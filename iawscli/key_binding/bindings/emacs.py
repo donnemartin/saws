@@ -1,13 +1,13 @@
 # pylint: disable=function-redefined
 from __future__ import unicode_literals
-from prompt_toolkit.buffer import SelectionType, indent, unindent
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.enums import IncrementalSearchDirection, SEARCH_BUFFER, SYSTEM_BUFFER
-from prompt_toolkit.filters import CLIFilter, Always
+from iawscli.buffer import SelectionType, indent, unindent
+from iawscli.keys import Keys
+from iawscli.enums import IncrementalSearchDirection, SEARCH_BUFFER, SYSTEM_BUFFER
+from iawscli.filters import CLIFilter, Always
 
 from .utils import create_handle_decorator
 
-import prompt_toolkit.filters as filters
+import iawscli.filters as filters
 
 __all__ = (
     'load_emacs_bindings',

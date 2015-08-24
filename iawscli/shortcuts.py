@@ -69,9 +69,9 @@ def create_eventloop(inputhook=None):
     `CommandLineInterface`.
     """
     if is_windows():
-        from prompt_toolkit.eventloop.win32 import Win32EventLoop as Loop
+        from iawscli.eventloop.win32 import Win32EventLoop as Loop
     else:
-        from prompt_toolkit.eventloop.posix import PosixEventLoop as Loop
+        from iawscli.eventloop.posix import PosixEventLoop as Loop
 
     return Loop(inputhook=inputhook)
 
@@ -102,9 +102,9 @@ def create_asyncio_eventloop(loop=None):
     # Inline import, to make sure the rest doesn't break on Python 2. (Where
     # asyncio is not available.)
     if is_windows():
-        from prompt_toolkit.eventloop.asyncio_win32 import Win32AsyncioEventLoop as AsyncioEventLoop
+        from iawscli.eventloop.asyncio_win32 import Win32AsyncioEventLoop as AsyncioEventLoop
     else:
-        from prompt_toolkit.eventloop.asyncio_posix import PosixAsyncioEventLoop as AsyncioEventLoop
+        from iawscli.eventloop.asyncio_posix import PosixAsyncioEventLoop as AsyncioEventLoop
 
     return AsyncioEventLoop(loop)
 

@@ -1,17 +1,17 @@
 # pylint: disable=function-redefined
 from __future__ import unicode_literals
-from prompt_toolkit.buffer import ClipboardData, indent, unindent
-from prompt_toolkit.document import Document
-from prompt_toolkit.enums import IncrementalSearchDirection, SEARCH_BUFFER, SYSTEM_BUFFER
-from prompt_toolkit.filters import Filter, Condition, HasArg, Always, to_cli_filter, IsReadOnly
-from prompt_toolkit.key_binding.vi_state import ViState, CharacterFind, InputMode
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.layout.utils import find_window_for_buffer_name
-from prompt_toolkit.selection import SelectionType
+from iawscli.buffer import ClipboardData, indent, unindent
+from iawscli.document import Document
+from iawscli.enums import IncrementalSearchDirection, SEARCH_BUFFER, SYSTEM_BUFFER
+from iawscli.filters import Filter, Condition, HasArg, Always, to_cli_filter, IsReadOnly
+from iawscli.key_binding.vi_state import ViState, CharacterFind, InputMode
+from iawscli.keys import Keys
+from iawscli.layout.utils import find_window_for_buffer_name
+from iawscli.selection import SelectionType
 
 from .utils import create_handle_decorator
 
-import prompt_toolkit.filters as filters
+import iawscli.filters as filters
 import codecs
 
 __all__ = (

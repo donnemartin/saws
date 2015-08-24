@@ -30,13 +30,13 @@ import fcntl
 from six import int2byte, text_type, binary_type
 from codecs import getincrementaldecoder
 
-from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.eventloop.base import EventLoop
-from prompt_toolkit.interface import CommandLineInterface, Application
-from prompt_toolkit.layout.screen import Size
-from prompt_toolkit.shortcuts import create_default_application
-from prompt_toolkit.terminal.vt100_input import InputStream
-from prompt_toolkit.terminal.vt100_output import Vt100_Output
+from iawscli.enums import DEFAULT_BUFFER
+from iawscli.eventloop.base import EventLoop
+from iawscli.interface import CommandLineInterface, Application
+from iawscli.layout.screen import Size
+from iawscli.shortcuts import create_default_application
+from iawscli.terminal.vt100_input import InputStream
+from iawscli.terminal.vt100_output import Vt100_Output
 
 from .log import logger
 from .protocol import IAC, DO, LINEMODE, SB, MODE, SE, WILL, ECHO, NAWS, SUPPRESS_GO_AHEAD

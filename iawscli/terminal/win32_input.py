@@ -1,9 +1,9 @@
 from ctypes import windll, pointer
 from ctypes.wintypes import DWORD
 
-from prompt_toolkit.key_binding.input_processor import KeyPress
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.win32_types import EventTypes, KEY_EVENT_RECORD, INPUT_RECORD, STD_INPUT_HANDLE
+from iawscli.key_binding.input_processor import KeyPress
+from iawscli.keys import Keys
+from iawscli.win32_types import EventTypes, KEY_EVENT_RECORD, INPUT_RECORD, STD_INPUT_HANDLE
 
 __all__ = (
     'ConsoleInputReader',

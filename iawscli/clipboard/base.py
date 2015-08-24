@@ -6,7 +6,7 @@ from abc import ABCMeta, abstractmethod
 from six import with_metaclass
 import six
 
-from prompt_toolkit.selection import SelectionType
+from iawscli.selection import SelectionType
 
 __all__ = (
     'Clipboard',

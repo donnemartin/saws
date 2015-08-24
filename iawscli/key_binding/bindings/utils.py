@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from functools import wraps
-from prompt_toolkit.filters import CLIFilter, Always
+from iawscli.filters import CLIFilter, Always
 
 
 def create_handle_decorator(registry, filter=Always()):

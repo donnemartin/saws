@@ -182,7 +182,7 @@ class InputStream(object):
         i = InputStream(callback)
         i.feed('data\x01...')
 
-    :attr input_processor: :class:`~prompt_toolkit.key_binding.InputProcessor` instance.
+    :attr input_processor: :class:`~iawscli.key_binding.InputProcessor` instance.
     """
     # Lookup table of ANSI escape sequences for a VT100 terminal
     # Hint: in order to know what sequences your terminal writes to stdin, run

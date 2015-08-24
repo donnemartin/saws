@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 from pygments.formatters.terminal256 import Terminal256Formatter, EscapeSequence
 
-from prompt_toolkit.layout.screen import Size
-from prompt_toolkit.renderer import Output
+from iawscli.layout.screen import Size
+from iawscli.renderer import Output
 
 import array
 import errno

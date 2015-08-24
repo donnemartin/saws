@@ -2,7 +2,7 @@
 Interface for an output.
 
 The actual implementations are in
-`prompt_toolkit.terminal.vt100_output/win32_output`.
+`iawscli.terminal.vt100_output/win32_output`.
 """
 from __future__ import unicode_literals
 from abc import ABCMeta, abstractmethod

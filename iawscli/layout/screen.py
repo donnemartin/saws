@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.utils import get_cwidth
+from iawscli.utils import get_cwidth
 from collections import defaultdict, namedtuple
 from pygments.token import Token
 import six

@@ -4,9 +4,9 @@ from six import with_metaclass
 
 from pygments.token import Token
 
-from prompt_toolkit.document import Document
-from prompt_toolkit.enums import SEARCH_BUFFER
-from prompt_toolkit.filters import to_cli_filter, Never
+from iawscli.document import Document
+from iawscli.enums import SEARCH_BUFFER
+from iawscli.filters import to_cli_filter, Never
 
 from .utils import token_list_len
 

@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 from six import with_metaclass
 from abc import ABCMeta, abstractmethod
 
-from prompt_toolkit.filters import to_cli_filter
+from iawscli.filters import to_cli_filter
 from pygments.token import Token
 
 __all__ = (

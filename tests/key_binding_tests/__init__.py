@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.key_binding.input_processor import InputProcessor, KeyPress
-from prompt_toolkit.key_binding.registry import Registry
-from prompt_toolkit.keys import Keys
+from iawscli.key_binding.input_processor import InputProcessor, KeyPress
+from iawscli.key_binding.registry import Registry
+from iawscli.keys import Keys
 
 import unittest
 

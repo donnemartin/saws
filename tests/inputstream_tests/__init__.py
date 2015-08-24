@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.terminal.vt100_input import InputStream
-from prompt_toolkit.keys import Keys
+from iawscli.terminal.vt100_input import InputStream
+from iawscli.keys import Keys
 
 import unittest
 

@@ -1,10 +1,10 @@
 # pylint: disable=function-redefined
 from __future__ import unicode_literals
 
-from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.filters import CLIFilter, Always, HasSelection, Condition
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.utils import suspend_to_background_supported
+from iawscli.enums import DEFAULT_BUFFER
+from iawscli.filters import CLIFilter, Always, HasSelection, Condition
+from iawscli.keys import Keys
+from iawscli.utils import suspend_to_background_supported
 
 from .utils import create_handle_decorator
 

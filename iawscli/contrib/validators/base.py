@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from prompt_toolkit.validation import Validator, ValidationError
+from iawscli.validation import Validator, ValidationError
 from six import string_types
 
 

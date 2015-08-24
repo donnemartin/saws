@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from pygments.token import Token
 from six import text_type
 
-from prompt_toolkit.enums import IncrementalSearchDirection, SEARCH_BUFFER
+from iawscli.enums import IncrementalSearchDirection, SEARCH_BUFFER
 
 from .utils import token_list_len
 from .processors import Processor

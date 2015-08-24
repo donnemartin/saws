@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.layout.screen import Screen, Char, Size, Point
+from iawscli.layout.screen import Screen, Char, Size, Point
 from pygments.token import Token
 
 import unittest

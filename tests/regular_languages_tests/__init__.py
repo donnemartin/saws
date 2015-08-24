@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.contrib.regular_languages import compile
-from prompt_toolkit.contrib.regular_languages.compiler import Match, Variables
-from prompt_toolkit.contrib.regular_languages.completion import GrammarCompleter
-from prompt_toolkit.completion import Completer, Completion, CompleteEvent
-from prompt_toolkit.document import Document
+from iawscli.contrib.regular_languages import compile
+from iawscli.contrib.regular_languages.compiler import Match, Variables
+from iawscli.contrib.regular_languages.completion import GrammarCompleter
+from iawscli.completion import Completer, Completion, CompleteEvent
+from iawscli.document import Document
 
 import unittest
 

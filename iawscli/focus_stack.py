@@ -8,7 +8,7 @@ buffers has the focus.
 from __future__ import unicode_literals
 from six import string_types
 
-from prompt_toolkit.enums import DEFAULT_BUFFER
+from iawscli.enums import DEFAULT_BUFFER
 
 __all__ = (
     'FocusStack',

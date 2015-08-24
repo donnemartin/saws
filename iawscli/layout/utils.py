@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.utils import get_cwidth
+from iawscli.utils import get_cwidth
 
 __all__ = (
     'token_list_len',

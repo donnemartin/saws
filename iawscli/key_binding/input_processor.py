@@ -1,7 +1,7 @@
 # *** encoding: utf-8 ***
 """
 An :class:`~.InputProcessor` receives callbacks for the keystrokes parsed from
-the input in the :class:`~prompt_toolkit.inputstream.InputStream` instance.
+the input in the :class:`~iawscli.inputstream.InputStream` instance.
 
 The `InputProcessor` will according to the implemented keybindings call the
 correct callbacks when new key presses are feed through `feed_key`.
@@ -9,7 +9,7 @@ correct callbacks when new key presses are feed through `feed_key`.
 from __future__ import unicode_literals
 from ..keys import Keys
 from ..utils import Callback
-from prompt_toolkit.buffer import EditReadOnlyBuffer
+from iawscli.buffer import EditReadOnlyBuffer
 
 import weakref
 

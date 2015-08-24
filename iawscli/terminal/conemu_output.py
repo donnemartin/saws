@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.renderer import Output
+from iawscli.renderer import Output
 
 from .win32_output import Win32Output
 from .vt100_output import Vt100_Output

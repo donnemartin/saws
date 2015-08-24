@@ -7,10 +7,10 @@ from pygments.token import Token
 from six import with_metaclass
 from abc import ABCMeta, abstractmethod
 
-from prompt_toolkit.filters import to_cli_filter
-from prompt_toolkit.utils import get_cwidth
-from prompt_toolkit.search_state import SearchState
-from prompt_toolkit.enums import DEFAULT_BUFFER
+from iawscli.filters import to_cli_filter
+from iawscli.utils import get_cwidth
+from iawscli.search_state import SearchState
+from iawscli.enums import DEFAULT_BUFFER
 
 from .lexers import Lexer, SimpleLexer
 from .margins import Margin, NoMargin

@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from ctypes import windll, byref, ArgumentError, c_char, c_long, c_ulong, c_uint
 from ctypes.wintypes import DWORD
 
-from prompt_toolkit.renderer import Output
-from prompt_toolkit.win32_types import CONSOLE_SCREEN_BUFFER_INFO, STD_OUTPUT_HANDLE, COORD, SMALL_RECT
+from iawscli.renderer import Output
+from iawscli.win32_types import CONSOLE_SCREEN_BUFFER_INFO, STD_OUTPUT_HANDLE, COORD, SMALL_RECT
 
 import six
 
@@ -59,7 +59,7 @@ class Win32Output(Output):
         self._buffer.append(data)
 
     def get_size(self):
-        from prompt_toolkit.layout.screen import Size
+        from iawscli.layout.screen import Size
         info = self._screen_buffer_info()
 
         # We take the width of the *visible* region as the size. Not the width

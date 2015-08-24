@@ -148,8 +148,8 @@ class Buffer(object):
     current input line and implements all text manupulations on top of it. It
     also implements the history, undo stack and the completion state.
 
-    :attr completer : :class:`~prompt_toolkit.completion.Completer` instance.
-    :attr history: :class:`~prompt_toolkit.history.History` instance.
+    :attr completer : :class:`~iawscli.completion.Completer` instance.
+    :attr history: :class:`~iawscli.history.History` instance.
     :attr callbacks: :class:`~.Callbacks` instance.
 
     :attr tempfile_suffix: Suffix to be appended to the tempfile for the 'open

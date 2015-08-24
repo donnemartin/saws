@@ -11,8 +11,8 @@ from pygments.token import Token
 from .screen import Point, WritePosition
 from .dimension import LayoutDimension, sum_layout_dimensions, max_layout_dimensions
 from .controls import UIControl
-from prompt_toolkit.reactive import Integer
-from prompt_toolkit.filters import to_cli_filter
+from iawscli.reactive import Integer
+from iawscli.filters import to_cli_filter
 
 __all__ = (
     'HSplit',

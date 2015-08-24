@@ -6,9 +6,9 @@ from __future__ import unicode_literals
 
 from pygments.style import Style
 from pygments.token import Token
-from prompt_toolkit.layout.screen import Point, Screen, WritePosition
-from prompt_toolkit.output import Output
-from prompt_toolkit.utils import is_windows
+from iawscli.layout.screen import Point, Screen, WritePosition
+from iawscli.output import Output
+from iawscli.utils import is_windows
 
 __all__ = (
     'Renderer',

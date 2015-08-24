@@ -3,8 +3,8 @@ Completer for a regular grammar.
 """
 from __future__ import unicode_literals
 
-from prompt_toolkit.completion import Completer, Completion
-from prompt_toolkit.document import Document
+from iawscli.completion import Completer, Completion
+from iawscli.document import Document
 
 from .compiler import _CompiledGrammar
 

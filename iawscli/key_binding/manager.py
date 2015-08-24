@@ -11,12 +11,12 @@ Usage::
     cli = CommandLineInterface(key_bindings_registry=manager.registry)
 """
 from __future__ import unicode_literals
-from prompt_toolkit.key_binding.registry import Registry
-from prompt_toolkit.key_binding.vi_state import ViState
-from prompt_toolkit.key_binding.bindings.basic import load_basic_bindings, load_basic_system_bindings
-from prompt_toolkit.key_binding.bindings.emacs import load_emacs_bindings, load_emacs_system_bindings, load_emacs_search_bindings, load_emacs_open_in_editor_bindings
-from prompt_toolkit.key_binding.bindings.vi import load_vi_bindings, load_vi_system_bindings, load_vi_search_bindings, load_vi_open_in_editor_bindings
-from prompt_toolkit.filters import Never, Always, to_cli_filter
+from iawscli.key_binding.registry import Registry
+from iawscli.key_binding.vi_state import ViState
+from iawscli.key_binding.bindings.basic import load_basic_bindings, load_basic_system_bindings
+from iawscli.key_binding.bindings.emacs import load_emacs_bindings, load_emacs_system_bindings, load_emacs_search_bindings, load_emacs_open_in_editor_bindings
+from iawscli.key_binding.bindings.vi import load_vi_bindings, load_vi_system_bindings, load_vi_search_bindings, load_vi_open_in_editor_bindings
+from iawscli.filters import Never, Always, to_cli_filter
 
 __all__ = (
     'KeyBindingManager',

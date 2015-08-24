@@ -1,5 +1,5 @@
 """
-Prompt_toolkit is designed a way that the amount of changing state is reduced
+iawscli is designed a way that the amount of changing state is reduced
 to a minimum. Where possible, code is written in a pure functional way. In
 general, this results in code where the flow is very easy to follow: the value
 of a variable can be deducted from its first assignment.

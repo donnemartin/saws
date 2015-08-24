@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from prompt_toolkit.buffer import Buffer
+from iawscli.buffer import Buffer
 
 import unittest
 

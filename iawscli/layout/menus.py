@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 
 from six.moves import zip_longest
-from prompt_toolkit.filters import HasCompletions, IsDone, Always, Condition
-from prompt_toolkit.reactive import Integer
-from prompt_toolkit.utils import get_cwidth
+from iawscli.filters import HasCompletions, IsDone, Always, Condition
+from iawscli.reactive import Integer
+from iawscli.utils import get_cwidth
 from pygments.token import Token
 
 from .containers import Window, HSplit, ConditionalContainer

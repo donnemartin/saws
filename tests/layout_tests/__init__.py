@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-#from prompt_toolkit.layout.utils import fit_tokens_in_size
+#from iawscli.layout.utils import fit_tokens_in_size
 from pygments.token import Token
 
 import unittest
