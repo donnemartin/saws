@@ -73,7 +73,7 @@ class Application(object):
                  key_bindings_registry=None, clipboard=None,
                  on_abort=AbortAction.RETRY, on_exit=AbortAction.IGNORE,
                  use_alternate_screen=False,
-                 get_title=None,
+                 get_title=None, aws_driver=None,
 
                  paste_mode=Never(), ignore_case=Never(),
 
@@ -127,6 +127,7 @@ class Application(object):
         self.on_exit = on_exit
         self.use_alternate_screen = use_alternate_screen
         self.get_title = get_title
+        self.aws_driver = aws_driver
 
         self.paste_mode = paste_mode
         self.ignore_case = ignore_case

@@ -261,6 +261,7 @@ def create_default_application(
         get_bottom_toolbar_tokens=None,
         display_completions_in_columns=False,
         get_title=None,
+        aws_driver=None,
         extra_input_processors=None,
         key_bindings_registry=None,
         on_abort=AbortAction.RAISE_EXCEPTION,
@@ -335,6 +336,7 @@ def create_default_application(
         clipboard=clipboard,
         key_bindings_registry=key_bindings_registry,
         get_title=get_title,
+        aws_driver=aws_driver,
         on_abort=on_abort,
         on_exit=on_exit)
 
