@@ -31,7 +31,7 @@ class Document(object):
     This is a immutable class around the text and cursor position, and contains
     methods for querying this data, e.g. to give the text before the cursor.
 
-    This class is usually instantiated by a :class:`~prompt_toolkit.buffer.Buffer`
+    This class is usually instantiated by a :class:`~iawscli.buffer.Buffer`
     object, and accessed as the `document` property of that class.
 
     :param text: string
