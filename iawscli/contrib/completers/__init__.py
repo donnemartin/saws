@@ -3,4 +3,4 @@ from __future__ import unicode_literals
 from .filesystem import PathCompleter
 from .base import WordCompleter
 from .system import SystemCompleter
-from .awscli import AwsCliCompleter
+from .aws import AwsCliCompleter
