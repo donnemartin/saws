@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 import os
 import subprocess
+import pexpect
 from six import string_types
 from iawscli.completion import Completer, Completion
 from iawscli.shortcuts import get_input
@@ -36,7 +37,8 @@ def cli():
             break
         try:
             # Pass the command onto the shell so aws-cli can execute it
-            subprocess.call([text], shell=True)
+            process = pexpect.spawnu(text)
+            process.interact()
         except Exception as e:
             print(e)
 

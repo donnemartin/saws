@@ -24,6 +24,7 @@ setup(
     install_requires = [
         'awscli>=1.7.46',
         'pygments',
+        'pexpect>=3.3',
         'six>=1.9.0',
         'wcwidth',
     ],
