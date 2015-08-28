@@ -35,5 +35,15 @@ nosetests.xml
 .project
 .pydevproject
 
-# Scratch dir
+screenshots/
+tests/
 scratch/
+
+.idea/
+*.pyc
+*.egg-info/
+*env/
+.tox/
+build/
+dist/
+.DS_Store
