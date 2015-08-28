@@ -1,48 +1,52 @@
-#!/usr/bin/env python
-import os
-from setuptools import setup, find_packages
+from iawscli.__init__ import __version__
 
-
-long_description = open(
-    os.path.join(
-        os.path.dirname(__file__),
-        'README.rst'
-    )
-).read()
-
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 setup(
-    name='iawscli',
+    description='iawscli: an interactive shell for AWS with auto-completion',
     author='Donne Martin',
-    author_email='donne.martin@gmail.com',
-    version='0.1',
-    license='LICENSE.txt',
     url='https://github.com/donnemartin/iawscli',
-    description='Interactive AWS CLI with auto-completion.',
-    long_description=long_description,
-    packages=find_packages('.'),
-    install_requires = [
+    download_url='https://github.com/donnemartin/iawscli',
+    author_email='donne.martin@gmail.com',
+    version=__version__,
+    install_requires=[
         'awscli>=1.7.46',
-        'pygments',
-        'pexpect>=3.3',
         'six>=1.9.0',
-        'wcwidth',
+        'pygments>=2.0.2',
+        'prompt-toolkit==0.46',
+        'tabulate>=0.7.5',
+        'click>=4.0',
+        'py-pretty>-0.1',
+        'configobj >= 5.0.6',
+        'pexpect>=3.3',
+        'fuzzyfinder>=1.0.0'
     ],
-    entry_points='''
-        [console_scripts]
-        iawscli=iawscli.main:cli
-    ''',
+    extras_require={
+        'testing': [
+            'pytest>=2.7.0',
+            'mock>=1.0.1',
+            'tox>=1.9.2'
+        ],
+    },
+    entry_points={
+        'console_scripts': 'iawscli = iawscli.main:cli'
+    },
+    packages=['iawscli'],
+    package_data={'iawscli': ['iawsclirc']},
+    scripts=[],
+    name='iawscli',
     classifiers=[
         'Intended Audience :: Developers',
-        'License :: Apache 2.0',
         'Operating System :: Unix',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        ],
+    ],
 )
