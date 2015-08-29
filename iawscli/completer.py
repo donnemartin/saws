@@ -88,6 +88,15 @@ class AwsCompleter(Completer):
         except Exception as e:
             print(e)
 
+    def get_res_completions(self, words, word_before_cursor,
+                           option_text, resource):
+        if words[-1] == option_text or \
+            (len(words) > 1 and (words[-2] == option_text and word_before_cursor != '')):
+            return AwsCompleter.find_matches(
+                word_before_cursor,
+                resource,
+                self.fuzzy_match)
+
     def get_completions(self, document, _):
         """
         Get completions for the current scope.
@@ -103,11 +112,11 @@ class AwsCompleter(Completer):
         except Exception as ex:
             pass
         sys.stdout = old_stdout
-        completions = mystdout.getvalue()
+        aws_completer_results = mystdout.getvalue()
 
         # Tidy up the completions and store it in a list
-        completions = re.sub('\n', '', completions)
-        completions_list = completions.split()
+        aws_completer_results = re.sub('\n', '', aws_completer_results)
+        aws_completer_results_list = aws_completer_results.split()
 
         # Build the list of completions
         self.aws_completions = set()
@@ -115,7 +124,7 @@ class AwsCompleter(Completer):
             # Autocomplete 'aws' at the beginning of the command
             self.aws_completions = [self.BASE_COMMAND]
         else:
-            self.aws_completions.update(completions_list)
+            self.aws_completions.update(aws_completer_results_list)
 
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         first_word = AwsCompleter.first_token(document.text).lower()
@@ -124,19 +133,17 @@ class AwsCompleter(Completer):
         if len(words) == 0:
             return []
 
-        if words[-1] == '--instance-ids' or \
-            (len(words) > 1 and (words[-2] == '--instance-ids' and word_before_cursor != '')):
-            completions = AwsCompleter.find_matches(
-                word_before_cursor,
-                self.instance_ids,
-                self.fuzzy_match)
-        elif words[-1] == '--bucket' or \
-            (len(words) > 1 and (words[-2] == '--bucket' and word_before_cursor != '')):
-            completions = AwsCompleter.find_matches(
-                word_before_cursor,
-                self.bucket_names,
-                self.fuzzy_match)
-        else:
+        completions = None
+        completions = self.get_res_completions(words,
+                                               word_before_cursor,
+                                               '--instance-ids',
+                                               self.instance_ids)
+        if completions is None:
+            completions = self.get_res_completions(words,
+                                                   word_before_cursor,
+                                                   '--bucket',
+                                                   self.bucket_names)
+        if completions is None:
             completions = AwsCompleter.find_matches(
                 word_before_cursor,
                 self.aws_completions,
