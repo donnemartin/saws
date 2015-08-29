@@ -5,7 +5,6 @@ import os
 import re
 
 from optparse import OptionParser, OptionError, OptionGroup
-from .option import CommandOption
 
 
 GLOBAL_OPTIONS = [

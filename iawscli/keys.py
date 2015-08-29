@@ -2,8 +2,6 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
-import webbrowser
-
 from prompt_toolkit.key_binding.manager import KeyBindingManager
 from prompt_toolkit.keys import Keys
 

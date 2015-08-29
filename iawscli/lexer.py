@@ -3,8 +3,8 @@ from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Operator, Keyword, Text, Name
 
-from .options import GLOBAL_OPTIONS, RESOURCE_OPTIONS
-from .options import IAWS_COMMANDS, all_commands
+from .options import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
+    IAWS_COMMANDS, all_commands
 
 
 class CommandLexer(RegexLexer):
