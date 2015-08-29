@@ -1,2 +1,1 @@
-from .interface import CommandLineInterface
-from .application import AbortAction, Application
+__version__ = '0.1.0'
