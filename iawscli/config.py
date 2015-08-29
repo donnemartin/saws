@@ -1,7 +1,6 @@
 # -*- coding: utf-8
 import shutil
 from os.path import expanduser, exists
-
 from configobj import ConfigObj
 
 
@@ -13,13 +12,10 @@ def read_config(usr_config, def_config=None):
     :return: ConfigParser
     """
     usr_config_file = expanduser(usr_config)
-
     cfg = ConfigObj()
     cfg.filename = usr_config_file
-
     if def_config:
         cfg.merge(ConfigObj(def_config, interpolation=False))
-
     cfg.merge(ConfigObj(usr_config_file, interpolation=False))
     return cfg
 
@@ -34,5 +30,4 @@ def write_default_config(source, destination, overwrite=False):
     destination = expanduser(destination)
     if not overwrite and exists(destination):
         return
-
     shutil.copyfile(source, destination)

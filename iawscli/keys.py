@@ -1,7 +1,6 @@
 # -*- coding: utf-8
 from __future__ import unicode_literals
 from __future__ import print_function
-
 from prompt_toolkit.key_binding.manager import KeyBindingManager
 from prompt_toolkit.keys import Keys
 
@@ -12,12 +11,10 @@ def get_key_manager(set_fuzzy_match, get_fuzzy_match,
     Create and initialize keybinding manager
     :return: KeyBindingManager
     """
-
     assert callable(set_fuzzy_match)
     assert callable(get_fuzzy_match)
     assert callable(refresh_resources)
     assert callable(handle_docs)
-
     manager = KeyBindingManager(enable_system_bindings=True)
 
     @manager.registry.add_binding(Keys.F2)

@@ -4,7 +4,6 @@ Helper functions to format output for CLI.
 """
 from __future__ import unicode_literals
 from __future__ import print_function
-
 import json
 import click
 from tabulate import tabulate
@@ -130,7 +129,6 @@ class JsonStreamFormatter(StreamFormatter):
             line = "{0}".format(data['error'])
         else:
             line = "{0}".format(data)
-
         if line:
             line = line.rstrip()
 
@@ -151,9 +149,7 @@ class JsonStreamFormatter(StreamFormatter):
         :param data: json
         """
         click.echo(b'\x0d', nl=False)
-
         self.progress = True
-
         line = "{0} {1}: {2}".format(
             data['status'],
             data['id'],
@@ -171,10 +167,8 @@ def format_data(command, data):
         f = DATA_FORMATTERS[command]
         assert callable(f)
         return f(data)
-
     if command and command in DATA_FILTERS:
         data = DATA_FILTERS[command](data)
-
     if isinstance(data, list) and len(data) > 0:
         if isinstance(data[0], tuple):
             if is_plain_lists(data):
@@ -206,10 +200,8 @@ def format_data(command, data):
 
 
 def format_struct(data, spaces=4, indent=0, lines=None):
-
     if lines is None:
         lines = []
-
     if isinstance(data, dict):
         data = [(k, data[k]) for k in sorted(data.keys())]
 
@@ -218,16 +210,13 @@ def format_struct(data, spaces=4, indent=0, lines=None):
         if len(current_line) == 0:
             current_indent = ' ' * (indent * spaces)
             current_line = current_indent
-
         current_line += '{0}'.format(current_item)
-
         if is_last_item:
             current_list.append(current_line)
             current_line = ''
         else:
             current_line += ': '
         return current_line, current_list
-
     for row in data:
         line = ''
         l = len(row)
@@ -244,7 +233,6 @@ def format_struct(data, spaces=4, indent=0, lines=None):
                     lines = format_struct(row[i], spaces, indent + 1, lines)
             else:
                 line, lines = item_to_line(row[i], line, i == (l - 1), lines)
-
     return lines
 
 
@@ -352,7 +340,6 @@ def format_ports(ports):
                 port.get('Type', 'type'))
         # Fallback to formatting "as is"
         return "{0}".format(port)
-
     if isinstance(ports, dict):
         return ', '.join(['{0}->{1}'.format(k, format_port_list(v))
                           for k, v in ports.items()])
@@ -365,7 +352,6 @@ def flatten_rows(rows):
     :param rows: iterable of dictionaries
     :return:
     """
-
     for row in rows:
         for k in row.keys():
             if k in ROW_FORMATTERS:
@@ -484,9 +470,7 @@ def output_stream(command, stream, logs):
         formatter = STREAM_FORMATTERS[command](stream)
     else:
         formatter = StreamFormatter(stream)
-
     stream_count = formatter.output()
-
     if stream_count == 0 and logs and callable(logs):
         # Something nasty has happened and we got an empty
         # output stream. But we have logs. Let's show those.

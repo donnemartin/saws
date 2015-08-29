@@ -2,7 +2,6 @@
 # -*- coding: utf-8
 from __future__ import unicode_literals
 from __future__ import print_function
-
 import os
 import sys
 import re
@@ -12,7 +11,6 @@ import pexpect
 import subprocess
 import webbrowser
 from cStringIO import StringIO
-
 from types import GeneratorType
 from prompt_toolkit import AbortAction
 from prompt_toolkit import Application
@@ -36,15 +34,13 @@ from .options import OptionError, AWS_DOCS
 from .logger import create_logger
 from .__init__ import __version__
 
-# Added this to avoid the annoying warning: http://click.pocoo.org/5/python3/
-click.disable_unicode_literals_warning = True
 
+click.disable_unicode_literals_warning = True
 
 class IAwsCli(object):
     """
     The CLI implementation.
     """
-
     aws_cli = None
     keyword_completer = None
     saved_less_opts = None
@@ -57,17 +53,13 @@ class IAwsCli(object):
         Initialize class members.
         Should read the config here at some point.
         """
-
         self.config = self.read_configuration()
         self.theme = self.config['main']['theme']
-
         log_file = self.config['main']['log_file']
         log_level = self.config['main']['log_level']
         self.logger = create_logger(__name__, log_file, log_level)
-
         refresh_instance_ids=self.config['main'].as_bool('resfresh_instance_ids')
         refresh_bucket_names=self.config['main'].as_bool('refresh_bucket_names')
-
         self.completer = AwsCompleter(
             aws_completer,
             fuzzy_match=self.get_fuzzy_match(),
@@ -76,10 +68,6 @@ class IAwsCli(object):
         self.saved_less_opts = self.set_less_opts()
 
     def read_configuration(self):
-        """
-
-        :return:
-        """
         default_config = os.path.join(
             self.get_package_path(), self.config_template)
         write_default_config(default_config, self.config_name)
@@ -187,10 +175,8 @@ class IAwsCli(object):
         Run the main loop
         """
         print('Version:', __version__)
-
         history = FileHistory(os.path.expanduser('~/.iawscli-history'))
         toolbar_handler = create_toolbar_handler(self.get_fuzzy_match)
-
         layout = create_default_layout(
             message='iawscli> ',
             reserve_space_for_menu=True,
@@ -203,18 +189,15 @@ class IAwsCli(object):
                     filter=HasFocus(DEFAULT_BUFFER) & ~IsDone())
             ]
         )
-
         cli_buffer = Buffer(
             history=history,
             completer=self.completer,
             complete_while_typing=Always())
-
         manager = get_key_manager(
             self.set_fuzzy_match,
             self.get_fuzzy_match,
             self.refresh_resources,
             self.handle_docs)
-
         application = Application(
             style=style_factory(self.theme),
             layout=layout,
@@ -222,13 +205,10 @@ class IAwsCli(object):
             key_bindings_registry=manager.registry,
             on_exit=AbortAction.RAISE_EXCEPTION,
             ignore_case=True)
-
         eventloop = create_eventloop()
-
         self.aws_cli = CommandLineInterface(
             application=application,
             eventloop=eventloop)
-
         while True:
             document = self.aws_cli.run()
             try:
@@ -236,10 +216,8 @@ class IAwsCli(object):
                 if not self.handle_docs():
                     process = pexpect.spawnu(document.text)
                     process.interact()
-
             except Exception as e:
                 print(e)
-
         self.revert_less_opts()
         self.write_config_file()
         print('Goodbye!')

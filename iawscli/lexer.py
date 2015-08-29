@@ -2,7 +2,6 @@
 from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Operator, Keyword, Text, Name
-
 from .options import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
     AWS_COMMAND, AWS_DOCS, all_commands
 
@@ -12,7 +11,6 @@ class CommandLexer(RegexLexer):
     aliases = ['cli']
     filenames = []
     commands = all_commands()
-
     tokens = {
         'root': [
             (words(tuple(AWS_COMMAND), prefix=r'', suffix=r'\b'),

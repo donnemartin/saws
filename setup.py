@@ -1,9 +1,9 @@
 from iawscli.__init__ import __version__
-
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
 
 setup(
     description='iawscli: an interactive shell for AWS with auto-completion',

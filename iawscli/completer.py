@@ -1,12 +1,10 @@
 # -*- coding: utf-8
 from __future__ import unicode_literals
-
 import sys
 import re
 import os
 import fuzzyfinder
 import subprocess
-
 from cStringIO import StringIO
 from itertools import chain
 from prompt_toolkit.completion import Completer, Completion
@@ -34,7 +32,6 @@ class AwsCompleter(Completer):
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_bucket_names = refresh_bucket_names
         self.BASE_COMMAND = 'aws'
-
         self.generate_commands()
         self.refresh_resources()
 
@@ -103,7 +100,6 @@ class AwsCompleter(Completer):
         :param document:
         :param _: complete_event
         """
-
         # Capture the AWS CLI autocompleter and store it in a string
         old_stdout = sys.stdout
         sys.stdout = mystdout = StringIO()
@@ -113,11 +109,9 @@ class AwsCompleter(Completer):
             pass
         sys.stdout = old_stdout
         aws_completer_results = mystdout.getvalue()
-
         # Tidy up the completions and store it in a list
         aws_completer_results = re.sub('\n', '', aws_completer_results)
         aws_completer_results_list = aws_completer_results.split()
-
         # Build the list of completions
         self.aws_completions = set()
         if len(document.text) < len(self.BASE_COMMAND):
@@ -125,14 +119,11 @@ class AwsCompleter(Completer):
             self.aws_completions = [self.BASE_COMMAND]
         else:
             self.aws_completions.update(aws_completer_results_list)
-
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         first_word = AwsCompleter.first_token(document.text).lower()
         words = AwsCompleter.get_tokens(document.text)
-
         if len(words) == 0:
             return []
-
         completions = None
         completions = self.get_res_completions(words,
                                                word_before_cursor,
@@ -148,7 +139,6 @@ class AwsCompleter(Completer):
                 word_before_cursor,
                 self.aws_completions,
                 self.fuzzy_match)
-
         return completions
 
     @staticmethod
@@ -160,7 +150,6 @@ class AwsCompleter(Completer):
         :param fuzzy: boolean
         :return: iterable
         """
-
         if fuzzy:
             for suggestion in fuzzyfinder.fuzzyfinder(word, lst):
                 yield Completion(suggestion, -len(word))
@@ -179,7 +168,6 @@ class AwsCompleter(Completer):
         :return: iterable
         """
         text = AwsCompleter.last_token(text).lower()
-
         for suggestion in AwsCompleter.find_collection_matches(
                 text, collection, fuzzy):
             yield suggestion

@@ -13,8 +13,8 @@ def style_factory(name):
         style = pygments.styles.get_style_by_name('native')
 
     class CliStyle(Style):
-        styles = {}
 
+        styles = {}
         styles.update(style.styles)
         styles.update(default_style_extensions)
         styles.update({
