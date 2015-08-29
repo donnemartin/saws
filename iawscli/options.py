@@ -26,8 +26,11 @@ RESOURCE_OPTIONS = [
     '--bucket',
 ]
 
-IAWS_COMMANDS = [
+AWS_COMMAND = [
     'aws',
+]
+
+AWS_DOCS = [
     'docs',
 ]
 

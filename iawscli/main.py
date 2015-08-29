@@ -32,7 +32,7 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .options import OptionError
+from .options import OptionError, AWS_DOCS
 from .logger import create_logger
 from .__init__ import __version__
 
@@ -149,20 +149,25 @@ class IAwsCli(object):
     def refresh_resources(self):
         self.completer.refresh_resources()
 
-    def handle_docs(self, text=None, commands=None, sub_commands=None):
+    def handle_docs(self, from_fkey=False):
         base_url = 'http://docs.aws.amazon.com/cli/latest/reference/'
         index_html = 'index.html'
-        if text is None:
-            webbrowser.open(base_url + index_html)
-            return True
+        text = self.aws_cli.current_buffer.document.text
+        commands = self.completer.commands
+        sub_commands = self.completer.sub_commands
+        # If the user hit the F2 key, append 'docs' to the text
+        if from_fkey:
+            text = text.strip() + ' ' + AWS_DOCS[0]
         tokens = text.split()
-        if len(tokens) > 2 and tokens[-1] == 'docs':
+        if len(tokens) > 2 and tokens[-1] == AWS_DOCS[0]:
             prev_word = tokens[-2]
+            # If we have a command, build the url
             if prev_word in commands:
                 prev_word = prev_word + '/'
                 url = base_url + prev_word + index_html
                 webbrowser.open(url)
                 return True
+            # if we have a command and subcommand, build the url
             elif prev_word in sub_commands:
                 command_url = tokens[-3] + '/'
                 sub_command_url = tokens[-2] + '.html'
@@ -170,6 +175,11 @@ class IAwsCli(object):
                 webbrowser.open(url)
                 return True
             webbrowser.open(base_url + index_html)
+        # if we still haven't opened the help doc at this point and the
+        # user hit the F2 key for docs, just open the main docs index
+        if from_fkey:
+            webbrowser.open(base_url + index_html)
+            return True
         return False
 
     def run_cli(self):
@@ -223,9 +233,7 @@ class IAwsCli(object):
             document = self.aws_cli.run()
             try:
                 # Pass the command onto the shell so aws-cli can execute it
-                if not self.handle_docs(document.text,
-                                        self.completer.commands,
-                                        self.completer.sub_commands):
+                if not self.handle_docs():
                     process = pexpect.spawnu(document.text)
                     process.interact()
 

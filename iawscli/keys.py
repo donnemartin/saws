@@ -25,7 +25,7 @@ def get_key_manager(set_fuzzy_match, get_fuzzy_match,
         """
         When F2 has been pressed, fill in the "docs" command.
         """
-        handle_docs()
+        handle_docs(from_fkey=True)
 
     @manager.registry.add_binding(Keys.F4)
     def _(_):

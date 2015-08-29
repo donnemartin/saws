@@ -4,7 +4,7 @@ from pygments.lexer import words
 from pygments.token import Operator, Keyword, Text, Name
 
 from .options import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
-    IAWS_COMMANDS, all_commands
+    AWS_COMMAND, AWS_DOCS, all_commands
 
 
 class CommandLexer(RegexLexer):
@@ -15,7 +15,9 @@ class CommandLexer(RegexLexer):
 
     tokens = {
         'root': [
-            (words(tuple(IAWS_COMMANDS), prefix=r'', suffix=r'\b'),
+            (words(tuple(AWS_COMMAND), prefix=r'', suffix=r'\b'),
+             Operator.Word),
+            (words(tuple(AWS_DOCS), prefix=r'', suffix=r'\b'),
              Operator.Word),
             (words(tuple(commands[0]), prefix=r'', suffix=r'\b'),
              Operator.Word),
