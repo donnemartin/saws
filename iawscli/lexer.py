@@ -2,7 +2,7 @@
 from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Operator, Keyword, Text, Name
-from .options import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
+from .commands import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
     AWS_COMMAND, AWS_DOCS, all_commands
 
 

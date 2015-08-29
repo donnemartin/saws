@@ -30,7 +30,7 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .options import OptionError, AWS_DOCS
+from .commands import OptionError, AWS_DOCS
 from .logger import create_logger
 from .__init__ import __version__
 
