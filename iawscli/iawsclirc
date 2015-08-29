@@ -1,0 +1,23 @@
+[main]
+
+# timeout to connect to client, in seconds
+client_timeout = 2
+
+# Visual theme. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
+# native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
+# colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
+theme = default
+
+# Use fuzzy matching mode (default is to use simple substring match).
+fuzzy_match = False
+
+# log_file location.
+log_file = ~/.iawscli.log
+
+# Default log level. Possible values: "CRITICAL", "ERROR", "WARNING", "INFO"
+# and "DEBUG".
+log_level = INFO
+
+# AWS resources to refresh
+resfresh_instance_ids = True
+refresh_bucket_names = True
