@@ -32,6 +32,10 @@ AWS_DOCS = [
     'docs',
 ]
 
+SHORTCUTS = {
+    'aws ec2 ls': 'aws ec2 describe-instances',
+}
+
 def all_commands():
     p = os.path.dirname(os.path.realpath(__file__))
     f = os.path.join(p, 'data/SOURCES.txt')

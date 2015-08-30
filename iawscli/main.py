@@ -30,7 +30,7 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import OptionError, AWS_DOCS
+from .commands import OptionError, AWS_DOCS, SHORTCUTS
 from .logger import create_logger
 from .__init__ import __version__
 
@@ -213,14 +213,25 @@ class IAwsCli(object):
             document = self.aws_cli.run()
             try:
                 # Pass the command onto the shell so aws-cli can execute it
-                if not self.handle_docs():
-                    process = pexpect.spawnu(document.text)
-                    process.interact()
+                if self.handle_docs():
+                    continue
+                text = self.handle_shortcuts()
+                process = pexpect.spawnu(text)
+                process.interact()
+                print('executed: ', text)
             except Exception as e:
                 print(e)
         self.revert_less_opts()
         self.write_config_file()
         print('Goodbye!')
+
+    def handle_shortcuts(self):
+        text = self.aws_cli.current_buffer.document.text
+        for key in SHORTCUTS.keys():
+            if key in text:
+                text = re.sub(key, SHORTCUTS[key], text)
+                break
+        return text
 
 
 @click.command()
