@@ -1,8 +1,5 @@
 [main]
 
-# timeout to connect to client, in seconds
-client_timeout = 2
-
 # Use color output mode (default is to use simple substring match).
 color_output = True
 
