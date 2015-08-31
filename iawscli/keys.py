@@ -5,12 +5,15 @@ from prompt_toolkit.key_binding.manager import KeyBindingManager
 from prompt_toolkit.keys import Keys
 
 
-def get_key_manager(set_fuzzy_match, get_fuzzy_match,
+def get_key_manager(set_color, get_color,
+                    set_fuzzy_match, get_fuzzy_match,
                     refresh_resources, handle_docs):
     """
     Create and initialize keybinding manager
     :return: KeyBindingManager
     """
+    assert callable(set_color)
+    assert callable(get_color)
     assert callable(set_fuzzy_match)
     assert callable(get_fuzzy_match)
     assert callable(refresh_resources)
@@ -23,6 +26,13 @@ def get_key_manager(set_fuzzy_match, get_fuzzy_match,
         When F2 has been pressed, fill in the "docs" command.
         """
         handle_docs(from_fkey=True)
+
+    @manager.registry.add_binding(Keys.F3)
+    def _(_):
+        """
+        Enable/Disable color output.
+        """
+        set_color(not get_color())
 
     @manager.registry.add_binding(Keys.F4)
     def _(_):

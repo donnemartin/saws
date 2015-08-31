@@ -8,6 +8,9 @@ client_timeout = 2
 # colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
 theme = default
 
+# Use color output mode (default is to use simple substring match).
+color_output = True
+
 # Use fuzzy matching mode (default is to use simple substring match).
 fuzzy_match = False
 

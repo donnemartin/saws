@@ -7,7 +7,6 @@ import sys
 import re
 import click
 import traceback
-import pexpect
 import subprocess
 import webbrowser
 from cStringIO import StringIO
@@ -119,6 +118,20 @@ class IAwsCli(object):
         """
         click.clear()
 
+    def set_color(self, is_color):
+        """
+        Setter for color output mode
+        :param is_color: boolean
+        """
+        self.config['main']['color_output'] = is_color
+
+    def get_color(self):
+        """
+        Getter for color output mode
+        :return: boolean
+        """
+        return self.config['main'].as_bool('color_output')
+
     def set_fuzzy_match(self, is_fuzzy):
         """
         Setter for fuzzy matching mode
@@ -170,13 +183,25 @@ class IAwsCli(object):
             return True
         return False
 
+    def handle_shortcuts(self):
+        text = self.aws_cli.current_buffer.document.text
+        for key in SHORTCUTS.keys():
+            if key in text:
+                text = re.sub(key, SHORTCUTS[key], text)
+                break
+        return text
+
+    def colorize_output(self, text):
+        return text.strip() + ' | pygmentize -l json'
+
     def run_cli(self):
         """
         Run the main loop
         """
         print('Version:', __version__)
         history = FileHistory(os.path.expanduser('~/.iawscli-history'))
-        toolbar_handler = create_toolbar_handler(self.get_fuzzy_match)
+        toolbar_handler = create_toolbar_handler(self.get_color,
+                                                 self.get_fuzzy_match)
         layout = create_default_layout(
             message='iawscli> ',
             reserve_space_for_menu=True,
@@ -194,6 +219,8 @@ class IAwsCli(object):
             completer=self.completer,
             complete_while_typing=Always())
         manager = get_key_manager(
+            self.set_color,
+            self.get_color,
             self.set_fuzzy_match,
             self.get_fuzzy_match,
             self.refresh_resources,
@@ -212,26 +239,19 @@ class IAwsCli(object):
         while True:
             document = self.aws_cli.run()
             try:
-                # Pass the command onto the shell so aws-cli can execute it
                 if self.handle_docs():
                     continue
                 text = self.handle_shortcuts()
-                process = pexpect.spawnu(text)
-                process.interact()
+                if self.get_color():
+                    text = self.colorize_output(text)
+                # Pass the command onto the shell so aws-cli can execute it
+                subprocess.call([text], shell=True)
                 print('executed: ', text)
             except Exception as e:
                 print(e)
         self.revert_less_opts()
         self.write_config_file()
         print('Goodbye!')
-
-    def handle_shortcuts(self):
-        text = self.aws_cli.current_buffer.document.text
-        for key in SHORTCUTS.keys():
-            if key in text:
-                text = re.sub(key, SHORTCUTS[key], text)
-                break
-        return text
 
 
 @click.command()
