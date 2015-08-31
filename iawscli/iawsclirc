@@ -3,11 +3,6 @@
 # timeout to connect to client, in seconds
 client_timeout = 2
 
-# Visual theme. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
-# native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
-# colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
-theme = default
-
 # Use color output mode (default is to use simple substring match).
 color_output = True
 

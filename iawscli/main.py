@@ -53,12 +53,12 @@ class IAwsCli(object):
         Should read the config here at some point.
         """
         self.config = self.read_configuration()
-        self.theme = self.config['main']['theme']
         log_file = self.config['main']['log_file']
         log_level = self.config['main']['log_level']
         self.logger = create_logger(__name__, log_file, log_level)
         refresh_instance_ids=self.config['main'].as_bool('resfresh_instance_ids')
         refresh_bucket_names=self.config['main'].as_bool('refresh_bucket_names')
+        self.theme = 'vim'
         self.completer = AwsCompleter(
             aws_completer,
             fuzzy_match=self.get_fuzzy_match(),
