@@ -29,7 +29,8 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import OptionError, AWS_DOCS, SHORTCUTS
+from .commands import OptionError, AWS_DOCS, SHORTCUTS_MAP, \
+    generate_all_commands
 from .logger import create_logger
 from .__init__ import __version__
 
@@ -56,15 +57,18 @@ class IAwsCli(object):
         log_file = self.config['main']['log_file']
         log_level = self.config['main']['log_level']
         self.logger = create_logger(__name__, log_file, log_level)
-        refresh_instance_ids=self.config['main'].as_bool('resfresh_instance_ids')
+        refresh_instance_ids=self.config['main'].as_bool('refresh_instance_ids')
+        refresh_instance_tags=self.config['main'].as_bool('refresh_instance_tags')
         refresh_bucket_names=self.config['main'].as_bool('refresh_bucket_names')
         self.theme = 'vim'
         self.completer = AwsCompleter(
             aws_completer,
             fuzzy_match=self.get_fuzzy_match(),
             refresh_instance_ids=refresh_instance_ids,
+            refresh_instance_tags=refresh_instance_tags,
             refresh_bucket_names=refresh_bucket_names)
         self.saved_less_opts = self.set_less_opts()
+        self.commands, self.sub_commands = generate_all_commands()
 
     def read_configuration(self):
         default_config = os.path.join(
@@ -148,14 +152,12 @@ class IAwsCli(object):
         return self.config['main'].as_bool('fuzzy_match')
 
     def refresh_resources(self):
-        self.completer.refresh_resources()
+        self.completer.refresh_resources(force_refresh=True)
 
     def handle_docs(self, from_fkey=False):
         base_url = 'http://docs.aws.amazon.com/cli/latest/reference/'
         index_html = 'index.html'
         text = self.aws_cli.current_buffer.document.text
-        commands = self.completer.commands
-        sub_commands = self.completer.sub_commands
         # If the user hit the F2 key, append 'docs' to the text
         if from_fkey:
             text = text.strip() + ' ' + AWS_DOCS[0]
@@ -163,13 +165,13 @@ class IAwsCli(object):
         if len(tokens) > 2 and tokens[-1] == AWS_DOCS[0]:
             prev_word = tokens[-2]
             # If we have a command, build the url
-            if prev_word in commands:
+            if prev_word in self.commands:
                 prev_word = prev_word + '/'
                 url = base_url + prev_word + index_html
                 webbrowser.open(url)
                 return True
             # if we have a command and subcommand, build the url
-            elif prev_word in sub_commands:
+            elif prev_word in self.sub_commands:
                 command_url = tokens[-3] + '/'
                 sub_command_url = tokens[-2] + '.html'
                 url = base_url + command_url + sub_command_url
@@ -183,16 +185,11 @@ class IAwsCli(object):
             return True
         return False
 
-    def handle_shortcuts(self):
-        text = self.aws_cli.current_buffer.document.text
-        for key in SHORTCUTS.keys():
-            if key in text:
-                text = re.sub(key, SHORTCUTS[key], text)
-                break
-        return text
-
     def colorize_output(self, text):
-        return text.strip() + ' | pygmentize -l json'
+        if text.strip() != '':
+            return text.strip() + ' | pygmentize -l json'
+        else:
+            return text
 
     def run_cli(self):
         """
@@ -241,7 +238,7 @@ class IAwsCli(object):
             try:
                 if self.handle_docs():
                     continue
-                text = self.handle_shortcuts()
+                text = self.completer.handle_shortcuts(document.text)
                 if self.get_color():
                     text = self.colorize_output(text)
                 # Pass the command onto the shell so aws-cli can execute it
