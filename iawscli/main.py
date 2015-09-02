@@ -3,13 +3,9 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import os
-import sys
-import re
 import click
-import traceback
 import subprocess
 import webbrowser
-from types import GeneratorType
 from prompt_toolkit import AbortAction
 from prompt_toolkit import Application
 from prompt_toolkit import CommandLineInterface
@@ -28,13 +24,13 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import OptionError, AWS_DOCS, SHORTCUTS_MAP, \
-    generate_all_commands
+from .commands import AWS_DOCS, generate_all_commands
 from .logger import create_logger
 from .__init__ import __version__
 
 
 click.disable_unicode_literals_warning = True
+
 
 class IAwsCli(object):
     """
@@ -56,9 +52,12 @@ class IAwsCli(object):
         log_file = self.config['main']['log_file']
         log_level = self.config['main']['log_level']
         self.logger = create_logger(__name__, log_file, log_level)
-        refresh_instance_ids=self.config['main'].as_bool('refresh_instance_ids')
-        refresh_instance_tags=self.config['main'].as_bool('refresh_instance_tags')
-        refresh_bucket_names=self.config['main'].as_bool('refresh_bucket_names')
+        refresh_instance_ids = \
+            self.config['main'].as_bool('refresh_instance_ids')
+        refresh_instance_tags = \
+            self.config['main'].as_bool('refresh_instance_tags')
+        refresh_bucket_names = \
+            self.config['main'].as_bool('refresh_bucket_names')
         self.theme = 'vim'
         self.completer = AwsCompleter(
             aws_completer,
