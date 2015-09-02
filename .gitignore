@@ -38,6 +38,7 @@ nosetests.xml
 screenshots/
 tests/
 scratch/
+iawscli/data/RESOURCES.txt
 
 .idea/
 *.pyc
