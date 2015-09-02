@@ -5,6 +5,8 @@ import re
 from optparse import OptionParser, OptionError, OptionGroup
 
 
+# Global AWS built-in commands, listed for syntax highlighting
+# TODO: Move this to SOURCES.txt
 GLOBAL_OPTIONS = [
     '--debug',
     '--endpoint-url',
@@ -19,24 +21,31 @@ GLOBAL_OPTIONS = [
     '--no-sign-request',
 ]
 
+# AWS built-in commands, listed for syntax highlighting
+# TODO: Generate a full list of these commands and store them
+# in data/SOURCES.TXT
 RESOURCE_OPTIONS = [
     '--instance-ids',
     '--bucket',
     '--load-balancer-names',
 ]
 
+# AWS CLI entry point, listed for syntax highlighting
 AWS_COMMAND = [
     'aws',
 ]
 
+# iawscli docs
 AWS_DOCS = [
     'docs',
 ]
 
- SHORTCUTS = {
+# iawscli shortcuts
+SHORTCUTS = {
     'ls',
 }
 
+# iawscli mapping of shortcuts to full commands
 SHORTCUTS_MAP = {
     'aws ec2 ls': 'aws ec2 describe-instances',
     'aws dynamodb ls': 'aws dynamodb list-tables',
