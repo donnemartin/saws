@@ -35,6 +35,9 @@ AWS_DOCS = [
 
 SHORTCUTS = {
     'aws ec2 ls': 'aws ec2 describe-instances',
+    'aws dynamodb ls': 'aws dynamodb list-tables',
+    'aws emr ls': 'aws emr list-clusters',
+    'aws elb ls': 'aws elb describe-load-balancers',
 }
 
 def all_commands():
