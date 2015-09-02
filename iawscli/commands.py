@@ -53,7 +53,7 @@ SHORTCUTS_MAP = {
     'aws elb ls': 'aws elb describe-load-balancers',
 }
 
-def all_commands():
+def generate_all_commands():
     p = os.path.dirname(os.path.realpath(__file__))
     f = os.path.join(p, 'data/SOURCES.txt')
     commands = []

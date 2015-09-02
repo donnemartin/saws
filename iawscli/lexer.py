@@ -3,11 +3,11 @@ from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Keyword, Name, Operator, Generic, Literal
 from .commands import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
-    AWS_COMMAND, AWS_DOCS, SHORTCUTS, all_commands
+    AWS_COMMAND, AWS_DOCS, SHORTCUTS, generate_all_commands
 
 
 class CommandLexer(RegexLexer):
-    commands = all_commands()
+    commands = generate_all_commands()
     tokens = {
         'root': [
             (words(tuple(AWS_COMMAND), prefix=r'', suffix=r'\b'),
