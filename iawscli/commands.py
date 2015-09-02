@@ -60,11 +60,17 @@ def generate_all_commands():
     sub_commands = []
     COMMANDS_INDEX = 2
     SUB_COMMANDS_INDEX = 3
+    parsing_sub_commands = False
     with open(f) as fp:
         for line in fp:
-            if 'awscli/examples/' in line:
-                line = re.sub('.rst\n', '', line)
-                tokens = line.split('/')
-                commands.append(tokens[COMMANDS_INDEX])
-                sub_commands.append(tokens[SUB_COMMANDS_INDEX])
+            line = re.sub('\n', '', line)
+            if '[commands]' in line:
+                continue
+            if '[sub_commands]' in line:
+                parsing_sub_commands = True
+                continue
+            if not parsing_sub_commands:
+                commands.append(line)
+            else:
+                sub_commands.append(line)
     return sorted(list(commands)), sorted(list(sub_commands))
