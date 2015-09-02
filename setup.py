@@ -22,7 +22,8 @@ setup(
         'py-pretty>-0.1',
         'configobj >= 5.0.6',
         'pexpect>=3.3',
-        'fuzzyfinder>=1.0.0'
+        'fuzzyfinder>=1.0.0',
+        'enum34>=1.0.4'
     ],
     extras_require={
         'testing': [
