@@ -43,6 +43,7 @@ AWS_DOCS = [
 # iawscli shortcuts
 SHORTCUTS = {
     'ls',
+    '--tags',
 }
 
 # iawscli mapping of shortcuts to full commands
@@ -51,6 +52,7 @@ SHORTCUTS_MAP = {
     'aws dynamodb ls': 'aws dynamodb list-tables',
     'aws emr ls': 'aws emr list-clusters',
     'aws elb ls': 'aws elb describe-load-balancers',
+    '--tags': '--filters "Name=tag-key,Values=%s"',
 }
 
 def generate_all_commands():
