@@ -33,7 +33,11 @@ AWS_DOCS = [
     'docs',
 ]
 
-SHORTCUTS = {
+ SHORTCUTS = {
+    'ls',
+}
+
+SHORTCUTS_MAP = {
     'aws ec2 ls': 'aws ec2 describe-instances',
     'aws dynamodb ls': 'aws dynamodb list-tables',
     'aws emr ls': 'aws emr list-clusters',
