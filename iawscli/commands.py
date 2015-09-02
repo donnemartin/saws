@@ -22,6 +22,7 @@ GLOBAL_OPTIONS = [
 RESOURCE_OPTIONS = [
     '--instance-ids',
     '--bucket',
+    '--load-balancer-names',
 ]
 
 AWS_COMMAND = [
