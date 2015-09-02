@@ -19,7 +19,6 @@ setup(
         'prompt-toolkit==0.46',
         'tabulate>=0.7.5',
         'click>=4.0',
-        'py-pretty>-0.1',
         'configobj >= 5.0.6',
         'pexpect>=3.3',
         'fuzzyfinder>=1.0.0',
