@@ -21,35 +21,35 @@ def get_key_manager(set_color, get_color,
     manager = KeyBindingManager(enable_system_bindings=True)
 
     @manager.registry.add_binding(Keys.F2)
-    def _(event):
+    def handle_f2(event):
         """
         When F2 has been pressed, fill in the "docs" command.
         """
         handle_docs(from_fkey=True)
 
     @manager.registry.add_binding(Keys.F3)
-    def _(_):
+    def handle_f3(_):
         """
         Enable/Disable color output.
         """
         set_color(not get_color())
 
     @manager.registry.add_binding(Keys.F4)
-    def _(_):
+    def handle_f4(_):
         """
         Enable/Disable fuzzy matching.
         """
         set_fuzzy_match(not get_fuzzy_match())
 
     @manager.registry.add_binding(Keys.F5)
-    def _(_):
+    def handle_f5(_):
         """
         Refreshes AWS resources.
         """
         refresh_resources()
 
     @manager.registry.add_binding(Keys.F10)
-    def _(event):
+    def handle_f10(event):
         """
         When F10 has been pressed, quit.
         """
@@ -57,7 +57,7 @@ def get_key_manager(set_color, get_color,
         raise EOFError
 
     @manager.registry.add_binding(Keys.ControlSpace)
-    def _(event):
+    def handle_ctrl_space(event):
         """
         Initialize autocompletion at cursor.
 
