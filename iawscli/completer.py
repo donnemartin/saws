@@ -7,10 +7,9 @@ import os
 import fuzzyfinder
 import subprocess
 from six.moves import cStringIO
-from itertools import chain
 from prompt_toolkit.completion import Completer, Completion
 from .utils import shlex_split, shlex_first_token
-from .commands import SHORTCUTS, SHORTCUTS_MAP
+from .commands import SHORTCUTS_MAP
 
 
 class AwsCompleter(Completer):
@@ -43,9 +42,7 @@ class AwsCompleter(Completer):
     def refresh_resources_from_file(self, f, p):
         class ResType(Enum):
 
-            INSTANCE_IDS, \
-            INSTANCE_TAGS, \
-            BUCKET_NAMES = range(3)
+            INSTANCE_IDS, INSTANCE_TAGS, BUCKET_NAMES = range(3)
 
         res_type = ResType.INSTANCE_IDS
         with open(f) as fp:
@@ -164,9 +161,10 @@ class AwsCompleter(Completer):
         return text
 
     def get_res_completions(self, words, word_before_cursor,
-                           option_text, resource):
+                            option_text, resource):
         if words[-1] == option_text or \
-            (len(words) > 1 and (words[-2] == option_text and word_before_cursor != '')):
+            (len(words) > 1 and
+                (words[-2] == option_text and word_before_cursor != '')):
             return AwsCompleter.find_matches(
                 word_before_cursor,
                 resource,
@@ -200,7 +198,6 @@ class AwsCompleter(Completer):
         else:
             self.aws_completions.update(aws_completer_results_list)
         word_before_cursor = document.get_word_before_cursor(WORD=True)
-        first_word = AwsCompleter.first_token(document.text).lower()
         words = AwsCompleter.get_tokens(document.text)
         if len(words) == 0:
             return []
