@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 import os
 import re
-from optparse import OptionParser, OptionError, OptionGroup
 
 
 # Global AWS built-in commands, listed for syntax highlighting
@@ -55,13 +54,12 @@ SHORTCUTS_MAP = {
     '--tags': '--filters "Name=tag-key,Values=%s"',
 }
 
+
 def generate_all_commands():
     p = os.path.dirname(os.path.realpath(__file__))
     f = os.path.join(p, 'data/SOURCES.txt')
     commands = []
     sub_commands = []
-    COMMANDS_INDEX = 2
-    SUB_COMMANDS_INDEX = 3
     parsing_sub_commands = False
     with open(f) as fp:
         for line in fp:
