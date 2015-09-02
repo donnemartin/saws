@@ -6,7 +6,7 @@ import re
 import os
 import fuzzyfinder
 import subprocess
-from cStringIO import StringIO
+from six.moves import cStringIO
 from itertools import chain
 from prompt_toolkit.completion import Completer, Completion
 from .utils import shlex_split, shlex_first_token
@@ -180,7 +180,7 @@ class AwsCompleter(Completer):
         """
         # Capture the AWS CLI autocompleter and store it in a string
         old_stdout = sys.stdout
-        sys.stdout = mystdout = StringIO()
+        sys.stdout = mystdout = cStringIO()
         try:
             text = self.handle_shortcuts(document.text)
             self.aws_completer.complete(text, len(text))

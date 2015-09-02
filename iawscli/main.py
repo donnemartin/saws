@@ -9,7 +9,6 @@ import click
 import traceback
 import subprocess
 import webbrowser
-from cStringIO import StringIO
 from types import GeneratorType
 from prompt_toolkit import AbortAction
 from prompt_toolkit import Application
@@ -248,7 +247,6 @@ class IAwsCli(object):
                 print(e)
         self.revert_less_opts()
         self.write_config_file()
-        print('Goodbye!')
 
 
 @click.command()
@@ -260,7 +258,7 @@ def cli():
         aws_cli = IAwsCli()
         aws_cli.run_cli()
     except Exception as ex:
-        click.secho(ex.message, fg='red')
+        print(ex)
 
 
 if __name__ == "__main__":
