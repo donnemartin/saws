@@ -3,7 +3,7 @@ from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Keyword, Name, Operator, Generic, Literal
 from .commands import GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
-    AWS_COMMAND, AWS_DOCS, all_commands
+    AWS_COMMAND, AWS_DOCS, SHORTCUTS, all_commands
 
 
 class CommandLexer(RegexLexer):
@@ -15,6 +15,8 @@ class CommandLexer(RegexLexer):
             (words(tuple(commands[0]), prefix=r'', suffix=r'\b'),
              Name.Class),
             (words(tuple(commands[1]), prefix=r'', suffix=r'\b'),
+             Keyword.Declaration),
+            (words(tuple(SHORTCUTS), prefix=r'', suffix=r'\b'),
              Keyword.Declaration),
             (words(tuple(GLOBAL_OPTIONS), prefix=r'', suffix=r'\b'),
              Generic.Output),
