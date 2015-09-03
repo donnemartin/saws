@@ -54,19 +54,22 @@ SHORTCUTS_MAP = {
     '--tags': '--filters "Name=tag-key,Values=%s"',
 }
 
+COMMANDS_HEADER = '[commands]: '
+SUB_COMMANDS_HEADER = '[sub_commands]: '
+SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
+SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
+
 
 def generate_all_commands():
-    p = os.path.dirname(os.path.realpath(__file__))
-    f = os.path.join(p, 'data/SOURCES.txt')
     commands = []
     sub_commands = []
     parsing_sub_commands = False
-    with open(f) as fp:
-        for line in fp:
+    with open(SOURCES_PATH) as f:
+        for line in f:
             line = re.sub('\n', '', line)
-            if '[commands]' in line:
+            if COMMANDS_HEADER in line:
                 continue
-            if '[sub_commands]' in line:
+            if SUB_COMMANDS_HEADER in line:
                 parsing_sub_commands = True
                 continue
             if not parsing_sub_commands:
