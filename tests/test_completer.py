@@ -62,3 +62,10 @@ class CompleterTest(unittest.TestCase):
         commands = ['aws -', 'aws --']
         expected = GLOBAL_OPTIONS
         self.verify_completions(commands, expected)
+
+    def test_resource_options(self):
+        commands = ['aws ec2 describe-instances --',
+                    'aws s3api get-bucket-acl --',
+                    'aws elb describe-instance-health --']
+        expected = RESOURCE_OPTIONS
+        self.verify_completions(commands, expected)
