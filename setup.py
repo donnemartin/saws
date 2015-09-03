@@ -14,20 +14,20 @@ setup(
     version=__version__,
     install_requires=[
         'awscli>=1.7.46',
-        'six>=1.9.0',
-        'pygments>=2.0.2',
-        'prompt-toolkit==0.46',
-        'tabulate>=0.7.5',
         'click>=4.0',
         'configobj >= 5.0.6',
-        'pexpect>=3.3',
+        'enum34>=1.0.4',
         'fuzzyfinder>=1.0.0',
-        'enum34>=1.0.4'
+        'prompt-toolkit==0.46',
+        'six>=1.9.0',
+        'tabulate>=0.7.5',
+        'pexpect>=3.3',
+        'pygments>=2.0.2'
     ],
     extras_require={
         'testing': [
-            'pytest>=2.7.0',
             'mock>=1.0.1',
+            'pytest>=2.7.0',
             'tox>=1.9.2'
         ],
     },
