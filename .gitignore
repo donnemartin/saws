@@ -36,7 +36,6 @@ nosetests.xml
 .pydevproject
 
 screenshots/
-tests/
 scratch/
 iawscli/data/RESOURCES.txt
 
