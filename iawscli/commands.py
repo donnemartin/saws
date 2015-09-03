@@ -26,7 +26,7 @@ GLOBAL_OPTIONS = [
 RESOURCE_OPTIONS = [
     '--instance-ids',
     '--bucket',
-    '--load-balancer-names',
+    '--load-balancer-name',
 ]
 
 # AWS CLI entry point, listed for syntax highlighting
