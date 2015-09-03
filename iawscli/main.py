@@ -17,7 +17,7 @@ from prompt_toolkit.buffer import Buffer
 from prompt_toolkit.shortcuts import create_default_layout
 from prompt_toolkit.shortcuts import create_eventloop
 from prompt_toolkit.history import FileHistory
-from awscli import completer as aws_completer
+from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
 from .config import write_default_config, read_config
@@ -60,7 +60,7 @@ class IAwsCli(object):
             self.config['main'].as_bool('refresh_bucket_names')
         self.theme = 'vim'
         self.completer = AwsCompleter(
-            aws_completer,
+            awscli_completer,
             fuzzy_match=self.get_fuzzy_match(),
             refresh_instance_ids=refresh_instance_ids,
             refresh_instance_tags=refresh_instance_tags,
