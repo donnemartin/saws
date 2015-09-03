@@ -9,7 +9,7 @@ import subprocess
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer, Completion
 from .utils import shlex_split, shlex_first_token
-from .commands import SHORTCUTS_MAP
+from .commands import SHORTCUTS_MAP, AWS_COMMAND, AWS_DOCS
 
 
 class AwsCompleter(Completer):
@@ -33,7 +33,8 @@ class AwsCompleter(Completer):
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_instance_tags = refresh_instance_tags
         self.refresh_bucket_names = refresh_bucket_names
-        self.BASE_COMMAND = 'aws'
+        self.BASE_COMMAND = AWS_COMMAND[0]
+        self.DOCS_COMMAND = AWS_DOCS[0]
         self.instance_ids_marker = '[instance ids]'
         self.instance_tags_marker = '[instance tags]'
         self.bucket_names_marker = '[bucket names]'
@@ -194,9 +195,11 @@ class AwsCompleter(Completer):
         self.aws_completions = set()
         if len(document.text) < len(self.BASE_COMMAND):
             # Autocomplete 'aws' at the beginning of the command
-            self.aws_completions = [self.BASE_COMMAND]
+            self.aws_completions.update([self.BASE_COMMAND,
+                                         self.DOCS_COMMAND])
         else:
             self.aws_completions.update(aws_completer_results_list)
+        self.aws_completions.update([self.DOCS_COMMAND])
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         words = AwsCompleter.get_tokens(document.text)
         if len(words) == 0:
