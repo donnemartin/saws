@@ -40,10 +40,10 @@ AWS_DOCS = [
 ]
 
 # iawscli shortcuts
-SHORTCUTS = {
+SHORTCUTS = [
     'ls',
     '--tags',
-}
+]
 
 # iawscli mapping of shortcuts to full commands
 SHORTCUTS_MAP = {
