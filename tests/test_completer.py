@@ -52,3 +52,8 @@ class CompleterTest(unittest.TestCase):
         commands = ['a', 'aw']
         expected = ['aws']
         self.verify_completions(commands, expected)
+
+    def test_docs_command_completion(self):
+        commands = ['d', 'do', 'doc']
+        expected = ['docs']
+        self.verify_completions(commands, expected)
