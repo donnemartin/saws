@@ -69,3 +69,8 @@ class CompleterTest(unittest.TestCase):
                     'aws elb describe-instance-health --']
         expected = RESOURCE_OPTIONS
         self.verify_completions(commands, expected)
+
+    def test_shortcuts(self):
+        commands = ['aws ec2 ls --']
+        expected = ['--instance-ids']
+        self.verify_completions(commands, expected)
