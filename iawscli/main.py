@@ -65,7 +65,6 @@ class IAwsCli(object):
             refresh_instance_ids=refresh_instance_ids,
             refresh_instance_tags=refresh_instance_tags,
             refresh_bucket_names=refresh_bucket_names)
-        self.saved_less_opts = self.set_less_opts()
         self.commands, self.sub_commands = generate_all_commands()
 
     def read_configuration(self):
@@ -82,43 +81,11 @@ class IAwsCli(object):
         from iawscli import __file__ as package_root
         return os.path.dirname(package_root)
 
-    def set_less_opts(self):
-        """
-        Set the "less" options and save the old settings.
-
-        What we're setting:
-          -F:
-            --quit-if-one-screen: Quit if entire file fits on first screen.
-          -R:
-            --raw-control-chars: Output "raw" control characters.
-          -X:
-            --no-init: Don't use termcap keypad init/deinit strings.
-            --no-keypad: Don't use termcap init/deinit strings.
-            This also disables launching "less" in an alternate screen.
-
-        :return: string with old options
-        """
-        opts = os.environ.get('LESS', '')
-        os.environ['LESS'] = '-RXF'
-        return opts
-
-    def revert_less_opts(self):
-        """
-        Restore the previous "less" options.
-        """
-        os.environ['LESS'] = self.saved_less_opts
-
     def write_config_file(self):
         """
         Write config file on exit.
         """
         self.config.write()
-
-    def clear(self):
-        """
-        Clear the screen.
-        """
-        click.clear()
 
     def set_color(self, is_color):
         """
