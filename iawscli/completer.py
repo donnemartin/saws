@@ -9,7 +9,7 @@ import subprocess
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer, Completion
 from .utils import shlex_split, shlex_first_token
-from .commands import SHORTCUTS_MAP, AWS_COMMAND, AWS_DOCS
+from .commands import SHORTCUTS_MAP, AWS_COMMAND, AWS_DOCS, SOURCES_DIR
 
 
 class AwsCompleter(Completer):
@@ -89,7 +89,7 @@ class AwsCompleter(Completer):
         Refreshes the AWS resources
         :return: None
         """
-        p = os.path.dirname(os.path.realpath(__file__))
+        p = SOURCES_DIR
         f = os.path.join(p, 'data/RESOURCES.txt')
         if not force_refresh:
             try:
