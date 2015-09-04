@@ -1,12 +1,10 @@
 from __future__ import unicode_literals
 import unittest
 from mock import Mock
-from prompt_toolkit.completion import Completion
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from iawscli.completer import AwsCompleter
-from iawscli.commands import generate_all_commands, AWS_COMMAND, \
-    GLOBAL_OPTIONS, RESOURCE_OPTIONS
+from iawscli.commands import AWS_COMMAND, GLOBAL_OPTIONS, RESOURCE_OPTIONS
 
 
 class CompleterTest(unittest.TestCase):
