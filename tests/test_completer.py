@@ -91,3 +91,10 @@ class CompleterTest(unittest.TestCase):
         expected = ['web-server-logs', 'web-server-images']
         self.completer.bucket_names.extend(expected)
         self.verify_completions(commands, expected)
+
+    def test_fuzzy_matching(self):
+        commands = ['aws ec2 ls --instance-ids a5']
+        expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
+        self.completer.fuzzy_match = True
+        self.completer.instance_ids.extend(expected)
+        self.verify_completions(commands, expected)
