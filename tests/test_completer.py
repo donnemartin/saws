@@ -73,3 +73,9 @@ class CompleterTest(unittest.TestCase):
         commands = ['aws ec2 ls --']
         expected = ['--instance-ids']
         self.verify_completions(commands, expected)
+
+    def test_instance_ids(self):
+        commands = ['aws ec2 ls --instance-ids i-a']
+        expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
+        self.completer.instance_ids.extend(expected)
+        self.verify_completions(commands, expected)
