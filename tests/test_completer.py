@@ -79,3 +79,9 @@ class CompleterTest(unittest.TestCase):
         expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
         self.completer.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
+
+    def test_instance_tags(self):
+        commands = ['aws ec2 ls --tags prod']
+        expected = ['production', 'production-blue', 'production-green']
+        self.completer.instance_tags.update(expected)
+        self.verify_completions(commands, expected)
