@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import os
 import pexpect
-import fixture_utils as fixutils
 
 
 def before_all(context):
