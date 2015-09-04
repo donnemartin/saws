@@ -85,3 +85,9 @@ class CompleterTest(unittest.TestCase):
         expected = ['production', 'production-blue', 'production-green']
         self.completer.instance_tags.update(expected)
         self.verify_completions(commands, expected)
+
+    def test_bucket_names(self):
+        commands = ['aws seapi get-bucket-acl --bucket web-']
+        expected = ['web-server-logs', 'web-server-images']
+        self.completer.bucket_names.extend(expected)
+        self.verify_completions(commands, expected)
