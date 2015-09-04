@@ -48,7 +48,7 @@ class CompleterTest(unittest.TestCase):
 
     def test_aws_command_completion(self):
         commands = ['a', 'aw']
-        expected = ['aws']
+        expected = AWS_COMMAND
         self.verify_completions(commands, expected)
 
     def test_docs_command_completion(self):
