@@ -4,7 +4,8 @@ from mock import Mock
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from iawscli.completer import AwsCompleter
-from iawscli.commands import AWS_COMMAND, GLOBAL_OPTIONS, RESOURCE_OPTIONS
+from iawscli.commands import AWS_COMMAND, AWS_DOCS, \
+    GLOBAL_OPTIONS, RESOURCE_OPTIONS
 
 
 class CompleterTest(unittest.TestCase):
@@ -53,7 +54,7 @@ class CompleterTest(unittest.TestCase):
 
     def test_docs_command_completion(self):
         commands = ['d', 'do', 'doc']
-        expected = ['docs']
+        expected = AWS_DOCS
         self.verify_completions(commands, expected)
 
     def test_global_options(self):
