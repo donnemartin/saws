@@ -207,7 +207,7 @@ class IAwsCli(object):
                 if self.get_color():
                     text = self.colorize_output(text)
                 # Pass the command onto the shell so aws-cli can execute it
-                subprocess.call([text], shell=True)
+                subprocess.call(text, shell=True)
                 print('executed: ', text)
             except Exception as e:
                 print(e)
