@@ -125,9 +125,9 @@ class AwsCompleter(Completer):
             print(e)
 
     def generate_instance_tags(self):
-        command = "aws ec2 describe-instances --filters 'Name=tag-key,Values=*' --query Reservations[].Instances[].Tags[].Key --output text"
+        command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         try:
-            result = subprocess.check_output([command], shell=True)
+            result = subprocess.check_output(command, shell=True)
             self.instance_tags = set(result.split('\t'))
         except Exception as e:
             print(e)
