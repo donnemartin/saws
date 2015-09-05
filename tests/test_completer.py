@@ -87,7 +87,7 @@ class CompleterTest(unittest.TestCase):
         self.verify_completions(commands, expected)
 
     def test_bucket_names(self):
-        commands = ['aws seapi get-bucket-acl --bucket web-']
+        commands = ['aws s3pi get-bucket-acl --bucket web-']
         expected = ['web-server-logs', 'web-server-images']
         self.completer.bucket_names.extend(expected)
         self.verify_completions(commands, expected)
