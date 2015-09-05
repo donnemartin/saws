@@ -142,6 +142,7 @@ class AwsCompleter(Completer):
                     result = result.split()[-1]
                     self.bucket_names.append(result)
                 except:
+                    # Ignore blank lines
                     pass
         except Exception as e:
             print(e)
