@@ -6,16 +6,19 @@ from awscli import completer as awscli_completer
 from iawscli.completer import AwsCompleter
 from iawscli.commands import AWS_COMMAND, AWS_DOCS, \
     GLOBAL_OPTIONS, RESOURCE_OPTIONS
+from iawscli.main import IAwsCli
 
 
 class CompleterTest(unittest.TestCase):
 
     def setUp(self):
+        self.iaws_cli = IAwsCli()
         self.completer = self.create_completer()
         self.completer_event = self.create_completer_event()
 
     def create_completer(self):
         return AwsCompleter(awscli_completer,
+                            self.iaws_cli.config,
                             refresh_instance_ids=False,
                             refresh_instance_tags=False,
                             refresh_bucket_names=False)

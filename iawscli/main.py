@@ -60,6 +60,7 @@ class IAwsCli(object):
         self.theme = 'vim'
         self.completer = AwsCompleter(
             awscli_completer,
+            self.config,
             fuzzy_match=self.get_fuzzy_match(),
             refresh_instance_ids=refresh_instance_ids,
             refresh_instance_tags=refresh_instance_tags,

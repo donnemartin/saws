@@ -9,7 +9,7 @@ import subprocess
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer, Completion
 from .utils import shlex_split
-from .commands import SHORTCUTS_MAP, AWS_COMMAND, AWS_DOCS, SOURCES_DIR
+from .commands import AWS_COMMAND, AWS_DOCS, SOURCES_DIR
 
 
 class AwsCompleter(Completer):
@@ -17,7 +17,7 @@ class AwsCompleter(Completer):
     Completer for AWS commands and parameters.
     """
 
-    def __init__(self, aws_completer,
+    def __init__(self, aws_completer, config,
                  fuzzy_match=False, refresh_instance_ids=True,
                  refresh_instance_tags=True, refresh_bucket_names=True):
         """
@@ -39,6 +39,8 @@ class AwsCompleter(Completer):
         self.instance_tags_marker = '[instance tags]'
         self.bucket_names_marker = '[bucket names]'
         self.refresh_resources()
+        self.shortcuts = dict(zip(config['shortcuts'].keys(),
+                                  config['shortcuts'].values()))
 
     def refresh_resources_from_file(self, f, p):
         class ResType(Enum):
@@ -148,10 +150,10 @@ class AwsCompleter(Completer):
             print(e)
 
     def handle_shortcuts(self, text):
-        for key in SHORTCUTS_MAP.keys():
+        for key in self.shortcuts.keys():
             if key in text:
                 # Replace shortcut with full command
-                text = re.sub(key, SHORTCUTS_MAP[key], text)
+                text = re.sub(key, self.shortcuts[key], text)
                 text = self.handle_subs(text)
         return text
 

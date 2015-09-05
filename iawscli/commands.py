@@ -51,16 +51,6 @@ SHORTCUTS = [
     '--tags',
 ]
 
-# iawscli mapping of shortcuts to full commands
-# TODO: Move this to iawsclirc
-SHORTCUTS_MAP = {
-    'aws ec2 ls': 'aws ec2 describe-instances',
-    'aws dynamodb ls': 'aws dynamodb list-tables',
-    'aws emr ls': 'aws emr list-clusters',
-    'aws elb ls': 'aws elb describe-load-balancers',
-    '--tags': '--filters "Name=tag-key,Values=%s"',
-}
-
 COMMANDS_HEADER = '[commands]: '
 SUB_COMMANDS_HEADER = '[sub_commands]: '
 SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
