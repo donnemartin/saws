@@ -204,6 +204,9 @@ class IAwsCli(object):
                 if self.handle_docs():
                     continue
                 text = self.completer.handle_shortcuts(document.text)
+                if AWS_COMMAND[0] not in text:
+                    print('usage: aws <command> <subcommand> [parameters] [options]')
+                    continue
                 if self.get_color():
                     text = self.colorize_output(text)
                 # Pass the command onto the shell so aws-cli can execute it
