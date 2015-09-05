@@ -150,7 +150,8 @@ class IAwsCli(object):
 
     def colorize_output(self, text):
         if text.strip() != '' and \
-            text.strip() != AWS_COMMAND[0] + ' ' + AWS_CONFIGURE[0]:
+            text.strip() != AWS_COMMAND[0] + ' ' + AWS_CONFIGURE[0] and \
+            AWS_COMMAND[0] in text.strip():
             return text.strip() + ' | pygmentize -l json'
         else:
             return text
