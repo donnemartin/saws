@@ -185,7 +185,6 @@ class AwsCompleter(Completer):
             self.aws_completer.complete(text, len(text))
         except Exception as e:
             print('Exception: ', e)
-            pass
         sys.stdout = old_stdout
         aws_completer_results = mystdout.getvalue()
         # Tidy up the completions and store it in a list
