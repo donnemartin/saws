@@ -34,6 +34,11 @@ AWS_COMMAND = [
     'aws',
 ]
 
+# AWS CLI configure command, listed for syntax highlighting
+AWS_CONFIGURE = [
+    'configure'
+]
+
 # iawscli docs
 AWS_DOCS = [
     'docs',
