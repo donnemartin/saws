@@ -35,8 +35,7 @@ setup(
         'console_scripts': 'iawscli = iawscli.main:cli'
     },
     packages=['iawscli'],
-    package_data={'iawscli': ['iawsclirc'],
-                  'iawscli': ['data/SOURCES.txt']},
+    package_data={'iawscli': ['iawsclirc', 'data/SOURCES.txt']},
     scripts=[],
     name='iawscli',
     classifiers=[
