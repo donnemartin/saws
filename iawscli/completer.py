@@ -8,7 +8,7 @@ import fuzzyfinder
 import subprocess
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer, Completion
-from .utils import shlex_split, shlex_first_token
+from .utils import shlex_split
 from .commands import SHORTCUTS_MAP, AWS_COMMAND, AWS_DOCS, SOURCES_DIR
 
 
@@ -269,25 +269,6 @@ class AwsCompleter(Completer):
             words = AwsCompleter.safe_split(text)
             return words
         return []
-
-    @staticmethod
-    def first_token(text):
-        """
-        Find first word in a sentence
-        :param text:
-        :return:
-        """
-        if text is not None:
-            text = text.strip()
-            if len(text) > 0:
-                try:
-                    word = shlex_first_token(text)
-                    word = word.strip()
-                    return word
-                except:
-                    # no error, just do not complete
-                    pass
-        return ''
 
     @staticmethod
     def last_token(text):
