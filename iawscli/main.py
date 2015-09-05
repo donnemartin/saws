@@ -6,25 +6,24 @@ import os
 import click
 import subprocess
 import webbrowser
-from prompt_toolkit import AbortAction
-from prompt_toolkit import Application
-from prompt_toolkit import CommandLineInterface
+from prompt_toolkit import AbortAction, Application, CommandLineInterface
 from prompt_toolkit.enums import DEFAULT_BUFFER
 from prompt_toolkit.filters import Always, HasFocus, IsDone
 from prompt_toolkit.layout.processors import \
     HighlightMatchingBracketProcessor, ConditionalProcessor
 from prompt_toolkit.buffer import Buffer
-from prompt_toolkit.shortcuts import create_default_layout
-from prompt_toolkit.shortcuts import create_eventloop
+from prompt_toolkit.shortcuts import create_default_layout, create_eventloop
 from prompt_toolkit.history import FileHistory
 from awscli import completer as awscli_completer
+from iawscli import __file__ as package_root
 from .completer import AwsCompleter
 from .lexer import CommandLexer
 from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import AWS_DOCS, generate_all_commands
+from .commands import AWS_COMMAND, AWS_CONFIGURE, AWS_DOCS, \
+    generate_all_commands
 from .logger import create_logger
 from .__init__ import __version__
 
@@ -78,7 +77,6 @@ class IAwsCli(object):
         Find out pakage root path.
         :return: string: path
         """
-        from iawscli import __file__ as package_root
         return os.path.dirname(package_root)
 
     def write_config_file(self):
