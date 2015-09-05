@@ -39,13 +39,15 @@ AWS_DOCS = [
     'docs',
 ]
 
-# iawscli shortcuts
+# iawscli shortcuts for syntax highlighting purposes
+# TODO: Rename this to KEYWORDS
 SHORTCUTS = [
     'ls',
     '--tags',
 ]
 
 # iawscli mapping of shortcuts to full commands
+# TODO: Move this to iawsclirc
 SHORTCUTS_MAP = {
     'aws ec2 ls': 'aws ec2 describe-instances',
     'aws dynamodb ls': 'aws dynamodb list-tables',
