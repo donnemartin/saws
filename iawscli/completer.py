@@ -133,9 +133,9 @@ class AwsCompleter(Completer):
             print(e)
 
     def generate_bucket_names(self):
-        command = "aws s3 ls"
+        command = 'aws s3 ls'
         try:
-            output = subprocess.check_output([command], shell=True)
+            output = subprocess.check_output(command, shell=True)
             result_list = output.split('\n')
             for result in result_list:
                 try:
