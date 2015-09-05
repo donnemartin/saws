@@ -141,9 +141,9 @@ class IAwsCli(object):
                 webbrowser.open(url)
                 return True
             webbrowser.open(base_url + index_html)
-        # if we still haven't opened the help doc at this point and the
-        # user hit the F2 key for docs, just open the main docs index
-        if from_fkey:
+        # If we still haven't opened the help doc at this point and the
+        # user hit the F2 key or typed docs, just open the main docs index
+        if from_fkey or AWS_DOCS[0] in tokens:
             webbrowser.open(base_url + index_html)
             return True
         return False
