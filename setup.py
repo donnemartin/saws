@@ -21,7 +21,6 @@ setup(
         'prompt-toolkit==0.46',
         'six>=1.9.0',
         'tabulate>=0.7.5',
-        'pexpect>=3.3',
         'pygments>=2.0.2'
     ],
     extras_require={
