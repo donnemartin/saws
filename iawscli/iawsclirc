@@ -3,8 +3,8 @@
 # Use color output mode (default is to use simple substring match).
 color_output = True
 
-# Use fuzzy matching mode (default is to use simple substring match).
-fuzzy_match = False
+# Use fuzzy matching mode for resources (default is to use simple substring match).
+fuzzy_match = True
 
 # log_file location.
 log_file = ~/.iawscli.log
