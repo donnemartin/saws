@@ -98,3 +98,9 @@ class CompleterTest(unittest.TestCase):
         self.completer.fuzzy_match = True
         self.completer.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
+
+    def test_substitutions(self):
+        command = 'aws ec2 ls --filters "Name=tag-key,Values=%s prod"'
+        expected = 'aws ec2 ls --filters "Name=tag-key,Values=prod"'
+        result = self.completer.handle_subs(command)
+        assert result == expected
