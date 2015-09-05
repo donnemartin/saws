@@ -7,8 +7,11 @@ env:
   - TOXENV=pypy
 install:
   - travis_retry pip install tox
+  - pip install coveralls
   - pip install codecov
 script:
   - tox
+  - coverage run --source=iawscli tests/run_tests.py
 after_success:
+  - coveralls
   - codecov
