@@ -116,9 +116,9 @@ class AwsCompleter(Completer):
             print(e)
 
     def generate_instance_ids(self):
-        command = "aws ec2 describe-instances --query 'Reservations[].Instances[].[InstanceId]' --output text"
+        command = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
         try:
-            result = subprocess.check_output([command], shell=True)
+            result = subprocess.check_output(command, shell=True)
             result = re.sub('\n', ' ', result)
             self.instance_ids = result.split()
         except Exception as e:
