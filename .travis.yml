@@ -11,7 +11,6 @@ install:
   - pip install codecov
 script:
   - tox
-  - coverage run --source=iawscli tests/run_tests.py
 after_success:
   - coveralls
   - codecov
