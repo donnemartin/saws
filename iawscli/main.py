@@ -226,11 +226,8 @@ def cli():
     """
     Create and call the CLI
     """
-    try:
-        iaws_cli = IAwsCli()
-        iaws_cli.run_cli()
-    except Exception as ex:
-        print(ex)
+    iaws_cli = IAwsCli()
+    iaws_cli.run_cli()
 
 
 if __name__ == "__main__":
