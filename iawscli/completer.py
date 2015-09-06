@@ -4,11 +4,10 @@ from enum import Enum
 import sys
 import re
 import os
-import fuzzyfinder
 import subprocess
 from six.moves import cStringIO
-from prompt_toolkit.completion import Completer, Completion
-from .utils import shlex_split
+from prompt_toolkit.completion import Completer
+from .utils import TextUtils
 from .commands import AWS_COMMAND, AWS_DOCS, SOURCES_DIR
 
 
@@ -26,6 +25,7 @@ class AwsCompleter(Completer):
         """
         self.aws_completer = aws_completer
         self.aws_completions = set()
+        self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.instance_ids = []
         self.instance_tags = set()
@@ -169,10 +169,9 @@ class AwsCompleter(Completer):
         if words[-1] == option_text or \
             (len(words) > 1 and
                 (words[-2] == option_text and word_before_cursor != '')):
-            return AwsCompleter.find_matches(
-                word_before_cursor,
-                resource,
-                self.fuzzy_match)
+            return self.text_utils.find_matches(word_before_cursor,
+                                                resource,
+                                                self.fuzzy_match)
 
     def get_completions(self, document, _):
         """
@@ -203,7 +202,7 @@ class AwsCompleter(Completer):
             self.aws_completions.update(aws_completer_results_list)
         self.aws_completions.update([self.DOCS_COMMAND])
         word_before_cursor = document.get_word_before_cursor(WORD=True)
-        words = AwsCompleter.get_tokens(document.text)
+        words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:
             return []
         completions = None
@@ -222,78 +221,7 @@ class AwsCompleter(Completer):
                                                    '--bucket',
                                                    self.bucket_names)
         if completions is None:
-            completions = AwsCompleter.find_matches(
-                word_before_cursor,
-                self.aws_completions,
-                self.fuzzy_match)
+            completions = self.text_utils.find_matches(word_before_cursor,
+                                                       self.aws_completions,
+                                                       self.fuzzy_match)
         return completions
-
-    @staticmethod
-    def find_collection_matches(word, lst, fuzzy):
-        """
-        Yield all matching names in list
-        :param lst: collection
-        :param word: string user typed
-        :param fuzzy: boolean
-        :return: iterable
-        """
-        if fuzzy:
-            for suggestion in fuzzyfinder.fuzzyfinder(word, lst):
-                yield Completion(suggestion, -len(word))
-        else:
-            for name in sorted(lst):
-                if name.startswith(word) or not word:
-                    yield Completion(name, -len(word))
-
-    @staticmethod
-    def find_matches(text, collection, fuzzy):
-        """
-        Find all matches for the current text
-        :param text: text before cursor
-        :param collection: collection to suggest from
-        :param fuzzy: boolean
-        :return: iterable
-        """
-        text = AwsCompleter.last_token(text).lower()
-        for suggestion in AwsCompleter.find_collection_matches(
-                text, collection, fuzzy):
-            yield suggestion
-
-    @staticmethod
-    def get_tokens(text):
-        """
-        Parse out all tokens.
-        :param text:
-        :return: list
-        """
-        if text is not None:
-            text = text.strip()
-            words = AwsCompleter.safe_split(text)
-            return words
-        return []
-
-    @staticmethod
-    def last_token(text):
-        """
-        Find last word in a sentence
-        :param text:
-        :return:
-        """
-        if text is not None:
-            text = text.strip()
-            if len(text) > 0:
-                word = AwsCompleter.safe_split(text)[-1]
-                word = word.strip()
-                return word
-        return ''
-
-    @staticmethod
-    def safe_split(text):
-        """
-        Shlex can't always split. For example, "\" crashes the completer.
-        """
-        try:
-            words = shlex_split(text)
-            return words
-        except:
-            return text
