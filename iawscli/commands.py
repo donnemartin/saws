@@ -2,23 +2,8 @@
 from __future__ import unicode_literals
 import os
 import re
+from enum import Enum
 
-
-# Global AWS built-in commands, listed for syntax highlighting
-# TODO: Move this to SOURCES.txt
-GLOBAL_OPTIONS = [
-    '--debug',
-    '--endpoint-url',
-    '--no-verify-ssl',
-    '--no-paginate',
-    '--output',
-    '--profile',
-    '--region',
-    '--version',
-    '--color',
-    '--query',
-    '--no-sign-request',
-]
 
 # AWS built-in commands, listed for syntax highlighting
 # TODO: Generate a full list of these commands and store them
@@ -53,24 +38,37 @@ SHORTCUTS = [
 
 COMMANDS_HEADER = '[commands]: '
 SUB_COMMANDS_HEADER = '[sub_commands]: '
+GLOBAL_OPTIONS_HEADER = '[global_options]: '
 SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
 SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
+
+
+class CommandType(Enum):
+
+    COMMANDS, SUB_COMMANDS, GLOBAL_OPTIONS = range(3)
 
 
 def generate_all_commands():
     commands = []
     sub_commands = []
-    parsing_sub_commands = False
+    global_options = []
+    command_type = CommandType.COMMANDS
     with open(SOURCES_PATH) as f:
         for line in f:
             line = re.sub('\n', '', line)
             if COMMANDS_HEADER in line:
+                command_type = CommandType.COMMANDS
                 continue
-            if SUB_COMMANDS_HEADER in line:
-                parsing_sub_commands = True
+            elif SUB_COMMANDS_HEADER in line:
+                command_type = CommandType.SUB_COMMANDS
                 continue
-            if not parsing_sub_commands:
+            elif GLOBAL_OPTIONS_HEADER in line:
+                command_type = CommandType.GLOBAL_OPTIONS
+                continue
+            if command_type == CommandType.COMMANDS:
                 commands.append(line)
-            else:
+            elif command_type == CommandType.SUB_COMMANDS:
                 sub_commands.append(line)
-    return sorted(list(commands)), sorted(list(sub_commands))
+            elif command_type == CommandType.GLOBAL_OPTIONS:
+                global_options.append(line)
+    return sorted(commands), sorted(sub_commands), sorted(global_options)

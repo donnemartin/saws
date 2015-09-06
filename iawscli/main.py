@@ -65,7 +65,8 @@ class IAwsCli(object):
             refresh_instance_ids=refresh_instance_ids,
             refresh_instance_tags=refresh_instance_tags,
             refresh_bucket_names=refresh_bucket_names)
-        self.commands, self.sub_commands = generate_all_commands()
+        self.commands, self.sub_commands, self.global_options = \
+            generate_all_commands()
 
     def read_configuration(self):
         default_config = os.path.join(

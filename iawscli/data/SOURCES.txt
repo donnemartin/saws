@@ -1554,3 +1554,15 @@ describe-workspaces
 reboot-workspaces
 rebuild-workspaces
 terminate-workspaces
+[global_options]: 11
+--debug
+--endpoint-url
+--no-verify-ssl
+--no-paginate
+--output
+--profile
+--region
+--version
+--color
+--query
+--no-sign-request
