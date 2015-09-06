@@ -15,6 +15,10 @@ AWS_CONFIGURE = [
     'configure'
 ]
 
+AWS_HELP = [
+    'help',
+]
+
 # iawscli docs
 AWS_DOCS = [
     'docs',

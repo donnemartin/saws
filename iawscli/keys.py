@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 from prompt_toolkit.key_binding.manager import KeyBindingManager
 from prompt_toolkit.keys import Keys
+from commands import AWS_COMMAND
 
 
 def get_key_manager(set_color, get_color,
@@ -25,7 +26,12 @@ def get_key_manager(set_color, get_color,
         """
         When F1 has been pressed, fill in the "help" command.
         """
-        event.cli.current_buffer.insert_text(" help")
+        help_command = ' help'
+        if event.cli.current_buffer.text.strip() != '':
+            event.cli.current_buffer.insert_text(help_command)
+        else:
+            event.cli.current_buffer\
+                .insert_text(AWS_COMMAND[0] + help_command)
 
     @manager.registry.add_binding(Keys.F2)
     def handle_f2(event):
