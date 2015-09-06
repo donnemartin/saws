@@ -20,6 +20,13 @@ def get_key_manager(set_color, get_color,
     assert callable(handle_docs)
     manager = KeyBindingManager(enable_system_bindings=True)
 
+    @manager.registry.add_binding(Keys.F1)
+    def handle_f1(event):
+        """
+        When F1 has been pressed, fill in the "help" command.
+        """
+        event.cli.current_buffer.insert_text(" help")
+
     @manager.registry.add_binding(Keys.F2)
     def handle_f2(event):
         """
