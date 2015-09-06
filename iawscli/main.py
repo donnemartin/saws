@@ -216,7 +216,6 @@ class IAwsCli(object):
                 print('executed: ', text)
             except Exception as e:
                 print(e)
-        self.revert_less_opts()
         self.write_config_file()
 
 
