@@ -24,4 +24,4 @@ refresh_bucket_names = True
 'dynamodb ls' = 'dynamodb list-tables'
 'emr ls' = 'emr list-clusters'
 'elb ls' = 'elb describe-load-balancers'
-'--tags' = '--filters "Name=tag-key,Values=%s"'
+'--ec2-tags' = '--filters "Name=tag-key,Values=%s"'

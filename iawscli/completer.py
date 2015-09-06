@@ -214,7 +214,7 @@ class AwsCompleter(Completer):
         if completions is None:
             completions = self.get_res_completions(words,
                                                    word_before_cursor,
-                                                   '--tags',
+                                                   '--ec2-tags',
                                                    self.instance_tags)
         if completions is None:
             completions = self.get_res_completions(words,

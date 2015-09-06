@@ -83,7 +83,7 @@ class CompleterTest(unittest.TestCase):
         self.verify_completions(commands, expected)
 
     def test_instance_tags(self):
-        commands = ['aws ec2 ls --tags prod']
+        commands = ['aws ec2 ls --ec2-tags prod']
         expected = ['production', 'production-blue', 'production-green']
         self.completer.instance_tags.update(expected)
         self.verify_completions(commands, expected)

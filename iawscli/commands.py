@@ -27,7 +27,7 @@ AWS_DOCS = [
 # iawscli custom keywords for syntax highlighting purposes
 CUSTOM_KEYWORDS = [
     'ls',
-    '--tags',
+    '--ec2-tags',
 ]
 
 COMMANDS_HEADER = '[commands]: '
