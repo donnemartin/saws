@@ -29,9 +29,8 @@ AWS_DOCS = [
     'docs',
 ]
 
-# iawscli shortcuts for syntax highlighting purposes
-# TODO: Rename this to KEYWORDS
-SHORTCUTS = [
+# iawscli custom keywords for syntax highlighting purposes
+CUSTOM_KEYWORDS = [
     'ls',
     '--tags',
 ]
