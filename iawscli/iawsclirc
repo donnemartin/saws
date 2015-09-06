@@ -20,8 +20,8 @@ refresh_bucket_names = True
 
 [shortcuts]
 
-'aws ec2 ls' = 'aws ec2 describe-instances'
-'aws dynamodb ls' = 'aws dynamodb list-tables'
-'aws emr ls' = 'aws emr list-clusters'
-'aws elb ls' = 'aws elb describe-load-balancers'
+'ec2 ls' = 'ec2 describe-instances'
+'dynamodb ls' = 'dynamodb list-tables'
+'emr ls' = 'emr list-clusters'
+'elb ls' = 'elb describe-load-balancers'
 '--tags' = '--filters "Name=tag-key,Values=%s"'
