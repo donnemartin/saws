@@ -31,4 +31,6 @@ refresh_bucket_names = True
 '--ec2-stopping' = '--filters "Name=instance-state-name, Values=stopping"'
 '--ec2-shutting-down' = '--filters "Name=instance-state-name, Values=shutting-down"'
 '--ec2-stopped' = '--filters "Name=instance-state-name, Values=stopped"'
-'--ec2-terminated' = '--filters "Name=instance-state-name, Values=terminated"''
+'--ec2-terminated' = '--filters "Name=instance-state-name, Values=terminated"'
+'ec2 up' = 'ec2 start-instances'
+'ec2 down' = 'ec2 stop-instances'
