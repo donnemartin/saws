@@ -22,7 +22,7 @@ from .config import write_default_config, read_config
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import AWS_COMMAND, AWS_CONFIGURE, AWS_DOCS, \
+from .commands import AWS_COMMAND, AWS_CONFIGURE, AWS_DOCS, AWS_HELP, \
     generate_all_commands
 from .logger import create_logger
 from .__init__ import __version__
@@ -151,9 +151,11 @@ class IAwsCli(object):
         return False
 
     def colorize_output(self, text):
-        if text.strip() != '' and \
-            text.strip() != AWS_COMMAND[0] + ' ' + AWS_CONFIGURE[0] and \
-                AWS_COMMAND[0] in text.strip():
+        stripped_text = text.strip()
+        if stripped_text != '' and \
+            stripped_text != AWS_COMMAND[0] + ' ' + AWS_CONFIGURE[0] and \
+                AWS_HELP[0] not in stripped_text and \
+                AWS_COMMAND[0] in stripped_text:
             return text.strip() + ' | pygmentize -l json'
         else:
             return text
