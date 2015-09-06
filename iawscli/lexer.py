@@ -28,7 +28,7 @@ class CommandLexer(RegexLexer):
             (words(tuple(commands[CommandType.RESOURCE_OPTIONS.value]),
                    prefix=r'',
                    suffix=r'\b'),
-             Keyword.Declaration),
+             Operator.Word),
             (words(tuple(AWS_DOCS),
                    prefix=r'',
                    suffix=r'\b'),
