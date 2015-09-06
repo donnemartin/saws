@@ -225,8 +225,8 @@ def cli():
     Create and call the CLI
     """
     try:
-        aws_cli = IAwsCli()
-        aws_cli.run_cli()
+        iaws_cli = IAwsCli()
+        iaws_cli.run_cli()
     except Exception as ex:
         print(ex)
 
