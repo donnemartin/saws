@@ -1566,3 +1566,7 @@ website
 --query
 --region
 --version
+[resource_options]: 3
+--bucket
+--instance-ids
+--load-balancer-name

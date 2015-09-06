@@ -4,7 +4,7 @@ from mock import Mock
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from iawscli.completer import AwsCompleter
-from iawscli.commands import AWS_COMMAND, AWS_DOCS, RESOURCE_OPTIONS
+from iawscli.commands import AWS_COMMAND, AWS_DOCS
 from iawscli.main import IAwsCli
 
 
@@ -68,7 +68,7 @@ class CompleterTest(unittest.TestCase):
         commands = ['aws ec2 describe-instances --',
                     'aws s3api get-bucket-acl --',
                     'aws elb describe-instance-health --']
-        expected = RESOURCE_OPTIONS
+        expected = self.iaws_cli.resource_options
         self.verify_completions(commands, expected)
 
     def test_shortcuts(self):
