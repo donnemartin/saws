@@ -1,17 +1,18 @@
 # -*- coding: utf-8
 import shutil
-from os.path import expanduser, exists
+import os
 from configobj import ConfigObj
+from iawscli import __file__ as package_root
 
 
-def read_config(usr_config, def_config=None):
+def _read_config(usr_config, def_config=None):
     """
     Read config file (if not exists, read default config).
     :param usr_config: string: config file name
     :param def_config: string: default name
     :return: ConfigParser
     """
-    usr_config_file = expanduser(usr_config)
+    usr_config_file = os.path.expanduser(usr_config)
     cfg = ConfigObj()
     cfg.filename = usr_config_file
     if def_config:
@@ -27,7 +28,29 @@ def write_default_config(source, destination, overwrite=False):
     :param destination: string: path to write
     :param overwrite: boolean
     """
-    destination = expanduser(destination)
-    if not overwrite and exists(destination):
+    destination = os.path.expanduser(destination)
+    if not overwrite and os.path.exists(destination):
         return
     shutil.copyfile(source, destination)
+
+
+def get_package_path():
+        """
+        Find out pakage root path.
+        :return: string: path
+        """
+        return os.path.dirname(package_root)
+
+
+def read_configuration():
+    config_template = 'iawsclirc'
+    config_name = '~/.iawsclirc'
+    default_config = os.path.join(
+        get_package_path(), config_template)
+    write_default_config(default_config, config_name)
+    return _read_config(config_name, default_config)
+
+
+def get_shortcuts(config):
+    return dict(zip(config['shortcuts'].keys(),
+                    config['shortcuts'].values()))

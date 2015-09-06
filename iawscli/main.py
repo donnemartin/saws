@@ -18,7 +18,7 @@ from awscli import completer as awscli_completer
 from iawscli import __file__ as package_root
 from .completer import AwsCompleter
 from .lexer import CommandLexer
-from .config import write_default_config, read_config
+from .config import read_configuration, get_shortcuts
 from .style import style_factory
 from .keys import get_key_manager
 from .toolbar import create_toolbar_handler
@@ -39,53 +39,34 @@ class IAwsCli(object):
     keyword_completer = None
     saved_less_opts = None
     config = None
-    config_template = 'iawsclirc'
-    config_name = '~/.iawsclirc'
 
     def __init__(self):
         """
         Initialize class members.
-        Should read the config here at some point.
         """
-        self.config = self.read_configuration()
-        log_file = self.config['main']['log_file']
-        log_level = self.config['main']['log_level']
-        self.logger = create_logger(__name__, log_file, log_level)
-        refresh_instance_ids = \
-            self.config['main'].as_bool('refresh_instance_ids')
-        refresh_instance_tags = \
-            self.config['main'].as_bool('refresh_instance_tags')
-        refresh_bucket_names = \
-            self.config['main'].as_bool('refresh_bucket_names')
-        self.theme = 'vim'
+        self.init_config()
         self.completer = AwsCompleter(
             awscli_completer,
             self.config,
             fuzzy_match=self.get_fuzzy_match(),
-            refresh_instance_ids=refresh_instance_ids,
-            refresh_instance_tags=refresh_instance_tags,
-            refresh_bucket_names=refresh_bucket_names)
+            refresh_instance_ids=self.refresh_instance_ids,
+            refresh_instance_tags=self.refresh_instance_tags,
+            refresh_bucket_names=self.refresh_bucket_names)
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options = generate_all_commands()
 
-    def read_configuration(self):
-        default_config = os.path.join(
-            self.get_package_path(), self.config_template)
-        write_default_config(default_config, self.config_name)
-        return read_config(self.config_name, default_config)
-
-    def get_package_path(self):
-        """
-        Find out pakage root path.
-        :return: string: path
-        """
-        return os.path.dirname(package_root)
-
-    def write_config_file(self):
-        """
-        Write config file on exit.
-        """
-        self.config.write()
+    def init_config(self):
+        self.config = read_configuration()
+        self.log_file = self.config['main']['log_file']
+        self.log_level = self.config['main']['log_level']
+        self.logger = create_logger(__name__, self.log_file, self.log_level)
+        self.refresh_instance_ids = \
+            self.config['main'].as_bool('refresh_instance_ids')
+        self.refresh_instance_tags = \
+            self.config['main'].as_bool('refresh_instance_tags')
+        self.refresh_bucket_names = \
+            self.config['main'].as_bool('refresh_bucket_names')
+        self.theme = 'vim'
 
     def set_color(self, is_color):
         """
@@ -218,7 +199,7 @@ class IAwsCli(object):
                 print('executed: ', text)
             except Exception as e:
                 print(e)
-        self.write_config_file()
+        self.config.write()
 
 
 @click.command()
