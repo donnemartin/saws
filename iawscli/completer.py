@@ -18,8 +18,9 @@ class AwsCompleter(Completer):
     Completer for AWS commands and parameters.
     """
 
-    def __init__(self, aws_completer, config,
-                 fuzzy_match=False, refresh_instance_ids=True,
+    def __init__(self, aws_completer,
+                 config, fuzzy_match=False,
+                 shortcut_match=False, refresh_instance_ids=True,
                  refresh_instance_tags=True, refresh_bucket_names=True):
         """
         Initialize the completer
@@ -29,6 +30,7 @@ class AwsCompleter(Completer):
         self.aws_completions = set()
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
+        self.shortcut_match = shortcut_match
         self.instance_ids = []
         self.instance_tags = set()
         self.bucket_names = []
@@ -202,6 +204,8 @@ class AwsCompleter(Completer):
         else:
             self.aws_completions.update(aws_completer_results_list)
         self.aws_completions.update([self.DOCS_COMMAND])
+        if self.shortcut_match:
+            self.aws_completions.update(self.shortcuts.keys())
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:

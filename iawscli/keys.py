@@ -8,6 +8,7 @@ from .commands import AWS_COMMAND
 
 def get_key_manager(set_color, get_color,
                     set_fuzzy_match, get_fuzzy_match,
+                    set_shortcut_match, get_shortcut_match,
                     refresh_resources, handle_docs):
     """
     Create and initialize keybinding manager
@@ -17,6 +18,8 @@ def get_key_manager(set_color, get_color,
     assert callable(get_color)
     assert callable(set_fuzzy_match)
     assert callable(get_fuzzy_match)
+    assert callable(set_shortcut_match)
+    assert callable(get_shortcut_match)
     assert callable(refresh_resources)
     assert callable(handle_docs)
     manager = KeyBindingManager(enable_system_bindings=True)
@@ -56,6 +59,13 @@ def get_key_manager(set_color, get_color,
 
     @manager.registry.add_binding(Keys.F5)
     def handle_f5(_):
+        """
+        Enable/Disable shortcut matching.
+        """
+        set_shortcut_match(not get_shortcut_match())
+
+    @manager.registry.add_binding(Keys.F6)
+    def handle_f6(_):
         """
         Refreshes AWS resources.
         """

@@ -47,6 +47,7 @@ class IAwsCli(object):
             awscli_completer,
             self.config,
             fuzzy_match=self.get_fuzzy_match(),
+            shortcut_match=self.get_shortcut_match(),
             refresh_instance_ids=self.refresh_instance_ids,
             refresh_instance_tags=self.refresh_instance_tags,
             refresh_bucket_names=self.refresh_bucket_names)
@@ -94,6 +95,21 @@ class IAwsCli(object):
         :return: boolean
         """
         return self.config['main'].as_bool('fuzzy_match')
+
+    def set_shortcut_match(self, is_shortcut):
+        """
+        Setter for shortcut matching mode
+        :param is_shortcut: boolean
+        """
+        self.config['main']['shortcut_match'] = is_shortcut
+        self.completer.shortcut_match = is_shortcut
+
+    def get_shortcut_match(self):
+        """
+        Getter for shortcut matching mode
+        :return: boolean
+        """
+        return self.config['main'].as_bool('shortcut_match')
 
     def refresh_resources(self):
         self.completer.refresh_resources(force_refresh=True)
@@ -146,7 +162,8 @@ class IAwsCli(object):
         print('Version:', __version__)
         history = FileHistory(os.path.expanduser('~/.iawscli-history'))
         toolbar_handler = create_toolbar_handler(self.get_color,
-                                                 self.get_fuzzy_match)
+                                                 self.get_fuzzy_match,
+                                                 self.get_shortcut_match)
         layout = create_default_layout(
             message='iawscli> ',
             reserve_space_for_menu=True,
@@ -168,6 +185,8 @@ class IAwsCli(object):
             self.get_color,
             self.set_fuzzy_match,
             self.get_fuzzy_match,
+            self.set_shortcut_match,
+            self.get_shortcut_match,
             self.refresh_resources,
             self.handle_docs)
         application = Application(
