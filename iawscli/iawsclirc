@@ -23,17 +23,24 @@ refresh_bucket_names = True
 
 [shortcuts]
 
+# Shortcuts are evaluated top to bottom, so place simpler shortcuts
+# near the bottom and more complex shortcuts at the top.
+# Once a shortcut key match is found, the corresponding value is
+# substituted and matching stops until the next keypress.
+# Shortcuts are only shown after the user types 'aws' as the first
+# command and is inputting the subcommand:
+#     'aws [show shortcut matches]'
+'ec2 ls --ec2-tags' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
+'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
+'ec2 ls --ec2-running' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=running"'
+'ec2 ls --ec2-pending' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=pending"'
+'ec2 ls --ec2-stopping' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=stopping"'
+'ec2 ls --ec2-shutting-down' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=shutting-down"'
+'ec2 ls --ec2-stopped' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=stopped"'
+'ec2 ls --ec2-terminated' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=terminated"'
+'ec2 up --instance-ids' = 'ec2 start-instances --instance-ids'
+'ec2 down --instance-ids' = 'ec2 stop-instances --instance-ids'
 'ec2 ls' = 'ec2 describe-instances'
 'dynamodb ls' = 'dynamodb list-tables'
 'emr ls' = 'emr list-clusters'
 'elb ls' = 'elb describe-load-balancers'
-'--ec2-tags' = '--filters "Name=tag-key,Values=%s"'
-'--ec2-state' = '--filters "Name=instance-state-name,Values=%s"'
-'--ec2-running' = '--filters "Name=instance-state-name, Values=running"'
-'--ec2-pending' = '--filters "Name=instance-state-name, Values=pending"'
-'--ec2-stopping' = '--filters "Name=instance-state-name, Values=stopping"'
-'--ec2-shutting-down' = '--filters "Name=instance-state-name, Values=shutting-down"'
-'--ec2-stopped' = '--filters "Name=instance-state-name, Values=stopped"'
-'--ec2-terminated' = '--filters "Name=instance-state-name, Values=terminated"'
-'ec2 up' = 'ec2 start-instances'
-'ec2 down' = 'ec2 stop-instances'
