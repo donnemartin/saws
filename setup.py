@@ -18,6 +18,7 @@ setup(
         'configobj >= 5.0.6',
         'enum34>=1.0.4',
         'fuzzyfinder>=1.0.0',
+        'ordereddict>=1.1',
         'prompt-toolkit==0.46',
         'six>=1.9.0',
         'tabulate>=0.7.5',
