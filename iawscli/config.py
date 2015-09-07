@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import shutil
 import os
+from collections import OrderedDict
 from configobj import ConfigObj
 from iawscli import __file__ as package_root
 
@@ -54,5 +55,5 @@ def read_configuration():
 
 
 def get_shortcuts(config):
-    return dict(zip(config['shortcuts'].keys(),
-                    config['shortcuts'].values()))
+    return OrderedDict(zip(config['shortcuts'].keys(),
+                           config['shortcuts'].values()))

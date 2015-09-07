@@ -6,6 +6,7 @@ import sys
 import re
 import os
 import subprocess
+from collections import OrderedDict
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
 from .utils import TextUtils
@@ -42,8 +43,9 @@ class AwsCompleter(Completer):
         self.instance_tags_marker = '[instance tags]'
         self.bucket_names_marker = '[bucket names]'
         self.refresh_resources()
-        self.shortcuts = dict(zip(config['shortcuts'].keys(),
-                                  config['shortcuts'].values()))
+        # TODO: Refactor to use config.get_shortcuts()
+        self.shortcuts = OrderedDict(zip(config['shortcuts'].keys(),
+                                         config['shortcuts'].values()))
 
     def refresh_resources_from_file(self, f, p):
         class ResType(Enum):
