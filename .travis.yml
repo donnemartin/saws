@@ -1,6 +1,4 @@
 language: python
-virtualenv:
-  system_site_packages: true
 env:
   - TOXENV=py26
   - TOXENV=py27
@@ -9,7 +7,6 @@ env:
   - TOXENV=pypy
 os:
   - linux
-  - osx
 install:
   - travis_retry pip install tox
   - pip install coveralls
