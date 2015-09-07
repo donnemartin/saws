@@ -206,12 +206,15 @@ class AwsCompleter(Completer):
         else:
             self.aws_completions.update(aws_completer_results_list)
         self.aws_completions.update([self.DOCS_COMMAND])
-        if self.shortcut_match:
-            self.aws_completions.update(self.shortcuts.keys())
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:
             return []
+        elif len(words) == 2 and words[0] == self.BASE_COMMAND:
+            # Insert shortcuts if the user typed 'aws' as the first
+            # command and is inputting the subcommand
+            if self.shortcut_match:
+                self.aws_completions.update(self.shortcuts.keys())
         completions = None
         completions = self.get_resource_completions(words,
                                                     word_before_cursor,
