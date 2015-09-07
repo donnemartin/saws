@@ -164,8 +164,8 @@ class AwsCompleter(Completer):
             text = re.sub('%s', tokens[-1], text)
         return text
 
-    def get_res_completions(self, words, word_before_cursor,
-                            option_text, resource):
+    def get_resource_completions(self, words, word_before_cursor,
+                                 option_text, resource):
         if words[-1] == option_text or \
             (len(words) > 1 and
                 (words[-2] == option_text and word_before_cursor != '')):
@@ -206,20 +206,20 @@ class AwsCompleter(Completer):
         if len(words) == 0:
             return []
         completions = None
-        completions = self.get_res_completions(words,
-                                               word_before_cursor,
-                                               '--instance-ids',
-                                               self.instance_ids)
+        completions = self.get_resource_completions(words,
+                                                    word_before_cursor,
+                                                    '--instance-ids',
+                                                    self.instance_ids)
         if completions is None:
-            completions = self.get_res_completions(words,
-                                                   word_before_cursor,
-                                                   '--ec2-tags',
-                                                   self.instance_tags)
+            completions = self.get_resource_completions(words,
+                                                        word_before_cursor,
+                                                        '--ec2-tags',
+                                                        self.instance_tags)
         if completions is None:
-            completions = self.get_res_completions(words,
-                                                   word_before_cursor,
-                                                   '--bucket',
-                                                   self.bucket_names)
+            completions = self.get_resource_completions(words,
+                                                        word_before_cursor,
+                                                        '--bucket',
+                                                        self.bucket_names)
         if completions is None:
             completions = self.text_utils.find_matches(word_before_cursor,
                                                        self.aws_completions,
