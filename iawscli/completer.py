@@ -10,6 +10,7 @@ from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
 from .utils import TextUtils
 from .commands import AWS_COMMAND, AWS_DOCS, SOURCES_DIR
+from .config import get_shortcuts
 
 
 class AwsCompleter(Completer):
@@ -40,8 +41,7 @@ class AwsCompleter(Completer):
         self.instance_tags_marker = '[instance tags]'
         self.bucket_names_marker = '[bucket names]'
         self.refresh_resources()
-        self.shortcuts = dict(zip(config['shortcuts'].keys(),
-                                  config['shortcuts'].values()))
+        self.shortcuts = get_shortcuts(config)
 
     def refresh_resources_from_file(self, f, p):
         class ResType(Enum):
