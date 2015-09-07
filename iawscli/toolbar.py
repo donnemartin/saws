@@ -40,7 +40,7 @@ def create_toolbar_handler(is_color, is_fuzzy, is_shortcuts):
             (color_token, ' [F3] Color: {0} '.format(color)),
             (fuzzy_token, ' [F4] Fuzzy: {0} '.format(fuzzy)),
             (shortcuts_token, ' [F5] Shortcuts: {0} '.format(shortcuts)),
-            (Token.Toolbar, ' [F6] Refresh Resources '),
+            (Token.Toolbar, ' [F6] Refresh '),
             (Token.Toolbar, ' [F10] Exit ')
         ]
     return get_toolbar_items
