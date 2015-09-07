@@ -5,6 +5,9 @@ env:
   - TOXENV=py33
   - TOXENV=py34
   - TOXENV=pypy
+os:
+  - linux
+  - osx
 install:
   - travis_retry pip install tox
   - pip install coveralls
