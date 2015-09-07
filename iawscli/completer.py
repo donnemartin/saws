@@ -104,20 +104,20 @@ class AwsCompleter(Completer):
             print('Refreshing resources...')
             if self.refresh_instance_ids:
                 print('  Refreshing instance ids...')
-                self.generate_instance_ids()
+                self.query_instance_ids()
             if self.refresh_instance_tags:
                 print('  Refreshing instance tags...')
-                self.generate_instance_tags()
+                self.query_instance_tags()
             if self.refresh_bucket_names:
                 print('  Refreshing bucket names...')
-                self.generate_bucket_names()
+                self.query_bucket_names()
             print('Done refreshing')
         try:
             self.save_resources_to_file(f, p)
         except IOError as e:
             print(e)
 
-    def generate_instance_ids(self):
+    def query_instance_ids(self):
         command = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
         try:
             result = subprocess.check_output(command, shell=True)
@@ -126,7 +126,7 @@ class AwsCompleter(Completer):
         except Exception as e:
             print(e)
 
-    def generate_instance_tags(self):
+    def query_instance_tags(self):
         command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         try:
             result = subprocess.check_output(command, shell=True)
@@ -134,7 +134,7 @@ class AwsCompleter(Completer):
         except Exception as e:
             print(e)
 
-    def generate_bucket_names(self):
+    def query_bucket_names(self):
         command = 'aws s3 ls'
         try:
             output = subprocess.check_output(command, shell=True)
