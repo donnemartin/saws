@@ -6,6 +6,9 @@ color_output = True
 # Use fuzzy matching mode for resources (default is to use simple substring match).
 fuzzy_match = True
 
+# Use shortcut matching mode
+shortcut_match = False
+
 # log_file location.
 log_file = ~/.iawscli.log
 
