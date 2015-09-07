@@ -24,6 +24,10 @@ class CommandLexer(RegexLexer):
                    prefix=r'',
                    suffix=r'\b'),
              Literal.String),
+            (words(tuple(AWS_DOCS),
+                   prefix=r'',
+                   suffix=r'\b'),
+             Literal.Number),
             (words(tuple(commands[CommandType.COMMANDS.value]),
                    prefix=r'',
                    suffix=r'\b'),
@@ -44,9 +48,5 @@ class CommandLexer(RegexLexer):
                    prefix=r'',
                    suffix=r'\b'),
              Name.Exception),
-            (words(tuple(AWS_DOCS),
-                   prefix=r'',
-                   suffix=r'\b'),
-             Literal.Number),
         ]
     }
