@@ -14,8 +14,11 @@ def cli():
     """
     Create and call the CLI
     """
-    iaws_cli = IAwsCli()
-    iaws_cli.run_cli()
+    try:
+        iaws_cli = IAwsCli()
+        iaws_cli.run_cli()
+    except (EOFError, KeyboardInterrupt):
+        iaws_cli.config.write()
 
 
 if __name__ == "__main__":

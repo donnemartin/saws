@@ -216,4 +216,3 @@ class IAwsCli(object):
                 print('executed: ', text)
             except Exception as e:
                 print(e)
-        self.config.write()
