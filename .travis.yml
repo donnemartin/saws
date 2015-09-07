@@ -1,6 +1,5 @@
 language: python
 env:
-  - TOXENV=py26
   - TOXENV=py27
   - TOXENV=py33
   - TOXENV=py34
@@ -9,7 +8,6 @@ os:
   - linux
 install:
   - travis_retry pip install tox
-  - pip install ordereddict
   - pip install coveralls
   - pip install codecov
 script:
