@@ -8,7 +8,7 @@ from test_commands import CommandsTest  # NOQA
 try:
     from test_cli import CliTest  # NOQA
 except:
-# pexpect import fails on Windows
+    # pexpect import fails on Windows
     pass
 
 
