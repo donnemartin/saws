@@ -37,7 +37,7 @@ def get_key_manager(set_color, get_color,
                 .insert_text(AWS_COMMAND[0] + help_command)
 
     @manager.registry.add_binding(Keys.F2)
-    def handle_f2(event):
+    def handle_f2(_):
         """
         When F2 has been pressed, fill in the "docs" command.
         """
@@ -72,11 +72,10 @@ def get_key_manager(set_color, get_color,
         refresh_resources()
 
     @manager.registry.add_binding(Keys.F10)
-    def handle_f10(event):
+    def handle_f10(_):
         """
         When F10 has been pressed, quit.
         """
-        # Unused parameters for linter.
         raise EOFError
 
     @manager.registry.add_binding(Keys.ControlSpace)
