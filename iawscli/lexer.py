@@ -1,8 +1,7 @@
 # -*- coding: utf-8
 from pygments.lexer import RegexLexer
 from pygments.lexer import words
-from pygments.token import Keyword, Name, Operator, Generic, Literal, \
-    Comment
+from pygments.token import Keyword, Name, Operator, Generic, Literal
 from .commands import AWS_COMMAND, AWS_DOCS, generate_all_commands, \
     CommandType
 from .config import read_configuration, get_shortcuts
