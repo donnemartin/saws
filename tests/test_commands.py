@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from __future__ import print_function
 import unittest
 import re
 from iawscli.commands import generate_all_commands, COMMANDS_HEADER, \

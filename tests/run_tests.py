@@ -1,5 +1,7 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from __future__ import print_function
 import unittest
 from test_completer import CompleterTest  # NOQA
 from test_commands import CommandsTest  # NOQA
