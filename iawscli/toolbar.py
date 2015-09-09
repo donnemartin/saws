@@ -35,7 +35,6 @@ def create_toolbar_handler(is_color, is_fuzzy, is_shortcuts):
             shortcuts_token = Token.Toolbar.Off
             shortcuts = 'OFF'
         return [
-            (Token.Toolbar, ' [F1] Help '),
             (Token.Toolbar, ' [F2] Docs '),
             (color_token, ' [F3] Color: {0} '.format(color)),
             (fuzzy_token, ' [F4] Fuzzy: {0} '.format(fuzzy)),
