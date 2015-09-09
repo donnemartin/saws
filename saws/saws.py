@@ -112,7 +112,7 @@ class Saws(object):
         return self.config['main'].as_bool('shortcut_match')
 
     def refresh_resources(self):
-        self.completer.refresh_resources(force_refresh=True)
+        self.completer.resources.refresh(force_refresh=True)
 
     def handle_docs(self, from_fkey=False):
         base_url = 'http://docs.aws.amazon.com/cli/latest/reference/'

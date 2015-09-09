@@ -81,26 +81,26 @@ class CompleterTest(unittest.TestCase):
     def test_instance_ids(self):
         commands = ['aws ec2 ls --instance-ids i-a']
         expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
-        self.completer.instance_ids.extend(expected)
+        self.completer.resources.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_tags(self):
         commands = ['aws ec2 ls --ec2-tags prod']
         expected = ['production', 'production-blue', 'production-green']
-        self.completer.instance_tags.update(expected)
+        self.completer.resources.instance_tags.update(expected)
         self.verify_completions(commands, expected)
 
     def test_bucket_names(self):
         commands = ['aws s3pi get-bucket-acl --bucket web-']
         expected = ['web-server-logs', 'web-server-images']
-        self.completer.bucket_names.extend(expected)
+        self.completer.resources.bucket_names.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_fuzzy_matching(self):
         commands = ['aws ec2 ls --instance-ids a5']
         expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
         self.completer.fuzzy_match = True
-        self.completer.instance_ids.extend(expected)
+        self.completer.resources.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_substitutions(self):
