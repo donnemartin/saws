@@ -40,6 +40,7 @@ refresh_bucket_names = True
 'ec2 ls --ec2-terminated' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=terminated"'
 'ec2 up --instance-ids' = 'ec2 start-instances --instance-ids'
 'ec2 down --instance-ids' = 'ec2 stop-instances --instance-ids'
+'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
 'ec2 ls' = 'ec2 describe-instances'
 'dynamodb ls' = 'dynamodb list-tables'
 'emr ls' = 'emr list-clusters'
