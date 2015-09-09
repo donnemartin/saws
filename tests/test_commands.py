@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import unittest
 import re
-from iawscli.commands import generate_all_commands, COMMANDS_HEADER, \
+from saws.commands import generate_all_commands, COMMANDS_HEADER, \
     SUB_COMMANDS_HEADER, GLOBAL_OPTIONS_HEADER, RESOURCE_OPTIONS_HEADER, \
     SOURCES_PATH
 

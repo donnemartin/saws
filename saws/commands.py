@@ -20,7 +20,7 @@ AWS_HELP = [
     'help',
 ]
 
-# iawscli docs
+# saws docs
 AWS_DOCS = [
     'docs',
 ]
