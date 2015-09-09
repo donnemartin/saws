@@ -5,15 +5,15 @@ import unittest
 from mock import Mock
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
-from iawscli.completer import AwsCompleter
-from iawscli.commands import AWS_COMMAND, AWS_DOCS
-from iawscli.main import IAwsCli
+from saws.completer import AwsCompleter
+from saws.commands import AWS_COMMAND, AWS_DOCS
+from saws.main import Saws
 
 
 class CompleterTest(unittest.TestCase):
 
     def setUp(self):
-        self.iaws_cli = IAwsCli()
+        self.iaws_cli = Saws()
         self.completer = self.create_completer()
         self.completer_event = self.create_completer_event()
 

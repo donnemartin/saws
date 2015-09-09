@@ -1,4 +1,4 @@
-from iawscli.__init__ import __version__
+from saws.__init__ import __version__
 try:
     from setuptools import setup
 except ImportError:
@@ -6,10 +6,10 @@ except ImportError:
 
 
 setup(
-    description='iawscli: an interactive shell for AWS with auto-completion',
+    description='saws: supercharged AWS command line interface',
     author='Donne Martin',
-    url='https://github.com/donnemartin/iawscli',
-    download_url='https://github.com/donnemartin/iawscli',
+    url='https://github.com/donnemartin/saws',
+    download_url='https://github.com/donnemartin/saws',
     author_email='donne.martin@gmail.com',
     version=__version__,
     install_requires=[
@@ -31,12 +31,12 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': 'iawscli = iawscli.main:cli'
+        'console_scripts': 'saws = saws.main:cli'
     },
-    packages=['iawscli'],
-    package_data={'iawscli': ['iawsclirc', 'data/SOURCES.txt']},
+    packages=['saws'],
+    package_data={'saws': ['sawsrc', 'data/SOURCES.txt']},
     scripts=[],
-    name='iawscli',
+    name='saws',
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: Unix',

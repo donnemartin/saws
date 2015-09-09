@@ -10,7 +10,7 @@ fuzzy_match = True
 shortcut_match = False
 
 # log_file location.
-log_file = ~/.iawscli.log
+log_file = ~/.saws.log
 
 # Default log level. Possible values: "CRITICAL", "ERROR", "WARNING", "INFO"
 # and "DEBUG".

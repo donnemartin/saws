@@ -5,7 +5,7 @@ import shutil
 import os
 from collections import OrderedDict
 from configobj import ConfigObj
-from iawscli import __file__ as package_root
+from saws import __file__ as package_root
 
 
 def _read_config(usr_config, def_config=None):
@@ -46,8 +46,8 @@ def get_package_path():
 
 
 def read_configuration():
-    config_template = 'iawsclirc'
-    config_name = '~/.iawsclirc'
+    config_template = 'sawsrc'
+    config_name = '~/.sawsrc'
     default_config = os.path.join(
         get_package_path(), config_template)
     write_default_config(default_config, config_name)

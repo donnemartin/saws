@@ -29,7 +29,7 @@ from .__init__ import __version__
 click.disable_unicode_literals_warning = True
 
 
-class IAwsCli(object):
+class Saws(object):
     """
     The CLI implementation.
     """
@@ -160,12 +160,12 @@ class IAwsCli(object):
         Run the main loop
         """
         print('Version:', __version__)
-        history = FileHistory(os.path.expanduser('~/.iawscli-history'))
+        history = FileHistory(os.path.expanduser('~/.saws-history'))
         toolbar_handler = create_toolbar_handler(self.get_color,
                                                  self.get_fuzzy_match,
                                                  self.get_shortcut_match)
         layout = create_default_layout(
-            message='iawscli> ',
+            message='saws> ',
             reserve_space_for_menu=True,
             lexer=CommandLexer,
             get_bottom_toolbar_tokens=toolbar_handler,
