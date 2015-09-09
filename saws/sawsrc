@@ -42,6 +42,6 @@ refresh_bucket_names = True
 'ec2 down --instance-ids' = 'ec2 stop-instances --instance-ids'
 'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
 'ec2 ls' = 'ec2 describe-instances'
-'dynamodb ls' = 'dynamodb list-tables'
 'emr ls' = 'emr list-clusters'
 'elb ls' = 'elb describe-load-balancers'
+'dynamodb ls' = 'dynamodb list-tables'
