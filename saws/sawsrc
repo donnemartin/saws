@@ -31,6 +31,7 @@ refresh_bucket_names = True
 # command and is inputting the subcommand:
 #     'aws [show shortcut matches]'
 'ec2 ls --ec2-tags' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
+# States: [pending | running | shutting-down | terminated | stopping | stopped]
 'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
 'ec2 ls --ec2-running' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=running"'
 'ec2 ls --ec2-pending' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=pending"'
