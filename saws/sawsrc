@@ -7,7 +7,7 @@ color_output = True
 fuzzy_match = True
 
 # Use shortcut matching mode
-shortcut_match = False
+shortcut_match = True
 
 # log_file location.
 log_file = ~/.saws.log
