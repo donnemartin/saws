@@ -20,7 +20,6 @@ setup(
         'fuzzyfinder>=1.0.0',
         'prompt-toolkit==0.46',
         'six>=1.9.0',
-        'tabulate>=0.7.5',
         'pygments>=2.0.2'
     ],
     extras_require={
