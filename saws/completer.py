@@ -38,6 +38,7 @@ class AwsCompleter(Completer):
         self.resources = AwsResources(refresh_instance_ids,
                                       refresh_instance_tags,
                                       refresh_bucket_names)
+        self.resources.refresh()
         # TODO: Refactor to use config.get_shortcuts()
         self.shortcuts = OrderedDict(zip(config['shortcuts'].keys(),
                                          config['shortcuts'].values()))
