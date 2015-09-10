@@ -25,47 +25,35 @@ def get_key_manager(set_color, get_color,
     manager = KeyBindingManager(enable_system_bindings=True)
 
     @manager.registry.add_binding(Keys.F1)
-    def handle_f1(event):
+    def handle_f1(_):
         """
-        When F1 has been pressed, fill in the "help" command.
-        """
-        help_command = ' help'
-        if event.cli.current_buffer.text.strip() != '':
-            event.cli.current_buffer.insert_text(help_command)
-        else:
-            event.cli.current_buffer\
-                .insert_text(AWS_COMMAND[0] + help_command)
-
-    @manager.registry.add_binding(Keys.F2)
-    def handle_f2(_):
-        """
-        When F2 has been pressed, fill in the "docs" command.
+        When F1 has been pressed, fill in the "docs" command.
         """
         handle_docs(from_fkey=True)
 
-    @manager.registry.add_binding(Keys.F3)
-    def handle_f3(_):
+    @manager.registry.add_binding(Keys.F2)
+    def handle_f2(_):
         """
         Enable/Disable color output.
         """
         set_color(not get_color())
 
-    @manager.registry.add_binding(Keys.F4)
-    def handle_f4(_):
+    @manager.registry.add_binding(Keys.F3)
+    def handle_f3(_):
         """
         Enable/Disable fuzzy matching.
         """
         set_fuzzy_match(not get_fuzzy_match())
 
-    @manager.registry.add_binding(Keys.F5)
-    def handle_f5(_):
+    @manager.registry.add_binding(Keys.F4)
+    def handle_f4(_):
         """
         Enable/Disable shortcut matching.
         """
         set_shortcut_match(not get_shortcut_match())
 
-    @manager.registry.add_binding(Keys.F6)
-    def handle_f6(_):
+    @manager.registry.add_binding(Keys.F5)
+    def handle_f5(_):
         """
         Refreshes AWS resources.
         """
