@@ -113,8 +113,14 @@ class AwsCompleter(Completer):
             completions = self \
                 .get_resource_completions(words,
                                           word_before_cursor,
-                                          '--ec2-tags',
-                                          self.resources.instance_tags)
+                                          '--ec2-tag-key',
+                                          self.resources.instance_tag_keys)
+        if completions is None:
+            completions = self \
+                .get_resource_completions(words,
+                                          word_before_cursor,
+                                          '--ec2-tag-value',
+                                          self.resources.instance_tag_values)
         if completions is None:
             completions = self \
                 .get_resource_completions(words,

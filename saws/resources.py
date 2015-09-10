@@ -15,13 +15,15 @@ class AwsResources(object):
                  refresh_instance_tags=True,
                  refresh_bucket_names=True):
         self.instance_ids = []
-        self.instance_tags = set()
+        self.instance_tag_keys = set()
+        self.instance_tag_values = set()
         self.bucket_names = []
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_instance_tags = refresh_instance_tags
         self.refresh_bucket_names = refresh_bucket_names
         self.instance_ids_marker = '[instance ids]'
-        self.instance_tags_marker = '[instance tags]'
+        self.instance_tag_keys_marker = '[instance tag keys]'
+        self.instance_tag_values_marker = '[instance tag values]'
         self.bucket_names_marker = '[bucket names]'
 
     def refresh(self, force_refresh=False):
@@ -45,7 +47,8 @@ class AwsResources(object):
                 self.query_instance_ids()
             if self.refresh_instance_tags:
                 print('  Refreshing instance tags...')
-                self.query_instance_tags()
+                self.query_instance_tag_keys()
+                self.query_instance_tag_values()
             if self.refresh_bucket_names:
                 print('  Refreshing bucket names...')
                 self.query_bucket_names()
@@ -64,11 +67,19 @@ class AwsResources(object):
         except Exception as e:
             print(e)
 
-    def query_instance_tags(self):
+    def query_instance_tag_keys(self):
         command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         try:
             result = subprocess.check_output(command, shell=True)
-            self.instance_tags = set(result.split('\t'))
+            self.instance_tag_keys = set(result.split('\t'))
+        except Exception as e:
+            print(e)
+
+    def query_instance_tag_values(self):
+        command = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
+        try:
+            result = subprocess.check_output(command, shell=True)
+            self.instance_tag_values = set(result.split('\t'))
         except Exception as e:
             print(e)
 
@@ -90,14 +101,17 @@ class AwsResources(object):
     def refresh_resources_from_file(self, f, p):
         class ResType(Enum):
 
-            INSTANCE_IDS, INSTANCE_TAGS, BUCKET_NAMES = range(3)
+            INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
+                BUCKET_NAMES = range(4)
 
         res_type = ResType.INSTANCE_IDS
         with open(f) as fp:
             self.instance_ids = []
-            self.instance_tags = set()
+            self.instance_tag_keys = set()
+            self.instance_tag_values = set()
             self.bucket_names = []
-            instance_tags_list = []
+            instance_tag_keys_list = []
+            instance_tag_values_list = []
             for line in fp:
                 line = re.sub('\n', '', line)
                 if line.strip() == '':
@@ -105,28 +119,37 @@ class AwsResources(object):
                 elif self.instance_ids_marker in line:
                     res_type = ResType.INSTANCE_IDS
                     continue
-                elif self.instance_tags_marker in line:
-                    res_type = ResType.INSTANCE_TAGS
+                elif self.instance_tag_keys_marker in line:
+                    res_type = ResType.INSTANCE_TAG_KEYS
+                    continue
+                elif self.instance_tag_values_marker in line:
+                    res_type = ResType.INSTANCE_TAG_VALUES
                     continue
                 elif self.bucket_names_marker in line:
                     res_type = ResType.BUCKET_NAMES
                     continue
                 if res_type == ResType.INSTANCE_IDS:
                     self.instance_ids.append(line)
-                elif res_type == ResType.INSTANCE_TAGS:
-                    instance_tags_list.append(line)
+                elif res_type == ResType.INSTANCE_TAG_KEYS:
+                    instance_tag_keys_list.append(line)
+                elif res_type == ResType.INSTANCE_TAG_VALUES:
+                    instance_tag_values_list.append(line)
                 elif res_type == ResType.BUCKET_NAMES:
                     self.bucket_names.append(line)
-            self.instance_tags = set(instance_tags_list)
+            self.instance_tag_keys = set(instance_tag_keys_list)
+            self.instance_tag_values = set(instance_tag_values_list)
 
     def save_resources_to_file(self, f, p):
         with open(f, 'w') as fp:
             fp.write(self.instance_ids_marker + '\n')
             for instance_id in self.instance_ids:
                 fp.write(instance_id + '\n')
-            fp.write(self.instance_tags_marker + '\n')
-            for instance_tag in self.instance_tags:
-                fp.write(instance_tag + '\n')
+            fp.write(self.instance_tag_keys_marker + '\n')
+            for instance_tag_key in self.instance_tag_keys:
+                fp.write(instance_tag_key + '\n')
+            fp.write(self.instance_tag_values_marker + '\n')
+            for instance_tag_value in self.instance_tag_values:
+                fp.write(instance_tag_value + '\n')
             fp.write(self.bucket_names_marker + '\n')
             for bucket_name in self.bucket_names:
                 fp.write(bucket_name + '\n')
