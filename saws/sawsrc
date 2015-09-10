@@ -30,7 +30,8 @@ refresh_bucket_names = True
 # Shortcuts are only shown after the user types 'aws' as the first
 # command and is inputting the subcommand:
 #     'aws [show shortcut matches]'
-'ec2 ls --ec2-tags' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
+'ec2 ls --ec2-tag-key' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
+'ec2 ls --ec2-tag-value' = 'ec2 describe-instances --filters "Name=tag-value,Values=%s"'
 # States: [pending | running | shutting-down | terminated | stopping | stopped]
 'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
 'ec2 ls --ec2-running' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=running"'
