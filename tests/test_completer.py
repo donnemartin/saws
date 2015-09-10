@@ -84,10 +84,16 @@ class CompleterTest(unittest.TestCase):
         self.completer.resources.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
 
-    def test_instance_tags(self):
-        commands = ['aws ec2 ls --ec2-tags prod']
+    def test_instance_keys(self):
+        commands = ['aws ec2 ls --ec2-tag-key na']
+        expected = ['name', 'namE']
+        self.completer.resources.instance_tag_keys.update(expected)
+        self.verify_completions(commands, expected)
+
+    def test_instance_tag_values(self):
+        commands = ['aws ec2 ls --ec2-tag-value prod']
         expected = ['production', 'production-blue', 'production-green']
-        self.completer.resources.instance_tags.update(expected)
+        self.completer.resources.instance_tag_values.update(expected)
         self.verify_completions(commands, expected)
 
     def test_bucket_names(self):
