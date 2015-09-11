@@ -49,7 +49,7 @@ class Saws(object):
         self.completer = AwsCompleter(
             awscli_completer,
             self.config,
-            self.ec2_states,
+            ec2_states=self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match(),
             refresh_instance_ids=self.refresh_instance_ids,

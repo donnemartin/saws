@@ -19,7 +19,7 @@ class AwsCompleter(Completer):
     def __init__(self,
                  aws_completer,
                  config,
-                 ec2_states,
+                 ec2_states=[],
                  fuzzy_match=False,
                  shortcut_match=False,
                  refresh_instance_ids=True,
