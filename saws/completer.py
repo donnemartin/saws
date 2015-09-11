@@ -19,6 +19,7 @@ class AwsCompleter(Completer):
     def __init__(self,
                  aws_completer,
                  config,
+                 ec2_states,
                  fuzzy_match=False,
                  shortcut_match=False,
                  refresh_instance_ids=True,
@@ -30,6 +31,7 @@ class AwsCompleter(Completer):
         """
         self.aws_completer = aws_completer
         self.aws_completions = set()
+        self.ec2_states = ec2_states
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
@@ -122,6 +124,12 @@ class AwsCompleter(Completer):
                                           word_before_cursor,
                                           '--ec2-tag-value',
                                           self.resources.instance_tag_values)
+        if completions is None:
+            completions = self \
+                .get_resource_completions(words,
+                                          word_before_cursor,
+                                          '--ec2-state',
+                                          self.ec2_states)
         if completions is None:
             completions = self \
                 .get_resource_completions(words,

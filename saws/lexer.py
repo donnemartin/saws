@@ -1,7 +1,8 @@
 # -*- coding: utf-8
 from pygments.lexer import RegexLexer
 from pygments.lexer import words
-from pygments.token import Keyword, Name, Operator, Generic, Literal
+from pygments.token import Keyword, Name, Operator, Generic, Literal, \
+    Comment
 from .commands import AWS_COMMAND, AWS_DOCS, generate_all_commands, \
     CommandType
 from .config import read_configuration, get_shortcuts
@@ -43,6 +44,10 @@ class CommandLexer(RegexLexer):
                    prefix=r'',
                    suffix=r'\b'),
              Operator.Word),
+            (words(tuple(commands[CommandType.EC2_STATES.value]),
+                   prefix=r'',
+                   suffix=r'\b'),
+             Generic.Output),
             (words(tuple(shortcut_tokens),
                    prefix=r'',
                    suffix=r'\b'),

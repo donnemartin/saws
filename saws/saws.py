@@ -43,16 +43,18 @@ class Saws(object):
         Initialize class members.
         """
         self.init_config()
+        self.commands, self.sub_commands, self.global_options, \
+            self.resource_options, self.ec2_states \
+            = generate_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
             self.config,
+            self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match(),
             refresh_instance_ids=self.refresh_instance_ids,
             refresh_instance_tags=self.refresh_instance_tags,
             refresh_bucket_names=self.refresh_bucket_names)
-        self.commands, self.sub_commands, self.global_options, \
-            self.resource_options = generate_all_commands()
 
     def init_config(self):
         self.config = read_configuration()

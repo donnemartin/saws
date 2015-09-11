@@ -1570,3 +1570,10 @@ website
 --bucket
 --instance-ids
 --load-balancer-name
+[ec2_states]: 6
+pending
+running
+shutting-down
+terminated
+stopping
+stopped

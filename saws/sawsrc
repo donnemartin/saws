@@ -34,12 +34,6 @@ refresh_bucket_names = True
 'ec2 ls --ec2-tag-value' = 'ec2 describe-instances --filters "Name=tag-value,Values=%s"'
 # States: [pending | running | shutting-down | terminated | stopping | stopped]
 'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
-'ec2 ls --ec2-running' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=running"'
-'ec2 ls --ec2-pending' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=pending"'
-'ec2 ls --ec2-stopping' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=stopping"'
-'ec2 ls --ec2-shutting-down' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=shutting-down"'
-'ec2 ls --ec2-stopped' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=stopped"'
-'ec2 ls --ec2-terminated' = 'ec2 describe-instances --filters "Name=instance-state-name, Values=terminated"'
 'ec2 up --instance-ids' = 'ec2 start-instances --instance-ids'
 'ec2 down --instance-ids' = 'ec2 stop-instances --instance-ids'
 'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
