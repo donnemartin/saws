@@ -20,6 +20,7 @@ class CompleterTest(unittest.TestCase):
     def create_completer(self):
         return AwsCompleter(awscli_completer,
                             self.iaws_cli.config,
+
                             refresh_instance_ids=False,
                             refresh_instance_tags=False,
                             refresh_bucket_names=False)
