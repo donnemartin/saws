@@ -53,9 +53,8 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1500
+[sub_commands]: 1398
 abort-environment-update
-abort-multipart-upload
 abort-multipart-upload
 abort-vault-lock
 accept-vpc-peering-connection
@@ -70,17 +69,11 @@ add-communication-to-case
 add-instance-groups
 add-option-to-option-group
 add-permission
-add-permission
-add-permission
 add-role-to-instance-profile
 add-source-identifier-to-subscription
 add-steps
 add-tags
-add-tags
-add-tags
 add-tags-to-on-premises-instances
-add-tags-to-resource
-add-tags-to-resource
 add-tags-to-resource
 add-tags-to-stream
 add-tags-to-vault
@@ -139,7 +132,6 @@ cancel-conversion-task
 cancel-export-task
 cancel-import-task
 cancel-job
-cancel-job
 cancel-reserved-instances-listing
 cancel-retrieval
 cancel-spot-fleet-requests
@@ -154,7 +146,6 @@ check-dns-availability
 check-domain-availability
 clone-stack
 complete-lifecycle-action
-complete-multipart-upload
 complete-multipart-upload
 complete-vault-lock
 configure-health-check
@@ -172,7 +163,6 @@ copy-image
 copy-object
 copy-option-group
 copy-snapshot
-copy-snapshot
 count-closed-workflow-executions
 count-open-workflow-executions
 count-pending-activity-tasks
@@ -181,10 +171,8 @@ cp
 create-access-key
 create-account-alias
 create-alias
-create-alias
 create-app
 create-app-cookie-stickiness-policy
-create-application
 create-application
 create-application-version
 create-association
@@ -200,8 +188,6 @@ create-cache-subnet-group
 create-cached-iscsi-volume
 create-case
 create-cloud-front-origin-access-identity
-create-cluster
-create-cluster
 create-cluster
 create-cluster-parameter-group
 create-cluster-security-group
@@ -226,7 +212,6 @@ create-db-snapshot
 create-db-subnet-group
 create-default-roles
 create-deployment
-create-deployment
 create-deployment-config
 create-deployment-group
 create-device-pool
@@ -235,11 +220,9 @@ create-directory
 create-distribution
 create-document
 create-domain
-create-domain
 create-environment
 create-evaluation
 create-event-source-mapping
-create-event-subscription
 create-event-subscription
 create-file-system
 create-flow-logs
@@ -261,7 +244,6 @@ create-instance-profile
 create-interconnect
 create-internet-gateway
 create-invalidation
-create-job
 create-job
 create-key
 create-key-pair
@@ -285,8 +267,6 @@ create-open-id-connect-provider
 create-option-group
 create-or-update-tags
 create-pipeline
-create-pipeline
-create-pipeline
 create-placement-group
 create-platform-application
 create-platform-endpoint
@@ -309,13 +289,9 @@ create-saml-provider
 create-security-group
 create-service
 create-snapshot
-create-snapshot
-create-snapshot
-create-snapshot
 create-snapshot-copy-grant
 create-snapshot-from-volume-recovery-point
 create-spot-datafeed-subscription
-create-stack
 create-stack
 create-storage-location
 create-stored-iscsi-volume
@@ -324,8 +300,6 @@ create-streaming-distribution
 create-subnet
 create-subscription
 create-table
-create-tags
-create-tags
 create-tags
 create-tapes
 create-topic
@@ -360,7 +334,6 @@ delete-alias
 delete-analysis-scheme
 delete-app
 delete-application
-delete-application
 delete-application-version
 delete-archive
 delete-association
@@ -381,7 +354,6 @@ delete-cache-security-group
 delete-cache-subnet-group
 delete-chap-credentials
 delete-cloud-front-origin-access-identity
-delete-cluster
 delete-cluster
 delete-cluster-parameter-group
 delete-cluster-security-group
@@ -410,12 +382,10 @@ delete-directory
 delete-distribution
 delete-document
 delete-domain
-delete-domain
 delete-endpoint
 delete-environment-configuration
 delete-evaluation
 delete-event-source-mapping
-delete-event-subscription
 delete-event-subscription
 delete-expression
 delete-file-system
@@ -465,11 +435,8 @@ delete-objects
 delete-open-id-connect-provider
 delete-option-group
 delete-pipeline
-delete-pipeline
-delete-pipeline
 delete-placement-group
 delete-platform-application
-delete-policy
 delete-policy
 delete-policy-version
 delete-preset
@@ -490,13 +457,10 @@ delete-server-certificate
 delete-service
 delete-signing-certificate
 delete-snapshot
-delete-snapshot
-delete-snapshot
 delete-snapshot-copy-grant
 delete-snapshot-schedule
 delete-spot-datafeed-subscription
 delete-ssh-public-key
-delete-stack
 delete-stack
 delete-stream
 delete-streaming-distribution
@@ -504,9 +468,6 @@ delete-subnet
 delete-subscription-filter
 delete-suggester
 delete-table
-delete-tags
-delete-tags
-delete-tags
 delete-tags
 delete-tags-for-domain
 delete-tape
@@ -521,7 +482,6 @@ delete-vault-access-policy
 delete-vault-notifications
 delete-virtual-interface
 delete-virtual-mfa-device
-delete-volume
 delete-volume
 delete-vpc
 delete-vpc-endpoints
@@ -544,7 +504,6 @@ deregister-on-premises-instance
 deregister-rds-db-instance
 deregister-task-definition
 deregister-volume
-describe-account-attributes
 describe-account-attributes
 describe-account-limits
 describe-activity-type
@@ -588,7 +547,6 @@ describe-cluster-snapshots
 describe-cluster-subnet-groups
 describe-cluster-versions
 describe-clusters
-describe-clusters
 describe-commands
 describe-communications
 describe-configuration-options
@@ -629,18 +587,12 @@ describe-elastic-ips
 describe-elastic-load-balancers
 describe-engine-default-cluster-parameters
 describe-engine-default-parameters
-describe-engine-default-parameters
 describe-environment-health
 describe-environment-resources
 describe-environments
 describe-evaluations
 describe-event-categories
-describe-event-categories
 describe-event-subscriptions
-describe-event-subscriptions
-describe-events
-describe-events
-describe-events
 describe-events
 describe-export-tasks
 describe-expressions
@@ -664,7 +616,6 @@ describe-instance-attribute
 describe-instance-health
 describe-instance-status
 describe-instances
-describe-instances
 describe-instances-health
 describe-interconnects
 describe-internet-gateways
@@ -678,7 +629,6 @@ describe-lifecycle-hooks
 describe-load-balancer-attributes
 describe-load-balancer-policies
 describe-load-balancer-policy-types
-describe-load-balancers
 describe-load-balancers
 describe-load-based-auto-scaling
 describe-locations
@@ -733,13 +683,10 @@ describe-security-groups
 describe-service-access-policies
 describe-service-errors
 describe-services
-describe-services
 describe-severity-levels
 describe-snapshot-attribute
 describe-snapshot-copy-grants
 describe-snapshot-schedule
-describe-snapshots
-describe-snapshots
 describe-snapshots
 describe-spot-datafeed-subscription
 describe-spot-fleet-instances
@@ -753,19 +700,13 @@ describe-stack-resource
 describe-stack-resources
 describe-stack-summary
 describe-stacks
-describe-stacks
 describe-step
 describe-stored-iscsi-volumes
-describe-stream
 describe-stream
 describe-subnets
 describe-subscription-filters
 describe-suggesters
 describe-table
-describe-tags
-describe-tags
-describe-tags
-describe-tags
 describe-tags
 describe-tape-archives
 describe-tape-recovery-points
@@ -786,7 +727,6 @@ describe-virtual-gateways
 describe-virtual-interfaces
 describe-volume-attribute
 describe-volume-status
-describe-volumes
 describe-volumes
 describe-vpc-attribute
 describe-vpc-classic-link
@@ -866,7 +806,6 @@ generate-data-key
 generate-data-key-without-plaintext
 generate-random
 get
-get
 get-access-key-last-used
 get-account-authorization-details
 get-account-password-policy
@@ -898,6 +837,8 @@ get-cloud-front-origin-access-identity-config
 get-cognito-events
 get-config
 get-console-output
+get-context-keys-for-custom-policy
+get-context-keys-for-principal-policy
 get-credential-report
 get-credentials-for-identity
 get-data-retrieval-policy
@@ -963,12 +904,10 @@ get-pipeline-definition
 get-pipeline-state
 get-platform-application-attributes
 get-policy
-get-policy
 get-policy-version
 get-project
 get-queue-attributes
 get-queue-url
-get-records
 get-records
 get-repository
 get-resource-config-history
@@ -982,12 +921,10 @@ get-send-statistics
 get-server-certificate
 get-session-token
 get-shard-iterator
-get-shard-iterator
 get-shipping-label
 get-snapshot-limits
 get-ssh-public-key
 get-stack-policy
-get-status
 get-status
 get-streaming-distribution
 get-streaming-distribution-config
@@ -1040,7 +977,6 @@ list-buckets
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
 list-clusters
-list-clusters
 list-container-instances
 list-datasets
 list-dead-letter-source-queues
@@ -1054,8 +990,6 @@ list-discovered-resources
 list-distributions
 list-documents
 list-domain-names
-list-domains
-list-domains
 list-domains
 list-endpoints-by-platform-application
 list-entities-for-policy
@@ -1073,7 +1007,6 @@ list-hosted-zones
 list-hosted-zones-by-name
 list-hsms
 list-identities
-list-identities
 list-identity-policies
 list-identity-pool-usage
 list-identity-pools
@@ -1081,8 +1014,6 @@ list-instance-profiles
 list-instance-profiles-for-role
 list-instances
 list-invalidations
-list-jobs
-list-jobs
 list-jobs
 list-jobs-by-pipeline
 list-jobs-by-status
@@ -1093,7 +1024,6 @@ list-luna-clients
 list-metrics
 list-mfa-devices
 list-multipart-uploads
-list-multipart-uploads
 list-object-versions
 list-objects
 list-on-premises-instances
@@ -1101,9 +1031,6 @@ list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
 list-parts
-list-parts
-list-pipelines
-list-pipelines
 list-pipelines
 list-platform-applications
 list-policies
@@ -1118,7 +1045,6 @@ list-reusable-delegation-sets
 list-role-policies
 list-roles
 list-runs
-list-runs
 list-saml-providers
 list-samples
 list-server-certificates
@@ -1130,15 +1056,11 @@ list-stacks
 list-steps
 list-streaming-distributions
 list-streams
-list-streams
 list-subscriptions
 list-subscriptions-by-topic
 list-suites
 list-tables
 list-tags-for-domain
-list-tags-for-resource
-list-tags-for-resource
-list-tags-for-resource
 list-tags-for-resource
 list-tags-for-resources
 list-tags-for-stream
@@ -1176,7 +1098,6 @@ modify-db-cluster-parameter-group
 modify-db-instance
 modify-db-parameter-group
 modify-db-subnet-group
-modify-event-subscription
 modify-event-subscription
 modify-hapg
 modify-hsm
@@ -1276,12 +1197,10 @@ record-activity-task-heartbeat
 record-lifecycle-action-heartbeat
 refresh-trusted-advisor-check
 register
-register
 register-activity-type
 register-application-revision
 register-container-instance
 register-device
-register-domain
 register-domain
 register-ecs-cluster
 register-elastic-ip
@@ -1298,16 +1217,10 @@ release-address
 remove-client-id-from-open-id-connect-provider
 remove-option-from-option-group
 remove-permission
-remove-permission
-remove-permission
 remove-role-from-instance-profile
 remove-source-identifier-from-subscription
 remove-tags
-remove-tags
-remove-tags
 remove-tags-from-on-premises-instances
-remove-tags-from-resource
-remove-tags-from-resource
 remove-tags-from-resource
 remove-tags-from-stream
 remove-tags-from-vault
@@ -1405,6 +1318,8 @@ set-vault-notifications
 shutdown-gateway
 signal-resource
 signal-workflow-execution
+simulate-custom-policy
+simulate-principal-policy
 socks
 split-shard
 ssh
@@ -1426,7 +1341,6 @@ stop-stack
 stop-task
 submit-container-state-change
 submit-task-state-change
-subscribe
 subscribe
 subscribe-to-dataset
 suggest
@@ -1455,7 +1369,6 @@ update-access-key
 update-account-password-policy
 update-alias
 update-app
-update-application
 update-application
 update-application-version
 update-association-status
@@ -1498,7 +1411,6 @@ update-ml-model
 update-my-user-profile
 update-open-id-connect-provider-thumbprint
 update-pipeline
-update-pipeline
 update-pipeline-notifications
 update-pipeline-status
 update-radius
@@ -1514,7 +1426,6 @@ update-service-access-policies
 update-signing-certificate
 update-snapshot-schedule
 update-ssh-public-key
-update-stack
 update-stack
 update-streaming-distribution
 update-subscription
@@ -1540,19 +1451,6 @@ verify-domain-dkim
 verify-domain-identity
 verify-email-identity
 wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
-wait
 website
 [global_options]: 11
 --color
@@ -1574,6 +1472,6 @@ website
 pending
 running
 shutting-down
-terminated
-stopping
 stopped
+stopping
+terminated
