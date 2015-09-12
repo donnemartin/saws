@@ -4,31 +4,43 @@ from __future__ import print_function
 from pygments.token import Token
 
 
-def create_toolbar_handler(is_color, is_fuzzy, is_shortcuts):
+def create_toolbar_handler(color_cfg, fuzzy_cfg, shortcuts_cfg):
+    """Creates the toolbar handler.
 
-    assert callable(is_color)
-    assert callable(is_fuzzy)
-    assert callable(is_shortcuts)
+    Args:
+        * color_cfg: A boolean that spedifies whether to color the output.
+        * fuzzy_cfg: A boolean that spedifies whether to do fuzzy matching.
+        * shortcuts_cfg: A boolean that spedifies whether to match shortcuts.
+
+    Returns:
+        A callable get_toolbar_items.
+    """
+    assert callable(color_cfg)
+    assert callable(fuzzy_cfg)
+    assert callable(shortcuts_cfg)
 
     def get_toolbar_items(_):
+        """Returns bottom menu items.
+
+        Args:
+            * _: An instance of prompt_toolkit's Cli (not used).
+
+        Returns:
+            A list of Token.Toolbar.
         """
-        Return bottom menu items
-        :param _: cli instance
-        :return: list of Token.Toolbar
-        """
-        if is_color():
+        if color_cfg():
             color_token = Token.Toolbar.On
             color = 'ON'
         else:
             color_token = Token.Toolbar.Off
             color = 'OFF'
-        if is_fuzzy():
+        if fuzzy_cfg():
             fuzzy_token = Token.Toolbar.On
             fuzzy = 'ON'
         else:
             fuzzy_token = Token.Toolbar.Off
             fuzzy = 'OFF'
-        if is_shortcuts():
+        if shortcuts_cfg():
             shortcuts_token = Token.Toolbar.On
             shortcuts = 'ON'
         else:
@@ -42,4 +54,5 @@ def create_toolbar_handler(is_color, is_fuzzy, is_shortcuts):
             (Token.Toolbar, ' [F5] Refresh '),
             (Token.Toolbar, ' [F10] Exit ')
         ]
+
     return get_toolbar_items
