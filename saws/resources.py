@@ -9,11 +9,46 @@ from .commands import SOURCES_DIR
 
 
 class AwsResources(object):
+    """Loads and stores AWS resources.
+
+    Attributes:
+        * instance_ids: A list of instance ids
+        * instance_tag_keys: A set of instance tag keys
+        * instance_tag_values: A set of isntance tag values
+        * bucket_names: A list of bucket names
+        * refresh_instance_ids: A boolean that determines whether to
+            refresh instance ids by querying AWS.
+        * refresh_instance_tags: A boolean that determines whether to
+            refresh instance tags by querying AWS.
+        * refresh_bucket_names: A boolean that determines whether to
+            refresh bucket names by querying AWS.
+        * INSTANCE_IDS_MARKER: A string marking the start of
+            instance ids in data/RESOURCES.txt
+        * INSTANCE_TAG_KEYS_MARKER: A string marking the start of
+            instance tag keys in data/RESOURCES.txt
+        * INSTANCE_TAG_VALUES_MARKER: A string marking the start of
+            instance tag values in data/RESOURCES.txt
+        * BUCKET_NAMES_MARKER: A string marking the start of i
+            bucket names in data/RESOURCES.txt
+    """
 
     def __init__(self,
                  refresh_instance_ids=True,
                  refresh_instance_tags=True,
                  refresh_bucket_names=True):
+        """Initializes AwsResources.
+
+        Args:
+            * refresh_instance_ids: A boolean that determines whether to
+                refresh instance ids by querying AWS.
+            * refresh_instance_tags: A boolean that determines whether to
+                refresh instance tags by querying AWS.
+            * refresh_bucket_names: A boolean that determines whether to
+                refresh bucket names by querying AWS.
+
+        Returns:
+            None.
+        """
         self.instance_ids = []
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
@@ -21,21 +56,31 @@ class AwsResources(object):
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_instance_tags = refresh_instance_tags
         self.refresh_bucket_names = refresh_bucket_names
-        self.instance_ids_marker = '[instance ids]'
-        self.instance_tag_keys_marker = '[instance tag keys]'
-        self.instance_tag_values_marker = '[instance tag values]'
-        self.bucket_names_marker = '[bucket names]'
+        self.INSTANCE_IDS_MARKER = '[instance ids]'
+        self.INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
+        self.INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
+        self.BUCKET_NAMES_MARKER = '[bucket names]'
 
     def refresh(self, force_refresh=False):
+        """Refreshes the AWS resources and caches them to a file.
+
+        This function is called on startup.
+        If no cache exists, it queries AWS to build the resource lists.
+        Pressing the `F5` key will set force_refresh to True, which proceeds
+        to refresh the list regardless of whether a cache exists.
+        Before returning, it saves the resource lists to cache.
+
+        Args:
+            * force_refresh: A boolean determines whether to force a cache
+                refresh.  This value is set to True when the user presses `F5`.
+
+        Returns:
+            None.
         """
-        Refreshes the AWS resources
-        :return: None
-        """
-        p = SOURCES_DIR
-        f = os.path.join(p, 'data/RESOURCES.txt')
+        file_path = os.path.join(SOURCES_DIR, 'data/RESOURCES.txt')
         if not force_refresh:
             try:
-                self.refresh_resources_from_file(f, p)
+                self.refresh_resources_from_file(file_path)
                 print('Loaded resources from cache')
             except IOError:
                 print('No resource cache found')
@@ -54,11 +99,19 @@ class AwsResources(object):
                 self.query_bucket_names()
             print('Done refreshing')
         try:
-            self.save_resources_to_file(f, p)
+            self.save_resources_to_file(file_path)
         except IOError as e:
             print(e)
 
     def query_instance_ids(self):
+        """Queries and stores instance ids from AWS.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
         command = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
         try:
             result = subprocess.check_output(command, shell=True)
@@ -68,6 +121,14 @@ class AwsResources(object):
             print(e)
 
     def query_instance_tag_keys(self):
+        """Queries and stores instance tag keys from AWS.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
         command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         try:
             result = subprocess.check_output(command, shell=True)
@@ -76,6 +137,14 @@ class AwsResources(object):
             print(e)
 
     def query_instance_tag_values(self):
+        """Queries and stores instance tag values from AWS.
+
+        Args:
+            * None
+
+        Returns:
+            None.
+        """
         command = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
         try:
             result = subprocess.check_output(command, shell=True)
@@ -84,6 +153,14 @@ class AwsResources(object):
             print(e)
 
     def query_bucket_names(self):
+        """Queries and stores bucket names from AWS.
+
+        Args:
+            * None
+
+        Returns:
+            None
+        """
         command = 'aws s3 ls'
         try:
             output = subprocess.check_output(command, shell=True)
@@ -98,14 +175,31 @@ class AwsResources(object):
         except Exception as e:
             print(e)
 
-    def refresh_resources_from_file(self, f, p):
+    def refresh_resources_from_file(self, file_path):
+        """Refreshes the AWS resources from data/RESOURCES.txt.
+
+        Args:
+            * file_path: A string representing the resource file path.
+
+        Returns:
+            None.
+        """
+
         class ResType(Enum):
+            """Enum specifying the resource type.
+
+            Attributes:
+                * INSTANCE_IDS: An int representing instance ids.
+                * INSTANCE_TAG_KEYS: An int representing instance tag keys.
+                * INSTANCE_TAG_VALUES: An int representing instance tag values.
+                * BUCKET_NAMES: An int representing bucket names.
+            """
 
             INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
                 BUCKET_NAMES = range(4)
 
         res_type = ResType.INSTANCE_IDS
-        with open(f) as fp:
+        with open(file_path) as fp:
             self.instance_ids = []
             self.instance_tag_keys = set()
             self.instance_tag_values = set()
@@ -116,16 +210,16 @@ class AwsResources(object):
                 line = re.sub('\n', '', line)
                 if line.strip() == '':
                     continue
-                elif self.instance_ids_marker in line:
+                elif self.INSTANCE_IDS_MARKER in line:
                     res_type = ResType.INSTANCE_IDS
                     continue
-                elif self.instance_tag_keys_marker in line:
+                elif self.INSTANCE_TAG_KEYS_MARKER in line:
                     res_type = ResType.INSTANCE_TAG_KEYS
                     continue
-                elif self.instance_tag_values_marker in line:
+                elif self.INSTANCE_TAG_VALUES_MARKER in line:
                     res_type = ResType.INSTANCE_TAG_VALUES
                     continue
-                elif self.bucket_names_marker in line:
+                elif self.BUCKET_NAMES_MARKER in line:
                     res_type = ResType.BUCKET_NAMES
                     continue
                 if res_type == ResType.INSTANCE_IDS:
@@ -139,17 +233,25 @@ class AwsResources(object):
             self.instance_tag_keys = set(instance_tag_keys_list)
             self.instance_tag_values = set(instance_tag_values_list)
 
-    def save_resources_to_file(self, f, p):
-        with open(f, 'w') as fp:
-            fp.write(self.instance_ids_marker + '\n')
+    def save_resources_to_file(self, file_path):
+        """Saves the AWS resources to data/RESOURCES.txt.
+
+        Args:
+            * file_path: A string representing the resource file path.
+
+        Returns:
+            None.
+        """
+        with open(file_path, 'w') as fp:
+            fp.write(self.INSTANCE_IDS_MARKER + '\n')
             for instance_id in self.instance_ids:
                 fp.write(instance_id + '\n')
-            fp.write(self.instance_tag_keys_marker + '\n')
+            fp.write(self.INSTANCE_TAG_KEYS_MARKER + '\n')
             for instance_tag_key in self.instance_tag_keys:
                 fp.write(instance_tag_key + '\n')
-            fp.write(self.instance_tag_values_marker + '\n')
+            fp.write(self.INSTANCE_TAG_VALUES_MARKER + '\n')
             for instance_tag_value in self.instance_tag_values:
                 fp.write(instance_tag_value + '\n')
-            fp.write(self.bucket_names_marker + '\n')
+            fp.write(self.BUCKET_NAMES_MARKER + '\n')
             for bucket_name in self.bucket_names:
                 fp.write(bucket_name + '\n')
