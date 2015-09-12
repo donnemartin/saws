@@ -15,10 +15,10 @@ def cli():
     Create and call the CLI
     """
     try:
-        iaws_cli = Saws()
-        iaws_cli.run_cli()
+        saws = Saws()
+        saws.run_cli()
     except (EOFError, KeyboardInterrupt):
-        iaws_cli.config.write()
+        saws.config.write()
 
 
 if __name__ == "__main__":
