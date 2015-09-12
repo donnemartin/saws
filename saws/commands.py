@@ -35,12 +35,34 @@ SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
 
 
 class CommandType(Enum):
+    """Enum specifying the command type.
+
+    Attributes:
+        * COMMANDS: An int representing commands.
+        * SUB_COMMANDS: An int representing subcommands.
+        * GLOBAL_OPTIONS: An int representing global options.
+        * RESOURCE_OPTIONS: An int representing resource options.
+        * EC2_STATES: An int representing ec2 running states.
+    """
 
     COMMANDS, SUB_COMMANDS, GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
         EC2_STATES = range(5)
 
 
 def generate_all_commands():
+    """Generates all commands from the data/SOURCES.txt file.
+
+    Args:
+        * None.
+
+    Returns:
+        A tuple, where each tuple element is a list of:
+            * commands
+            * sub_commands
+            * global_options
+            * resource_options
+            * ec2_states
+    """
     commands = []
     sub_commands = []
     global_options = []
