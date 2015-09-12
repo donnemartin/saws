@@ -9,6 +9,26 @@ from .config import read_configuration, get_shortcuts
 
 
 class CommandLexer(RegexLexer):
+    """Provides highlighting for commands.
+
+    Custom Pygments Lexers seem to require a specific class structure, samples:
+        http://pygments.org/docs/lexerdevelopment/
+    TODO: Investigate how to clean this up while still keeping Pygments happy.
+
+    Attributes:
+        * config: An instance of ConfigObj
+        * shortcuts: An OrderedDict containing the shortcut commands as the
+            keys and their corresponding full commands as the values.
+        * shortcut_tokens: A list containing words for each shortcut key:
+            key: 'aws ec2 ls' -> shortcut_tokens: ['aws', 'ec2', 'ls']
+        * commands: A tuple, where each tuple element is a list of:
+            * commands
+            * sub_commands
+            * global_options
+            * resource_options
+            * ec2_states
+        * tokens: A dictionary of pygments tokens.
+    """
 
     config = read_configuration()
     shortcuts = get_shortcuts(config)
