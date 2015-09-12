@@ -6,13 +6,20 @@ import click
 from .saws import Saws
 
 
+# Disable Warning: Click detected the use of the unicode_literals
+# __future__ import.
 click.disable_unicode_literals_warning = True
 
 
 @click.command()
 def cli():
-    """
-    Create and call the CLI
+    """Creates and calls Saws.
+
+    Args:
+        * None.
+
+    Returns:
+        None.
     """
     try:
         saws = Saws()
