@@ -6,13 +6,22 @@ from prompt_toolkit.keys import Keys
 from .commands import AWS_COMMAND
 
 
-def get_key_manager(set_color, get_color,
-                    set_fuzzy_match, get_fuzzy_match,
-                    set_shortcut_match, get_shortcut_match,
-                    refresh_resources, handle_docs):
-    """
-    Create and initialize keybinding manager
-    :return: KeyBindingManager
+def create_key_manager(set_color, get_color,
+                       set_fuzzy_match, get_fuzzy_match,
+                       set_shortcut_match, get_shortcut_match,
+                       refresh_resources, handle_docs):
+    """Creates and initializes the keybinding manager.
+
+    Args:
+        * set_color: A function that sets the color output config.
+        * get_color: A function that gets the color output config.
+        * set_fuzzy_match: A function that sets the fuzzy match config.
+        * get_fuzzy_match: A function that gets the fuzzy match config.
+        * set_shortcut_match: A function that sets the shortcut match config.
+        * get_shortcut_match: A function that gets the shortcut match config.
+
+    Returns:
+        A KeyBindingManager.
     """
     assert callable(set_color)
     assert callable(get_color)
@@ -26,55 +35,90 @@ def get_key_manager(set_color, get_color,
 
     @manager.registry.add_binding(Keys.F1)
     def handle_f1(_):
-        """
-        When F1 has been pressed, fill in the "docs" command.
+        """Inputs the "docs" command when the `F1` key is pressed.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         handle_docs(from_fkey=True)
 
     @manager.registry.add_binding(Keys.F2)
     def handle_f2(_):
-        """
-        Enable/Disable color output.
+        """Enables/Disables color output.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         set_color(not get_color())
 
     @manager.registry.add_binding(Keys.F3)
     def handle_f3(_):
-        """
-        Enable/Disable fuzzy matching.
+        """Enables/Disables fuzzy matching.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         set_fuzzy_match(not get_fuzzy_match())
 
     @manager.registry.add_binding(Keys.F4)
     def handle_f4(_):
-        """
-        Enable/Disable shortcut matching.
+        """Enables/Disables shortcut matching.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         set_shortcut_match(not get_shortcut_match())
 
     @manager.registry.add_binding(Keys.F5)
     def handle_f5(_):
-        """
-        Refreshes AWS resources.
+        """Refreshes AWS resources.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         refresh_resources()
 
     @manager.registry.add_binding(Keys.F10)
     def handle_f10(_):
-        """
-        When F10 has been pressed, quit.
+        """Quits when the `F10` key is pressed.
+
+        Args:
+            * _: An instance of prompt_toolkit's Event (not used)
+
+        Returns:
+            None.
         """
         raise EOFError
 
     @manager.registry.add_binding(Keys.ControlSpace)
     def handle_ctrl_space(event):
-        """
-        Initialize autocompletion at cursor.
+        """Initializes autocompletion at the cursor.
 
         If the autocompletion menu is not showing, display it with the
         appropriate completions for the context.
 
         If the menu is showing, select the next completion.
+
+        Args:
+            * event: An instance of prompt_toolkit's Event
+
+        Returns:
+            None.
         """
         b = event.cli.current_buffer
         if b.complete_state:
