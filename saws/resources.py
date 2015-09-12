@@ -172,6 +172,7 @@ class AwsResources(object):
             output = subprocess.check_output(command,
                                              universal_newlines=True,
                                              shell=True)
+            self.bucket_names = []
             result_list = output.split('\n')
             for result in result_list:
                 try:
