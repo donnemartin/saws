@@ -5,7 +5,6 @@ import shutil
 import os
 from collections import OrderedDict
 from configobj import ConfigObj
-from saws import __file__ as package_root
 
 
 def _read_config(usr_config, def_config=None):
@@ -42,14 +41,13 @@ def get_package_path():
         Find out pakage root path.
         :return: string: path
         """
-        return os.path.dirname(package_root)
+        return os.path.dirname(__file__)
 
 
 def read_configuration():
     config_template = 'sawsrc'
     config_name = '~/.sawsrc'
-    default_config = os.path.join(
-        get_package_path(), config_template)
+    default_config = os.path.join(get_package_path(), config_template)
     write_default_config(default_config, config_name)
     return _read_config(config_name, default_config)
 
