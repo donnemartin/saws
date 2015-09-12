@@ -7,12 +7,29 @@ import pygments.styles
 
 
 def style_factory(name):
+    """Retrieves the specified pygments style.
+
+    If the specified style is not found, the native style is returned.
+
+    Args:
+        * name: A string representing the pygments style.
+
+    Returns:
+        An instance of CliStyle.
+    """
     try:
         style = pygments.styles.get_style_by_name(name)
     except ClassNotFound:
         style = pygments.styles.get_style_by_name('native')
 
     class CliStyle(Style):
+        """Custom Saws Style.
+
+        Provides styles for the completions menu and toolbar.
+
+        Attributes:
+            * styles: A dictionary that contains pygments style information.
+        """
 
         styles = {}
         styles.update(style.styles)
