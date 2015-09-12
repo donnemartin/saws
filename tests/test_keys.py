@@ -5,7 +5,7 @@ import unittest
 import pip
 import pexpect
 import mock
-from saws.keys import get_key_manager
+from saws.keys import create_key_manager
 #from prompt_toolkit import CommandLineInterface
 from prompt_toolkit.buffer import Buffer
 #from prompt_toolkit.keys import Keys

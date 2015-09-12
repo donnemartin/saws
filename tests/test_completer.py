@@ -19,11 +19,7 @@ class CompleterTest(unittest.TestCase):
 
     def create_completer(self):
         return AwsCompleter(awscli_completer,
-                            self.iaws_cli.config,
-
-                            refresh_instance_ids=False,
-                            refresh_instance_tags=False,
-                            refresh_bucket_names=False)
+                            self.iaws_cli.config)
 
     def create_completer_event(self):
         return Mock()
@@ -113,5 +109,5 @@ class CompleterTest(unittest.TestCase):
     def test_substitutions(self):
         command = 'aws ec2 ls --filters "Name=tag-key,Values=%s prod"'
         expected = 'aws ec2 ls --filters "Name=tag-key,Values=prod"'
-        result = self.completer.handle_subs(command)
+        result = self.completer.replace_substitution(command)
         assert result == expected
