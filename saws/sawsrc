@@ -23,20 +23,40 @@ refresh_bucket_names = True
 
 [shortcuts]
 
-# Shortcuts are evaluated top to bottom, so place simpler shortcuts
-# near the bottom and more complex shortcuts at the top.
-# Once a shortcut key match is found, the corresponding value is
-# substituted and matching stops until the next keypress.
-# Shortcuts are only shown after the user types 'aws' as the first
-# command and is inputting the subcommand:
-#     'aws [show shortcut matches]'
+# Shortcut entries in this file follow the form:
+#   'shortcut command' = 'full command'
+# Once a shortcut command is found, the corresponding full command is
+# substituted and matching stops.  Only one shortcut per command is supported.
+# Shortcuts are evaluated top to bottom, so place more complex
+# shortcuts near the top and simpler shortcuts near the bottom.
+# Currently, shortcuts are only shown after the user types 'aws' as the
+# first command and the user is currently inputting the subcommand:
+#   aws [show shortcut matches]
+# Shortcuts optionally support fuzzy completion.
+
+# Simple shortcut demonstration to replace describe-instances with ls
+# Running the following command will kick off fuzzy auto-completion:
+#   aws ec2ls
+'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
+
+# The following entries are placed solely for easy fuzzy autocompletion
+# For example: the following commands will kick off fuzzy auto-completion:
+#   aws ec2start
+#   aws ec2stop
+'ec2 start-instances --instance-ids' = 'ec2 start-instances --instance-ids'
+'ec2 stop-instances --instance-ids' = 'ec2 stop-instances --instance-ids'
+
+# The following shortcuts support a string substitution:
+#   aws ls --ec2-tag-key [tag-key]
+#   aws ls --ec2-tag-value [tag-value]
 'ec2 ls --ec2-tag-key' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
 'ec2 ls --ec2-tag-value' = 'ec2 describe-instances --filters "Name=tag-value,Values=%s"'
-# States: [pending | running | shutting-down | terminated | stopping | stopped]
+
+# Saws will auto-complete the following --ec2-state auto-completions:
+#   [pending | running | shutting-down | terminated | stopping | stopped]
 'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
-'ec2 up --instance-ids' = 'ec2 start-instances --instance-ids'
-'ec2 down --instance-ids' = 'ec2 stop-instances --instance-ids'
-'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
+
+# Place simpler shortcuts near the bottom
 'ec2 ls' = 'ec2 describe-instances'
 'emr ls' = 'emr list-clusters'
 'elb ls' = 'elb describe-load-balancers'
