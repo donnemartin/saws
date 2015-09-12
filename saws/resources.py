@@ -114,7 +114,9 @@ class AwsResources(object):
         """
         command = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
         try:
-            result = subprocess.check_output(command, shell=True)
+            result = subprocess.check_output(command,
+                                             universal_newlines=True,
+                                             shell=True)
             result = re.sub('\n', ' ', result)
             self.instance_ids = result.split()
         except Exception as e:
@@ -131,7 +133,9 @@ class AwsResources(object):
         """
         command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         try:
-            result = subprocess.check_output(command, shell=True)
+            result = subprocess.check_output(command,
+                                             universal_newlines=True,
+                                             shell=True)
             self.instance_tag_keys = set(result.split('\t'))
         except Exception as e:
             print(e)
@@ -147,7 +151,9 @@ class AwsResources(object):
         """
         command = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
         try:
-            result = subprocess.check_output(command, shell=True)
+            result = subprocess.check_output(command,
+                                             universal_newlines=True,
+                                             shell=True)
             self.instance_tag_values = set(result.split('\t'))
         except Exception as e:
             print(e)
@@ -163,7 +169,9 @@ class AwsResources(object):
         """
         command = 'aws s3 ls'
         try:
-            output = subprocess.check_output(command, shell=True)
+            output = subprocess.check_output(command,
+                                             universal_newlines=True,
+                                             shell=True)
             result_list = output.split('\n')
             for result in result_list:
                 try:
@@ -242,7 +250,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-        with open(file_path, 'w') as fp:
+        with open(file_path, 'wt') as fp:
             fp.write(self.INSTANCE_IDS_MARKER + '\n')
             for instance_id in self.instance_ids:
                 fp.write(instance_id + '\n')
