@@ -12,8 +12,21 @@ from .resources import AwsResources
 
 
 class AwsCompleter(Completer):
-    """
-    Completer for AWS commands and parameters.
+    """Completer for AWS commands, subcommands, options, and parameters.
+
+    Attributes:
+        * aws_completer: An instance of the official awscli Completer.
+        * aws_completions: A set of completions to show the user.
+        * config: An instance of ConfigObj, reads from ~/.sawsrc
+        * ec2_states: A list of the possible instance states.
+        * text_utils: An instance of TextUtils.
+        * fuzzy_match: A boolean that determines whether to use fuzzy matching.
+        * shortcut_match: A boolean that determines whether to match shortcuts.
+        * BASE_COMMAND: A string representing the 'aws' command.
+        * DOCS_COMMAND: A string representing the 'docs' command.
+        * resources: An instance of AwsResources.
+        * shortcuts: An OrderedDict containing shortcuts commands as keys
+            and their corresponding full commands as values.
     """
 
     def __init__(self,
@@ -21,39 +34,73 @@ class AwsCompleter(Completer):
                  config,
                  ec2_states=[],
                  fuzzy_match=False,
-                 shortcut_match=False,
-                 refresh_instance_ids=True,
-                 refresh_instance_tags=True,
-                 refresh_bucket_names=True):
-        """
-        Initialize the completer
-        :return:
+                 shortcut_match=False):
+        """Initializes AwsCompleter.
+
+        Args:
+            * aws_completer: The official aws cli completer module.
+            * config: An instance of ConfigObj, reads from ~/.sawsrc
+            * fuzzy_match: A boolean that determines whether to use
+                fuzzy matching.
+            * shortcut_match: A boolean that determines whether to
+                match shortcuts.
+
+        Returns:
+            None.
         """
         self.aws_completer = aws_completer
         self.aws_completions = set()
+        self.config = config
         self.ec2_states = ec2_states
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
         self.BASE_COMMAND = AWS_COMMAND[0]
         self.DOCS_COMMAND = AWS_DOCS[0]
-        self.resources = AwsResources(refresh_instance_ids,
-                                      refresh_instance_tags,
-                                      refresh_bucket_names)
-        self.resources.refresh()
         # TODO: Refactor to use config.get_shortcuts()
-        self.shortcuts = OrderedDict(zip(config['shortcuts'].keys(),
-                                         config['shortcuts'].values()))
+        self.shortcuts = OrderedDict(zip(self.config['shortcuts'].keys(),
+                                         self.config['shortcuts'].values()))
+        self.resources = \
+            AwsResources(self.config['main'].as_bool('refresh_instance_ids'),
+                         self.config['main'].as_bool('refresh_instance_tags'),
+                         self.config['main'].as_bool('refresh_bucket_names'))
+        self.resources.refresh()
 
-    def handle_shortcuts(self, text):
+    def replace_shortcut(self, text):
+        """Replaces matched shortcut commands with their full command.
+
+        Currently, only one shortcut is replaced before shortcut replacement
+        terminates, although this function could potentially be extended
+        to replace mutliple shortcuts.
+
+        Args:
+            * text: A string representing the input command text to replace.
+
+        Returns:
+            A string representing input command text with a shortcut
+                replaced, if one has been found.
+        """
         for key in self.shortcuts.keys():
             if key in text:
-                # Replace shortcut with full command
                 text = re.sub(key, self.shortcuts[key], text)
-                text = self.handle_subs(text)
+                text = self.replace_substitution(text)
+                break
         return text
 
-    def handle_subs(self, text):
+    def replace_substitution(self, text):
+        """Replaces a `%s` with the word immediately following it.
+
+        Currently, only one substitution is done before replacement terminates,
+        although this function could potentially be extended to do multiple
+        subsitutions.
+
+        Args:
+            * text: A string representing the input command text to replace.
+
+        Returns:
+            A string representing input command text with a substitution,
+            if one has been found.
+        """
         if '%s' in text:
             tokens = text.split()
             text = ' '.join(tokens[:-1])
@@ -62,24 +109,53 @@ class AwsCompleter(Completer):
 
     def get_resource_completions(self, words, word_before_cursor,
                                  option_text, resource):
-        if words[-1] == option_text or \
-            (len(words) > 1 and
-                (words[-2] == option_text and word_before_cursor != '')):
+        """Get completions for enabled AWS resources.
+
+        Args:
+            * words: A list of words that represent the input command text.
+            * word_before_cursor: A string representing the word before the
+                cursor.
+            * option_text: A string to match that represents the resource's
+                option text, such as '--ec2-state'.  For example, if
+                option_text is '--ec2-state' and it is the word before the
+                cursor, then display associated resource completions found
+                in the resource parameter such as pending, running, etc.
+            * resource: A list that represents the resource completions to
+                display if option_text is matched.  For example, instance ids,
+                instance tags, etc.
+
+        Returns:
+            A generator of prompt_toolkit's Completion objects, containing
+            matched completions.
+        """
+        if len(words) <= 1:
+            return
+        # Show the matching resources in the following scenarios:
+        # ... --instance-ids
+        # ... --instance-ids [user is now completing the instance id]
+        option_text_match = (words[-1] == option_text)
+        completing_res = (words[-2] == option_text and word_before_cursor != '')
+        if  option_text_match or completing_res:
             return self.text_utils.find_matches(word_before_cursor,
                                                 resource,
                                                 self.fuzzy_match)
 
     def get_completions(self, document, _):
-        """
-        Get completions for the current scope.
-        :param document:
-        :param _: complete_event
+        """Get completions for the current scope.
+
+        Args:
+            * document: An instance of prompt_toolkit's Document.
+            * _: An instance of prompt_toolkit's CompleteEvent (not used).
+
+        Returns:
+            A generator of prompt_toolkit's Completion objects, containing
+            matched completions.
         """
         # Capture the AWS CLI autocompleter and store it in a string
         old_stdout = sys.stdout
         sys.stdout = mystdout = cStringIO()
         try:
-            text = self.handle_shortcuts(document.text)
+            text = self.replace_shortcut(document.text)
             self.aws_completer.complete(text, len(text))
         except Exception as e:
             print('Exception: ', e)
