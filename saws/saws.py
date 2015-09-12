@@ -18,31 +18,46 @@ from .completer import AwsCompleter
 from .lexer import CommandLexer
 from .config import read_configuration
 from .style import style_factory
-from .keys import get_key_manager
+from .keys import create_key_manager
 from .toolbar import create_toolbar_handler
 from .commands import AWS_COMMAND, AWS_CONFIGURE, AWS_DOCS, AWS_HELP, \
     generate_all_commands
-from .logger import create_logger
+from .logger import SawsLogger
 from .__init__ import __version__
 
 
-click.disable_unicode_literals_warning = True
-
-
 class Saws(object):
+    """Encapsulates the Saws CLI.
+
+    Attributes:
+        * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
+        * config: An instance of ConfigObj, reads from ~/.sawsrc.
+        * commands: A list of commands from data/SOURCES.txt.
+        * sub_commands: A list of sub_commands from data/SOURCES.txt.
+        * global_options: A list of global_options from data/SOURCES.txt.
+        * resource_options: A list of resource_options from data/SOURCES.txt.
+        * ec2_states: A list of ec2_states from data/SOURCES.txt.
+        * completer: An instance of AwsCompleter.
+        * logger: An instance of SawsLoggerself.
+        * theme: A string representing the lexer theme.
+            Currently only 'vim' is supported.
     """
-    The CLI implementation.
-    """
-    aws_cli = None
-    keyword_completer = None
-    saved_less_opts = None
-    config = None
 
     def __init__(self):
+        """Inits Saws.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
         """
-        Initialize class members.
-        """
-        self.init_config()
+        self.aws_cli = None
+        self.theme = 'vim'
+        self.config = read_configuration()
+        self.logger = SawsLogger(__name__,
+                                 self.config['main']['log_file'],
+                                 self.config['main']['log_level'])
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options, self.ec2_states \
             = generate_all_commands()
@@ -51,76 +66,142 @@ class Saws(object):
             self.config,
             ec2_states=self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
-            shortcut_match=self.get_shortcut_match(),
-            refresh_instance_ids=self.refresh_instance_ids,
-            refresh_instance_tags=self.refresh_instance_tags,
-            refresh_bucket_names=self.refresh_bucket_names)
+            shortcut_match=self.get_shortcut_match())
+        self.create_cli()
 
-    def init_config(self):
-        self.config = read_configuration()
-        self.log_file = self.config['main']['log_file']
-        self.log_level = self.config['main']['log_level']
-        self.logger = create_logger(__name__, self.log_file, self.log_level)
-        self.refresh_instance_ids = \
-            self.config['main'].as_bool('refresh_instance_ids')
-        self.refresh_instance_tags = \
-            self.config['main'].as_bool('refresh_instance_tags')
-        self.refresh_bucket_names = \
-            self.config['main'].as_bool('refresh_bucket_names')
-        self.theme = 'vim'
+    def set_color(self, color):
+        """Setter for color output mode.
 
-    def set_color(self, is_color):
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * color: A boolean that represents the color flag.
+
+        Returns:
+            None.
         """
-        Setter for color output mode
-        :param is_color: boolean
-        """
-        self.config['main']['color_output'] = is_color
+        self.config['main']['color_output'] = color
 
     def get_color(self):
-        """
-        Getter for color output mode
-        :return: boolean
+        """Getter for color output mode.
+
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * None.
+
+        Returns:
+            A boolean that represents the color flag.
         """
         return self.config['main'].as_bool('color_output')
 
-    def set_fuzzy_match(self, is_fuzzy):
+    def set_fuzzy_match(self, fuzzy):
+        """Setter for fuzzy matching mode
+
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * color: A boolean that represents the fuzzy flag.
+
+        Returns:
+            None.
         """
-        Setter for fuzzy matching mode
-        :param is_fuzzy: boolean
-        """
-        self.config['main']['fuzzy_match'] = is_fuzzy
-        self.completer.fuzzy_match = is_fuzzy
+        self.config['main']['fuzzy_match'] = fuzzy
+        self.completer.fuzzy_match = fuzzy
 
     def get_fuzzy_match(self):
-        """
-        Getter for fuzzy matching mode
-        :return: boolean
+        """Getter for fuzzy matching mode
+
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * None.
+
+        Returns:
+            A boolean that represents the fuzzy flag.
         """
         return self.config['main'].as_bool('fuzzy_match')
 
-    def set_shortcut_match(self, is_shortcut):
+    def set_shortcut_match(self, shortcut):
+        """Setter for shortcut matching mode
+
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * color: A boolean that represents the shortcut flag.
+
+        Returns:
+            None.
         """
-        Setter for shortcut matching mode
-        :param is_shortcut: boolean
-        """
-        self.config['main']['shortcut_match'] = is_shortcut
-        self.completer.shortcut_match = is_shortcut
+        self.config['main']['shortcut_match'] = shortcut
+        self.completer.shortcut_match = shortcut
 
     def get_shortcut_match(self):
-        """
-        Getter for shortcut matching mode
-        :return: boolean
+        """Getter for shortcut matching mode
+
+        Used by prompt_toolkit's KeyBindingManager.
+        KeyBindingManager expects this function to be callable so we can't use
+        @property and @attrib.setter.
+
+        Args:
+            * None.
+
+        Returns:
+            A boolean that represents the shortcut flag.
         """
         return self.config['main'].as_bool('shortcut_match')
 
     def refresh_resources(self):
+        """Convenience function to refresh resources for completion.
+
+        Used by prompt_toolkit's KeyBindingManager.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
         self.completer.resources.refresh(force_refresh=True)
 
-    def handle_docs(self, from_fkey=False):
+    def handle_docs(self, text=None, from_fkey=False):
+        """Displays contextual web docs for `F1` or the `docs` command.
+
+        Displays the web docs specific to the currently entered:
+
+        * (optional) command
+        * (optional) subcommand
+
+        If no command or subcommand is present, the docs index page is shown.
+
+        Docs are only displayed if:
+
+        * from_fkey is True
+        * from_fkey is False and `docs` is found in text
+
+        Args:
+            * text: A string representing the input command text.
+            * from_fkey: A boolean representing whether this function is
+                being executed from an `F1` key press
+
+        Returns:
+            A boolean representing whether the web docs were shown.
+        """
         base_url = 'http://docs.aws.amazon.com/cli/latest/reference/'
         index_html = 'index.html'
-        text = self.aws_cli.current_buffer.document.text
-        # If the user hit the F2 key, append 'docs' to the text
+        if text is None:
+            text = self.aws_cli.current_buffer.document.text
+        # If the user hit the F1 key, append 'docs' to the text
         if from_fkey:
             text = text.strip() + ' ' + AWS_DOCS[0]
         tokens = text.split()
@@ -141,27 +222,50 @@ class Saws(object):
                 return True
             webbrowser.open(base_url + index_html)
         # If we still haven't opened the help doc at this point and the
-        # user hit the F2 key or typed docs, just open the main docs index
+        # user hit the F1 key or typed docs, just open the main docs index
         if from_fkey or AWS_DOCS[0] in tokens:
             webbrowser.open(base_url + index_html)
             return True
         return False
 
     def colorize_output(self, text):
+        """Highlights output with pygments.
+
+        Only highlights the output if all of the following conditions are True:
+
+        * The color option is enabled
+        * The text does not contain the `configure` command
+        * The text does not contain the `help` command, which already does
+            output highlighting
+
+        Args:
+            * text: A string that represents the input command text.
+
+        Returns:
+            A string that represents:
+                * The original command text if no highlighting was performed.
+                * The pygments highlighted command text otherwise.
+        """
+        if not self.get_color():
+            return text
         stripped_text = text.strip()
-        if stripped_text != '' and \
-            stripped_text != AWS_COMMAND[0] + ' ' + AWS_CONFIGURE[0] and \
-                AWS_HELP[0] not in stripped_text and \
-                AWS_COMMAND[0] in stripped_text:
+        excludes = [AWS_CONFIGURE[0], AWS_HELP[0]]
+        if not any(substring in stripped_text for substring in excludes):
             return text.strip() + ' | pygmentize -l json'
         else:
             return text
 
-    def run_cli(self):
+    def create_cli(self):
+        """Creates the prompt_toolkit's CommandLineInterface.
+
+        Long description.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
         """
-        Run the main loop
-        """
-        print('Version:', __version__)
         history = FileHistory(os.path.expanduser('~/.saws-history'))
         toolbar_handler = create_toolbar_handler(self.get_color,
                                                  self.get_fuzzy_match,
@@ -182,7 +286,7 @@ class Saws(object):
             history=history,
             completer=self.completer,
             complete_while_typing=Always())
-        manager = get_key_manager(
+        manager = create_key_manager(
             self.set_color,
             self.get_color,
             self.set_fuzzy_match,
@@ -202,19 +306,31 @@ class Saws(object):
         self.aws_cli = CommandLineInterface(
             application=application,
             eventloop=eventloop)
+
+    def run_cli(self):
+        """Runs the main loop.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
+        print('Version:', __version__)
         while True:
             document = self.aws_cli.run()
+            text = self.completer.replace_shortcut(document.text)
+            if self.handle_docs(text):
+                continue
+            if AWS_COMMAND[0] not in text:
+                print('usage: aws [options] <command> <subcommand> [parameters]')
+                print('aws: error: too few arguments')
+                print('\n')
+                continue
+            text = self.colorize_output(text)
             try:
-                if self.handle_docs():
-                    continue
-                text = self.completer.handle_shortcuts(document.text)
-                if AWS_COMMAND[0] not in text:
-                    print('usage: aws <command> <subcommand> [parameters] [options]')
-                    continue
-                if self.get_color():
-                    text = self.colorize_output(text)
                 # Pass the command onto the shell so aws-cli can execute it
                 subprocess.call(text, shell=True)
-                print('executed: ', text)
+                print('')
             except Exception as e:
                 print(e)
