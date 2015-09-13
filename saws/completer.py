@@ -236,8 +236,7 @@ class AwsCompleter(Completer):
         self.aws_completions = set()
         if len(document.text) < len(self.BASE_COMMAND):
             # Autocomplete 'aws' at the beginning of the command
-            self.aws_completions.update([self.BASE_COMMAND,
-                                         self.DOCS_COMMAND])
+            self.aws_completions.update([self.BASE_COMMAND])
         else:
             self.aws_completions.update(aws_completer_results_list)
         self.aws_completions.update([self.DOCS_COMMAND])
