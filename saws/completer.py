@@ -173,36 +173,18 @@ class AwsCompleter(Completer):
         aws_completer_results_list = aws_completer_results.split()
         return aws_completer_results_list
 
-    def get_completions(self, document, _):
-        """Get completions for the current scope.
+    def get_all_resource_completions(self, words, word_before_cursor):
+        """Description.
 
         Args:
-            * document: An instance of prompt_toolkit's Document.
-            * _: An instance of prompt_toolkit's CompleteEvent (not used).
+            * words: A list of strings for each word in the command text.
+            * word_before_cursor: A string representing the word before
+                the cursor.
 
         Returns:
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
-        aws_completer_results_list = self.get_aws_cli_completions(document)
-        self.aws_completions = set()
-        if len(document.text) < len(self.BASE_COMMAND):
-            # Autocomplete 'aws' at the beginning of the command
-            self.aws_completions.update([self.BASE_COMMAND,
-                                         self.DOCS_COMMAND])
-        else:
-            self.aws_completions.update(aws_completer_results_list)
-        self.aws_completions.update([self.DOCS_COMMAND])
-        word_before_cursor = document.get_word_before_cursor(WORD=True)
-        words = self.text_utils.get_tokens(document.text)
-        if len(words) == 0:
-            return []
-        elif len(words) == 2 and words[0] == self.BASE_COMMAND:
-            # Insert shortcuts if the user typed 'aws' as the first
-            # command and is inputting the subcommand
-            if self.shortcut_match:
-                self.aws_completions.update(self.shortcuts.keys())
-        completions = None
         completions = self \
             .get_resource_completions(words,
                                       word_before_cursor,
@@ -237,4 +219,37 @@ class AwsCompleter(Completer):
                 .text_utils.find_matches(word_before_cursor,
                                          self.aws_completions,
                                          self.fuzzy_match)
+        return completions
+
+    def get_completions(self, document, _):
+        """Get completions for the current scope.
+
+        Args:
+            * document: An instance of prompt_toolkit's Document.
+            * _: An instance of prompt_toolkit's CompleteEvent (not used).
+
+        Returns:
+            A generator of prompt_toolkit's Completion objects, containing
+            matched completions.
+        """
+        aws_completer_results_list = self.get_aws_cli_completions(document)
+        self.aws_completions = set()
+        if len(document.text) < len(self.BASE_COMMAND):
+            # Autocomplete 'aws' at the beginning of the command
+            self.aws_completions.update([self.BASE_COMMAND,
+                                         self.DOCS_COMMAND])
+        else:
+            self.aws_completions.update(aws_completer_results_list)
+        self.aws_completions.update([self.DOCS_COMMAND])
+        word_before_cursor = document.get_word_before_cursor(WORD=True)
+        words = self.text_utils.get_tokens(document.text)
+        if len(words) == 0:
+            return []
+        elif len(words) == 2 and words[0] == self.BASE_COMMAND:
+            # Insert shortcuts if the user typed 'aws' as the first
+            # command and is inputting the subcommand
+            if self.shortcut_match:
+                self.aws_completions.update(self.shortcuts.keys())
+        completions = self.get_all_resource_completions(words,
+                                                        word_before_cursor)
         return completions
