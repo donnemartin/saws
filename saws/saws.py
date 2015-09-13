@@ -16,7 +16,7 @@ from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
 from .config import Config
-from .style import style_factory
+from .style import StyleFactory
 from .keys import KeyManager
 from .toolbar import Toolbar
 from .commands import AwsCommands
@@ -297,8 +297,9 @@ class Saws(object):
             self.get_shortcut_match,
             self.refresh_resources,
             self.handle_docs)
+        style_factory = StyleFactory(self.theme)
         application = Application(
-            style=style_factory(self.theme),
+            style=style_factory.style,
             layout=layout,
             buffer=cli_buffer,
             key_bindings_registry=key_manager.manager.registry,
