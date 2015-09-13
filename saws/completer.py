@@ -198,7 +198,7 @@ class AwsCompleter(Completer):
             matched completions.
         """
         completions = None
-        for key, value in self.resource_map.iteritems():
+        for key, value in self.resource_map.items():
             if completions is None:
                 completions = self \
                     .get_resource_completions(words,
