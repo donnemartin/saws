@@ -25,7 +25,7 @@ def cli():
         saws = Saws()
         saws.run_cli()
     except (EOFError, KeyboardInterrupt):
-        saws.config.write()
+        saws.config_obj.write()
 
 
 if __name__ == "__main__":

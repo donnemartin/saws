@@ -15,7 +15,7 @@ from prompt_toolkit.history import FileHistory
 from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
-from .config import read_configuration
+from .config import Config
 from .style import style_factory
 from .keys import KeyManager
 from .toolbar import Toolbar
@@ -29,7 +29,8 @@ class Saws(object):
 
     Attributes:
         * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
-        * config: An instance of ConfigObj, reads from ~/.sawsrc.
+        * config: An instance of Config.
+        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * aws_commands: An instance of AwsCommands
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
@@ -53,17 +54,18 @@ class Saws(object):
         """
         self.aws_cli = None
         self.theme = 'vim'
-        self.config = read_configuration()
+        self.config = Config()
+        self.config_obj = self.config.read_configuration()
         self.logger = SawsLogger(__name__,
-                                 self.config['main']['log_file'],
-                                 self.config['main']['log_level'])
+                                 self.config_obj['main']['log_file'],
+                                 self.config_obj['main']['log_level'])
         self.aws_commands = AwsCommands()
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options, self.ec2_states \
             = self.aws_commands.generate_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
-            self.config,
+            self.config_obj,
             ec2_states=self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match())
@@ -82,7 +84,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config['main']['color_output'] = color
+        self.config_obj['main']['color_output'] = color
 
     def get_color(self):
         """Getter for color output mode.
@@ -97,7 +99,7 @@ class Saws(object):
         Returns:
             A boolean that represents the color flag.
         """
-        return self.config['main'].as_bool('color_output')
+        return self.config_obj['main'].as_bool('color_output')
 
     def set_fuzzy_match(self, fuzzy):
         """Setter for fuzzy matching mode
@@ -112,7 +114,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config['main']['fuzzy_match'] = fuzzy
+        self.config_obj['main']['fuzzy_match'] = fuzzy
         self.completer.fuzzy_match = fuzzy
 
     def get_fuzzy_match(self):
@@ -128,7 +130,7 @@ class Saws(object):
         Returns:
             A boolean that represents the fuzzy flag.
         """
-        return self.config['main'].as_bool('fuzzy_match')
+        return self.config_obj['main'].as_bool('fuzzy_match')
 
     def set_shortcut_match(self, shortcut):
         """Setter for shortcut matching mode
@@ -143,7 +145,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config['main']['shortcut_match'] = shortcut
+        self.config_obj['main']['shortcut_match'] = shortcut
         self.completer.shortcut_match = shortcut
 
     def get_shortcut_match(self):
@@ -159,7 +161,7 @@ class Saws(object):
         Returns:
             A boolean that represents the shortcut flag.
         """
-        return self.config['main'].as_bool('shortcut_match')
+        return self.config_obj['main'].as_bool('shortcut_match')
 
     def refresh_resources(self):
         """Convenience function to refresh resources for completion.

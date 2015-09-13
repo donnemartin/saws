@@ -3,7 +3,7 @@ from pygments.lexer import RegexLexer
 from pygments.lexer import words
 from pygments.token import Keyword, Name, Operator, Generic, Literal
 from .commands import AwsCommands
-from .config import read_configuration, get_shortcuts
+from .config import Config
 
 
 class CommandLexer(RegexLexer):
@@ -14,7 +14,7 @@ class CommandLexer(RegexLexer):
     TODO: Investigate how to clean this up while still keeping Pygments happy.
 
     Attributes:
-        * config: An instance of ConfigObj
+        * config_obj: An instance of ConfigObj
         * shortcuts: An OrderedDict containing the shortcut commands as the
             keys and their corresponding full commands as the values.
         * shortcut_tokens: A list containing words for each shortcut key:
@@ -29,8 +29,9 @@ class CommandLexer(RegexLexer):
         * tokens: A dictionary of pygments tokens.
     """
 
-    config = read_configuration()
-    shortcuts = get_shortcuts(config)
+    config = Config()
+    config_obj = config.read_configuration()
+    shortcuts = config.get_shortcuts(config_obj)
     shortcut_tokens = []
     for shortcut in shortcuts.keys():
         tokens = shortcut.split()

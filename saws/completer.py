@@ -17,7 +17,7 @@ class AwsCompleter(Completer):
     Attributes:
         * aws_completer: An instance of the official awscli Completer.
         * aws_completions: A set of completions to show the user.
-        * config: An instance of ConfigObj, reads from ~/.sawsrc
+        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc
         * ec2_states: A list of the possible instance states.
         * text_utils: An instance of TextUtils.
         * fuzzy_match: A boolean that determines whether to use fuzzy matching.
@@ -31,7 +31,7 @@ class AwsCompleter(Completer):
 
     def __init__(self,
                  aws_completer,
-                 config,
+                 config_obj,
                  ec2_states=[],
                  fuzzy_match=False,
                  shortcut_match=False):
@@ -39,7 +39,7 @@ class AwsCompleter(Completer):
 
         Args:
             * aws_completer: The official aws cli completer module.
-            * config: An instance of ConfigObj, reads from ~/.sawsrc
+            * config_obj: An instance of ConfigObj, reads from ~/.sawsrc
             * fuzzy_match: A boolean that determines whether to use
                 fuzzy matching.
             * shortcut_match: A boolean that determines whether to
@@ -50,20 +50,21 @@ class AwsCompleter(Completer):
         """
         self.aws_completer = aws_completer
         self.aws_completions = set()
-        self.config = config
+        self.config_obj = config_obj
         self.ec2_states = ec2_states
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
         self.BASE_COMMAND = AwsCommands.AWS_COMMAND
         self.DOCS_COMMAND = AwsCommands.AWS_DOCS
-        # TODO: Refactor to use config.get_shortcuts()
-        self.shortcuts = OrderedDict(zip(self.config['shortcuts'].keys(),
-                                         self.config['shortcuts'].values()))
+        # TODO: Refactor to use config_obj.get_shortcuts()
+        self.shortcuts = OrderedDict(zip(self.config_obj['shortcuts'].keys(),
+                                         self.config_obj['shortcuts'].values()))
         self.resources = \
-            AwsResources(self.config['main'].as_bool('refresh_instance_ids'),
-                         self.config['main'].as_bool('refresh_instance_tags'),
-                         self.config['main'].as_bool('refresh_bucket_names'))
+            AwsResources(
+                self.config_obj['main'].as_bool('refresh_instance_ids'),
+                self.config_obj['main'].as_bool('refresh_instance_tags'),
+                self.config_obj['main'].as_bool('refresh_bucket_names'))
         self.resources.refresh()
 
     def replace_shortcut(self, text):
