@@ -149,16 +149,14 @@ class AwsCompleter(Completer):
                                                 resource,
                                                 self.fuzzy_match)
 
-    def get_completions(self, document, _):
-        """Get completions for the current scope.
+    def get_aws_cli_completions(self, document):
+        """Get completions from the official AWS CLI for the current scope.
 
         Args:
             * document: An instance of prompt_toolkit's Document.
-            * _: An instance of prompt_toolkit's CompleteEvent (not used).
 
         Returns:
-            A generator of prompt_toolkit's Completion objects, containing
-            matched completions.
+            A list of string completions.
         """
         text = self.replace_shortcut(document.text)
         old_stdout = sys.stdout
@@ -173,7 +171,20 @@ class AwsCompleter(Completer):
         # Tidy up the completions and store it in a list
         aws_completer_results = re.sub('\n', '', aws_completer_results)
         aws_completer_results_list = aws_completer_results.split()
-        # Build the list of completions
+        return aws_completer_results_list
+
+    def get_completions(self, document, _):
+        """Get completions for the current scope.
+
+        Args:
+            * document: An instance of prompt_toolkit's Document.
+            * _: An instance of prompt_toolkit's CompleteEvent (not used).
+
+        Returns:
+            A generator of prompt_toolkit's Completion objects, containing
+            matched completions.
+        """
+        aws_completer_results_list = self.get_aws_cli_completions(document)
         self.aws_completions = set()
         if len(document.text) < len(self.BASE_COMMAND):
             # Autocomplete 'aws' at the beginning of the command
