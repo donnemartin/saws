@@ -18,7 +18,7 @@ class AwsCompleter(Completer):
     Attributes:
         * aws_completer: An instance of the official awscli Completer.
         * aws_completions: A set of completions to show the user.
-        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc
+        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * log_exception: A callable log_exception from SawsLogger.
         * ec2_states: A list of the possible instance states.
         * text_utils: An instance of TextUtils.
@@ -42,7 +42,7 @@ class AwsCompleter(Completer):
 
         Args:
             * aws_completer: The official aws cli completer module.
-            * config_obj: An instance of ConfigObj, reads from ~/.sawsrc
+            * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * fuzzy_match: A boolean that determines whether to use
                 fuzzy matching.
             * shortcut_match: A boolean that determines whether to

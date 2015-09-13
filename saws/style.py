@@ -12,7 +12,7 @@ class StyleFactory(object):
     Provides styles for the completions menu and toolbar.
 
     Attributes:
-        * None
+        * None.
     """
 
     def __init__(self, name):

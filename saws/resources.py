@@ -13,10 +13,10 @@ class AwsResources(object):
     """Loads and stores AWS resources.
 
     Attributes:
-        * instance_ids: A list of instance ids
-        * instance_tag_keys: A set of instance tag keys
-        * instance_tag_values: A set of isntance tag values
-        * bucket_names: A list of bucket names
+        * instance_ids: A list of instance ids.
+        * instance_tag_keys: A set of instance tag keys.
+        * instance_tag_values: A set of isntance tag values.
+        * bucket_names: A list of bucket names.
         * refresh_instance_ids: A boolean that determines whether to
             refresh instance ids by querying AWS.
         * refresh_instance_tags: A boolean that determines whether to
@@ -24,13 +24,13 @@ class AwsResources(object):
         * refresh_bucket_names: A boolean that determines whether to
             refresh bucket names by querying AWS.
         * INSTANCE_IDS_MARKER: A string marking the start of
-            instance ids in data/RESOURCES.txt
+            instance ids in data/RESOURCES.txt.
         * INSTANCE_TAG_KEYS_MARKER: A string marking the start of
-            instance tag keys in data/RESOURCES.txt
+            instance tag keys in data/RESOURCES.txt.
         * INSTANCE_TAG_VALUES_MARKER: A string marking the start of
-            instance tag values in data/RESOURCES.txt
+            instance tag values in data/RESOURCES.txt.
         * BUCKET_NAMES_MARKER: A string marking the start of i
-            bucket names in data/RESOURCES.txt
+            bucket names in data/RESOURCES.txt.
         * log_exception: A callable log_exception from SawsLogger.
     """
 

@@ -210,7 +210,7 @@ class Saws(object):
         Args:
             * text: A string representing the input command text.
             * from_fkey: A boolean representing whether this function is
-                being executed from an `F1` key press
+                being executed from an `F1` key press.
 
         Returns:
             A boolean representing whether the web docs were shown.

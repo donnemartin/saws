@@ -11,14 +11,14 @@ class TextUtils(object):
     """Utilities for parsing and matching text.
 
     Attributes:
-        * None
+        * None.
     """
 
     def shlex_split(self, text):
         """Wrapper for shlex, because it does not seem to handle unicode in 2.6.
 
         Args:
-            * text: A string to split
+            * text: A string to split.
 
         Returns:
             A list that contains words for each split element of text.

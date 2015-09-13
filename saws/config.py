@@ -54,7 +54,7 @@ class Config(object):
         """Reads the config file if it exists, else reads the default config.
 
         Args:
-            * None
+            * None.
 
         Returns:
             An instance of a ConfigObj.
@@ -69,7 +69,7 @@ class Config(object):
         """Gets the shortcuts from the specified config.
 
         Args:
-            * config: An instance of ConfigObj
+            * config: An instance of ConfigObj.
 
         Returns:
             An OrderedDict containing the shortcut commands as the keys and their

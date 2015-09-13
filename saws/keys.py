@@ -67,7 +67,7 @@ class KeyManager(object):
             """Inputs the "docs" command when the `F1` key is pressed.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -79,7 +79,7 @@ class KeyManager(object):
             """Enables/Disables color output.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -91,7 +91,7 @@ class KeyManager(object):
             """Enables/Disables fuzzy matching.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -103,7 +103,7 @@ class KeyManager(object):
             """Enables/Disables shortcut matching.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -115,7 +115,7 @@ class KeyManager(object):
             """Refreshes AWS resources.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -127,7 +127,7 @@ class KeyManager(object):
             """Quits when the `F10` key is pressed.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used)
+                * _: An instance of prompt_toolkit's Event (not used).
 
             Returns:
                 None.
@@ -144,7 +144,7 @@ class KeyManager(object):
             If the menu is showing, select the next completion.
 
             Args:
-                * event: An instance of prompt_toolkit's Event
+                * event: An instance of prompt_toolkit's Event.
 
             Returns:
                 None.

@@ -10,24 +10,24 @@ class AwsCommands(object):
     """Encapsulates AWS commands.
 
     Attributes:
-        * AWS_COMMAND: A string representing the 'aws' command
-        * AWS_CONFIGURE: A string representing the 'configure' command
-        * AWS_HELP: A string representing the 'help' command
-        * AWS_DOCS: A string representing the 'docs' command
+        * AWS_COMMAND: A string representing the 'aws' command.
+        * AWS_CONFIGURE: A string representing the 'configure' command.
+        * AWS_HELP: A string representing the 'help' command.
+        * AWS_DOCS: A string representing the 'docs' command.
         * COMMANDS_HEADER: A string denoting the start of
-            commands in data/SOURCES.txt
+            commands in data/SOURCES.txt.
         * SUB_COMMANDS_HEADER: A string denoting the start of
-            subcommands in data/SOURCES.txt
+            subcommands in data/SOURCES.txt.
         * GLOBAL_OPTIONS_HEADER: A string denoting the start of
-            global options in data/SOURCES.txt
+            global options in data/SOURCES.txt.
         * RESOURCE_OPTIONS_HEADER: A string denoting the start of
-            resource options in data/SOURCES.txt
+            resource options in data/SOURCES.txt.
         * EC2_STATES_HEADER: A string denoting the start of
-            ec2 states in data/SOURCES.txt
+            ec2 states in data/SOURCES.txt.
         * SOURCES_DIR: A string representing the directory containing
-            data/SOURCES.txt
+            data/SOURCES.txt.
         * SOURCES_PATH: A string representing the full file path of
-            data/SOURCES.txt
+            data/SOURCES.txt.
     """
 
     AWS_COMMAND = 'aws'
@@ -46,10 +46,10 @@ class AwsCommands(object):
         """Enum specifying the command type.
 
         Attributes:
-            * AWS_COMMAND: A string representing the 'aws' command
-            * AWS_CONFIGURE: A string representing the 'configure' command
-            * AWS_HELP: A string representing the 'help' command
-            * AWS_DOCS: A string representing the 'docs' command
+            * AWS_COMMAND: A string representing the 'aws' command.
+            * AWS_CONFIGURE: A string representing the 'configure' command.
+            * AWS_HELP: A string representing the 'help' command.
+            * AWS_DOCS: A string representing the 'docs' command.
             * COMMANDS: An int representing commands.
             * SUB_COMMANDS: An int representing subcommands.
             * GLOBAL_OPTIONS: An int representing global options.
