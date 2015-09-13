@@ -17,7 +17,7 @@ from .completer import AwsCompleter
 from .lexer import CommandLexer
 from .config import read_configuration
 from .style import style_factory
-from .keys import create_key_manager
+from .keys import KeyManager
 from .toolbar import create_toolbar_handler
 from .commands import AwsCommands
 from .logger import SawsLogger
@@ -286,7 +286,7 @@ class Saws(object):
             history=history,
             completer=self.completer,
             complete_while_typing=Always())
-        manager = create_key_manager(
+        key_manager = KeyManager(
             self.set_color,
             self.get_color,
             self.set_fuzzy_match,
@@ -299,7 +299,7 @@ class Saws(object):
             style=style_factory(self.theme),
             layout=layout,
             buffer=cli_buffer,
-            key_bindings_registry=manager.registry,
+            key_bindings_registry=key_manager.manager.registry,
             on_exit=AbortAction.RAISE_EXCEPTION,
             ignore_case=True)
         eventloop = create_eventloop()
