@@ -77,6 +77,11 @@ class AwsResources(object):
         self.INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
         self.INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
         self.BUCKET_NAMES_MARKER = '[bucket names]'
+        self.INSTANCE_IDS = '--instance-ids'
+        self.EC2_TAG_KEY = '--ec2-tag-key'
+        self.EC2_TAG_VALUE = '--ec2-tag-value'
+        self.EC2_STATE = '--ec2-state'
+        self.BUCKET = '--bucket'
         self.log_exception = log_exception
 
     def refresh(self, force_refresh=False):

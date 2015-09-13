@@ -74,6 +74,16 @@ class AwsCompleter(Completer):
                 self.config_obj['main'].as_bool('refresh_instance_tags'),
                 self.config_obj['main'].as_bool('refresh_bucket_names'))
         self.resources.refresh()
+        self.resource_map = dict(zip([self.resources.INSTANCE_IDS,
+                                      self.resources.EC2_TAG_KEY,
+                                      self.resources.EC2_TAG_VALUE,
+                                      self.resources.EC2_STATE,
+                                      self.resources.BUCKET],
+                                     [self.resources.instance_ids,
+                                      self.resources.instance_tag_keys,
+                                      self.resources.instance_tag_values,
+                                      self.ec2_states,
+                                      self.resources.bucket_names]))
 
     def replace_shortcut(self, text):
         """Replaces matched shortcut commands with their full command.
@@ -185,40 +195,16 @@ class AwsCompleter(Completer):
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
-        completions = self \
-            .get_resource_completions(words,
-                                      word_before_cursor,
-                                      '--instance-ids',
-                                      self.resources.instance_ids)
-        if completions is None:
-            completions = self \
-                .get_resource_completions(words,
-                                          word_before_cursor,
-                                          '--ec2-tag-key',
-                                          self.resources.instance_tag_keys)
-        if completions is None:
-            completions = self \
-                .get_resource_completions(words,
-                                          word_before_cursor,
-                                          '--ec2-tag-value',
-                                          self.resources.instance_tag_values)
-        if completions is None:
-            completions = self \
-                .get_resource_completions(words,
-                                          word_before_cursor,
-                                          '--ec2-state',
-                                          self.ec2_states)
-        if completions is None:
-            completions = self \
-                .get_resource_completions(words,
-                                          word_before_cursor,
-                                          '--bucket',
-                                          self.resources.bucket_names)
-        if completions is None:
-            completions = self \
-                .text_utils.find_matches(word_before_cursor,
-                                         self.aws_completions,
-                                         self.fuzzy_match)
+        completions = None
+        for key, value in self.resource_map.iteritems():
+            if completions is None:
+                completions = self \
+                    .get_resource_completions(words,
+                                              word_before_cursor,
+                                              key,
+                                              value)
+            else:
+                break
         return completions
 
     def get_completions(self, document, _):
@@ -251,4 +237,8 @@ class AwsCompleter(Completer):
                 self.aws_completions.update(self.shortcuts.keys())
         completions = self.get_all_resource_completions(words,
                                                         word_before_cursor)
+        if completions is None:
+            completions = self .text_utils.find_matches(word_before_cursor,
+                                                        self.aws_completions,
+                                                        self.fuzzy_match)
         return completions
