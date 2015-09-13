@@ -101,9 +101,9 @@ class AwsCompleter(Completer):
             A string representing input command text with a shortcut
                 replaced, if one has been found.
         """
-        for key in self.shortcuts.keys():
+        for key, value in self.shortcuts.items():
             if key in text:
-                text = re.sub(key, self.shortcuts[key], text)
+                text = re.sub(key, value, text)
                 text = self.replace_substitution(text)
                 break
         return text
