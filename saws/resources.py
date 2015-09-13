@@ -74,6 +74,7 @@ class AwsResources(object):
         Returns:
             None.
         """
+        self.RESOURCE_FILE = 'data/RESOURCES.txt'
         self.instance_ids = []
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
@@ -112,7 +113,8 @@ class AwsResources(object):
         Returns:
             None.
         """
-        file_path = os.path.join(AwsCommands.SOURCES_DIR, 'data/RESOURCES.txt')
+        file_path = os.path.join(AwsCommands.SOURCES_DIR,
+                                 self.RESOURCE_FILE)
         if not force_refresh:
             try:
                 self.refresh_resources_from_file(file_path)
