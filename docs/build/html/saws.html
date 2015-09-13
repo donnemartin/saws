@@ -51,53 +51,53 @@
 <dl class="docutils">
 <dt>Attributes:</dt>
 <dd><ul class="first last">
-<li><p class="first">AWS_COMMAND: A string representing the &#8216;aws&#8217; command</p>
+<li><p class="first">AWS_COMMAND: A string representing the &#8216;aws&#8217; command.</p>
 </li>
-<li><p class="first">AWS_CONFIGURE: A string representing the &#8216;configure&#8217; command</p>
+<li><p class="first">AWS_CONFIGURE: A string representing the &#8216;configure&#8217; command.</p>
 </li>
-<li><p class="first">AWS_HELP: A string representing the &#8216;help&#8217; command</p>
+<li><p class="first">AWS_HELP: A string representing the &#8216;help&#8217; command.</p>
 </li>
-<li><p class="first">AWS_DOCS: A string representing the &#8216;docs&#8217; command</p>
+<li><p class="first">AWS_DOCS: A string representing the &#8216;docs&#8217; command.</p>
 </li>
 <li><dl class="first docutils">
 <dt>COMMANDS_HEADER: A string denoting the start of</dt>
-<dd><p class="first last">commands in data/SOURCES.txt</p>
+<dd><p class="first last">commands in data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>SUB_COMMANDS_HEADER: A string denoting the start of</dt>
-<dd><p class="first last">subcommands in data/SOURCES.txt</p>
+<dd><p class="first last">subcommands in data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>GLOBAL_OPTIONS_HEADER: A string denoting the start of</dt>
-<dd><p class="first last">global options in data/SOURCES.txt</p>
+<dd><p class="first last">global options in data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>RESOURCE_OPTIONS_HEADER: A string denoting the start of</dt>
-<dd><p class="first last">resource options in data/SOURCES.txt</p>
+<dd><p class="first last">resource options in data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>EC2_STATES_HEADER: A string denoting the start of</dt>
-<dd><p class="first last">ec2 states in data/SOURCES.txt</p>
+<dd><p class="first last">ec2 states in data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>SOURCES_DIR: A string representing the directory containing</dt>
-<dd><p class="first last">data/SOURCES.txt</p>
+<dd><p class="first last">data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>SOURCES_PATH: A string representing the full file path of</dt>
-<dd><p class="first last">data/SOURCES.txt</p>
+<dd><p class="first last">data/SOURCES.txt.</p>
 </dd>
 </dl>
 </li>
@@ -137,10 +137,10 @@
 <dl class="docutils">
 <dt>Attributes:</dt>
 <dd><ul class="first last simple">
-<li>AWS_COMMAND: A string representing the &#8216;aws&#8217; command</li>
-<li>AWS_CONFIGURE: A string representing the &#8216;configure&#8217; command</li>
-<li>AWS_HELP: A string representing the &#8216;help&#8217; command</li>
-<li>AWS_DOCS: A string representing the &#8216;docs&#8217; command</li>
+<li>AWS_COMMAND: A string representing the &#8216;aws&#8217; command.</li>
+<li>AWS_CONFIGURE: A string representing the &#8216;configure&#8217; command.</li>
+<li>AWS_HELP: A string representing the &#8216;help&#8217; command.</li>
+<li>AWS_DOCS: A string representing the &#8216;docs&#8217; command.</li>
 <li>COMMANDS: An int representing commands.</li>
 <li>SUB_COMMANDS: An int representing subcommands.</li>
 <li>GLOBAL_OPTIONS: An int representing global options.</li>
@@ -214,7 +214,7 @@
 <span id="saws-completer-module"></span><h2>saws.completer module<a class="headerlink" href="#module-saws.completer" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="saws.completer.AwsCompleter">
-<em class="property">class </em><code class="descclassname">saws.completer.</code><code class="descname">AwsCompleter</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>config</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">saws.completer.</code><code class="descname">AwsCompleter</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">prompt_toolkit.completion.Completer</span></code></p>
 <p>Completer for AWS commands, subcommands, options, and parameters.</p>
 <dl class="docutils">
@@ -224,7 +224,9 @@
 </li>
 <li><p class="first">aws_completions: A set of completions to show the user.</p>
 </li>
-<li><p class="first">config: An instance of ConfigObj, reads from ~/.sawsrc</p>
+<li><p class="first">config_obj: An instance of ConfigObj, reads from ~/.sawsrc.</p>
+</li>
+<li><p class="first">log_exception: A callable log_exception from SawsLogger.</p>
 </li>
 <li><p class="first">ec2_states: A list of the possible instance states.</p>
 </li>
@@ -351,14 +353,26 @@ if one has been found.</dd>
 </div>
 <div class="section" id="module-saws.config">
 <span id="saws-config-module"></span><h2>saws.config module<a class="headerlink" href="#module-saws.config" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="saws.config.get_shortcuts">
-<code class="descclassname">saws.config.</code><code class="descname">get_shortcuts</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.get_shortcuts" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="saws.config.Config">
+<em class="property">class </em><code class="descclassname">saws.config.</code><code class="descname">Config</code><a class="headerlink" href="#saws.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Reads and writes the config file <cite>sawsrc</cite>.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>None</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="saws.config.Config.get_shortcuts">
+<code class="descname">get_shortcuts</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.Config.get_shortcuts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the shortcuts from the specified config.</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><ul class="first last simple">
-<li>config: An instance of ConfigObj</li>
+<li>config: An instance of ConfigObj.</li>
 </ul>
 </dd>
 <dt>Returns:</dt>
@@ -367,14 +381,14 @@ corresponding full commands as the values.</dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="saws.config.read_configuration">
-<code class="descclassname">saws.config.</code><code class="descname">read_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.read_configuration" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="saws.config.Config.read_configuration">
+<code class="descname">read_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.Config.read_configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads the config file if it exists, else reads the default config.</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><ul class="first last simple">
-<li>None</li>
+<li>None.</li>
 </ul>
 </dd>
 <dt>Returns:</dt>
@@ -382,9 +396,9 @@ corresponding full commands as the values.</dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="saws.config.write_default_config">
-<code class="descclassname">saws.config.</code><code class="descname">write_default_config</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.write_default_config" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="saws.config.Config.write_default_config">
+<code class="descname">write_default_config</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.Config.write_default_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes the default config from a template.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -399,12 +413,26 @@ corresponding full commands as the values.</dd>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </div>
 <div class="section" id="module-saws.keys">
 <span id="saws-keys-module"></span><h2>saws.keys module<a class="headerlink" href="#module-saws.keys" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="saws.keys.create_key_manager">
-<code class="descclassname">saws.keys.</code><code class="descname">create_key_manager</code><span class="sig-paren">(</span><em>set_color</em>, <em>get_color</em>, <em>set_fuzzy_match</em>, <em>get_fuzzy_match</em>, <em>set_shortcut_match</em>, <em>get_shortcut_match</em>, <em>refresh_resources</em>, <em>handle_docs</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.keys.create_key_manager" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="saws.keys.KeyManager">
+<em class="property">class </em><code class="descclassname">saws.keys.</code><code class="descname">KeyManager</code><span class="sig-paren">(</span><em>set_color</em>, <em>get_color</em>, <em>set_fuzzy_match</em>, <em>get_fuzzy_match</em>, <em>set_shortcut_match</em>, <em>get_shortcut_match</em>, <em>refresh_resources</em>, <em>handle_docs</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.keys.KeyManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Creates a Key Manager.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>manager: An instance of a prompt_toolkit&#8217;s KeyBindingManager.</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="saws.keys.KeyManager.create_key_manager">
+<code class="descname">create_key_manager</code><span class="sig-paren">(</span><em>set_color</em>, <em>get_color</em>, <em>set_fuzzy_match</em>, <em>get_fuzzy_match</em>, <em>set_shortcut_match</em>, <em>get_shortcut_match</em>, <em>refresh_resources</em>, <em>handle_docs</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.keys.KeyManager.create_key_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and initializes the keybinding manager.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -420,6 +448,8 @@ corresponding full commands as the values.</dd>
 <dt>Returns:</dt>
 <dd>A KeyBindingManager.</dd>
 </dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -438,7 +468,7 @@ corresponding full commands as the values.</dd>
 <dl class="docutils">
 <dt>Attributes:</dt>
 <dd><ul class="first last">
-<li><p class="first">config: An instance of ConfigObj</p>
+<li><p class="first">config_obj: An instance of ConfigObj.</p>
 </li>
 <li><dl class="first docutils">
 <dt>shortcuts: An OrderedDict containing the shortcut commands as the</dt>
@@ -448,11 +478,11 @@ corresponding full commands as the values.</dd>
 </li>
 <li><dl class="first docutils">
 <dt>shortcut_tokens: A list containing words for each shortcut key:</dt>
-<dd><p class="first last">key: &#8216;aws ec2 ls&#8217; -&gt; shortcut_tokens: [&#8216;aws&#8217;, &#8216;ec2&#8217;, &#8216;ls&#8217;]</p>
+<dd><p class="first last">key: &#8216;aws ec2 ls&#8217; -&gt; shortcut_tokens: [&#8216;aws&#8217;, &#8216;ec2&#8217;, &#8216;ls&#8217;].</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">aws_commands: An instance of AwsCommands</p>
+<li><p class="first">aws_commands: An instance of AwsCommands.</p>
 </li>
 <li><dl class="first docutils">
 <dt>commands: A tuple, where each tuple element is a list of:</dt>
@@ -483,7 +513,12 @@ corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.config">
-<code class="descname">config</code><em class="property"> = ConfigObj({'main': {'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO', 'refresh_instance_ids': 'True', 'refresh_instance_tags': 'True', 'refresh_bucket_names': 'True'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables'}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config" title="Permalink to this definition">¶</a></dt>
+<code class="descname">config</code><em class="property"> = &lt;saws.config.Config object&gt;</em><a class="headerlink" href="#saws.lexer.CommandLexer.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="saws.lexer.CommandLexer.config_obj">
+<code class="descname">config_obj</code><em class="property"> = ConfigObj({'main': {'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO', 'refresh_instance_ids': 'True', 'refresh_instance_tags': 'True', 'refresh_bucket_names': 'True'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables'}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config_obj" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -508,7 +543,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x10b6a63d0&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x10b6a6410&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x10b6a6450&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x10b6a6490&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x10b6a64d0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x10b6a6510&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x10b6a6550&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x10b6a6590&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x105d62250&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x105d62290&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x105d622d0&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x105d62310&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x105d62350&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x105d62390&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x105d623d0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x105d62410&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -538,19 +573,19 @@ corresponding full commands as the values.</dd>
 <span id="saws-resources-module"></span><h2>saws.resources module<a class="headerlink" href="#module-saws.resources" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="saws.resources.AwsResources">
-<em class="property">class </em><code class="descclassname">saws.resources.</code><code class="descname">AwsResources</code><span class="sig-paren">(</span><em>refresh_instance_ids=True</em>, <em>refresh_instance_tags=True</em>, <em>refresh_bucket_names=True</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">saws.resources.</code><code class="descname">AwsResources</code><span class="sig-paren">(</span><em>log_exception</em>, <em>refresh_instance_ids=True</em>, <em>refresh_instance_tags=True</em>, <em>refresh_bucket_names=True</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Loads and stores AWS resources.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
 <dd><ul class="first last">
-<li><p class="first">instance_ids: A list of instance ids</p>
+<li><p class="first">instance_ids: A list of instance ids.</p>
 </li>
-<li><p class="first">instance_tag_keys: A set of instance tag keys</p>
+<li><p class="first">instance_tag_keys: A set of instance tag keys.</p>
 </li>
-<li><p class="first">instance_tag_values: A set of isntance tag values</p>
+<li><p class="first">instance_tag_values: A set of isntance tag values.</p>
 </li>
-<li><p class="first">bucket_names: A list of bucket names</p>
+<li><p class="first">bucket_names: A list of bucket names.</p>
 </li>
 <li><dl class="first docutils">
 <dt>refresh_instance_ids: A boolean that determines whether to</dt>
@@ -572,27 +607,29 @@ corresponding full commands as the values.</dd>
 </li>
 <li><dl class="first docutils">
 <dt>INSTANCE_IDS_MARKER: A string marking the start of</dt>
-<dd><p class="first last">instance ids in data/RESOURCES.txt</p>
+<dd><p class="first last">instance ids in data/RESOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>INSTANCE_TAG_KEYS_MARKER: A string marking the start of</dt>
-<dd><p class="first last">instance tag keys in data/RESOURCES.txt</p>
+<dd><p class="first last">instance tag keys in data/RESOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>INSTANCE_TAG_VALUES_MARKER: A string marking the start of</dt>
-<dd><p class="first last">instance tag values in data/RESOURCES.txt</p>
+<dd><p class="first last">instance tag values in data/RESOURCES.txt.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>BUCKET_NAMES_MARKER: A string marking the start of i</dt>
-<dd><p class="first last">bucket names in data/RESOURCES.txt</p>
+<dd><p class="first last">bucket names in data/RESOURCES.txt.</p>
 </dd>
 </dl>
+</li>
+<li><p class="first">log_exception: A callable log_exception from SawsLogger.</p>
 </li>
 </ul>
 </dd>
@@ -727,7 +764,9 @@ Before returning, it saves the resource lists to cache.</p>
 <dd><ul class="first last">
 <li><p class="first">aws_cli: An instance of prompt_toolkit&#8217;s CommandLineInterface.</p>
 </li>
-<li><p class="first">config: An instance of ConfigObj, reads from ~/.sawsrc.</p>
+<li><p class="first">config: An instance of Config.</p>
+</li>
+<li><p class="first">config_obj: An instance of ConfigObj, reads from ~/.sawsrc.</p>
 </li>
 <li><p class="first">aws_commands: An instance of AwsCommands</p>
 </li>
@@ -743,7 +782,7 @@ Before returning, it saves the resource lists to cache.</p>
 </li>
 <li><p class="first">completer: An instance of AwsCompleter.</p>
 </li>
-<li><p class="first">logger: An instance of SawsLoggerself.</p>
+<li><p class="first">logger: An instance of SawsLogger.</p>
 </li>
 <li><dl class="first docutils">
 <dt>theme: A string representing the lexer theme.</dt>
@@ -882,7 +921,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </li>
 <li><dl class="first docutils">
 <dt>from_fkey: A boolean representing whether this function is</dt>
-<dd><p class="first last">being executed from an <cite>F1</cite> key press</p>
+<dd><p class="first last">being executed from an <cite>F1</cite> key press.</p>
 </dd>
 </dl>
 </li>
@@ -890,6 +929,22 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dd>
 <dt>Returns:</dt>
 <dd>A boolean representing whether the web docs were shown.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.saws.Saws.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>traceback</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs the exception and traceback to the log file ~/.saws.log.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>e: A Exception that specifies the exception.</li>
+<li>traceback: A Traceback that specifies the traceback.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
 </dl>
 </dd></dl>
 
@@ -983,9 +1038,22 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </div>
 <div class="section" id="module-saws.style">
 <span id="saws-style-module"></span><h2>saws.style module<a class="headerlink" href="#module-saws.style" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="saws.style.style_factory">
-<code class="descclassname">saws.style.</code><code class="descname">style_factory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.style.style_factory" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="saws.style.StyleFactory">
+<em class="property">class </em><code class="descclassname">saws.style.</code><code class="descname">StyleFactory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.style.StyleFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Creates a custom saws style.</p>
+<p>Provides styles for the completions menu and toolbar.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>None.</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="saws.style.StyleFactory.style_factory">
+<code class="descname">style_factory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.style.StyleFactory.style_factory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the specified pygments style.</p>
 <p>If the specified style is not found, the native style is returned.</p>
 <dl class="docutils">
@@ -999,12 +1067,26 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </div>
 <div class="section" id="module-saws.toolbar">
 <span id="saws-toolbar-module"></span><h2>saws.toolbar module<a class="headerlink" href="#module-saws.toolbar" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="saws.toolbar.create_toolbar_handler">
-<code class="descclassname">saws.toolbar.</code><code class="descname">create_toolbar_handler</code><span class="sig-paren">(</span><em>color_cfg</em>, <em>fuzzy_cfg</em>, <em>shortcuts_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.toolbar.create_toolbar_handler" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="saws.toolbar.Toolbar">
+<em class="property">class </em><code class="descclassname">saws.toolbar.</code><code class="descname">Toolbar</code><span class="sig-paren">(</span><em>color_cfg</em>, <em>fuzzy_cfg</em>, <em>shortcuts_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.toolbar.Toolbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Encapsulates the bottom toolbar.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>handler: A callable get_toolbar_items.</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="saws.toolbar.Toolbar.create_toolbar_handler">
+<code class="descname">create_toolbar_handler</code><span class="sig-paren">(</span><em>color_cfg</em>, <em>fuzzy_cfg</em>, <em>shortcuts_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.toolbar.Toolbar.create_toolbar_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the toolbar handler.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -1019,6 +1101,8 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </div>
 <div class="section" id="module-saws.utils">
 <span id="saws-utils-module"></span><h2>saws.utils module<a class="headerlink" href="#module-saws.utils" title="Permalink to this headline">¶</a></h2>
@@ -1030,7 +1114,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 <dl class="docutils">
 <dt>Attributes:</dt>
 <dd><ul class="first last simple">
-<li>None</li>
+<li>None.</li>
 </ul>
 </dd>
 </dl>
@@ -1135,7 +1219,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><ul class="first last simple">
-<li>text: A string to split</li>
+<li>text: A string to split.</li>
 </ul>
 </dd>
 <dt>Returns:</dt>
