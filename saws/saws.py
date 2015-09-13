@@ -18,7 +18,7 @@ from .lexer import CommandLexer
 from .config import read_configuration
 from .style import style_factory
 from .keys import KeyManager
-from .toolbar import create_toolbar_handler
+from .toolbar import Toolbar
 from .commands import AwsCommands
 from .logger import SawsLogger
 from .__init__ import __version__
@@ -267,14 +267,14 @@ class Saws(object):
             None.
         """
         history = FileHistory(os.path.expanduser('~/.saws-history'))
-        toolbar_handler = create_toolbar_handler(self.get_color,
-                                                 self.get_fuzzy_match,
-                                                 self.get_shortcut_match)
+        toolbar = Toolbar(self.get_color,
+                          self.get_fuzzy_match,
+                          self.get_shortcut_match)
         layout = create_default_layout(
             message='saws> ',
             reserve_space_for_menu=True,
             lexer=CommandLexer,
-            get_bottom_toolbar_tokens=toolbar_handler,
+            get_bottom_toolbar_tokens=toolbar.handler,
             extra_input_processors=[
                 ConditionalProcessor(
                     processor=HighlightMatchingBracketProcessor(
