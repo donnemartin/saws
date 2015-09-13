@@ -6,7 +6,7 @@ from mock import Mock
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from saws.completer import AwsCompleter
-from saws.commands import AWS_COMMAND, AWS_DOCS
+from saws.commands import AwsCommands
 from saws.main import Saws
 
 
@@ -50,12 +50,12 @@ class CompleterTest(unittest.TestCase):
 
     def test_aws_command_completion(self):
         commands = ['a', 'aw']
-        expected = AWS_COMMAND
+        expected = [AwsCommands.AWS_COMMAND]
         self.verify_completions(commands, expected)
 
     def test_docs_command_completion(self):
         commands = ['d', 'do', 'doc']
-        expected = AWS_DOCS
+        expected = [AwsCommands.AWS_DOCS]
         self.verify_completions(commands, expected)
 
     def test_global_options(self):

@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 from prompt_toolkit.key_binding.manager import KeyBindingManager
 from prompt_toolkit.keys import Keys
-from .commands import AWS_COMMAND
 
 
 def create_key_manager(set_color, get_color,

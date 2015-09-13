@@ -7,7 +7,7 @@ from collections import OrderedDict
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
 from .utils import TextUtils
-from .commands import AWS_COMMAND, AWS_DOCS
+from .commands import AwsCommands
 from .resources import AwsResources
 
 
@@ -55,8 +55,8 @@ class AwsCompleter(Completer):
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
-        self.BASE_COMMAND = AWS_COMMAND[0]
-        self.DOCS_COMMAND = AWS_DOCS[0]
+        self.BASE_COMMAND = AwsCommands.AWS_COMMAND
+        self.DOCS_COMMAND = AwsCommands.AWS_DOCS
         # TODO: Refactor to use config.get_shortcuts()
         self.shortcuts = OrderedDict(zip(self.config['shortcuts'].keys(),
                                          self.config['shortcuts'].values()))

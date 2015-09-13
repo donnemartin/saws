@@ -20,8 +20,7 @@ from .config import read_configuration
 from .style import style_factory
 from .keys import create_key_manager
 from .toolbar import create_toolbar_handler
-from .commands import AWS_COMMAND, AWS_CONFIGURE, AWS_DOCS, AWS_HELP, \
-    generate_all_commands
+from .commands import AwsCommands
 from .logger import SawsLogger
 from .__init__ import __version__
 
@@ -32,6 +31,7 @@ class Saws(object):
     Attributes:
         * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
         * config: An instance of ConfigObj, reads from ~/.sawsrc.
+        * aws_commands: An instance of AwsCommands
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
         * global_options: A list of global_options from data/SOURCES.txt.
@@ -58,9 +58,10 @@ class Saws(object):
         self.logger = SawsLogger(__name__,
                                  self.config['main']['log_file'],
                                  self.config['main']['log_level'])
+        self.aws_commands = AwsCommands()
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options, self.ec2_states \
-            = generate_all_commands()
+            = self.aws_commands.generate_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
             self.config,
@@ -203,9 +204,9 @@ class Saws(object):
             text = self.aws_cli.current_buffer.document.text
         # If the user hit the F1 key, append 'docs' to the text
         if from_fkey:
-            text = text.strip() + ' ' + AWS_DOCS[0]
+            text = text.strip() + ' ' + AwsCommands.AWS_DOCS
         tokens = text.split()
-        if len(tokens) > 2 and tokens[-1] == AWS_DOCS[0]:
+        if len(tokens) > 2 and tokens[-1] == AwsCommands.AWS_DOCS:
             prev_word = tokens[-2]
             # If we have a command, build the url
             if prev_word in self.commands:
@@ -223,7 +224,7 @@ class Saws(object):
             webbrowser.open(base_url + index_html)
         # If we still haven't opened the help doc at this point and the
         # user hit the F1 key or typed docs, just open the main docs index
-        if from_fkey or AWS_DOCS[0] in tokens:
+        if from_fkey or AwsCommands.AWS_DOCS in tokens:
             webbrowser.open(base_url + index_html)
             return True
         return False
@@ -249,7 +250,7 @@ class Saws(object):
         if not self.get_color():
             return text
         stripped_text = text.strip()
-        excludes = [AWS_CONFIGURE[0], AWS_HELP[0]]
+        excludes = [AwsCommands.AWS_CONFIGURE, AwsCommands.AWS_HELP]
         if not any(substring in stripped_text for substring in excludes):
             return text.strip() + ' | pygmentize -l json'
         else:
@@ -322,7 +323,7 @@ class Saws(object):
             text = self.completer.replace_shortcut(document.text)
             if self.handle_docs(text):
                 continue
-            if AWS_COMMAND[0] not in text:
+            if AwsCommands.AWS_COMMAND not in text:
                 print('usage: aws [options] <command> <subcommand> [parameters]')
                 print('aws: error: too few arguments')
                 print('\n')

@@ -5,7 +5,7 @@ import os
 import re
 import subprocess
 from enum import Enum
-from .commands import SOURCES_DIR
+from .commands import AwsCommands
 
 
 class AwsResources(object):
@@ -77,7 +77,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-        file_path = os.path.join(SOURCES_DIR, 'data/RESOURCES.txt')
+        file_path = os.path.join(AwsCommands.SOURCES_DIR, 'data/RESOURCES.txt')
         if not force_refresh:
             try:
                 self.refresh_resources_from_file(file_path)
