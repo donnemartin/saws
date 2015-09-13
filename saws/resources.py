@@ -31,6 +31,14 @@ class AwsResources(object):
             instance tag values in data/RESOURCES.txt.
         * BUCKET_NAMES_MARKER: A string marking the start of i
             bucket names in data/RESOURCES.txt.
+        QUERY_INSTANCE_IDS_CMD: A string representing the AWS query to
+            list all instance ids
+        QUERY_INSTANCE_TAG_KEYS_CMD: A string representing the AWS query to
+            list all instance tag keys
+        QUERY_INSTANCE_TAG_VALUES_CMD: A string representing the AWS query to
+            list all instance tag values
+        QUERY_BUCKET_NAMES_CMD: A string representing the AWS query to
+            list all bucket names
         * log_exception: A callable log_exception from SawsLogger.
     """
 
@@ -82,6 +90,10 @@ class AwsResources(object):
         self.EC2_TAG_VALUE = '--ec2-tag-value'
         self.EC2_STATE = '--ec2-state'
         self.BUCKET = '--bucket'
+        self.QUERY_INSTANCE_IDS_CMD = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
+        self.QUERY_INSTANCE_TAG_KEYS_CMD = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
+        self.QUERY_INSTANCE_TAG_VALUES_CMD = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
+        self.QUERY_BUCKET_NAMES_CMD = 'aws s3 ls'
         self.log_exception = log_exception
 
     def refresh(self, force_refresh=False):
@@ -135,7 +147,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-        command = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
+        command = self.QUERY_INSTANCE_IDS_CMD
         try:
             result = subprocess.check_output(command,
                                              universal_newlines=True,
@@ -154,7 +166,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-        command = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
+        command = self.QUERY_INSTANCE_TAG_KEYS_CMD
         try:
             result = subprocess.check_output(command,
                                              universal_newlines=True,
@@ -172,7 +184,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-        command = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
+        command = self.QUERY_INSTANCE_TAG_VALUES_CMD
         try:
             result = subprocess.check_output(command,
                                              universal_newlines=True,
@@ -190,7 +202,7 @@ class AwsResources(object):
         Returns:
             None
         """
-        command = 'aws s3 ls'
+        command = self.QUERY_BUCKET_NAMES_CMD
         try:
             output = subprocess.check_output(command,
                                              universal_newlines=True,
