@@ -46,6 +46,8 @@ class AwsCompleter(Completer):
         Args:
             * aws_completer: The official aws cli completer module.
             * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
+            * log_exception: A callable log_exception from SawsLogger.
+            * ec2_states: A list of the possible instance states.
             * fuzzy_match: A boolean that determines whether to use
                 fuzzy matching.
             * shortcut_match: A boolean that determines whether to
