@@ -42,7 +42,6 @@ class AwsCommands(object):
     SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
     SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
 
-
     class CommandType(Enum):
         """Enum specifying the command type.
 
@@ -60,7 +59,6 @@ class AwsCommands(object):
 
         COMMANDS, SUB_COMMANDS, GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
             EC2_STATES = range(5)
-
 
     def generate_all_commands(self):
         """Generates all commands from the data/SOURCES.txt file.

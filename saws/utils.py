@@ -59,7 +59,7 @@ class TextUtils(object):
         Returns:
             A generator of prompt_toolkit's Completions.
         """
-        text = self.last_token(word).lower()
+        word = self.last_token(word).lower()
         for suggestion in self.find_collection_matches(
                 word, collection, fuzzy):
             yield suggestion

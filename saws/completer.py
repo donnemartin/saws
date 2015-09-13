@@ -135,7 +135,7 @@ class AwsCompleter(Completer):
         # ... --instance-ids [user is now completing the instance id]
         option_text_match = (words[-1] == option_text)
         completing_res = (words[-2] == option_text and word_before_cursor != '')
-        if  option_text_match or completing_res:
+        if option_text_match or completing_res:
             return self.text_utils.find_matches(word_before_cursor,
                                                 resource,
                                                 self.fuzzy_match)
