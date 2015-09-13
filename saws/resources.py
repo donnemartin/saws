@@ -34,6 +34,19 @@ class AwsResources(object):
         * log_exception: A callable log_exception from SawsLogger.
     """
 
+    class ResType(Enum):
+        """Enum specifying the resource type.
+
+        Attributes:
+            * INSTANCE_IDS: An int representing instance ids.
+            * INSTANCE_TAG_KEYS: An int representing instance tag keys.
+            * INSTANCE_TAG_VALUES: An int representing instance tag values.
+            * BUCKET_NAMES: An int representing bucket names.
+        """
+
+        INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
+            BUCKET_NAMES = range(4)
+
     def __init__(self,
                  log_exception,
                  refresh_instance_ids=True,
@@ -198,21 +211,7 @@ class AwsResources(object):
         Returns:
             None.
         """
-
-        class ResType(Enum):
-            """Enum specifying the resource type.
-
-            Attributes:
-                * INSTANCE_IDS: An int representing instance ids.
-                * INSTANCE_TAG_KEYS: An int representing instance tag keys.
-                * INSTANCE_TAG_VALUES: An int representing instance tag values.
-                * BUCKET_NAMES: An int representing bucket names.
-            """
-
-            INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
-                BUCKET_NAMES = range(4)
-
-        res_type = ResType.INSTANCE_IDS
+        res_type = self.ResType.INSTANCE_IDS
         with open(file_path) as fp:
             self.instance_ids = []
             self.instance_tag_keys = set()
@@ -225,24 +224,24 @@ class AwsResources(object):
                 if line.strip() == '':
                     continue
                 elif self.INSTANCE_IDS_MARKER in line:
-                    res_type = ResType.INSTANCE_IDS
+                    res_type = self.ResType.INSTANCE_IDS
                     continue
                 elif self.INSTANCE_TAG_KEYS_MARKER in line:
-                    res_type = ResType.INSTANCE_TAG_KEYS
+                    res_type = self.ResType.INSTANCE_TAG_KEYS
                     continue
                 elif self.INSTANCE_TAG_VALUES_MARKER in line:
-                    res_type = ResType.INSTANCE_TAG_VALUES
+                    res_type = self.ResType.INSTANCE_TAG_VALUES
                     continue
                 elif self.BUCKET_NAMES_MARKER in line:
-                    res_type = ResType.BUCKET_NAMES
+                    res_type = self.ResType.BUCKET_NAMES
                     continue
-                if res_type == ResType.INSTANCE_IDS:
+                if res_type == self.ResType.INSTANCE_IDS:
                     self.instance_ids.append(line)
-                elif res_type == ResType.INSTANCE_TAG_KEYS:
+                elif res_type == self.ResType.INSTANCE_TAG_KEYS:
                     instance_tag_keys_list.append(line)
-                elif res_type == ResType.INSTANCE_TAG_VALUES:
+                elif res_type == self.ResType.INSTANCE_TAG_VALUES:
                     instance_tag_values_list.append(line)
-                elif res_type == ResType.BUCKET_NAMES:
+                elif res_type == self.ResType.BUCKET_NAMES:
                     self.bucket_names.append(line)
             self.instance_tag_keys = set(instance_tag_keys_list)
             self.instance_tag_values = set(instance_tag_values_list)
