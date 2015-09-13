@@ -13,14 +13,14 @@ from saws.main import Saws
 class CompleterTest(unittest.TestCase):
 
     def setUp(self):
-        self.iaws_cli = Saws()
+        self.saws = Saws()
         self.completer = self.create_completer()
         self.completer_event = self.create_completer_event()
 
     def create_completer(self):
         return AwsCompleter(awscli_completer,
-                            self.iaws_cli.config_obj,
-                            self.iaws_cli.logger)
+                            self.saws.config_obj,
+                            self.saws.logger)
 
     def create_completer_event(self):
         return Mock()
@@ -61,14 +61,14 @@ class CompleterTest(unittest.TestCase):
 
     def test_global_options(self):
         commands = ['aws -', 'aws --']
-        expected = self.iaws_cli.global_options
+        expected = self.saws.global_options
         self.verify_completions(commands, expected)
 
     def test_resource_options(self):
         commands = ['aws ec2 describe-instances --',
                     'aws s3api get-bucket-acl --',
                     'aws elb describe-instance-health --']
-        expected = self.iaws_cli.resource_options
+        expected = self.saws.resource_options
         self.verify_completions(commands, expected)
 
     def test_shortcuts(self):
