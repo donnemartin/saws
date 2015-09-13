@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import re
 import sys
+import traceback
 from collections import OrderedDict
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
@@ -18,6 +19,7 @@ class AwsCompleter(Completer):
         * aws_completer: An instance of the official awscli Completer.
         * aws_completions: A set of completions to show the user.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc
+        * log_exception: A callable log_exception from SawsLogger.
         * ec2_states: A list of the possible instance states.
         * text_utils: An instance of TextUtils.
         * fuzzy_match: A boolean that determines whether to use fuzzy matching.
@@ -32,6 +34,7 @@ class AwsCompleter(Completer):
     def __init__(self,
                  aws_completer,
                  config_obj,
+                 log_exception,
                  ec2_states=[],
                  fuzzy_match=False,
                  shortcut_match=False):
@@ -51,6 +54,7 @@ class AwsCompleter(Completer):
         self.aws_completer = aws_completer
         self.aws_completions = set()
         self.config_obj = config_obj
+        self.log_exception = log_exception
         self.ec2_states = ec2_states
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
@@ -62,6 +66,7 @@ class AwsCompleter(Completer):
                                          self.config_obj['shortcuts'].values()))
         self.resources = \
             AwsResources(
+                self.log_exception,
                 self.config_obj['main'].as_bool('refresh_instance_ids'),
                 self.config_obj['main'].as_bool('refresh_instance_tags'),
                 self.config_obj['main'].as_bool('refresh_bucket_names'))
@@ -152,15 +157,16 @@ class AwsCompleter(Completer):
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
-        # Capture the AWS CLI autocompleter and store it in a string
-        old_stdout = sys.stdout
-        sys.stdout = mystdout = cStringIO()
         try:
+            # Capture the AWS CLI autocompleter and store it in a string
+            old_stdout = sys.stdout
+            sys.stdout = mystdout = cStringIO()
             text = self.replace_shortcut(document.text)
             self.aws_completer.complete(text, len(text))
         except Exception as e:
-            print('Exception: ', e)
-        sys.stdout = old_stdout
+            self.log_exception(e, traceback)
+        finally:
+            sys.stdout = old_stdout
         aws_completer_results = mystdout.getvalue()
         # Tidy up the completions and store it in a list
         aws_completer_results = re.sub('\n', '', aws_completer_results)

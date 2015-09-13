@@ -4,6 +4,7 @@ from __future__ import print_function
 import os
 import re
 import subprocess
+import traceback
 from enum import Enum
 from .commands import AwsCommands
 
@@ -30,15 +31,18 @@ class AwsResources(object):
             instance tag values in data/RESOURCES.txt
         * BUCKET_NAMES_MARKER: A string marking the start of i
             bucket names in data/RESOURCES.txt
+        * log_exception: A callable log_exception from SawsLogger.
     """
 
     def __init__(self,
+                 log_exception,
                  refresh_instance_ids=True,
                  refresh_instance_tags=True,
                  refresh_bucket_names=True):
         """Initializes AwsResources.
 
         Args:
+            * log_exception: A callable log_exception from SawsLogger.
             * refresh_instance_ids: A boolean that determines whether to
                 refresh instance ids by querying AWS.
             * refresh_instance_tags: A boolean that determines whether to
@@ -60,6 +64,7 @@ class AwsResources(object):
         self.INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
         self.INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
         self.BUCKET_NAMES_MARKER = '[bucket names]'
+        self.log_exception = log_exception
 
     def refresh(self, force_refresh=False):
         """Refreshes the AWS resources and caches them to a file.
@@ -101,7 +106,7 @@ class AwsResources(object):
         try:
             self.save_resources_to_file(file_path)
         except IOError as e:
-            print(e)
+            self.log_exception(e, traceback)
 
     def query_instance_ids(self):
         """Queries and stores instance ids from AWS.
@@ -120,7 +125,7 @@ class AwsResources(object):
             result = re.sub('\n', ' ', result)
             self.instance_ids = result.split()
         except Exception as e:
-            print(e)
+            self.log_exception(e, traceback)
 
     def query_instance_tag_keys(self):
         """Queries and stores instance tag keys from AWS.
@@ -138,7 +143,7 @@ class AwsResources(object):
                                              shell=True)
             self.instance_tag_keys = set(result.split('\t'))
         except Exception as e:
-            print(e)
+            self.log_exception(e, traceback)
 
     def query_instance_tag_values(self):
         """Queries and stores instance tag values from AWS.
@@ -156,7 +161,7 @@ class AwsResources(object):
                                              shell=True)
             self.instance_tag_values = set(result.split('\t'))
         except Exception as e:
-            print(e)
+            self.log_exception(e, traceback)
 
     def query_bucket_names(self):
         """Queries and stores bucket names from AWS.
@@ -182,7 +187,7 @@ class AwsResources(object):
                     # Ignore blank lines
                     pass
         except Exception as e:
-            print(e)
+            self.log_exception(e, traceback)
 
     def refresh_resources_from_file(self, file_path):
         """Refreshes the AWS resources from data/RESOURCES.txt.

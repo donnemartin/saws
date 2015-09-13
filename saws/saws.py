@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import print_function
+import click
 import os
 import subprocess
+import traceback
 import webbrowser
 from prompt_toolkit import AbortAction, Application, CommandLineInterface
 from prompt_toolkit.enums import DEFAULT_BUFFER
@@ -38,7 +40,7 @@ class Saws(object):
         * resource_options: A list of resource_options from data/SOURCES.txt.
         * ec2_states: A list of ec2_states from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
-        * logger: An instance of SawsLoggerself.
+        * logger: An instance of SawsLogger.
         * theme: A string representing the lexer theme.
             Currently only 'vim' is supported.
     """
@@ -58,7 +60,7 @@ class Saws(object):
         self.config_obj = self.config.read_configuration()
         self.logger = SawsLogger(__name__,
                                  self.config_obj['main']['log_file'],
-                                 self.config_obj['main']['log_level'])
+                                 self.config_obj['main']['log_level']).logger
         self.aws_commands = AwsCommands()
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options, self.ec2_states \
@@ -66,10 +68,24 @@ class Saws(object):
         self.completer = AwsCompleter(
             awscli_completer,
             self.config_obj,
+            self.log_exception,
             ec2_states=self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match())
         self.create_cli()
+
+    def log_exception(self, e, traceback):
+        """Logs the exception and traceback to the log file ~/.saws.log.
+
+        Args:
+            * e: A Exception that specifies the exception.
+            * traceback: A Traceback that specifies the traceback.
+
+        Returns:
+            None.
+        """
+        self.logger.debug('exception: %r.', str(e))
+        self.logger.error("traceback: %r", traceback.format_exc())
 
     def set_color(self, color):
         """Setter for color output mode.
@@ -327,7 +343,7 @@ class Saws(object):
                 continue
             if AwsCommands.AWS_COMMAND not in text:
                 print('usage: aws [options] <command> <subcommand> [parameters]')
-                print('aws: error: too few arguments')
+                print('aws: error: commands must start with: aws')
                 print('\n')
                 continue
             text = self.colorize_output(text)
@@ -336,4 +352,5 @@ class Saws(object):
                 subprocess.call(text, shell=True)
                 print('')
             except Exception as e:
-                print(e)
+                self.log_exception(e, traceback)
+                click.secho(e.message, fg='red')

@@ -19,7 +19,8 @@ class CompleterTest(unittest.TestCase):
 
     def create_completer(self):
         return AwsCompleter(awscli_completer,
-                            self.iaws_cli.config_obj)
+                            self.iaws_cli.config_obj,
+                            self.iaws_cli.logger)
 
     def create_completer_event(self):
         return Mock()
