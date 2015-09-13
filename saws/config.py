@@ -3,7 +3,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import shutil
 import os
-from collections import OrderedDict
+try:
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 from configobj import ConfigObj
 
 
