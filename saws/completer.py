@@ -160,16 +160,15 @@ class AwsCompleter(Completer):
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
+        text = self.replace_shortcut(document.text)
+        old_stdout = sys.stdout
+        sys.stdout = mystdout = cStringIO()
         try:
             # Capture the AWS CLI autocompleter and store it in a string
-            old_stdout = sys.stdout
-            sys.stdout = mystdout = cStringIO()
-            text = self.replace_shortcut(document.text)
             self.aws_completer.complete(text, len(text))
         except Exception as e:
             self.log_exception(e, traceback)
-        finally:
-            sys.stdout = old_stdout
+        sys.stdout = old_stdout
         aws_completer_results = mystdout.getvalue()
         # Tidy up the completions and store it in a list
         aws_completer_results = re.sub('\n', '', aws_completer_results)
