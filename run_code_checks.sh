@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-flake8 --ignore=F811 --max-line-length=99 --exclude=build .
+flake8 --max-line-length=80 --exclude=build,scratch,docs .
