@@ -65,7 +65,6 @@ class AwsCompleter(Completer):
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
         self.BASE_COMMAND = AwsCommands.AWS_COMMAND
-        self.DOCS_COMMAND = AwsCommands.AWS_DOCS
         # TODO: Refactor to use config_obj.get_shortcuts()
         self.shortcuts = OrderedDict(zip(self.config_obj['shortcuts'].keys(),
                                          self.config_obj['shortcuts'].values()))
@@ -227,7 +226,6 @@ class AwsCompleter(Completer):
             self.aws_completions.update([self.BASE_COMMAND])
         else:
             self.aws_completions.update(aws_completer_results_list)
-        self.aws_completions.update([self.DOCS_COMMAND])
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:

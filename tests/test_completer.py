@@ -54,11 +54,6 @@ class CompleterTest(unittest.TestCase):
         expected = [AwsCommands.AWS_COMMAND]
         self.verify_completions(commands, expected)
 
-    def test_docs_command_completion(self):
-        commands = ['d', 'do', 'doc']
-        expected = [AwsCommands.AWS_DOCS]
-        self.verify_completions(commands, expected)
-
     def test_global_options(self):
         commands = ['aws -', 'aws --']
         expected = self.saws.global_options
