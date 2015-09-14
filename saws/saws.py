@@ -246,6 +246,38 @@ class Saws(object):
             return True
         return False
 
+    def handle_cd(self, text):
+        """Handles a `cd` shell command by calling python's os.chdir.
+
+        Simply passing in the `cd` command to subprocess.call doesn't work.
+        Note: Changing the directory within Saws will only be in effect while
+        running Saws.  Exiting the program will return you to the directory
+        you were in prior to running Saws.
+
+        Attributes:
+            * text: A string representing the input command text.
+
+        Returns:
+            A boolean representing a `cd` command was found and handled.
+        """
+        CD_CMD = 'cd'
+        stripped_text = text.strip()
+        if stripped_text.startswith(CD_CMD):
+            directory = ''
+            if stripped_text == CD_CMD:
+                # Treat `cd` as a change to the root directory.
+                # os.path.expanduser does this in a cross platform manner.
+                directory = os.path.expanduser('~')
+            else:
+                tokens = text.split(CD_CMD + ' ')
+                directory = tokens[-1]
+            try:
+                os.chdir(directory)
+            except OSError as e:
+                self.log_exception(e, traceback)
+            return True
+        return False
+
     def colorize_output(self, text):
         """Highlights output with pygments.
 
@@ -338,18 +370,16 @@ class Saws(object):
         print('Version:', __version__)
         while True:
             document = self.aws_cli.run()
-            text = self.completer.replace_shortcut(document.text)
-            if self.handle_docs(text):
-                continue
-            if AwsCommands.AWS_COMMAND not in text:
-                print('usage: aws [options] <command> <subcommand> [parameters]')
-                print('aws: error: commands must start with: aws')
-                print('\n')
-                continue
-            text = self.colorize_output(text)
+            text = document.text
+            if AwsCommands.AWS_COMMAND in text:
+                text = self.completer.replace_shortcut(text)
+                if self.handle_docs(text):
+                    continue
+                text = self.colorize_output(text)
             try:
-                # Pass the command onto the shell so aws-cli can execute it
-                subprocess.call(text, shell=True)
+                if not self.handle_cd(text):
+                    # Pass the command onto the shell so aws-cli can execute it
+                    subprocess.call(text, shell=True)
                 print('')
             except Exception as e:
                 self.log_exception(e, traceback)
