@@ -36,7 +36,7 @@ class TextUtils(object):
             * collection: A collection of words to match.
             * fuzzy: A boolean that specifies whether to use fuzzy matching.
 
-        Returns:
+        Yields:
             A generator of prompt_toolkit's Completions.
         """
         if fuzzy:
@@ -56,7 +56,7 @@ class TextUtils(object):
             * collection: A collection of words to match.
             * fuzzy: A boolean that specifies whether to use fuzzy matching.
 
-        Returns:
+        Yields:
             A generator of prompt_toolkit's Completions.
         """
         word = self.last_token(word).lower()
@@ -71,7 +71,7 @@ class TextUtils(object):
             * text: A string to split into tokens.
 
         Returns:
-            A list that contains words for each split element of text.
+            A list of strings for each word in the text.
         """
         if text is not None:
             text = text.strip()
