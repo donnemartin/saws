@@ -74,18 +74,22 @@ class Saws(object):
             shortcut_match=self.get_shortcut_match())
         self.create_cli()
 
-    def log_exception(self, e, traceback):
+    def log_exception(self, e, traceback, echo=False):
         """Logs the exception and traceback to the log file ~/.saws.log.
 
         Args:
             * e: A Exception that specifies the exception.
             * traceback: A Traceback that specifies the traceback.
+            * echo: A boolean that specifies whether to echo the exception
+                to the console using click.
 
         Returns:
             None.
         """
         self.logger.debug('exception: %r.', str(e))
         self.logger.error("traceback: %r", traceback.format_exc())
+        if echo:
+            click.secho(str(e), fg='red')
 
     def set_color(self, color):
         """Setter for color output mode.
@@ -274,7 +278,7 @@ class Saws(object):
             try:
                 os.chdir(directory)
             except OSError as e:
-                self.log_exception(e, traceback)
+                self.log_exception(e, traceback, echo=True)
             return True
         return False
 
@@ -380,7 +384,6 @@ class Saws(object):
                 if not self.handle_cd(text):
                     # Pass the command onto the shell so aws-cli can execute it
                     subprocess.call(text, shell=True)
-                print('')
+                print(text)
             except Exception as e:
-                self.log_exception(e, traceback)
-                click.secho(e.message, fg='red')
+                self.log_exception(e, traceback, echo=True)
