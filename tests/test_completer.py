@@ -7,7 +7,7 @@ from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
-from saws.main import Saws
+from saws.saws import Saws
 
 
 class CompleterTest(unittest.TestCase):
