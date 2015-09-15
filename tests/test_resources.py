@@ -48,32 +48,32 @@ class ResourcesTest(unittest.TestCase):
             self.NUM_BUCKET_NAMES
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_instance_ids(self, mock_subprocess):
-        self.resources.query_instance_ids()
+    def test_query_aws_with_instance_ids(self, mock_subprocess):
+        self.resources.query_aws(self.resources.QUERY_INSTANCE_IDS_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_IDS_CMD,
             universal_newlines=True,
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_instance_tag_keys(self, mock_subprocess):
-        self.resources.query_instance_tag_keys()
+    def test_query_aws_with_instance_tag_keys(self, mock_subprocess):
+        self.resources.query_aws(self.resources.QUERY_INSTANCE_TAG_KEYS_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_TAG_KEYS_CMD,
             universal_newlines=True,
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def query_instance_tag_values(self, mock_subprocess):
-        self.resources.query_instance_tag_values()
+    def query_aws_with_instance_tag_values(self, mock_subprocess):
+        self.resources.query_aws(self.resources.QUERY_INSTANCE_TAG_VALUES_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_TAG_VALUES_CMD,
             universal_newlines=True,
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_bucket_names(self, mock_subprocess):
-        self.resources.query_bucket_names()
+    def test_query_aws_with_bucket_names(self, mock_subprocess):
+        self.resources.query_aws(self.resources.QUERY_BUCKET_NAMES_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_BUCKET_NAMES_CMD,
             universal_newlines=True,
