@@ -30,3 +30,15 @@ class ResourcesTest(unittest.TestCase):
             self.NUM_INSTANCE_TAG_VALUES
         assert len(self.resources.bucket_names) == \
             self.NUM_BUCKET_NAMES
+
+    @unittest.skip('TODO: Does not properly test a force refresh')
+    def test_refresh_forced(self):
+        self.resources.refresh(force_refresh=True)
+        assert len(self.resources.instance_ids) == \
+            self.NUM_INSTANCE_IDS
+        assert len(self.resources.instance_tag_keys) == \
+            self.NUM_INSTANCE_TAG_KEYS
+        assert len(self.resources.instance_tag_values) == \
+            self.NUM_INSTANCE_TAG_VALUES
+        assert len(self.resources.bucket_names) == \
+            self.NUM_BUCKET_NAMES
