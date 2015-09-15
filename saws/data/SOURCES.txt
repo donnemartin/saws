@@ -1467,7 +1467,6 @@ website
 [resource_options]: 3
 --bucket
 --instance-ids
---load-balancer-name
 [ec2_states]: 6
 pending
 running

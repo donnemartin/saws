@@ -61,8 +61,7 @@ class CompleterTest(unittest.TestCase):
 
     def test_resource_options(self):
         commands = ['aws ec2 describe-instances --',
-                    'aws s3api get-bucket-acl --',
-                    'aws elb describe-instance-health --']
+                    'aws s3api get-bucket-acl --']
         expected = self.saws.resource_options
         self.verify_completions(commands, expected)
 

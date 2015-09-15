@@ -37,7 +37,8 @@ class Saws(object):
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
         * global_options: A list of global_options from data/SOURCES.txt.
-        * resource_options: A list of resource_options from data/SOURCES.txt.
+        * resource_options: A list of resource_options from data/SOURCES.txt,
+            used for syntax coloring.
         * ec2_states: A list of ec2_states from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
         * logger: An instance of SawsLogger.
