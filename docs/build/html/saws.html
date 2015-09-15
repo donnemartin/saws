@@ -252,6 +252,78 @@
 </dd>
 </dl>
 <dl class="method">
+<dt id="saws.completer.AwsCompleter.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes AwsCompleter.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">aws_completer: The official aws cli completer module.</p>
+</li>
+<li><p class="first">config_obj: An instance of ConfigObj, reads from ~/.sawsrc.</p>
+</li>
+<li><p class="first">log_exception: A callable log_exception from SawsLogger.</p>
+</li>
+<li><p class="first">ec2_states: A list of the possible instance states.</p>
+</li>
+<li><dl class="first docutils">
+<dt>fuzzy_match: A boolean that determines whether to use</dt>
+<dd><p class="first last">fuzzy matching.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>shortcut_match: A boolean that determines whether to</dt>
+<dd><p class="first last">match shortcuts.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.completer.AwsCompleter.get_all_resource_completions">
+<code class="descname">get_all_resource_completions</code><span class="sig-paren">(</span><em>words</em>, <em>word_before_cursor</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.get_all_resource_completions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">words: A list of strings for each word in the command text.</p>
+</li>
+<li><dl class="first docutils">
+<dt>word_before_cursor: A string representing the word before</dt>
+<dd><p class="first last">the cursor.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>A generator of prompt_toolkit&#8217;s Completion objects, containing
+matched completions.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.completer.AwsCompleter.get_aws_cli_completions">
+<code class="descname">get_aws_cli_completions</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.get_aws_cli_completions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get completions from the official AWS CLI for the current scope.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>document: An instance of prompt_toolkit&#8217;s Document.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>A list of string completions.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="saws.completer.AwsCompleter.get_completions">
 <code class="descname">get_completions</code><span class="sig-paren">(</span><em>document</em>, <em>_</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.get_completions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get completions for the current scope.</p>
@@ -431,6 +503,26 @@ corresponding full commands as the values.</dd>
 </dd>
 </dl>
 <dl class="method">
+<dt id="saws.keys.KeyManager.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>set_color</em>, <em>get_color</em>, <em>set_fuzzy_match</em>, <em>get_fuzzy_match</em>, <em>set_shortcut_match</em>, <em>get_shortcut_match</em>, <em>refresh_resources</em>, <em>handle_docs</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.keys.KeyManager.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes KeyManager.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>set_color: A function that sets the color output config.</li>
+<li>get_color: A function that gets the color output config.</li>
+<li>set_fuzzy_match: A function that sets the fuzzy match config.</li>
+<li>get_fuzzy_match: A function that gets the fuzzy match config.</li>
+<li>set_shortcut_match: A function that sets the shortcut match config.</li>
+<li>get_shortcut_match: A function that gets the shortcut match config.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="saws.keys.KeyManager.create_key_manager">
 <code class="descname">create_key_manager</code><span class="sig-paren">(</span><em>set_color</em>, <em>get_color</em>, <em>set_fuzzy_match</em>, <em>get_fuzzy_match</em>, <em>set_shortcut_match</em>, <em>get_shortcut_match</em>, <em>refresh_resources</em>, <em>handle_docs</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.keys.KeyManager.create_key_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and initializes the keybinding manager.</p>
@@ -543,7 +635,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x105d62250&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x105d62290&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x105d622d0&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x105d62310&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x105d62350&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x105d62390&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x105d623d0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x105d62410&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x106910c90&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x106910cd0&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x106910d10&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x106910d50&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x106910d90&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x106910dd0&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x106910e10&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x106910e50&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -563,6 +655,23 @@ corresponding full commands as the values.</dd>
 </ul>
 </dd>
 </dl>
+<dl class="method">
+<dt id="saws.logger.SawsLogger.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>log_file</em>, <em>log_level</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.logger.SawsLogger.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a Logger for Saws.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>name: A string that represents the logger&#8217;s name.</li>
+<li>log_file: A string that represents the log file name.</li>
+<li>log_level: A string that represents the logging level.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -578,7 +687,7 @@ corresponding full commands as the values.</dd>
 <p>Loads and stores AWS resources.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd><ul class="first last">
+<dd><ul class="first">
 <li><p class="first">instance_ids: A list of instance ids.</p>
 </li>
 <li><p class="first">instance_tag_keys: A set of instance tag keys.</p>
@@ -629,14 +738,76 @@ corresponding full commands as the values.</dd>
 </dd>
 </dl>
 </li>
-<li><p class="first">log_exception: A callable log_exception from SawsLogger.</p>
-</li>
+</ul>
+<dl class="docutils">
+<dt>QUERY_INSTANCE_IDS_CMD: A string representing the AWS query to</dt>
+<dd>list all instance ids</dd>
+<dt>QUERY_INSTANCE_TAG_KEYS_CMD: A string representing the AWS query to</dt>
+<dd>list all instance tag keys</dd>
+<dt>QUERY_INSTANCE_TAG_VALUES_CMD: A string representing the AWS query to</dt>
+<dd>list all instance tag values</dd>
+<dt>QUERY_BUCKET_NAMES_CMD: A string representing the AWS query to</dt>
+<dd>list all bucket names</dd>
+</dl>
+<ul class="last simple">
+<li>log_exception: A callable log_exception from SawsLogger.</li>
 </ul>
 </dd>
 </dl>
+<dl class="class">
+<dt id="saws.resources.AwsResources.ResType">
+<em class="property">class </em><code class="descname">ResType</code><a class="headerlink" href="#saws.resources.AwsResources.ResType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Enum specifying the resource type.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>INSTANCE_IDS: An int representing instance ids.</li>
+<li>INSTANCE_TAG_KEYS: An int representing instance tag keys.</li>
+<li>INSTANCE_TAG_VALUES: An int representing instance tag values.</li>
+<li>BUCKET_NAMES: An int representing bucket names.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.resources.AwsResources.__init__">
+<code class="descclassname">AwsResources.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>log_exception</em>, <em>refresh_instance_ids=True</em>, <em>refresh_instance_tags=True</em>, <em>refresh_bucket_names=True</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes AwsResources.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">log_exception: A callable log_exception from SawsLogger.</p>
+</li>
+<li><dl class="first docutils">
+<dt>refresh_instance_ids: A boolean that determines whether to</dt>
+<dd><p class="first last">refresh instance ids by querying AWS.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>refresh_instance_tags: A boolean that determines whether to</dt>
+<dd><p class="first last">refresh instance tags by querying AWS.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>refresh_bucket_names: A boolean that determines whether to</dt>
+<dd><p class="first last">refresh bucket names by querying AWS.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="saws.resources.AwsResources.query_bucket_names">
-<code class="descname">query_bucket_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_bucket_names" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">query_bucket_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_bucket_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries and stores bucket names from AWS.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -651,7 +822,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.query_instance_ids">
-<code class="descname">query_instance_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_ids" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">query_instance_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_ids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries and stores instance ids from AWS.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -666,7 +837,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.query_instance_tag_keys">
-<code class="descname">query_instance_tag_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_tag_keys" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">query_instance_tag_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_tag_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries and stores instance tag keys from AWS.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -681,7 +852,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.query_instance_tag_values">
-<code class="descname">query_instance_tag_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_tag_values" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">query_instance_tag_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.query_instance_tag_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries and stores instance tag values from AWS.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -696,7 +867,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.refresh">
-<code class="descname">refresh</code><span class="sig-paren">(</span><em>force_refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.refresh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">refresh</code><span class="sig-paren">(</span><em>force_refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.refresh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refreshes the AWS resources and caches them to a file.</p>
 <p>This function is called on startup.
 If no cache exists, it queries AWS to build the resource lists.
@@ -721,7 +892,7 @@ Before returning, it saves the resource lists to cache.</p>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.refresh_resources_from_file">
-<code class="descname">refresh_resources_from_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.refresh_resources_from_file" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">refresh_resources_from_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.refresh_resources_from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Refreshes the AWS resources from data/RESOURCES.txt.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -736,7 +907,7 @@ Before returning, it saves the resource lists to cache.</p>
 
 <dl class="method">
 <dt id="saws.resources.AwsResources.save_resources_to_file">
-<code class="descname">save_resources_to_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.save_resources_to_file" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">AwsResources.</code><code class="descname">save_resources_to_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.save_resources_to_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the AWS resources to data/RESOURCES.txt.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -793,6 +964,21 @@ Before returning, it saves the resource lists to cache.</p>
 </ul>
 </dd>
 </dl>
+<dl class="method">
+<dt id="saws.saws.Saws.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits Saws.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>None.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="saws.saws.Saws.colorize_output">
 <code class="descname">colorize_output</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.colorize_output" title="Permalink to this definition">¶</a></dt>
@@ -900,6 +1086,25 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dd></dl>
 
 <dl class="method">
+<dt id="saws.saws.Saws.handle_cd">
+<code class="descname">handle_cd</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.handle_cd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles a <cite>cd</cite> shell command by calling python&#8217;s os.chdir.</p>
+<p>Simply passing in the <cite>cd</cite> command to subprocess.call doesn&#8217;t work.
+Note: Changing the directory within Saws will only be in effect while
+running Saws.  Exiting the program will return you to the directory
+you were in prior to running Saws.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>text: A string representing the input command text.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>A boolean representing a <cite>cd</cite> command was found and handled.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="saws.saws.Saws.handle_docs">
 <code class="descname">handle_docs</code><span class="sig-paren">(</span><em>text=None</em>, <em>from_fkey=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.handle_docs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays contextual web docs for <cite>F1</cite> or the <cite>docs</cite> command.</p>
@@ -934,13 +1139,21 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 
 <dl class="method">
 <dt id="saws.saws.Saws.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>traceback</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>traceback</em>, <em>echo=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs the exception and traceback to the log file ~/.saws.log.</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd><ul class="first last simple">
-<li>e: A Exception that specifies the exception.</li>
-<li>traceback: A Traceback that specifies the traceback.</li>
+<dd><ul class="first last">
+<li><p class="first">e: A Exception that specifies the exception.</p>
+</li>
+<li><p class="first">traceback: A Traceback that specifies the traceback.</p>
+</li>
+<li><dl class="first docutils">
+<dt>echo: A boolean that specifies whether to echo the exception</dt>
+<dd><p class="first last">to the console using click.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 <dt>Returns:</dt>
@@ -1052,6 +1265,21 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dd>
 </dl>
 <dl class="method">
+<dt id="saws.style.StyleFactory.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.style.StyleFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes StyleFactory.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>name: A string representing the pygments style.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>An instance of CliStyle.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="saws.style.StyleFactory.style_factory">
 <code class="descname">style_factory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.style.StyleFactory.style_factory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the specified pygments style.</p>
@@ -1084,6 +1312,23 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </ul>
 </dd>
 </dl>
+<dl class="method">
+<dt id="saws.toolbar.Toolbar.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>color_cfg</em>, <em>fuzzy_cfg</em>, <em>shortcuts_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.toolbar.Toolbar.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes ToolBar.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>color_cfg: A boolean that spedifies whether to color the output.</li>
+<li>fuzzy_cfg: A boolean that spedifies whether to do fuzzy matching.</li>
+<li>shortcuts_cfg: A boolean that spedifies whether to match shortcuts.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="saws.toolbar.Toolbar.create_toolbar_handler">
 <code class="descname">create_toolbar_handler</code><span class="sig-paren">(</span><em>color_cfg</em>, <em>fuzzy_cfg</em>, <em>shortcuts_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.toolbar.Toolbar.create_toolbar_handler" title="Permalink to this definition">¶</a></dt>
@@ -1137,7 +1382,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </li>
 </ul>
 </dd>
-<dt>Returns:</dt>
+<dt>Yields:</dt>
 <dd>A generator of prompt_toolkit&#8217;s Completions.</dd>
 </dl>
 </dd></dl>
@@ -1161,7 +1406,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </li>
 </ul>
 </dd>
-<dt>Returns:</dt>
+<dt>Yields:</dt>
 <dd>A generator of prompt_toolkit&#8217;s Completions.</dd>
 </dl>
 </dd></dl>
@@ -1177,7 +1422,7 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </ul>
 </dd>
 <dt>Returns:</dt>
-<dd>A list that contains words for each split element of text.</dd>
+<dd>A list of strings for each word in the text.</dd>
 </dl>
 </dd></dl>
 
