@@ -1464,7 +1464,7 @@ website
 --query
 --region
 --version
-[resource_options]: 3
+[resource_options]: 2
 --bucket
 --instance-ids
 [ec2_states]: 6
