@@ -42,3 +42,11 @@ class ResourcesTest(unittest.TestCase):
             self.NUM_INSTANCE_TAG_VALUES
         assert len(self.resources.bucket_names) == \
             self.NUM_BUCKET_NAMES
+
+    @mock.patch('saws.resources.subprocess')
+    def test_query_instance_ids(self, mock_subprocess):
+        self.resources.query_instance_ids()
+        mock_subprocess.check_output.assert_called_with(
+            self.resources.QUERY_INSTANCE_IDS_CMD,
+            universal_newlines=True,
+            shell=True)
