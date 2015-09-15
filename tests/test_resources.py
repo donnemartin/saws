@@ -58,3 +58,11 @@ class ResourcesTest(unittest.TestCase):
             self.resources.QUERY_INSTANCE_TAG_KEYS_CMD,
             universal_newlines=True,
             shell=True)
+
+    @mock.patch('saws.resources.subprocess')
+    def query_instance_tag_values(self, mock_subprocess):
+        self.resources.query_instance_tag_values()
+        mock_subprocess.check_output.assert_called_with(
+            self.resources.QUERY_INSTANCE_TAG_VALUES_CMD,
+            universal_newlines=True,
+            shell=True)
