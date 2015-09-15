@@ -34,7 +34,9 @@ setup(
         'console_scripts': 'saws = saws.main:cli'
     },
     packages=['saws'],
-    package_data={'saws': ['sawsrc', 'data/SOURCES.txt']},
+    package_data={'saws': ['sawsrc',
+                           'data/SOURCES.txt',
+                           'data/RESOURCES_SAMPLE.txt']},
     scripts=[],
     name='saws',
     classifiers=[

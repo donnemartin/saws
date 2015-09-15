@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from __future__ import print_function
+import unittest
+import mock
+from saws.saws import Saws
+
+
+class ResourcesTest(unittest.TestCase):
+
+    def setUp(self):
+        self.create_resources()
+        self.NUM_INSTANCE_IDS = 7
+        self.NUM_INSTANCE_TAG_KEYS = 3
+        self.NUM_INSTANCE_TAG_VALUES = 6
+        self.NUM_BUCKET_NAMES = 16
+
+    def create_resources(self):
+        self.saws = Saws()
+        self.resources = self.saws.completer.resources
+        self.resources.RESOURCE_FILE = 'data/RESOURCES_SAMPLE.txt'
+
+    def test_refresh(self):
+        self.resources.refresh(force_refresh=False)
+        assert len(self.resources.instance_ids) == \
+            self.NUM_INSTANCE_IDS
+        assert len(self.resources.instance_tag_keys) == \
+            self.NUM_INSTANCE_TAG_KEYS
+        assert len(self.resources.instance_tag_values) == \
+            self.NUM_INSTANCE_TAG_VALUES
+        assert len(self.resources.bucket_names) == \
+            self.NUM_BUCKET_NAMES

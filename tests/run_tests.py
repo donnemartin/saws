@@ -10,6 +10,7 @@ try:
 except:
     # pexpect import fails on Windows
     pass
+from test_resources import ResourcesTest  # NOQA
 
 
 if __name__ == '__main__':

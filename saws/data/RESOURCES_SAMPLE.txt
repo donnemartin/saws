@@ -1,0 +1,36 @@
+[instance ids]
+i-b815ecc3
+i-a51d05f4
+i-a71bd617
+i-c86cba18
+i-f7df0ea7
+i-a1637b56
+i-hdcbac0d
+[instance tag keys]
+Stack
+Name
+Purpose
+[instance tag values]
+metrics
+testing
+billing
+security
+development-feature
+production
+[bucket names]
+prod-downloads
+prod-downloads-logs
+prod-assets
+prod-assets-logs
+dev-downloads
+dev-downloads-logs
+dev-assets
+dev-assets-logs
+dev-feature-downloads
+dev-feature-downloads-logs
+dev-feature-assets
+dev-feature-assets-logs
+test-downloads
+test-downloads-logs
+test-assets
+test-assets-logs
