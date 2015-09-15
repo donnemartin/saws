@@ -70,3 +70,11 @@ class ResourcesTest(unittest.TestCase):
             self.resources.QUERY_INSTANCE_TAG_VALUES_CMD,
             universal_newlines=True,
             shell=True)
+
+    @mock.patch('saws.resources.subprocess')
+    def test_query_bucket_names(self, mock_subprocess):
+        self.resources.query_bucket_names()
+        mock_subprocess.check_output.assert_called_with(
+            self.resources.QUERY_BUCKET_NAMES_CMD,
+            universal_newlines=True,
+            shell=True)
