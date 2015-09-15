@@ -1,6 +1,5 @@
 codecov>=1.3.3
 flake8>=2.4.1
-importlib>=1.0.3
 mock>=1.0.1
 pexpect>=3.3
 pytest>=2.7.0
