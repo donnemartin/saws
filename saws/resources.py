@@ -158,7 +158,7 @@ class AwsResources(object):
             None.
         """
         output = self.query_aws(self.QUERY_INSTANCE_IDS_CMD)
-        output = re.sub('\n', ' ', result)
+        output = re.sub('\n', ' ', output)
         self.instance_ids = output.split()
 
     def query_instance_tag_keys(self):
