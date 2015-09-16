@@ -2,11 +2,8 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import sys
-if sys.version_info < (2, 7):
-    import unittest2 as unittest
-else:
-    import unittest
 import mock
+import unittest
 from saws.saws import Saws
 from saws.resources import AwsResources
 
@@ -22,12 +19,15 @@ class ResourcesTest(unittest.TestCase):
         self.RESOURCES_SAMPLE = 'data/RESOURCES_SAMPLE.txt'
         self.create_resources()
 
-    def create_resources(self):
+    @mock.patch('saws.resources.print')
+    def create_resources(self, mock_print):
         self.saws = Saws()
         self.resources = self.saws.completer.resources
         self.resources.RESOURCE_FILE = self.RESOURCES_SAMPLE
+        mock_print.assert_called_with('Loaded resources from cache')
 
-    def test_refresh(self):
+    @mock.patch('saws.resources.print')
+    def test_refresh(self, mock_print):
         self.resources.refresh(force_refresh=False)
         assert len(self.resources.instance_ids) == \
             self.NUM_INSTANCE_IDS
@@ -37,9 +37,11 @@ class ResourcesTest(unittest.TestCase):
             self.NUM_INSTANCE_TAG_VALUES
         assert len(self.resources.bucket_names) == \
             self.NUM_BUCKET_NAMES
+        mock_print.assert_called_with('Loaded resources from cache')
 
     @mock.patch('saws.resources.subprocess')
-    def test_refresh_forced(self, mock_subprocess):
+    @mock.patch('saws.resources.print')
+    def test_refresh_forced(self, mock_print, mock_subprocess):
         self.resources.RESOURCE_FILE = self.RESOURCES
         with self.assertRaises(TypeError):
             try:
@@ -52,6 +54,7 @@ class ResourcesTest(unittest.TestCase):
                     self.resources.QUERY_INSTANCE_IDS_CMD,
                     universal_newlines=True,
                     shell=True)
+                mock_print.assert_called_with('  Refreshing instance ids...')
                 raise e
         self.resources.RESOURCE_FILE = self.RESOURCES_SAMPLE
 
