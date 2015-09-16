@@ -2,28 +2,36 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import unittest
-from mock import Mock
+import mock
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
 from saws.saws import Saws
+from saws.resources import AwsResources
 
 
 class CompleterTest(unittest.TestCase):
 
-    def setUp(self):
+    @mock.patch('saws.resources.print')
+    def setUp(self, mock_print):
         self.saws = Saws()
         self.completer = self.create_completer()
         self.completer_event = self.create_completer_event()
+        mock_print.assert_called_with('Loaded resources from cache')
 
     def create_completer(self):
+        self.aws_commands = AwsCommands()
+        self.commands, self.sub_commands, self.global_options, \
+            self.resource_options, self.ec2_states = \
+            self.aws_commands.generate_all_commands()
         return AwsCompleter(awscli_completer,
                             self.saws.config_obj,
-                            self.saws.logger)
+                            self.saws.logger,
+                            self.ec2_states)
 
     def create_completer_event(self):
-        return Mock()
+        return mock.Mock()
 
     def _get_completions(self, command):
         position = len(command)
@@ -48,6 +56,24 @@ class CompleterTest(unittest.TestCase):
         else:
             for item in expected:
                 assert item in result_texts
+
+    def test_ec2_state_completions(self):
+        commands = ['ec2 ls --ec2-state pend']
+        expected = ['pending']
+        self.verify_completions(commands, expected)
+        commands = ['ec2 ls --ec2-state run']
+        expected = ['running']
+        self.verify_completions(commands, expected)
+        commands = ['ec2 ls --ec2-state shut']
+        expected = ['shutting-down']
+        self.verify_completions(commands, expected)
+        commands = ['ec2 ls --ec2-state term']
+        expected = ['terminated']
+        self.verify_completions(commands, expected)
+        commands = ['ec2 ls --ec2-state stop']
+        expected = ['stopping',
+                    'stopped']
+        self.verify_completions(commands, expected)
 
     def test_aws_command_completion(self):
         commands = ['a', 'aw']
