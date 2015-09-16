@@ -40,3 +40,8 @@ class KeysTest(unittest.TestCase):
         orig_shortcut = self.saws.get_shortcut_match()
         self.processor.feed_key(KeyPress(Keys.F4, ''))
         assert orig_shortcut != self.saws.get_shortcut_match()
+
+    @mock.patch('saws.resources.print')
+    def test_f5(self, mock_print):
+        self.processor.feed_key(KeyPress(Keys.F5, ''))
+        mock_print.assert_called_with('Done refreshing')
