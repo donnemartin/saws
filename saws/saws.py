@@ -41,6 +41,7 @@ class Saws(object):
             used for syntax coloring.
         * ec2_states: A list of ec2_states from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
+        * key_manager: An instance of KeyManager
         * logger: An instance of SawsLogger.
         * theme: A string representing the lexer theme.
             Currently only 'vim' is supported.
@@ -56,6 +57,7 @@ class Saws(object):
             None.
         """
         self.aws_cli = None
+        self.key_manager = None
         self.theme = 'vim'
         self.PYGMENTS_CMD = ' | pygmentize -l json'
         self.config = Config()
@@ -364,7 +366,7 @@ class Saws(object):
             history=history,
             completer=self.completer,
             complete_while_typing=Always())
-        key_manager = KeyManager(
+        self.key_manager = KeyManager(
             self.set_color,
             self.get_color,
             self.set_fuzzy_match,
@@ -378,7 +380,7 @@ class Saws(object):
             style=style_factory.style,
             layout=layout,
             buffer=cli_buffer,
-            key_bindings_registry=key_manager.manager.registry,
+            key_bindings_registry=self.key_manager.manager.registry,
             on_exit=AbortAction.RAISE_EXCEPTION,
             ignore_case=True)
         eventloop = create_eventloop()
