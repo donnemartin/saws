@@ -1,61 +1,27 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import print_function
-import unittest
-import pip
-import pexpect
 import mock
-from saws.keys import create_key_manager
-#from prompt_toolkit import CommandLineInterface
-from prompt_toolkit.buffer import Buffer
-#from prompt_toolkit.keys import Keys
+import unittest
+from prompt_toolkit.key_binding.input_processor import InputProcessor, KeyPress
+from prompt_toolkit.key_binding.registry import Registry
+from prompt_toolkit.keys import Key, Keys
+from pygments.token import Token
+from saws.saws import Saws
+from saws.keys import KeyManager
 
 
 class KeysTest(unittest.TestCase):
 
-    #@mock.patch.object(CommandLineInterface.current_buffer,
-    #                   'insert_text',
-    #                   autospec=True)
-    @mock.patch.object(Buffer,
-                       'insert_text',
-                       autospec=True)
-    def test_handle_f1(self, mock_insert_text):
-        pass
+    @mock.patch('saws.resources.print')
+    def setUp(self, mock_print):
+        self.saws = Saws()
+        mock_print.assert_called_with('Loaded resources from cache')
+        self.registry = self.saws.key_manager.manager.registry
+        self.processor = self.saws.aws_cli.input_processor
+        self.DOCS_HOME_URL = 'http://docs.aws.amazon.com/cli/latest/reference/index.html'
 
-    """
-    def test_run_cli(self):
-        self.cli = None
-        self.step_cli_installed()
-        self.step_run_cli()
-        self.step_see_prompt()
-        #self.cli.Keys.F1
-        #self.cli.sendline(Keys.F1)
-        #self.cli.expect('saws> help')
-        self.step_send_ctrld()
-    """
-
-    def step_cli_installed(self):
-        """
-        Make sure saws is in installed packages.
-        """
-        dists = set([di.key for di in pip.get_installed_distributions()])
-        assert 'saws' in dists
-
-    def step_run_cli(self):
-        """
-        Run the process using pexpect.
-        """
-        self.cli = pexpect.spawnu('saws')
-
-    def step_see_prompt(self):
-        """
-        Expect to see prompt.
-        """
-        self.cli.expect('saws> ')
-
-    def step_send_ctrld(self):
-        """
-        Send Ctrl + D to exit.
-        """
-        self.cli.sendcontrol('d')
-        self.cli.expect(pexpect.EOF)
+    @mock.patch('saws.saws.webbrowser')
+    def test_F1(self, mock_webbrowser):
+        self.processor.feed_key(KeyPress(Keys.F1, ''))
+        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
