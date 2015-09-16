@@ -91,11 +91,7 @@ class CompleterTest(unittest.TestCase):
         expected = self.saws.resource_options
         self.verify_completions(commands, expected)
 
-    def test_shortcuts(self):
-        commands = ['aws ec2 ls --']
-        expected = ['--instance-ids']
-        self.verify_completions(commands, expected)
-        # TODO Add more like above here for tags, buckets
+    def test_simple_shortcuts(self):
         commands = ['aws ec2 ls',
                     'aws emr ls',
                     'aws elb ls',
