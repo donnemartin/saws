@@ -57,6 +57,7 @@ class Saws(object):
         """
         self.aws_cli = None
         self.theme = 'vim'
+        self.PYGMENTS_CMD = ' | pygmentize -l json'
         self.config = Config()
         self.config_obj = self.config.read_configuration()
         self.logger = SawsLogger(__name__,
@@ -306,7 +307,7 @@ class Saws(object):
         stripped_text = text.strip()
         excludes = [AwsCommands.AWS_CONFIGURE, AwsCommands.AWS_HELP]
         if not any(substring in stripped_text for substring in excludes):
-            return text.strip() + ' | pygmentize -l json'
+            return text.strip() + self.PYGMENTS_CMD
         else:
             return text
 
