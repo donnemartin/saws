@@ -25,3 +25,8 @@ class KeysTest(unittest.TestCase):
     def test_F1(self, mock_webbrowser):
         self.processor.feed_key(KeyPress(Keys.F1, ''))
         mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
+
+    def test_F2(self):
+        orig_color = self.saws.get_color()
+        self.processor.feed_key(KeyPress(Keys.F2, ''))
+        assert orig_color != self.saws.get_color()
