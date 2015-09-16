@@ -3,7 +3,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import sys
 import mock
-import unittest
+if sys.version_info < (2, 7):
+    import unittest2 as unittest
+else:
+    import unittest
 from saws.saws import Saws
 from saws.resources import AwsResources
 
