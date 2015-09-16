@@ -46,12 +46,16 @@ refresh_bucket_names = True
 'ec2 start-instances --instance-ids' = 'ec2 start-instances --instance-ids'
 'ec2 stop-instances --instance-ids' = 'ec2 stop-instances --instance-ids'
 
-# For example: the following commands will kick off fuzzy auto-completion:
+# The following commands will kick off fuzzy auto-completion:
 #   aws ec2tagkey
 #   aws ec2tagval
-# The following shortcuts support a string substitution:
+# These shortcuts support a string substitution:
 #   aws ls --ec2-tag-key [tag-key]
 #   aws ls --ec2-tag-value [tag-value]
+# Example input:
+#   aws ls --ec2-tag-key Stack
+# Example result:
+#   'ec2 ls --ec2-tag-key' = 'ec2 describe-instances --filters "Name=tag-key,Values=Stack"'
 'ec2 ls --ec2-tag-key' = 'ec2 describe-instances --filters "Name=tag-key,Values=%s"'
 'ec2 ls --ec2-tag-value' = 'ec2 describe-instances --filters "Name=tag-value,Values=%s"'
 
