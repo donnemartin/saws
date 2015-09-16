@@ -61,6 +61,8 @@ refresh_bucket_names = True
 
 # Saws will auto-complete the following --ec2-state auto-completions:
 #   [pending | running | shutting-down | terminated | stopping | stopped]
+# Usage:
+#   ec2 ls --ec2-state
 'ec2 ls --ec2-state' = 'ec2 describe-instances --filters "Name=instance-state-name,Values=%s"'
 
 # Place simpler shortcuts near the bottom
