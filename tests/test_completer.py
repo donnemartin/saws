@@ -69,6 +69,19 @@ class CompleterTest(unittest.TestCase):
         commands = ['aws ec2 ls --']
         expected = ['--instance-ids']
         self.verify_completions(commands, expected)
+        # TODO Add more like above here for tags, buckets
+        commands = ['aws ec2 ls',
+                    'aws emr ls',
+                    'aws elb ls',
+                    'aws dynamodb ls']
+        expected = ['aws ec2 describe-instances',
+                    'aws emr list-clusters',
+                    'aws elb describe-load-balancers',
+                    'aws dynamodb list-tables']
+        shortcuts = dict(zip(commands, expected))
+        for command, expect in shortcuts.items():
+            result = self.completer.replace_shortcut(command)
+            assert result == expect
 
     def test_instance_ids(self):
         commands = ['aws ec2 ls --instance-ids i-a']
