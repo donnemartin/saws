@@ -114,6 +114,25 @@ class CompleterTest(unittest.TestCase):
         self.completer.resources.instance_ids.extend(expected)
         self.verify_completions(commands, expected)
 
+    def test_fuzzy_shortcut_matching(self):
+        self.completer.fuzzy_match = True
+        self.completer.shortcut_match = True
+        commands = ['aws ec2ls']
+        expected = ['ec2 ls --instance-ids']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2start']
+        expected = ['ec2 start-instances --instance-ids']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2stop']
+        expected = ['ec2 stop-instances --instance-ids']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2tagk']
+        expected = ['ec2 ls --ec2-tag-key']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2tagv']
+        expected = ['ec2 ls --ec2-tag-value']
+        self.verify_completions(commands, expected)
+
     def test_substitutions(self):
         command = 'aws ec2 ls --filters "Name=tag-key,Values=%s prod"'
         expected = 'aws ec2 ls --filters "Name=tag-key,Values=prod"'
