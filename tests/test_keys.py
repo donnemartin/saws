@@ -30,3 +30,8 @@ class KeysTest(unittest.TestCase):
         orig_color = self.saws.get_color()
         self.processor.feed_key(KeyPress(Keys.F2, ''))
         assert orig_color != self.saws.get_color()
+
+    def test_F3(self):
+        orig_fuzzy = self.saws.get_fuzzy_match()
+        self.processor.feed_key(KeyPress(Keys.F3, ''))
+        assert orig_fuzzy != self.saws.get_fuzzy_match()
