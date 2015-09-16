@@ -119,3 +119,11 @@ class CompleterTest(unittest.TestCase):
         expected = 'aws ec2 ls --filters "Name=tag-key,Values=prod"'
         result = self.completer.replace_substitution(command)
         assert result == expected
+        command = 'aws ec2 ls --ec2-tag-key Stack'
+        expected = 'aws ec2 describe-instances --filters "Name=tag-key,Values=Stack"'
+        result = self.completer.replace_shortcut(command)
+        assert result == expected
+        command = 'aws ec2 ls --ec2-tag-value prod'
+        expected = 'aws ec2 describe-instances --filters "Name=tag-value,Values=prod"'
+        result = self.completer.replace_shortcut(command)
+        assert result == expected
