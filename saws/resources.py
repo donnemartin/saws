@@ -158,8 +158,9 @@ class AwsResources(object):
             None.
         """
         output = self.query_aws(self.QUERY_INSTANCE_IDS_CMD)
-        output = re.sub('\n', ' ', output)
-        self.instance_ids = output.split()
+        if output is not None:
+            output = re.sub('\n', ' ', output)
+            self.instance_ids = output.split()
 
     def query_instance_tag_keys(self):
         """Queries and stores instance tag keys from AWS.
@@ -171,7 +172,8 @@ class AwsResources(object):
             None.
         """
         output = self.query_aws(self.QUERY_INSTANCE_TAG_KEYS_CMD)
-        self.instance_tag_keys = set(output.split('\t'))
+        if output is not None:
+            self.instance_tag_keys = set(output.split('\t'))
 
     def query_instance_tag_values(self):
         """Queries and stores instance tag values from AWS.
@@ -183,7 +185,8 @@ class AwsResources(object):
             None.
         """
         output = self.query_aws(self.QUERY_INSTANCE_TAG_VALUES_CMD)
-        self.instance_tag_values = set(output.split('\t'))
+        if output is not None:
+            self.instance_tag_values = set(output.split('\t'))
 
     def query_bucket_names(self):
         """Queries and stores bucket names from AWS.
@@ -195,15 +198,16 @@ class AwsResources(object):
             None
         """
         output = self.query_aws(self.QUERY_BUCKET_NAMES_CMD)
-        self.bucket_names = []
-        result_list = output.split('\n')
-        for result in result_list:
-            try:
-                result = result.split()[-1]
-                self.bucket_names.append(result)
-            except:
-                # Ignore blank lines
-                pass
+        if output is not None:
+            self.bucket_names = []
+            result_list = output.split('\n')
+            for result in result_list:
+                try:
+                    result = result.split()[-1]
+                    self.bucket_names.append(result)
+                except:
+                    # Ignore blank lines
+                    pass
 
     def refresh_resources_from_file(self, file_path):
         """Refreshes the AWS resources from data/RESOURCES.txt.
