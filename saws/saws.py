@@ -310,6 +310,28 @@ class Saws(object):
         else:
             return text
 
+    def process_command(self, text):
+        """Processes the input command, called by the cli event loop
+
+        Args:
+            * text: A string that represents the input command text.
+
+        Returns:
+            None.
+        """
+        if AwsCommands.AWS_COMMAND in text:
+            text = self.completer.replace_shortcut(text)
+            if self.handle_docs(text):
+                return
+            text = self.colorize_output(text)
+        try:
+            if not self.handle_cd(text):
+                # Pass the command onto the shell so aws-cli can execute it
+                subprocess.call(text, shell=True)
+            print('')
+        except Exception as e:
+            self.log_exception(e, traceback, echo=True)
+
     def create_cli(self):
         """Creates the prompt_toolkit's CommandLineInterface.
 
@@ -375,16 +397,4 @@ class Saws(object):
         print('Version:', __version__)
         while True:
             document = self.aws_cli.run()
-            text = document.text
-            if AwsCommands.AWS_COMMAND in text:
-                text = self.completer.replace_shortcut(text)
-                if self.handle_docs(text):
-                    continue
-                text = self.colorize_output(text)
-            try:
-                if not self.handle_cd(text):
-                    # Pass the command onto the shell so aws-cli can execute it
-                    subprocess.call(text, shell=True)
-                print(text)
-            except Exception as e:
-                self.log_exception(e, traceback, echo=True)
+            self.process_command(document.text)
