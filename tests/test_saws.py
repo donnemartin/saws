@@ -34,3 +34,9 @@ class SawsTest(unittest.TestCase):
             for line in fp:
                 pass
             assert exception_message in line
+
+    def test_set_get_color(self):
+        self.saws.set_color(True)
+        assert self.saws.get_color()
+        self.saws.set_color(False)
+        assert not self.saws.get_color()
