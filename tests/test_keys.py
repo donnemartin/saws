@@ -2,7 +2,11 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import mock
-import unittest
+import sys
+if sys.version_info < (2, 7):
+    import unittest2 as unittest
+else:
+    import unittest
 from prompt_toolkit.key_binding.input_processor import InputProcessor, KeyPress
 from prompt_toolkit.key_binding.registry import Registry
 from prompt_toolkit.keys import Key, Keys
@@ -40,6 +44,10 @@ class KeysTest(unittest.TestCase):
         orig_shortcut = self.saws.get_shortcut_match()
         self.processor.feed_key(KeyPress(Keys.F4, ''))
         assert orig_shortcut != self.saws.get_shortcut_match()
+
+    def test_F10(self):
+        with self.assertRaises(EOFError):
+            self.processor.feed_key(KeyPress(Keys.F10, ''))
 
     @mock.patch('saws.resources.print')
     def test_f5(self, mock_print):
