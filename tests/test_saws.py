@@ -46,3 +46,9 @@ class SawsTest(unittest.TestCase):
         assert self.saws.get_fuzzy_match()
         self.saws.set_fuzzy_match(False)
         assert not self.saws.get_fuzzy_match()
+
+    def test_get_set_shortcut_match(self):
+        self.saws.set_shortcut_match(True)
+        assert self.saws.get_shortcut_match()
+        self.saws.set_shortcut_match(False)
+        assert not self.saws.get_shortcut_match()
