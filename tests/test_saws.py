@@ -93,3 +93,10 @@ class SawsTest(unittest.TestCase):
         EC2_LS_CMD = 'aws ec2 ls'
         assert self.saws.colorize_output(EC2_LS_CMD) == \
             EC2_LS_CMD + self.saws.PYGMENTS_CMD
+
+    @mock.patch('saws.saws.subprocess')
+    @mock.patch('saws.saws.webbrowser')
+    def test_process_command_docs(self, mock_webbrowser, mock_subprocess):
+        self.saws.process_command('aws docs')
+        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
+        mock_subprocess.call.assert_not_called()
