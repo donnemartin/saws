@@ -27,3 +27,16 @@ class ToolbarTest(unittest.TestCase):
             (Token.Toolbar, ' [F5] Refresh '),
             (Token.Toolbar, ' [F10] Exit ')]
         assert expected == self.toolbar.handler(None)
+
+    def test_toolbar_off(self):
+        self.saws.set_color(False)
+        self.saws.set_fuzzy_match(False)
+        self.saws.set_shortcut_match(False)
+        expected = [
+            (Token.Toolbar, ' [F1] Docs '),
+            (Token.Toolbar.Off, ' [F2] Color: OFF '),
+            (Token.Toolbar.Off, ' [F3] Fuzzy: OFF '),
+            (Token.Toolbar.Off, ' [F4] Shortcuts: OFF '),
+            (Token.Toolbar, ' [F5] Refresh '),
+            (Token.Toolbar, ' [F10] Exit ')]
+        assert expected == self.toolbar.handler(None)
