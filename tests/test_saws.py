@@ -105,3 +105,19 @@ class SawsTest(unittest.TestCase):
     def test_process_command_cd(self, mock_subprocess):
         self.saws.process_command('cd .')
         mock_subprocess.call.assert_not_called()
+
+    @mock.patch('saws.saws.subprocess')
+    def test_process_command(self, mock_subprocess):
+        self.saws.set_color(False)
+        INVAL_CMD = 'foo'
+        self.saws.process_command(INVAL_CMD)
+        mock_subprocess.call.assert_called_with(INVAL_CMD,
+                                                shell=True)
+        self.saws.process_command(AwsCommands.AWS_COMMAND)
+        mock_subprocess.call.assert_called_with(AwsCommands.AWS_COMMAND,
+                                                shell=True)
+        self.saws.set_color(True)
+        colorized_command = AwsCommands.AWS_COMMAND + self.saws.PYGMENTS_CMD
+        self.saws.process_command(AwsCommands.AWS_COMMAND)
+        mock_subprocess.call.assert_called_with(colorized_command,
+                                                shell=True)
