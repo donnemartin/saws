@@ -40,3 +40,9 @@ class SawsTest(unittest.TestCase):
         assert self.saws.get_color()
         self.saws.set_color(False)
         assert not self.saws.get_color()
+
+    def test_get_set_fuzzy_match(self):
+        self.saws.set_fuzzy_match(True)
+        assert self.saws.get_fuzzy_match()
+        self.saws.set_fuzzy_match(False)
+        assert not self.saws.get_fuzzy_match()
