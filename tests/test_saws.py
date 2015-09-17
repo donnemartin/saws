@@ -80,3 +80,16 @@ class SawsTest(unittest.TestCase):
         assert self.saws.handle_cd('cd ')
         assert self.saws.handle_cd('cd foo')
         mock_os.chdir.assert_called_with('foo')
+
+    def test_colorize_output(self):
+        self.saws.set_color(False)
+        assert self.saws.colorize_output(AwsCommands.AWS_COMMAND) == \
+            AwsCommands.AWS_COMMAND
+        self.saws.set_color(True)
+        assert self.saws.colorize_output(AwsCommands.AWS_CONFIGURE) == \
+            AwsCommands.AWS_CONFIGURE
+        assert self.saws.colorize_output(AwsCommands.AWS_HELP) == \
+            AwsCommands.AWS_HELP
+        EC2_LS_CMD = 'aws ec2 ls'
+        assert self.saws.colorize_output(EC2_LS_CMD) == \
+            EC2_LS_CMD + self.saws.PYGMENTS_CMD
