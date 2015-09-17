@@ -52,3 +52,24 @@ class SawsTest(unittest.TestCase):
         assert self.saws.get_shortcut_match()
         self.saws.set_shortcut_match(False)
         assert not self.saws.get_shortcut_match()
+
+    @mock.patch('saws.saws.webbrowser')
+    def test_handle_docs(self, mock_webbrowser):
+        EC2_URL = 'http://docs.aws.amazon.com/cli/latest/reference/ec2/index.html'
+        EC2_DESC_INSTANCES_URL = 'http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html'
+        assert not self.saws.handle_docs('')
+        assert not self.saws.handle_docs('foo bar')
+        assert self.saws.handle_docs('', from_fkey=True)
+        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
+        assert self.saws.handle_docs('baz', from_fkey=True)
+        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
+        assert self.saws.handle_docs('aws ec2', from_fkey=True)
+        mock_webbrowser.open.assert_called_with(EC2_URL)
+        assert self.saws.handle_docs('aws ec2 docs', from_fkey=False)
+        mock_webbrowser.open.assert_called_with(EC2_URL)
+        assert self.saws.handle_docs('aws ec2 describe-instances',
+            from_fkey=True)
+        mock_webbrowser.open.assert_called_with(EC2_DESC_INSTANCES_URL)
+        assert self.saws.handle_docs('aws ec2 describe-instances docs',
+            from_fkey=False)
+        mock_webbrowser.open.assert_called_with(EC2_DESC_INSTANCES_URL)
