@@ -100,3 +100,8 @@ class SawsTest(unittest.TestCase):
         self.saws.process_command('aws docs')
         mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
         mock_subprocess.call.assert_not_called()
+
+    @mock.patch('saws.saws.subprocess')
+    def test_process_command_cd(self, mock_subprocess):
+        self.saws.process_command('cd .')
+        mock_subprocess.call.assert_not_called()
