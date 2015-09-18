@@ -39,7 +39,7 @@ refresh_bucket_names = True
 #   aws ec2ls
 'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
 
-# The following entries are placed solely for easy fuzzy autocompletion
+# The following entries are placed here solely for easy fuzzy autocompletion
 # For example: the following commands will kick off fuzzy auto-completion:
 #   aws ec2start
 #   aws ec2stop
