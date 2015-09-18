@@ -53,7 +53,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1398
+[sub_commands]: 1400
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -819,6 +819,7 @@ get-branch
 get-bucket-acl
 get-bucket-cors
 get-bucket-lifecycle
+get-bucket-lifecycle-configuration
 get-bucket-location
 get-bucket-logging
 get-bucket-notification
@@ -1139,6 +1140,7 @@ put-attributes
 put-bucket-acl
 put-bucket-cors
 put-bucket-lifecycle
+put-bucket-lifecycle-configuration
 put-bucket-logging
 put-bucket-notification
 put-bucket-notification-configuration
