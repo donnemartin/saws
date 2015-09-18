@@ -19,7 +19,7 @@ setup(
         'enum34>=1.0.4',
         'fuzzyfinder>=1.0.0',
         'ordereddict>=1.1',
-        'prompt-toolkit==0.46',
+        'prompt-toolkit>=0.46',
         'six>=1.9.0',
         'pygments>=2.0.2'
     ],
