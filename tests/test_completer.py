@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import unittest
 import mock
+import re
 from prompt_toolkit.document import Document
 from awscli import completer as awscli_completer
 from saws.completer import AwsCompleter
@@ -150,6 +151,16 @@ class CompleterTest(unittest.TestCase):
         commands = ['aws s3pi get-bucket-acl --bucket web-']
         expected = ['web-server-logs', 'web-server-images']
         self.completer.resources.bucket_names.extend(expected)
+        self.verify_completions(commands, expected)
+
+    def test_s3_completion(self):
+        commands = ['aws s3 ls s3:']
+        expected = ['s3://web-server-logs', 's3://web-server-images']
+        for s3_uri in expected:
+            bucket_name = re.sub('s3://', '', s3_uri)
+            self.completer.resources.add_bucket_name(bucket_name)
+        self.verify_completions(commands, expected)
+        commands = ['aws s3 ls s3://web']
         self.verify_completions(commands, expected)
 
     def test_fuzzy_instance_ids_matching(self):
