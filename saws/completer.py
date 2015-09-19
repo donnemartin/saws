@@ -249,7 +249,9 @@ class AwsCompleter(Completer):
         words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:
             return []
-        elif len(words) == 2 and words[0] == self.BASE_COMMAND:
+        elif len(words) == 2 and \
+            words[0] == self.BASE_COMMAND and \
+            word_before_cursor != '':
             # Insert shortcuts if the user typed 'aws' as the first
             # command and is inputting the subcommand
             if self.shortcut_match:
