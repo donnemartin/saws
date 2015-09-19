@@ -1,4 +1,0 @@
-   1  [run]
-    2  branch = True
-    3: include =
-    4      saws/*
