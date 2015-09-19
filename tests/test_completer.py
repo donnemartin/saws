@@ -57,6 +57,18 @@ class CompleterTest(unittest.TestCase):
             for item in expected:
                 assert item in result_texts
 
+    def test_ec2_commands(self):
+        commands = ['aws e']
+        expected = ['ec2',
+                    'ecs',
+                    'efs',
+                    'elasticache',
+                    'elasticbeanstalk',
+                    'elastictranscoder',
+                    'elb',
+                    'emr']
+        self.verify_completions(commands, expected)
+
     def test_ec2_state_completions(self):
         commands = ['ec2 ls --ec2-state pend']
         expected = ['pending']
