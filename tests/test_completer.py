@@ -69,6 +69,17 @@ class CompleterTest(unittest.TestCase):
                     'emr']
         self.verify_completions(commands, expected)
 
+    def test_ec2_subcommands(self):
+        commands = ['aws ec2 c']
+        expected = ['cancel-bundle-task',
+                    'cancel-conversion-task',
+                    'cancel-export-task',
+                    'cancel-import-task',
+                    'cancel-reserved-instances-listing',
+                    'cancel-spot-fleet-requests',
+                    'cancel-spot-instance-requests']
+        self.verify_completions(commands, expected)
+
     def test_ec2_state_completions(self):
         commands = ['ec2 ls --ec2-state pend']
         expected = ['pending']
