@@ -12,6 +12,7 @@ setup(
     download_url='https://github.com/donnemartin/saws',
     author_email='donne.martin@gmail.com',
     version=__version__,
+    license='LICENSE.txt',
     install_requires=[
         'awscli>=1.7.46',
         'click>=4.0',
