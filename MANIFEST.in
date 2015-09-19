@@ -1,0 +1,9 @@
+include MANIFEST.in
+include setup.py
+include *.cfg
+include *.ini
+include *.txt
+include .bzrignore
+include saws/data/SOURCES.txt
+include saws/data/RESOURCES_SAMPLE.txt
+recursive-include saws *.*
