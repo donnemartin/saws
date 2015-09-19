@@ -9,10 +9,8 @@ os:
   - linux
 install:
   - travis_retry pip install tox
-  - pip install coveralls
   - pip install codecov
 script:
   - tox
 after_success:
-  - coveralls
   - codecov
