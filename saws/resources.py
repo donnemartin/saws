@@ -79,6 +79,7 @@ class AwsResources(object):
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
         self.bucket_names = []
+        self.s3_uri_names = []
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_instance_tags = refresh_instance_tags
         self.refresh_bucket_names = refresh_bucket_names
@@ -91,6 +92,7 @@ class AwsResources(object):
         self.EC2_TAG_VALUE = '--ec2-tag-value'
         self.EC2_STATE = '--ec2-state'
         self.BUCKET = '--bucket'
+        self.S3_URI = 's3:'
         self.QUERY_INSTANCE_IDS_CMD = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
         self.QUERY_INSTANCE_TAG_KEYS_CMD = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
         self.QUERY_INSTANCE_TAG_VALUES_CMD = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
@@ -204,10 +206,22 @@ class AwsResources(object):
             for result in result_list:
                 try:
                     result = result.split()[-1]
-                    self.bucket_names.append(result)
+                    self.add_bucket_name(result)
                 except:
                     # Ignore blank lines
                     pass
+
+    def add_bucket_name(self, bucket_name):
+        """Adds the bucket name to our bucket resources.
+
+        Args:
+            * bucket_name: A string representing the bucket name.
+
+        Returns:
+            None.
+        """
+        self.bucket_names.append(bucket_name)
+        self.s3_uri_names.append(self.S3_URI + '//' + bucket_name)
 
     def refresh_resources_from_file(self, file_path):
         """Refreshes the AWS resources from data/RESOURCES.txt.
@@ -249,7 +263,7 @@ class AwsResources(object):
                 elif res_type == self.ResType.INSTANCE_TAG_VALUES:
                     instance_tag_values_list.append(line)
                 elif res_type == self.ResType.BUCKET_NAMES:
-                    self.bucket_names.append(line)
+                    self.add_bucket_name(line)
             self.instance_tag_keys = set(instance_tag_keys_list)
             self.instance_tag_values = set(instance_tag_values_list)
 

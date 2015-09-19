@@ -79,12 +79,14 @@ class AwsCompleter(Completer):
                                       self.resources.EC2_TAG_KEY,
                                       self.resources.EC2_TAG_VALUE,
                                       self.resources.EC2_STATE,
-                                      self.resources.BUCKET],
+                                      self.resources.BUCKET,
+                                      self.resources.S3_URI],
                                      [self.resources.instance_ids,
                                       self.resources.instance_tag_keys,
                                       self.resources.instance_tag_values,
                                       self.ec2_states,
-                                      self.resources.bucket_names]))
+                                      self.resources.bucket_names,
+                                      self.resources.s3_uri_names]))
 
     def replace_shortcut(self, text):
         """Replaces matched shortcut commands with their full command.
@@ -150,12 +152,15 @@ class AwsCompleter(Completer):
         """
         if len(words) <= 1:
             return
-        # Show the matching resources in the following scenarios:
-        # ... --instance-ids
-        # ... --instance-ids [user is now completing the instance id]
+        # Example: --bucket
         option_text_match = (words[-1] == option_text)
-        completing_res = (words[-2] == option_text and word_before_cursor != '')
-        if option_text_match or completing_res:
+        # Example: --bucket prod
+        completing_with_space = \
+            (words[-2] == option_text and word_before_cursor != '')
+        # Example: s3://prod
+        completing_no_space = \
+            (option_text in words[-1] and word_before_cursor != '')
+        if option_text_match or completing_with_space or completing_no_space:
             return self.text_utils.find_matches(word_before_cursor,
                                                 resource,
                                                 self.fuzzy_match)
