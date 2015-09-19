@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-gitchangelog > CHANGELOG
+gitchangelog > CHANGELOG_DRAFT
