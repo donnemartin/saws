@@ -92,8 +92,8 @@ class AwsResources(object):
         self.instance_ids = []
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
-        self.bucket_names = []
-        self.s3_uri_names = []
+        self.bucket_names = []  # TODO: Make this 'private'
+        self.s3_uri_names = []  # TODO: Make this 'private'
         self.refresh_instance_ids = refresh_instance_ids
         self.refresh_instance_tags = refresh_instance_tags
         self.refresh_bucket_names = refresh_bucket_names
@@ -215,7 +215,7 @@ class AwsResources(object):
         """
         output = self.query_aws(self.QUERY_BUCKET_NAMES_CMD)
         if output is not None:
-            self.bucket_names = []
+            self.clear_bucket_names()
             result_list = output.split('\n')
             for result in result_list:
                 try:
@@ -237,6 +237,20 @@ class AwsResources(object):
         self.bucket_names.append(bucket_name)
         self.s3_uri_names.append(self.S3_URI + '//' + bucket_name)
 
+    def clear_bucket_names(self):
+        """Clears bucket all bucket names.
+
+        Long description.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
+        self.bucket_names = []
+        self.s3_uri_names = []
+
     def refresh_resources_from_file(self, file_path):
         """Refreshes the AWS resources from data/RESOURCES.txt.
 
@@ -251,7 +265,7 @@ class AwsResources(object):
             self.instance_ids = []
             self.instance_tag_keys = set()
             self.instance_tag_values = set()
-            self.bucket_names = []
+            self.clear_bucket_names()
             instance_tag_keys_list = []
             instance_tag_values_list = []
             for line in fp:

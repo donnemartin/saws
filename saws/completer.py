@@ -88,7 +88,22 @@ class AwsCompleter(Completer):
                 self.config_obj['main'].as_bool('refresh_instance_ids'),
                 self.config_obj['main'].as_bool('refresh_instance_tags'),
                 self.config_obj['main'].as_bool('refresh_bucket_names'))
-        self.resources.refresh()
+        self.resource_map = None
+        self.refresh_resources()
+
+    def create_resource_map(self):
+        """Creates a mapping of resource keywords and resources to complete.
+
+        Example:
+            Key: '--instance-ids'.
+            Value: List of instance ids.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
         self.resource_map = dict(zip([self.resources.INSTANCE_IDS,
                                       self.resources.EC2_TAG_KEY,
                                       self.resources.EC2_TAG_VALUE,
@@ -101,6 +116,19 @@ class AwsCompleter(Completer):
                                       self.ec2_states,
                                       self.resources.bucket_names,
                                       self.resources.s3_uri_names]))
+
+    def refresh_resources(self, force_refresh=False):
+        """Convenience function to refresh resources for completion.
+
+        Args:
+            * force_refresh: A boolean determines whether to force a cache
+                refresh.  This value is set to True when the user presses `F5`.
+
+        Returns:
+            None.
+        """
+        self.resources.refresh(force_refresh)
+        self.create_resource_map()
 
     def replace_shortcut(self, text):
         """Replaces matched shortcut commands with their full command.

@@ -27,13 +27,14 @@ from saws.resources import AwsResources
 
 class ResourcesTest(unittest.TestCase):
 
+    NUM_INSTANCE_IDS = 7
+    NUM_INSTANCE_TAG_KEYS = 3
+    NUM_INSTANCE_TAG_VALUES = 6
+    NUM_BUCKET_NAMES = 16
+    RESOURCES = 'data/RESOURCES.txt'
+    RESOURCES_SAMPLE = 'data/RESOURCES_SAMPLE.txt'
+
     def setUp(self):
-        self.NUM_INSTANCE_IDS = 7
-        self.NUM_INSTANCE_TAG_KEYS = 3
-        self.NUM_INSTANCE_TAG_VALUES = 6
-        self.NUM_BUCKET_NAMES = 16
-        self.RESOURCES = 'data/RESOURCES.txt'
-        self.RESOURCES_SAMPLE = 'data/RESOURCES_SAMPLE.txt'
         self.create_resources()
 
     @mock.patch('saws.resources.print')
@@ -53,6 +54,8 @@ class ResourcesTest(unittest.TestCase):
         assert len(self.resources.instance_tag_values) == \
             self.NUM_INSTANCE_TAG_VALUES
         assert len(self.resources.bucket_names) == \
+            self.NUM_BUCKET_NAMES
+        assert len(self.resources.s3_uri_names) == \
             self.NUM_BUCKET_NAMES
         mock_print.assert_called_with('Loaded resources from cache')
 
@@ -106,3 +109,14 @@ class ResourcesTest(unittest.TestCase):
             self.resources.QUERY_BUCKET_NAMES_CMD,
             universal_newlines=True,
             shell=True)
+
+    def test_add_and_clear_bucket_name(self):
+        BUCKET_NAME = 'test_bucket_name'
+        self.resources.clear_bucket_names()
+        self.resources.add_bucket_name(BUCKET_NAME)
+        assert BUCKET_NAME in self.resources.bucket_names
+        assert str(self.resources.S3_URI + '//' + BUCKET_NAME) in \
+            self.resources.s3_uri_names
+        self.resources.clear_bucket_names()
+        assert len(self.resources.bucket_names) == 0
+        assert len(self.resources.s3_uri_names) == 0

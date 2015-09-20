@@ -24,6 +24,7 @@ from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
 from saws.saws import Saws
 from saws.resources import AwsResources
+from test_resources import ResourcesTest
 
 
 class CompleterTest(unittest.TestCase):
@@ -216,3 +217,26 @@ class CompleterTest(unittest.TestCase):
         expected = 'aws ec2 describe-instances --filters "Name=tag-value,Values=prod"'
         result = self.completer.replace_shortcut(command)
         assert result == expected
+
+    @mock.patch('saws.resources.print')
+    def test_refresh_resources(self, mock_print):
+        NUM_EC2_STATE = 6
+        self.completer.resources.RESOURCE_FILE = \
+            ResourcesTest.RESOURCES_SAMPLE
+        self.completer.resource_map = None
+        self.completer.refresh_resources(force_refresh=False)
+        mock_print.assert_called_with('Loaded resources from cache')
+        keys = [self.completer.resources.INSTANCE_IDS,
+                self.completer.resources.EC2_TAG_KEY,
+                self.completer.resources.EC2_TAG_VALUE,
+                self.completer.resources.EC2_STATE,
+                self.completer.resources.BUCKET,
+                self.completer.resources.S3_URI]
+        expected = [ResourcesTest.NUM_INSTANCE_IDS,
+                    ResourcesTest.NUM_INSTANCE_TAG_KEYS,
+                    ResourcesTest.NUM_INSTANCE_TAG_VALUES,
+                    NUM_EC2_STATE,
+                    ResourcesTest.NUM_BUCKET_NAMES,
+                    ResourcesTest.NUM_BUCKET_NAMES]
+        for i in range(len(keys)):
+            assert len(self.completer.resource_map[keys[i]]) == expected[i]
