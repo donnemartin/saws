@@ -212,7 +212,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.completer.resources.refresh(force_refresh=True)
+        self.completer.refresh_resources(force_refresh=True)
 
     def handle_docs(self, text=None, from_fkey=False):
         """Displays contextual web docs for `F1` or the `docs` command.
