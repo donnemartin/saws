@@ -1,44 +1,76 @@
 Release Checklist
 =================
 
-A. Review Travis, Codecov, and Gemnasium
+A. Run unit tests
 
-B. Run code checks and fix issues
+    $ tox
+
+B. Run code checks
 
     $ scripts/run_code_checks.sh
 
-C. Verify manual sanity tests prior to release
+C. Run manual smoke tests on Mac, Ubuntu, Windows*
 
-D. Update version number in `saws/__init__.py`
-
-E. Create `README.rst`
-
-    $ scripts/create_readme_rst.sh
-
-F. Create `CHANGELOG_DRAFT` clean it up, and update CHANGELOG
+D. Update and review `CHANGELOG`
 
     $ scripts/create_changelog.sh
 
-Steps G-J can be completed with:
+E. Update and review `README.rst`
 
-    $ scripts/upload_pypi.sh
+    $ scripts/create_readme_rst.sh
 
-G. Register package with PyPi
-
-    $ python setup.py register -r pypi
-
-H. Upload to PyPi
-
-    $ python setup.py sdist upload -r pypi
-
-I. Build Sphinx docs
+F. Update and review `Sphinx` docs
 
     $ python setup.py build_sphinx
 
-J. Upload Sphinx docs to PyPi
+G. Push changes to `develop`
+
+H. Review Travis, Codecov, and Gemnasium for `develop`
+
+I. Start a new release branch
+
+    $ git flow release start x.y.z
+
+J. Increment the version number in `saws/__init__.py`
+
+    $ scripts/upload_pypi.sh
+
+K. Register package with PyPi
+
+    $ python setup.py register -r pypi
+
+L. Upload to PyPi
+
+    $ python setup.py sdist upload -r pypi
+
+M. Upload Sphinx docs to PyPi
 
     $ python setup.py upload_sphinx
 
-K. Review and download newly released package from PyPi
+N. Review newly released package from PyPi
 
-L. Verify manual sanity tests post release
+O. Install and run manual smoke tests on Mac, Ubuntu, Windows*
+
+## Smoke Tests
+
+Run the following on Python 2.7 and Python 3.4:
+
+* Craete a new `virtualenv`
+* Pip install `SAWS` into new `virtualenv`
+* Run `SAWS`
+* Check resource load from cache
+* Force refresh of resources
+* Toggle toolbar options
+* Verify toolbar options are saved across sessions
+* Commands
+    * Blank
+    * aws
+    * aws s3api get-bucket-acl --bucket
+    * aws ec2 describe-instances --instance-ids
+    * aws ecls
+    * aws ectagk
+    * aws ectagv
+    * aws ecstate
+    * aws s3 ls s3:
+    * aws s3 ls docs
+* Run specialized tests based on code changes
