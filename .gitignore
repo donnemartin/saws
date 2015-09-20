@@ -7,7 +7,6 @@
 *.egg
 *.egg-info
 dist
-build
 eggs
 parts
 bin
@@ -38,12 +37,12 @@ nosetests.xml
 screenshots/
 scratch/
 saws/data/RESOURCES.txt
+CHANGELOG_DRAFT
 
 .idea/
 *.pyc
 *.egg-info/
 *env/
 .tox/
-build/
 dist/
 .DS_Store
