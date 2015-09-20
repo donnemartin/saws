@@ -23,7 +23,6 @@ from awscli import completer as awscli_completer
 from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
 from saws.saws import Saws
-from saws.resources import AwsResources
 from test_resources import ResourcesTest
 
 

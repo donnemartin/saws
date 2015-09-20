@@ -21,12 +21,9 @@ if sys.version_info < (2, 7):
     import unittest2 as unittest
 else:
     import unittest
-from prompt_toolkit.key_binding.input_processor import InputProcessor, KeyPress
-from prompt_toolkit.key_binding.registry import Registry
-from prompt_toolkit.keys import Key, Keys
-from pygments.token import Token
+from prompt_toolkit.key_binding.input_processor import KeyPress
+from prompt_toolkit.keys import Keys
 from saws.saws import Saws
-from saws.keys import KeyManager
 
 
 class KeysTest(unittest.TestCase):

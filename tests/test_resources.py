@@ -22,7 +22,6 @@ if sys.version_info < (2, 7):
 else:
     import unittest
 from saws.saws import Saws
-from saws.resources import AwsResources
 
 
 class ResourcesTest(unittest.TestCase):

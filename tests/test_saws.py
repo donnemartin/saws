@@ -73,19 +73,23 @@ class SawsTest(unittest.TestCase):
         EC2_DESC_INSTANCES_URL = 'http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html'
         assert not self.saws.handle_docs('')
         assert not self.saws.handle_docs('foo bar')
-        assert self.saws.handle_docs('', from_fkey=True)
+        assert self.saws.handle_docs('',
+                                     from_fkey=True)
         mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
-        assert self.saws.handle_docs('baz', from_fkey=True)
+        assert self.saws.handle_docs('baz',
+                                     from_fkey=True)
         mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
-        assert self.saws.handle_docs('aws ec2', from_fkey=True)
+        assert self.saws.handle_docs('aws ec2',
+                                     from_fkey=True)
         mock_webbrowser.open.assert_called_with(EC2_URL)
-        assert self.saws.handle_docs('aws ec2 docs', from_fkey=False)
+        assert self.saws.handle_docs('aws ec2 docs',
+                                     from_fkey=False)
         mock_webbrowser.open.assert_called_with(EC2_URL)
         assert self.saws.handle_docs('aws ec2 describe-instances',
-            from_fkey=True)
+                                     from_fkey=True)
         mock_webbrowser.open.assert_called_with(EC2_DESC_INSTANCES_URL)
         assert self.saws.handle_docs('aws ec2 describe-instances docs',
-            from_fkey=False)
+                                     from_fkey=False)
         mock_webbrowser.open.assert_called_with(EC2_DESC_INSTANCES_URL)
 
     @mock.patch('saws.saws.os')
