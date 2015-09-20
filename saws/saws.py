@@ -215,7 +215,7 @@ class Saws(object):
         self.completer.refresh_resources(force_refresh=True)
 
     def handle_docs(self, text=None, from_fkey=False):
-        """Displays contextual web docs for `F1` or the `docs` command.
+        """Displays contextual web docs for `F9` or the `docs` command.
 
         Displays the web docs specific to the currently entered:
 
@@ -232,7 +232,7 @@ class Saws(object):
         Args:
             * text: A string representing the input command text.
             * from_fkey: A boolean representing whether this function is
-                being executed from an `F1` key press.
+                being executed from an `F9` key press.
 
         Returns:
             A boolean representing whether the web docs were shown.
@@ -241,7 +241,7 @@ class Saws(object):
         index_html = 'index.html'
         if text is None:
             text = self.aws_cli.current_buffer.document.text
-        # If the user hit the F1 key, append 'docs' to the text
+        # If the user hit the F9 key, append 'docs' to the text
         if from_fkey:
             text = text.strip() + ' ' + AwsCommands.AWS_DOCS
         tokens = text.split()
@@ -262,7 +262,7 @@ class Saws(object):
                 return True
             webbrowser.open(base_url + index_html)
         # If we still haven't opened the help doc at this point and the
-        # user hit the F1 key or typed docs, just open the main docs index
+        # user hit the F9 key or typed docs, just open the main docs index
         if from_fkey or AwsCommands.AWS_DOCS in tokens:
             webbrowser.open(base_url + index_html)
             return True

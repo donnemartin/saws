@@ -39,11 +39,6 @@ class KeysTest(unittest.TestCase):
         self.processor = self.saws.aws_cli.input_processor
         self.DOCS_HOME_URL = 'http://docs.aws.amazon.com/cli/latest/reference/index.html'
 
-    @mock.patch('saws.saws.webbrowser')
-    def test_F1(self, mock_webbrowser):
-        self.processor.feed_key(KeyPress(Keys.F1, ''))
-        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
-
     def test_F2(self):
         orig_color = self.saws.get_color()
         self.processor.feed_key(KeyPress(Keys.F2, ''))
@@ -58,6 +53,11 @@ class KeysTest(unittest.TestCase):
         orig_shortcut = self.saws.get_shortcut_match()
         self.processor.feed_key(KeyPress(Keys.F4, ''))
         assert orig_shortcut != self.saws.get_shortcut_match()
+
+    @mock.patch('saws.saws.webbrowser')
+    def test_F9(self, mock_webbrowser):
+        self.processor.feed_key(KeyPress(Keys.F9, ''))
+        mock_webbrowser.open.assert_called_with(self.DOCS_HOME_URL)
 
     def test_F10(self):
         with self.assertRaises(EOFError):

@@ -76,18 +76,6 @@ class KeyManager(object):
         assert callable(handle_docs)
         self.manager = KeyBindingManager(enable_system_bindings=True)
 
-        @self.manager.registry.add_binding(Keys.F1)
-        def handle_f1(_):
-            """Inputs the "docs" command when the `F1` key is pressed.
-
-            Args:
-                * _: An instance of prompt_toolkit's Event (not used).
-
-            Returns:
-                None.
-            """
-            handle_docs(from_fkey=True)
-
         @self.manager.registry.add_binding(Keys.F2)
         def handle_f2(_):
             """Enables/Disables color output.
@@ -135,6 +123,18 @@ class KeyManager(object):
                 None.
             """
             refresh_resources()
+
+        @self.manager.registry.add_binding(Keys.F9)
+        def handle_f9(_):
+            """Inputs the "docs" command when the `F9` key is pressed.
+
+            Args:
+                * _: An instance of prompt_toolkit's Event (not used).
+
+            Returns:
+                None.
+            """
+            handle_docs(from_fkey=True)
 
         @self.manager.registry.add_binding(Keys.F10)
         def handle_f10(_):
