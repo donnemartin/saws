@@ -287,7 +287,7 @@ class AwsCompleter(Completer):
         completions = self.get_all_resource_completions(words,
                                                         word_before_cursor)
         if completions is None:
-            completions = self .text_utils.find_matches(word_before_cursor,
-                                                        self.aws_completions,
-                                                        self.fuzzy_match)
+            completions = self.text_utils.find_matches(word_before_cursor,
+                                                       self.aws_completions,
+                                                       fuzzy=False)
         return completions
