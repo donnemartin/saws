@@ -11,27 +11,27 @@ B. Run code checks
 
 C. Run manual smoke tests on Mac, Ubuntu, Windows*
 
-D. Update and review `CHANGELOG`
-
-    $ scripts/create_changelog.sh
-
-E. Update and review `README.rst`
+D. Update and review `README.rst`
 
     $ scripts/create_readme_rst.sh
 
-F. Update and review `Sphinx` docs
+E. Update and review `Sphinx` docs
 
     $ python setup.py build_sphinx
 
-G. Push changes
+F. Push changes
 
-H. Review Travis, Codecov, and Gemnasium
+G. Review Travis, Codecov, and Gemnasium
 
-I. Start a new release branch
+H. Start a new release branch
 
     $ git flow release start x.y.z
 
-J. Increment the version number in `saws/__init__.py`
+I. Increment the version number in `saws/__init__.py`
+
+J. Update and review `CHANGELOG`
+
+    $ scripts/create_changelog.sh
 
 K. Commit the changes
 
