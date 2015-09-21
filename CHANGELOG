@@ -1,8 +1,21 @@
 Changelog
 =========
 
-0.1.0
-------------------------
+0.1.1 (2015-09-21)
+------------------
+
+- Fixed #14: Fuzzy completions are sometimes showing incorrect
+  completions for built-in commands and subcommands.
+
+- Updated installation section.
+
+- Updated docs.
+
+- Updated description, download url, license, and classifiers in
+  setup.py.
+
+0.1.0 (2015-09-21)
+------------------
 
 - Initial release.
 
