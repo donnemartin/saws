@@ -42,7 +42,7 @@ If you are not familiar with pull requests, review the [pull request docs](https
 
 ### Code Quality
 
-Ensure your pull request
+Ensure your pull request satisfies all of the following, where applicable:
 
 * Is covered by [unit tests](#unit-tests-and-code-coverage)
 * Passes [continuous integration](#continuous-integration)
@@ -52,8 +52,7 @@ Review the following [style guide](https://google-styleguide.googlecode.com/svn/
 
 Run code checks and fix any issues:
 
-    $ cd utility_scripts
-    $ ./run_code_checks.sh
+    $ scripts/run_code_checks.sh
 
 ### Installation
 
