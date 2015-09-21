@@ -65,6 +65,8 @@ T. Install and run manual smoke tests on Mac, Ubuntu, Windows*
 
 U. Restore README  # TODO
 
+V. Rebuild Readthedocs at https://readthedocs.org/projects/saws/builds/
+
 ## Smoke Tests
 
 Run the following on Python 2.7 and Python 3.4:
