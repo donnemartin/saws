@@ -214,7 +214,7 @@
 <span id="saws-completer-module"></span><h2>saws.completer module<a class="headerlink" href="#module-saws.completer" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="saws.completer.AwsCompleter">
-<em class="property">class </em><code class="descclassname">saws.completer.</code><code class="descname">AwsCompleter</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">saws.completer.</code><code class="descname">AwsCompleter</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>commands</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">prompt_toolkit.completion.Completer</span></code></p>
 <p>Completer for AWS commands, subcommands, options, and parameters.</p>
 <dl class="docutils">
@@ -253,12 +253,14 @@
 </dl>
 <dl class="method">
 <dt id="saws.completer.AwsCompleter.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>aws_completer</em>, <em>commands</em>, <em>config_obj</em>, <em>log_exception</em>, <em>ec2_states=[]</em>, <em>fuzzy_match=False</em>, <em>shortcut_match=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes AwsCompleter.</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><ul class="first last">
 <li><p class="first">aws_completer: The official aws cli completer module.</p>
+</li>
+<li><p class="first">commands: A list of AWS top-level commands such ec2, elb, s3, etc.</p>
 </li>
 <li><p class="first">config_obj: An instance of ConfigObj, reads from ~/.sawsrc.</p>
 </li>
@@ -673,7 +675,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x1020800d0&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x102080110&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x102080150&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x102080190&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x1020801d0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x102080210&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x102080250&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x102080290&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x10571fd50&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x10571fd90&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x10571fdd0&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x10571fe10&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x10571fe50&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x10571fe90&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x10571fed0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x10571ff10&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
