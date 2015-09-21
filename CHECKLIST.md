@@ -33,23 +33,37 @@ I. Start a new release branch
 
 J. Increment the version number in `saws/__init__.py`
 
-    $ scripts/upload_pypi.sh
+K. Commit the changes
 
-K. Register package with PyPi
+L. Finish the release branch
+
+    $ git flow release finish 'x.y.z'
+
+M. Input a tag
+
+    $ vx.y.z
+
+N. Push tagged release to develop and master
+
+O. Temporarily remove README before pushing to PyPi  # TODO
+
+P. Register package with PyPi
 
     $ python setup.py register -r pypi
 
-L. Upload to PyPi
+Q. Upload to PyPi
 
     $ python setup.py sdist upload -r pypi
 
-M. Upload Sphinx docs to PyPi
+R. Upload Sphinx docs to PyPi
 
     $ python setup.py upload_sphinx
 
-N. Review newly released package from PyPi
+S. Review newly released package from PyPi
 
-O. Install and run manual smoke tests on Mac, Ubuntu, Windows*
+T. Install and run manual smoke tests on Mac, Ubuntu, Windows*
+
+U. Restore README  # TODO
 
 ## Smoke Tests
 
