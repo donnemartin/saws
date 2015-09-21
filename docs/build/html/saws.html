@@ -286,6 +286,24 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="saws.completer.AwsCompleter.create_resource_map">
+<code class="descname">create_resource_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.create_resource_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a mapping of resource keywords and resources to complete.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>Key: &#8216;&#8211;instance-ids&#8217;.
+Value: List of instance ids.</dd>
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>None.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="saws.completer.AwsCompleter.get_all_resource_completions">
 <code class="descname">get_all_resource_completions</code><span class="sig-paren">(</span><em>words</em>, <em>word_before_cursor</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.get_all_resource_completions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Description.</p>
@@ -376,6 +394,26 @@ instance tags, etc.</p>
 <dt>Returns:</dt>
 <dd>A generator of prompt_toolkit&#8217;s Completion objects, containing
 matched completions.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.completer.AwsCompleter.refresh_resources">
+<code class="descname">refresh_resources</code><span class="sig-paren">(</span><em>force_refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.completer.AwsCompleter.refresh_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to refresh resources for completion.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>force_refresh: A boolean determines whether to force a cache</dt>
+<dd><p class="first last">refresh.  This value is set to True when the user presses <cite>F5</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
 </dl>
 </dd></dl>
 
@@ -635,7 +673,7 @@ corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x106eaebd0&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x106eaec10&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x106eaec50&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x106eaec90&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x106eaecd0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x106eaed10&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x106eaed50&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x106eaed90&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x102867c50&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x102867c90&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x102867cd0&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x102867d10&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x102867d50&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x102867d90&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x102867dd0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x102867e10&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -813,6 +851,22 @@ corresponding full commands as the values.</dd>
 <dt>Args:</dt>
 <dd><ul class="first last simple">
 <li>bucket_name: A string representing the bucket name.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.resources.AwsResources.clear_bucket_names">
+<code class="descclassname">AwsResources.</code><code class="descname">clear_bucket_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.resources.AwsResources.clear_bucket_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears bucket all bucket names.</p>
+<p>Long description.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>None.</li>
 </ul>
 </dd>
 <dt>Returns:</dt>
@@ -1133,7 +1187,7 @@ you were in prior to running Saws.</p>
 <dl class="method">
 <dt id="saws.saws.Saws.handle_docs">
 <code class="descname">handle_docs</code><span class="sig-paren">(</span><em>text=None</em>, <em>from_fkey=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.saws.Saws.handle_docs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Displays contextual web docs for <cite>F1</cite> or the <cite>docs</cite> command.</p>
+<dd><p>Displays contextual web docs for <cite>F9</cite> or the <cite>docs</cite> command.</p>
 <p>Displays the web docs specific to the currently entered:</p>
 <ul class="simple">
 <li>(optional) command</li>
@@ -1152,7 +1206,7 @@ you were in prior to running Saws.</p>
 </li>
 <li><dl class="first docutils">
 <dt>from_fkey: A boolean representing whether this function is</dt>
-<dd><p class="first last">being executed from an <cite>F1</cite> key press.</p>
+<dd><p class="first last">being executed from an <cite>F9</cite> key press.</p>
 </dd>
 </dl>
 </li>

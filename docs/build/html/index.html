@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Saws: Supercharged AWS Command Line Interface (CLI) &mdash; saws 0.1.0 documentation</title>
+    <title>Saws: A Supercharged AWS Command Line Interface (CLI) &mdash; saws 0.1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -36,11 +36,516 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="saws-supercharged-aws-command-line-interface-cli">
-<h1>Saws: Supercharged AWS Command Line Interface (CLI)<a class="headerlink" href="#saws-supercharged-aws-command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="saws-a-supercharged-aws-command-line-interface-cli">
+<h1>Saws: A Supercharged AWS Command Line Interface (CLI)<a class="headerlink" href="#saws-a-supercharged-aws-command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/vzC5zmA.gif" />
+</div>
+<p><a class="reference external" href="https://travis-ci.org/donnemartin/saws"><img alt="Build Status" src="https://travis-ci.org/donnemartin/saws.svg?branch=master" /></a> <a class="reference external" href="http://saws.readthedocs.org/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/saws/badge/?version=latest" /></a> <a class="reference external" href="https://gemnasium.com/donnemartin/saws"><img alt="Dependency Status" src="https://gemnasium.com/donnemartin/saws.svg" /></a> <a class="reference external" href="https://codecov.io/github/donnemartin/saws/saws"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/donnemartin/saws.svg" /></a></p>
+<p><a class="reference external" href="http://badge.fury.io/py/saws"><img alt="PyPI version" src="https://badge.fury.io/py/saws.svg" /></a> <a class="reference external" href="https://pypi.python.org/pypi/saws/"><img alt="PyPI" src="https://img.shields.io/pypi/pyversions/saws.svg" /></a> <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0.html"><img alt="License" src="http://img.shields.io/:license-apache-blue.svg" /></a></p>
+</div>
+<div class="section" id="saws">
+<h1>SAWS<a class="headerlink" href="#saws" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aws-cli">
+<h3>AWS CLI<a class="headerlink" href="#aws-cli" title="Permalink to this headline">¶</a></h3>
+<p>Although the <a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI</a> is a great
+resource to manage your AWS-powered services, it&#8217;s <strong>tough to remember
+usage</strong> of:</p>
+<ul class="simple">
+<li>50+ top-level commands</li>
+<li>~1400 subcommands</li>
+<li>Countless command-specific options</li>
+<li>Resources such as instance tags and buckets</li>
+</ul>
+</div>
+<div class="section" id="saws-a-supercharged-aws-cli">
+<h3>SAWS: A Supercharged AWS CLI<a class="headerlink" href="#saws-a-supercharged-aws-cli" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> aims to <strong>supercharge</strong> the AWS CLI with features focusing on:</p>
+<ul class="simple">
+<li><strong>Improving ease-of-use</strong></li>
+<li><strong>Increasing productivity</strong></li>
+</ul>
+<p>Under the hood, <code class="docutils literal"><span class="pre">SAWS</span></code> is <strong>powered by the AWS CLI</strong> and supports the
+<strong>same commands</strong> and <strong>command structure</strong>.</p>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> and <code class="docutils literal"><span class="pre">AWS</span> <span class="pre">CLI</span></code> Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws &lt;command&gt; &lt;subcommand&gt; [parameters] [options]
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> Features:</p>
+<ul class="simple">
+<li>Auto-completion of:<ul>
+<li>Commands</li>
+<li>Subcommands</li>
+<li>Options</li>
+</ul>
+</li>
+<li>Auto-completion of resources:<ul>
+<li>Bucket names</li>
+<li>Instance ids</li>
+<li>Instance tags</li>
+<li><a class="reference external" href="(#todo-add-more-resources)">More coming soon!</a></li>
+</ul>
+</li>
+<li>Syntax and output highlighting</li>
+<li>Customizable shortcuts</li>
+<li>Contextual help</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> is available for Mac, *nix, and
+<a class="reference external" href="#windows-support">Windows</a>.</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/Eo12q9T.png" />
+</div>
+</div>
+</div>
+<div class="section" id="index">
+<h2>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="#syntax-and-output-highlighting">Syntax and Output Highlighting</a></li>
+<li><a class="reference external" href="#auto-completion-of-commands-subcommands-and-options">Auto-Completion of Commands, Subcommands, and
+Options</a></li>
+<li><a class="reference external" href="#auto-completion-of-aws-resources">Auto-Completion of AWS
+Resources</a><ul>
+<li><a class="reference external" href="#s3-buckets">S3 Buckets</a></li>
+<li><a class="reference external" href="#ec2-instance-ids">EC2 Instance Ids</a></li>
+<li><a class="reference external" href="#ec2-instance-tags">EC2 Instance Tags</a></li>
+<li><a class="reference external" href="#todo-add-more-resources">TODO: Add More Resources</a></li>
+<li><a class="reference external" href="#configuring-resource-completion">Configuring Resource
+Completion</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#customizable-shortcuts">Customizable Shortcuts</a></li>
+<li><a class="reference external" href="#fuzzy-resource-and-shortcut-completion">Fuzzy Resource and Shortcut
+Completion</a></li>
+<li><a class="reference external" href="#contextual-help">Contextual Help</a><ul>
+<li><a class="reference external" href="#contextual-command-line-help">Contextual Command Line Help</a></li>
+<li><a class="reference external" href="#contextual-web-docs">Contextual Web Docs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#toolbar-options">Toolbar Options</a></li>
+<li><a class="reference external" href="#windows-support">Windows Support</a></li>
+</ul>
+</div>
+<div class="section" id="installation-and-tests">
+<h3>Installation and Tests<a class="headerlink" href="#installation-and-tests" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="#installation">Installation</a><ul>
+<li><a class="reference external" href="#pip-installation">Pip Installation</a></li>
+<li><a class="reference external" href="#supported-python-versions">Supported Python Versions</a></li>
+<li><a class="reference external" href="#supported-platforms">Supported Platforms</a></li>
+<li><a class="reference external" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#developer-installation">Developer Installation</a><ul>
+<li><a class="reference external" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference external" href="#dependencies-management">Dependencies Management</a></li>
+<li><a class="reference external" href="#unit-tests-and-code-coverage">Unit Tests and Code Coverage</a></li>
+<li><a class="reference external" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="misc">
+<h3>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="#contributing">Contributing</a></li>
+<li><a class="reference external" href="#credits">Credits</a></li>
+<li><a class="reference external" href="#contact-info">Contact Info</a></li>
+<li><a class="reference external" href="#license">License</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="syntax-and-output-highlighting">
+<h2>Syntax and Output Highlighting<a class="headerlink" href="#syntax-and-output-highlighting" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/xQDpw70.png" />
+</div>
+</div>
+<div class="section" id="auto-completion-of-commands-subcommands-and-options">
+<h2>Auto-Completion of Commands, Subcommands, and Options<a class="headerlink" href="#auto-completion-of-commands-subcommands-and-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> provides smart autocompletion as you type. Entering the
+following command will interactively list and auto-complete all
+subcommands <strong>specific only</strong> to <code class="docutils literal"><span class="pre">ec2</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/P2tL9vW.png" />
+</div>
+</div>
+<div class="section" id="auto-completion-of-aws-resources">
+<h2>Auto-Completion of AWS Resources<a class="headerlink" href="#auto-completion-of-aws-resources" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the default commands, subcommands, and options the AWS
+CLI provides, <code class="docutils literal"><span class="pre">SAWS</span></code> supports auto-completion of your AWS resources.
+Currently, bucket names, instance ids, and instance tags are included,
+with additional support for more resources <a class="reference external" href="#todo-add-more-resources">under
+development</a>.</p>
+<div class="section" id="s3-buckets">
+<h3>S3 Buckets<a class="headerlink" href="#s3-buckets" title="Permalink to this headline">¶</a></h3>
+<p>Option for <code class="docutils literal"><span class="pre">s3api</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">bucket</span>
+</pre></div>
+</div>
+<p>Sample Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws s3api get-bucket-acl --bucket
+</pre></div>
+</div>
+<p>Syntax for <code class="docutils literal"><span class="pre">s3</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>s3://
+</pre></div>
+</div>
+<p>Sample Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws s3 ls s3://
+</pre></div>
+</div>
+<p>Note: The example below demonstrates the use of <a class="reference external" href="fuzzy-resource-and-shortcutcompletion">fuzzy resource
+completion</a>:</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/39CAS5T.png" />
+</div>
+</div>
+<div class="section" id="ec2-instance-ids">
+<h3>EC2 Instance Ids<a class="headerlink" href="#ec2-instance-ids" title="Permalink to this headline">¶</a></h3>
+<p>Option for <code class="docutils literal"><span class="pre">ec2</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">ids</span>
+</pre></div>
+</div>
+<p>Sample Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 describe-instances --instance-ids
+aws ec2 ls --instance-ids
+</pre></div>
+</div>
+<p>Note: The <code class="docutils literal"><span class="pre">ls</span></code> command demonstrates the use of <a class="reference external" href="#customizable-shortcuts">customizable
+shortcuts</a>:</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/jFyCSXl.png" />
+</div>
+</div>
+<div class="section" id="ec2-instance-tags">
+<h3>EC2 Instance Tags<a class="headerlink" href="#ec2-instance-tags" title="Permalink to this headline">¶</a></h3>
+<p>Option for <code class="docutils literal"><span class="pre">ec2</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">ec2</span><span class="o">-</span><span class="n">tag</span><span class="o">-</span><span class="n">key</span>
+<span class="o">--</span><span class="n">ec2</span><span class="o">-</span><span class="n">tag</span><span class="o">-</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>Sample Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 ls --ec2-tag-key
+aws ec2 ls --ec2-tag-value
+</pre></div>
+</div>
+<p><strong>Tags support wildcards</strong> with the <code class="docutils literal"><span class="pre">*</span></code> character.</p>
+<p>Note: <code class="docutils literal"><span class="pre">ls</span></code>, <code class="docutils literal"><span class="pre">--ec2-tag-value</span></code>, and <code class="docutils literal"><span class="pre">--ec2-tag-key</span></code> demonstrate the
+use of <a class="reference external" href="#customizable-shortcuts">customizable shortcuts</a>:</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/VIKwG3Z.png" />
+</div>
+</div>
+<div class="section" id="todo-add-more-resources">
+<h3>TODO: Add More Resources<a class="headerlink" href="#todo-add-more-resources" title="Permalink to this headline">¶</a></h3>
+<p>Feel free to submit an issue or a pull request if you&#8217;d like support for
+additional resources.</p>
+</div>
+<div class="section" id="configuring-resource-completion">
+<h3>Configuring Resource Completion<a class="headerlink" href="#configuring-resource-completion" title="Permalink to this headline">¶</a></h3>
+<p>You can control which resources are loaded on startup and are available
+for interactive completion by updating your <code class="docutils literal"><span class="pre">~/.sawsrc</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># AWS resources to refresh</span>
+<span class="n">refresh_instance_ids</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">refresh_instance_tags</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">refresh_bucket_names</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>Once initially loaded, resources are cached locally to allow for faster
+loading. To refresh the cache, use the <code class="docutils literal"><span class="pre">F5</span></code> key.</p>
+</div>
+</div>
+<div class="section" id="customizable-shortcuts">
+<h2>Customizable Shortcuts<a class="headerlink" href="#customizable-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">~/.sawsrc</span></code> file contains shortcuts that you can modify. It comes
+pre-populated with several <a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/sawsrc">handy
+shortcuts</a>
+out of the box. You can combine shortcuts with <a class="reference external" href="#fuzzy-resource-and-shortcut-completion">fuzzy
+completion</a> for even less
+keystrokes. Below are a few examples.</p>
+<p>List all EC2 instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 ls
+</pre></div>
+</div>
+<p>List all running EC2 instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 ls --ec2-state running  # fuzzy shortcut: aws ecstate
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/jYFEsoM.png" />
+</div>
+<p>List all EC2 instances with a matching tag (supports wildcards <code class="docutils literal"><span class="pre">*</span></code>):</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 ls --ec2-tag-key    # fuzzy shortcut: aws ectagk
+aws ec2 ls --ec2-tag-value  # fuzzy shortcut: aws ectagv
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/PSuwUIw.png" />
+</div>
+<p>List EC2 instance with matching id:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws ec2 ls --instance-ids  # fuzzy shortcut: aws eclsi
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/wGcUCsa.png" />
+</div>
+<p>List all DynamoDB tables:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws dynamodb ls  # fuzzy shortcut: aws dls
+</pre></div>
+</div>
+<p>List all EMR clusters:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws emr ls  # fuzzy shortcut: aws emls
+</pre></div>
+</div>
+<p>Add/remove/modify shortcuts in your <code class="docutils literal"><span class="pre">~/.sawsrc</span></code> file to suit your
+needs.</p>
+<p>Feel free to submit:</p>
+<ul class="simple">
+<li>An issue to request additional shortcuts</li>
+<li>A pull request if you&#8217;d like to share your shortcuts (see
+<a class="reference external" href="#contributions">contributing guidelines</a>)</li>
+</ul>
+<div class="section" id="fuzzy-resource-and-shortcut-completion">
+<h3>Fuzzy Resource and Shortcut Completion<a class="headerlink" href="#fuzzy-resource-and-shortcut-completion" title="Permalink to this headline">¶</a></h3>
+<p>To toggle fuzzy completion of AWS resources and shortcuts, use <code class="docutils literal"><span class="pre">F3</span></code>
+key.</p>
+<p>Note: Fuzzy completion currently only works with AWS
+<a class="reference external" href="#auto-completion-of-aws-resources">resources</a> and
+<a class="reference external" href="customizable-shortcuts">shortcuts</a>.</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/7OvFHCw.png" />
+</div>
+</div>
+</div>
+<div class="section" id="contextual-help">
+<h2>Contextual Help<a class="headerlink" href="#contextual-help" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> supports contextual command line <code class="docutils literal"><span class="pre">help</span></code> and contextual web
+<code class="docutils literal"><span class="pre">docs</span></code>.</p>
+<div class="section" id="contextual-command-line-help">
+<h3>Contextual Command Line Help<a class="headerlink" href="#contextual-command-line-help" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">help</span></code> command is powered by the AWS CLI and outputs help within
+the command line.</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws &lt;command&gt; &lt;subcommand&gt; help
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/zSkzt6y.png" />
+</div>
+</div>
+<div class="section" id="contextual-web-docs">
+<h3>Contextual Web Docs<a class="headerlink" href="#contextual-web-docs" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you&#8217;re not quite sure what specific command/subcommand/option
+combination you need to use. In such cases, browsing through several
+combinations with the <code class="docutils literal"><span class="pre">help</span></code> command line is cumbersome versus
+browsing the online AWS CLI docs through a web browser.</p>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> supports contextual web docs with the <code class="docutils literal"><span class="pre">docs</span></code> command or the
+<code class="docutils literal"><span class="pre">F9</span></code> key. <code class="docutils literal"><span class="pre">SAWS</span></code> will display the web docs specific to the currently
+entered command and subcommand.</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>aws &lt;command&gt; &lt;subcommand&gt; docs
+</pre></div>
+</div>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/zK4IJYp.png" />
+</div>
+</div>
+</div>
+<div class="section" id="toolbar-options">
+<h2>Toolbar Options<a class="headerlink" href="#toolbar-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> supports a number of toolbar options:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">F2</span></code> toggles <a class="reference external" href="#syntax-and-output-highlighting">output syntax
+highlighting</a></li>
+<li><code class="docutils literal"><span class="pre">F3</span></code> toggles <a class="reference external" href="#fuzzy-resource-and-shortcut-completion">fuzzy completion of AWS resources and
+shortcuts</a></li>
+<li><code class="docutils literal"><span class="pre">F4</span></code> toggles <a class="reference external" href="#customizable-shortcuts">completion of shortcuts</a></li>
+<li><code class="docutils literal"><span class="pre">F5</span></code> refreshes <a class="reference external" href="#auto-completion-of-aws-resources">resources for
+auto-completion</a></li>
+<li><code class="docutils literal"><span class="pre">F9</span></code> displays the <a class="reference external" href="#contextual-web-docs">contextual web docs</a></li>
+<li><code class="docutils literal"><span class="pre">F10</span></code> or <code class="docutils literal"><span class="pre">control</span> <span class="pre">d</span></code> exits <code class="docutils literal"><span class="pre">SAWS</span></code></li>
+</ul>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/7vz8OSc.png" />
+</div>
+<div class="section" id="windows-support">
+<h3>Windows Support<a class="headerlink" href="#windows-support" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> is developed under Mac OS X Yosemite and Ubuntu 14.04 LTS and
+has been tested on Windows 7 and Windows 10.</p>
+<p>On Windows, the <code class="docutils literal"><span class="pre">.sawsrc</span></code> file can be found in <code class="docutils literal"><span class="pre">%userprofile%</span></code>. For
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre>C:\Users\dmartin\.sawsrc
+</pre></div>
+</div>
+<p>Although you can use the standard Windows command prompt, you&#8217;ll
+probably have a better experience with either
+<a class="reference external" href="https://github.com/cmderdev/cmder">cmder</a> or
+<a class="reference external" href="https://github.com/Maximus5/ConEmu">conemu</a>.</p>
+<div class="figure">
+<img alt="" src="http://i.imgur.com/pUwJWck.png" />
+</div>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pip-installation">
+<h3>Pip Installation<a class="headerlink" href="#pip-installation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://badge.fury.io/py/saws"><img alt="PyPI version" src="https://badge.fury.io/py/saws.svg" /></a> <a class="reference external" href="https://pypi.python.org/pypi/saws/"><img alt="PyPI" src="https://img.shields.io/pypi/pyversions/saws.svg" /></a></p>
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> is hosted on <a class="reference external" href="https://pypi.python.org/pypi">PyPi</a>. The
+following command will install <code class="docutils literal"><span class="pre">SAWS</span></code> along with dependencies such as
+the <a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install saws
+</pre></div>
+</div>
+</div>
+<div class="section" id="supported-python-versions">
+<h3>Supported Python Versions<a class="headerlink" href="#supported-python-versions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Python 2.6</li>
+<li>Python 2.7</li>
+<li>Python 3.3</li>
+<li>Python 3.4</li>
+<li>Pypy</li>
+</ul>
+<p>Pypy3 is not supported due to <a class="reference external" href="https://github.com/boto/botocore/issues/622">lack of
+support</a> from
+<a class="reference external" href="https://github.com/boto/boto">boto</a>.</p>
+</div>
+<div class="section" id="supported-platforms">
+<h3>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Mac OS X</li>
+<li>*nix (Tested on Ubuntu 14.04 LTS)</li>
+<li>Windows 7</li>
+<li>Windows 10</li>
+</ul>
+</div>
+<div class="section" id="configuring-aws-credentials">
+<h3>Configuring AWS Credentials<a class="headerlink" href="#configuring-aws-credentials" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/aws/aws-cli#getting-started">Configure your
+credentials</a> with the
+AWS CLI:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ aws configure
+</pre></div>
+</div>
+<p>For more details on how to install and configure the AWS CLI, refer to
+the following
+<a class="reference external" href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="developer-installation">
+<h2>Developer Installation<a class="headerlink" href="#developer-installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/donnemartin/saws.git
+$ pip install -e .
+$ pip install -r requirements-dev.txt
+</pre></div>
+</div>
+<div class="section" id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://travis-ci.org/donnemartin/saws"><img alt="Build Status" src="https://travis-ci.org/donnemartin/saws.svg?branch=master" /></a></p>
+<p>Continuous integration details are available on <a class="reference external" href="https://travis-ci.org/donnemartin/saws">Travis
+CI</a>.</p>
+</div>
+<div class="section" id="dependencies-management">
+<h3>Dependencies Management<a class="headerlink" href="#dependencies-management" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://gemnasium.com/donnemartin/saws"><img alt="Dependency Status" src="https://gemnasium.com/donnemartin/saws.svg" /></a></p>
+<p>Dependencies management details are available on
+<a class="reference external" href="https://gemnasium.com/donnemartin/saws">Gemnasium</a>.</p>
+</div>
+<div class="section" id="unit-tests-and-code-coverage">
+<h3>Unit Tests and Code Coverage<a class="headerlink" href="#unit-tests-and-code-coverage" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://codecov.io/github/donnemartin/saws/saws"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/donnemartin/saws.svg" /></a></p>
+<div class="figure">
+<img alt="" src="http://codecov.io/github/donnemartin/saws/branch.svg?branch=master" />
+</div>
+<p>Code coverage details are available on
+<a class="reference external" href="https://codecov.io/github/donnemartin/saws/saws">Codecov</a>.</p>
+<p>Run unit tests in your active Python environment:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python tests/run_tests.py
+</pre></div>
+</div>
+<p>Run unit tests with <a class="reference external" href="https://pypi.python.org/pypi/tox">tox</a> on
+multiple Python environments:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ tox
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://saws.readthedocs.org/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/saws/badge/?version=latest" /></a></p>
+<p>Documentation is available on
+<a class="reference external" href="http://saws.readthedocs.org/en/latest/?badge=latest">Readthedocs.org</a>.</p>
+<p>Run the following to build the docs:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd docs
+$ make html
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>Contributions are welcome!</p>
+<p>Review the <a class="reference external" href="https://github.com/donnemartin/saws/blob/master/CONTRIBUTING.md">Contributing
+Guidelines</a>
+for details on how to:</p>
+<ul class="simple">
+<li>Submit issues</li>
+<li>Submit pull requests</li>
+</ul>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI</a> by
+<a class="reference external" href="https://github.com/aws">AWS</a> for powering <code class="docutils literal"><span class="pre">SAWS</span></code> under the hood</li>
+<li><a class="reference external" href="https://github.com/jonathanslenders/python-prompt-toolkit">Python Prompt
+Toolkit</a>
+by <a class="reference external" href="https://github.com/jonathanslenders">jonathanslenders</a> for
+simplifying the creation of <code class="docutils literal"><span class="pre">SAWS</span></code></li>
+<li><a class="reference external" href="https://github.com/j-bennet/wharfee">Wharfee</a> by
+<a class="reference external" href="https://github.com/j-bennet">j-bennet</a> for inspiring the creation
+of <code class="docutils literal"><span class="pre">SAWS</span></code> and for some handy utility functions</li>
+</ul>
+</div>
+<div class="section" id="contact-info">
+<h2>Contact Info<a class="headerlink" href="#contact-info" title="Permalink to this headline">¶</a></h2>
+<p>Feel free to contact me to discuss any issues, questions, or comments.</p>
+<ul class="simple">
+<li>Email: <a class="reference external" href="mailto:donne&#46;martin&#37;&#52;&#48;gmail&#46;com">donne<span>&#46;</span>martin<span>&#64;</span>gmail<span>&#46;</span>com</a></li>
+<li>Twitter: <a class="reference external" href="https://twitter.com/donne_martin">donne_martin</a></li>
+<li>GitHub: <a class="reference external" href="https://github.com/donnemartin">donnemartin</a></li>
+<li>LinkedIn: <a class="reference external" href="https://www.linkedin.com/in/donnemartin">donnemartin</a></li>
+<li>Website: <a class="reference external" href="http://donnemartin.com">donnemartin.com</a></li>
+</ul>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>Copyright 2015 Donne Martin
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul class="simple">
 </ul>
+</div>
 </div>
 </div>
 <div class="section" id="source-code">
@@ -61,7 +566,62 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Saws: Supercharged AWS Command Line Interface (CLI)</a></li>
+<li><a class="reference internal" href="#">Saws: A Supercharged AWS Command Line Interface (CLI)</a></li>
+<li><a class="reference internal" href="#saws">SAWS</a><ul>
+<li><a class="reference internal" href="#motivation">Motivation</a><ul>
+<li><a class="reference internal" href="#aws-cli">AWS CLI</a></li>
+<li><a class="reference internal" href="#saws-a-supercharged-aws-cli">SAWS: A Supercharged AWS CLI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#index">Index</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#installation-and-tests">Installation and Tests</a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#syntax-and-output-highlighting">Syntax and Output Highlighting</a></li>
+<li><a class="reference internal" href="#auto-completion-of-commands-subcommands-and-options">Auto-Completion of Commands, Subcommands, and Options</a></li>
+<li><a class="reference internal" href="#auto-completion-of-aws-resources">Auto-Completion of AWS Resources</a><ul>
+<li><a class="reference internal" href="#s3-buckets">S3 Buckets</a></li>
+<li><a class="reference internal" href="#ec2-instance-ids">EC2 Instance Ids</a></li>
+<li><a class="reference internal" href="#ec2-instance-tags">EC2 Instance Tags</a></li>
+<li><a class="reference internal" href="#todo-add-more-resources">TODO: Add More Resources</a></li>
+<li><a class="reference internal" href="#configuring-resource-completion">Configuring Resource Completion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizable-shortcuts">Customizable Shortcuts</a><ul>
+<li><a class="reference internal" href="#fuzzy-resource-and-shortcut-completion">Fuzzy Resource and Shortcut Completion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contextual-help">Contextual Help</a><ul>
+<li><a class="reference internal" href="#contextual-command-line-help">Contextual Command Line Help</a></li>
+<li><a class="reference internal" href="#contextual-web-docs">Contextual Web Docs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolbar-options">Toolbar Options</a><ul>
+<li><a class="reference internal" href="#windows-support">Windows Support</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#pip-installation">Pip Installation</a></li>
+<li><a class="reference internal" href="#supported-python-versions">Supported Python Versions</a></li>
+<li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
+<li><a class="reference internal" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#developer-installation">Developer Installation</a><ul>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference internal" href="#dependencies-management">Dependencies Management</a></li>
+<li><a class="reference internal" href="#unit-tests-and-code-coverage">Unit Tests and Code Coverage</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#credits">Credits</a></li>
+<li><a class="reference internal" href="#contact-info">Contact Info</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#source-code">Source Code</a></li>
 </ul>
 <div class="relations">
