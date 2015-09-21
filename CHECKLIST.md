@@ -23,9 +23,9 @@ F. Update and review `Sphinx` docs
 
     $ python setup.py build_sphinx
 
-G. Push changes to `develop`
+G. Push changes
 
-H. Review Travis, Codecov, and Gemnasium for `develop`
+H. Review Travis, Codecov, and Gemnasium
 
 I. Start a new release branch
 
@@ -58,6 +58,7 @@ Run the following on Python 2.7 and Python 3.4:
 * Craete a new `virtualenv`
 * Pip install `SAWS` into new `virtualenv`
 * Run `SAWS`
+* Empty cache
 * Check resource load from cache
 * Force refresh of resources
 * Toggle toolbar options
