@@ -322,6 +322,13 @@ Fuzzy Resource and Shortcut Completion
 To toggle fuzzy completion of AWS resources and shortcuts, use ``F3``
 key.
 
+Sample fuzzy shortcuts to start and stop EC2 instances:
+
+::
+
+    aws ecstop
+    aws ecstart
+
 Note: Fuzzy completion currently only works with AWS
 `resources <#auto-completion-of-aws-resources>`__ and
 `shortcuts <customizable-shortcuts>`__.

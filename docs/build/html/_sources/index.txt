@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Saws: A Supercharged AWS Command Line Interface (CLI)
-===================================================
+=====================================================
 
 .. include:: README.rst
 
