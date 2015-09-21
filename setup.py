@@ -6,13 +6,13 @@ except ImportError:
 
 
 setup(
-    description='saws: supercharged AWS command line interface',
+    description='SAWS: A Supercharged AWS Command Line Interface (CLI)',
     author='Donne Martin',
     url='https://github.com/donnemartin/saws',
-    download_url='https://github.com/donnemartin/saws',
+    download_url='https://pypi.python.org/pypi/saws',
     author_email='donne.martin@gmail.com',
     version=__version__,
-    license='LICENSE.txt',
+    license='Apache License 2.0',
     install_requires=[
         'awscli>=1.7.46',
         'click>=4.0',
@@ -42,7 +42,9 @@ setup(
     name='saws',
     classifiers=[
         'Intended Audience :: Developers',
-        'Operating System :: Unix',
+        'Intended Audience :: System Administrators',
+        'License :: OSI Approved :: Apache Software License',
+        'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
