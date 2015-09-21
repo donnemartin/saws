@@ -50,6 +50,7 @@ class AwsCompleter(Completer):
 
     def __init__(self,
                  aws_completer,
+                 commands,
                  config_obj,
                  log_exception,
                  ec2_states=[],
@@ -59,6 +60,7 @@ class AwsCompleter(Completer):
 
         Args:
             * aws_completer: The official aws cli completer module.
+            * commands: A list of AWS top-level commands such ec2, elb, s3, etc.
             * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * log_exception: A callable log_exception from SawsLogger.
             * ec2_states: A list of the possible instance states.
@@ -71,6 +73,7 @@ class AwsCompleter(Completer):
             None.
         """
         self.aws_completer = aws_completer
+        self.commands = commands
         self.aws_completions = set()
         self.config_obj = config_obj
         self.log_exception = log_exception
@@ -287,7 +290,15 @@ class AwsCompleter(Completer):
         completions = self.get_all_resource_completions(words,
                                                         word_before_cursor)
         if completions is None:
+            fuzzy_aws_completions = self.fuzzy_match
+            if self.fuzzy_match and word_before_cursor in self.commands:
+                # Fuzzy completion currently only works with AWS resources
+                # and shortcuts.  If we have just completed a top-level
+                # command (ie. ec2, elb, s3) then disable fuzzy completions,
+                # otherwise the corresponding subcommands will be fuzzy
+                # completed and incorrectly shown.
+                fuzzy_aws_completions = False
             completions = self.text_utils.find_matches(word_before_cursor,
                                                        self.aws_completions,
-                                                       fuzzy=False)
+                                                       fuzzy_aws_completions)
         return completions

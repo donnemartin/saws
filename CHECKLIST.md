@@ -82,6 +82,7 @@ Run the following on Python 2.7 and Python 3.4:
 * Commands
     * Blank
     * aws
+    * aws elb
     * aws s3api get-bucket-acl --bucket
     * aws ec2 describe-instances --instance-ids
     * aws ecls

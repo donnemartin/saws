@@ -41,6 +41,7 @@ class CompleterTest(unittest.TestCase):
             self.resource_options, self.ec2_states = \
             self.aws_commands.generate_all_commands()
         return AwsCompleter(awscli_completer,
+                            self.saws.commands,
                             self.saws.config_obj,
                             self.saws.logger,
                             self.ec2_states)
@@ -71,6 +72,15 @@ class CompleterTest(unittest.TestCase):
         else:
             for item in expected:
                 assert item in result_texts
+
+    def test_no_completions(self):
+        command = 'aws ec2'
+        expected = set([])
+        assert expected == self._get_completions(command)
+        command = 'aws elb'
+        assert expected == self._get_completions(command)
+        command = 'aws elasticache'
+        assert expected == self._get_completions(command)
 
     def test_ec2_commands(self):
         commands = ['aws e']

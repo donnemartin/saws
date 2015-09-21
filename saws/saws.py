@@ -85,6 +85,7 @@ class Saws(object):
             = self.aws_commands.generate_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
+            self.commands,
             self.config_obj,
             self.log_exception,
             ec2_states=self.ec2_states,
