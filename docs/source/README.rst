@@ -101,9 +101,9 @@ Installation and Tests
 -  `Installation <#installation>`__
 
    -  `Pip Installation <#pip-installation>`__
+   -  `Configuring AWS Credentials <#configuring-aws-credentials>`__
    -  `Supported Python Versions <#supported-python-versions>`__
    -  `Supported Platforms <#supported-platforms>`__
-   -  `Configuring AWS Credentials <#configuring-aws-credentials>`__
 
 -  `Developer Installation <#developer-installation>`__
 
@@ -425,13 +425,34 @@ Pip Installation
 
 |PyPI version| |PyPI|
 
-``SAWS`` is hosted on `PyPi <https://pypi.python.org/pypi>`__. The
+``SAWS`` is hosted on `PyPi <https://pypi.python.org/pypi/saws>`__. The
 following command will install ``SAWS`` along with dependencies such as
 the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
 ::
 
     $ pip install saws
+
+Once installed, run the following command to start ``SAWS``:
+
+::
+
+    $ saws
+
+Configuring AWS Credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Configure your
+credentials <https://github.com/aws/aws-cli#getting-started>`__ with the
+AWS CLI:
+
+::
+
+    $ aws configure
+
+For more details on how to install and configure the AWS CLI, refer to
+the following
+`documentation <http://docs.aws.amazon.com/cli/latest/userguide/installing.html>`__.
 
 Supported Python Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -453,21 +474,6 @@ Supported Platforms
 -  \*nix (Tested on Ubuntu 14.04 LTS)
 -  Windows 7
 -  Windows 10
-
-Configuring AWS Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Configure your
-credentials <https://github.com/aws/aws-cli#getting-started>`__ with the
-AWS CLI:
-
-::
-
-    $ aws configure
-
-For more details on how to install and configure the AWS CLI, refer to
-the following
-`documentation <http://docs.aws.amazon.com/cli/latest/userguide/installing.html>`__.
 
 Developer Installation
 ----------------------

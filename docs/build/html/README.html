@@ -131,9 +131,9 @@ Completion</a></li>
 <ul class="simple">
 <li><a class="reference external" href="#installation">Installation</a><ul>
 <li><a class="reference external" href="#pip-installation">Pip Installation</a></li>
+<li><a class="reference external" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
 <li><a class="reference external" href="#supported-python-versions">Supported Python Versions</a></li>
 <li><a class="reference external" href="#supported-platforms">Supported Platforms</a></li>
-<li><a class="reference external" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
 </ul>
 </li>
 <li><a class="reference external" href="#developer-installation">Developer Installation</a><ul>
@@ -400,12 +400,28 @@ probably have a better experience with either
 <div class="section" id="pip-installation">
 <h3>Pip Installation<a class="headerlink" href="#pip-installation" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://badge.fury.io/py/saws"><img alt="PyPI version" src="https://badge.fury.io/py/saws.svg" /></a> <a class="reference external" href="https://pypi.python.org/pypi/saws/"><img alt="PyPI" src="https://img.shields.io/pypi/pyversions/saws.svg" /></a></p>
-<p><code class="docutils literal"><span class="pre">SAWS</span></code> is hosted on <a class="reference external" href="https://pypi.python.org/pypi">PyPi</a>. The
+<p><code class="docutils literal"><span class="pre">SAWS</span></code> is hosted on <a class="reference external" href="https://pypi.python.org/pypi/saws">PyPi</a>. The
 following command will install <code class="docutils literal"><span class="pre">SAWS</span></code> along with dependencies such as
 the <a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI</a>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pip install saws
 </pre></div>
 </div>
+<p>Once installed, run the following command to start <code class="docutils literal"><span class="pre">SAWS</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ saws
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuring-aws-credentials">
+<h3>Configuring AWS Credentials<a class="headerlink" href="#configuring-aws-credentials" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/aws/aws-cli#getting-started">Configure your
+credentials</a> with the
+AWS CLI:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ aws configure
+</pre></div>
+</div>
+<p>For more details on how to install and configure the AWS CLI, refer to
+the following
+<a class="reference external" href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">documentation</a>.</p>
 </div>
 <div class="section" id="supported-python-versions">
 <h3>Supported Python Versions<a class="headerlink" href="#supported-python-versions" title="Permalink to this headline">¶</a></h3>
@@ -428,18 +444,6 @@ support</a> from
 <li>Windows 7</li>
 <li>Windows 10</li>
 </ul>
-</div>
-<div class="section" id="configuring-aws-credentials">
-<h3>Configuring AWS Credentials<a class="headerlink" href="#configuring-aws-credentials" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/aws/aws-cli#getting-started">Configure your
-credentials</a> with the
-AWS CLI:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ aws configure
-</pre></div>
-</div>
-<p>For more details on how to install and configure the AWS CLI, refer to
-the following
-<a class="reference external" href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">documentation</a>.</p>
 </div>
 </div>
 <div class="section" id="developer-installation">
@@ -592,9 +596,9 @@ limitations under the License.
 </li>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
 <li><a class="reference internal" href="#pip-installation">Pip Installation</a></li>
+<li><a class="reference internal" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
 <li><a class="reference internal" href="#supported-python-versions">Supported Python Versions</a></li>
 <li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li><a class="reference internal" href="#configuring-aws-credentials">Configuring AWS Credentials</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#developer-installation">Developer Installation</a><ul>

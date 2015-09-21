@@ -74,9 +74,9 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
+    * [Configuring AWS Credentials](#configuring-aws-credentials)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
-    * [Configuring AWS Credentials](#configuring-aws-credentials)
 * [Developer Installation](#developer-installation)
     * [Continuous Integration](#continuous-integration)
     * [Dependencies Management](#dependencies-management)
@@ -290,9 +290,21 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
 [![PyPI version](https://badge.fury.io/py/saws.svg)](http://badge.fury.io/py/saws) [![PyPI](https://img.shields.io/pypi/pyversions/saws.svg)](https://pypi.python.org/pypi/saws/)
 
-`SAWS` is hosted on [PyPi](https://pypi.python.org/pypi).  The following command will install `SAWS` along with dependencies such as the [AWS CLI](https://github.com/aws/aws-cli):
+`SAWS` is hosted on [PyPi](https://pypi.python.org/pypi/saws).  The following command will install `SAWS` along with dependencies such as the [AWS CLI](https://github.com/aws/aws-cli):
 
     $ pip install saws
+
+Once installed, run the following command to start `SAWS`:
+
+    $ saws
+
+### Configuring AWS Credentials
+
+[Configure your credentials](https://github.com/aws/aws-cli#getting-started) with the AWS CLI:
+
+    $ aws configure
+
+For more details on how to install and configure the AWS CLI, refer to the following [documentation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
 
 ### Supported Python Versions
 
@@ -310,14 +322,6 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
 * *nix (Tested on Ubuntu 14.04 LTS)
 * Windows 7
 * Windows 10
-
-### Configuring AWS Credentials
-
-[Configure your credentials](https://github.com/aws/aws-cli#getting-started) with the AWS CLI:
-
-    $ aws configure
-
-For more details on how to install and configure the AWS CLI, refer to the following [documentation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
 
 ## Developer Installation
 
