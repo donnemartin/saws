@@ -117,7 +117,7 @@ class KeyManager(object):
             """Refreshes AWS resources.
 
             Args:
-                * _: An instance of prompt_toolkit's Event.
+                * event: An instance of prompt_toolkit's Event.
 
             Returns:
                 None.
