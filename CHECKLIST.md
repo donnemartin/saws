@@ -11,61 +11,57 @@ B. Run code checks
 
 C. Run manual smoke tests on Mac, Ubuntu, Windows*
 
-D. Update and review `README.rst`
+D. Update and review `README.rst` and `Sphinx` docs
 
-    $ scripts/create_readme_rst.sh
+    $ scripts/update_docs.sh
 
-E. Update and review `Sphinx` docs
+E. Push changes
 
-    $ python setup.py build_sphinx
+F. Review Travis, Codecov, and Gemnasium
 
-F. Push changes
-
-G. Review Travis, Codecov, and Gemnasium
-
-H. Start a new release branch
+G. Start a new release branch
 
     $ git flow release start x.y.z
 
-I. Increment the version number in `saws/__init__.py`
+H. Increment the version number in `saws/__init__.py`
 
-J. Update and review `CHANGELOG`
+I. Update and review `CHANGELOG`
 
     $ scripts/create_changelog.sh
 
-K. Commit the changes
+J. Commit the changes
 
-L. Finish the release branch
+K. Finish the release branch
 
     $ git flow release finish 'x.y.z'
 
-M. Input a tag
+L. Input a tag
 
     $ vx.y.z
 
-N. Push tagged release to develop and master
+M. Push tagged release to develop and master
 
-O. Temporarily remove README before pushing to PyPi  # TODO
+N. Temporarily remove README before pushing to PyPi  # TODO
 
-P. Register package with PyPi
+O. Register package with PyPi
 
     $ python setup.py register -r pypi
 
-Q. Upload to PyPi
+P. Upload to PyPi
 
     $ python setup.py sdist upload -r pypi
 
-R. Upload Sphinx docs to PyPi
+Q. Upload Sphinx docs to PyPi
 
     $ python setup.py upload_sphinx
 
-S. Review newly released package from PyPi
+R. Review newly released package from PyPi
 
-T. Install and run manual smoke tests on Mac, Ubuntu, Windows*
+S. Install and run manual smoke tests on Mac, Ubuntu, Windows*
 
-U. Restore README  # TODO
+T. Restore README  # TODO
 
-V. Rebuild Readthedocs at https://readthedocs.org/projects/saws/builds/
+U. Rebuild Readthedocs at https://readthedocs.org/projects/saws/builds/
 
 ## Smoke Tests
 
