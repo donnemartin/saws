@@ -87,6 +87,7 @@ Features
 -  `Customizable Shortcuts <#customizable-shortcuts>`__
 -  `Fuzzy Resource and Shortcut
    Completion <#fuzzy-resource-and-shortcut-completion>`__
+-  `Executing Shell Commands <#executing-shell-commands>`__
 -  `Contextual Help <#contextual-help>`__
 
    -  `Contextual Command Line Help <#contextual-command-line-help>`__
@@ -127,7 +128,9 @@ Syntax and Output Highlighting
    :alt: 
 
 You can control which theme to load for syntax highlighting by updating
-your ``~/.sawsrc`` file:
+your
+`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+file:
 
 ::
 
@@ -242,14 +245,16 @@ use of `customizable shortcuts <#customizable-shortcuts>`__:
 TODO: Add More Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Feel free to submit an issue or a pull request if you'd like support for
-additional resources.
+Feel free to `submit an issue or a pull request <#contributions>`__ if
+you'd like support for additional resources.
 
 Configuring Resource Completion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can control which resources are loaded on startup and are available
-for interactive completion by updating your ``~/.sawsrc`` file:
+for interactive completion by updating your
+`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+file:
 
 ::
 
@@ -264,8 +269,10 @@ loading. To refresh the cache, use the ``F5`` key.
 Customizable Shortcuts
 ----------------------
 
-The ``~/.sawsrc`` file contains shortcuts that you can modify. It comes
-pre-populated with several `handy
+The
+`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+file contains shortcuts that you can modify. It comes pre-populated with
+several `handy
 shortcuts <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
 out of the box. You can combine shortcuts with `fuzzy
 completion <#fuzzy-resource-and-shortcut-completion>`__ for even less
@@ -317,8 +324,9 @@ List all EMR clusters:
 
     aws emr ls  # fuzzy shortcut: aws emls
 
-Add/remove/modify shortcuts in your ``~/.sawsrc`` file to suit your
-needs.
+Add/remove/modify shortcuts in your
+`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+file to suit your needs.
 
 Feel free to submit:
 
@@ -344,6 +352,14 @@ Note: Fuzzy completion currently only works with AWS
 `shortcuts <customizable-shortcuts>`__.
 
 .. figure:: http://i.imgur.com/7OvFHCw.png
+   :alt: 
+
+Executing Shell Commands
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+``SAWS`` allows you to execute shell commands from the ``saws>`` prompt.
+
+.. figure:: http://i.imgur.com/eWW8RUH.png
    :alt: 
 
 Contextual Help
@@ -412,8 +428,9 @@ Windows Support
 ``SAWS`` is developed under Mac OS X Yosemite and Ubuntu 14.04 LTS and
 has been tested on Windows 7 and Windows 10.
 
-On Windows, the ``.sawsrc`` file can be found in ``%userprofile%``. For
-example:
+On Windows, the
+`.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+file can be found in ``%userprofile%``. For example:
 
 ::
 
@@ -443,11 +460,40 @@ the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
     $ pip install saws
 
+I highly recommend installing Python packages in a
+`virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__
+to avoid any `issues with dependencies or
+permissions <https://github.com/donnemartin/saws/issues/15>`__.
+
 Once installed, run the following command to start ``SAWS``:
 
 ::
 
     $ saws
+
+If you'd like to use a specific named profile with ``SAWS``, run the
+following commands on OS X, Linux, or Unix:
+
+::
+
+    $ export AWS_DEFAULT_PROFILE=user1
+    $ saws
+
+Or as a one-liner:
+
+::
+
+    $ AWS_DEFAULT_PROFILE=user1 saws
+
+Windows users can run the following commands:
+
+::
+
+    > set AWS_DEFAULT_PROFILE=user1
+    > saws
+
+Command line options for starting ``SAWS`` with a specific profile are
+`under development <https://github.com/donnemartin/saws/issues/16>`__.
 
 Configuring AWS Credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -480,13 +526,14 @@ support <https://github.com/boto/botocore/issues/622>`__ from
 Supported Platforms
 ~~~~~~~~~~~~~~~~~~~
 
--  Mac OS X
+-  Mac OS X (Tested on OS X 10.10)
 -  \*nix (Tested on Ubuntu 14.04 LTS)
--  Windows 7
--  Windows 10
+-  Windows (Tested on Windows 7 and 10)
 
 Developer Installation
 ----------------------
+
+If you're interested in contributing to ``SAWS``, run the following:
 
 ::
 
@@ -539,15 +586,14 @@ Documentation
 
 |Documentation Status|
 
-Documentation is available on
+Source code documentation is available on
 `Readthedocs.org <http://saws.readthedocs.org/en/latest/?badge=latest>`__.
 
 Run the following to build the docs:
 
 ::
 
-    $ cd docs
-    $ make html
+    $ scripts/update_docs.sh
 
 Contributing
 ------------
