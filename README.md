@@ -316,6 +316,22 @@ Once installed, run the following command to start `SAWS`:
 
     $ saws
 
+If you'd like to use a specific named profile with `SAWS`, run the following commands on OS X, Linux, or Unix:
+
+    $ export AWS_DEFAULT_PROFILE=user1
+    $ saws
+
+Or as a one-liner:
+
+    $ AWS_DEFAULT_PROFILE=user1 saws
+
+Windows users can run the following commands:
+
+    > set AWS_DEFAULT_PROFILE=user1
+    > saws
+
+Command line options for starting `SAWS` with a specific profile are [under development](https://github.com/donnemartin/saws/issues/16).
+
 ### Configuring AWS Credentials
 
 [Configure your credentials](https://github.com/aws/aws-cli#getting-started) with the AWS CLI:
