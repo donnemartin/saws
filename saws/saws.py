@@ -322,7 +322,9 @@ class Saws(object):
         if not self.get_color():
             return text
         stripped_text = text.strip()
-        excludes = [AwsCommands.AWS_CONFIGURE, AwsCommands.AWS_HELP]
+        excludes = [AwsCommands.AWS_CONFIGURE,
+                    AwsCommands.AWS_HELP,
+                    '|']
         if not any(substring in stripped_text for substring in excludes):
             return text.strip() + self.PYGMENTS_CMD
         else:
