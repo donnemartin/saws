@@ -327,10 +327,9 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
 
 ### Supported Platforms
 
-* Mac OS X
+* Mac OS X (Tested on OS X 10.10)
 * *nix (Tested on Ubuntu 14.04 LTS)
-* Windows 7
-* Windows 10
+* Windows (Tested on Windows 7 and 10)
 
 ## Developer Installation
 
