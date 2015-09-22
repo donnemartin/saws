@@ -333,6 +333,8 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
 
 ## Developer Installation
 
+If you're interested in contributing to `SAWS`, run the following:
+
     $ git clone https://github.com/donnemartin/saws.git
     $ pip install -e .
     $ pip install -r requirements-dev.txt
@@ -373,8 +375,7 @@ Source code documentation is available on [Readthedocs.org](http://saws.readthed
 
 Run the following to build the docs:
 
-    $ cd docs
-    $ make html
+    $ scripts/update_docs.sh
 
 ## Contributing
 
