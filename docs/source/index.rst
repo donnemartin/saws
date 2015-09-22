@@ -6,18 +6,16 @@
 SAWS: A Supercharged AWS Command Line Interface (CLI)
 =====================================================
 
-.. include:: README.rst
-
-.. toctree::
-   :maxdepth: 2
-
-
-
 Source Code
-==================
+-----------
 
 * `GitHub Repo <https://github.com/donnemartin/saws>`__
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+|
 
+.. include:: README.rst
+
+.. toctree::
+   :maxdepth: 2
