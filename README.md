@@ -94,7 +94,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 ![](http://i.imgur.com/xQDpw70.png)
 
-You can control which theme to load for syntax highlighting by updating your `~/.sawsrc` file:
+You can control which theme to load for syntax highlighting by updating your [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file:
 
 ```
 # Visual theme. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
@@ -172,11 +172,11 @@ Note:  `ls`, `--ec2-tag-value`, and `--ec2-tag-key` demonstrate the use of [cust
 
 ### TODO: Add More Resources
 
-Feel free to submit an issue or a pull request if you'd like support for additional resources.
+Feel free to [submit an issue or a pull request](#contributions) if you'd like support for additional resources.
 
 ### Configuring Resource Completion
 
-You can control which resources are loaded on startup and are available for interactive completion by updating your `~/.sawsrc` file:
+You can control which resources are loaded on startup and are available for interactive completion by updating your [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file:
 
 ```
 # AWS resources to refresh
@@ -189,7 +189,7 @@ Once initially loaded, resources are cached locally to allow for faster loading.
 
 ## Customizable Shortcuts
 
-The `~/.sawsrc` file contains shortcuts that you can modify.  It comes pre-populated with several [handy shortcuts](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) out of the box.  You can combine shortcuts with [fuzzy completion](#fuzzy-resource-and-shortcut-completion) for even less keystrokes.  Below are a few examples.
+The [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file contains shortcuts that you can modify.  It comes pre-populated with several [handy shortcuts](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) out of the box.  You can combine shortcuts with [fuzzy completion](#fuzzy-resource-and-shortcut-completion) for even less keystrokes.  Below are a few examples.
 
 List all EC2 instances:
 
@@ -222,7 +222,7 @@ List all EMR clusters:
 
     aws emr ls  # fuzzy shortcut: aws emls
 
-Add/remove/modify shortcuts in your `~/.sawsrc` file to suit your needs.
+Add/remove/modify shortcuts in your [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file to suit your needs.
 
 Feel free to submit:
 
@@ -285,7 +285,7 @@ Usage:
 
 `SAWS` is developed under Mac OS X Yosemite and Ubuntu 14.04 LTS and has been tested on Windows 7 and Windows 10.
 
-On Windows, the `.sawsrc` file can be found in `%userprofile%`.  For example:
+On Windows, the [.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file can be found in `%userprofile%`.  For example:
 
     C:\Users\dmartin\.sawsrc
 
@@ -370,7 +370,7 @@ Run unit tests with [tox](https://pypi.python.org/pypi/tox) on multiple Python e
 
 [![Documentation Status](https://readthedocs.org/projects/saws/badge/?version=latest)](http://saws.readthedocs.org/en/latest/?badge=latest)
 
-Documentation is available on [Readthedocs.org](http://saws.readthedocs.org/en/latest/?badge=latest).
+Source code documentation is available on [Readthedocs.org](http://saws.readthedocs.org/en/latest/?badge=latest).
 
 Run the following to build the docs:
 
