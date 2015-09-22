@@ -94,6 +94,15 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 ![](http://i.imgur.com/xQDpw70.png)
 
+You can control which theme to load for syntax highlighting by updating your `~/.sawsrc` file:
+
+```
+# Visual theme. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
+# native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
+# colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
+theme = vim
+```
+
 ## Auto-Completion of Commands, Subcommands, and Options
 
 `SAWS` provides smart autocompletion as you type.  Entering the following command will interactively list and auto-complete all subcommands **specific only** to `ec2`:

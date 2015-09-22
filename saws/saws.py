@@ -72,10 +72,10 @@ class Saws(object):
         """
         self.aws_cli = None
         self.key_manager = None
-        self.theme = 'vim'
         self.PYGMENTS_CMD = ' | pygmentize -l json'
         self.config = Config()
         self.config_obj = self.config.read_configuration()
+        self.theme = self.config_obj['main']['theme']
         self.logger = SawsLogger(__name__,
                                  self.config_obj['main']['log_file'],
                                  self.config_obj['main']['log_level']).logger
@@ -413,6 +413,7 @@ class Saws(object):
             None.
         """
         print('Version:', __version__)
+        print('Theme:', self.theme)
         while True:
             document = self.aws_cli.run()
             self.process_command(document.text)
