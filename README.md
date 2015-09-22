@@ -64,6 +64,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * [Configuring Resource Completion](#configuring-resource-completion)
 * [Customizable Shortcuts](#customizable-shortcuts)
 * [Fuzzy Resource and Shortcut Completion](#fuzzy-resource-and-shortcut-completion)
+* [Executing Shell Commands](#executing-shell-commands)
 * [Contextual Help](#contextual-help)
     * [Contextual Command Line Help](#contextual-command-line-help)
     * [Contextual Web Docs](#contextual-web-docs)
@@ -241,6 +242,12 @@ Sample fuzzy shortcuts to start and stop EC2 instances:
 Note:  Fuzzy completion currently only works with AWS [resources](#auto-completion-of-aws-resources) and [shortcuts](customizable-shortcuts).
 
 ![](http://i.imgur.com/7OvFHCw.png)
+
+### Executing Shell Commands
+
+`SAWS` allows you to execute shell commands from the `saws>` prompt.
+
+![](http://i.imgur.com/eWW8RUH.png)
 
 ## Contextual Help
 
