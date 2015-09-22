@@ -310,6 +310,8 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
     $ pip install saws
 
+I highly recommend installing Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid any [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
+
 Once installed, run the following command to start `SAWS`:
 
     $ saws
