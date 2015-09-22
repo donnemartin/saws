@@ -113,16 +113,16 @@ class KeyManager(object):
             set_shortcut_match(not get_shortcut_match())
 
         @self.manager.registry.add_binding(Keys.F5)
-        def handle_f5(_):
+        def handle_f5(event):
             """Refreshes AWS resources.
 
             Args:
-                * _: An instance of prompt_toolkit's Event (not used).
+                * _: An instance of prompt_toolkit's Event.
 
             Returns:
                 None.
             """
-            refresh_resources()
+            event.cli.run_in_terminal(refresh_resources)
 
         @self.manager.registry.add_binding(Keys.F9)
         def handle_f9(_):
