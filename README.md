@@ -31,7 +31,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
     aws <command> <subcommand> [parameters] [options]
 
-`SAWS` Features:
+`SAWS` features:
 
 * Auto-completion of:
     * Commands
@@ -46,7 +46,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 * Customizable shortcuts
 * Contextual help
 
-`SAWS` is available for Mac, *nix, and [Windows](#windows-support).
+`SAWS` is available for Mac, Linux, Unix, and [Windows](#windows-support).
 
 ![](http://i.imgur.com/Eo12q9T.png)
 
@@ -306,7 +306,7 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
 [![PyPI version](https://badge.fury.io/py/saws.svg)](http://badge.fury.io/py/saws) [![PyPI](https://img.shields.io/pypi/pyversions/saws.svg)](https://pypi.python.org/pypi/saws/)
 
-`SAWS` is hosted on [PyPi](https://pypi.python.org/pypi/saws).  The following command will install `SAWS` along with dependencies such as the [AWS CLI](https://github.com/aws/aws-cli):
+`SAWS` is hosted on [PyPI](https://pypi.python.org/pypi/saws).  The following command will install `SAWS` along with dependencies such as the [AWS CLI](https://github.com/aws/aws-cli):
 
     $ pip install saws
 
@@ -353,7 +353,7 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
 ### Supported Platforms
 
 * Mac OS X (Tested on OS X 10.10)
-* *nix (Tested on Ubuntu 14.04 LTS)
+* Linux, Unix (Tested on Ubuntu 14.04 LTS)
 * Windows (Tested on Windows 7 and 10)
 
 ## Developer Installation
