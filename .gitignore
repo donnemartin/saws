@@ -34,11 +34,6 @@ nosetests.xml
 .project
 .pydevproject
 
-screenshots/
-scratch/
-saws/data/RESOURCES.txt
-CHANGELOG_DRAFT
-
 .idea/
 *.pyc
 *.egg-info/
@@ -46,3 +41,9 @@ CHANGELOG_DRAFT
 .tox/
 dist/
 .DS_Store
+
+screenshots/
+scratch/
+saws/data/RESOURCES.txt
+CHANGELOG_DRAFT
+CHANGELOG.md

@@ -3,13 +3,13 @@ Release Checklist
 
 A. Run unit tests
 
-    $ tox
+    $ rm -rf .tox && tox
 
 B. Run code checks
 
     $ scripts/run_code_checks.sh
 
-C. Run manual smoke tests on Mac, Ubuntu, Windows*
+C. Run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
 
 D. Update and review `README.rst` and `Sphinx` docs
 
@@ -41,7 +41,13 @@ L. Input a tag
 
 M. Push tagged release to develop and master
 
-N. Temporarily remove README before pushing to PyPi  # TODO
+Note: Steps N through R can now be done with a single script:
+
+    $ scripts/release_pypi.sh
+
+N. Set CHANGELOG as `README.md`
+
+    $ scripts/set_changelog_as_readme.sh
 
 O. Register package with PyPi
 
@@ -55,13 +61,13 @@ Q. Upload Sphinx docs to PyPi
 
     $ python setup.py upload_sphinx
 
-R. Review newly released package from PyPi
+R. Restore `README.md`
 
-S. Install and run manual smoke tests on Mac, Ubuntu, Windows*
+    $ scripts/set_changelog_as_readme_undo.sh
 
-T. Restore README  # TODO
+S. Review newly released package from PyPi
 
-U. Rebuild Readthedocs at https://readthedocs.org/projects/saws/builds/
+T. Install and run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
 
 ## Smoke Tests
 
@@ -75,7 +81,7 @@ Run the following on Python 2.7 and Python 3.4:
 * Force refresh of resources
 * Toggle toolbar options
 * Verify toolbar options are saved across sessions
-* Commands
+* Test the following commands
     * Blank
     * aws
     * aws elb
@@ -87,4 +93,4 @@ Run the following on Python 2.7 and Python 3.4:
     * aws ecstate
     * aws s3 ls s3:
     * aws s3 ls docs
-* Run specialized tests based on code changes
+* Run targeted tests based on recent code changes
