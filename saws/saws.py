@@ -396,7 +396,7 @@ class Saws(object):
             self.handle_docs)
         style_factory = StyleFactory(self.theme)
         application = Application(
-            mouse_support=True,
+            mouse_support=False,
             style=style_factory.style,
             layout=layout,
             buffer=cli_buffer,
