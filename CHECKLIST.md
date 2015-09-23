@@ -3,7 +3,7 @@ Release Checklist
 
 A. Run unit tests
 
-    $ tox
+    $ rm -rf .tox && tox
 
 B. Run code checks
 
