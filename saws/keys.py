@@ -74,7 +74,10 @@ class KeyManager(object):
         assert callable(get_shortcut_match)
         assert callable(refresh_resources)
         assert callable(handle_docs)
-        self.manager = KeyBindingManager(enable_system_bindings=True)
+        self.manager = KeyBindingManager(
+           enable_search=True,
+           enable_abort_and_exit_bindings=True,
+           enable_system_bindings=True)
 
         @self.manager.registry.add_binding(Keys.F2)
         def handle_f2(_):
