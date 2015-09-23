@@ -4,7 +4,6 @@ env:
   - TOXENV=py27
   - TOXENV=py33
   - TOXENV=py34
-  - TOXENV=py35
   - TOXENV=pypy
 os:
   - linux
