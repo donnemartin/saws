@@ -80,6 +80,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
+    * [Virtual Environment Installation](#virtual-environment-installation)
     * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
@@ -321,11 +322,31 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
     $ pip install saws
 
-I highly recommend installing Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid any [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
-
 Once installed, run the following command to start `SAWS`:
 
     $ saws
+
+### Virtual Environment Installation
+
+I highly recommend installing Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
+
+If you're not familiar with virtual environments, I've listed the commands below.  For more details (and for instructions on how to install on Windows using `virtualenvwrapper-win`), check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+
+Install `virtualenv` and `virtualenvwrapper`:
+
+    pip install virtualenv
+    pip install virtualenvwrapper
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+
+Create a `SAWS` `virtualenv` and install `SAWS`:
+
+    mkvirtualenv saws
+    pip install saws
+
+If you want to activate the `saws` `virtualenv` again later, run:
+
+    workon saws
 
 ### AWS Credentials and Named Profiles
 
