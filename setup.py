@@ -27,7 +27,6 @@ setup(
     extras_require={
         'testing': [
             'mock>=1.0.1',
-            'pytest>=2.7.0',
             'tox>=1.9.2'
         ],
     },
