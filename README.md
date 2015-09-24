@@ -45,10 +45,10 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 * Customizable shortcuts
 * Fuzzy completion of resources and shortcuts
 * Syntax and output highlighting
+* Execution and piping of shell commands
+* Command history
 * Contextual help
 * Toolbar options
-
-`SAWS` supports [running and piping shell commands](executing-shell-commands) from within the `saws>` prompt.
 
 `SAWS` is available for Mac, Linux, Unix, and [Windows](#windows-support).
 
@@ -69,6 +69,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 * [Customizable Shortcuts](#customizable-shortcuts)
 * [Fuzzy Resource and Shortcut Completion](#fuzzy-resource-and-shortcut-completion)
 * [Executing Shell Commands](#executing-shell-commands)
+* [Command History](#command-history)
 * [Contextual Help](#contextual-help)
     * [Contextual Command Line Help](#contextual-command-line-help)
     * [Contextual Web Docs](#contextual-web-docs)
@@ -251,7 +252,13 @@ Note:  Fuzzy completion currently only works with AWS [resources](#auto-completi
 
 `SAWS` allows you to execute shell commands from the `saws>` prompt.
 
-![](http://i.imgur.com/eWW8RUH.png)
+![](http://i.imgur.com/FiSn6b2.png)
+
+### Command History
+
+`SAWS` keeps track of commands you enter and stores them in `~/.saws-history`.  Use the up and down arrow keys to cycle through the command history.
+
+![](http://i.imgur.com/z8RrDQB.png)
 
 ## Contextual Help
 
