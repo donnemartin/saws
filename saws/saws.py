@@ -350,6 +350,10 @@ class Saws(object):
                 # Pass the command onto the shell so aws-cli can execute it
                 subprocess.call(text, shell=True)
             print('')
+        except KeyboardInterrupt:
+            # Continue running on keyboard interrupt
+            # The user might interrupt an AWS command with Control-C
+            print('')
         except Exception as e:
             self.log_exception(e, traceback, echo=True)
 
