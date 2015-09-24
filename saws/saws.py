@@ -23,6 +23,7 @@ import webbrowser
 from prompt_toolkit import AbortAction, Application, CommandLineInterface
 from prompt_toolkit.enums import DEFAULT_BUFFER
 from prompt_toolkit.filters import Always, HasFocus, IsDone
+from prompt_toolkit.interface import AcceptAction
 from prompt_toolkit.layout.processors import \
     HighlightMatchingBracketProcessor, ConditionalProcessor
 from prompt_toolkit.buffer import Buffer
@@ -382,7 +383,8 @@ class Saws(object):
         cli_buffer = Buffer(
             history=history,
             completer=self.completer,
-            complete_while_typing=Always())
+            complete_while_typing=Always(),
+            accept_action=AcceptAction.RETURN_DOCUMENT)
         self.key_manager = KeyManager(
             self.set_color,
             self.get_color,
@@ -394,11 +396,13 @@ class Saws(object):
             self.handle_docs)
         style_factory = StyleFactory(self.theme)
         application = Application(
+            mouse_support=True,
             style=style_factory.style,
             layout=layout,
             buffer=cli_buffer,
             key_bindings_registry=self.key_manager.manager.registry,
             on_exit=AbortAction.RAISE_EXCEPTION,
+            on_abort=AbortAction.RETRY,
             ignore_case=True)
         eventloop = create_eventloop()
         self.aws_cli = CommandLineInterface(
