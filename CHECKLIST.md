@@ -1,8 +1,16 @@
 Release Checklist
 =================
 
-A. Run unit tests
+A. Install in a new venv and run unit tests
 
+Note, you can't seem to script the virtualenv calls, see:
+https://bitbucket.org/dhellmann/virtualenvwrapper/issues/219/cant-deactivate-active-virtualenv-from
+
+    $ deactivate
+    $ rmvirtualenv saws
+    $ mkvirtualenv saws
+    $ pip install -e .
+    $ pip install -r requirements-dev.txt
     $ rm -rf .tox && tox
 
 B. Run code checks
@@ -67,7 +75,7 @@ R. Restore `README.md`
 
 S. Review newly released package from PyPi
 
-T. Install and run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
+T. Install in a new venv and run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
 
 ## Smoke Tests
 
