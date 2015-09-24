@@ -42,9 +42,13 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * Instance ids
     * Instance tags
     * [More coming soon!]((#todo-add-more-resources))
-* Syntax and output highlighting
 * Customizable shortcuts
+* Fuzzy completion of resources and shortcuts
+* Syntax and output highlighting
 * Contextual help
+* Toolbar options
+
+`SAWS` supports [running and piping shell commands](executing-shell-commands) from within the `saws>` prompt.
 
 `SAWS` is available for Mac, Linux, Unix, and [Windows](#windows-support).
 
