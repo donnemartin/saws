@@ -380,17 +380,22 @@ For more details on how to install and configure the AWS CLI, refer to the follo
 * Python 3.4
 * Pypy
 
+Light testing indicates that `SAWS` also seems to be compatible with Python 3.5.
+
 Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore/issues/622) from [boto](https://github.com/boto/boto).
 
 ### Supported Platforms
 
-* Mac OS X (Tested on OS X 10.10)
-* Linux, Unix (Tested on Ubuntu 14.04 LTS)
-* Windows (Tested on Windows 7 and 10)
+* Mac OS X
+    * Tested on OS X 10.10
+* Linux, Unix
+    * Tested on Ubuntu 14.04 LTS
+* Windows
+    * Tested on Windows 7 and 10
 
 ## Developer Installation
 
-If you're interested in contributing to `SAWS`, run the following:
+If you're interested in contributing to `SAWS`, run the following commands:
 
     $ git clone https://github.com/donnemartin/saws.git
     $ pip install -e .
