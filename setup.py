@@ -1,9 +1,26 @@
 from saws.__init__ import __version__
+import sys
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
+install_requires = [
+    'awscli>=1.7.46',
+    'click>=4.0',
+    'configobj>=5.0.6',
+    'fuzzyfinder>=1.0.0',
+    'prompt-toolkit==0.52',
+    'six>=1.9.0',
+    'pygments>=2.0.2'
+]
+
+if sys.version_info < (2, 7):
+    # Introduced in Python 2.7
+    install_requires.append('ordereddict>=1.1')
+if sys.version_info < (3, 4):
+    # Backport of Python 3.4 enums to earlier versions
+    install_requires.append('enum34>=1.0.4')
 
 setup(
     description='SAWS: A Supercharged AWS Command Line Interface (CLI)',
@@ -13,17 +30,7 @@ setup(
     author_email='donne.martin@gmail.com',
     version=__version__,
     license='Apache License 2.0',
-    install_requires=[
-        'awscli>=1.7.46',
-        'click>=4.0',
-        'configobj >= 5.0.6',
-        'enum34>=1.0.4',
-        'fuzzyfinder>=1.0.0',
-        'ordereddict>=1.1',
-        'prompt-toolkit==0.52',
-        'six>=1.9.0',
-        'pygments>=2.0.2'
-    ],
+    install_requires=install_requires,
     extras_require={
         'testing': [
             'mock>=1.0.1',
