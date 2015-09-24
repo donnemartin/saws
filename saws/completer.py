@@ -299,6 +299,7 @@ class AwsCompleter(Completer):
                 # command (ie. ec2, elb, s3) then disable fuzzy completions,
                 # otherwise the corresponding subcommands will be fuzzy
                 # completed and incorrectly shown.
+                # See: https://github.com/donnemartin/saws/issues/14
                 fuzzy_aws_completions = False
             completions = self.text_utils.find_matches(word_before_cursor,
                                                        self.aws_completions,
