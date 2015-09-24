@@ -220,10 +220,12 @@ class AwsCompleter(Completer):
             A list of string completions.
         """
         text = self.replace_shortcut(document.text)
+        # Redirect stdout to a string so we can capture the AWS CLI
+        # autocompleter results
+        # See: http://stackoverflow.com/a/1218951
         old_stdout = sys.stdout
         sys.stdout = mystdout = cStringIO()
         try:
-            # Capture the AWS CLI autocompleter and store it in a string
             self.aws_completer.complete(text, len(text))
         except Exception as e:
             self.log_exception(e, traceback)
