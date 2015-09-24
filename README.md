@@ -79,7 +79,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
-    * [Configuring AWS Credentials](#configuring-aws-credentials)
+    * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
 * [Developer Installation](#developer-installation)
@@ -320,6 +320,12 @@ Once installed, run the following command to start `SAWS`:
 
     $ saws
 
+### AWS Credentials and Named Profiles
+
+[Configure your credentials](https://github.com/aws/aws-cli#getting-started) with the AWS CLI:
+
+    $ aws configure
+
 If you'd like to use a specific named profile with `SAWS`, run the following commands on OS X, Linux, or Unix:
 
     $ export AWS_DEFAULT_PROFILE=user1
@@ -335,12 +341,6 @@ Windows users can run the following commands:
     > saws
 
 Command line options for starting `SAWS` with a specific profile are [under development](https://github.com/donnemartin/saws/issues/16).
-
-### Configuring AWS Credentials
-
-[Configure your credentials](https://github.com/aws/aws-cli#getting-started) with the AWS CLI:
-
-    $ aws configure
 
 For more details on how to install and configure the AWS CLI, refer to the following [documentation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
 
