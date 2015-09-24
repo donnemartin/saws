@@ -40,7 +40,7 @@ Under the hood, ``SAWS`` is **powered by the AWS CLI** and supports the
 
     aws <command> <subcommand> [parameters] [options]
 
-``SAWS`` Features:
+``SAWS`` features:
 
 -  Auto-completion of:
 
@@ -55,11 +55,15 @@ Under the hood, ``SAWS`` is **powered by the AWS CLI** and supports the
    -  Instance tags
    -  `More coming soon! <(#todo-add-more-resources)>`__
 
--  Syntax and output highlighting
 -  Customizable shortcuts
+-  Fuzzy completion of resources and shortcuts
+-  Syntax and output highlighting
+-  Execution and piping of shell commands
+-  Command history
 -  Contextual help
+-  Toolbar options
 
-``SAWS`` is available for Mac, \*nix, and
+``SAWS`` is available for Mac, Linux, Unix, and
 `Windows <#windows-support>`__.
 
 .. figure:: http://i.imgur.com/Eo12q9T.png
@@ -88,6 +92,7 @@ Features
 -  `Fuzzy Resource and Shortcut
    Completion <#fuzzy-resource-and-shortcut-completion>`__
 -  `Executing Shell Commands <#executing-shell-commands>`__
+-  `Command History <#command-history>`__
 -  `Contextual Help <#contextual-help>`__
 
    -  `Contextual Command Line Help <#contextual-command-line-help>`__
@@ -102,7 +107,10 @@ Installation and Tests
 -  `Installation <#installation>`__
 
    -  `Pip Installation <#pip-installation>`__
-   -  `Configuring AWS Credentials <#configuring-aws-credentials>`__
+   -  `Virtual Environment
+      Installation <#virtual-environment-installation>`__
+   -  `AWS Credentials and Named
+      Profiles <#aws-credentials-and-named-profiles>`__
    -  `Supported Python Versions <#supported-python-versions>`__
    -  `Supported Platforms <#supported-platforms>`__
 
@@ -359,7 +367,17 @@ Executing Shell Commands
 
 ``SAWS`` allows you to execute shell commands from the ``saws>`` prompt.
 
-.. figure:: http://i.imgur.com/eWW8RUH.png
+.. figure:: http://i.imgur.com/FiSn6b2.png
+   :alt: 
+
+Command History
+~~~~~~~~~~~~~~~
+
+``SAWS`` keeps track of commands you enter and stores them in
+``~/.saws-history``. Use the up and down arrow keys to cycle through the
+command history.
+
+.. figure:: http://i.imgur.com/z8RrDQB.png
    :alt: 
 
 Contextual Help
@@ -452,7 +470,7 @@ Pip Installation
 
 |PyPI version| |PyPI|
 
-``SAWS`` is hosted on `PyPi <https://pypi.python.org/pypi/saws>`__. The
+``SAWS`` is hosted on `PyPI <https://pypi.python.org/pypi/saws>`__. The
 following command will install ``SAWS`` along with dependencies such as
 the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
@@ -460,16 +478,57 @@ the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
     $ pip install saws
 
-I highly recommend installing Python packages in a
-`virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__
-to avoid any `issues with dependencies or
-permissions <https://github.com/donnemartin/saws/issues/15>`__.
-
 Once installed, run the following command to start ``SAWS``:
 
 ::
 
     $ saws
+
+Virtual Environment Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I highly recommend installing Python packages in a
+`virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__
+to avoid potential `issues with dependencies or
+permissions <https://github.com/donnemartin/saws/issues/15>`__.
+
+If you're not familiar with virtual environments, I've listed the
+commands below. For more details (and for instructions on how to install
+on Windows using ``virtualenvwrapper-win``), check out this
+`guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__.
+
+Install ``virtualenv`` and ``virtualenvwrapper``:
+
+::
+
+    pip install virtualenv
+    pip install virtualenvwrapper
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+
+Create a ``SAWS`` ``virtualenv`` and install ``SAWS``:
+
+::
+
+    mkvirtualenv saws
+    pip install saws
+
+If you want to activate the ``saws`` ``virtualenv`` again later, run:
+
+::
+
+    workon saws
+
+AWS Credentials and Named Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Configure your
+credentials <https://github.com/aws/aws-cli#getting-started>`__ with the
+AWS CLI:
+
+::
+
+    $ aws configure
 
 If you'd like to use a specific named profile with ``SAWS``, run the
 following commands on OS X, Linux, or Unix:
@@ -495,17 +554,6 @@ Windows users can run the following commands:
 Command line options for starting ``SAWS`` with a specific profile are
 `under development <https://github.com/donnemartin/saws/issues/16>`__.
 
-Configuring AWS Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Configure your
-credentials <https://github.com/aws/aws-cli#getting-started>`__ with the
-AWS CLI:
-
-::
-
-    $ aws configure
-
 For more details on how to install and configure the AWS CLI, refer to
 the following
 `documentation <http://docs.aws.amazon.com/cli/latest/userguide/installing.html>`__.
@@ -519,6 +567,9 @@ Supported Python Versions
 -  Python 3.4
 -  Pypy
 
+Light testing indicates that ``SAWS`` also seems to be compatible with
+Python 3.5.
+
 Pypy3 is not supported due to `lack of
 support <https://github.com/boto/botocore/issues/622>`__ from
 `boto <https://github.com/boto/boto>`__.
@@ -526,20 +577,30 @@ support <https://github.com/boto/botocore/issues/622>`__ from
 Supported Platforms
 ~~~~~~~~~~~~~~~~~~~
 
--  Mac OS X (Tested on OS X 10.10)
--  \*nix (Tested on Ubuntu 14.04 LTS)
--  Windows (Tested on Windows 7 and 10)
+-  Mac OS X
+
+   -  Tested on OS X 10.10
+
+-  Linux, Unix
+
+   -  Tested on Ubuntu 14.04 LTS
+
+-  Windows
+
+   -  Tested on Windows 7 and 10
 
 Developer Installation
 ----------------------
 
-If you're interested in contributing to ``SAWS``, run the following:
+If you're interested in contributing to ``SAWS``, run the following
+commands:
 
 ::
 
     $ git clone https://github.com/donnemartin/saws.git
     $ pip install -e .
     $ pip install -r requirements-dev.txt
+    $ saws
 
 Continuous Integration
 ~~~~~~~~~~~~~~~~~~~~~~
