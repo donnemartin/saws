@@ -328,9 +328,7 @@ Once installed, run the following command to start `SAWS`:
 
 ### Virtual Environment Installation
 
-I highly recommend installing Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
-
-If you're not familiar with virtual environments, I've listed the commands below.  For more details (and for instructions on how to install on Windows using `virtualenvwrapper-win`), check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+It is recommended that you install Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).  If you are a Windows user or if you would like more details on `virtualenv`, check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 Install `virtualenv` and `virtualenvwrapper`:
 
