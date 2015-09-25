@@ -366,9 +366,7 @@ Windows users can run the following commands:
     > set AWS_DEFAULT_PROFILE=user1
     > saws
 
-Command line options for starting `SAWS` with a specific profile are [under development](https://github.com/donnemartin/saws/issues/16).
-
-For more details on how to install and configure the AWS CLI, refer to the following [documentation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+Command line options for starting `SAWS` with a specific profile are [under development](https://github.com/donnemartin/saws/issues/16).  For more details on how to install and configure the AWS CLI, refer to the following [documentation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
 
 ### Supported Python Versions
 
