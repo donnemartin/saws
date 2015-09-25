@@ -17,6 +17,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import click
 import os
+import platform
 import subprocess
 import traceback
 import webbrowser
@@ -29,6 +30,8 @@ from prompt_toolkit.layout.processors import \
 from prompt_toolkit.buffer import Buffer
 from prompt_toolkit.shortcuts import create_default_layout, create_eventloop
 from prompt_toolkit.history import FileHistory
+from prompt_toolkit.key_binding.input_processor import KeyPress
+from prompt_toolkit.keys import Keys
 from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
@@ -350,12 +353,36 @@ class Saws(object):
                 # Pass the command onto the shell so aws-cli can execute it
                 subprocess.call(text, shell=True)
             print('')
-        except KeyboardInterrupt:
-            # Continue running on keyboard interrupt
-            # The user might interrupt an AWS command with Control-C
-            print('')
+        except KeyboardInterrupt as e:
+            self.handle_keyboard_interrupt(e)
         except Exception as e:
             self.log_exception(e, traceback, echo=True)
+
+    def handle_keyboard_interrupt(self, e):
+        """Handles keyboard interrupts more gracefully on Mac/Unix/Linux.
+
+        Allows Mac/Unix/Linux to continue running on keyboard interrupt,
+        as the user might interrupt a long-running AWS command with Control-C
+        while continuing to work with Saws.
+
+        On Windows, the "Terminate batch job (Y/N)" confirmation makes it
+        tricky to handle this gracefully.  Thus, we re-raise KeyboardInterrupt.
+
+        Args:
+            * e: A KeyboardInterrupt.
+
+        Returns:
+            None
+
+        Raises:
+            Exception: A KeyboardInterrupt if running on Windows.
+        """
+        if platform.system() == 'Windows':
+            raise e
+        else:
+            # Clear the renderer and send a carriage return
+            self.aws_cli.renderer.clear()
+            self.aws_cli.input_processor.feed_key(KeyPress(Keys.ControlM, ''))
 
     def create_cli(self):
         """Creates the prompt_toolkit's CommandLineInterface.
