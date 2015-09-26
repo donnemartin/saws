@@ -354,11 +354,11 @@ class Saws(object):
                 subprocess.call(text, shell=True)
             print('')
         except KeyboardInterrupt as e:
-            self.handle_keyboard_interrupt(e)
+            self.handle_keyboard_interrupt(e, platform.system())
         except Exception as e:
             self.log_exception(e, traceback, echo=True)
 
-    def handle_keyboard_interrupt(self, e):
+    def handle_keyboard_interrupt(self, e, platform):
         """Handles keyboard interrupts more gracefully on Mac/Unix/Linux.
 
         Allows Mac/Unix/Linux to continue running on keyboard interrupt,
@@ -370,6 +370,8 @@ class Saws(object):
 
         Args:
             * e: A KeyboardInterrupt.
+            * platform: A string that denotes platform such as
+                'Windows', 'Darwin', etc.
 
         Returns:
             None
@@ -377,7 +379,7 @@ class Saws(object):
         Raises:
             Exception: A KeyboardInterrupt if running on Windows.
         """
-        if platform.system() == 'Windows':
+        if platform == 'Windows':
             raise e
         else:
             # Clear the renderer and send a carriage return
@@ -423,7 +425,7 @@ class Saws(object):
             self.get_fuzzy_match,
             self.set_shortcut_match,
             self.get_shortcut_match,
-            self.refresh_resources,
+            self.refresh_resources_and_options,
             self.handle_docs)
         style_factory = StyleFactory(self.theme)
         application = Application(
