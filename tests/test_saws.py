@@ -18,7 +18,10 @@ from __future__ import print_function
 import mock
 import os
 import traceback
-import unittest
+if sys.version_info < (2, 7):
+    import unittest2 as unittest
+else:
+    import unittest
 from saws.saws import Saws
 from saws.commands import AwsCommands
 

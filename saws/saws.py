@@ -425,7 +425,7 @@ class Saws(object):
             self.get_fuzzy_match,
             self.set_shortcut_match,
             self.get_shortcut_match,
-            self.refresh_resources_and_options,
+            self.refresh_resources,
             self.handle_docs)
         style_factory = StyleFactory(self.theme)
         application = Application(
