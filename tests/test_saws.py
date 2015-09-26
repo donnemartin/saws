@@ -17,6 +17,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import mock
 import os
+import sys
 import traceback
 if sys.version_info < (2, 7):
     import unittest2 as unittest
