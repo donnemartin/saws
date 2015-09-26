@@ -302,7 +302,7 @@ Usage:
 
 ### Windows Support
 
-`SAWS` is developed under Mac OS X Yosemite and Ubuntu 14.04 LTS and has been tested on Windows 7 and Windows 10.
+`SAWS` has been tested on Windows 7 and Windows 10.
 
 On Windows, the [.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file can be found in `%userprofile%`.  For example:
 
