@@ -139,3 +139,10 @@ class SawsTest(unittest.TestCase):
         self.saws.process_command(AwsCommands.AWS_COMMAND)
         mock_subprocess.call.assert_called_with(colorized_command,
                                                 shell=True)
+
+    def test_handle_keyboard_interrupt(self):
+        e = KeyboardInterrupt('')
+        # TODO: Mock calls to renderer.clear and input_processor.feed_key
+        self.saws.handle_keyboard_interrupt(e, platform='Darwin')
+        with self.assertRaises(KeyboardInterrupt):
+            self.saws.handle_keyboard_interrupt(e, platform='Windows')
