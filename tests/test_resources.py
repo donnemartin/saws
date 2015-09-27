@@ -26,12 +26,12 @@ from saws.saws import Saws
 
 class ResourcesTest(unittest.TestCase):
 
-    NUM_INSTANCE_IDS = 7
-    NUM_INSTANCE_TAG_KEYS = 3
-    NUM_INSTANCE_TAG_VALUES = 6
-    NUM_BUCKET_NAMES = 16
     RESOURCES = 'data/RESOURCES.txt'
     RESOURCES_SAMPLE = 'data/RESOURCES_SAMPLE.txt'
+    NUM_SAMPLE_INSTANCE_IDS = 7
+    NUM_SAMPLE_INSTANCE_TAG_KEYS = 3
+    NUM_SAMPLE_INSTANCE_TAG_VALUES = 6
+    NUM_SAMPLE_BUCKET_NAMES = 16
 
     def setUp(self):
         self.create_resources()
@@ -47,15 +47,15 @@ class ResourcesTest(unittest.TestCase):
     def test_refresh(self, mock_print):
         self.resources.refresh(force_refresh=False)
         assert len(self.resources.instance_ids) == \
-            self.NUM_INSTANCE_IDS
+            self.NUM_SAMPLE_INSTANCE_IDS
         assert len(self.resources.instance_tag_keys) == \
-            self.NUM_INSTANCE_TAG_KEYS
+            self.NUM_SAMPLE_INSTANCE_TAG_KEYS
         assert len(self.resources.instance_tag_values) == \
-            self.NUM_INSTANCE_TAG_VALUES
+            self.NUM_SAMPLE_INSTANCE_TAG_VALUES
         assert len(self.resources.bucket_names) == \
-            self.NUM_BUCKET_NAMES
+            self.NUM_SAMPLE_BUCKET_NAMES
         assert len(self.resources.s3_uri_names) == \
-            self.NUM_BUCKET_NAMES
+            self.NUM_SAMPLE_BUCKET_NAMES
         mock_print.assert_called_with('Loaded resources from cache')
 
     @mock.patch('saws.resources.subprocess')
@@ -78,7 +78,7 @@ class ResourcesTest(unittest.TestCase):
         self.resources.RESOURCE_FILE = self.RESOURCES_SAMPLE
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_aws_with_instance_ids(self, mock_subprocess):
+    def test_query_aws_instance_ids(self, mock_subprocess):
         self.resources.query_aws(self.resources.QUERY_INSTANCE_IDS_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_IDS_CMD,
@@ -86,7 +86,7 @@ class ResourcesTest(unittest.TestCase):
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_aws_with_instance_tag_keys(self, mock_subprocess):
+    def test_query_aws_instance_tag_keys(self, mock_subprocess):
         self.resources.query_aws(self.resources.QUERY_INSTANCE_TAG_KEYS_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_TAG_KEYS_CMD,
@@ -94,7 +94,7 @@ class ResourcesTest(unittest.TestCase):
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def query_aws_with_instance_tag_values(self, mock_subprocess):
+    def query_aws_instance_tag_values(self, mock_subprocess):
         self.resources.query_aws(self.resources.QUERY_INSTANCE_TAG_VALUES_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_INSTANCE_TAG_VALUES_CMD,
@@ -102,7 +102,7 @@ class ResourcesTest(unittest.TestCase):
             shell=True)
 
     @mock.patch('saws.resources.subprocess')
-    def test_query_aws_with_bucket_names(self, mock_subprocess):
+    def test_query_aws_bucket_names(self, mock_subprocess):
         self.resources.query_aws(self.resources.QUERY_BUCKET_NAMES_CMD)
         mock_subprocess.check_output.assert_called_with(
             self.resources.QUERY_BUCKET_NAMES_CMD,
@@ -114,8 +114,12 @@ class ResourcesTest(unittest.TestCase):
         self.resources.clear_bucket_names()
         self.resources.add_bucket_name(BUCKET_NAME)
         assert BUCKET_NAME in self.resources.bucket_names
-        assert str(self.resources.S3_URI + '//' + BUCKET_NAME) in \
+        assert str(self.resources.S3_URI_OPT + '//' + BUCKET_NAME) in \
             self.resources.s3_uri_names
         self.resources.clear_bucket_names()
         assert len(self.resources.bucket_names) == 0
         assert len(self.resources.s3_uri_names) == 0
+
+        def test_create_resources_map(self):
+            # TODO: Implement
+            pass

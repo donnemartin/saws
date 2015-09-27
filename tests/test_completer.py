@@ -24,6 +24,7 @@ from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
 from saws.saws import Saws
 from test_resources import ResourcesTest
+from test_options import OptionsTest
 
 
 class CompleterTest(unittest.TestCase):
@@ -32,19 +33,22 @@ class CompleterTest(unittest.TestCase):
     def setUp(self, mock_print):
         self.saws = Saws()
         self.completer = self.create_completer()
+        self.completer.refresh_resources_and_options()
         self.completer_event = self.create_completer_event()
         mock_print.assert_called_with('Loaded resources from cache')
 
     def create_completer(self):
+        # TODO: Fix duplicate creation of AwsCompleter, which is already
+        # created by Saws init
         self.aws_commands = AwsCommands()
+        self.all_commands = self.aws_commands.get_all_commands()
         self.commands, self.sub_commands, self.global_options, \
             self.resource_options, self.ec2_states = \
-            self.aws_commands.generate_all_commands()
+            self.all_commands
         return AwsCompleter(awscli_completer,
-                            self.saws.commands,
+                            self.all_commands,
                             self.saws.config_obj,
-                            self.saws.logger,
-                            self.ec2_states)
+                            self.saws.logger)
 
     def create_completer_event(self):
         return mock.Mock()
@@ -105,41 +109,25 @@ class CompleterTest(unittest.TestCase):
                     'cancel-spot-instance-requests']
         self.verify_completions(commands, expected)
 
-    def test_ec2_state_completions(self):
-        commands = ['ec2 ls --ec2-state pend']
-        expected = ['pending']
-        self.verify_completions(commands, expected)
-        commands = ['ec2 ls --ec2-state run']
-        expected = ['running']
-        self.verify_completions(commands, expected)
-        commands = ['ec2 ls --ec2-state shut']
-        expected = ['shutting-down']
-        self.verify_completions(commands, expected)
-        commands = ['ec2 ls --ec2-state term']
-        expected = ['terminated']
-        self.verify_completions(commands, expected)
-        commands = ['ec2 ls --ec2-state stop']
-        expected = ['stopping',
-                    'stopped']
-        self.verify_completions(commands, expected)
-
-    def test_aws_command_completion(self):
+    def test_aws_command(self):
         commands = ['a', 'aw']
         expected = [AwsCommands.AWS_COMMAND]
         self.verify_completions(commands, expected)
 
     def test_global_options(self):
         commands = ['aws -', 'aws --']
-        expected = self.saws.global_options
+        expected = self.saws \
+            .all_commands[AwsCommands.CommandType.GLOBAL_OPTIONS.value]
         self.verify_completions(commands, expected)
 
     def test_resource_options(self):
         commands = ['aws ec2 describe-instances --',
                     'aws s3api get-bucket-acl --']
-        expected = self.saws.resource_options
+        expected = self.saws \
+            .all_commands[AwsCommands.CommandType.RESOURCE_OPTIONS.value]
         self.verify_completions(commands, expected)
 
-    def test_simple_shortcuts(self):
+    def test_shortcuts(self):
         commands = ['aws ec2 ls',
                     'aws emr ls',
                     'aws elb ls',
@@ -153,48 +141,7 @@ class CompleterTest(unittest.TestCase):
             result = self.completer.replace_shortcut(command)
             assert result == expect
 
-    def test_instance_ids(self):
-        commands = ['aws ec2 ls --instance-ids i-a']
-        expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
-        self.completer.resources.instance_ids.extend(expected)
-        self.verify_completions(commands, expected)
-
-    def test_instance_keys(self):
-        commands = ['aws ec2 ls --ec2-tag-key na']
-        expected = ['name', 'namE']
-        self.completer.resources.instance_tag_keys.update(expected)
-        self.verify_completions(commands, expected)
-
-    def test_instance_tag_values(self):
-        commands = ['aws ec2 ls --ec2-tag-value prod']
-        expected = ['production', 'production-blue', 'production-green']
-        self.completer.resources.instance_tag_values.update(expected)
-        self.verify_completions(commands, expected)
-
-    def test_bucket_names(self):
-        commands = ['aws s3pi get-bucket-acl --bucket web-']
-        expected = ['web-server-logs', 'web-server-images']
-        self.completer.resources.bucket_names.extend(expected)
-        self.verify_completions(commands, expected)
-
-    def test_s3_completion(self):
-        commands = ['aws s3 ls s3:']
-        expected = ['s3://web-server-logs', 's3://web-server-images']
-        for s3_uri in expected:
-            bucket_name = re.sub('s3://', '', s3_uri)
-            self.completer.resources.add_bucket_name(bucket_name)
-        self.verify_completions(commands, expected)
-        commands = ['aws s3 ls s3://web']
-        self.verify_completions(commands, expected)
-
-    def test_fuzzy_instance_ids_matching(self):
-        self.completer.fuzzy_match = True
-        commands = ['aws ec2 ls --instance-ids a5']
-        expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
-        self.completer.resources.instance_ids.extend(expected)
-        self.verify_completions(commands, expected)
-
-    def test_fuzzy_shortcut_matching(self):
+    def test_shortcuts_fuzzy(self):
         self.completer.fuzzy_match = True
         self.completer.shortcut_match = True
         commands = ['aws ec2ls']
@@ -228,24 +175,82 @@ class CompleterTest(unittest.TestCase):
         assert result == expected
 
     @mock.patch('saws.resources.print')
-    def test_refresh_resources(self, mock_print):
-        NUM_EC2_STATE = 6
+    def test_refresh_resources_and_options(self, mock_print):
         self.completer.resources.RESOURCE_FILE = \
             ResourcesTest.RESOURCES_SAMPLE
-        self.completer.resource_map = None
-        self.completer.refresh_resources(force_refresh=False)
+        self.completer.resources.resources_map = None
+        self.completer.refresh_resources_and_options(force_refresh=False)
         mock_print.assert_called_with('Loaded resources from cache')
-        keys = [self.completer.resources.INSTANCE_IDS,
-                self.completer.resources.EC2_TAG_KEY,
-                self.completer.resources.EC2_TAG_VALUE,
-                self.completer.resources.EC2_STATE,
-                self.completer.resources.BUCKET,
-                self.completer.resources.S3_URI]
-        expected = [ResourcesTest.NUM_INSTANCE_IDS,
-                    ResourcesTest.NUM_INSTANCE_TAG_KEYS,
-                    ResourcesTest.NUM_INSTANCE_TAG_VALUES,
-                    NUM_EC2_STATE,
-                    ResourcesTest.NUM_BUCKET_NAMES,
-                    ResourcesTest.NUM_BUCKET_NAMES]
+        keys = [self.completer.resources.INSTANCE_IDS_OPT,
+                self.completer.resources.EC2_TAG_KEY_OPT,
+                self.completer.resources.EC2_TAG_VALUE_OPT,
+                self.completer.resources.BUCKET_OPT,
+                self.completer.resources.S3_URI_OPT]
+        expected = [ResourcesTest.NUM_SAMPLE_INSTANCE_IDS,
+                    ResourcesTest.NUM_SAMPLE_INSTANCE_TAG_KEYS,
+                    ResourcesTest.NUM_SAMPLE_INSTANCE_TAG_VALUES,
+                    ResourcesTest.NUM_SAMPLE_BUCKET_NAMES,
+                    ResourcesTest.NUM_SAMPLE_BUCKET_NAMES]
         for i in range(len(keys)):
-            assert len(self.completer.resource_map[keys[i]]) == expected[i]
+            assert len(
+                self.completer.resources.resources_map[keys[i]]) == expected[i]
+        # TODO: Add tests for options_map
+
+    def test_instance_ids(self):
+        commands = ['aws ec2 ls --instance-ids i-a']
+        expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
+        self.completer.resources.instance_ids.extend(expected)
+        self.verify_completions(commands, expected)
+
+    def test_instance_ids_fuzzy(self):
+        self.completer.fuzzy_match = True
+        commands = ['aws ec2 ls --instance-ids a5']
+        expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
+        self.completer.resources.instance_ids.extend(expected)
+        self.verify_completions(commands, expected)
+
+    def test_instance_keys(self):
+        commands = ['aws ec2 ls --ec2-tag-key na']
+        expected = ['name', 'namE']
+        self.completer.resources.instance_tag_keys.update(expected)
+        self.verify_completions(commands, expected)
+
+    def test_instance_tag_values(self):
+        commands = ['aws ec2 ls --ec2-tag-value prod']
+        expected = ['production', 'production-blue', 'production-green']
+        self.completer.resources.instance_tag_values.update(expected)
+        self.verify_completions(commands, expected)
+
+    def test_bucket_names(self):
+        commands = ['aws s3pi get-bucket-acl --bucket web-']
+        expected = ['web-server-logs', 'web-server-images']
+        self.completer.resources.bucket_names.extend(expected)
+        self.verify_completions(commands, expected)
+
+    def test_s3_uri(self):
+        commands = ['aws s3 ls s3:']
+        expected = ['s3://web-server-logs', 's3://web-server-images']
+        for s3_uri in expected:
+            bucket_name = re.sub('s3://', '', s3_uri)
+            self.completer.resources.add_bucket_name(bucket_name)
+        self.verify_completions(commands, expected)
+        commands = ['aws s3 ls s3://web']
+        self.verify_completions(commands, expected)
+
+    def test_ec2_states(self):
+        commands = ['aws ec2 ls --ec2-state pend']
+        expected = ['pending']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2 ls --ec2-state run']
+        expected = ['running']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2 ls --ec2-state shut']
+        expected = ['shutting-down']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2 ls --ec2-state term']
+        expected = ['terminated']
+        self.verify_completions(commands, expected)
+        commands = ['aws ec2 ls --ec2-state stop']
+        expected = ['stopping',
+                    'stopped']
+        self.verify_completions(commands, expected)

@@ -24,13 +24,15 @@ from .commands import AwsCommands
 
 
 class AwsResources(object):
-    """Loads and stores AWS resources.
+    """Encapsulates AWS resources such as ec2 tags and buckets.
 
     Attributes:
         * instance_ids: A list of instance ids.
         * instance_tag_keys: A set of instance tag keys.
         * instance_tag_values: A set of isntance tag values.
         * bucket_names: A list of bucket names.
+        * resources_map: A dict mapping of resource keywords and
+            resources to complete
         * refresh_instance_ids: A boolean that determines whether to
             refresh instance ids by querying AWS.
         * refresh_instance_tags: A boolean that determines whether to
@@ -45,16 +47,37 @@ class AwsResources(object):
             instance tag values in data/RESOURCES.txt.
         * BUCKET_NAMES_MARKER: A string marking the start of i
             bucket names in data/RESOURCES.txt.
-        QUERY_INSTANCE_IDS_CMD: A string representing the AWS query to
+        * INSTANCE_IDS_OPT: A string representing the option for instance ids
+        * EC2_TAG_KEY_OPT: A string representing the option for ec2 tag keys
+        * EC2_TAG_VALUE_OPT: A string representing the option for ec2 tag values
+        * BUCKET_OPT: A string representing the option for buckets
+        * S3_URI_OPT: A string representing the option for s3 uris
+        * QUERY_INSTANCE_IDS_CMD: A string representing the AWS query to
             list all instance ids
-        QUERY_INSTANCE_TAG_KEYS_CMD: A string representing the AWS query to
+        * QUERY_INSTANCE_TAG_KEYS_CMD: A string representing the AWS query to
             list all instance tag keys
-        QUERY_INSTANCE_TAG_VALUES_CMD: A string representing the AWS query to
+        * QUERY_INSTANCE_TAG_VALUES_CMD: A string representing the AWS query to
             list all instance tag values
-        QUERY_BUCKET_NAMES_CMD: A string representing the AWS query to
+        * QUERY_BUCKET_NAMES_CMD: A string representing the AWS query to
             list all bucket names
+        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * log_exception: A callable log_exception from SawsLogger.
     """
+
+    RESOURCE_FILE = 'data/RESOURCES.txt'
+    INSTANCE_IDS_MARKER = '[instance ids]'
+    INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
+    INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
+    BUCKET_NAMES_MARKER = '[bucket names]'
+    INSTANCE_IDS_OPT = '--instance-ids'
+    EC2_TAG_KEY_OPT = '--ec2-tag-key'
+    EC2_TAG_VALUE_OPT = '--ec2-tag-value'
+    BUCKET_OPT = '--bucket'
+    S3_URI_OPT = 's3:'
+    QUERY_INSTANCE_IDS_CMD = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
+    QUERY_INSTANCE_TAG_KEYS_CMD = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
+    QUERY_INSTANCE_TAG_VALUES_CMD = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
+    QUERY_BUCKET_NAMES_CMD = 'aws s3 ls'
 
     class ResType(Enum):
         """Enum specifying the resource type.
@@ -70,48 +93,55 @@ class AwsResources(object):
             BUCKET_NAMES = range(4)
 
     def __init__(self,
-                 log_exception,
-                 refresh_instance_ids=True,
-                 refresh_instance_tags=True,
-                 refresh_bucket_names=True):
+                 config_obj,
+                 log_exception):
         """Initializes AwsResources.
 
         Args:
+            * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * log_exception: A callable log_exception from SawsLogger.
-            * refresh_instance_ids: A boolean that determines whether to
-                refresh instance ids by querying AWS.
-            * refresh_instance_tags: A boolean that determines whether to
-                refresh instance tags by querying AWS.
-            * refresh_bucket_names: A boolean that determines whether to
-                refresh bucket names by querying AWS.
 
         Returns:
             None.
         """
-        self.RESOURCE_FILE = 'data/RESOURCES.txt'
         self.instance_ids = []
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
         self.bucket_names = []  # TODO: Make this 'private'
         self.s3_uri_names = []  # TODO: Make this 'private'
-        self.refresh_instance_ids = refresh_instance_ids
-        self.refresh_instance_tags = refresh_instance_tags
-        self.refresh_bucket_names = refresh_bucket_names
-        self.INSTANCE_IDS_MARKER = '[instance ids]'
-        self.INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
-        self.INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
-        self.BUCKET_NAMES_MARKER = '[bucket names]'
-        self.INSTANCE_IDS = '--instance-ids'
-        self.EC2_TAG_KEY = '--ec2-tag-key'
-        self.EC2_TAG_VALUE = '--ec2-tag-value'
-        self.EC2_STATE = '--ec2-state'
-        self.BUCKET = '--bucket'
-        self.S3_URI = 's3:'
-        self.QUERY_INSTANCE_IDS_CMD = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
-        self.QUERY_INSTANCE_TAG_KEYS_CMD = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
-        self.QUERY_INSTANCE_TAG_VALUES_CMD = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
-        self.QUERY_BUCKET_NAMES_CMD = 'aws s3 ls'
+        self.config_obj = config_obj
+        self.refresh_instance_ids = \
+            self.config_obj['main'].as_bool('refresh_instance_ids')
+        self.refresh_instance_tags = \
+            self.config_obj['main'].as_bool('refresh_instance_tags')
+        self.refresh_bucket_names = \
+            self.config_obj['main'].as_bool('refresh_bucket_names')
+        self.resources_map = None
         self.log_exception = log_exception
+
+    def create_resources_map(self):
+        """Creates a mapping of resource keywords and resources to complete.
+
+        Example:
+            Key:   '--instance-ids'.
+            Value: List of instance ids.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
+        self.resources_map = dict(zip([self.INSTANCE_IDS_OPT,
+                                       self.EC2_TAG_KEY_OPT,
+                                       self.EC2_TAG_VALUE_OPT,
+                                       self.BUCKET_OPT,
+                                       self.S3_URI_OPT],
+                                      [self.instance_ids,
+                                       self.instance_tag_keys,
+                                       self.instance_tag_values,
+                                       self.bucket_names,
+                                       self.s3_uri_names]))
 
     def refresh(self, force_refresh=False):
         """Refreshes the AWS resources and caches them to a file.
@@ -235,7 +265,7 @@ class AwsResources(object):
             None.
         """
         self.bucket_names.append(bucket_name)
-        self.s3_uri_names.append(self.S3_URI + '//' + bucket_name)
+        self.s3_uri_names.append(self.S3_URI_OPT + '//' + bucket_name)
 
     def clear_bucket_names(self):
         """Clears bucket all bucket names.

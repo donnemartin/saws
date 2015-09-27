@@ -29,7 +29,7 @@ class KeyManager(object):
     def __init__(self, set_color, get_color,
                  set_fuzzy_match, get_fuzzy_match,
                  set_shortcut_match, get_shortcut_match,
-                 refresh_resources, handle_docs):
+                 refresh_resources_and_options, handle_docs):
         """Initializes KeyManager.
 
         Args:
@@ -47,12 +47,12 @@ class KeyManager(object):
         self.create_key_manager(set_color, get_color,
                                 set_fuzzy_match, get_fuzzy_match,
                                 set_shortcut_match, get_shortcut_match,
-                                refresh_resources, handle_docs)
+                                refresh_resources_and_options, handle_docs)
 
     def create_key_manager(self, set_color, get_color,
                            set_fuzzy_match, get_fuzzy_match,
                            set_shortcut_match, get_shortcut_match,
-                           refresh_resources, handle_docs):
+                           refresh_resources_and_options, handle_docs):
         """Creates and initializes the keybinding manager.
 
         Args:
@@ -72,12 +72,12 @@ class KeyManager(object):
         assert callable(get_fuzzy_match)
         assert callable(set_shortcut_match)
         assert callable(get_shortcut_match)
-        assert callable(refresh_resources)
+        assert callable(refresh_resources_and_options)
         assert callable(handle_docs)
         self.manager = KeyBindingManager(
-           enable_search=True,
-           enable_abort_and_exit_bindings=True,
-           enable_system_bindings=True)
+            enable_search=True,
+            enable_abort_and_exit_bindings=True,
+            enable_system_bindings=True)
 
         @self.manager.registry.add_binding(Keys.F2)
         def handle_f2(_):
@@ -125,7 +125,7 @@ class KeyManager(object):
             Returns:
                 None.
             """
-            event.cli.run_in_terminal(refresh_resources)
+            event.cli.run_in_terminal(refresh_resources_and_options)
 
         @self.manager.registry.add_binding(Keys.F9)
         def handle_f9(_):
