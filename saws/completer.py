@@ -26,6 +26,7 @@ from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
 from .utils import TextUtils
 from .commands import AwsCommands
+from .options import AwsOptions
 from .resources import AwsResources
 
 
@@ -35,35 +36,35 @@ class AwsCompleter(Completer):
     Attributes:
         * aws_completer: An instance of the official awscli Completer.
         * aws_completions: A set of completions to show the user.
+        * all_commands: A list of all commands, sub_commands, options, etc
+            from data/SOURCES.txt.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * log_exception: A callable log_exception from SawsLogger.
-        * ec2_states: A list of the possible instance states.
         * text_utils: An instance of TextUtils.
         * fuzzy_match: A boolean that determines whether to use fuzzy matching.
         * shortcut_match: A boolean that determines whether to match shortcuts.
         * BASE_COMMAND: A string representing the 'aws' command.
-        * DOCS_COMMAND: A string representing the 'docs' command.
         * resources: An instance of AwsResources.
+        * options: An instance of AwsOptions
         * shortcuts: An OrderedDict containing shortcuts commands as keys
             and their corresponding full commands as values.
     """
 
     def __init__(self,
                  aws_completer,
-                 commands,
+                 all_commands,
                  config_obj,
                  log_exception,
-                 ec2_states=[],
                  fuzzy_match=False,
                  shortcut_match=False):
         """Initializes AwsCompleter.
 
         Args:
             * aws_completer: The official aws cli completer module.
-            * commands: A list of AWS top-level commands such ec2, elb, s3, etc.
+            * all_commands: A list of all commands, sub_commands, options, etc
+                from data/SOURCES.txt.
             * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * log_exception: A callable log_exception from SawsLogger.
-            * ec2_states: A list of the possible instance states.
             * fuzzy_match: A boolean that determines whether to use
                 fuzzy matching.
             * shortcut_match: A boolean that determines whether to
@@ -73,11 +74,10 @@ class AwsCompleter(Completer):
             None.
         """
         self.aws_completer = aws_completer
-        self.commands = commands
+        self.all_commands = all_commands
         self.aws_completions = set()
         self.config_obj = config_obj
         self.log_exception = log_exception
-        self.ec2_states = ec2_states
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
@@ -85,42 +85,10 @@ class AwsCompleter(Completer):
         # TODO: Refactor to use config_obj.get_shortcuts()
         self.shortcuts = OrderedDict(zip(self.config_obj['shortcuts'].keys(),
                                          self.config_obj['shortcuts'].values()))
-        self.resources = \
-            AwsResources(
-                self.log_exception,
-                self.config_obj['main'].as_bool('refresh_instance_ids'),
-                self.config_obj['main'].as_bool('refresh_instance_tags'),
-                self.config_obj['main'].as_bool('refresh_bucket_names'))
-        self.resource_map = None
-        self.refresh_resources()
+        self.resources = AwsResources(self.config_obj, self.log_exception)
+        self.options = AwsOptions(self.all_commands, self.log_exception)
 
-    def create_resource_map(self):
-        """Creates a mapping of resource keywords and resources to complete.
-
-        Example:
-            Key: '--instance-ids'.
-            Value: List of instance ids.
-
-        Args:
-            * None.
-
-        Returns:
-            None.
-        """
-        self.resource_map = dict(zip([self.resources.INSTANCE_IDS,
-                                      self.resources.EC2_TAG_KEY,
-                                      self.resources.EC2_TAG_VALUE,
-                                      self.resources.EC2_STATE,
-                                      self.resources.BUCKET,
-                                      self.resources.S3_URI],
-                                     [self.resources.instance_ids,
-                                      self.resources.instance_tag_keys,
-                                      self.resources.instance_tag_values,
-                                      self.ec2_states,
-                                      self.resources.bucket_names,
-                                      self.resources.s3_uri_names]))
-
-    def refresh_resources(self, force_refresh=False):
+    def refresh_resources_and_options(self, force_refresh=False):
         """Convenience function to refresh resources for completion.
 
         Args:
@@ -131,7 +99,8 @@ class AwsCompleter(Completer):
             None.
         """
         self.resources.refresh(force_refresh)
-        self.create_resource_map()
+        self.resources.create_resources_map()
+        self.options.create_options_map()
 
     def replace_shortcut(self, text):
         """Replaces matched shortcut commands with their full command.
@@ -176,7 +145,7 @@ class AwsCompleter(Completer):
 
     def get_resource_completions(self, words, word_before_cursor,
                                  option_text, resource):
-        """Get completions for enabled AWS resources.
+        """Get completions for the specified AWS resource.
 
         Args:
             * words: A list of words that represent the input command text.
@@ -236,20 +205,27 @@ class AwsCompleter(Completer):
         aws_completer_results_list = aws_completer_results.split()
         return aws_completer_results_list
 
-    def get_all_resource_completions(self, words, word_before_cursor):
-        """Description.
+    def get_custom_completions(self, words, word_before_cursor, mapping):
+        """Get custom completions resources, options, etc.
+
+        Completions for all enabled AWS resources, global options,
+        filter options, etc.
 
         Args:
             * words: A list of strings for each word in the command text.
             * word_before_cursor: A string representing the word before
                 the cursor.
+            * mapping: A dict mapping of keyword triggers to completions
+                Example:
+                    key: --bucket,    value: list of bucket names
+                    key: --ec2-state, value: list of ec2 states
 
         Returns:
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
         completions = None
-        for key, value in self.resource_map.items():
+        for key, value in mapping.items():
             if completions is None:
                 completions = self \
                     .get_resource_completions(words,
@@ -271,6 +247,7 @@ class AwsCompleter(Completer):
             A generator of prompt_toolkit's Completion objects, containing
             matched completions.
         """
+        # Get completions from the official AWS CLI
         aws_completer_results_list = self.get_aws_cli_completions(document)
         self.aws_completions = set()
         if len(document.text) < len(self.BASE_COMMAND):
@@ -282,19 +259,27 @@ class AwsCompleter(Completer):
         words = self.text_utils.get_tokens(document.text)
         if len(words) == 0:
             return []
+        # Determine if we should insert shortcuts
         elif len(words) == 2 and \
             words[0] == self.BASE_COMMAND and \
-            word_before_cursor != '':
+                word_before_cursor != '':
             # Insert shortcuts if the user typed 'aws' as the first
             # command and is inputting the subcommand
             if self.shortcut_match:
                 self.aws_completions.update(self.shortcuts.keys())
-        completions = self.get_all_resource_completions(words,
-                                                        word_before_cursor)
+        # Try to get completions for enabled AWS resources
+        completions = self.get_custom_completions(
+            words, word_before_cursor, self.resources.resources_map)
+        # Try to get completions for global options, filter options, etc
+        if completions is None:
+            completions = self.get_custom_completions(
+                words, word_before_cursor, self.options.options_map)
+        # Try to get completions from the official AWS CLI
         if completions is None:
             fuzzy_aws_completions = self.fuzzy_match
-            if self.fuzzy_match and word_before_cursor in self.commands:
-                # Fuzzy completion currently only works with AWS resources
+            if self.fuzzy_match and word_before_cursor in \
+                    self.all_commands[AwsCommands.CommandType.COMMANDS.value]:
+                # Fuzzy completion currently only works with resources, options
                 # and shortcuts.  If we have just completed a top-level
                 # command (ie. ec2, elb, s3) then disable fuzzy completions,
                 # otherwise the corresponding subcommands will be fuzzy

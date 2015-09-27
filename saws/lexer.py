@@ -39,7 +39,6 @@ class CommandLexer(RegexLexer):
             * sub_commands
             * global_options
             * resource_options
-            * ec2_states
         * tokens: A dictionary of pygments tokens.
     """
 
@@ -52,7 +51,7 @@ class CommandLexer(RegexLexer):
         for token in tokens:
             shortcut_tokens.append(token)
     aws_commands = AwsCommands()
-    commands = aws_commands.generate_all_commands()
+    commands = aws_commands.get_all_commands()
     tokens = {
         'root': [
             (words(tuple([AwsCommands.AWS_COMMAND]),
@@ -79,10 +78,6 @@ class CommandLexer(RegexLexer):
                    prefix=r'',
                    suffix=r'\b'),
              Operator.Word),
-            (words(tuple(commands[AwsCommands.CommandType.EC2_STATES.value]),
-                   prefix=r'',
-                   suffix=r'\b'),
-             Generic.Output),
             (words(tuple(shortcut_tokens),
                    prefix=r'',
                    suffix=r'\b'),

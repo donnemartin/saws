@@ -52,18 +52,17 @@ class Saws(object):
         * config: An instance of Config.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * aws_commands: An instance of AwsCommands
+        * all_commands: A list of all commands, sub_commands, options, etc
+            from data/SOURCES.txt.
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
-        * global_options: A list of global_options from data/SOURCES.txt.
-        * resource_options: A list of resource_options from data/SOURCES.txt,
-            used for syntax coloring.
-        * ec2_states: A list of ec2_states from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
         * key_manager: An instance of KeyManager
         * logger: An instance of SawsLogger.
         * theme: A string representing the lexer theme.
-            Currently only 'vim' is supported.
     """
+
+    PYGMENTS_CMD = ' | pygmentize -l json'
 
     def __init__(self):
         """Inits Saws.
@@ -76,26 +75,30 @@ class Saws(object):
         """
         self.aws_cli = None
         self.key_manager = None
-        self.PYGMENTS_CMD = ' | pygmentize -l json'
         self.config = Config()
         self.config_obj = self.config.read_configuration()
         self.theme = self.config_obj['main']['theme']
         self.logger = SawsLogger(__name__,
                                  self.config_obj['main']['log_file'],
                                  self.config_obj['main']['log_level']).logger
-        self.aws_commands = AwsCommands()
-        self.commands, self.sub_commands, self.global_options, \
-            self.resource_options, self.ec2_states \
-            = self.aws_commands.generate_all_commands()
+        self.get_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
-            self.commands,
+            self.all_commands,
             self.config_obj,
             self.log_exception,
-            ec2_states=self.ec2_states,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match())
+        self.completer.refresh_resources_and_options()
         self.create_cli()
+
+    def get_all_commands(self):
+        self.aws_commands = AwsCommands()
+        self.all_commands = self.aws_commands.get_all_commands()
+        self.commands = \
+            self.all_commands[AwsCommands.CommandType.COMMANDS.value]
+        self.sub_commands = \
+            self.all_commands[AwsCommands.CommandType.SUB_COMMANDS.value]
 
     def log_exception(self, e, traceback, echo=False):
         """Logs the exception and traceback to the log file ~/.saws.log.
@@ -206,8 +209,8 @@ class Saws(object):
         """
         return self.config_obj['main'].as_bool('shortcut_match')
 
-    def refresh_resources(self):
-        """Convenience function to refresh resources for completion.
+    def refresh_resources_and_options(self):
+        """Convenience function to refresh resources and options for completion.
 
         Used by prompt_toolkit's KeyBindingManager.
 
@@ -217,7 +220,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.completer.refresh_resources(force_refresh=True)
+        self.completer.refresh_resources_and_options(force_refresh=True)
 
     def handle_docs(self, text=None, from_fkey=False):
         """Displays contextual web docs for `F9` or the `docs` command.
@@ -334,30 +337,6 @@ class Saws(object):
         else:
             return text
 
-    def process_command(self, text):
-        """Processes the input command, called by the cli event loop
-
-        Args:
-            * text: A string that represents the input command text.
-
-        Returns:
-            None.
-        """
-        if AwsCommands.AWS_COMMAND in text:
-            text = self.completer.replace_shortcut(text)
-            if self.handle_docs(text):
-                return
-            text = self.colorize_output(text)
-        try:
-            if not self.handle_cd(text):
-                # Pass the command onto the shell so aws-cli can execute it
-                subprocess.call(text, shell=True)
-            print('')
-        except KeyboardInterrupt as e:
-            self.handle_keyboard_interrupt(e, platform.system())
-        except Exception as e:
-            self.log_exception(e, traceback, echo=True)
-
     def handle_keyboard_interrupt(self, e, platform):
         """Handles keyboard interrupts more gracefully on Mac/Unix/Linux.
 
@@ -385,6 +364,30 @@ class Saws(object):
             # Clear the renderer and send a carriage return
             self.aws_cli.renderer.clear()
             self.aws_cli.input_processor.feed_key(KeyPress(Keys.ControlM, ''))
+
+    def process_command(self, text):
+        """Processes the input command, called by the cli event loop
+
+        Args:
+            * text: A string that represents the input command text.
+
+        Returns:
+            None.
+        """
+        if AwsCommands.AWS_COMMAND in text:
+            text = self.completer.replace_shortcut(text)
+            if self.handle_docs(text):
+                return
+            text = self.colorize_output(text)
+        try:
+            if not self.handle_cd(text):
+                # Pass the command onto the shell so aws-cli can execute it
+                subprocess.call(text, shell=True)
+            print('')
+        except KeyboardInterrupt as e:
+            self.handle_keyboard_interrupt(e, platform.system())
+        except Exception as e:
+            self.log_exception(e, traceback, echo=True)
 
     def create_cli(self):
         """Creates the prompt_toolkit's CommandLineInterface.
@@ -425,7 +428,7 @@ class Saws(object):
             self.get_fuzzy_match,
             self.set_shortcut_match,
             self.get_shortcut_match,
-            self.refresh_resources,
+            self.refresh_resources_and_options,
             self.handle_docs)
         style_factory = StyleFactory(self.theme)
         application = Application(

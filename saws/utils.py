@@ -15,9 +15,9 @@
 
 from __future__ import unicode_literals
 from __future__ import print_function
+import re
 import six
 import shlex
-import fuzzyfinder
 from prompt_toolkit.completion import Completion
 
 
@@ -41,6 +41,38 @@ class TextUtils(object):
             text = text.encode('utf-8')
         return shlex.split(text)
 
+    def fuzzy_finder(self, text, collection, case_sensitive=True):
+        """Customized fuzzy finder with optional case-insensitive matching.
+
+        Adapted from: https://github.com/amjith/fuzzyfinder.
+
+        Args:
+            text: A string which is typically entered by a user.
+            collection: An iterable that represents a collection of strings
+                which will be filtered based on the input `text`.
+            case_sensitive: A boolean that indicates whether the find
+                will be case sensitive.
+
+        Returns:
+            A generator object that produces a list of suggestions
+            narrowed down from `collections` using the `text` input.
+        """
+        suggestions = []
+        if case_sensitive:
+            pat = '.*?'.join(map(re.escape, text))
+        else:
+            pat = '.*?'.join(map(re.escape, text.lower()))
+        regex = re.compile(pat)
+        for item in collection:
+            if case_sensitive:
+                r = regex.search(item)
+            else:
+                r = regex.search(item.lower())
+            if r:
+                suggestions.append((len(r.group()), r.start(), item))
+
+        return (z for _, _, z in sorted(suggestions))
+
     def find_collection_matches(self, word, collection, fuzzy):
         """Yields all matching names in list.
 
@@ -53,12 +85,15 @@ class TextUtils(object):
         Yields:
             A generator of prompt_toolkit's Completions.
         """
+        word = word.lower()
         if fuzzy:
-            for suggestion in fuzzyfinder.fuzzyfinder(word, collection):
+            for suggestion in self.fuzzy_finder(word,
+                                                collection,
+                                                case_sensitive=False):
                 yield Completion(suggestion, -len(word))
         else:
             for name in sorted(collection):
-                if name.startswith(word) or not word:
+                if name.lower().startswith(word) or not word:
                     yield Completion(name, -len(word))
 
     def find_matches(self, word, collection, fuzzy):
