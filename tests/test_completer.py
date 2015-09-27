@@ -254,3 +254,29 @@ class CompleterTest(unittest.TestCase):
         expected = ['stopping',
                     'stopped']
         self.verify_completions(commands, expected)
+
+    def test_cluster_states(self):
+        self.verify_cluster_states()
+
+    def test_cluster_states_fuzzy(self):
+        self.completer.fuzzy_match = True
+        self.verify_cluster_states()
+
+    def verify_cluster_states(self):
+        commands = ['aws emr ls --cluster-states star']
+        expected = ['STARTING']
+        self.verify_completions(commands, expected)
+        commands = ['emr ls --cluster-states BOOT']
+        expected = ['BOOTSTRAPPING']
+        self.verify_completions(commands, expected)
+        commands = ['emr ls --cluster-states run']
+        expected = ['RUNNING']
+        self.verify_completions(commands, expected)
+        commands = ['emr ls --cluster-states WAIT']
+        expected = ['WAITING']
+        self.verify_completions(commands, expected)
+        commands = ['emr ls --cluster-states term']
+        expected = ['TERMINATING',
+                    'TERMINATED',
+                    'TERMINATED_WITH_ERRORS']
+        self.verify_completions(commands, expected)

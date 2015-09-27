@@ -15,6 +15,9 @@
 
 from __future__ import unicode_literals
 from __future__ import print_function
+from enum import Enum
+from awscli.customizations.emr.constants import LIST_CLUSTERS_ACTIVE_STATES, \
+    LIST_CLUSTERS_TERMINATED_STATES, LIST_CLUSTERS_FAILED_STATES
 from .commands import AwsCommands
 
 
@@ -25,11 +28,24 @@ class AwsOptions(object):
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
         * EC2_STATE_OPT: A string representing the option for ec2 states
+        * CLUSTER_STATE_OPT: A string representing the option for cluster states
         * ec2_states: A list of the possible EC2 instance states.
+        * cluster_states: A list of the possible cluster states.
         * options_map: A dict mapping of options keywords and
             options to complete
         * log_exception: A callable log_exception from SawsLogger.
     """
+
+    class OptionType(Enum):
+        """Enum specifying the command type.
+
+        Attributes:
+            * EC2_STATES: An int representing ec2 running states.
+            * CLUSTER_STATES: An int representing cluster running states.
+        """
+
+        NUM_OPTION_TYPES = 2
+        EC2_STATES, CLUSTER_STATES = range(NUM_OPTION_TYPES)
 
     def __init__(self,
                  all_commands,
@@ -46,10 +62,19 @@ class AwsOptions(object):
         """
         self.all_commands = all_commands
         self.EC2_STATE_OPT = '--ec2-state'
+        self.CLUSTER_STATE_OPT = '--cluster-states'
         self.ec2_states = \
             self.all_commands[AwsCommands.CommandType.EC2_STATES.value]
+        self.cluster_states = []
+        self.get_cluster_states()
         self.options_map = None
         self.log_exception = log_exception
+
+
+    def get_cluster_states(self):
+        self.cluster_states.extend(LIST_CLUSTERS_ACTIVE_STATES)
+        self.cluster_states.extend(LIST_CLUSTERS_TERMINATED_STATES)
+        self.cluster_states.extend(LIST_CLUSTERS_FAILED_STATES)
 
     def create_options_map(self):
         """Creates a mapping of option keywords and options to complete.
@@ -64,5 +89,7 @@ class AwsOptions(object):
         Returns:
             None.
         """
-        self.options_map = dict(zip([self.EC2_STATE_OPT],
-                                    [self.ec2_states]))
+        self.options_map = dict(zip([self.EC2_STATE_OPT,
+                                     self.CLUSTER_STATE_OPT],
+                                    [self.ec2_states,
+                                     self.cluster_states]))
