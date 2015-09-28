@@ -51,13 +51,13 @@ class Saws(object):
         * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
         * config: An instance of Config.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
-        * aws_commands: An instance of AwsCommands
+        * aws_commands: An instance of AwsCommands.
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
-        * key_manager: An instance of KeyManager
+        * key_manager: An instance of KeyManager.
         * logger: An instance of SawsLogger.
         * theme: A string representing the lexer theme.
     """
@@ -78,14 +78,16 @@ class Saws(object):
         self.key_manager = None
         self.config = Config()
         self.config_obj = self.config.read_configuration()
-        self.theme = self.config_obj['main']['theme']
-        self.logger = SawsLogger(__name__,
-                                 self.config_obj['main']['log_file'],
-                                 self.config_obj['main']['log_level']).logger
+        self.theme = self.config_obj[self.config.MAIN][self.config.THEME]
+        self.logger = SawsLogger(
+            __name__,
+            self.config_obj[self.config.MAIN][self.config.LOG_FILE],
+            self.config_obj[self.config.MAIN][self.config.LOG_LEVEL]).logger
         self.get_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
             self.all_commands,
+            self.config,
             self.config_obj,
             self.log_exception,
             fuzzy_match=self.get_fuzzy_match(),
@@ -132,7 +134,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config_obj['main']['color_output'] = color
+        self.config_obj[self.config.MAIN][self.config.COLOR] = color
 
     def get_color(self):
         """Getter for color output mode.
@@ -147,7 +149,7 @@ class Saws(object):
         Returns:
             A boolean that represents the color flag.
         """
-        return self.config_obj['main'].as_bool('color_output')
+        return self.config_obj[self.config.MAIN].as_bool(self.config.COLOR)
 
     def set_fuzzy_match(self, fuzzy):
         """Setter for fuzzy matching mode
@@ -162,7 +164,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config_obj['main']['fuzzy_match'] = fuzzy
+        self.config_obj[self.config.MAIN][self.config.FUZZY] = fuzzy
         self.completer.fuzzy_match = fuzzy
 
     def get_fuzzy_match(self):
@@ -178,7 +180,7 @@ class Saws(object):
         Returns:
             A boolean that represents the fuzzy flag.
         """
-        return self.config_obj['main'].as_bool('fuzzy_match')
+        return self.config_obj[self.config.MAIN].as_bool(self.config.FUZZY)
 
     def set_shortcut_match(self, shortcut):
         """Setter for shortcut matching mode
@@ -193,7 +195,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.config_obj['main']['shortcut_match'] = shortcut
+        self.config_obj[self.config.MAIN][self.config.SHORTCUT] = shortcut
         self.completer.shortcut_match = shortcut
 
     def get_shortcut_match(self):
@@ -209,7 +211,7 @@ class Saws(object):
         Returns:
             A boolean that represents the shortcut flag.
         """
-        return self.config_obj['main'].as_bool('shortcut_match')
+        return self.config_obj[self.config.MAIN].as_bool(self.config.SHORTCUT)
 
     def refresh_resources_and_options(self):
         """Convenience function to refresh resources and options for completion.

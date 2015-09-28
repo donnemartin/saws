@@ -47,6 +47,7 @@ class CompleterTest(unittest.TestCase):
             self.resource_options = self.all_commands
         return AwsCompleter(awscli_completer,
                             self.all_commands,
+                            self.saws.config,
                             self.saws.config_obj,
                             self.saws.logger)
 

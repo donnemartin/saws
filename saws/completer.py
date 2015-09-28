@@ -38,6 +38,7 @@ class AwsCompleter(Completer):
         * aws_completions: A set of completions to show the user.
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
+        * config: An instance of Config.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * log_exception: A callable log_exception from SawsLogger.
         * text_utils: An instance of TextUtils.
@@ -53,6 +54,7 @@ class AwsCompleter(Completer):
     def __init__(self,
                  aws_completer,
                  all_commands,
+                 config,
                  config_obj,
                  log_exception,
                  fuzzy_match=False,
@@ -63,6 +65,7 @@ class AwsCompleter(Completer):
             * aws_completer: The official aws cli completer module.
             * all_commands: A list of all commands, sub_commands, options, etc
                 from data/SOURCES.txt.
+            * config: An instance of Config.
             * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * log_exception: A callable log_exception from SawsLogger.
             * fuzzy_match: A boolean that determines whether to use
@@ -76,15 +79,14 @@ class AwsCompleter(Completer):
         self.aws_completer = aws_completer
         self.all_commands = all_commands
         self.aws_completions = set()
+        self.config = config
         self.config_obj = config_obj
         self.log_exception = log_exception
         self.text_utils = TextUtils()
         self.fuzzy_match = fuzzy_match
         self.shortcut_match = shortcut_match
         self.BASE_COMMAND = AwsCommands.AWS_COMMAND
-        # TODO: Refactor to use config_obj.get_shortcuts()
-        self.shortcuts = OrderedDict(zip(self.config_obj['shortcuts'].keys(),
-                                         self.config_obj['shortcuts'].values()))
+        self.shortcuts = self.config.get_shortcuts(config_obj)
         self.resources = AwsResources(self.log_exception)
         self.options = AwsOptions(self.all_commands, self.log_exception)
 
