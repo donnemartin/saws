@@ -56,7 +56,8 @@ class DataUtil(object):
                         break
                 if not parsing_header:
                     # Store the data in its associated list
-                    data_lists[data_type.value].append(line)
+                    if line.strip() != '':
+                        data_lists[data_type.value].append(line)
             for data_list in data_lists:
                 data_list.sort()
         return data_lists
