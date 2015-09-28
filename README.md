@@ -79,6 +79,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
+    * [Pipsi Installation](#pipsi-installation)
     * [Virtual Environment Installation](#virtual-environment-installation)
     * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
@@ -311,6 +312,10 @@ Although you can use the standard Windows command prompt, you'll probably have a
 Once installed, run the following command to start `SAWS`:
 
     $ saws
+
+### Pipsi Installation
+
+With [Pipsi](https://github.com/mitsuhiko/pipsi) you can get all the benefits of a virtual environment setup without the hassle.  Simply `pipsi install saws` (or `pipsi install --python=python3 saws` if you want to install SAWS in a Python3 environment) and you'll have a working SAWS installation with no system conflicts.
 
 ### Virtual Environment Installation
 
