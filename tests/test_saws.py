@@ -29,11 +29,9 @@ from saws.commands import AwsCommands
 
 class SawsTest(unittest.TestCase):
 
-    @mock.patch('saws.resources.print')
-    def setUp(self, mock_print):
+    def setUp(self):
         self.file_name = os.path.expanduser('~') + '/' + '.saws.log'
-        self.saws = Saws()
-        mock_print.assert_called_with('Loaded resources from cache')
+        self.saws = Saws(refresh_resources=False)
         self.DOCS_HOME_URL = 'http://docs.aws.amazon.com/cli/latest/reference/index.html'
 
     @mock.patch('saws.saws.click')

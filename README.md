@@ -65,7 +65,6 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * [EC2 Instance Ids](#ec2-instance-ids)
     * [EC2 Instance Tags](#ec2-instance-tags)
     * [TODO: Add More Resources](#todo-add-more-resources)
-    * [Configuring Resource Completion](#configuring-resource-completion)
 * [Customizable Shortcuts](#customizable-shortcuts)
 * [Fuzzy Resource and Shortcut Completion](#fuzzy-resource-and-shortcut-completion)
 * [Executing Shell Commands](#executing-shell-commands)
@@ -180,19 +179,6 @@ Note:  `ls`, `--ec2-tag-value`, and `--ec2-tag-key` demonstrate the use of [cust
 ### TODO: Add More Resources
 
 Feel free to [submit an issue or a pull request](#contributions) if you'd like support for additional resources.
-
-### Configuring Resource Completion
-
-You can control which resources are loaded on startup and are available for interactive completion by updating your [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file:
-
-```
-# AWS resources to refresh
-refresh_instance_ids = True
-refresh_instance_tags = True
-refresh_bucket_names = True
-```
-
-Once initially loaded, resources are cached locally to allow for faster loading.  To refresh the cache, use the `F5` key.
 
 ## Customizable Shortcuts
 

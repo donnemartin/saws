@@ -64,11 +64,12 @@ class Saws(object):
 
     PYGMENTS_CMD = ' | pygmentize -l json'
 
-    def __init__(self):
+    def __init__(self, refresh_resources=True):
         """Inits Saws.
 
         Args:
-            * None.
+            * refresh_resources: A boolean that determines whether to
+                refresh resources.
 
         Returns:
             None.
@@ -89,12 +90,13 @@ class Saws(object):
             self.log_exception,
             fuzzy_match=self.get_fuzzy_match(),
             shortcut_match=self.get_shortcut_match())
-        self.completer.refresh_resources_and_options()
+        if refresh_resources:
+            self.completer.refresh_resources_and_options()
         self.create_cli()
 
     def get_all_commands(self):
         self.aws_commands = AwsCommands()
-        self.all_commands = self.aws_commands.get_all_commands()
+        self.all_commands = self.aws_commands.all_commands
         self.commands = \
             self.all_commands[AwsCommands.CommandType.COMMANDS.value]
         self.sub_commands = \
@@ -391,8 +393,6 @@ class Saws(object):
 
     def create_cli(self):
         """Creates the prompt_toolkit's CommandLineInterface.
-
-        Long description.
 
         Args:
             * None.

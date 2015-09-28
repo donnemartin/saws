@@ -1469,10 +1469,3 @@ website
 [resource_options]: 2
 --bucket
 --instance-ids
-[ec2_states]: 6
-pending
-running
-shutting-down
-stopped
-stopping
-terminated

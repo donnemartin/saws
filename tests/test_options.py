@@ -17,8 +17,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import mock
 import unittest
-import re
-from saws.commands import AwsCommands
 from saws.saws import Saws
 
 
@@ -27,11 +25,9 @@ class OptionsTest(unittest.TestCase):
     def setUp(self):
         self.create_options()
 
-    @mock.patch('saws.resources.print')
-    def create_options(self, mock_print):
-        self.saws = Saws()
+    def create_options(self):
+        self.saws = Saws(refresh_resources=False)
         self.options = self.saws.completer.options
-        mock_print.assert_called_with('Loaded resources from cache')
 
     def test_create_options_map(self):
         # TODO: Implement

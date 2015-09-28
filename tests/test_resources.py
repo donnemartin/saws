@@ -26,8 +26,6 @@ from saws.saws import Saws
 
 class ResourcesTest(unittest.TestCase):
 
-    RESOURCES = 'data/RESOURCES.txt'
-    RESOURCES_SAMPLE = 'data/RESOURCES_SAMPLE.txt'
     NUM_SAMPLE_INSTANCE_IDS = 7
     NUM_SAMPLE_INSTANCE_TAG_KEYS = 3
     NUM_SAMPLE_INSTANCE_TAG_VALUES = 6
@@ -36,12 +34,10 @@ class ResourcesTest(unittest.TestCase):
     def setUp(self):
         self.create_resources()
 
-    @mock.patch('saws.resources.print')
-    def create_resources(self, mock_print):
-        self.saws = Saws()
+    def create_resources(self):
+        self.saws = Saws(refresh_resources=False)
         self.resources = self.saws.completer.resources
-        self.resources.RESOURCE_FILE = self.RESOURCES_SAMPLE
-        mock_print.assert_called_with('Loaded resources from cache')
+        self.resources.set_resources_path('data/RESOURCES_SAMPLE.txt')
 
     @mock.patch('saws.resources.print')
     def test_refresh(self, mock_print):
@@ -61,7 +57,7 @@ class ResourcesTest(unittest.TestCase):
     @mock.patch('saws.resources.subprocess')
     @mock.patch('saws.resources.print')
     def test_refresh_forced(self, mock_print, mock_subprocess):
-        self.resources.RESOURCE_FILE = self.RESOURCES
+        self.resources.set_resources_path('data/RESOURCES_SAMPLE.txt')
         with self.assertRaises(TypeError):
             try:
                 self.resources.refresh(force_refresh=True)
@@ -75,7 +71,6 @@ class ResourcesTest(unittest.TestCase):
                     shell=True)
                 mock_print.assert_called_with('  Refreshing instance ids...')
                 raise e
-        self.resources.RESOURCE_FILE = self.RESOURCES_SAMPLE
 
     @mock.patch('saws.resources.subprocess')
     def test_query_aws_instance_ids(self, mock_subprocess):

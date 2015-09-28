@@ -16,12 +16,12 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import os
-import re
 try:
     from collections import OrderedDict
 except:
     from ordereddict import OrderedDict
 from enum import Enum
+from .data_util import DataUtil
 
 
 class AwsCommands(object):
@@ -45,28 +45,6 @@ class AwsCommands(object):
             completions for each CommandType.
     """
 
-    AWS_COMMAND = 'aws'
-    AWS_CONFIGURE = 'configure'
-    AWS_HELP = 'help'
-    AWS_DOCS = 'docs'
-    SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
-    SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
-
-    def __init__(self):
-        self.command_headers = ['[commands]: ',
-                                '[sub_commands]: ',
-                                '[global_options]: ',
-                                '[resource_options]: ',
-                                '[ec2_states]: ']
-        self.command_types = []
-        for command_type in self.CommandType:
-            if command_type != self.CommandType.NUM_COMMAND_TYPES:
-                self.command_types.append(command_type)
-        self.header_to_type_map = OrderedDict(zip(self.command_headers,
-                                                  self.command_types))
-        self.command_lists = [[] for x in range(
-            self.CommandType.NUM_COMMAND_TYPES.value)]
-
     class CommandType(Enum):
         """Enum specifying the command type.
 
@@ -79,14 +57,36 @@ class AwsCommands(object):
             * SUB_COMMANDS: An int representing subcommands.
             * GLOBAL_OPTIONS: An int representing global options.
             * RESOURCE_OPTIONS: An int representing resource options.
-            * EC2_STATES: An int representing ec2 running states.
         """
 
-        NUM_COMMAND_TYPES = 5
-        COMMANDS, SUB_COMMANDS, GLOBAL_OPTIONS, RESOURCE_OPTIONS, \
-            EC2_STATES = range(NUM_COMMAND_TYPES)
+        NUM_TYPES = 4
+        COMMANDS, SUB_COMMANDS, GLOBAL_OPTIONS, RESOURCE_OPTIONS = \
+            range(NUM_TYPES)
 
-    def get_all_commands(self):
+    AWS_COMMAND = 'aws'
+    AWS_CONFIGURE = 'configure'
+    AWS_HELP = 'help'
+    AWS_DOCS = 'docs'
+    SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
+    SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
+
+    def __init__(self):
+        # TODO: Refactor into DataUtil
+        self.command_headers = ['[commands]: ',
+                                '[sub_commands]: ',
+                                '[global_options]: ',
+                                '[resource_options]: ']
+        self.command_types = []
+        for command_type in self.CommandType:
+            if command_type != self.CommandType.NUM_TYPES:
+                self.command_types.append(command_type)
+        self.header_to_type_map = OrderedDict(zip(self.command_headers,
+                                                  self.command_types))
+        self.command_lists = [[] for x in range(
+            self.CommandType.NUM_TYPES.value)]
+        self.all_commands = self._get_all_commands()
+
+    def _get_all_commands(self):
         """Gets all commands from the data/SOURCES.txt file.
 
         Args:
@@ -96,21 +96,7 @@ class AwsCommands(object):
             A list, where each element is a list of completions for each
                 CommandType
         """
-        command_type = self.CommandType.COMMANDS
-        with open(self.SOURCES_PATH) as f:
-            for line in f:
-                line = re.sub('\n', '', line)
-                parsing_header = False
-                # Check if we are reading in a command header to determine
-                # which set of commands we are parsing
-                for key, value in self.header_to_type_map.items():
-                    if key in line:
-                        command_type = value
-                        parsing_header = True
-                        break
-                if not parsing_header:
-                    # Store the command in its associated list
-                    self.command_lists[command_type.value].append(line)
-            for command_list in self.command_lists:
-                command_list.sort()
-        return self.command_lists
+        return DataUtil().get_data(self.SOURCES_PATH,
+                                   self.header_to_type_map,
+                                   self.CommandType.COMMANDS,
+                                   self.command_lists)

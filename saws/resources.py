@@ -16,11 +16,16 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import os
+try:
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 import re
 import subprocess
 import traceback
 from enum import Enum
 from .commands import AwsCommands
+from .data_util import DataUtil
 
 
 class AwsResources(object):
@@ -33,20 +38,6 @@ class AwsResources(object):
         * bucket_names: A list of bucket names.
         * resources_map: A dict mapping of resource keywords and
             resources to complete
-        * refresh_instance_ids: A boolean that determines whether to
-            refresh instance ids by querying AWS.
-        * refresh_instance_tags: A boolean that determines whether to
-            refresh instance tags by querying AWS.
-        * refresh_bucket_names: A boolean that determines whether to
-            refresh bucket names by querying AWS.
-        * INSTANCE_IDS_MARKER: A string marking the start of
-            instance ids in data/RESOURCES.txt.
-        * INSTANCE_TAG_KEYS_MARKER: A string marking the start of
-            instance tag keys in data/RESOURCES.txt.
-        * INSTANCE_TAG_VALUES_MARKER: A string marking the start of
-            instance tag values in data/RESOURCES.txt.
-        * BUCKET_NAMES_MARKER: A string marking the start of i
-            bucket names in data/RESOURCES.txt.
         * INSTANCE_IDS_OPT: A string representing the option for instance ids
         * EC2_TAG_KEY_OPT: A string representing the option for ec2 tag keys
         * EC2_TAG_VALUE_OPT: A string representing the option for ec2 tag values
@@ -60,15 +51,9 @@ class AwsResources(object):
             list all instance tag values
         * QUERY_BUCKET_NAMES_CMD: A string representing the AWS query to
             list all bucket names
-        * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * log_exception: A callable log_exception from SawsLogger.
     """
 
-    RESOURCE_FILE = 'data/RESOURCES.txt'
-    INSTANCE_IDS_MARKER = '[instance ids]'
-    INSTANCE_TAG_KEYS_MARKER = '[instance tag keys]'
-    INSTANCE_TAG_VALUES_MARKER = '[instance tag values]'
-    BUCKET_NAMES_MARKER = '[bucket names]'
     INSTANCE_IDS_OPT = '--instance-ids'
     EC2_TAG_KEY_OPT = '--ec2-tag-key'
     EC2_TAG_VALUE_OPT = '--ec2-tag-value'
@@ -79,7 +64,7 @@ class AwsResources(object):
     QUERY_INSTANCE_TAG_VALUES_CMD = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
     QUERY_BUCKET_NAMES_CMD = 'aws s3 ls'
 
-    class ResType(Enum):
+    class ResourceType(Enum):
         """Enum specifying the resource type.
 
         Attributes:
@@ -88,36 +73,56 @@ class AwsResources(object):
             * INSTANCE_TAG_VALUES: An int representing instance tag values.
             * BUCKET_NAMES: An int representing bucket names.
         """
-
+        NUM_TYPES = 4
         INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
-            BUCKET_NAMES = range(4)
+            BUCKET_NAMES = range(NUM_TYPES)
 
     def __init__(self,
-                 config_obj,
                  log_exception):
         """Initializes AwsResources.
 
         Args:
-            * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
             * log_exception: A callable log_exception from SawsLogger.
 
         Returns:
             None.
         """
-        self.instance_ids = []
+        # TODO: Use a file version instead
+        self.set_resources_path('data/RESOURCES_v2.txt')
+        self.instance_ids = set()
         self.instance_tag_keys = set()
         self.instance_tag_values = set()
-        self.bucket_names = []  # TODO: Make this 'private'
-        self.s3_uri_names = []  # TODO: Make this 'private'
-        self.config_obj = config_obj
-        self.refresh_instance_ids = \
-            self.config_obj['main'].as_bool('refresh_instance_ids')
-        self.refresh_instance_tags = \
-            self.config_obj['main'].as_bool('refresh_instance_tags')
-        self.refresh_bucket_names = \
-            self.config_obj['main'].as_bool('refresh_bucket_names')
+        self.bucket_names = set()  # TODO: Make this 'private'
+        self.s3_uri_names = set()  # TODO: Make this 'private'
         self.resources_map = None
+        # TODO: Refactor into DataUtil
+        self.resource_headers = [self.INSTANCE_IDS_OPT,
+                                 self.EC2_TAG_KEY_OPT,
+                                 self.EC2_TAG_VALUE_OPT,
+                                 self.BUCKET_OPT]
+        self.resource_types = []
+        for resource_type in self.ResourceType:
+            if resource_type != self.ResourceType.NUM_TYPES:
+                self.resource_types.append(resource_type)
+        self.header_to_type_map = OrderedDict(zip(self.resource_headers,
+                                                  self.resource_types))
+        self.resource_lists = [[] for x in range(
+            self.ResourceType.NUM_TYPES.value)]
         self.log_exception = log_exception
+
+    def set_resources_path(self, resources_file):
+        """Sets the path of where to load the resources.
+
+        Args:
+            * resources_file: A string representing the resource file
+                path relative to the saws package.
+
+        Returns:
+            None.
+        """
+        RESOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
+        self.resources_path = os.path.join(RESOURCES_DIR,
+                                           resources_file)
 
     def create_resources_map(self):
         """Creates a mapping of resource keywords and resources to complete.
@@ -132,16 +137,16 @@ class AwsResources(object):
         Returns:
             None.
         """
-        self.resources_map = dict(zip([self.INSTANCE_IDS_OPT,
-                                       self.EC2_TAG_KEY_OPT,
-                                       self.EC2_TAG_VALUE_OPT,
-                                       self.BUCKET_OPT,
-                                       self.S3_URI_OPT],
-                                      [self.instance_ids,
-                                       self.instance_tag_keys,
-                                       self.instance_tag_values,
-                                       self.bucket_names,
-                                       self.s3_uri_names]))
+        self.resources_map = OrderedDict(zip([self.INSTANCE_IDS_OPT,
+                                              self.EC2_TAG_KEY_OPT,
+                                              self.EC2_TAG_VALUE_OPT,
+                                              self.BUCKET_OPT,
+                                              self.S3_URI_OPT],
+                                             [self.instance_ids,
+                                              self.instance_tag_keys,
+                                              self.instance_tag_values,
+                                              self.bucket_names,
+                                              self.s3_uri_names]))
 
     def refresh(self, force_refresh=False):
         """Refreshes the AWS resources and caches them to a file.
@@ -159,30 +164,23 @@ class AwsResources(object):
         Returns:
             None.
         """
-        file_path = os.path.join(AwsCommands.SOURCES_DIR,
-                                 self.RESOURCE_FILE)
         if not force_refresh:
             try:
-                self.refresh_resources_from_file(file_path)
+                self.refresh_resources_from_file()
                 print('Loaded resources from cache')
             except IOError:
                 print('No resource cache found')
                 force_refresh = True
         if force_refresh:
             print('Refreshing resources...')
-            if self.refresh_instance_ids:
-                print('  Refreshing instance ids...')
-                self.query_instance_ids()
-            if self.refresh_instance_tags:
-                print('  Refreshing instance tags...')
-                self.query_instance_tag_keys()
-                self.query_instance_tag_values()
-            if self.refresh_bucket_names:
-                print('  Refreshing bucket names...')
-                self.query_bucket_names()
+            self.query_instance_ids()
+            self.query_instance_tag_keys()
+            self.query_instance_tag_values()
+            self.query_bucket_names()
             print('Done refreshing')
         try:
-            self.save_resources_to_file(file_path)
+            self.create_resources_map()
+            self.save_resources_to_file()
         except IOError as e:
             self.log_exception(e, traceback)
 
@@ -203,6 +201,7 @@ class AwsResources(object):
         Returns:
             None.
         """
+        print('  Refreshing instance ids...')
         output = self.query_aws(self.QUERY_INSTANCE_IDS_CMD)
         if output is not None:
             output = re.sub('\n', ' ', output)
@@ -217,6 +216,7 @@ class AwsResources(object):
         Returns:
             None.
         """
+        print('  Refreshing instance tags...')
         output = self.query_aws(self.QUERY_INSTANCE_TAG_KEYS_CMD)
         if output is not None:
             self.instance_tag_keys = set(output.split('\t'))
@@ -243,6 +243,7 @@ class AwsResources(object):
         Returns:
             None
         """
+        print('  Refreshing bucket names...')
         output = self.query_aws(self.QUERY_BUCKET_NAMES_CMD)
         if output is not None:
             self.clear_bucket_names()
@@ -264,13 +265,11 @@ class AwsResources(object):
         Returns:
             None.
         """
-        self.bucket_names.append(bucket_name)
-        self.s3_uri_names.append(self.S3_URI_OPT + '//' + bucket_name)
+        self.bucket_names.update([bucket_name])
+        self.s3_uri_names.update([self.S3_URI_OPT + '//' + bucket_name])
 
     def clear_bucket_names(self):
         """Clears bucket all bucket names.
-
-        Long description.
 
         Args:
             * None.
@@ -278,10 +277,29 @@ class AwsResources(object):
         Returns:
             None.
         """
-        self.bucket_names = []
-        self.s3_uri_names = []
+        self.bucket_names = set()
+        self.s3_uri_names = set()
 
-    def refresh_resources_from_file(self, file_path):
+    def _get_all_resources(self):
+        """Gets all resources from the data/RESOURCES.txt file.
+
+        Args:
+            * None.
+
+        Returns:
+            A list, where each element is a list of completions for each
+                ResourceType
+        """
+        self.instance_ids = set()
+        self.instance_tag_keys = set()
+        self.instance_tag_values = set()
+        self.clear_bucket_names()
+        return DataUtil().get_data(self.resources_path,
+                                   self.header_to_type_map,
+                                   self.ResourceType.INSTANCE_IDS,
+                                   self.resource_lists)
+
+    def refresh_resources_from_file(self):
         """Refreshes the AWS resources from data/RESOURCES.txt.
 
         Args:
@@ -290,60 +308,29 @@ class AwsResources(object):
         Returns:
             None.
         """
-        res_type = self.ResType.INSTANCE_IDS
-        with open(file_path) as fp:
-            self.instance_ids = []
-            self.instance_tag_keys = set()
-            self.instance_tag_values = set()
-            self.clear_bucket_names()
-            instance_tag_keys_list = []
-            instance_tag_values_list = []
-            for line in fp:
-                line = re.sub('\n', '', line)
-                if line.strip() == '':
-                    continue
-                elif self.INSTANCE_IDS_MARKER in line:
-                    res_type = self.ResType.INSTANCE_IDS
-                    continue
-                elif self.INSTANCE_TAG_KEYS_MARKER in line:
-                    res_type = self.ResType.INSTANCE_TAG_KEYS
-                    continue
-                elif self.INSTANCE_TAG_VALUES_MARKER in line:
-                    res_type = self.ResType.INSTANCE_TAG_VALUES
-                    continue
-                elif self.BUCKET_NAMES_MARKER in line:
-                    res_type = self.ResType.BUCKET_NAMES
-                    continue
-                if res_type == self.ResType.INSTANCE_IDS:
-                    self.instance_ids.append(line)
-                elif res_type == self.ResType.INSTANCE_TAG_KEYS:
-                    instance_tag_keys_list.append(line)
-                elif res_type == self.ResType.INSTANCE_TAG_VALUES:
-                    instance_tag_values_list.append(line)
-                elif res_type == self.ResType.BUCKET_NAMES:
-                    self.add_bucket_name(line)
-            self.instance_tag_keys = set(instance_tag_keys_list)
-            self.instance_tag_values = set(instance_tag_values_list)
+        self.instance_ids, self.instance_tag_keys, self.instance_tag_values, \
+            bucket_names, = self._get_all_resources()
+        self.instance_ids = set(self.instance_ids)
+        self.instance_tag_keys = set(self.instance_tag_keys)
+        self.instance_tag_values = set(self.instance_tag_values)
+        bucket_names = set(bucket_names)
+        for bucket_name in bucket_names:
+            self.add_bucket_name(bucket_name)
 
-    def save_resources_to_file(self, file_path):
+    def save_resources_to_file(self):
         """Saves the AWS resources to data/RESOURCES.txt.
 
         Args:
-            * file_path: A string representing the resource file path.
+            * None.
 
         Returns:
             None.
         """
-        with open(file_path, 'wt') as fp:
-            fp.write(self.INSTANCE_IDS_MARKER + '\n')
-            for instance_id in self.instance_ids:
-                fp.write(instance_id + '\n')
-            fp.write(self.INSTANCE_TAG_KEYS_MARKER + '\n')
-            for instance_tag_key in self.instance_tag_keys:
-                fp.write(instance_tag_key + '\n')
-            fp.write(self.INSTANCE_TAG_VALUES_MARKER + '\n')
-            for instance_tag_value in self.instance_tag_values:
-                fp.write(instance_tag_value + '\n')
-            fp.write(self.BUCKET_NAMES_MARKER + '\n')
-            for bucket_name in self.bucket_names:
-                fp.write(bucket_name + '\n')
+        with open(self.resources_path, 'wt') as fp:
+            excludes = self.S3_URI_OPT
+            for key, resources in self.resources_map.items():
+                if key in excludes:
+                    continue
+                fp.write(key + ': ' + str(len(resources)) + '\n')
+                for resource in resources:
+                    fp.write(resource + '\n')

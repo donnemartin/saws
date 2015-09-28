@@ -85,7 +85,7 @@ class AwsCompleter(Completer):
         # TODO: Refactor to use config_obj.get_shortcuts()
         self.shortcuts = OrderedDict(zip(self.config_obj['shortcuts'].keys(),
                                          self.config_obj['shortcuts'].values()))
-        self.resources = AwsResources(self.config_obj, self.log_exception)
+        self.resources = AwsResources(self.log_exception)
         self.options = AwsOptions(self.all_commands, self.log_exception)
 
     def refresh_resources_and_options(self, force_refresh=False):
@@ -99,8 +99,6 @@ class AwsCompleter(Completer):
             None.
         """
         self.resources.refresh(force_refresh)
-        self.resources.create_resources_map()
-        self.options.create_options_map()
 
     def replace_shortcut(self, text):
         """Replaces matched shortcut commands with their full command.

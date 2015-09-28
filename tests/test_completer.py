@@ -24,15 +24,16 @@ from saws.completer import AwsCompleter
 from saws.commands import AwsCommands
 from saws.saws import Saws
 from test_resources import ResourcesTest
-from test_options import OptionsTest
 
 
 class CompleterTest(unittest.TestCase):
 
     @mock.patch('saws.resources.print')
     def setUp(self, mock_print):
-        self.saws = Saws()
+        self.saws = Saws(refresh_resources=False)
         self.completer = self.create_completer()
+        self.completer.resources.set_resources_path(
+            'data/RESOURCES_SAMPLE.txt')
         self.completer.refresh_resources_and_options()
         self.completer_event = self.create_completer_event()
         mock_print.assert_called_with('Loaded resources from cache')
@@ -41,10 +42,9 @@ class CompleterTest(unittest.TestCase):
         # TODO: Fix duplicate creation of AwsCompleter, which is already
         # created by Saws init
         self.aws_commands = AwsCommands()
-        self.all_commands = self.aws_commands.get_all_commands()
+        self.all_commands = self.aws_commands.all_commands
         self.commands, self.sub_commands, self.global_options, \
-            self.resource_options, self.ec2_states = \
-            self.all_commands
+            self.resource_options = self.all_commands
         return AwsCompleter(awscli_completer,
                             self.all_commands,
                             self.saws.config_obj,
@@ -176,8 +176,8 @@ class CompleterTest(unittest.TestCase):
 
     @mock.patch('saws.resources.print')
     def test_refresh_resources_and_options(self, mock_print):
-        self.completer.resources.RESOURCE_FILE = \
-            ResourcesTest.RESOURCES_SAMPLE
+        self.completer.resources.set_resources_path(
+            'data/RESOURCES_SAMPLE.txt')
         self.completer.resources.resources_map = None
         self.completer.refresh_resources_and_options(force_refresh=False)
         mock_print.assert_called_with('Loaded resources from cache')
@@ -199,14 +199,14 @@ class CompleterTest(unittest.TestCase):
     def test_instance_ids(self):
         commands = ['aws ec2 ls --instance-ids i-a']
         expected = ['i-a875ecc3', 'i-a51d05f4', 'i-a3628153']
-        self.completer.resources.instance_ids.extend(expected)
+        self.completer.resources.instance_ids.update(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_ids_fuzzy(self):
         self.completer.fuzzy_match = True
         commands = ['aws ec2 ls --instance-ids a5']
         expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
-        self.completer.resources.instance_ids.extend(expected)
+        self.completer.resources.instance_ids.update(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_keys(self):
@@ -224,7 +224,7 @@ class CompleterTest(unittest.TestCase):
     def test_bucket_names(self):
         commands = ['aws s3pi get-bucket-acl --bucket web-']
         expected = ['web-server-logs', 'web-server-images']
-        self.completer.resources.bucket_names.extend(expected)
+        self.completer.resources.bucket_names.update(expected)
         self.verify_completions(commands, expected)
 
     def test_s3_uri(self):

@@ -24,9 +24,9 @@ class CommandsTest(unittest.TestCase):
 
     def test_get_all_commands(self):
         aws_commands = AwsCommands()
-        command_lists = aws_commands.get_all_commands()
+        command_lists = aws_commands.all_commands
         num_results_list = [None] * \
-            aws_commands.CommandType.NUM_COMMAND_TYPES.value
+            aws_commands.CommandType.NUM_TYPES.value
         with open(AwsCommands.SOURCES_PATH) as f:
             for line in f:
                 line = re.sub('\n', '', line)

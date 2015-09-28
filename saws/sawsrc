@@ -21,11 +21,6 @@ log_file = ~/.saws.log
 # and "DEBUG".
 log_level = INFO
 
-# AWS resources to refresh
-refresh_instance_ids = True
-refresh_instance_tags = True
-refresh_bucket_names = True
-
 [shortcuts]
 
 # Shortcut entries in this file follow the form:

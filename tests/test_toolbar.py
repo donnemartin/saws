@@ -24,13 +24,11 @@ from saws.toolbar import Toolbar
 
 class ToolbarTest(unittest.TestCase):
 
-    @mock.patch('saws.resources.print')
-    def setUp(self, mock_print):
-        self.saws = Saws()
+    def setUp(self):
+        self.saws = Saws(refresh_resources=False)
         self.toolbar = Toolbar(self.saws.get_color,
                                self.saws.get_fuzzy_match,
                                self.saws.get_shortcut_match)
-        mock_print.assert_called_with('Loaded resources from cache')
 
     def test_toolbar_on(self):
         expected = [
