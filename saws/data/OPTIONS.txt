@@ -1,0 +1,7 @@
+--ec2-state: 6
+pending
+running
+shutting-down
+stopped
+stopping
+terminated

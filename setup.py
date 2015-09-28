@@ -42,7 +42,8 @@ setup(
     packages=['saws'],
     package_data={'saws': ['sawsrc',
                            'data/SOURCES.txt',
-                           'data/RESOURCES_SAMPLE.txt']},
+                           'data/RESOURCES_SAMPLE.txt',
+                           'data/OPTIONS.txt']},
     scripts=[],
     name='saws',
     classifiers=[
