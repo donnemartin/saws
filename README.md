@@ -79,8 +79,8 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
-    * [Pipsi Installation](#pipsi-installation)
     * [Virtual Environment Installation](#virtual-environment-installation)
+    * [Pipsi Installation](#pipsi-installation)
     * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
@@ -313,10 +313,6 @@ Once installed, run the following command to start `SAWS`:
 
     $ saws
 
-### Pipsi Installation
-
-With [Pipsi](https://github.com/mitsuhiko/pipsi) you can get all the benefits of a virtual environment setup without the hassle.  Simply `pipsi install saws` (or `pipsi install --python=python3 saws` if you want to install SAWS in a Python3 environment) and you'll have a working SAWS installation with no system conflicts.
-
 ### Virtual Environment Installation
 
 It is recommended that you install Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).  If you are a Windows user or if you would like more details on `virtualenv`, check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
@@ -336,6 +332,14 @@ Create a `SAWS` `virtualenv` and install `SAWS`:
 If you want to activate the `saws` `virtualenv` again later, run:
 
     workon saws
+
+### Pipsi Installation
+
+[Pipsi](https://github.com/mitsuhiko/pipsi) simplifies the `virtualenv` setup.  
+
+1. [Install Pipsi](https://github.com/mitsuhiko/pipsi/blob/master/README.rst)
+2. Run `pipsi install saws`
+   (or `pipsi install --python=python3 saws` for a Python 3 virtualenv).
 
 ### AWS Credentials and Named Profiles
 
