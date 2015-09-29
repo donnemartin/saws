@@ -177,6 +177,20 @@ class CompleterTest(unittest.TestCase):
         result = self.completer.replace_shortcut(command)
         assert result == expected
 
+    def test_substitutions_with_more_tokens(self):
+        command = 'aws ec2 ls --filters "Name=tag-key,Values=%s prod" | grep IpAddress'
+        expected = 'aws ec2 ls --filters "Name=tag-key,Values=prod" | grep IpAddress'
+        result = self.completer.replace_substitution(command)
+        assert result == expected
+        command = 'aws ec2 ls --ec2-tag-key Stack | grep IpAddress'
+        expected = 'aws ec2 describe-instances --filters "Name=tag-key,Values=Stack" | grep IpAddress'
+        result = self.completer.replace_shortcut(command)
+        assert result == expected
+        command = 'aws ec2 ls --ec2-tag-value prod | grep IpAddress'
+        expected = 'aws ec2 describe-instances --filters "Name=tag-value,Values=prod" | grep IpAddress'
+        result = self.completer.replace_shortcut(command)
+        assert result == expected
+
     @mock.patch('saws.resources.print')
     def test_refresh_resources_and_options(self, mock_print):
         self.completer.refresh_resources_and_options(force_refresh=False)
