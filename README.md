@@ -315,9 +315,11 @@ Once installed, run the following command to start `SAWS`:
 
 ### Virtual Environment Installation
 
-It is recommended that you install Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).  If you are a Windows user or if you would like more details on `virtualenv`, check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+It is recommended that you install Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
 
-Install `virtualenv` and `virtualenvwrapper`:
+If you are a Windows user or if you would like more details on `virtualenv`, check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+
+Install `virtualenv` and `virtualenvwrapper`, or check out the [Pipsi Installation](#pipsi-installation) section below:
 
     pip install virtualenv
     pip install virtualenvwrapper
@@ -335,11 +337,21 @@ If you want to activate the `saws` `virtualenv` again later, run:
 
 ### Pipsi Installation
 
-[Pipsi](https://github.com/mitsuhiko/pipsi) simplifies the `virtualenv` setup.  
+[Pipsi](https://github.com/mitsuhiko/pipsi) simplifies the `virtualenv` setup.
 
-1. [Install Pipsi](https://github.com/mitsuhiko/pipsi/blob/master/README.rst)
-2. Run `pipsi install saws`
-   (or `pipsi install --python=python3 saws` for a Python 3 virtualenv).
+Install `pipsi`:
+
+    pip install pipsi
+
+Create a `virtualenv` and install `SAWS`:
+
+    pipsi install saws
+
+For Python 3:
+
+    pipsi install --python=python3 saws
+
+Note:  [Pipsi might not be fully supported on Windows](https://github.com/mitsuhiko/pipsi/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+windows).
 
 ### AWS Credentials and Named Profiles
 
