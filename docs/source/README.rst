@@ -85,8 +85,6 @@ Features
    -  `EC2 Instance Ids <#ec2-instance-ids>`__
    -  `EC2 Instance Tags <#ec2-instance-tags>`__
    -  `TODO: Add More Resources <#todo-add-more-resources>`__
-   -  `Configuring Resource
-      Completion <#configuring-resource-completion>`__
 
 -  `Customizable Shortcuts <#customizable-shortcuts>`__
 -  `Fuzzy Resource and Shortcut
@@ -109,6 +107,7 @@ Installation and Tests
    -  `Pip Installation <#pip-installation>`__
    -  `Virtual Environment
       Installation <#virtual-environment-installation>`__
+   -  `Pipsi Installation <#pipsi-installation>`__
    -  `AWS Credentials and Named
       Profiles <#aws-credentials-and-named-profiles>`__
    -  `Supported Python Versions <#supported-python-versions>`__
@@ -255,24 +254,6 @@ TODO: Add More Resources
 
 Feel free to `submit an issue or a pull request <#contributions>`__ if
 you'd like support for additional resources.
-
-Configuring Resource Completion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can control which resources are loaded on startup and are available
-for interactive completion by updating your
-`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
-file:
-
-::
-
-    # AWS resources to refresh
-    refresh_instance_ids = True
-    refresh_instance_tags = True
-    refresh_bucket_names = True
-
-Once initially loaded, resources are cached locally to allow for faster
-loading. To refresh the cache, use the ``F5`` key.
 
 Customizable Shortcuts
 ----------------------
@@ -443,8 +424,7 @@ Toolbar Options
 Windows Support
 ~~~~~~~~~~~~~~~
 
-``SAWS`` is developed under Mac OS X Yosemite and Ubuntu 14.04 LTS and
-has been tested on Windows 7 and Windows 10.
+``SAWS`` has been tested on Windows 7 and Windows 10.
 
 On Windows, the
 `.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
@@ -487,17 +467,17 @@ Once installed, run the following command to start ``SAWS``:
 Virtual Environment Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I highly recommend installing Python packages in a
+It is recommended that you install Python packages in a
 `virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__
 to avoid potential `issues with dependencies or
 permissions <https://github.com/donnemartin/saws/issues/15>`__.
 
-If you're not familiar with virtual environments, I've listed the
-commands below. For more details (and for instructions on how to install
-on Windows using ``virtualenvwrapper-win``), check out this
+If you are a Windows user or if you would like more details on
+``virtualenv``, check out this
 `guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__.
 
-Install ``virtualenv`` and ``virtualenvwrapper``:
+Install ``virtualenv`` and ``virtualenvwrapper``, or check out the
+`Pipsi Installation <#pipsi-installation>`__ section below:
 
 ::
 
@@ -518,6 +498,33 @@ If you want to activate the ``saws`` ``virtualenv`` again later, run:
 ::
 
     workon saws
+
+Pipsi Installation
+~~~~~~~~~~~~~~~~~~
+
+`Pipsi <https://github.com/mitsuhiko/pipsi>`__ simplifies the
+``virtualenv`` setup.
+
+Install ``pipsi``:
+
+::
+
+    pip install pipsi
+
+Create a ``virtualenv`` and install ``SAWS``:
+
+::
+
+    pipsi install saws
+
+For Python 3:
+
+::
+
+    pipsi install --python=python3 saws
+
+Note: `Pipsi might not be fully supported on
+Windows <https://github.com/mitsuhiko/pipsi/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+windows>`__.
 
 AWS Credentials and Named Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -553,7 +560,6 @@ Windows users can run the following commands:
 
 Command line options for starting ``SAWS`` with a specific profile are
 `under development <https://github.com/donnemartin/saws/issues/16>`__.
-
 For more details on how to install and configure the AWS CLI, refer to
 the following
 `documentation <http://docs.aws.amazon.com/cli/latest/userguide/installing.html>`__.
