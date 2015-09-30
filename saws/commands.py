@@ -27,22 +27,20 @@ from .data_util import DataUtil
 class AwsCommands(object):
     """Encapsulates AWS commands.
 
+    All commands are listed in the periodically updated data/SOURCES.txt file.
+
     Attributes:
         * AWS_COMMAND: A string representing the 'aws' command.
         * AWS_CONFIGURE: A string representing the 'configure' command.
         * AWS_HELP: A string representing the 'help' command.
         * AWS_DOCS: A string representing the 'docs' command.
-        * SOURCES_DIR: A string representing the directory containing
+        * DATA_DIR: A string representing the directory containing
             data/SOURCES.txt.
-        * SOURCES_PATH: A string representing the full file path of
+        * DATA_PATH: A string representing the full file path of
             data/SOURCES.txt.
-        * command_headers: A list denoting the start of each set of
-            command types.
-        * command_types: A list of enums of CommandType.
-        * header_to_type_map: A mapping between command_headers and
-            command_types
-        * command_lists: A list of lists.  Each list element contains
-            completions for each CommandType.
+        * headers: A list denoting the start of each set of command types.
+        * header_to_type_map: A dictionary mapping between headers and
+            CommandType
     """
 
     class CommandType(Enum):
@@ -67,36 +65,19 @@ class AwsCommands(object):
     AWS_CONFIGURE = 'configure'
     AWS_HELP = 'help'
     AWS_DOCS = 'docs'
-    SOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
-    SOURCES_PATH = os.path.join(SOURCES_DIR, 'data/SOURCES.txt')
+    DATA_DIR = os.path.dirname(os.path.realpath(__file__))
+    DATA_PATH = os.path.join(DATA_DIR, 'data/SOURCES.txt')
 
     def __init__(self):
-        # TODO: Refactor into DataUtil
-        self.command_headers = ['[commands]: ',
-                                '[sub_commands]: ',
-                                '[global_options]: ',
-                                '[resource_options]: ']
-        self.command_types = []
-        for command_type in self.CommandType:
-            if command_type != self.CommandType.NUM_TYPES:
-                self.command_types.append(command_type)
-        self.header_to_type_map = OrderedDict(zip(self.command_headers,
-                                                  self.command_types))
-        self.command_lists = [[] for x in range(
-            self.CommandType.NUM_TYPES.value)]
-        self.all_commands = self._get_all_commands()
-
-    def _get_all_commands(self):
-        """Gets all commands from the data/SOURCES.txt file.
-
-        Args:
-            * None.
-
-        Returns:
-            A list, where each element is a list of completions for each
-                CommandType
-        """
-        return DataUtil().get_data(self.SOURCES_PATH,
-                                   self.header_to_type_map,
-                                   self.CommandType.COMMANDS,
-                                   self.command_lists)
+        self.headers = ['[commands]: ',
+                        '[sub_commands]: ',
+                        '[global_options]: ',
+                        '[resource_options]: ']
+        self.data_util = DataUtil()
+        self.header_to_type_map = self.data_util.create_header_to_type_map(
+            headers=self.headers,
+            data_type=self.CommandType)
+        self.all_commands = self.data_util.get_data(
+            data_file_path=self.DATA_PATH,
+            header_to_type_map=self.header_to_type_map,
+            data_type=self.CommandType)

@@ -95,19 +95,14 @@ class AwsResources(object):
         self.bucket_names = set()  # TODO: Make this 'private'
         self.s3_uri_names = set()  # TODO: Make this 'private'
         self.resources_map = None
-        # TODO: Refactor into DataUtil
         self.resource_headers = [self.INSTANCE_IDS_OPT,
                                  self.EC2_TAG_KEY_OPT,
                                  self.EC2_TAG_VALUE_OPT,
                                  self.BUCKET_OPT]
-        self.resource_types = []
-        for resource_type in self.ResourceType:
-            if resource_type != self.ResourceType.NUM_TYPES:
-                self.resource_types.append(resource_type)
-        self.header_to_type_map = OrderedDict(zip(self.resource_headers,
-                                                  self.resource_types))
-        self.resource_lists = [[] for x in range(
-            self.ResourceType.NUM_TYPES.value)]
+        self.data_util = DataUtil()
+        self.header_to_type_map = self.data_util.create_header_to_type_map(
+            headers=self.resource_headers,
+            data_type=self.ResourceType)
         self.log_exception = log_exception
 
     def set_resources_path(self, resources_file):
@@ -296,8 +291,7 @@ class AwsResources(object):
         self.clear_bucket_names()
         return DataUtil().get_data(self.resources_path,
                                    self.header_to_type_map,
-                                   self.ResourceType.INSTANCE_IDS,
-                                   self.resource_lists)
+                                   self.ResourceType)
 
     def refresh_resources_from_file(self):
         """Refreshes the AWS resources from data/RESOURCES.txt.

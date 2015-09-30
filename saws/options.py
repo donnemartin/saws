@@ -29,6 +29,13 @@ from .data_util import DataUtil
 class AwsOptions(object):
     """Encapsulates AWS command options such as ec2 running states.
 
+    Some options can be obtained from the awscli, while others cannot.
+    For example:
+        Option: --ec2-state completions are not found in the awscli
+            Completions for --ec2-state should be added to data/OPTIONS.txt
+        Option: --cluster-states are found in the awscli
+            See get_cluster_states()
+
     Attributes:
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
@@ -71,22 +78,21 @@ class AwsOptions(object):
         self.all_commands = all_commands
         self.EC2_STATE_OPT = '--ec2-state'
         self.CLUSTER_STATE_OPT = '--cluster-states'
+        self.option_headers = [self.make_header(self.EC2_STATE_OPT)]
         self.ec2_states = []
         self.cluster_states = []
+        self.data_util = DataUtil()
+        self.header_to_type_map = self.data_util.create_header_to_type_map(
+            headers=self.option_headers,
+            data_type=self.OptionType)
+        self.ec2_states, _ = DataUtil().get_data(self.OPTIONS_PATH,
+                                                 self.header_to_type_map,
+                                                 self.OptionType)
         self.get_cluster_states()
-        # TODO: Refactor into DataUtil
-        self.option_headers = [self.make_header(self.EC2_STATE_OPT)]
-        self.option_types = []
-        for option_type in self.OptionType:
-            if option_type != self.OptionType.NUM_TYPES:
-                self.option_types.append(option_type)
-        self.header_to_type_map = OrderedDict(zip(self.option_headers,
-                                                  self.option_types))
-        self.option_lists = [[] for x in range(
-            self.OptionType.NUM_TYPES.value)]
-        self.ec2_states, _ = self._get_all_options()
-        self.options_map = None
-        self.create_options_map()
+        self.options_map = dict(zip([self.EC2_STATE_OPT,
+                                     self.CLUSTER_STATE_OPT],
+                                    [self.ec2_states,
+                                     self.cluster_states]))
         self.log_exception = log_exception
 
     def make_header(self, option):
@@ -100,21 +106,6 @@ class AwsOptions(object):
                 given option.
         """
         return option + ': '
-
-    def _get_all_options(self):
-        """Gets all options from the data/OPTIONS.txt file.
-
-        Args:
-            * None.
-
-        Returns:
-            A list, where each element is a list of completions for each
-                OptionType
-        """
-        return DataUtil().get_data(self.OPTIONS_PATH,
-                                   self.header_to_type_map,
-                                   self.OptionType.EC2_STATES,
-                                   self.option_lists)
 
     def get_cluster_states(self):
         """Gets all the cluster states from the official AWS CLI.
@@ -131,21 +122,3 @@ class AwsOptions(object):
         self.cluster_states.extend(LIST_CLUSTERS_ACTIVE_STATES)
         self.cluster_states.extend(LIST_CLUSTERS_TERMINATED_STATES)
         self.cluster_states.extend(LIST_CLUSTERS_FAILED_STATES)
-
-    def create_options_map(self):
-        """Creates a mapping of option keywords and options to complete.
-
-        Example:
-            Key:   '--ec2-state'.
-            Value: A list of the possible instance states.
-
-        Args:
-            * None.
-
-        Returns:
-            None.
-        """
-        self.options_map = dict(zip([self.EC2_STATE_OPT,
-                                     self.CLUSTER_STATE_OPT],
-                                    [self.ec2_states,
-                                     self.cluster_states]))

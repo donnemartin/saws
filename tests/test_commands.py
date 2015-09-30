@@ -27,10 +27,10 @@ class CommandsTest(unittest.TestCase):
         command_lists = aws_commands.all_commands
         num_results_list = [None] * \
             aws_commands.CommandType.NUM_TYPES.value
-        with open(AwsCommands.SOURCES_PATH) as f:
+        with open(AwsCommands.DATA_PATH) as f:
             for line in f:
                 line = re.sub('\n', '', line)
-                for command_header in aws_commands.command_headers:
+                for command_header in aws_commands.headers:
                     if command_header in line:
                         command_type_value = aws_commands \
                             .header_to_type_map[command_header].value

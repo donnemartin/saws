@@ -16,6 +16,10 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import re
+try:
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 
 
 class DataUtil(object):
@@ -25,24 +29,28 @@ class DataUtil(object):
         * None.
     """
 
-    def get_data(self, data_file_path, header_to_type_map,
-                 data_type, data_lists):
+    def create_header_to_type_map(self, headers, data_type):
+        command_types = []
+        for item in data_type:
+            if item != data_type.NUM_TYPES:
+                command_types.append(item)
+        return OrderedDict(zip(headers, command_types))
+
+    def get_data(self, data_file_path, header_to_type_map, data_type):
         """Gets all data from the specified data file.
 
         Args:
-            * data_file_path: A xxx that does xxx.
+            * data_file_path: A string representing the full file path of
+                the data file.
             * header_to_type_map: A dictionary mapping the data header labels
                  to the data types.
-            * data_type: A xxx that does xxx.
-                This must be initialized to the first data type encountered
-                when reading the data file.
-            * data_lists: A list of lists.  Each list element contains
-                completions for each data type.
+            * data_type: An Enum specifying the data type.
 
         Returns:
             A list, where each element is a list of completions for each
                 data_type
         """
+        data_lists = [[] for x in range(data_type.NUM_TYPES.value)]
         with open(data_file_path) as f:
             for line in f:
                 line = re.sub('\n', '', line)
