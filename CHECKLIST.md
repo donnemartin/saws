@@ -99,6 +99,7 @@ Run the following on Python 2.7 and Python 3.4:
     * aws ectagk
     * aws ectagv
     * aws ecstate
+    * aws emrls
     * aws s3 ls s3:
     * aws s3 ls docs
 * Run targeted tests based on recent code changes
