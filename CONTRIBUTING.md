@@ -5,6 +5,16 @@ Contributions are welcome!
 
 **Please carefully read this page to make the code review process go as smoothly as possible and to maximize the likelihood of your contribution being merged.**
 
+## A Note to Contributors
+
+First, thank you for your interest in improving the `SAWS` project.
+
+The first commit for `SAWS` went in on August 24 2015, so the project is still in its beginning stages.  Before investing a lot of time, I wanted to ship a minimum feature set early on to gather feedback about whether this was something the community thought is valuable. Now that we've gained interest I'd like to make the codebase easier to work with. I'm overhauling the code pretty heavily at the moment, doing considerable refactoring to try simplify future development.
+
+If you're thinking of some adding completions for options or resources, or you have some beefy changes in mind, you might want to hold off until I wrap up this [ticket](https://github.com/donnemartin/saws/issues/36).
+
+-Donne
+
 ## Bug Reports
 
 For bug reports or requests [submit an issue](https://github.com/donnemartin/saws/issues).
