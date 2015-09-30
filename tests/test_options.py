@@ -29,6 +29,15 @@ class OptionsTest(unittest.TestCase):
         self.saws = Saws(refresh_resources=False)
         self.options = self.saws.completer.options
 
-    def test_create_options_map(self):
-        # TODO: Implement
-        pass
+    def test_make_header(self):
+        option = '--ec2-state'
+        header = '--ec2-state: '
+        assert header == self.options.make_header(option)
+
+    def test_get_cluster_states(self):
+        self.options.cluster_states = []
+        self.options.get_cluster_states()
+        states = ['STARTING', 'BOOTSTRAPPING', 'RUNNING', 'WAITING',
+                  'TERMINATING', 'TERMINATED', 'TERMINATED_WITH_ERRORS']
+        for state in states:
+            assert state in self.options.cluster_states
