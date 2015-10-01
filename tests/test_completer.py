@@ -203,6 +203,10 @@ class CompleterTest(unittest.TestCase):
         expected = ['name', 'namE']
         self.completer.resources.instance_tag_keys.resources.extend(expected)
         self.verify_completions(commands, expected)
+        commands = ['aws ec2 ls --ec2-tag-key Sta']
+        expected = ['Stack']
+        self.completer.resources.instance_tag_keys.resources.extend(expected)
+        self.verify_completions(commands, expected)
 
     def test_instance_tag_values(self):
         commands = ['aws ec2 ls --ec2-tag-value prod']
