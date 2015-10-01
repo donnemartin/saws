@@ -399,7 +399,7 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
 
 ### Docker Installation
 
-`SAWS` can be run from via docker without any other dependencies installed. This is ideal for conflicting Python versions etc. Assuming docker is installed and configured, the docker image can be built by running `docker build -t saws .` in a directory containt the [Dockerfile](Dockerfile).
+`SAWS` can be run from via docker without any other dependencies installed. This is ideal for conflicting Python versions etc. Assuming docker is installed and configured, the docker image can be built by running `docker build -t saws .` in a directory containing the [Dockerfile](Dockerfile).
 `SAWS` can then be run via 
 ```
 docker run -it -e AWS_ACCESS_KEY_ID=<key> -e AWS_SECRET_ACCESS_KEY=<secret> -e AWS_DEFAULT_REGION=<region> saws
