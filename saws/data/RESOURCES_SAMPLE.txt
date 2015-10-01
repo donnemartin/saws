@@ -34,3 +34,20 @@ test-downloads
 test-downloads-logs
 test-assets
 test-assets-logs
+s3:: 16
+prod-downloads
+prod-downloads-logs
+prod-assets
+prod-assets-logs
+dev-downloads
+dev-downloads-logs
+dev-assets
+dev-assets-logs
+dev-feature-downloads
+dev-feature-downloads-logs
+dev-feature-assets
+dev-feature-assets-logs
+test-downloads
+test-downloads-logs
+test-assets
+test-assets-logs
