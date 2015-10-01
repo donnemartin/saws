@@ -115,9 +115,6 @@ class AwsOptions(object):
 
         Returns:
             None.
-
-        Raises:
-            Exception: An error occurred doing xxx.
         """
         self.cluster_states.extend(LIST_CLUSTERS_ACTIVE_STATES)
         self.cluster_states.extend(LIST_CLUSTERS_TERMINATED_STATES)
