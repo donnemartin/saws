@@ -83,7 +83,7 @@ class Saws(object):
             __name__,
             self.config_obj[self.config.MAIN][self.config.LOG_FILE],
             self.config_obj[self.config.MAIN][self.config.LOG_LEVEL]).logger
-        self.get_all_commands()
+        self._generate_all_commands()
         self.completer = AwsCompleter(
             awscli_completer,
             self.all_commands,
@@ -94,15 +94,7 @@ class Saws(object):
             shortcut_match=self.get_shortcut_match())
         if refresh_resources:
             self.completer.refresh_resources_and_options()
-        self.create_cli()
-
-    def get_all_commands(self):
-        self.aws_commands = AwsCommands()
-        self.all_commands = self.aws_commands.all_commands
-        self.commands = \
-            self.all_commands[AwsCommands.CommandType.COMMANDS.value]
-        self.sub_commands = \
-            self.all_commands[AwsCommands.CommandType.SUB_COMMANDS.value]
+        self._create_cli()
 
     def log_exception(self, e, traceback, echo=False):
         """Logs the exception and traceback to the log file ~/.saws.log.
@@ -280,7 +272,7 @@ class Saws(object):
             return True
         return False
 
-    def handle_cd(self, text):
+    def _handle_cd(self, text):
         """Handles a `cd` shell command by calling python's os.chdir.
 
         Simply passing in the `cd` command to subprocess.call doesn't work.
@@ -312,7 +304,7 @@ class Saws(object):
             return True
         return False
 
-    def colorize_output(self, text):
+    def _colorize_output(self, text):
         """Highlights output with pygments.
 
         Only highlights the output if all of the following conditions are True:
@@ -341,7 +333,7 @@ class Saws(object):
         else:
             return text
 
-    def handle_keyboard_interrupt(self, e, platform):
+    def _handle_keyboard_interrupt(self, e, platform):
         """Handles keyboard interrupts more gracefully on Mac/Unix/Linux.
 
         Allows Mac/Unix/Linux to continue running on keyboard interrupt,
@@ -369,7 +361,23 @@ class Saws(object):
             self.aws_cli.renderer.clear()
             self.aws_cli.input_processor.feed_key(KeyPress(Keys.ControlM, ''))
 
-    def process_command(self, text):
+    def _generate_all_commands(self):
+        """Generates all commands, subcommands, and options.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+        """
+        self.aws_commands = AwsCommands()
+        self.all_commands = self.aws_commands.all_commands
+        self.commands = \
+            self.all_commands[AwsCommands.CommandType.COMMANDS.value]
+        self.sub_commands = \
+            self.all_commands[AwsCommands.CommandType.SUB_COMMANDS.value]
+
+    def _process_command(self, text):
         """Processes the input command, called by the cli event loop
 
         Args:
@@ -382,18 +390,18 @@ class Saws(object):
             text = self.completer.replace_shortcut(text)
             if self.handle_docs(text):
                 return
-            text = self.colorize_output(text)
+            text = self._colorize_output(text)
         try:
-            if not self.handle_cd(text):
+            if not self._handle_cd(text):
                 # Pass the command onto the shell so aws-cli can execute it
                 subprocess.call(text, shell=True)
             print('')
         except KeyboardInterrupt as e:
-            self.handle_keyboard_interrupt(e, platform.system())
+            self._handle_keyboard_interrupt(e, platform.system())
         except Exception as e:
             self.log_exception(e, traceback, echo=True)
 
-    def create_cli(self):
+    def _create_cli(self):
         """Creates the prompt_toolkit's CommandLineInterface.
 
         Args:
@@ -460,4 +468,4 @@ class Saws(object):
         print('Theme:', self.theme)
         while True:
             document = self.aws_cli.run()
-            self.process_command(document.text)
+            self._process_command(document.text)

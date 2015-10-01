@@ -30,6 +30,18 @@ class DataUtil(object):
     """
 
     def create_header_to_type_map(self, headers, data_type):
+        """Creates a dict mapping headers to ResourceTypes.
+
+        Headers are the resource headers as they appear in the RESOURCES.txt.
+        Headers are mapped to their corresponding ResourceType.
+
+        Args:
+            * headers: A string that represents the header.
+            * data_type: An Enum specifying the data type.
+
+        Returns:
+            An OrderedDict mapping headers to ResourceTypes.
+        """
         command_types = []
         for item in data_type:
             if item != data_type.NUM_TYPES:

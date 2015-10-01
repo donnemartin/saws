@@ -28,7 +28,39 @@ class TextUtils(object):
         * None.
     """
 
-    def shlex_split(self, text):
+    def find_matches(self, word, collection, fuzzy):
+        """Finds all matches in collection for word.
+
+        Args:
+            * word: A string representing the word before
+                the cursor.
+            * collection: A collection of words to match.
+            * fuzzy: A boolean that specifies whether to use fuzzy matching.
+
+        Yields:
+            A generator of prompt_toolkit's Completions.
+        """
+        word = self._last_token(word).lower()
+        for suggestion in self._find_collection_matches(
+                word, collection, fuzzy):
+            yield suggestion
+
+    def get_tokens(self, text):
+        """Parses out all tokens.
+
+        Args:
+            * text: A string to split into tokens.
+
+        Returns:
+            A list of strings for each word in the text.
+        """
+        if text is not None:
+            text = text.strip()
+            words = self._safe_split(text)
+            return words
+        return []
+
+    def _shlex_split(self, text):
         """Wrapper for shlex, because it does not seem to handle unicode in 2.6.
 
         Args:
@@ -41,7 +73,7 @@ class TextUtils(object):
             text = text.encode('utf-8')
         return shlex.split(text)
 
-    def fuzzy_finder(self, text, collection, case_sensitive=True):
+    def _fuzzy_finder(self, text, collection, case_sensitive=True):
         """Customized fuzzy finder with optional case-insensitive matching.
 
         Adapted from: https://github.com/amjith/fuzzyfinder.
@@ -73,7 +105,7 @@ class TextUtils(object):
 
         return (z for _, _, z in sorted(suggestions))
 
-    def find_collection_matches(self, word, collection, fuzzy):
+    def _find_collection_matches(self, word, collection, fuzzy):
         """Yields all matching names in list.
 
         Args:
@@ -87,7 +119,7 @@ class TextUtils(object):
         """
         word = word.lower()
         if fuzzy:
-            for suggestion in self.fuzzy_finder(word,
+            for suggestion in self._fuzzy_finder(word,
                                                 collection,
                                                 case_sensitive=False):
                 yield Completion(suggestion, -len(word))
@@ -96,39 +128,7 @@ class TextUtils(object):
                 if name.lower().startswith(word) or not word:
                     yield Completion(name, -len(word))
 
-    def find_matches(self, word, collection, fuzzy):
-        """Finds all matches in collection for word.
-
-        Args:
-            * word: A string representing the word before
-                the cursor.
-            * collection: A collection of words to match.
-            * fuzzy: A boolean that specifies whether to use fuzzy matching.
-
-        Yields:
-            A generator of prompt_toolkit's Completions.
-        """
-        word = self.last_token(word).lower()
-        for suggestion in self.find_collection_matches(
-                word, collection, fuzzy):
-            yield suggestion
-
-    def get_tokens(self, text):
-        """Parses out all tokens.
-
-        Args:
-            * text: A string to split into tokens.
-
-        Returns:
-            A list of strings for each word in the text.
-        """
-        if text is not None:
-            text = text.strip()
-            words = self.safe_split(text)
-            return words
-        return []
-
-    def last_token(self, text):
+    def _last_token(self, text):
         """Finds the last word in text.
 
         Args:
@@ -140,12 +140,12 @@ class TextUtils(object):
         if text is not None:
             text = text.strip()
             if len(text) > 0:
-                word = self.safe_split(text)[-1]
+                word = self._safe_split(text)[-1]
                 word = word.strip()
                 return word
         return ''
 
-    def safe_split(self, text):
+    def _safe_split(self, text):
         """Safely splits the input text.
 
         Shlex can't always split. For example, "\" crashes the completer.
@@ -158,7 +158,7 @@ class TextUtils(object):
 
         """
         try:
-            words = self.shlex_split(text)
+            words = self._shlex_split(text)
             return words
         except:
             return text

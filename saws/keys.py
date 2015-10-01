@@ -44,12 +44,12 @@ class KeyManager(object):
             None.
         """
         self.manager = None
-        self.create_key_manager(set_color, get_color,
-                                set_fuzzy_match, get_fuzzy_match,
-                                set_shortcut_match, get_shortcut_match,
-                                refresh_resources_and_options, handle_docs)
+        self._create_key_manager(set_color, get_color,
+                                 set_fuzzy_match, get_fuzzy_match,
+                                 set_shortcut_match, get_shortcut_match,
+                                 refresh_resources_and_options, handle_docs)
 
-    def create_key_manager(self, set_color, get_color,
+    def _create_key_manager(self, set_color, get_color,
                            set_fuzzy_match, get_fuzzy_match,
                            set_shortcut_match, get_shortcut_match,
                            refresh_resources_and_options, handle_docs):

@@ -22,7 +22,7 @@ from saws.commands import AwsCommands
 
 class CommandsTest(unittest.TestCase):
 
-    def test_get_all_commands(self):
+    def test_all_commands(self):
         aws_commands = AwsCommands()
         command_lists = aws_commands.all_commands
         num_results_list = [None] * \

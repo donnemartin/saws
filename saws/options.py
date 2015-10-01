@@ -78,7 +78,7 @@ class AwsOptions(object):
         self.all_commands = all_commands
         self.EC2_STATE_OPT = '--ec2-state'
         self.CLUSTER_STATE_OPT = '--cluster-states'
-        self.option_headers = [self.make_header(self.EC2_STATE_OPT)]
+        self.option_headers = [self._make_header(self.EC2_STATE_OPT)]
         self.ec2_states = []
         self.cluster_states = []
         self.data_util = DataUtil()
@@ -88,14 +88,14 @@ class AwsOptions(object):
         self.ec2_states, _ = DataUtil().get_data(self.OPTIONS_PATH,
                                                  self.header_to_type_map,
                                                  self.OptionType)
-        self.get_cluster_states()
+        self._generate_cluster_states()
         self.options_map = dict(zip([self.EC2_STATE_OPT,
                                      self.CLUSTER_STATE_OPT],
                                     [self.ec2_states,
                                      self.cluster_states]))
         self.log_exception = log_exception
 
-    def make_header(self, option):
+    def _make_header(self, option):
         """Creates the header string in OPTIONS.txt from the given option.
 
         Args:
@@ -107,8 +107,8 @@ class AwsOptions(object):
         """
         return option + ': '
 
-    def get_cluster_states(self):
-        """Gets all the cluster states from the official AWS CLI.
+    def _generate_cluster_states(self):
+        """Generates all the cluster states from the official AWS CLI.
 
         Args:
             * None.

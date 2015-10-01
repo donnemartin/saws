@@ -90,6 +90,61 @@ class AwsCompleter(Completer):
         self.resources = AwsResources(self.log_exception)
         self.options = AwsOptions(self.all_commands, self.log_exception)
 
+    def get_completions(self, document, _):
+        """Get completions for the current scope.
+
+        Args:
+            * document: An instance of prompt_toolkit's Document.
+            * _: An instance of prompt_toolkit's CompleteEvent (not used).
+
+        Returns:
+            A generator of prompt_toolkit's Completion objects, containing
+            matched completions.
+        """
+        # Get completions from the official AWS CLI
+        aws_completer_results_list = self._get_aws_cli_completions(document)
+        self.aws_completions = set()
+        if len(document.text) < len(self.BASE_COMMAND):
+            # Autocomplete 'aws' at the beginning of the command
+            self.aws_completions.update([self.BASE_COMMAND])
+        else:
+            self.aws_completions.update(aws_completer_results_list)
+        word_before_cursor = document.get_word_before_cursor(WORD=True)
+        words = self.text_utils.get_tokens(document.text)
+        if len(words) == 0:
+            return []
+        # Determine if we should insert shortcuts
+        elif len(words) == 2 and \
+            words[0] == self.BASE_COMMAND and \
+                word_before_cursor != '':
+            # Insert shortcuts if the user typed 'aws' as the first
+            # command and is inputting the subcommand
+            if self.shortcut_match:
+                self.aws_completions.update(self.shortcuts.keys())
+        # Try to get completions for enabled AWS resources
+        completions = self._get_custom_completions(
+            words, word_before_cursor, self.resources.resources_map)
+        # Try to get completions for global options, filter options, etc
+        if completions is None:
+            completions = self._get_custom_completions(
+                words, word_before_cursor, self.options.options_map)
+        # Try to get completions from the official AWS CLI
+        if completions is None:
+            fuzzy_aws_completions = self.fuzzy_match
+            if self.fuzzy_match and word_before_cursor in \
+                    self.all_commands[AwsCommands.CommandType.COMMANDS.value]:
+                # Fuzzy completion currently only works with resources, options
+                # and shortcuts.  If we have just completed a top-level
+                # command (ie. ec2, elb, s3) then disable fuzzy completions,
+                # otherwise the corresponding subcommands will be fuzzy
+                # completed and incorrectly shown.
+                # See: https://github.com/donnemartin/saws/issues/14
+                fuzzy_aws_completions = False
+            completions = self.text_utils.find_matches(word_before_cursor,
+                                                       self.aws_completions,
+                                                       fuzzy_aws_completions)
+        return completions
+
     def refresh_resources_and_options(self, force_refresh=False):
         """Convenience function to refresh resources for completion.
 
@@ -143,7 +198,7 @@ class AwsCompleter(Completer):
             text = re.sub('%s', tokens[-1], text)
         return text
 
-    def get_resource_completions(self, words, word_before_cursor,
+    def _get_resource_completions(self, words, word_before_cursor,
                                  option_text, resource):
         """Get completions for the specified AWS resource.
 
@@ -179,7 +234,7 @@ class AwsCompleter(Completer):
                                                 resource,
                                                 self.fuzzy_match)
 
-    def get_aws_cli_completions(self, document):
+    def _get_aws_cli_completions(self, document):
         """Get completions from the official AWS CLI for the current scope.
 
         Args:
@@ -205,7 +260,7 @@ class AwsCompleter(Completer):
         aws_completer_results_list = aws_completer_results.split()
         return aws_completer_results_list
 
-    def get_custom_completions(self, words, word_before_cursor, mapping):
+    def _get_custom_completions(self, words, word_before_cursor, mapping):
         """Get custom completions resources, options, etc.
 
         Completions for all enabled AWS resources, global options,
@@ -228,65 +283,10 @@ class AwsCompleter(Completer):
         for key, value in mapping.items():
             if completions is None:
                 completions = self \
-                    .get_resource_completions(words,
+                    ._get_resource_completions(words,
                                               word_before_cursor,
                                               key,
                                               value)
             else:
                 break
-        return completions
-
-    def get_completions(self, document, _):
-        """Get completions for the current scope.
-
-        Args:
-            * document: An instance of prompt_toolkit's Document.
-            * _: An instance of prompt_toolkit's CompleteEvent (not used).
-
-        Returns:
-            A generator of prompt_toolkit's Completion objects, containing
-            matched completions.
-        """
-        # Get completions from the official AWS CLI
-        aws_completer_results_list = self.get_aws_cli_completions(document)
-        self.aws_completions = set()
-        if len(document.text) < len(self.BASE_COMMAND):
-            # Autocomplete 'aws' at the beginning of the command
-            self.aws_completions.update([self.BASE_COMMAND])
-        else:
-            self.aws_completions.update(aws_completer_results_list)
-        word_before_cursor = document.get_word_before_cursor(WORD=True)
-        words = self.text_utils.get_tokens(document.text)
-        if len(words) == 0:
-            return []
-        # Determine if we should insert shortcuts
-        elif len(words) == 2 and \
-            words[0] == self.BASE_COMMAND and \
-                word_before_cursor != '':
-            # Insert shortcuts if the user typed 'aws' as the first
-            # command and is inputting the subcommand
-            if self.shortcut_match:
-                self.aws_completions.update(self.shortcuts.keys())
-        # Try to get completions for enabled AWS resources
-        completions = self.get_custom_completions(
-            words, word_before_cursor, self.resources.resources_map)
-        # Try to get completions for global options, filter options, etc
-        if completions is None:
-            completions = self.get_custom_completions(
-                words, word_before_cursor, self.options.options_map)
-        # Try to get completions from the official AWS CLI
-        if completions is None:
-            fuzzy_aws_completions = self.fuzzy_match
-            if self.fuzzy_match and word_before_cursor in \
-                    self.all_commands[AwsCommands.CommandType.COMMANDS.value]:
-                # Fuzzy completion currently only works with resources, options
-                # and shortcuts.  If we have just completed a top-level
-                # command (ie. ec2, elb, s3) then disable fuzzy completions,
-                # otherwise the corresponding subcommands will be fuzzy
-                # completed and incorrectly shown.
-                # See: https://github.com/donnemartin/saws/issues/14
-                fuzzy_aws_completions = False
-            completions = self.text_utils.find_matches(word_before_cursor,
-                                                       self.aws_completions,
-                                                       fuzzy_aws_completions)
         return completions

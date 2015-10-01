@@ -51,6 +51,35 @@ class Config(object):
     FUZZY = 'fuzzy_match'
     SHORTCUT = 'shortcut_match'
 
+    def get_shortcuts(self, config_obj):
+        """Gets the shortcuts from the specified config.
+
+        Args:
+            * config_obj: An instance of ConfigObj.
+
+        Returns:
+            An OrderedDict containing the shortcut commands as the keys and
+            their corresponding full commands as the values.
+        """
+        return OrderedDict(zip(config_obj[self.SHORTCUTS].keys(),
+                               config_obj[self.SHORTCUTS].values()))
+
+    def read_configuration(self):
+        """Reads the config file if it exists, else reads the default config.
+
+        Args:
+            * None.
+
+        Returns:
+            An instance of a ConfigObj.
+        """
+        config_template = 'sawsrc'
+        config_name = '~/.sawsrc'
+        default_config = os.path.join(os.path.dirname(__file__),
+                                      config_template)
+        self._write_default_config(default_config, config_name)
+        return self._read_configuration(config_name, default_config)
+
     def _read_configuration(self, usr_config, def_config=None):
         """Reads the config file if it exists, else reads the default config.
 
@@ -71,7 +100,7 @@ class Config(object):
         cfg.merge(ConfigObj(usr_config_file, interpolation=False))
         return cfg
 
-    def write_default_config(self, source, destination, overwrite=False):
+    def _write_default_config(self, source, destination, overwrite=False):
         """Writes the default config from a template.
 
         Args:
@@ -86,32 +115,3 @@ class Config(object):
         if not overwrite and os.path.exists(destination):
             return
         shutil.copyfile(source, destination)
-
-    def read_configuration(self):
-        """Reads the config file if it exists, else reads the default config.
-
-        Args:
-            * None.
-
-        Returns:
-            An instance of a ConfigObj.
-        """
-        config_template = 'sawsrc'
-        config_name = '~/.sawsrc'
-        default_config = os.path.join(os.path.dirname(__file__),
-                                      config_template)
-        self.write_default_config(default_config, config_name)
-        return self._read_configuration(config_name, default_config)
-
-    def get_shortcuts(self, config_obj):
-        """Gets the shortcuts from the specified config.
-
-        Args:
-            * config_obj: An instance of ConfigObj.
-
-        Returns:
-            An OrderedDict containing the shortcut commands as the keys and
-            their corresponding full commands as the values.
-        """
-        return OrderedDict(zip(config_obj[self.SHORTCUTS].keys(),
-                               config_obj[self.SHORTCUTS].values()))
