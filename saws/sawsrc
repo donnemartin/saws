@@ -38,6 +38,8 @@ log_level = INFO
 # Running the following command will kick off fuzzy auto-completion:
 #   aws ec2ls
 'ec2 ls --instance-ids' = 'ec2 describe-instances --instance-ids'
+#   aws emrls
+'emr ls --cluster-states' = 'emr list-clusters --cluster-states'
 
 # The following entries are placed here solely for easy fuzzy autocompletion
 # For example: the following commands will kick off fuzzy auto-completion:
