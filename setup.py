@@ -1,7 +1,7 @@
 from saws.__init__ import __version__
 import sys
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -39,7 +39,7 @@ setup(
     entry_points={
         'console_scripts': 'saws = saws.main:cli'
     },
-    packages=['saws'],
+    packages=find_packages(),
     package_data={'saws': ['sawsrc',
                            'data/SOURCES.txt',
                            'data/RESOURCES_SAMPLE.txt',
