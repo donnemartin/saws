@@ -38,23 +38,23 @@ class AwsCommands(object):
             data/SOURCES.txt.
         * DATA_PATH: A string representing the full file path of
             data/SOURCES.txt.
+        * data_util: An instance of DataUtil().
         * headers: A list denoting the start of each set of command types.
         * header_to_type_map: A dictionary mapping between headers and
-            CommandType
+            CommandType.
+        * all_commands: A list of all commands, sub_commands, options, etc
+            from data/SOURCES.txt.
     """
 
     class CommandType(Enum):
         """Enum specifying the command type.
 
         Attributes:
-            * AWS_COMMAND: A string representing the 'aws' command.
-            * AWS_CONFIGURE: A string representing the 'configure' command.
-            * AWS_HELP: A string representing the 'help' command.
-            * AWS_DOCS: A string representing the 'docs' command.
             * COMMANDS: An int representing commands.
             * SUB_COMMANDS: An int representing subcommands.
             * GLOBAL_OPTIONS: An int representing global options.
             * RESOURCE_OPTIONS: An int representing resource options.
+            * NUM_TYPES: An int representing the number of command types.
         """
 
         NUM_TYPES = 4
@@ -69,11 +69,11 @@ class AwsCommands(object):
     DATA_PATH = os.path.join(DATA_DIR, 'data/SOURCES.txt')
 
     def __init__(self):
+        self.data_util = DataUtil()
         self.headers = ['[commands]: ',
                         '[sub_commands]: ',
                         '[global_options]: ',
                         '[resource_options]: ']
-        self.data_util = DataUtil()
         self.header_to_type_map = self.data_util.create_header_to_type_map(
             headers=self.headers,
             data_type=self.CommandType)
