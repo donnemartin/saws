@@ -309,7 +309,7 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
     $ pip install saws
 
-If you are not installing in a `virtualenv`, run:
+If you are not installing in a [virtualenv](#virtual-environment-installation), run:
 
     $ sudo pip install saws
 
