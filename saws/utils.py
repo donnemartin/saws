@@ -60,18 +60,22 @@ class TextUtils(object):
             return words
         return []
 
-    def _shlex_split(self, text):
-        """Wrapper for shlex, because it does not seem to handle unicode in 2.6.
+    def _last_token(self, text):
+        """Finds the last word in text.
 
         Args:
-            * text: A string to split.
+            * text: A string to parse and obtain the last word.
 
         Returns:
-            A list that contains words for each split element of text.
+            A string representing the last word in the text.
         """
-        if six.PY2:
-            text = text.encode('utf-8')
-        return shlex.split(text)
+        if text is not None:
+            text = text.strip()
+            if len(text) > 0:
+                word = self._safe_split(text)[-1]
+                word = word.strip()
+                return word
+        return ''
 
     def _fuzzy_finder(self, text, collection, case_sensitive=True):
         """Customized fuzzy finder with optional case-insensitive matching.
@@ -128,22 +132,18 @@ class TextUtils(object):
                 if name.lower().startswith(word) or not word:
                     yield Completion(name, -len(word))
 
-    def _last_token(self, text):
-        """Finds the last word in text.
+    def _shlex_split(self, text):
+        """Wrapper for shlex, because it does not seem to handle unicode in 2.6.
 
         Args:
-            * text: A string to parse and obtain the last word.
+            * text: A string to split.
 
         Returns:
-            A string representing the last word in the text.
+            A list that contains words for each split element of text.
         """
-        if text is not None:
-            text = text.strip()
-            if len(text) > 0:
-                word = self._safe_split(text)[-1]
-                word = word.strip()
-                return word
-        return ''
+        if six.PY2:
+            text = text.encode('utf-8')
+        return shlex.split(text)
 
     def _safe_split(self, text):
         """Safely splits the input text.
