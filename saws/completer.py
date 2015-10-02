@@ -45,10 +45,10 @@ class AwsCompleter(Completer):
         * fuzzy_match: A boolean that determines whether to use fuzzy matching.
         * shortcut_match: A boolean that determines whether to match shortcuts.
         * BASE_COMMAND: A string representing the 'aws' command.
-        * resources: An instance of AwsResources.
-        * options: An instance of AwsOptions
         * shortcuts: An OrderedDict containing shortcuts commands as keys
             and their corresponding full commands as values.
+        * resources: An instance of AwsResources.
+        * options: An instance of AwsOptions
     """
 
     def __init__(self,
@@ -77,8 +77,8 @@ class AwsCompleter(Completer):
             None.
         """
         self.aws_completer = aws_completer
-        self.all_commands = all_commands
         self.aws_completions = set()
+        self.all_commands = all_commands
         self.config = config
         self.config_obj = config_obj
         self.log_exception = log_exception
@@ -88,7 +88,7 @@ class AwsCompleter(Completer):
         self.BASE_COMMAND = AwsCommands.AWS_COMMAND
         self.shortcuts = self.config.get_shortcuts(config_obj)
         self.resources = AwsResources(self.log_exception)
-        self.options = AwsOptions(self.all_commands, self.log_exception)
+        self.options = AwsOptions(self.all_commands)
 
     def get_completions(self, document, _):
         """Get completions for the current scope.
