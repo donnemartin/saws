@@ -23,11 +23,8 @@ from .config import Config
 class CommandLexer(RegexLexer):
     """Provides highlighting for commands.
 
-    Custom Pygments Lexers seem to require a specific class structure, samples:
-        http://pygments.org/docs/lexerdevelopment/
-    TODO: Investigate how to clean this up while still keeping Pygments happy.
-
     Attributes:
+        * config: An instance of Config.
         * config_obj: An instance of ConfigObj.
         * shortcuts: An OrderedDict containing the shortcut commands as the
             keys and their corresponding full commands as the values.
