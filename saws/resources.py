@@ -37,19 +37,22 @@ class AwsResources(object):
     """Encapsulates AWS resources such as ec2 tags and buckets.
 
     Attributes:
+        * resources_path: A string representing the full file path of
+            data/RESOURCES.txt.
+        * log_exception: A callable log_exception from SawsLogger.
         * instance_ids: An instance of InstanceIds.
         * instance_tag_keys: An instance of InstanceTagKeys.
         * instance_tag_values: An instance of InstanceTagValues.
         * bucket_names: An instance of BucketNames.
         * resource_lists: A list where each element is a list of completions
             for each resource.
-        * resource_headers: A list of headers that denote the start of each
-            set of resources in the RESOURCES.txt file.
-        * header_to_type_map: A dict mapping headers as they appear in the
-            RESOURCES.txt file to their corresponding ResourceType.
         * resources_map: A dict mapping resource keywords to
             resources to complete.
-        * log_exception: A callable log_exception from SawsLogger.
+        * resource_headers: A list of headers that denote the start of each
+            set of resources in the RESOURCES.txt file.
+        * data_util: An instance of DataUtil().
+        * header_to_type_map: A dict mapping headers as they appear in the
+            RESOURCES.txt file to their corresponding ResourceType.
     """
 
     class ResourceType(Enum):
@@ -60,6 +63,7 @@ class AwsResources(object):
             * INSTANCE_TAG_KEYS: An int representing instance tag keys.
             * INSTANCE_TAG_VALUES: An int representing instance tag values.
             * BUCKET_NAMES: An int representing bucket names.
+            * NUM_TYPES: An int representing the number of resource types.
         """
         NUM_TYPES = 5
         INSTANCE_IDS, INSTANCE_TAG_KEYS, INSTANCE_TAG_VALUES, \
@@ -142,6 +146,7 @@ class AwsResources(object):
         Returns:
             None.
         """
+        # TODO: Clean up to avoid having to list all resources.
         self.instance_ids = InstanceIds(log_exception)
         self.instance_tag_keys = InstanceTagKeys(log_exception)
         self.instance_tag_values = InstanceTagValues(log_exception)
@@ -152,40 +157,6 @@ class AwsResources(object):
                 self.instance_tag_values,
                 self.bucket_names,
                 self.bucket_uris]
-
-    def _refresh_resources_from_file(self):
-        """Refreshes the AWS resources from data/RESOURCES.txt.
-
-        Args:
-            * file_path: A string representing the resource file path.
-
-        Returns:
-            None.
-        """
-        self.instance_ids.resources, \
-        self.instance_tag_keys.resources, \
-        self.instance_tag_values.resources, \
-        bucket_names, \
-        bucket_uris_dummy, \
-            = self._get_all_resources()
-        for bucket_name in bucket_names:
-            self.bucket_names.add_bucket_name(bucket_name)
-            self.bucket_uris.add_bucket_name(bucket_name)
-
-    def _save_resources_to_file(self):
-        """Saves the AWS resources to data/RESOURCES.txt.
-
-        Args:
-            * None.
-
-        Returns:
-            None.
-        """
-        with open(self.resources_path, 'wt') as fp:
-            for key, resources in self.resources_map.items():
-                fp.write(key + ': ' + str(len(resources)) + '\n')
-                for resource in resources:
-                    fp.write(resource + '\n')
 
     def _get_resource_headers(self):
         """Builds a list of resource headers found in the resource file.
@@ -204,6 +175,27 @@ class AwsResources(object):
         for resource_list in self.resource_lists:
             resource_headers.append(resource_list.OPTION)
         return resource_headers
+
+    def _create_resources_map(self):
+        """Creates a mapping of resource keywords and resources to complete.
+
+        Requires self.resource_headers to already contain all headers.
+
+        Example:
+            Key:   '--instance-ids'.
+            Value: List of instance ids.
+
+        Args:
+            * None.
+
+        Returns:
+            An OrderedDict resource keywords and resources to complete.
+        """
+        resources = []
+        for resource_list in self.resource_lists:
+            resources.append(resource_list.resources)
+        resources_map = OrderedDict(zip(self.resource_headers, resources))
+        return resources_map
 
     def _query_resources(self):
         """Runs queries for all resources.
@@ -246,23 +238,37 @@ class AwsResources(object):
         RESOURCES_DIR = os.path.dirname(os.path.realpath(__file__))
         self.resources_path = os.path.join(RESOURCES_DIR, resources_file)
 
-    def _create_resources_map(self):
-        """Creates a mapping of resource keywords and resources to complete.
+    def _refresh_resources_from_file(self):
+        """Refreshes the AWS resources from data/RESOURCES.txt.
 
-        Requires self.resource_headers to already contain all headers.
+        Args:
+            * file_path: A string representing the resource file path.
 
-        Example:
-            Key:   '--instance-ids'.
-            Value: List of instance ids.
+        Returns:
+            None.
+        """
+        # TODO: Clean up to avoid having to list all resources.
+        self.instance_ids.resources, \
+        self.instance_tag_keys.resources, \
+        self.instance_tag_values.resources, \
+        bucket_names, \
+        bucket_uris_dummy, \
+            = self._get_all_resources()
+        for bucket_name in bucket_names:
+            self.bucket_names.add_bucket_name(bucket_name)
+            self.bucket_uris.add_bucket_name(bucket_name)
+
+    def _save_resources_to_file(self):
+        """Saves the AWS resources to data/RESOURCES.txt.
 
         Args:
             * None.
 
         Returns:
-            An OrderedDict resource keywords and resources to complete.
+            None.
         """
-        resources = []
-        for resource_list in self.resource_lists:
-            resources.append(resource_list.resources)
-        resources_map = OrderedDict(zip(self.resource_headers, resources))
-        return resources_map
+        with open(self.resources_path, 'wt') as fp:
+            for key, resources in self.resources_map.items():
+                fp.write(key + ': ' + str(len(resources)) + '\n')
+                for resource in resources:
+                    fp.write(resource + '\n')
