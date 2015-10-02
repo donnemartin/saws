@@ -32,11 +32,11 @@ class OptionsTest(unittest.TestCase):
     def test_make_header(self):
         option = '--ec2-state'
         header = '--ec2-state: '
-        assert header == self.options._make_header(option)
+        assert header == self.options._make_options_header(option)
 
     def test_generate_cluster_states(self):
         self.options.cluster_states = []
-        self.options._generate_cluster_states()
+        self.options.cluster_states = self.options._generate_cluster_states()
         states = ['STARTING', 'BOOTSTRAPPING', 'RUNNING', 'WAITING',
                   'TERMINATING', 'TERMINATED', 'TERMINATED_WITH_ERRORS']
         for state in states:

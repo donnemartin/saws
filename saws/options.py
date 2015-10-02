@@ -37,15 +37,22 @@ class AwsOptions(object):
             See get_cluster_states()
 
     Attributes:
+        * OPTIONS_DIR: A string representing the directory containing
+            data/OPTIONS.txt.
+        * OPTIONS_PATH: A string representing the full file path of
+            data/OPTIONS.txt.
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
         * EC2_STATE_OPT: A string representing the option for ec2 states
         * CLUSTER_STATE_OPT: A string representing the option for cluster states
+        * option_headers:
+        * data_util: An instance of DataUtil().
+        * header_to_type_map: A dict mapping headers as they appear in the
+            OPTIONS.txt file to their corresponding OptionType.
         * ec2_states: A list of the possible EC2 instance states.
         * cluster_states: A list of the possible cluster states.
         * options_map: A dict mapping of options keywords and
             options to complete
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     class OptionType(Enum):
@@ -54,6 +61,7 @@ class AwsOptions(object):
         Attributes:
             * EC2_STATES: An int representing ec2 running states.
             * CLUSTER_STATES: An int representing cluster running states.
+            * NUM_TYPES: An int representing the number of option types.
         """
 
         NUM_TYPES = 2
@@ -63,14 +71,12 @@ class AwsOptions(object):
     OPTIONS_PATH = os.path.join(OPTIONS_DIR, 'data/OPTIONS.txt')
 
     def __init__(self,
-                 all_commands,
-                 log_exception):
+                 all_commands):
         """Initializes AwsResources.
 
         Args:
             * all_commands: A list of all commands, sub_commands, options, etc
                 from data/SOURCES.txt.
-            * log_exception: A callable log_exception from SawsLogger.
 
         Returns:
             None.
@@ -78,9 +84,7 @@ class AwsOptions(object):
         self.all_commands = all_commands
         self.EC2_STATE_OPT = '--ec2-state'
         self.CLUSTER_STATE_OPT = '--cluster-states'
-        self.option_headers = [self._make_header(self.EC2_STATE_OPT)]
-        self.ec2_states = []
-        self.cluster_states = []
+        self.option_headers = [self._make_options_header(self.EC2_STATE_OPT)]
         self.data_util = DataUtil()
         self.header_to_type_map = self.data_util.create_header_to_type_map(
             headers=self.option_headers,
@@ -88,14 +92,13 @@ class AwsOptions(object):
         self.ec2_states, _ = DataUtil().get_data(self.OPTIONS_PATH,
                                                  self.header_to_type_map,
                                                  self.OptionType)
-        self._generate_cluster_states()
+        self.cluster_states = self._generate_cluster_states()
         self.options_map = dict(zip([self.EC2_STATE_OPT,
                                      self.CLUSTER_STATE_OPT],
                                     [self.ec2_states,
                                      self.cluster_states]))
-        self.log_exception = log_exception
 
-    def _make_header(self, option):
+    def _make_options_header(self, option):
         """Creates the header string in OPTIONS.txt from the given option.
 
         Args:
@@ -114,8 +117,10 @@ class AwsOptions(object):
             * None.
 
         Returns:
-            None.
+            A list containing all cluster states.
         """
-        self.cluster_states.extend(LIST_CLUSTERS_ACTIVE_STATES)
-        self.cluster_states.extend(LIST_CLUSTERS_TERMINATED_STATES)
-        self.cluster_states.extend(LIST_CLUSTERS_FAILED_STATES)
+        cluster_states = []
+        cluster_states.extend(LIST_CLUSTERS_ACTIVE_STATES)
+        cluster_states.extend(LIST_CLUSTERS_TERMINATED_STATES)
+        cluster_states.extend(LIST_CLUSTERS_FAILED_STATES)
+        return cluster_states
