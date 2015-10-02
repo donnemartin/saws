@@ -309,7 +309,11 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
     $ pip install saws
 
-Once installed, run the following command to start `SAWS`:
+If you are not installing in a `virtualenv`, run:
+
+    $ sudo pip install saws
+
+Once installed, start `SAWS`:
 
     $ saws
 
