@@ -26,7 +26,7 @@ class StyleFactory(object):
     Provides styles for the completions menu and toolbar.
 
     Attributes:
-        * None.
+        * style: An instance of a Pygments Style.
     """
 
     def __init__(self, name):
