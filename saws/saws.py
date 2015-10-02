@@ -49,17 +49,16 @@ class Saws(object):
 
     Attributes:
         * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
+        * key_manager: An instance of KeyManager.
         * config: An instance of Config.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
-        * aws_commands: An instance of AwsCommands.
+        * theme: A string representing the lexer theme.
+        * logger: An instance of SawsLogger.
         * all_commands: A list of all commands, sub_commands, options, etc
             from data/SOURCES.txt.
         * commands: A list of commands from data/SOURCES.txt.
         * sub_commands: A list of sub_commands from data/SOURCES.txt.
         * completer: An instance of AwsCompleter.
-        * key_manager: An instance of KeyManager.
-        * logger: An instance of SawsLogger.
-        * theme: A string representing the lexer theme.
     """
 
     PYGMENTS_CMD = ' | pygmentize -l json'
@@ -83,7 +82,11 @@ class Saws(object):
             __name__,
             self.config_obj[self.config.MAIN][self.config.LOG_FILE],
             self.config_obj[self.config.MAIN][self.config.LOG_LEVEL]).logger
-        self._generate_all_commands()
+        self.all_commands = AwsCommands().all_commands
+        self.commands = \
+            self.all_commands[AwsCommands.CommandType.COMMANDS.value]
+        self.sub_commands = \
+            self.all_commands[AwsCommands.CommandType.SUB_COMMANDS.value]
         self.completer = AwsCompleter(
             awscli_completer,
             self.all_commands,
@@ -360,22 +363,6 @@ class Saws(object):
             # Clear the renderer and send a carriage return
             self.aws_cli.renderer.clear()
             self.aws_cli.input_processor.feed_key(KeyPress(Keys.ControlM, ''))
-
-    def _generate_all_commands(self):
-        """Generates all commands, subcommands, and options.
-
-        Args:
-            * None.
-
-        Returns:
-            None.
-        """
-        self.aws_commands = AwsCommands()
-        self.all_commands = self.aws_commands.all_commands
-        self.commands = \
-            self.all_commands[AwsCommands.CommandType.COMMANDS.value]
-        self.sub_commands = \
-            self.all_commands[AwsCommands.CommandType.SUB_COMMANDS.value]
 
     def _process_command(self, text):
         """Processes the input command, called by the cli event loop
