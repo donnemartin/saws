@@ -42,8 +42,7 @@ class BucketUris(Resource):
         Returns:
             None.
         """
-        self.resources = []
-        self.log_exception = log_exception
+        super(BucketUris, self).__init__(log_exception)
 
     def query_resource(self):
         """Queries and stores bucket uris from AWS.

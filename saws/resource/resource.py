@@ -38,6 +38,18 @@ class Resource():
     OPTION = ''
     QUERY = ''
 
+    def __init__(self, log_exception):
+        """Initializes InstanceIds.
+
+        Args:
+            * log_exception: A callable log_exception from SawsLogger.
+
+        Returns:
+            None.
+        """
+        self.resources = []
+        self.log_exception = log_exception
+
     def clear_resources(self):
         """Clears the resource.
 
@@ -52,6 +64,8 @@ class Resource():
     @abstractmethod
     def query_resource(self):
         """Queries and stores resources from AWS.
+
+        Abstract method.
 
         Args:
             * None.

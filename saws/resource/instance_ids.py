@@ -41,8 +41,7 @@ class InstanceIds(Resource):
         Returns:
             None.
         """
-        self.resources = []
-        self.log_exception = log_exception
+        super(InstanceIds, self).__init__(log_exception)
 
     def query_resource(self):
         """Queries and stores instance ids from AWS.
