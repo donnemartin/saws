@@ -33,12 +33,12 @@ class KeyManager(object):
         """Initializes KeyManager.
 
         Args:
-            * set_color: A function that sets the color output config.
-            * get_color: A function that gets the color output config.
-            * set_fuzzy_match: A function that sets the fuzzy match config.
-            * get_fuzzy_match: A function that gets the fuzzy match config.
-            * set_shortcut_match: A function that sets the shortcut match config.
-            * get_shortcut_match: A function that gets the shortcut match config.
+            * set_color: A function setting the color output config.
+            * get_color: A function getting the color output config.
+            * set_fuzzy_match: A function setting the fuzzy match config.
+            * get_fuzzy_match: A function getting the fuzzy match config.
+            * set_shortcut_match: A function setting the shortcut match config.
+            * get_shortcut_match: A function getting the shortcut match config.
 
         Returns:
             None.
@@ -56,12 +56,12 @@ class KeyManager(object):
         """Creates and initializes the keybinding manager.
 
         Args:
-            * set_color: A function that sets the color output config.
-            * get_color: A function that gets the color output config.
-            * set_fuzzy_match: A function that sets the fuzzy match config.
-            * get_fuzzy_match: A function that gets the fuzzy match config.
-            * set_shortcut_match: A function that sets the shortcut match config.
-            * get_shortcut_match: A function that gets the shortcut match config.
+            * set_color: A function setting the color output config.
+            * get_color: A function getting the color output config.
+            * set_fuzzy_match: A function setting the fuzzy match config.
+            * get_fuzzy_match: A function getting the fuzzy match config.
+            * set_shortcut_match: A function setting the shortcut match config.
+            * get_shortcut_match: A function getting the shortcut match config.
 
         Returns:
             A KeyBindingManager.

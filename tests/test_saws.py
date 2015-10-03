@@ -32,7 +32,8 @@ class SawsTest(unittest.TestCase):
     def setUp(self):
         self.file_name = os.path.expanduser('~') + '/' + '.saws.log'
         self.saws = Saws(refresh_resources=False)
-        self.DOCS_HOME_URL = 'http://docs.aws.amazon.com/cli/latest/reference/index.html'
+        self.DOCS_HOME_URL = \
+            'http://docs.aws.amazon.com/cli/latest/reference/index.html'
 
     @mock.patch('saws.saws.click')
     def test_log_exception(self, mock_click):
@@ -71,8 +72,10 @@ class SawsTest(unittest.TestCase):
 
     @mock.patch('saws.saws.webbrowser')
     def test_handle_docs(self, mock_webbrowser):
-        EC2_URL = 'http://docs.aws.amazon.com/cli/latest/reference/ec2/index.html'
-        EC2_DESC_INSTANCES_URL = 'http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html'
+        EC2_URL = \
+            'http://docs.aws.amazon.com/cli/latest/reference/ec2/index.html'
+        EC2_DESC_INSTANCES_URL = \
+            'http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html'  # NOQA
         assert not self.saws.handle_docs('')
         assert not self.saws.handle_docs('foo bar')
         assert self.saws.handle_docs('',

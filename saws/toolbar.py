@@ -31,7 +31,8 @@ class Toolbar(object):
         Args:
             * color_cfg: A boolean that spedifies whether to color the output.
             * fuzzy_cfg: A boolean that spedifies whether to do fuzzy matching.
-            * shortcuts_cfg: A boolean that spedifies whether to match shortcuts.
+            * shortcuts_cfg: A boolean that spedifies whether to match
+                shortcuts.
 
         Returns:
             None
@@ -46,7 +47,8 @@ class Toolbar(object):
         Args:
             * color_cfg: A boolean that spedifies whether to color the output.
             * fuzzy_cfg: A boolean that spedifies whether to do fuzzy matching.
-            * shortcuts_cfg: A boolean that spedifies whether to match shortcuts.
+            * shortcuts_cfg: A boolean that spedifies whether to match
+                shortcuts.
 
         Returns:
             A callable get_toolbar_items.

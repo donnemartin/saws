@@ -29,7 +29,7 @@ class InstanceIds(Resource):
     """
 
     OPTION = '--instance-ids'
-    QUERY = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
+    QUERY = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'  # NOQA
 
     def __init__(self):
         """Initializes InstanceIds.

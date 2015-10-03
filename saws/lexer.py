@@ -51,33 +51,40 @@ class CommandLexer(RegexLexer):
     commands = aws_commands.all_commands
     tokens = {
         'root': [
-            (words(tuple([AwsCommands.AWS_COMMAND]),
-                   prefix=r'\b',
-                   suffix=r'\b'),
+            (words(
+                tuple([AwsCommands.AWS_COMMAND]),
+                prefix=r'\b',
+                suffix=r'\b'),
              Literal.String),
-            (words(tuple([AwsCommands.AWS_DOCS]),
-                   prefix=r'\b',
-                   suffix=r'\b'),
+            (words(
+                tuple([AwsCommands.AWS_DOCS]),
+                prefix=r'\b',
+                suffix=r'\b'),
              Literal.Number),
-            (words(tuple(commands[AwsCommands.CommandType.COMMANDS.value]),
-                   prefix=r'\b',
-                   suffix=r'\b'),
+            (words(
+                tuple(commands[AwsCommands.CommandType.COMMANDS.value]),
+                prefix=r'\b',
+                suffix=r'\b'),
              Name.Class),
-            (words(tuple(commands[AwsCommands.CommandType.SUB_COMMANDS.value]),
-                   prefix=r'\b',
-                   suffix=r'\b'),
+            (words(
+                tuple(commands[AwsCommands.CommandType.SUB_COMMANDS.value]),
+                prefix=r'\b',
+                suffix=r'\b'),
              Keyword.Declaration),
-            (words(tuple(commands[AwsCommands.CommandType.GLOBAL_OPTIONS.value]),
-                   prefix=r'',
-                   suffix=r'\b'),
+            (words(
+                tuple(commands[AwsCommands.CommandType.GLOBAL_OPTIONS.value]),
+                prefix=r'',
+                suffix=r'\b'),
              Generic.Output),
-            (words(tuple(commands[AwsCommands.CommandType.RESOURCE_OPTIONS.value]),
-                   prefix=r'',
-                   suffix=r'\b'),
+            (words(
+                tuple(commands[AwsCommands.CommandType.RESOURCE_OPTIONS.value]),
+                prefix=r'',
+                suffix=r'\b'),
              Operator.Word),
-            (words(tuple(shortcut_tokens),
-                   prefix=r'',
-                   suffix=r'\b'),
+            (words(
+                tuple(shortcut_tokens),
+                prefix=r'',
+                suffix=r'\b'),
              Name.Exception),
         ]
     }

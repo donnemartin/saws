@@ -29,7 +29,7 @@ class InstanceTagKeys(Resource):
     """
 
     OPTION = '--ec2-tag-key'
-    QUERY = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
+    QUERY = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'  # NOQA
 
     def __init__(self):
         """Initializes InstanceTagKeys.

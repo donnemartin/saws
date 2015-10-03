@@ -32,7 +32,8 @@ class KeysTest(unittest.TestCase):
         self.saws = Saws(refresh_resources=False)
         self.registry = self.saws.key_manager.manager.registry
         self.processor = self.saws.aws_cli.input_processor
-        self.DOCS_HOME_URL = 'http://docs.aws.amazon.com/cli/latest/reference/index.html'
+        self.DOCS_HOME_URL = \
+            'http://docs.aws.amazon.com/cli/latest/reference/index.html'
 
     def test_F2(self):
         orig_color = self.saws.get_color()
