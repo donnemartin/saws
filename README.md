@@ -79,12 +79,10 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
 
 * [Installation](#installation)
     * [Pip Installation](#pip-installation)
-    * [Virtual Environment Installation](#virtual-environment-installation)
-    * [Pipsi Installation](#pipsi-installation)
+    * [Virtual Environment and Docker Installation](#virtual-environment-and-docker-installation)
     * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
-    * [Docker Installation](#docker-installation)
 * [Developer Installation](#developer-installation)
     * [Continuous Integration](#continuous-integration)
     * [Dependencies Management](#dependencies-management)
@@ -310,7 +308,7 @@ Although you can use the standard Windows command prompt, you'll probably have a
 
     $ pip install saws
 
-If you are not installing in a [virtualenv](#virtual-environment-installation), run:
+If you are not installing in a [virtualenv](#virtual-environment-and-docker-installation), run:
 
     $ sudo pip install saws
 
@@ -318,45 +316,11 @@ Once installed, start `SAWS`:
 
     $ saws
 
-### Virtual Environment Installation
+### Virtual Environment and Docker Installation
 
 It is recommended that you install Python packages in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to avoid potential [issues with dependencies or permissions](https://github.com/donnemartin/saws/issues/15).
 
-If you are a Windows user or if you would like more details on `virtualenv`, check out this [guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
-
-Install `virtualenv` and `virtualenvwrapper`, or check out the [Pipsi Installation](#pipsi-installation) section below:
-
-    pip install virtualenv
-    pip install virtualenvwrapper
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-
-Create a `SAWS` `virtualenv` and install `SAWS`:
-
-    mkvirtualenv saws
-    pip install saws
-
-If you want to activate the `saws` `virtualenv` again later, run:
-
-    workon saws
-
-### Pipsi Installation
-
-[Pipsi](https://github.com/mitsuhiko/pipsi) simplifies the `virtualenv` setup.
-
-Install `pipsi`:
-
-    pip install pipsi
-
-Create a `virtualenv` and install `SAWS`:
-
-    pipsi install saws
-
-For Python 3:
-
-    pipsi install --python=python3 saws
-
-Note:  [Pipsi might not be fully supported on Windows](https://github.com/mitsuhiko/pipsi/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+windows).
+To view `SAWS` `virtualenv` and [Docker](https://www.docker.com/) installation instructions, click [here](https://github.com/donnemartin/saws/blob/master/INSTALLATION.md).
 
 ### AWS Credentials and Named Profiles
 
@@ -400,18 +364,6 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
     * Tested on Ubuntu 14.04 LTS
 * Windows
     * Tested on Windows 7 and 10
-
-### Docker Installation
-
-`SAWS` can be run from via docker without any other dependencies installed. This is ideal for conflicting Python versions etc. Assuming docker is installed and configured, the docker image can be built by running `docker build -t saws .` in a directory containing the [Dockerfile](Dockerfile).
-`SAWS` can then be run via 
-```
-docker run -it -e AWS_ACCESS_KEY_ID=<key> -e AWS_SECRET_ACCESS_KEY=<secret> -e AWS_DEFAULT_REGION=<region> saws
-```
-or by mounting a local `.aws` configuration directory:
-```
-docker run -it -v path/to/.aws/:/root/.aws:ro saws
-```
 
 ## Developer Installation
 
