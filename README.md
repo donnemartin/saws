@@ -84,6 +84,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * [AWS Credentials and Named Profiles](#aws-credentials-and-named-profiles)
     * [Supported Python Versions](#supported-python-versions)
     * [Supported Platforms](#supported-platforms)
+    * [Docker Installation](#docker-installation)
 * [Developer Installation](#developer-installation)
     * [Continuous Integration](#continuous-integration)
     * [Dependencies Management](#dependencies-management)
@@ -399,6 +400,18 @@ Pypy3 is not supported due to [lack of support](https://github.com/boto/botocore
     * Tested on Ubuntu 14.04 LTS
 * Windows
     * Tested on Windows 7 and 10
+
+### Docker Installation
+
+`SAWS` can be run from via docker without any other dependencies installed. This is ideal for conflicting Python versions etc. Assuming docker is installed and configured, the docker image can be built by running `docker build -t saws .` in a directory containing the [Dockerfile](Dockerfile).
+`SAWS` can then be run via 
+```
+docker run -it -e AWS_ACCESS_KEY_ID=<key> -e AWS_SECRET_ACCESS_KEY=<secret> -e AWS_DEFAULT_REGION=<region> saws
+```
+or by mounting a local `.aws` configuration directory:
+```
+docker run -it -v path/to/.aws/:/root/.aws:ro saws
+```
 
 ## Developer Installation
 
