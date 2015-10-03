@@ -27,22 +27,21 @@ class InstanceTagValues(Resource):
         * QUERY: A string representing the AWS query to list all instance
             tag values.
         * resources: A list of instance tag values.
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     OPTION = '--ec2-tag-value'
     QUERY = 'aws ec2 describe-instances --filters "Name=tag-value,Values=*" --query Reservations[].Instances[].Tags[].Value --output text'
 
-    def __init__(self, log_exception):
+    def __init__(self):
         """Initializes InstanceTagValues.
 
         Args:
-            * log_exception: A callable log_exception from SawsLogger.
+            * None.
 
         Returns:
             None.
         """
-        super(InstanceTagValues, self).__init__(log_exception)
+        super(InstanceTagValues, self).__init__()
 
     def query_resource(self):
         """Queries and stores instance ids from AWS.
@@ -52,6 +51,10 @@ class InstanceTagValues(Resource):
 
         Returns:
             The list of resources.
+
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status, which is called by self._query_aws.
         """
         print('  Refreshing instance tag values...')
         output = self._query_aws(self.QUERY)

@@ -30,25 +30,25 @@ class Resource():
             completions to be displayed when typed.
         * QUERY: A string representing the AWS query to list all resources
         * resources: A list of resources.
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     __metaclass__ = ABCMeta
 
     OPTION = ''
+    HEADER = ''
     QUERY = ''
 
-    def __init__(self, log_exception):
-        """Initializes InstanceIds.
+    def __init__(self):
+        """Initializes Resource.
 
         Args:
-            * log_exception: A callable log_exception from SawsLogger.
+            * None.
 
         Returns:
             None.
         """
         self.resources = []
-        self.log_exception = log_exception
+        self.HEADER = '[' + self.OPTION + ']'
 
     def clear_resources(self):
         """Clears the resource.
@@ -70,8 +70,9 @@ class Resource():
         Args:
             * None.
 
-        Returns:
-            None.
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status, which is called by self._query_aws.
         """
         pass
 
@@ -86,10 +87,11 @@ class Resource():
 
         Returns:
             A string representing the awscli output.
+
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status.
         """
-        try:
-            return subprocess.check_output(query,
-                                           universal_newlines=True,
-                                           shell=True)
-        except Exception as e:
-            self.log_exception(e, traceback)
+        return subprocess.check_output(query,
+                                       universal_newlines=True,
+                                       shell=True)

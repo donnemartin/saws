@@ -16,20 +16,25 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import re
-from .bucket import Bucket
+from .resource import Resource
+from abc import ABCMeta, abstractmethod
 
 
-class BucketNames(Bucket):
-    """Encapsulates the S3 bucket names resources.
+class Bucket(Resource):
+    """Encapsulates the S3 bucket resources.
+
+    Base class for BucketNames and BucketUris
 
     Attributes:
-        * OPTION: A string representing the option for bucket names.
-        * QUERY: A string representing the AWS query to list all bucket names.
-        * resources: A list of bucket names.
+        * OPTION: A string representing the option for bucket uri.
+        * QUERY: A string representing the AWS query to list all bucket uri.
+        * resources: A list of bucket uri.
     """
 
-    OPTION = '--bucket'
-    QUERY = 'aws s3 ls'
+    __metaclass__ = ABCMeta
+
+    OPTION = ''
+    QUERY = ''
 
     def __init__(self):
         """Initializes BucketNames.
@@ -40,10 +45,15 @@ class BucketNames(Bucket):
         Returns:
             None.
         """
-        super(BucketNames, self).__init__()
+        super(Bucket, self).__init__()
 
     def query_resource(self):
         """Queries and stores bucket names from AWS.
+
+        Special case for S3:
+            We have two ways to invoke S3 completions:
+                Option: --bucket  Completion: foo
+                Option: s3:       Completion: s3://foo
 
         Args:
             * None.
@@ -55,11 +65,23 @@ class BucketNames(Bucket):
             A subprocess.CalledProcessError if check_output returns a non-zero
                 exit status, which is called by self._query_aws.
         """
-        print('  Refreshing bucket names...')
-        super(BucketNames, self).query_resource()
+        output = self._query_aws(self.QUERY)
+        if output is not None:
+            self.clear_resources()
+            result_list = output.split('\n')
+            for result in result_list:
+                try:
+                    result = result.split()[-1]
+                    self.add_bucket_name(result)
+                except:
+                    # Ignore blank lines
+                    pass
 
+    @abstractmethod
     def add_bucket_name(self, bucket_name):
         """Adds the bucket name to our bucket resources.
+
+        Abstract method.
 
         Args:
             * bucket_name: A string representing the bucket name.
@@ -67,4 +89,4 @@ class BucketNames(Bucket):
         Returns:
             None.
         """
-        self.resources.extend([bucket_name])
+        pass

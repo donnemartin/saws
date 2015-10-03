@@ -1,4 +1,4 @@
---instance-ids: 7
+[--instance-ids]: 7
 i-b815ecc3
 i-a51d05f4
 i-a71bd617
@@ -6,18 +6,18 @@ i-c86cba18
 i-f7df0ea7
 i-a1637b56
 i-hdcbac0d
---ec2-tag-key: 3
+[--ec2-tag-key]: 3
 Stack
 Name
 Purpose
---ec2-tag-value: 6
+[--ec2-tag-value]: 6
 metrics
 testing
 billing
 security
 development-feature
 production
---bucket: 16
+[--bucket]: 16
 prod-downloads
 prod-downloads-logs
 prod-assets
@@ -34,7 +34,7 @@ test-downloads
 test-downloads-logs
 test-assets
 test-assets-logs
-s3:: 16
+[s3:]: 16
 prod-downloads
 prod-downloads-logs
 prod-assets

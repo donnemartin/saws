@@ -184,53 +184,65 @@ class CompleterTest(unittest.TestCase):
     def test_instance_ids(self):
         commands = ['aws ec2 ls --instance-ids i-b']
         expected = ['i-b875ecc3', 'i-b51d05f4', 'i-b3628153']
-        self.completer.resources.instance_ids.resources.extend(expected)
+        instance_ids = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.INSTANCE_IDS.value]
+        instance_ids.resources.extend(expected)
         self.verify_completions(commands, expected)
         commands = ['aws ec2 ls --instance-ids i-a']
         expected = ['i-a51d05f4', 'i-a71bd617', 'i-a1637b56']
-        self.completer.resources.instance_ids.resources.extend(expected)
+        instance_ids.resources.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_ids_fuzzy(self):
         self.completer.fuzzy_match = True
         commands = ['aws ec2 ls --instance-ids a5']
         expected = ['i-a875ecc3', 'i-a41d55f4', 'i-a3628153']
-        self.completer.resources.instance_ids.resources.extend(expected)
+        instance_ids = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.INSTANCE_IDS.value]
+        instance_ids.resources.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_keys(self):
         commands = ['aws ec2 ls --ec2-tag-key na']
         expected = ['name', 'namE']
-        self.completer.resources.instance_tag_keys.resources.extend(expected)
+        instance_tag_keys = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.INSTANCE_TAG_KEYS.value]
+        instance_tag_keys.resources.extend(expected)
         self.verify_completions(commands, expected)
         commands = ['aws ec2 ls --ec2-tag-key Sta']
         expected = ['Stack']
-        self.completer.resources.instance_tag_keys.resources.extend(expected)
+        instance_tag_keys.resources.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_instance_tag_values(self):
         commands = ['aws ec2 ls --ec2-tag-value prod']
         expected = ['production', 'production-blue', 'production-green']
-        self.completer.resources.instance_tag_values.resources.extend(expected)
+        instance_tag_values = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.INSTANCE_TAG_VALUES.value]
+        instance_tag_values.resources.extend(expected)
         self.verify_completions(commands, expected)
         commands = ['aws ec2 ls --ec2-tag-value test']
         expected = ['testing']
-        self.completer.resources.instance_tag_keys.resources.extend(expected)
+        instance_tag_values.resources.extend(expected)
         self.verify_completions(commands, expected)
 
     def test_bucket_names(self):
         commands = ['aws s3pi get-bucket-acl --bucket web-']
         expected = ['web-server-logs', 'web-server-images']
+        bucket_names = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.BUCKET_NAMES.value]
         for bucket_name in expected:
-            self.completer.resources.bucket_names.add_bucket_name(bucket_name)
+            bucket_names.add_bucket_name(bucket_name)
         self.verify_completions(commands, expected)
 
     def test_s3_uri(self):
         commands = ['aws s3 ls s3:']
         expected = ['s3://web-server-logs', 's3://web-server-images']
+        bucket_uris = self.completer.resources.resource_lists[
+            self.completer.resources.ResourceType.BUCKET_URIS.value]
         for s3_uri in expected:
             bucket_name = re.sub('s3://', '', s3_uri)
-            self.completer.resources.bucket_uris.add_bucket_name(bucket_name)
+            bucket_uris.add_bucket_name(bucket_name)
         self.verify_completions(commands, expected)
         commands = ['aws s3 ls s3://web']
         self.verify_completions(commands, expected)

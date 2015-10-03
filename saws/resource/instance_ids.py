@@ -26,22 +26,21 @@ class InstanceIds(Resource):
         * OPTION: A string representing the option for instance ids.
         * QUERY: A string representing the AWS query to list all instance ids.
         * resources: A list of instance ids.
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     OPTION = '--instance-ids'
     QUERY = 'aws ec2 describe-instances --query "Reservations[].Instances[].[InstanceId]" --output text'
 
-    def __init__(self, log_exception):
+    def __init__(self):
         """Initializes InstanceIds.
 
         Args:
-            * log_exception: A callable log_exception from SawsLogger.
+            * None.
 
         Returns:
             None.
         """
-        super(InstanceIds, self).__init__(log_exception)
+        super(InstanceIds, self).__init__()
 
     def query_resource(self):
         """Queries and stores instance ids from AWS.
@@ -51,6 +50,10 @@ class InstanceIds(Resource):
 
         Returns:
             The list of resources.
+
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status, which is called by self._query_aws.
         """
         print('  Refreshing instance ids...')
         output = self._query_aws(self.QUERY)

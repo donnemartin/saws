@@ -27,22 +27,21 @@ class InstanceTagKeys(Resource):
         * QUERY: A string representing the AWS query to list all instance
             tag keys.
         * resources: A list of instance tag keys.
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     OPTION = '--ec2-tag-key'
     QUERY = 'aws ec2 describe-instances --filters "Name=tag-key,Values=*" --query Reservations[].Instances[].Tags[].Key --output text'
 
-    def __init__(self, log_exception):
+    def __init__(self):
         """Initializes InstanceTagKeys.
 
         Args:
-            * log_exception: A callable log_exception from SawsLogger.
+            * None.
 
         Returns:
             None.
         """
-        super(InstanceTagKeys, self).__init__(log_exception)
+        super(InstanceTagKeys, self).__init__()
 
     def query_resource(self):
         """Queries and stores instance ids from AWS.
@@ -52,9 +51,12 @@ class InstanceTagKeys(Resource):
 
         Returns:
             The list of resources.
-        """
 
-        print('  Refreshing instance tags keys...')
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status, which is called by self._query_aws.
+        """
+        print('  Refreshing instance tag keys...')
         output = self._query_aws(self.QUERY)
         if output is not None:
             self.resources = set(output.split('\t'))

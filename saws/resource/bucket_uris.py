@@ -16,42 +16,24 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import re
-from .resource import Resource
+from .bucket import Bucket
 
 
-class BucketUris(Resource):
+class BucketUris(Bucket):
     """Encapsulates the S3 bucket uri resources.
 
     Attributes:
         * OPTION: A string representing the option for bucket uri.
         * QUERY: A string representing the AWS query to list all bucket uri.
         * resources: A list of bucket uri.
-        * log_exception: A callable log_exception from SawsLogger.
     """
 
     OPTION = 's3:'
     QUERY = 'aws s3 ls'
     PREFIX = OPTION + '//'
 
-    def __init__(self, log_exception):
+    def __init__(self):
         """Initializes BucketNames.
-
-        Args:
-            * log_exception: A callable log_exception from SawsLogger.
-
-        Returns:
-            None.
-        """
-        super(BucketUris, self).__init__(log_exception)
-
-    def query_resource(self):
-        """Queries and stores bucket uris from AWS.
-
-        Special case for S3:
-            We have two ways to invoke S3 completions:
-                Option: --bucket  Completion: foo
-                Option: s3:       Completion: s3://foo
-        BucketName.query_resource will load the bucket names for both options.
 
         Args:
             * None.
@@ -59,7 +41,23 @@ class BucketUris(Resource):
         Returns:
             None.
         """
-        output = []
+        super(BucketUris, self).__init__()
+
+    def query_resource(self):
+        """Queries and stores bucket uris from AWS.
+
+        Args:
+            * None.
+
+        Returns:
+            None.
+
+        Raises:
+            A subprocess.CalledProcessError if check_output returns a non-zero
+                exit status, which is called by self._query_aws.
+        """
+        print('  Refreshing bucket uris...')
+        super(BucketUris, self).query_resource()
 
     def add_bucket_name(self, bucket_name):
         """Adds the bucket name to our bucket resources.

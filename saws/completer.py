@@ -123,7 +123,7 @@ class AwsCompleter(Completer):
                 self.aws_completions.update(self.shortcuts.keys())
         # Try to get completions for enabled AWS resources
         completions = self._get_custom_completions(
-            words, word_before_cursor, self.resources.resources_map)
+            words, word_before_cursor, self.resources.resources_options_map)
         # Try to get completions for global options, filter options, etc
         if completions is None:
             completions = self._get_custom_completions(

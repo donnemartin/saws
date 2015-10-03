@@ -40,13 +40,12 @@ class AwsResources(object):
         * resources_path: A string representing the full file path of
             data/RESOURCES.txt.
         * log_exception: A callable log_exception from SawsLogger.
-        * instance_ids: An instance of InstanceIds.
-        * instance_tag_keys: An instance of InstanceTagKeys.
-        * instance_tag_values: An instance of InstanceTagValues.
-        * bucket_names: An instance of BucketNames.
         * resource_lists: A list where each element is a list of completions
             for each resource.
-        * resources_map: A dict mapping resource keywords to
+        * resources_headers_map: A dict mapping resource headers to
+            resources to complete.  Headers denote the start of each
+            set of resources in the RESOURCES.txt file.
+        * resources_options_map: A dict mapping resource options to
             resources to complete.
         * resource_headers: A list of headers that denote the start of each
             set of resources in the RESOURCES.txt file.
@@ -58,11 +57,15 @@ class AwsResources(object):
     class ResourceType(Enum):
         """Enum specifying the resource type.
 
+        Append new resource class instances here and increment NUM_TYPES.
+        Note: Order is important, new resources should be added to the end.
+
         Attributes:
             * INSTANCE_IDS: An int representing instance ids.
             * INSTANCE_TAG_KEYS: An int representing instance tag keys.
             * INSTANCE_TAG_VALUES: An int representing instance tag values.
             * BUCKET_NAMES: An int representing bucket names.
+            * BUCKET_URIS: An int representing bucket uris.
             * NUM_TYPES: An int representing the number of resource types.
         """
         NUM_TYPES = 5
@@ -82,9 +85,11 @@ class AwsResources(object):
         # TODO: Use a file version instead of a new file
         self._set_resources_path('data/RESOURCES_v2.txt')
         self.log_exception = log_exception
-        self.resource_lists = self._create_resource_lists(self.log_exception)
-        self.resources_map = None
+        self.resource_lists = self._create_resource_lists()
+        self.resources_headers_map = None
+        self.resources_options_map = None
         self.resource_headers = self._get_resource_headers()
+        self.resource_options = self._get_resource_options()
         self.data_util = DataUtil()
         self.header_to_type_map = self.data_util.create_header_to_type_map(
             headers=self.resource_headers,
@@ -117,7 +122,10 @@ class AwsResources(object):
         if force_refresh:
             self._query_resources()
         try:
-            self.resources_map = self._create_resources_map()
+            self.resources_headers_map = self._create_resources_map(
+                self.resource_headers)
+            self.resources_options_map = self._create_resources_map(
+                self.resource_options)
             self._save_resources_to_file()
         except IOError as e:
             self.log_exception(e, traceback)
@@ -134,10 +142,10 @@ class AwsResources(object):
         for resource_list in self.resource_lists:
             resource_list.clear_resources()
 
-    def _create_resource_lists(self, log_exception):
+    def _create_resource_lists(self):
         """Create the resource lists.
 
-        Append new resources here.
+        Append new resource class instances here.
         Note: Order is important, new resources should be added to the end.
 
         Args:
@@ -146,17 +154,11 @@ class AwsResources(object):
         Returns:
             None.
         """
-        # TODO: Clean up to avoid having to list all resources.
-        self.instance_ids = InstanceIds(log_exception)
-        self.instance_tag_keys = InstanceTagKeys(log_exception)
-        self.instance_tag_values = InstanceTagValues(log_exception)
-        self.bucket_names = BucketNames(log_exception)
-        self.bucket_uris = BucketUris(log_exception)
-        return [self.instance_ids,
-                self.instance_tag_keys,
-                self.instance_tag_values,
-                self.bucket_names,
-                self.bucket_uris]
+        return [InstanceIds(),
+                InstanceTagKeys(),
+                InstanceTagValues(),
+                BucketNames(),
+                BucketUris()]
 
     def _get_resource_headers(self):
         """Builds a list of resource headers found in the resource file.
@@ -173,20 +175,39 @@ class AwsResources(object):
         """
         resource_headers = []
         for resource_list in self.resource_lists:
-            resource_headers.append(resource_list.OPTION)
+            resource_headers.append(resource_list.HEADER)
         return resource_headers
 
-    def _create_resources_map(self):
+    def _get_resource_options(self):
+        """Builds a list of resource options that kick off option completions.
+
+        Args:
+            * None.
+
+        Returns:
+            A list of options that kick off option completions.
+        """
+        resource_options = []
+        for resource_list in self.resource_lists:
+            resource_options.append(resource_list.OPTION)
+        return resource_options
+
+    def _create_resources_map(self, resource_key):
         """Creates a mapping of resource keywords and resources to complete.
 
         Requires self.resource_headers to already contain all headers.
 
-        Example:
+        Example with resource_key == resource_headers:
+            Key:   '[--instance-ids]'.
+            Value: List of instance ids.
+
+        Example with resource_key == resource_options:
             Key:   '--instance-ids'.
             Value: List of instance ids.
 
         Args:
-            * None.
+            * resource_key: One of the two attributes:
+                resource_headers or resource_options.
 
         Returns:
             An OrderedDict resource keywords and resources to complete.
@@ -194,7 +215,7 @@ class AwsResources(object):
         resources = []
         for resource_list in self.resource_lists:
             resources.append(resource_list.resources)
-        resources_map = OrderedDict(zip(self.resource_headers, resources))
+        resources_map = OrderedDict(zip(resource_key, resources))
         return resources_map
 
     def _query_resources(self):
@@ -208,7 +229,10 @@ class AwsResources(object):
         """
         print('Refreshing resources...')
         for resource_list in self.resource_lists:
-            resource_list.query_resource()
+            try:
+                resource_list.query_resource()
+            except Exception as e:
+                self.log_exception(e, traceback)
         print('Done refreshing')
 
     def _get_all_resources(self):
@@ -247,16 +271,9 @@ class AwsResources(object):
         Returns:
             None.
         """
-        # TODO: Clean up to avoid having to list all resources.
-        self.instance_ids.resources, \
-        self.instance_tag_keys.resources, \
-        self.instance_tag_values.resources, \
-        bucket_names, \
-        bucket_uris_dummy, \
-            = self._get_all_resources()
-        for bucket_name in bucket_names:
-            self.bucket_names.add_bucket_name(bucket_name)
-            self.bucket_uris.add_bucket_name(bucket_name)
+        all_resources = self._get_all_resources()
+        for index, resources in enumerate(all_resources):
+            self.resource_lists[index].resources = resources
 
     def _save_resources_to_file(self):
         """Saves the AWS resources to data/RESOURCES.txt.
@@ -268,7 +285,7 @@ class AwsResources(object):
             None.
         """
         with open(self.resources_path, 'wt') as fp:
-            for key, resources in self.resources_map.items():
+            for key, resources in self.resources_headers_map.items():
                 fp.write(key + ': ' + str(len(resources)) + '\n')
                 for resource in resources:
                     fp.write(resource + '\n')
