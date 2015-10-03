@@ -17,10 +17,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 from enum import Enum
 import os
-try:
-    from collections import OrderedDict
-except:
-    from ordereddict import OrderedDict
 from awscli.customizations.emr.constants import LIST_CLUSTERS_ACTIVE_STATES, \
     LIST_CLUSTERS_TERMINATED_STATES, LIST_CLUSTERS_FAILED_STATES
 from .data_util import DataUtil

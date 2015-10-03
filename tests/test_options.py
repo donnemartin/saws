@@ -15,7 +15,6 @@
 
 from __future__ import unicode_literals
 from __future__ import print_function
-import mock
 import unittest
 from saws.saws import Saws
 

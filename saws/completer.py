@@ -18,10 +18,6 @@ from __future__ import print_function
 import re
 import sys
 import traceback
-try:
-    from collections import OrderedDict
-except:
-    from ordereddict import OrderedDict
 from six.moves import cStringIO
 from prompt_toolkit.completion import Completer
 from .utils import TextUtils

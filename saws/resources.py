@@ -20,11 +20,8 @@ try:
     from collections import OrderedDict
 except:
     from ordereddict import OrderedDict
-import re
-import subprocess
 import traceback
 from enum import Enum
-from .commands import AwsCommands
 from .data_util import DataUtil
 from .resource.instance_ids import InstanceIds
 from .resource.instance_tag_keys import InstanceTagKeys
