@@ -1,4 +1,4 @@
-[commands]: 54
+[commands]: 55
 autoscaling
 cloudformation
 cloudfront
@@ -28,6 +28,7 @@ elasticbeanstalk
 elastictranscoder
 elb
 emr
+es
 glacier
 iam
 importexport
@@ -53,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1400
+[sub_commands]: 1428
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -144,6 +145,7 @@ change-resource-record-sets
 change-tags-for-resource
 check-dns-availability
 check-domain-availability
+clone-receipt-rule-set
 clone-stack
 complete-lifecycle-action
 complete-multipart-upload
@@ -220,10 +222,12 @@ create-directory
 create-distribution
 create-document
 create-domain
+create-elasticsearch-domain
 create-environment
 create-evaluation
 create-event-source-mapping
 create-event-subscription
+create-export-task
 create-file-system
 create-flow-logs
 create-function
@@ -278,6 +282,9 @@ create-project
 create-public-virtual-interface
 create-queue
 create-realtime-endpoint
+create-receipt-filter
+create-receipt-rule
+create-receipt-rule-set
 create-replication-group
 create-repository
 create-reserved-instances-listing
@@ -382,6 +389,7 @@ delete-directory
 delete-distribution
 delete-document
 delete-domain
+delete-elasticsearch-domain
 delete-endpoint
 delete-environment-configuration
 delete-evaluation
@@ -442,6 +450,9 @@ delete-policy-version
 delete-preset
 delete-queue
 delete-realtime-endpoint
+delete-receipt-filter
+delete-receipt-rule
+delete-receipt-rule-set
 delete-replication-group
 delete-repository
 delete-retention-policy
@@ -506,6 +517,7 @@ deregister-task-definition
 deregister-volume
 describe-account-attributes
 describe-account-limits
+describe-active-receipt-rule-set
 describe-activity-type
 describe-addresses
 describe-adjustment-types
@@ -585,6 +597,9 @@ describe-domains
 describe-ecs-clusters
 describe-elastic-ips
 describe-elastic-load-balancers
+describe-elasticsearch-domain
+describe-elasticsearch-domain-config
+describe-elasticsearch-domains
 describe-engine-default-cluster-parameters
 describe-engine-default-parameters
 describe-environment-health
@@ -661,6 +676,8 @@ describe-policies
 describe-prefix-lists
 describe-raid-arrays
 describe-rds-db-instances
+describe-receipt-rule
+describe-receipt-rule-set
 describe-regions
 describe-replication-groups
 describe-reserved-cache-nodes
@@ -1038,7 +1055,10 @@ list-policies
 list-policy-versions
 list-presets
 list-projects
+list-public-keys
 list-queues
+list-receipt-filters
+list-receipt-rule-sets
 list-records
 list-repositories
 list-resource-record-sets
@@ -1061,6 +1081,7 @@ list-subscriptions
 list-subscriptions-by-topic
 list-suites
 list-tables
+list-tags
 list-tags-for-domain
 list-tags-for-resource
 list-tags-for-resources
@@ -1113,6 +1134,7 @@ modify-replication-group
 modify-reserved-instances
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
+modify-spot-fleet-request
 modify-subnet-attribute
 modify-volume-attribute
 modify-vpc-attribute
@@ -1227,6 +1249,7 @@ remove-tags-from-resource
 remove-tags-from-stream
 remove-tags-from-vault
 remove-user-from-group
+reorder-receipt-rule-set
 replace-network-acl-association
 replace-network-acl-entry
 replace-route
@@ -1285,11 +1308,13 @@ schedule-hbase-backup
 schedule-run
 search
 select
+send-bounce
 send-email
 send-message
 send-message-batch
 send-raw-email
 set
+set-active-receipt-rule-set
 set-alarm-state
 set-cognito-events
 set-data-retrieval-policy
@@ -1309,6 +1334,7 @@ set-load-based-auto-scaling
 set-permission
 set-platform-application-attributes
 set-queue-attributes
+set-receipt-rule-position
 set-stack-policy
 set-status
 set-subscription-attributes
@@ -1391,6 +1417,7 @@ update-domain-contact
 update-domain-contact-privacy
 update-domain-nameservers
 update-elastic-ip
+update-elasticsearch-domain-config
 update-environment
 update-evaluation
 update-event-source-mapping
@@ -1417,6 +1444,7 @@ update-pipeline-notifications
 update-pipeline-status
 update-radius
 update-rds-db-instance
+update-receipt-rule
 update-records
 update-repository-description
 update-repository-name
@@ -1447,6 +1475,7 @@ upload-server-certificate
 upload-signing-certificate
 upload-ssh-public-key
 validate-configuration-settings
+validate-logs
 validate-pipeline-definition
 validate-template
 verify-domain-dkim
@@ -1468,5 +1497,5 @@ website
 --version
 [resource_options]: 3
 --bucket
---instance-ids
 --cluster-states
+--instance-ids
