@@ -14,7 +14,7 @@ SAWS
 Although the [AWS CLI](https://github.com/aws/aws-cli) is a great resource to manage your AWS-powered services, it's **tough to remember usage** of:
 
 * 50+ top-level commands
-* ~1400 subcommands
+* 1400+ subcommands
 * Countless command-specific options
 * Resources such as instance tags and buckets
 
