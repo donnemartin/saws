@@ -124,8 +124,8 @@ class TextUtils(object):
         word = word.lower()
         if fuzzy:
             for suggestion in self._fuzzy_finder(word,
-                                                collection,
-                                                case_sensitive=False):
+                                                 collection,
+                                                 case_sensitive=False):
                 yield Completion(suggestion, -len(word))
         else:
             for name in sorted(collection):

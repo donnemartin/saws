@@ -48,8 +48,9 @@ class ResourcesTest(unittest.TestCase):
         self.resources._set_resources_path('data/RESOURCES_SAMPLE.txt')
 
     def verify_resources(self):
-        for resource_list, sample_resource_count in \
-            zip(self.resources.resource_lists, self.sample_resource_counts):
+        for resource_list, sample_resource_count in zip(
+                self.resources.resource_lists,
+                self.sample_resource_counts):
             assert len(resource_list.resources) == sample_resource_count
 
     # TODO: Silence output

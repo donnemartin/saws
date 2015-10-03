@@ -37,8 +37,8 @@ class Toolbar(object):
             None
         """
         self.handler = self._create_toolbar_handler(color_cfg,
-                                                   fuzzy_cfg,
-                                                   shortcuts_cfg)
+                                                    fuzzy_cfg,
+                                                    shortcuts_cfg)
 
     def _create_toolbar_handler(self, color_cfg, fuzzy_cfg, shortcuts_cfg):
         """Creates the toolbar handler.

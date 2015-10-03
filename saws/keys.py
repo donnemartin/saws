@@ -50,9 +50,9 @@ class KeyManager(object):
                                  refresh_resources_and_options, handle_docs)
 
     def _create_key_manager(self, set_color, get_color,
-                           set_fuzzy_match, get_fuzzy_match,
-                           set_shortcut_match, get_shortcut_match,
-                           refresh_resources_and_options, handle_docs):
+                            set_fuzzy_match, get_fuzzy_match,
+                            set_shortcut_match, get_shortcut_match,
+                            refresh_resources_and_options, handle_docs):
         """Creates and initializes the keybinding manager.
 
         Args:

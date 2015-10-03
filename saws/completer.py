@@ -195,7 +195,7 @@ class AwsCompleter(Completer):
         return text
 
     def _get_resource_completions(self, words, word_before_cursor,
-                                 option_text, resource):
+                                  option_text, resource):
         """Get completions for the specified AWS resource.
 
         Args:
@@ -280,9 +280,9 @@ class AwsCompleter(Completer):
             if completions is None:
                 completions = self \
                     ._get_resource_completions(words,
-                                              word_before_cursor,
-                                              key,
-                                              value)
+                                               word_before_cursor,
+                                               key,
+                                               value)
             else:
                 break
         return completions
