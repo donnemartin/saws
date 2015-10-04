@@ -1,128 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>saws package &mdash; saws 0.1.0 documentation</title>
-  
-
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="saws 0.1.0 documentation" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+    <title>saws package &mdash; saws 0.1.0 documentation</title>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="saws 0.1.0 documentation" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
-          
-            <a href="index.html" class="icon icon-home"> saws
-          
+  </head>
+  <body role="document">  
 
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                0.1.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="simple">
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">saws</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>saws package</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="_sources/saws.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="saws-package">
 <h1>saws package<a class="headerlink" href="#saws-package" title="Permalink to this headline">¶</a></h1>
@@ -506,7 +418,7 @@ their corresponding full commands as the values.</dd>
 
 <dl class="method">
 <dt id="saws.config.Config.read_configuration">
-<code class="descname">read_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.Config.read_configuration" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read_configuration</code><span class="sig-paren">(</span><em>config_template</em>, <em>config_path</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.config.Config.read_configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads the config file if it exists, else reads the default config.</p>
 <dl class="docutils">
 <dt>Args:</dt>
@@ -620,7 +532,7 @@ their corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.config_obj">
-<code class="descname">config_obj</code><em class="property"> = ConfigObj({'main': {'theme': 'vim', 'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO', 'refresh_instance_ids': 'True', 'refresh_instance_tags': 'True', 'refresh_bucket_names': 'True', 'history_file': '~/.saws-history'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'emr ls --cluster-states': 'emr list-clusters --cluster-states', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables'}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config_obj" title="Permalink to this definition">¶</a></dt>
+<code class="descname">config_obj</code><em class="property"> = ConfigObj({'main': {'theme': 'default', 'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'emr ls --cluster-states': 'emr list-clusters --cluster-states', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables'}, 'end': {}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config_obj" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -645,7 +557,7 @@ their corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x1082d9390&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x1082d93d0&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x1082d9410&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x1082d9450&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x1082d9490&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x1082d94d0&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x1082d9510&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x110402210&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x110402250&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x110402290&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x1104022d0&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x110402310&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x110402350&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x110402390&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1234,62 +1146,76 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </div>
 
 
-           </div>
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2015, Donne Martin.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">saws package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-saws.commands">saws.commands module</a></li>
+<li><a class="reference internal" href="#module-saws.completer">saws.completer module</a></li>
+<li><a class="reference internal" href="#module-saws.config">saws.config module</a></li>
+<li><a class="reference internal" href="#module-saws.keys">saws.keys module</a></li>
+<li><a class="reference internal" href="#module-saws.lexer">saws.lexer module</a></li>
+<li><a class="reference internal" href="#module-saws.logger">saws.logger module</a></li>
+<li><a class="reference internal" href="#module-saws.main">saws.main module</a></li>
+<li><a class="reference internal" href="#module-saws.resources">saws.resources module</a></li>
+<li><a class="reference internal" href="#module-saws.saws">saws.saws module</a></li>
+<li><a class="reference internal" href="#module-saws.style">saws.style module</a></li>
+<li><a class="reference internal" href="#module-saws.toolbar">saws.toolbar module</a></li>
+<li><a class="reference internal" href="#module-saws.utils">saws.utils module</a></li>
+<li><a class="reference internal" href="#module-saws">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/saws.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Donne Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/saws.txt"
+          rel="nofollow">Page source</a>
+    </div>
 
-    </section>
+    
 
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
-
-</body>
+    
+  </body>
 </html>
