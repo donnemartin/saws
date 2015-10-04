@@ -19,7 +19,7 @@ resource to manage your AWS-powered services, it's **tough to remember
 usage** of:
 
 -  50+ top-level commands
--  ~1400 subcommands
+-  1400+ subcommands
 -  Countless command-specific options
 -  Resources such as instance tags and buckets
 
@@ -58,7 +58,7 @@ Under the hood, ``SAWS`` is **powered by the AWS CLI** and supports the
 -  Customizable shortcuts
 -  Fuzzy completion of resources and shortcuts
 -  Syntax and output highlighting
--  Execution and piping of shell commands
+-  Execution of shell commands
 -  Command history
 -  Contextual help
 -  Toolbar options
@@ -105,9 +105,8 @@ Installation and Tests
 -  `Installation <#installation>`__
 
    -  `Pip Installation <#pip-installation>`__
-   -  `Virtual Environment
-      Installation <#virtual-environment-installation>`__
-   -  `Pipsi Installation <#pipsi-installation>`__
+   -  `Virtual Environment and Docker
+      Installation <#virtual-environment-and-docker-installation>`__
    -  `AWS Credentials and Named
       Profiles <#aws-credentials-and-named-profiles>`__
    -  `Supported Python Versions <#supported-python-versions>`__
@@ -458,73 +457,30 @@ the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
     $ pip install saws
 
-Once installed, run the following command to start ``SAWS``:
+If you are not installing in a
+`virtualenv <#virtual-environment-and-docker-installation>`__, run:
+
+::
+
+    $ sudo pip install saws
+
+Once installed, start ``SAWS``:
 
 ::
 
     $ saws
 
-Virtual Environment Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Virtual Environment and Docker Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is recommended that you install Python packages in a
 `virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__
 to avoid potential `issues with dependencies or
 permissions <https://github.com/donnemartin/saws/issues/15>`__.
 
-If you are a Windows user or if you would like more details on
-``virtualenv``, check out this
-`guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`__.
-
-Install ``virtualenv`` and ``virtualenvwrapper``, or check out the
-`Pipsi Installation <#pipsi-installation>`__ section below:
-
-::
-
-    pip install virtualenv
-    pip install virtualenvwrapper
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-
-Create a ``SAWS`` ``virtualenv`` and install ``SAWS``:
-
-::
-
-    mkvirtualenv saws
-    pip install saws
-
-If you want to activate the ``saws`` ``virtualenv`` again later, run:
-
-::
-
-    workon saws
-
-Pipsi Installation
-~~~~~~~~~~~~~~~~~~
-
-`Pipsi <https://github.com/mitsuhiko/pipsi>`__ simplifies the
-``virtualenv`` setup.
-
-Install ``pipsi``:
-
-::
-
-    pip install pipsi
-
-Create a ``virtualenv`` and install ``SAWS``:
-
-::
-
-    pipsi install saws
-
-For Python 3:
-
-::
-
-    pipsi install --python=python3 saws
-
-Note: `Pipsi might not be fully supported on
-Windows <https://github.com/mitsuhiko/pipsi/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+windows>`__.
+To view ``SAWS`` ``virtualenv`` and `Docker <https://www.docker.com/>`__
+installation instructions, click
+`here <https://github.com/donnemartin/saws/blob/master/INSTALLATION.md>`__.
 
 AWS Credentials and Named Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -140,7 +140,7 @@ resource to manage your AWS-powered services, it&#8217;s <strong>tough to rememb
 usage</strong> of:</p>
 <ul class="simple">
 <li>50+ top-level commands</li>
-<li>~1400 subcommands</li>
+<li>1400+ subcommands</li>
 <li>Countless command-specific options</li>
 <li>Resources such as instance tags and buckets</li>
 </ul>
@@ -176,7 +176,7 @@ usage</strong> of:</p>
 <li>Customizable shortcuts</li>
 <li>Fuzzy completion of resources and shortcuts</li>
 <li>Syntax and output highlighting</li>
-<li>Execution and piping of shell commands</li>
+<li>Execution of shell commands</li>
 <li>Command history</li>
 <li>Contextual help</li>
 <li>Toolbar options</li>
@@ -223,9 +223,8 @@ Completion</a></li>
 <ul class="simple">
 <li><a class="reference external" href="#installation">Installation</a><ul>
 <li><a class="reference external" href="#pip-installation">Pip Installation</a></li>
-<li><a class="reference external" href="#virtual-environment-installation">Virtual Environment
+<li><a class="reference external" href="#virtual-environment-and-docker-installation">Virtual Environment and Docker
 Installation</a></li>
-<li><a class="reference external" href="#pipsi-installation">Pipsi Installation</a></li>
 <li><a class="reference external" href="#aws-credentials-and-named-profiles">AWS Credentials and Named
 Profiles</a></li>
 <li><a class="reference external" href="#supported-python-versions">Supported Python Versions</a></li>
@@ -518,56 +517,25 @@ the <a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI<
 <div class="highlight-python"><div class="highlight"><pre>$ pip install saws
 </pre></div>
 </div>
-<p>Once installed, run the following command to start <code class="docutils literal"><span class="pre">SAWS</span></code>:</p>
+<p>If you are not installing in a
+<a class="reference external" href="#virtual-environment-and-docker-installation">virtualenv</a>, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo pip install saws
+</pre></div>
+</div>
+<p>Once installed, start <code class="docutils literal"><span class="pre">SAWS</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ saws
 </pre></div>
 </div>
 </div>
-<div class="section" id="virtual-environment-installation">
-<h3>Virtual Environment Installation<a class="headerlink" href="#virtual-environment-installation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="virtual-environment-and-docker-installation">
+<h3>Virtual Environment and Docker Installation<a class="headerlink" href="#virtual-environment-and-docker-installation" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended that you install Python packages in a
 <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">virtualenv</a>
 to avoid potential <a class="reference external" href="https://github.com/donnemartin/saws/issues/15">issues with dependencies or
 permissions</a>.</p>
-<p>If you are a Windows user or if you would like more details on
-<code class="docutils literal"><span class="pre">virtualenv</span></code>, check out this
-<a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">guide</a>.</p>
-<p>Install <code class="docutils literal"><span class="pre">virtualenv</span></code> and <code class="docutils literal"><span class="pre">virtualenvwrapper</span></code>, or check out the
-<a class="reference external" href="#pipsi-installation">Pipsi Installation</a> section below:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install virtualenv
-pip install virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-</pre></div>
-</div>
-<p>Create a <code class="docutils literal"><span class="pre">SAWS</span></code> <code class="docutils literal"><span class="pre">virtualenv</span></code> and install <code class="docutils literal"><span class="pre">SAWS</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>mkvirtualenv saws
-pip install saws
-</pre></div>
-</div>
-<p>If you want to activate the <code class="docutils literal"><span class="pre">saws</span></code> <code class="docutils literal"><span class="pre">virtualenv</span></code> again later, run:</p>
-<div class="highlight-python"><div class="highlight"><pre>workon saws
-</pre></div>
-</div>
-</div>
-<div class="section" id="pipsi-installation">
-<h3>Pipsi Installation<a class="headerlink" href="#pipsi-installation" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/mitsuhiko/pipsi">Pipsi</a> simplifies the
-<code class="docutils literal"><span class="pre">virtualenv</span></code> setup.</p>
-<p>Install <code class="docutils literal"><span class="pre">pipsi</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install pipsi
-</pre></div>
-</div>
-<p>Create a <code class="docutils literal"><span class="pre">virtualenv</span></code> and install <code class="docutils literal"><span class="pre">SAWS</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>pipsi install saws
-</pre></div>
-</div>
-<p>For Python 3:</p>
-<div class="highlight-python"><div class="highlight"><pre>pipsi install --python=python3 saws
-</pre></div>
-</div>
-<p>Note: <a class="reference external" href="https://github.com/mitsuhiko/pipsi/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aopen+windows">Pipsi might not be fully supported on
-Windows</a>.</p>
+<p>To view <code class="docutils literal"><span class="pre">SAWS</span></code> <code class="docutils literal"><span class="pre">virtualenv</span></code> and <a class="reference external" href="https://www.docker.com/">Docker</a>
+installation instructions, click
+<a class="reference external" href="https://github.com/donnemartin/saws/blob/master/INSTALLATION.md">here</a>.</p>
 </div>
 <div class="section" id="aws-credentials-and-named-profiles">
 <h3>AWS Credentials and Named Profiles<a class="headerlink" href="#aws-credentials-and-named-profiles" title="Permalink to this headline">¶</a></h3>
