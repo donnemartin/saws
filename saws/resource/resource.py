@@ -27,6 +27,8 @@ class Resource():
     Attributes:
         * OPTION: A string representing the option that will cause the resource
             completions to be displayed when typed.
+        * HEADER: A string representing the header in the RESOURCES.txt file
+            that denote the start of the given resources.
         * QUERY: A string representing the AWS query to list all resources
         * resources: A list of resources.
     """
