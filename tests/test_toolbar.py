@@ -30,6 +30,9 @@ class ToolbarTest(unittest.TestCase):
                                self.saws.get_shortcut_match)
 
     def test_toolbar_on(self):
+        self.saws.set_color(True)
+        self.saws.set_fuzzy_match(True)
+        self.saws.set_shortcut_match(True)
         expected = [
             (Token.Toolbar.On, ' [F2] Color: ON '),
             (Token.Toolbar.On, ' [F3] Fuzzy: ON '),
