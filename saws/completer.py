@@ -188,18 +188,16 @@ class AwsCompleter(Completer):
             A string representing input command text with a substitution,
             if one has been found.
         """
-        text_to_find = '%s'
+        substitution_marker = '%s'
 
-        if text_to_find in text:
+        if substitution_marker in text:
             tokens = text.split()
-            text_to_find_index = self.text_utils.get_token_index(text_to_find,
-                                                                 tokens)
+            replacement_index = self.text_utils.get_token_index(
+                substitution_marker, tokens) + 1
             try:
-                token_after = tokens[text_to_find_index + 1]
-                # remove word immediately following %s
-                del tokens[text_to_find_index + 1]
+                replacement_text = tokens.pop(replacement_index)
                 text = ' '.join(tokens)
-                text = re.sub(text_to_find, token_after, text)
+                text = re.sub(substitution_marker, replacement_text, text)
             except:
                 return text
         return text
