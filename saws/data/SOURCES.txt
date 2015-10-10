@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1428
+[sub_commands]: 1445
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -328,6 +328,7 @@ credential-helper
 deactivate-mfa-device
 deactivate-pipeline
 decode-authorization-message
+decrease-stream-retention-period
 decrypt
 define-analysis-scheme
 define-expression
@@ -366,6 +367,7 @@ delete-cluster-parameter-group
 delete-cluster-security-group
 delete-cluster-snapshot
 delete-cluster-subnet-group
+delete-config-rule
 delete-configuration-template
 delete-connection
 delete-custom-action-type
@@ -561,6 +563,10 @@ describe-cluster-versions
 describe-clusters
 describe-commands
 describe-communications
+describe-compliance-by-config-rule
+describe-compliance-by-resource
+describe-config-rule-evaluation-status
+describe-config-rules
 describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
@@ -828,6 +834,7 @@ get-account-authorization-details
 get-account-password-policy
 get-account-settings
 get-account-summary
+get-alias
 get-application
 get-application-revision
 get-attributes
@@ -853,6 +860,10 @@ get-checker-ip-ranges
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cognito-events
+get-compliance-details-by-config-rule
+get-compliance-details-by-resource
+get-compliance-summary-by-config-rule
+get-compliance-summary-by-resource-type
 get-config
 get-console-output
 get-context-keys-for-custom-policy
@@ -967,6 +978,7 @@ head-object
 import-image
 import-key-pair
 import-snapshot
+increase-stream-retention-period
 index-documents
 initiate-job
 initiate-multipart-upload
@@ -1006,6 +1018,7 @@ list-device-pools
 list-devices
 list-discovered-resources
 list-distributions
+list-distributions-by-web-acl-id
 list-documents
 list-domain-names
 list-domains
@@ -1097,6 +1110,7 @@ list-uploads
 list-user-policies
 list-users
 list-vaults
+list-versions-by-function
 list-virtual-mfa-devices
 list-volume-initiators
 list-volume-recovery-points
@@ -1150,6 +1164,7 @@ poll-for-third-party-jobs
 predict
 promote-read-replica
 publish
+publish-version
 purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
 purchase-reserved-instances-offering
@@ -1172,10 +1187,12 @@ put-bucket-request-payment
 put-bucket-tagging
 put-bucket-versioning
 put-bucket-website
+put-config-rule
 put-configuration-recorder
 put-delivery-channel
 put-destination
 put-destination-policy
+put-evaluations
 put-group-policy
 put-identity-policy
 put-item
