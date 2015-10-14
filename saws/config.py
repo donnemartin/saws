@@ -61,24 +61,29 @@ class Config(object):
             An OrderedDict containing the shortcut commands as the keys and
             their corresponding full commands as the values.
         """
-        return OrderedDict(zip(config_obj[self.SHORTCUTS].keys(),
-                               config_obj[self.SHORTCUTS].values()))
+        shortcut_config_obj = self.read_configuration('saws.shortcuts',
+                                                      '~/.saws.shortcuts')
+        return OrderedDict(zip(shortcut_config_obj[self.SHORTCUTS].keys(),
+                               shortcut_config_obj[self.SHORTCUTS].values()))
 
-    def read_configuration(self):
+    def read_configuration(self, config_template=None, config_path=None):
         """Reads the config file if it exists, else reads the default config.
 
         Args:
-            * None.
+            * config_template: A string representing the template file name.
+            * config_path: A string representing the template file path.
 
         Returns:
             An instance of a ConfigObj.
         """
-        config_template = 'sawsrc'
-        config_name = '~/.sawsrc'
-        default_config = os.path.join(os.path.dirname(__file__),
-                                      config_template)
-        self._write_default_config(default_config, config_name)
-        return self._read_configuration(config_name, default_config)
+        if config_template is None:
+            config_template = 'sawsrc'
+        if config_path is None:
+            config_path = '~/.sawsrc'
+        config_template_path = os.path.join(os.path.dirname(__file__),
+                                            config_template)
+        self._copy_template_config(config_template_path, config_path)
+        return self._read_configuration(config_path, config_template_path)
 
     def _read_configuration(self, usr_config, def_config=None):
         """Reads the config file if it exists, else reads the default config.
@@ -100,7 +105,7 @@ class Config(object):
         cfg.merge(ConfigObj(usr_config_file, interpolation=False))
         return cfg
 
-    def _write_default_config(self, source, destination, overwrite=False):
+    def _copy_template_config(self, source, destination, overwrite=False):
         """Writes the default config from a template.
 
         Args:
