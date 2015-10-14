@@ -60,6 +60,20 @@ class TextUtils(object):
             return words
         return []
 
+    def get_token_index(self, text, collection):
+        """Given a text return the index in the collection.
+        Args:
+            * text: A string to find and obtain the index.
+            * collection: A collection of words to match.
+        Returns:
+            An integer representing the index in the collection
+            where the text was found.
+        """
+        for token in collection:
+            if text in token:
+                return collection.index(token)
+        return None
+
     def _last_token(self, text):
         """Finds the last word in text.
 

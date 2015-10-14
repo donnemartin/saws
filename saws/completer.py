@@ -179,7 +179,7 @@ class AwsCompleter(Completer):
 
         Currently, only one substitution is done before replacement terminates,
         although this function could potentially be extended to do multiple
-        subsitutions.
+        substitutions.
 
         Args:
             * text: A string representing the input command text to replace.
@@ -188,10 +188,18 @@ class AwsCompleter(Completer):
             A string representing input command text with a substitution,
             if one has been found.
         """
-        if '%s' in text:
+        substitution_marker = '%s'
+
+        if substitution_marker in text:
             tokens = text.split()
-            text = ' '.join(tokens[:-1])
-            text = re.sub('%s', tokens[-1], text)
+            replacement_index = self.text_utils.get_token_index(
+                substitution_marker, tokens) + 1
+            try:
+                replacement_text = tokens.pop(replacement_index)
+                text = ' '.join(tokens)
+                text = re.sub(substitution_marker, replacement_text, text)
+            except:
+                return text
         return text
 
     def _get_resource_completions(self, words, word_before_cursor,
