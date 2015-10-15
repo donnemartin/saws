@@ -62,9 +62,11 @@ class TextUtils(object):
 
     def get_token_index(self, text, collection):
         """Given a text return the index in the collection.
+
         Args:
             * text: A string to find and obtain the index.
             * collection: A collection of words to match.
+
         Returns:
             An integer representing the index in the collection
             where the text was found.
