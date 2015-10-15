@@ -75,9 +75,9 @@ R. Restore `README.md`
 
 S. Review newly released package from PyPi
 
-T. Release on GitHub: https://github.com/donnemartin/saws/releases/new
+T. Release on GitHub: https://github.com/donnemartin/saws/tags
 
-    1. Click "Draft a new release"
+    1. Click "Add release notes" for latest release
     2. Copy release notes from `CHANGELOG.md`
     3. Click "Publish release"
 
