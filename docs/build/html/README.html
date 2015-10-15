@@ -266,9 +266,9 @@ you&#8217;d like support for additional resources.</p>
 <div class="section" id="customizable-shortcuts">
 <h2>Customizable Shortcuts<a class="headerlink" href="#customizable-shortcuts" title="Permalink to this headline">¶</a></h2>
 <p>The
-<a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/sawsrc">~/.sawsrc</a>
+<a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts">~/.saws.shortcuts</a>
 file contains shortcuts that you can modify. It comes pre-populated with
-several <a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/sawsrc">handy
+several <a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts">handy
 shortcuts</a>
 out of the box. You can combine shortcuts with <a class="reference external" href="#fuzzy-resource-and-shortcut-completion">fuzzy
 completion</a> for even less
@@ -308,7 +308,7 @@ aws ec2 ls --ec2-tag-value  # fuzzy shortcut: aws ectagv
 </pre></div>
 </div>
 <p>Add/remove/modify shortcuts in your
-<a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/sawsrc">~/.sawsrc</a>
+<a class="reference external" href="https://github.com/donnemartin/saws/blob/master/saws/shortcuts">~/.saws.shortcuts</a>
 file to suit your needs.</p>
 <p>Feel free to submit:</p>
 <ul class="simple">
@@ -429,8 +429,14 @@ the <a class="reference external" href="https://github.com/aws/aws-cli">AWS CLI<
 <div class="highlight-python"><div class="highlight"><pre>$ pip install saws
 </pre></div>
 </div>
+<p>You can also install the latest <code class="docutils literal"><span class="pre">SAWS</span></code> from GitHub source which can
+contain changes not yet pushed to PyPI:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install git+https://github.com/donnemartin/saws.git
+</pre></div>
+</div>
 <p>If you are not installing in a
-<a class="reference external" href="#virtual-environment-and-docker-installation">virtualenv</a>, run:</p>
+<a class="reference external" href="#virtual-environment-and-docker-installation">virtualenv</a>, run with
+<code class="docutils literal"><span class="pre">sudo</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sudo pip install saws
 </pre></div>
 </div>

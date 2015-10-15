@@ -258,10 +258,10 @@ Customizable Shortcuts
 ----------------------
 
 The
-`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+`~/.saws.shortcuts <https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts>`__
 file contains shortcuts that you can modify. It comes pre-populated with
 several `handy
-shortcuts <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+shortcuts <https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts>`__
 out of the box. You can combine shortcuts with `fuzzy
 completion <#fuzzy-resource-and-shortcut-completion>`__ for even less
 keystrokes. Below are a few examples.
@@ -313,7 +313,7 @@ List all EMR clusters:
     aws emr ls  # fuzzy shortcut: aws emls
 
 Add/remove/modify shortcuts in your
-`~/.sawsrc <https://github.com/donnemartin/saws/blob/master/saws/sawsrc>`__
+`~/.saws.shortcuts <https://github.com/donnemartin/saws/blob/master/saws/shortcuts>`__
 file to suit your needs.
 
 Feel free to submit:
@@ -457,8 +457,16 @@ the `AWS CLI <https://github.com/aws/aws-cli>`__:
 
     $ pip install saws
 
+You can also install the latest ``SAWS`` from GitHub source which can
+contain changes not yet pushed to PyPI:
+
+::
+
+    $ pip install git+https://github.com/donnemartin/saws.git
+
 If you are not installing in a
-`virtualenv <#virtual-environment-and-docker-installation>`__, run:
+`virtualenv <#virtual-environment-and-docker-installation>`__, run with
+``sudo``:
 
 ::
 
