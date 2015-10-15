@@ -75,7 +75,13 @@ R. Restore `README.md`
 
 S. Review newly released package from PyPi
 
-T. Install in a new venv and run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
+T. Release on GitHub: https://github.com/donnemartin/saws/releases/new
+
+    1. Click "Draft a new release"
+    2. Copy release notes from `CHANGELOG.md`
+    3. Click "Publish release"
+
+U. Install in a new venv and run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
 
 ## Smoke Tests
 
