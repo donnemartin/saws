@@ -84,7 +84,7 @@ Run the following on Python 2.7 and Python 3.4:
 * Craete a new `virtualenv`
 * Pip install `SAWS` into new `virtualenv`
 * Run `SAWS`
-* Empty cache
+* Check initial resource load
 * Check resource load from cache
 * Force refresh of resources
 * Toggle toolbar options
@@ -96,10 +96,13 @@ Run the following on Python 2.7 and Python 3.4:
     * aws s3api get-bucket-acl --bucket
     * aws ec2 describe-instances --instance-ids
     * aws ecls
+    * aws ec2 ls | grep InstanceId
     * aws ectagk
     * aws ectagv
     * aws ecstate
     * aws emrls
     * aws s3 ls s3:
     * aws s3 ls docs
+    * cd ..
+    * cd saws
 * Run targeted tests based on recent code changes
