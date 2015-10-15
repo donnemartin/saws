@@ -182,7 +182,7 @@ Feel free to [submit an issue or a pull request](#contributions) if you'd like s
 
 ## Customizable Shortcuts
 
-The [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file contains shortcuts that you can modify.  It comes pre-populated with several [handy shortcuts](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) out of the box.  You can combine shortcuts with [fuzzy completion](#fuzzy-resource-and-shortcut-completion) for even less keystrokes.  Below are a few examples.
+The [~/.saws.shortcuts](https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts) file contains shortcuts that you can modify.  It comes pre-populated with several [handy shortcuts](https://github.com/donnemartin/saws/blob/master/saws/saws.shortcuts) out of the box.  You can combine shortcuts with [fuzzy completion](#fuzzy-resource-and-shortcut-completion) for even less keystrokes.  Below are a few examples.
 
 List all EC2 instances:
 
@@ -215,7 +215,7 @@ List all EMR clusters:
 
     aws emr ls  # fuzzy shortcut: aws emls
 
-Add/remove/modify shortcuts in your [~/.sawsrc](https://github.com/donnemartin/saws/blob/master/saws/sawsrc) file to suit your needs.
+Add/remove/modify shortcuts in your [~/.saws.shortcuts](https://github.com/donnemartin/saws/blob/master/saws/shortcuts) file to suit your needs.
 
 Feel free to submit:
 
