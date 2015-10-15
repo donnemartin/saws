@@ -299,7 +299,7 @@ to replace mutliple shortcuts.</p>
 <dd><p>Replaces a <cite>%s</cite> with the word immediately following it.</p>
 <p>Currently, only one substitution is done before replacement terminates,
 although this function could potentially be extended to do multiple
-subsitutions.</p>
+substitutions.</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><ul class="first last simple">
@@ -533,7 +533,7 @@ their corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.config_obj">
-<code class="descname">config_obj</code><em class="property"> = ConfigObj({'main': {'theme': 'vim', 'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO', 'refresh_instance_ids': 'True', 'refresh_instance_tags': 'True', 'refresh_bucket_names': 'True'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'emr ls --cluster-states': 'emr list-clusters --cluster-states', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables'}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config_obj" title="Permalink to this definition">¶</a></dt>
+<code class="descname">config_obj</code><em class="property"> = ConfigObj({'main': {'theme': 'vim', 'color_output': 'True', 'fuzzy_match': 'True', 'shortcut_match': 'True', 'log_file': '~/.saws.log', 'log_level': 'INFO', 'refresh_instance_ids': 'True', 'refresh_instance_tags': 'True', 'refresh_bucket_names': 'True'}, 'shortcuts': {'ec2 ls --instance-ids': 'ec2 describe-instances --instance-ids', 'ec2 start-instances --instance-ids': 'ec2 start-instances --instance-ids', 'ec2 stop-instances --instance-ids': 'ec2 stop-instances --instance-ids', 'ec2 ls --ec2-tag-key': 'ec2 describe-instances --filters &quot;Name=tag-key,Values=%s&quot;', 'ec2 ls --ec2-tag-value': 'ec2 describe-instances --filters &quot;Name=tag-value,Values=%s&quot;', 'ec2 ls --ec2-state': 'ec2 describe-instances --filters &quot;Name=instance-state-name,Values=%s&quot;', 'ec2 ls': 'ec2 describe-instances', 'emr ls': 'emr list-clusters', 'elb ls': 'elb describe-load-balancers', 'dynamodb ls': 'dynamodb list-tables', 'emr ls --cluster-states': 'emr list-clusters --cluster-states'}})</em><a class="headerlink" href="#saws.lexer.CommandLexer.config_obj" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -558,7 +558,7 @@ their corresponding full commands as the values.</dd>
 
 <dl class="attribute">
 <dt id="saws.lexer.CommandLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x10c834ed0&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x10c834f10&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x10c834f50&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x10c834f90&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x10c834fd0&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x10c809050&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x10c809090&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tokens</code><em class="property"> = {'root': [(&lt;pygments.lexer.words object at 0x111390d10&gt;, Token.Literal.String), (&lt;pygments.lexer.words object at 0x111390d50&gt;, Token.Literal.Number), (&lt;pygments.lexer.words object at 0x111390d90&gt;, Token.Name.Class), (&lt;pygments.lexer.words object at 0x111390dd0&gt;, Token.Keyword.Declaration), (&lt;pygments.lexer.words object at 0x111390e10&gt;, Token.Generic.Output), (&lt;pygments.lexer.words object at 0x111390e50&gt;, Token.Operator.Word), (&lt;pygments.lexer.words object at 0x111390e90&gt;, Token.Name.Exception)]}</em><a class="headerlink" href="#saws.lexer.CommandLexer.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1120,6 +1120,23 @@ KeyBindingManager expects this function to be callable so we can&#8217;t use
 </dd>
 <dt>Yields:</dt>
 <dd>A generator of prompt_toolkit&#8217;s Completions.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="saws.utils.TextUtils.get_token_index">
+<code class="descname">get_token_index</code><span class="sig-paren">(</span><em>text</em>, <em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#saws.utils.TextUtils.get_token_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a text return the index in the collection.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>text: A string to find and obtain the index.</li>
+<li>collection: A collection of words to match.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>An integer representing the index in the collection
+where the text was found.</dd>
 </dl>
 </dd></dl>
 
