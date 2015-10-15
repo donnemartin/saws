@@ -325,9 +325,9 @@ class Saws(object):
                 * The original command text if no highlighting was performed.
                 * The pygments highlighted command text otherwise.
         """
-        if not self.get_color():
-            return text
         stripped_text = text.strip()
+        if not self.get_color() or stripped_text == '':
+            return text
         excludes = [AwsCommands.AWS_CONFIGURE,
                     AwsCommands.AWS_HELP,
                     '|']
