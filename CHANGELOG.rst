@@ -20,7 +20,7 @@ https://github.com/donnemartin/saws/issues
 Changelog
 =========
 
-0.3.0 (2015-10-14)
+0.3.1 (2015-10-15)
 ------------------
 
 Features
@@ -62,6 +62,9 @@ Bug Fixes
 -  Fixed `#41 <https://github.com/donnemartin/saws/issues/41>`__: Blank
    entry is no longer shown in list of completion if there is no
    optional value set for a given tag's key.
+-  Fixed `#60 <https://github.com/donnemartin/saws/issues/60>`__:
+   Running an empty command no longer results in a pygmentize syntax
+   error.
 
 Updates
 ~~~~~~~

@@ -38,7 +38,7 @@ Changelog
 * Fixed [#33](https://github.com/donnemartin/saws/issues/29): `SAWS` will no longer exit on keyboard interrupt such as `Ctrl-C`, which can be useful to terminate long-running `aws-cli` commands.
 * Fixed [#35](https://github.com/donnemartin/saws/issues/35): Grep now works consistently with shortcuts, by [mlimaloureiro](https://github.com/mlimaloureiro).
 * Fixed [#41](https://github.com/donnemartin/saws/issues/41): Blank entry is no longer shown in list of completion if there is no optional value set for a given tag's key.
-# Fixed [#60](https://github.com/donnemartin/saws/issues/60): Running an empty command no longer results in a pygmentize syntax error.
+* Fixed [#60](https://github.com/donnemartin/saws/issues/60): Running an empty command no longer results in a pygmentize syntax error.
 
 ### Updates
 
