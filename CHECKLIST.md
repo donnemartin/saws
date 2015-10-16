@@ -19,9 +19,9 @@ B. Run code checks
 
 C. Run manual [smoke tests](#smoke-tests) on Mac, Ubuntu, Windows
 
-D. Update and review `README.rst` and `Sphinx` docs
+D. Update and review `README.rst` and `Sphinx` docs, then check saws/docs/build/html/index.html
 
-    $ scripts/update_docs.sh  # Check saws/docs/build/html/index.html
+    $ scripts/update_docs.sh
 
 E. Push changes
 
