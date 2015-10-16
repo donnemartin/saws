@@ -20,7 +20,7 @@ https://github.com/donnemartin/saws/issues
 Changelog
 =========
 
-0.3.1 (2015-10-15)
+0.3.2 (2015-10-16)
 ------------------
 
 Features
@@ -65,6 +65,9 @@ Bug Fixes
 -  Fixed `#60 <https://github.com/donnemartin/saws/issues/60>`__:
    Running an empty command no longer results in a pygmentize syntax
    error.
+-  Fixed `#61 <https://github.com/donnemartin/saws/issues/61>`__:
+   Refreshing resources multiple times no longer results in an
+   exception.
 
 Updates
 ~~~~~~~
