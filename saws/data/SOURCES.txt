@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1445
+[sub_commands]: 1454
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -129,10 +129,12 @@ bulk-publish
 bundle-instance
 cancel-archival
 cancel-bundle-task
+cancel-command
 cancel-conversion-task
 cancel-export-task
 cancel-import-task
 cancel-job
+cancel-key-deletion
 cancel-reserved-instances-listing
 cancel-retrieval
 cancel-spot-fleet-requests
@@ -635,6 +637,7 @@ describe-import-snapshot-tasks
 describe-index-fields
 describe-instance-attribute
 describe-instance-health
+describe-instance-information
 describe-instance-status
 describe-instances
 describe-instances-health
@@ -819,6 +822,7 @@ enable-volume-io
 enable-vpc-classic-link
 encrypt
 enter-standby
+estimate-template-cost
 evaluate-expression
 execute-policy
 exit-standby
@@ -1007,6 +1011,8 @@ list-buckets
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
 list-clusters
+list-command-invocations
+list-commands
 list-container-instances
 list-datasets
 list-dead-letter-source-queues
@@ -1075,6 +1081,7 @@ list-receipt-rule-sets
 list-records
 list-repositories
 list-resource-record-sets
+list-retirable-grants
 list-reusable-delegation-sets
 list-role-policies
 list-roles
@@ -1322,10 +1329,12 @@ run-instances
 run-task
 scan
 schedule-hbase-backup
+schedule-key-deletion
 schedule-run
 search
 select
 send-bounce
+send-command
 send-email
 send-message
 send-message-batch
