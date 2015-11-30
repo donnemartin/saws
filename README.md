@@ -239,7 +239,7 @@ Note:  Fuzzy completion currently only works with AWS [resources](#auto-completi
 
 ### Fish-Style Auto-Suggestions
 
-`SAWS` supports fish-style auto-suggestions.  Once a suggestion has been displayed, use the `right arrow` key to complete it.
+`SAWS` supports Fish-style auto-suggestions.  Use the `right arrow` key to complete a suggestion.
 
 ![](http://i.imgur.com/t5200q1.png)
 
