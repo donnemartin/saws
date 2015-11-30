@@ -77,7 +77,8 @@ class KeyManager(object):
         self.manager = KeyBindingManager(
             enable_search=True,
             enable_abort_and_exit_bindings=True,
-            enable_system_bindings=True)
+            enable_system_bindings=True,
+            enable_auto_suggest_bindings=True)
 
         @self.manager.registry.add_binding(Keys.F2)
         def handle_f2(_):

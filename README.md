@@ -44,6 +44,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * [More coming soon!]((#todo-add-more-resources))
 * Customizable shortcuts
 * Fuzzy completion of resources and shortcuts
+* Fish-style auto-suggestions
 * Syntax and output highlighting
 * Execution of shell commands
 * Command history
@@ -67,6 +68,7 @@ Under the hood, `SAWS` is **powered by the AWS CLI** and supports the **same com
     * [TODO: Add More Resources](#todo-add-more-resources)
 * [Customizable Shortcuts](#customizable-shortcuts)
 * [Fuzzy Resource and Shortcut Completion](#fuzzy-resource-and-shortcut-completion)
+* [Fish-Style Auto-Suggestions](#fish-style-auto-suggestions)
 * [Executing Shell Commands](#executing-shell-commands)
 * [Command History](#command-history)
 * [Contextual Help](#contextual-help)
@@ -234,6 +236,12 @@ Sample fuzzy shortcuts to start and stop EC2 instances:
 Note:  Fuzzy completion currently only works with AWS [resources](#auto-completion-of-aws-resources) and [shortcuts](customizable-shortcuts).
 
 ![](http://i.imgur.com/7OvFHCw.png)
+
+### Fish-Style Auto-Suggestions
+
+`SAWS` supports fish-style auto-suggestions.  Once a suggestion has been displayed, use the `right arrow` key to complete it.
+
+![](http://i.imgur.com/t5200q1.png)
 
 ### Executing Shell Commands
 

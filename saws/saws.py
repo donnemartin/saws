@@ -32,6 +32,7 @@ from prompt_toolkit.shortcuts import create_default_layout, create_eventloop
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.key_binding.input_processor import KeyPress
 from prompt_toolkit.keys import Keys
+from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
@@ -415,6 +416,8 @@ class Saws(object):
         )
         cli_buffer = Buffer(
             history=history,
+            auto_suggest=AutoSuggestFromHistory(),
+            enable_history_search=True,
             completer=self.completer,
             complete_while_typing=Always(),
             accept_action=AcceptAction.RETURN_DOCUMENT)
