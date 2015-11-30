@@ -29,6 +29,9 @@ nosetests.xml
 # Translations
 *.mo
 
+# Sphinx documentation
+docs/build/
+
 # Mr Developer
 .mr.developer.cfg
 .project
