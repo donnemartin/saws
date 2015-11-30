@@ -5,15 +5,13 @@ Contributions are welcome!
 
 **Please carefully read this page to make the code review process go as smoothly as possible and to maximize the likelihood of your contribution being merged.**
 
-## A Note to Contributors
+## SAWS and AWS Collaboration
 
-First, thank you for your interest in improving the `SAWS` project.
+`SAWS` and the AWS team behind [boto](https://github.com/boto/boto) and [aws-cli](https://github.com/aws/aws-cli) will be collaborating to speed up the development of a low-friction wrapper around [aws-cli](https://github.com/aws/aws-cli).
 
-The first commit for `SAWS` went in on August 24 2015, so the project is still in its beginning stages.  Before investing a lot of time, I wanted to ship a minimum feature set early on to gather feedback about whether this was something the community thought is valuable. Now that we've gained interest I'd like to make the codebase easier to work with. I'm overhauling the code pretty heavily at the moment, doing considerable refactoring to try simplify future development.
+Check out the announcement at [AWS re:Invent](https://youtu.be/TnfqJYPjD9I?t=2288).
 
-If you're thinking of some adding completions for options or resources, or you have some beefy changes in mind, you might want to hold off until I wrap up this [ticket](https://github.com/donnemartin/saws/issues/36).
-
--Donne
+Stay tuned for more info!
 
 ## Bug Reports
 
@@ -44,7 +42,7 @@ The preferred way to contribute is to fork the
 
         $ git push -u origin my-feature
 
-6. Finally, go to the web page of your fork of the SAWS repo and click 'Pull Request' to send your changes for review.
+6. Finally, go to the web page of your fork of the `SAWS` repo and click 'Pull Request' to send your changes for review.
 
 ### GitHub Pull Requests Docs
 
