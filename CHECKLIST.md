@@ -49,10 +49,6 @@ L. Input a tag
 
 M. Push tagged release to develop and master
 
-Note: Steps N through R can now be done with a single script:
-
-    $ scripts/release_pypi.sh
-
 N. Set CHANGELOG as `README.md`
 
     $ scripts/set_changelog_as_readme.sh
