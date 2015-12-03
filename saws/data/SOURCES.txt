@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1454
+[sub_commands]: 1470
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -83,6 +83,7 @@ add-user-to-group
 add-working-storage
 allocate-address
 allocate-connection-on-interconnect
+allocate-hosts
 allocate-private-virtual-interface
 allocate-public-virtual-interface
 apply-pending-maintenance-action
@@ -152,6 +153,7 @@ clone-stack
 complete-lifecycle-action
 complete-multipart-upload
 complete-vault-lock
+compose-environments
 configure-health-check
 confirm-connection
 confirm-private-virtual-interface
@@ -388,6 +390,7 @@ delete-delivery-channel
 delete-deployment-config
 delete-deployment-group
 delete-destination
+delete-device-pool
 delete-dhcp-options
 delete-directory
 delete-distribution
@@ -452,6 +455,7 @@ delete-platform-application
 delete-policy
 delete-policy-version
 delete-preset
+delete-project
 delete-queue
 delete-realtime-endpoint
 delete-receipt-filter
@@ -465,6 +469,7 @@ delete-role
 delete-role-policy
 delete-route
 delete-route-table
+delete-run
 delete-saml-provider
 delete-scheduled-action
 delete-security-group
@@ -489,6 +494,7 @@ delete-tape
 delete-tape-archive
 delete-topic
 delete-trail
+delete-upload
 delete-user
 delete-user-policy
 delete-user-profile
@@ -590,6 +596,7 @@ describe-db-log-files
 describe-db-parameter-groups
 describe-db-parameters
 describe-db-security-groups
+describe-db-snapshot-attributes
 describe-db-snapshots
 describe-db-subnet-groups
 describe-default-cluster-parameters
@@ -623,9 +630,11 @@ describe-file-systems
 describe-flow-logs
 describe-gateway-information
 describe-hapg
+describe-hosts
 describe-hsm
 describe-hsm-client-certificates
 describe-hsm-configurations
+describe-id-format
 describe-identity
 describe-identity-pool
 describe-identity-pool-usage
@@ -1140,13 +1149,17 @@ modify-db-cluster
 modify-db-cluster-parameter-group
 modify-db-instance
 modify-db-parameter-group
+modify-db-snapshot-attribute
 modify-db-subnet-group
 modify-event-subscription
 modify-hapg
+modify-hosts
 modify-hsm
+modify-id-format
 modify-image-attribute
 modify-instance-attribute
 modify-instance-groups
+modify-instance-placement
 modify-load-balancer-attributes
 modify-luna-client
 modify-mount-target-security-groups
@@ -1262,6 +1275,7 @@ register-volume
 register-workflow-type
 reject-vpc-peering-connection
 release-address
+release-hosts
 remove-client-id-from-open-id-connect-provider
 remove-option-from-option-group
 remove-permission
@@ -1438,6 +1452,7 @@ update-container-agent
 update-data-source
 update-default-branch
 update-deployment-group
+update-device-pool
 update-distribution
 update-domain-contact
 update-domain-contact-privacy
@@ -1468,6 +1483,7 @@ update-open-id-connect-provider-thumbprint
 update-pipeline
 update-pipeline-notifications
 update-pipeline-status
+update-project
 update-radius
 update-rds-db-instance
 update-receipt-rule
