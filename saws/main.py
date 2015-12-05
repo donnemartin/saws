@@ -39,6 +39,7 @@ def cli():
         saws = Saws()
         saws.run_cli()
     except (EOFError, KeyboardInterrupt):
+        saws.aws_cli.set_return_value(None)
         saws.config_obj.write()
 
 
