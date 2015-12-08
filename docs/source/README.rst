@@ -53,10 +53,11 @@ Under the hood, ``SAWS`` is **powered by the AWS CLI** and supports the
    -  Bucket names
    -  Instance ids
    -  Instance tags
-   -  `More coming soon! <(#todo-add-more-resources)>`__
+   -  `More coming soon! <#todo-add-more-resources>`__
 
 -  Customizable shortcuts
 -  Fuzzy completion of resources and shortcuts
+-  Fish-style auto-suggestions
 -  Syntax and output highlighting
 -  Execution of shell commands
 -  Command history
@@ -89,6 +90,7 @@ Features
 -  `Customizable Shortcuts <#customizable-shortcuts>`__
 -  `Fuzzy Resource and Shortcut
    Completion <#fuzzy-resource-and-shortcut-completion>`__
+-  `Fish-Style Auto-Suggestions <#fish-style-auto-suggestions>`__
 -  `Executing Shell Commands <#executing-shell-commands>`__
 -  `Command History <#command-history>`__
 -  `Contextual Help <#contextual-help>`__
@@ -340,6 +342,15 @@ Note: Fuzzy completion currently only works with AWS
 `shortcuts <customizable-shortcuts>`__.
 
 .. figure:: http://i.imgur.com/7OvFHCw.png
+   :alt: 
+
+Fish-Style Auto-Suggestions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``SAWS`` supports Fish-style auto-suggestions. Use the ``right arrow``
+key to complete a suggestion.
+
+.. figure:: http://i.imgur.com/t5200q1.png
    :alt: 
 
 Executing Shell Commands
