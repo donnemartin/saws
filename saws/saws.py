@@ -314,6 +314,7 @@ class Saws(object):
         Only highlights the output if all of the following conditions are True:
 
         * The color option is enabled
+        * The command will be handled by the `aws-cli`
         * The text does not contain the `configure` command
         * The text does not contain the `help` command, which already does
             output highlighting
@@ -328,6 +329,8 @@ class Saws(object):
         """
         stripped_text = text.strip()
         if not self.get_color() or stripped_text == '':
+            return text
+        if AwsCommands.AWS_COMMAND not in stripped_text.split():
             return text
         excludes = [AwsCommands.AWS_CONFIGURE,
                     AwsCommands.AWS_HELP,
