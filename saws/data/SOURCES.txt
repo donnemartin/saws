@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1470
+[sub_commands]: 1493
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -265,6 +265,7 @@ create-log-group
 create-log-stream
 create-login-profile
 create-luna-client
+create-microsoft-ad
 create-ml-model
 create-mount-target
 create-multipart-upload
@@ -314,7 +315,11 @@ create-table
 create-tags
 create-tapes
 create-topic
+create-traffic-policy
+create-traffic-policy-instance
+create-traffic-policy-version
 create-trail
+create-trust
 create-upload
 create-user
 create-user-profile
@@ -493,7 +498,10 @@ delete-tags-for-domain
 delete-tape
 delete-tape-archive
 delete-topic
+delete-traffic-policy
+delete-traffic-policy-instance
 delete-trail
+delete-trust
 delete-upload
 delete-user
 delete-user-policy
@@ -755,6 +763,7 @@ describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
 describe-trusted-advisor-checks
+describe-trusts
 describe-upload-buffer
 describe-user-profiles
 describe-vault
@@ -869,6 +878,7 @@ get-bucket-versioning
 get-bucket-website
 get-bulk-publish-details
 get-change
+get-change-details
 get-checker-ip-ranges
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
@@ -977,6 +987,9 @@ get-template-summary
 get-test
 get-third-party-job-details
 get-topic-attributes
+get-traffic-policy
+get-traffic-policy-instance
+get-traffic-policy-instance-count
 get-trail-status
 get-upload
 get-user
@@ -1017,6 +1030,8 @@ list-available-solution-stacks
 list-available-zones
 list-branches
 list-buckets
+list-change-batches-by-hosted-zone
+list-change-batches-by-rr-set
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
 list-clusters
@@ -1121,6 +1136,11 @@ list-task-definitions
 list-tasks
 list-tests
 list-topics
+list-traffic-policies
+list-traffic-policy-instances
+list-traffic-policy-instances-by-hosted-zone
+list-traffic-policy-instances-by-policy
+list-traffic-policy-versions
 list-unique-problems
 list-uploads
 list-user-policies
@@ -1503,6 +1523,8 @@ update-streaming-distribution
 update-subscription
 update-table
 update-tags-for-domain
+update-traffic-policy-comment
+update-traffic-policy-instance
 update-trail
 update-user
 update-user-profile
@@ -1523,6 +1545,7 @@ validate-template
 verify-domain-dkim
 verify-domain-identity
 verify-email-identity
+verify-trust
 wait
 website
 [global_options]: 11
