@@ -20,6 +20,34 @@ https://github.com/donnemartin/saws/issues
 Changelog
 =========
 
+0.4.0 (2015-12-08)
+------------------
+
+Features
+~~~~~~~~
+
+-  Implemented `#67 <https://github.com/donnemartin/saws/issues/67>`__:
+   Add Fish-style auto suggestions.
+
+Bug Fixes
+~~~~~~~~~
+
+-  Fixed `#71 <https://github.com/donnemartin/saws/issues/71>`__:
+   Disable color output for shell commands.
+-  Fixed `#72 <https://github.com/donnemartin/saws/issues/72>`__:
+   Exiting with ``F10`` does not clear the menu bar.
+
+Updates
+~~~~~~~
+
+-  Updated list of commands.
+-  Updated repo ``README``.
+
+   -  Added auto suggestions.
+
+-  Fixed `#66 <https://github.com/donnemartin/saws/issues/38>`__:
+   Removed ``docs/build`` from source repo.
+
 0.3.2 (2015-10-16)
 ------------------
 
