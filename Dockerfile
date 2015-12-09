@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && \
+RUN apt-get update groff && \
   apt-get install -y python-pip && \
   pip install saws
 
