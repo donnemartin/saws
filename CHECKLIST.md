@@ -33,7 +33,7 @@ G. Start a new release branch
 
 H. Increment the version number in `saws/__init__.py`
 
-I. Update and review `CHANGELOG`
+I. Update and review `CHANGELOG.md`, then run:
 
     $ scripts/create_changelog.sh
 
