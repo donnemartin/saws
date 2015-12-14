@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1493
+[sub_commands]: 1496
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -68,6 +68,7 @@ add-cache
 add-client-id-to-open-id-connect-provider
 add-communication-to-case
 add-instance-groups
+add-model
 add-option-to-option-group
 add-permission
 add-role-to-instance-profile
@@ -1387,6 +1388,7 @@ set-identity-notification-topic
 set-identity-pool-configuration
 set-identity-pool-roles
 set-instance-health
+set-instance-protection
 set-load-balancer-listener-ssl-certificate
 set-load-balancer-policies-for-backend-server
 set-load-balancer-policies-of-listener
@@ -1404,6 +1406,7 @@ set-topic-attributes
 set-vault-access-policy
 set-vault-notifications
 shutdown-gateway
+sign
 signal-resource
 signal-workflow-execution
 simulate-custom-policy
