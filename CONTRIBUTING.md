@@ -5,14 +5,6 @@ Contributions are welcome!
 
 **Please carefully read this page to make the code review process go as smoothly as possible and to maximize the likelihood of your contribution being merged.**
 
-## SAWS and AWS Collaboration
-
-`SAWS` and the AWS team behind [boto](https://github.com/boto/boto) and [aws-cli](https://github.com/aws/aws-cli) will be collaborating to speed up the development of a low-friction wrapper around [aws-cli](https://github.com/aws/aws-cli).
-
-Check out the announcement at [AWS re:Invent](https://youtu.be/TnfqJYPjD9I?t=2288).
-
-Stay tuned for more info!
-
 ## Bug Reports
 
 For bug reports or requests [submit an issue](https://github.com/donnemartin/saws/issues).
