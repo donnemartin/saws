@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1499
+[sub_commands]: 1502
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -778,6 +778,7 @@ describe-volume-status
 describe-volumes
 describe-vpc-attribute
 describe-vpc-classic-link
+describe-vpc-classic-link-dns-support
 describe-vpc-endpoint-services
 describe-vpc-endpoints
 describe-vpc-peering-connections
@@ -819,6 +820,7 @@ disable-sso
 disable-stage-transition
 disable-vgw-route-propagation
 disable-vpc-classic-link
+disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-elastic-ip
 disassociate-route-table
@@ -842,6 +844,7 @@ enable-stage-transition
 enable-vgw-route-propagation
 enable-volume-io
 enable-vpc-classic-link
+enable-vpc-classic-link-dns-support
 encrypt
 enter-standby
 estimate-template-cost
