@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1502
+[sub_commands]: 1506
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -726,6 +726,8 @@ describe-scaling-activities
 describe-scaling-parameters
 describe-scaling-process-types
 describe-scheduled-actions
+describe-scheduled-instance-availability
+describe-scheduled-instances
 describe-security-groups
 describe-service-access-policies
 describe-service-errors
@@ -1216,6 +1218,7 @@ purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
 purchase-reserved-instances-offering
 purchase-reserved-node-offering
+purchase-scheduled-instances
 purge-queue
 push
 put
@@ -1367,6 +1370,7 @@ revoke-snapshot-access
 rm
 rotate-encryption-key
 run-instances
+run-scheduled-instances
 run-task
 scan
 schedule-hbase-backup
