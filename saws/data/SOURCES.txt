@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1506
+[sub_commands]: 1507
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -162,6 +162,7 @@ confirm-product-instance
 confirm-public-virtual-interface
 confirm-subscription
 connect-directory
+continue-update-rollback
 copy-cluster-snapshot
 copy-db-cluster-snapshot
 copy-db-parameter-group
