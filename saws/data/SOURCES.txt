@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1507
+[sub_commands]: 1510
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -119,7 +119,9 @@ authorize-security-group-egress
 authorize-security-group-ingress
 authorize-snapshot-access
 batch-delete-attributes
+batch-get-application-revisions
 batch-get-applications
+batch-get-deployment-instances
 batch-get-deployments
 batch-get-item
 batch-get-on-premises-instances
@@ -316,6 +318,7 @@ create-subnet
 create-subscription
 create-table
 create-tags
+create-tape-with-barcode
 create-tapes
 create-topic
 create-traffic-policy
