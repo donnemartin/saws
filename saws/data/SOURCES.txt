@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1510
+[sub_commands]: 1511
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -674,6 +674,7 @@ describe-launch-configurations
 describe-layers
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
+describe-limits
 describe-load-balancer-attributes
 describe-load-balancer-policies
 describe-load-balancer-policy-types
