@@ -9,7 +9,7 @@ install_requires = [
     'awscli>=1.7.46',
     'click>=4.0',
     'configobj>=5.0.6',
-    'prompt-toolkit==0.52',
+    'prompt-toolkit==0.60',
     'six>=1.9.0',
     'pygments>=2.0.2'
 ]
