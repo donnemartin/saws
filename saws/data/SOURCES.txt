@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1511
+[sub_commands]: 1514
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -533,6 +533,7 @@ deregister
 deregister-container-instance
 deregister-ecs-cluster
 deregister-elastic-ip
+deregister-event-topic
 deregister-image
 deregister-instance
 deregister-instances-from-load-balancer
@@ -638,6 +639,7 @@ describe-environments
 describe-evaluations
 describe-event-categories
 describe-event-subscriptions
+describe-event-topics
 describe-events
 describe-export-tasks
 describe-expressions
@@ -1300,6 +1302,7 @@ register-device
 register-domain
 register-ecs-cluster
 register-elastic-ip
+register-event-topic
 register-image
 register-instance
 register-instances-with-load-balancer
