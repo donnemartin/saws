@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1514
+[sub_commands]: 1518
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -899,6 +899,7 @@ get-checker-ip-ranges
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cognito-events
+get-commit
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
 get-compliance-summary-by-config-rule
@@ -978,6 +979,7 @@ get-queue-attributes
 get-queue-url
 get-records
 get-repository
+get-repository-triggers
 get-resource-config-history
 get-reusable-delegation-set
 get-role
@@ -1267,6 +1269,7 @@ put-object-acl
 put-pipeline-definition
 put-record
 put-records
+put-repository-triggers
 put-retention-policy
 put-role-policy
 put-scaling-policy
@@ -1463,6 +1466,7 @@ terminate-instances
 terminate-workflow-execution
 terminate-workspaces
 test-metric-filter
+test-repository-triggers
 test-role
 transfer-domain
 unassign-instance
