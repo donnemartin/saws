@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1518
+[sub_commands]: 1520
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -763,6 +763,7 @@ describe-subnets
 describe-subscription-filters
 describe-suggesters
 describe-table
+describe-table-restore-status
 describe-tags
 describe-tape-archives
 describe-tape-recovery-points
@@ -1364,6 +1365,7 @@ restore-from-cluster-snapshot
 restore-from-hbase-backup
 restore-from-snapshot
 restore-object
+restore-table-from-cluster-snapshot
 resume-processes
 resync-mfa-device
 retire-grant
