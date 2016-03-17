@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1520
+[sub_commands]: 1523
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -121,6 +121,7 @@ authorize-snapshot-access
 batch-delete-attributes
 batch-get-application-revisions
 batch-get-applications
+batch-get-deployment-groups
 batch-get-deployment-instances
 batch-get-deployments
 batch-get-item
@@ -943,6 +944,7 @@ get-hosted-zone-count
 get-hostname-suggestion
 get-id
 get-identity-dkim-attributes
+get-identity-mail-from-domain-attributes
 get-identity-notification-attributes
 get-identity-policies
 get-identity-pool-configuration
@@ -1407,6 +1409,7 @@ set-desired-capacity
 set-endpoint-attributes
 set-identity-dkim-enabled
 set-identity-feedback-forwarding-enabled
+set-identity-mail-from-domain
 set-identity-notification-topic
 set-identity-pool-configuration
 set-identity-pool-roles
