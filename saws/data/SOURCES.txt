@@ -54,7 +54,7 @@ sts
 support
 swf
 workspaces
-[sub_commands]: 1523
+[sub_commands]: 1531
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -965,6 +965,7 @@ get-ml-model
 get-object
 get-object-acl
 get-object-torrent
+get-offering-status
 get-on-premises-instance
 get-open-id-connect-provider
 get-open-id-token
@@ -1040,6 +1041,7 @@ list-account-aliases
 list-action-types
 list-activity-types
 list-aliases
+list-allowed-node-type-modifications
 list-application-revisions
 list-applications
 list-artifacts
@@ -1108,6 +1110,8 @@ list-mfa-devices
 list-multipart-uploads
 list-object-versions
 list-objects
+list-offering-transactions
+list-offerings
 list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
@@ -1226,6 +1230,7 @@ predict
 promote-read-replica
 publish
 publish-version
+purchase-offering
 purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
 purchase-reserved-instances-offering
@@ -1331,6 +1336,7 @@ remove-tags-from-resource
 remove-tags-from-stream
 remove-tags-from-vault
 remove-user-from-group
+renew-offering
 reorder-receipt-rule-set
 replace-network-acl-association
 replace-network-acl-entry
@@ -1419,6 +1425,7 @@ set-load-balancer-listener-ssl-certificate
 set-load-balancer-policies-for-backend-server
 set-load-balancer-policies-of-listener
 set-load-based-auto-scaling
+set-local-console-password
 set-permission
 set-platform-application-attributes
 set-queue-attributes
@@ -1454,6 +1461,7 @@ stop-deployment
 stop-instance
 stop-instances
 stop-logging
+stop-run
 stop-stack
 stop-task
 submit-container-state-change
