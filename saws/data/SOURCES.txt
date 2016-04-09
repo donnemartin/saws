@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1792
+[sub_commands]: 1808
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -115,7 +115,6 @@ associate-vpc-with-hosted-zone
 assume-role
 assume-role-with-saml
 assume-role-with-web-identity
-attach-assessment-and-rules-package
 attach-classic-link-vpc
 attach-elastic-load-balancer
 attach-group-policy
@@ -210,7 +209,8 @@ create-app
 create-app-cookie-stickiness-policy
 create-application
 create-application-version
-create-assessment
+create-assessment-target
+create-assessment-template
 create-association
 create-association-batch
 create-authorizer
@@ -228,6 +228,7 @@ create-cache-subnet-group
 create-cached-iscsi-volume
 create-case
 create-certificate-from-csr
+create-change-set
 create-cloud-front-origin-access-identity
 create-cluster
 create-cluster-parameter-group
@@ -393,6 +394,7 @@ create-vpn-connection-route
 create-vpn-gateway
 create-web-acl
 create-workspaces
+create-xss-match-set
 credential-helper
 deactivate-mfa-device
 deactivate-pipeline
@@ -414,7 +416,9 @@ delete-app
 delete-application
 delete-application-version
 delete-archive
-delete-assessment
+delete-assessment-run
+delete-assessment-target
+delete-assessment-template
 delete-association
 delete-attributes
 delete-authorizer
@@ -436,6 +440,7 @@ delete-cache-parameter-group
 delete-cache-security-group
 delete-cache-subnet-group
 delete-certificate
+delete-change-set
 delete-chap-credentials
 delete-client-certificate
 delete-cloud-front-origin-access-identity
@@ -612,6 +617,7 @@ delete-vpn-connection
 delete-vpn-connection-route
 delete-vpn-gateway
 delete-web-acl
+delete-xss-match-set
 deliver-config-snapshot
 deprecate-activity-type
 deprecate-domain
@@ -640,11 +646,12 @@ describe-alarms
 describe-alarms-for-metric
 describe-alias
 describe-analysis-schemes
-describe-application
 describe-application-versions
 describe-applications
 describe-apps
-describe-assessment
+describe-assessment-runs
+describe-assessment-targets
+describe-assessment-templates
 describe-association
 describe-attachment
 describe-auto-scaling-groups
@@ -667,6 +674,7 @@ describe-cached-iscsi-volumes
 describe-cases
 describe-certificate
 describe-certificates
+describe-change-set
 describe-chap-credentials
 describe-classic-link-instances
 describe-cluster
@@ -742,7 +750,7 @@ describe-events
 describe-export-tasks
 describe-expressions
 describe-file-systems
-describe-finding
+describe-findings
 describe-fleet-attributes
 describe-fleet-capacity
 describe-fleet-events
@@ -841,11 +849,10 @@ describe-reserved-instances-offerings
 describe-reserved-node-offerings
 describe-reserved-nodes
 describe-resize
-describe-resource-group
+describe-resource-groups
 describe-route-tables
 describe-rule
-describe-rules-package
-describe-run
+describe-rules-packages
 describe-scaling-activities
 describe-scaling-parameters
 describe-scaling-policies
@@ -923,7 +930,6 @@ describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
 describe-workspaces
-detach-assessment-and-rules-package
 detach-classic-link-vpc
 detach-elastic-load-balancer
 detach-group-policy
@@ -987,6 +993,7 @@ encrypt
 enter-standby
 estimate-template-cost
 evaluate-expression
+execute-change-set
 execute-policy
 exit-standby
 failover-db-cluster
@@ -1011,7 +1018,6 @@ get-api-key
 get-api-keys
 get-application
 get-application-revision
-get-assessment-telemetry
 get-attributes
 get-authorization-token
 get-authorizer
@@ -1036,6 +1042,7 @@ get-bucket-versioning
 get-bucket-website
 get-bulk-publish-details
 get-byte-match-set
+get-caller-identity
 get-certificate
 get-change
 get-change-details
@@ -1179,6 +1186,7 @@ get-streaming-distribution
 get-streaming-distribution-config
 get-subscription-attributes
 get-suite
+get-telemetry-metadata
 get-template
 get-template-summary
 get-test
@@ -1198,11 +1206,13 @@ get-vault-lock
 get-vault-notifications
 get-web-acl
 get-workflow-execution-history
+get-xss-match-set
 grant-access
 head-bucket
 head-object
 import-image
 import-key-pair
+import-rest-api
 import-snapshot
 increase-stream-retention-period
 index-documents
@@ -1224,13 +1234,13 @@ list-allowed-node-type-modifications
 list-application-revisions
 list-applications
 list-artifacts
-list-assessment-agents
-list-assessments
+list-assessment-run-agents
+list-assessment-runs
+list-assessment-targets
+list-assessment-templates
 list-associations
-list-attached-assessments
 list-attached-group-policies
 list-attached-role-policies
-list-attached-rules-packages
 list-attached-user-policies
 list-available-solution-stacks
 list-available-zones
@@ -1241,6 +1251,7 @@ list-byte-match-sets
 list-certificates
 list-change-batches-by-hosted-zone
 list-change-batches-by-rr-set
+list-change-sets
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
 list-clusters
@@ -1265,6 +1276,7 @@ list-domains
 list-endpoints-by-platform-application
 list-entities-for-policy
 list-event-source-mappings
+list-event-subscriptions
 list-findings
 list-fleets
 list-functions
@@ -1380,7 +1392,7 @@ list-volume-recovery-points
 list-volumes
 list-web-acls
 list-workflow-types
-localize-text
+list-xss-match-sets
 lookup-developer-identity
 lookup-events
 ls
@@ -1393,6 +1405,7 @@ modify-cache-parameter-group
 modify-cache-subnet-group
 modify-cluster
 modify-cluster-attributes
+modify-cluster-iam-roles
 modify-cluster-parameter-group
 modify-cluster-subnet-group
 modify-db-cluster
@@ -1435,7 +1448,7 @@ poll-for-jobs
 poll-for-task
 poll-for-third-party-jobs
 predict
-preview-agents-for-resource-group
+preview-agents
 promote-read-replica
 publish
 publish-version
@@ -1494,6 +1507,7 @@ put-record
 put-record-batch
 put-records
 put-repository-triggers
+put-rest-api
 put-retention-policy
 put-role-policy
 put-rule
@@ -1618,7 +1632,6 @@ revoke-security-group-ingress
 revoke-snapshot-access
 rm
 rotate-encryption-key
-run-assessment
 run-instances
 run-scheduled-instances
 run-task
@@ -1679,8 +1692,8 @@ simulate-principal-policy
 socks
 split-shard
 ssh
+start-assessment-run
 start-configuration-recorder
-start-data-collection
 start-gateway
 start-instance
 start-instances
@@ -1690,8 +1703,8 @@ start-replication-task
 start-stack
 start-task
 start-workflow-execution
+stop-assessment-run
 stop-configuration-recorder
-stop-data-collection
 stop-deployment
 stop-instance
 stop-instances
@@ -1704,6 +1717,7 @@ submit-container-state-change
 submit-task-state-change
 subscribe
 subscribe-to-dataset
+subscribe-to-event
 suggest
 suspend-processes
 swap-environment-cnames
@@ -1732,6 +1746,7 @@ unlink-identity
 unmonitor-instances
 unsubscribe
 unsubscribe-from-dataset
+unsubscribe-from-event
 update-access-key
 update-account
 update-account-password-policy
@@ -1740,7 +1755,7 @@ update-api-key
 update-app
 update-application
 update-application-version
-update-assessment
+update-assessment-target
 update-association-status
 update-assume-role-policy
 update-authorizer
@@ -1840,6 +1855,7 @@ update-user-profile
 update-volume
 update-vtl-device-type
 update-web-acl
+update-xss-match-set
 upload-archive
 upload-build
 upload-documents
