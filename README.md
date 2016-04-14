@@ -237,19 +237,19 @@ Note:  Fuzzy completion currently only works with AWS [resources](#auto-completi
 
 ![](http://i.imgur.com/7OvFHCw.png)
 
-### Fish-Style Auto-Suggestions
+## Fish-Style Auto-Suggestions
 
 `SAWS` supports Fish-style auto-suggestions.  Use the `right arrow` key to complete a suggestion.
 
 ![](http://i.imgur.com/t5200q1.png)
 
-### Executing Shell Commands
+## Executing Shell Commands
 
 `SAWS` allows you to execute shell commands from the `saws>` prompt.
 
 ![](http://i.imgur.com/FiSn6b2.png)
 
-### Command History
+## Command History
 
 `SAWS` keeps track of commands you enter and stores them in `~/.saws-history`.  Use the up and down arrow keys to cycle through the command history.
 
@@ -294,7 +294,7 @@ Usage:
 
 ![](http://i.imgur.com/7vz8OSc.png)
 
-### Windows Support
+## Windows Support
 
 `SAWS` has been tested on Windows 7 and Windows 10.
 
