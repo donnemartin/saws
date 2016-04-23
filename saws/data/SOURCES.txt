@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1812
+[sub_commands]: 1821
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -436,6 +436,7 @@ delete-bucket-tagging
 delete-bucket-website
 delete-build
 delete-byte-match-set
+delete-ca-certificate
 delete-cache-cluster
 delete-cache-parameter-group
 delete-cache-security-group
@@ -552,6 +553,7 @@ delete-realtime-endpoint
 delete-receipt-filter
 delete-receipt-rule
 delete-receipt-rule-set
+delete-registration-code
 delete-replication-group
 delete-replication-instance
 delete-replication-subnet-group
@@ -665,6 +667,7 @@ describe-bandwidth-rate-limit
 describe-batch-predictions
 describe-build
 describe-bundle-tasks
+describe-ca-certificate
 describe-cache
 describe-cache-clusters
 describe-cache-engine-versions
@@ -1155,6 +1158,7 @@ get-project
 get-queue-attributes
 get-queue-url
 get-records
+get-registration-code
 get-repository
 get-repository-policy
 get-repository-triggers
@@ -1251,7 +1255,9 @@ list-branches
 list-buckets
 list-builds
 list-byte-match-sets
+list-ca-certificates
 list-certificates
+list-certificates-by-ca
 list-change-batches-by-hosted-zone
 list-change-batches-by-rr-set
 list-change-sets
@@ -1544,6 +1550,8 @@ refresh-trusted-advisor-check
 register
 register-activity-type
 register-application-revision
+register-ca-certificate
+register-certificate
 register-container-instance
 register-cross-account-access-role
 register-device
@@ -1769,6 +1777,7 @@ update-base-path-mapping
 update-batch-prediction
 update-build
 update-byte-match-set
+update-ca-certificate
 update-certificate
 update-chap-credentials
 update-client-certificate
