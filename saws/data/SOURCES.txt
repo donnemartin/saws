@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1821
+[sub_commands]: 1828
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -102,6 +102,7 @@ allocate-connection-on-interconnect
 allocate-hosts
 allocate-private-virtual-interface
 allocate-public-virtual-interface
+apply-environment-managed-action
 apply-pending-maintenance-action
 apply-security-groups-to-load-balancer
 assign-instance
@@ -746,6 +747,8 @@ describe-endpoints
 describe-engine-default-cluster-parameters
 describe-engine-default-parameters
 describe-environment-health
+describe-environment-managed-action-history
+describe-environment-managed-actions
 describe-environment-resources
 describe-environments
 describe-evaluations
@@ -954,6 +957,7 @@ disable-alarm-actions
 disable-availability-zones-for-load-balancer
 disable-domain-auto-renew
 disable-domain-transfer-lock
+disable-enhanced-monitoring
 disable-gateway
 disable-hbase-backups
 disable-key
@@ -980,6 +984,7 @@ enable-alarm-actions
 enable-availability-zones-for-load-balancer
 enable-domain-auto-renew
 enable-domain-transfer-lock
+enable-enhanced-monitoring
 enable-key
 enable-key-rotation
 enable-logging
@@ -1032,6 +1037,7 @@ get-base-path-mapping
 get-base-path-mappings
 get-batch-prediction
 get-branch
+get-bucket-accelerate-configuration
 get-bucket-acl
 get-bucket-cors
 get-bucket-lifecycle
@@ -1472,6 +1478,7 @@ push
 put
 put-action-revision
 put-attributes
+put-bucket-accelerate-configuration
 put-bucket-acl
 put-bucket-cors
 put-bucket-lifecycle
