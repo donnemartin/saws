@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1828
+[sub_commands]: 1832
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -90,6 +90,7 @@ add-role-to-instance-profile
 add-source-identifier-to-subscription
 add-steps
 add-tags
+add-tags-to-certificate
 add-tags-to-on-premises-instances
 add-tags-to-resource
 add-tags-to-stream
@@ -1376,6 +1377,7 @@ list-subscriptions-by-topic
 list-suites
 list-tables
 list-tags
+list-tags-for-certificate
 list-tags-for-domain
 list-tags-for-resource
 list-tags-for-resources
@@ -1454,6 +1456,7 @@ modify-subnet-attribute
 modify-volume-attribute
 modify-vpc-attribute
 modify-vpc-endpoint
+modify-vpc-peering-connection-options
 monitor-instances
 move-address-to-vpc
 mv
@@ -1585,6 +1588,7 @@ remove-permission
 remove-role-from-instance-profile
 remove-source-identifier-from-subscription
 remove-tags
+remove-tags-from-certificate
 remove-tags-from-on-premises-instances
 remove-tags-from-resource
 remove-tags-from-stream
