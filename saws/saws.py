@@ -407,7 +407,7 @@ class Saws(object):
                           self.get_shortcut_match)
         layout = create_default_layout(
             message='saws> ',
-            reserve_space_for_menu=True,
+            reserve_space_for_menu=8,
             lexer=CommandLexer,
             get_bottom_toolbar_tokens=toolbar.handler,
             extra_input_processors=[
@@ -460,5 +460,5 @@ class Saws(object):
         print('Version:', __version__)
         print('Theme:', self.theme)
         while True:
-            document = self.aws_cli.run()
+            document = self.aws_cli.run(reset_current_buffer=True)
             self._process_command(document.text)
