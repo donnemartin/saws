@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1832
+[sub_commands]: 1834
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1074,6 +1074,7 @@ get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
 get-config
 get-console-output
+get-contact-reachability-status
 get-context-keys-for-custom-policy
 get-context-keys-for-principal-policy
 get-credential-report
@@ -1611,6 +1612,7 @@ request-environment-info
 request-spot-fleet
 request-spot-instances
 request-upload-credentials
+resend-contact-reachability-email
 resend-validation-email
 reset-cache
 reset-cache-parameter-group
