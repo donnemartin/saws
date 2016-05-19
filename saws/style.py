@@ -14,9 +14,8 @@
 # language governing permissions and limitations under the License.
 
 from pygments.token import Token
-from pygments.style import Style
 from pygments.util import ClassNotFound
-from prompt_toolkit.styles import default_style_extensions
+from prompt_toolkit.styles import style_from_pygments
 import pygments.styles
 
 
@@ -56,31 +55,17 @@ class StyleFactory(object):
         except ClassNotFound:
             style = pygments.styles.get_style_by_name('native')
 
-        class CliStyle(Style):
-            """Custom saws style.
-
-            Provides styles for the completions menu and toolbar.
-
-            Attributes:
-                * styles: A dictionary that contains pygments style information.
-            """
-
-            styles = {}
-            styles.update(style.styles)
-            styles.update(default_style_extensions)
-            styles.update({
-                Token.Menu.Completions.Completion.Current: 'bg:#00aaaa #000000',
-                Token.Menu.Completions.Completion: 'bg:#008888 #ffffff',
-                Token.Menu.Completions.ProgressButton: 'bg:#003333',
-                Token.Menu.Completions.ProgressBar: 'bg:#00aaaa',
-                Token.Toolbar: 'bg:#222222 #cccccc',
-                Token.Toolbar.Off: 'bg:#222222 #696969',
-                Token.Toolbar.On: 'bg:#222222 #ffffff',
-                Token.Toolbar.Search: 'noinherit bold',
-                Token.Toolbar.Search.Text: 'nobold',
-                Token.Toolbar.System: 'noinherit bold',
-                Token.Toolbar.Arg: 'noinherit bold',
-                Token.Toolbar.Arg.Text: 'nobold'
-            })
-
-        return CliStyle
+        return style_from_pygments(style_cls=style, style_dict={
+            Token.Menu.Completions.Completion.Current: 'bg:#00aaaa #000000',
+            Token.Menu.Completions.Completion: 'bg:#008888 #ffffff',
+            Token.Scrollbar: 'bg:#00aaaa',
+            Token.Scrollbar.Button: 'bg:#003333',
+            Token.Toolbar: 'bg:#222222 #cccccc',
+            Token.Toolbar.Off: 'bg:#222222 #696969',
+            Token.Toolbar.On: 'bg:#222222 #ffffff',
+            Token.Toolbar.Search: 'noinherit bold',
+            Token.Toolbar.Search.Text: 'nobold',
+            Token.Toolbar.System: 'noinherit bold',
+            Token.Toolbar.Arg: 'noinherit bold',
+            Token.Toolbar.Arg.Text: 'nobold'
+        })
