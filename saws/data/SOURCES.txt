@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1834
+[sub_commands]: 1840
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -733,6 +733,7 @@ describe-destinations
 describe-dhcp-options
 describe-directories
 describe-document
+describe-document-permission
 describe-domain
 describe-domains
 describe-ec2-instance-limits
@@ -871,6 +872,7 @@ describe-scheduled-actions
 describe-scheduled-instance-availability
 describe-scheduled-instances
 describe-schemas
+describe-security-group-references
 describe-security-groups
 describe-service-access-policies
 describe-service-errors
@@ -892,6 +894,7 @@ describe-stack-resource
 describe-stack-resources
 describe-stack-summary
 describe-stacks
+describe-stale-security-groups
 describe-step
 describe-stored-iscsi-volumes
 describe-stream
@@ -1330,6 +1333,7 @@ list-mfa-devices
 list-multipart-uploads
 list-object-versions
 list-objects
+list-objects-v2
 list-offering-transactions
 list-offerings
 list-on-premises-instances
@@ -1384,6 +1388,7 @@ list-tags-for-resource
 list-tags-for-resources
 list-tags-for-stream
 list-tags-for-vault
+list-tapes
 list-targets-by-rule
 list-task-definition-families
 list-task-definitions
@@ -1432,6 +1437,7 @@ modify-db-instance
 modify-db-parameter-group
 modify-db-snapshot-attribute
 modify-db-subnet-group
+modify-document-permission
 modify-endpoint
 modify-event-subscription
 modify-hapg
