@@ -9,6 +9,10 @@ Installation
 
     $ pip install saws
 
+You can also install the latest `SAWS` from GitHub source which can contain changes not yet pushed to PyPI:
+
+    $ pip install git+https://github.com/donnemartin/saws.git
+
 If you are not installing in a [virtualenv](#virtual-environment-installation), run:
 
     $ sudo pip install saws
