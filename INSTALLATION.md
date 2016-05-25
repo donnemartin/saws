@@ -70,3 +70,9 @@ Note:  [Pipsi might not be fully supported on Windows](https://github.com/mitsuh
 Or by mounting a local `.aws` configuration directory:
 
     docker run -it -v path/to/.aws/:/root/.aws:ro saws
+
+## Mac OS X 10.11 El Capitan Users
+
+There is a known issue with Apple and its included python package dependencies (more info at https://github.com/pypa/pip/issues/3165). We are investigating ways to fix this issue but in the meantime, to install saws, you can run:
+
+    $ sudo pip install saws --upgrade --ignore-installed six
