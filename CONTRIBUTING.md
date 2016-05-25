@@ -48,7 +48,7 @@ Ensure your pull request satisfies all of the following, where applicable:
 * Passes [continuous integration](https://github.com/donnemartin/saws#continuous-integration)
 * Is covered by [documentation](https://github.com/donnemartin/saws#documentation)
 
-Review the following [style guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html).
+Review the following [style guide](https://google.github.io/styleguide/pyguide.html).
 
 Run code checks and fix any issues:
 
