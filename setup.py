@@ -6,12 +6,12 @@ except ImportError:
     from distutils.core import setup
 
 install_requires = [
-    'awscli>=1.7.46',
-    'click>=4.0',
-    'configobj>=5.0.6',
+    'awscli>=1.7.46,<2.0.0',
+    'click>=4.0,<7.0',
+    'configobj>=5.0.6,<6.0.0',
     'prompt-toolkit>=1.0.0,<1.1.0',
-    'six>=1.9.0',
-    'pygments>=2.0.2'
+    'six>=1.9.0,<2.0.0',
+    'pygments>=2.0.2,<3.0.0'
 ]
 
 if sys.version_info < (2, 7):
