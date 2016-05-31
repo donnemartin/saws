@@ -20,6 +20,35 @@ https://github.com/donnemartin/saws/issues
 Changelog
 =========
 
+0.4.1 (2015-05-31)
+------------------
+
+Bug Fixes
+~~~~~~~~~
+
+-  `#83 <https://github.com/donnemartin/saws/pull/83>`__ - Update to
+   ``prompt-toolkit`` 1.0.0, which includes a number of performance
+   improvements (especially noticeable on Windows) and bug fixes.
+
+Updates
+~~~~~~~
+
+-  `#75 <https://github.com/donnemartin/saws/pull/75>`__,
+   `#76 <https://github.com/donnemartin/saws/pull/76>`__ - Fix groff
+   install and follow Dockerfile best practices.
+-  `#85 <https://github.com/donnemartin/saws/pull/85>`__ - Update
+   packaging dependencies based on semantic versioning.
+-  `#86 <https://github.com/donnemartin/saws/pull/86>`__ - Fix linter
+   issues regarding imports.
+-  Update list of commands.
+-  Update INSTALLATION:
+
+   -  Add install from SOURCE.
+   -  Add note about OS X 10.11 pip issue (now also in README).
+   -  Update intro.
+
+-  Update link to style guide in CONTRIBUTING.
+
 0.4.0 (2015-12-08)
 ------------------
 
