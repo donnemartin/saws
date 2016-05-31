@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1840
+[sub_commands]: 1843
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -713,6 +713,7 @@ describe-data-sources
 describe-dataset
 describe-db-cluster-parameter-groups
 describe-db-cluster-parameters
+describe-db-cluster-snapshot-attributes
 describe-db-cluster-snapshots
 describe-db-clusters
 describe-db-engine-versions
@@ -1077,6 +1078,7 @@ get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
 get-config
 get-console-output
+get-console-screenshot
 get-contact-reachability-status
 get-context-keys-for-custom-policy
 get-context-keys-for-principal-policy
@@ -1433,6 +1435,7 @@ modify-cluster-parameter-group
 modify-cluster-subnet-group
 modify-db-cluster
 modify-db-cluster-parameter-group
+modify-db-cluster-snapshot-attribute
 modify-db-instance
 modify-db-parameter-group
 modify-db-snapshot-attribute
