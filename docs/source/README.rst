@@ -1,12 +1,12 @@
 .. figure:: http://i.imgur.com/vzC5zmA.gif
    :alt: 
 
+SAWS
+====
+
 |Build Status| |Documentation Status| |Dependency Status| |Codecov|
 
 |PyPI version| |PyPI| |License|
-
-SAWS
-====
 
 Motivation
 ----------
@@ -345,7 +345,7 @@ Note: Fuzzy completion currently only works with AWS
    :alt: 
 
 Fish-Style Auto-Suggestions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ``SAWS`` supports Fish-style auto-suggestions. Use the ``right arrow``
 key to complete a suggestion.
@@ -354,7 +354,7 @@ key to complete a suggestion.
    :alt: 
 
 Executing Shell Commands
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 ``SAWS`` allows you to execute shell commands from the ``saws>`` prompt.
 
@@ -362,7 +362,7 @@ Executing Shell Commands
    :alt: 
 
 Command History
-~~~~~~~~~~~~~~~
+---------------
 
 ``SAWS`` keeps track of commands you enter and stores them in
 ``~/.saws-history``. Use the up and down arrow keys to cycle through the
@@ -432,7 +432,7 @@ Toolbar Options
    :alt: 
 
 Windows Support
-~~~~~~~~~~~~~~~
+---------------
 
 ``SAWS`` has been tested on Windows 7 and Windows 10.
 
@@ -500,6 +500,18 @@ permissions <https://github.com/donnemartin/saws/issues/15>`__.
 To view ``SAWS`` ``virtualenv`` and `Docker <https://www.docker.com/>`__
 installation instructions, click
 `here <https://github.com/donnemartin/saws/blob/master/INSTALLATION.md>`__.
+
+Mac OS X 10.11 El Capitan Users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is a known issue with Apple and its included python package
+dependencies (more info at https://github.com/pypa/pip/issues/3165). We
+are investigating ways to fix this issue but in the meantime, to install
+saws, you can run:
+
+::
+
+    $ sudo pip install saws --upgrade --ignore-installed six
 
 AWS Credentials and Named Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
