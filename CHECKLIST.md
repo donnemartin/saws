@@ -61,7 +61,7 @@ P. Upload to PyPi
 
     $ python setup.py sdist upload -r pypi
 
-Q. Upload Sphinx docs to PyPi
+Q. Upload Sphinx docs to PyPi (requires Python2)
 
     $ python setup.py upload_sphinx
 
