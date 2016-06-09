@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1843
+[sub_commands]: 1844
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1346,6 +1346,7 @@ list-parts
 list-pipelines
 list-platform-applications
 list-policies
+list-policy-principals
 list-policy-versions
 list-presets
 list-principal-policies
