@@ -366,7 +366,8 @@ class Saws(object):
         else:
             # Clear the renderer and send a carriage return
             self.aws_cli.renderer.clear()
-            self.aws_cli.input_processor.feed_key(KeyPress(Keys.ControlM, ''))
+            self.aws_cli.input_processor.feed(KeyPress(Keys.ControlM, u''))
+            self.aws_cli.input_processor.process_keys()
 
     def _process_command(self, text):
         """Processes the input command, called by the cli event loop
