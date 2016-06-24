@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1844
+[sub_commands]: 1851
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -703,6 +703,7 @@ describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
 describe-configuration-settings
+describe-connection-loa
 describe-connections
 describe-connections-on-interconnect
 describe-container-instances
@@ -779,6 +780,7 @@ describe-hsm-client-certificates
 describe-hsm-configurations
 describe-id-format
 describe-identity
+describe-identity-id-format
 describe-identity-pool
 describe-identity-pool-usage
 describe-identity-usage
@@ -793,6 +795,7 @@ describe-instance-information
 describe-instance-status
 describe-instances
 describe-instances-health
+describe-interconnect-loa
 describe-interconnects
 describe-internet-gateways
 describe-job
@@ -1448,6 +1451,7 @@ modify-hapg
 modify-hosts
 modify-hsm
 modify-id-format
+modify-identity-id-format
 modify-image-attribute
 modify-instance-attribute
 modify-instance-groups
@@ -1479,6 +1483,7 @@ poll-for-third-party-jobs
 predict
 preview-agents
 promote-read-replica
+promote-read-replica-db-cluster
 publish
 publish-version
 purchase-offering
@@ -1657,6 +1662,7 @@ retrieve-domain-auth-code
 retrieve-environment-info
 retrieve-tape-archive
 retrieve-tape-recovery-point
+retry-stage-execution
 revoke-cache-security-group-ingress
 revoke-cluster-security-group-ingress
 revoke-db-security-group-ingress
@@ -1691,6 +1697,7 @@ set-desired-capacity
 set-endpoint-attributes
 set-identity-dkim-enabled
 set-identity-feedback-forwarding-enabled
+set-identity-headers-in-notifications-enabled
 set-identity-mail-from-domain
 set-identity-notification-topic
 set-identity-pool-configuration
