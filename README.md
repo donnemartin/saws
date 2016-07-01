@@ -408,8 +408,6 @@ Dependencies management details are available on [Gemnasium](https://gemnasium.c
 
 [![Codecov](https://img.shields.io/codecov/c/github/donnemartin/saws.svg)](https://codecov.io/github/donnemartin/saws/saws)
 
-![](http://codecov.io/github/donnemartin/saws/branch.svg?branch=master)
-
 Code coverage details are available on [Codecov](https://codecov.io/github/donnemartin/saws/saws).
 
 Run unit tests in your active Python environment:
