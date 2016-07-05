@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1851
+[sub_commands]: 1863
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -175,6 +175,7 @@ change-resource-record-sets
 change-tags-for-resource
 check-dns-availability
 check-domain-availability
+check-if-phone-number-is-opted-out
 clone-receipt-rule-set
 clone-stack
 complete-layer-upload
@@ -205,6 +206,7 @@ count-pending-decision-tasks
 cp
 create-access-key
 create-account-alias
+create-activation
 create-alias
 create-api-key
 create-app
@@ -411,6 +413,7 @@ define-suggester
 delete-access-key
 delete-account-alias
 delete-account-password-policy
+delete-activation
 delete-alarms
 delete-alias
 delete-analysis-scheme
@@ -636,12 +639,14 @@ deregister-event-topic
 deregister-image
 deregister-instance
 deregister-instances-from-load-balancer
+deregister-managed-instance
 deregister-on-premises-instance
 deregister-rds-db-instance
 deregister-task-definition
 deregister-volume
 describe-account-attributes
 describe-account-limits
+describe-activations
 describe-active-receipt-rule-set
 describe-activity-type
 describe-addresses
@@ -868,6 +873,7 @@ describe-resource-groups
 describe-route-tables
 describe-rule
 describe-rules-packages
+describe-runtime-configuration
 describe-scaling-activities
 describe-scaling-parameters
 describe-scaling-policies
@@ -1198,6 +1204,7 @@ get-session-token
 get-shard-iterator
 get-shipping-label
 get-size-constraint-set
+get-sms-attributes
 get-snapshot-limits
 get-sql-injection-match-set
 get-ssh-public-key
@@ -1346,6 +1353,7 @@ list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
 list-parts
+list-phone-numbers-opted-out
 list-pipelines
 list-platform-applications
 list-policies
@@ -1475,6 +1483,7 @@ modify-vpc-peering-connection-options
 monitor-instances
 move-address-to-vpc
 mv
+opt-in-phone-number
 poll-for-activity-task
 poll-for-decision-task
 poll-for-jobs
@@ -1715,6 +1724,7 @@ set-platform-application-attributes
 set-queue-attributes
 set-receipt-rule-position
 set-repository-policy
+set-sms-attributes
 set-stack-policy
 set-status
 set-subscription-attributes
@@ -1853,6 +1863,7 @@ update-key-description
 update-layer
 update-login-profile
 update-maintenance-start-time
+update-managed-instance-role
 update-method
 update-method-response
 update-ml-model
@@ -1872,6 +1883,7 @@ update-repository-name
 update-resource
 update-rest-api
 update-rule
+update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
 update-server-certificate
