@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1863
+[sub_commands]: 1864
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1505,6 +1505,7 @@ purge-queue
 push
 put
 put-action-revision
+put-approval-result
 put-attributes
 put-bucket-accelerate-configuration
 put-bucket-acl
