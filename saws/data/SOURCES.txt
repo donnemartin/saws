@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1864
+[sub_commands]: 1865
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -458,6 +458,7 @@ delete-cluster-snapshot
 delete-cluster-subnet-group
 delete-conditional-forwarder
 delete-config-rule
+delete-configuration-recorder
 delete-configuration-template
 delete-connection
 delete-custom-action-type
