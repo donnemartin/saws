@@ -67,7 +67,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1865
+[sub_commands]: 1867
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -192,6 +192,7 @@ confirm-subscription
 connect-directory
 continue-update-rollback
 copy-cluster-snapshot
+copy-db-cluster-parameter-group
 copy-db-cluster-snapshot
 copy-db-parameter-group
 copy-db-snapshot
@@ -1241,6 +1242,7 @@ get-xss-match-set
 grant-access
 head-bucket
 head-object
+import-certificate
 import-image
 import-key-pair
 import-rest-api
