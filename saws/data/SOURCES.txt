@@ -1,6 +1,7 @@
-[commands]: 68
+[commands]: 72
 acm
 apigateway
+application-autoscaling
 autoscaling
 cloudformation
 cloudfront
@@ -12,6 +13,7 @@ cloudwatch
 codecommit
 codepipeline
 cognito-identity
+cognito-idp
 cognito-sync
 configservice
 configure
@@ -19,6 +21,7 @@ datapipeline
 deploy
 devicefarm
 directconnect
+discovery
 dms
 ds
 dynamodb
@@ -57,6 +60,7 @@ route53domains
 s3
 s3api
 sdb
+servicecatalog
 ses
 sns
 sqs
@@ -67,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1867
+[sub_commands]: 1918
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -82,6 +86,7 @@ add-attributes-to-findings
 add-cache
 add-client-id-to-open-id-connect-provider
 add-communication-to-case
+add-custom-attributes
 add-instance-groups
 add-model
 add-option-to-option-group
@@ -98,6 +103,15 @@ add-tags-to-vault
 add-upload-buffer
 add-user-to-group
 add-working-storage
+admin-confirm-sign-up
+admin-delete-user
+admin-delete-user-attributes
+admin-disable-user
+admin-enable-user
+admin-get-user
+admin-reset-user-password
+admin-set-user-settings
+admin-update-user-attributes
 allocate-address
 allocate-connection-on-interconnect
 allocate-hosts
@@ -185,9 +199,11 @@ complete-vault-lock
 compose-environments
 configure-health-check
 confirm-connection
+confirm-forgot-password
 confirm-private-virtual-interface
 confirm-product-instance
 confirm-public-virtual-interface
+confirm-sign-up
 confirm-subscription
 connect-directory
 continue-update-rollback
@@ -388,6 +404,8 @@ create-trail
 create-trust
 create-upload
 create-user
+create-user-pool
+create-user-pool-client
 create-user-profile
 create-vault
 create-virtual-mfa-device
@@ -613,7 +631,10 @@ delete-trail
 delete-trust
 delete-upload
 delete-user
+delete-user-attributes
 delete-user-policy
+delete-user-pool
+delete-user-pool-client
 delete-user-profile
 delete-vault
 delete-vault-access-policy
@@ -644,6 +665,7 @@ deregister-instances-from-load-balancer
 deregister-managed-instance
 deregister-on-premises-instance
 deregister-rds-db-instance
+deregister-scalable-target
 deregister-task-definition
 deregister-volume
 describe-account-attributes
@@ -654,6 +676,7 @@ describe-activity-type
 describe-addresses
 describe-adjustment-types
 describe-agent-versions
+describe-agents
 describe-alarm-history
 describe-alarms
 describe-alarms-for-metric
@@ -710,6 +733,7 @@ describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
 describe-configuration-settings
+describe-configurations
 describe-connection-loa
 describe-connections
 describe-connections-on-interconnect
@@ -767,6 +791,7 @@ describe-event-categories
 describe-event-subscriptions
 describe-event-topics
 describe-events
+describe-export-configurations
 describe-export-tasks
 describe-expressions
 describe-file-systems
@@ -849,10 +874,14 @@ describe-placement-groups
 describe-player-sessions
 describe-policies
 describe-prefix-lists
+describe-product
+describe-product-view
+describe-provisioning-parameters
 describe-raid-arrays
 describe-rds-db-instances
 describe-receipt-rule
 describe-receipt-rule-set
+describe-record
 describe-refresh-schemas-status
 describe-regions
 describe-replication-groups
@@ -876,6 +905,7 @@ describe-route-tables
 describe-rule
 describe-rules-packages
 describe-runtime-configuration
+describe-scalable-targets
 describe-scaling-activities
 describe-scaling-parameters
 describe-scaling-policies
@@ -932,6 +962,8 @@ describe-trusted-advisor-check-summaries
 describe-trusted-advisor-checks
 describe-trusts
 describe-upload-buffer
+describe-user-pool
+describe-user-pool-client
 describe-user-profiles
 describe-vault
 describe-virtual-gateways
@@ -1023,10 +1055,12 @@ evaluate-expression
 execute-change-set
 execute-policy
 exit-standby
+export-configurations
 failover-db-cluster
 filter-log-events
 flush-stage-authorizers-cache
 flush-stage-cache
+forgot-password
 generate-client-certificate
 generate-credential-report
 generate-data-key
@@ -1232,6 +1266,7 @@ get-traffic-policy-instance-count
 get-trail-status
 get-upload
 get-user
+get-user-attribute-verification-code
 get-user-policy
 get-vault-access-policy
 get-vault-lock
@@ -1292,6 +1327,7 @@ list-cloud-front-origin-access-identities
 list-clusters
 list-command-invocations
 list-commands
+list-configurations
 list-container-instances
 list-datasets
 list-dead-letter-source-queues
@@ -1341,6 +1377,7 @@ list-jobs-by-pipeline
 list-jobs-by-status
 list-key-policies
 list-keys
+list-launch-paths
 list-local-disks
 list-luna-clients
 list-metrics
@@ -1370,6 +1407,7 @@ list-public-keys
 list-queues
 list-receipt-filters
 list-receipt-rule-sets
+list-record-history
 list-records
 list-repositories
 list-resource-record-sets
@@ -1423,6 +1461,8 @@ list-traffic-policy-versions
 list-unique-problems
 list-uploads
 list-user-policies
+list-user-pool-clients
+list-user-pools
 list-users
 list-vaults
 list-versions-by-function
@@ -1496,6 +1536,7 @@ predict
 preview-agents
 promote-read-replica
 promote-read-replica-db-cluster
+provision-product
 publish
 publish-version
 purchase-offering
@@ -1603,6 +1644,7 @@ register-instance
 register-instances-with-load-balancer
 register-on-premises-instance
 register-rds-db-instance
+register-scalable-target
 register-task-definition
 register-volume
 register-workflow-type
@@ -1640,6 +1682,7 @@ request-environment-info
 request-spot-fleet
 request-spot-instances
 request-upload-credentials
+resend-confirmation-code
 resend-contact-reachability-email
 resend-validation-email
 reset-cache
@@ -1689,10 +1732,12 @@ run-instances
 run-scheduled-instances
 run-task
 scan
+scan-provisioned-products
 schedule-hbase-backup
 schedule-key-deletion
 schedule-run
 search
+search-products
 select
 send-bounce
 send-command
@@ -1736,10 +1781,12 @@ set-tags-for-resource
 set-task-status
 set-time-based-auto-scaling
 set-topic-attributes
+set-user-settings
 set-vault-access-policy
 set-vault-notifications
 shutdown-gateway
 sign
+sign-up
 signal-resource
 signal-workflow-execution
 simulate-custom-policy
@@ -1749,6 +1796,7 @@ split-shard
 ssh
 start-assessment-run
 start-configuration-recorder
+start-data-collection-by-agent-ids
 start-gateway
 start-instance
 start-instances
@@ -1760,6 +1808,7 @@ start-task
 start-workflow-execution
 stop-assessment-run
 stop-configuration-recorder
+stop-data-collection-by-agent-ids
 stop-deployment
 stop-instance
 stop-instances
@@ -1781,6 +1830,7 @@ terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
 terminate-instances
+terminate-provisioned-product
 terminate-workflow-execution
 terminate-workspaces
 test-connection
@@ -1878,6 +1928,7 @@ update-pipeline
 update-pipeline-notifications
 update-pipeline-status
 update-project
+update-provisioned-product
 update-radius
 update-rds-db-instance
 update-receipt-rule
@@ -1910,6 +1961,9 @@ update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
 update-user
+update-user-attributes
+update-user-pool
+update-user-pool-client
 update-user-profile
 update-volume
 update-vtl-device-type
@@ -1933,6 +1987,7 @@ verify-domain-dkim
 verify-domain-identity
 verify-email-identity
 verify-trust
+verify-user-attribute
 wait
 website
 [global_options]: 11
