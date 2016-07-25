@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1918
+[sub_commands]: 1926
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -359,6 +359,7 @@ create-realtime-endpoint
 create-receipt-filter
 create-receipt-rule
 create-receipt-rule-set
+create-remote-access-session
 create-replication-group
 create-replication-instance
 create-replication-subnet-group
@@ -509,6 +510,7 @@ delete-elasticsearch-domain
 delete-endpoint
 delete-environment-configuration
 delete-evaluation
+delete-evaluation-results
 delete-event-source-mapping
 delete-event-subscription
 delete-expression
@@ -579,6 +581,7 @@ delete-receipt-filter
 delete-receipt-rule
 delete-receipt-rule-set
 delete-registration-code
+delete-remote-access-session
 delete-replication-group
 delete-replication-instance
 delete-replication-subnet-group
@@ -1217,6 +1220,7 @@ get-queue-attributes
 get-queue-url
 get-records
 get-registration-code
+get-remote-access-session
 get-repository
 get-repository-policy
 get-repository-triggers
@@ -1290,6 +1294,7 @@ initiate-multipart-upload
 initiate-vault-lock
 install
 install-applications
+install-to-remote-access-session
 invoke
 invoke-async
 list
@@ -1409,6 +1414,7 @@ list-receipt-filters
 list-receipt-rule-sets
 list-record-history
 list-records
+list-remote-access-sessions
 list-repositories
 list-resource-record-sets
 list-retirable-grants
@@ -1795,6 +1801,7 @@ socks
 split-shard
 ssh
 start-assessment-run
+start-config-rules-evaluation
 start-configuration-recorder
 start-data-collection-by-agent-ids
 start-gateway
@@ -1813,6 +1820,7 @@ stop-deployment
 stop-instance
 stop-instances
 stop-logging
+stop-remote-access-session
 stop-replication-task
 stop-run
 stop-stack
