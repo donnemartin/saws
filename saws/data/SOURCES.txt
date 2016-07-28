@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1926
+[sub_commands]: 1931
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -396,6 +396,7 @@ create-tags
 create-tape-with-barcode
 create-tapes
 create-thing
+create-thing-type
 create-topic
 create-topic-rule
 create-traffic-policy
@@ -626,6 +627,7 @@ delete-tape
 delete-tape-archive
 delete-thing
 delete-thing-shadow
+delete-thing-type
 delete-topic
 delete-topic-rule
 delete-traffic-policy
@@ -656,6 +658,7 @@ delete-xss-match-set
 deliver-config-snapshot
 deprecate-activity-type
 deprecate-domain
+deprecate-thing-type
 deprecate-workflow-type
 deregister
 deregister-container-instance
@@ -957,6 +960,7 @@ describe-task-definition
 describe-tasks
 describe-termination-policy-types
 describe-thing
+describe-thing-type
 describe-time-based-auto-scaling
 describe-trails
 describe-trusted-advisor-check-refresh-statuses
@@ -1456,6 +1460,7 @@ list-task-definitions
 list-tasks
 list-tests
 list-thing-principals
+list-thing-types
 list-things
 list-topic-rules
 list-topics
