@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1931
+[sub_commands]: 1947
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -88,6 +88,7 @@ add-client-id-to-open-id-connect-provider
 add-communication-to-case
 add-custom-attributes
 add-instance-groups
+add-ip-routes
 add-model
 add-option-to-option-group
 add-permission
@@ -108,10 +109,17 @@ admin-delete-user
 admin-delete-user-attributes
 admin-disable-user
 admin-enable-user
+admin-forget-device
+admin-get-device
 admin-get-user
+admin-initiate-auth
+admin-list-devices
 admin-reset-user-password
+admin-respond-to-auth-challenge
 admin-set-user-settings
+admin-update-device-status
 admin-update-user-attributes
+admin-user-global-sign-out
 allocate-address
 allocate-connection-on-interconnect
 allocate-hosts
@@ -199,6 +207,7 @@ complete-vault-lock
 compose-environments
 configure-health-check
 confirm-connection
+confirm-device
 confirm-forgot-password
 confirm-private-virtual-interface
 confirm-product-instance
@@ -1067,6 +1076,7 @@ failover-db-cluster
 filter-log-events
 flush-stage-authorizers-cache
 flush-stage-cache
+forget-device
 forgot-password
 generate-client-certificate
 generate-credential-report
@@ -1282,6 +1292,7 @@ get-vault-notifications
 get-web-acl
 get-workflow-execution-history
 get-xss-match-set
+global-sign-out
 grant-access
 head-bucket
 head-object
@@ -1292,6 +1303,7 @@ import-rest-api
 import-snapshot
 increase-stream-retention-period
 index-documents
+initiate-auth
 initiate-job
 initiate-layer-upload
 initiate-multipart-upload
@@ -1380,6 +1392,7 @@ list-instance-profiles
 list-instance-profiles-for-role
 list-instances
 list-invalidations
+list-ip-routes
 list-ip-sets
 list-jobs
 list-jobs-by-pipeline
@@ -1665,6 +1678,7 @@ release-address
 release-hosts
 remove-attributes-from-findings
 remove-client-id-from-open-id-connect-provider
+remove-ip-routes
 remove-option-from-option-group
 remove-permission
 remove-role-from-instance-profile
@@ -1711,6 +1725,7 @@ respond-activity-task-canceled
 respond-activity-task-completed
 respond-activity-task-failed
 respond-decision-task-completed
+respond-to-auth-challenge
 restart-app-server
 restore-address-to-classic
 restore-db-cluster-from-snapshot
@@ -1898,6 +1913,7 @@ update-deployment
 update-deployment-group
 update-destination
 update-device-pool
+update-device-status
 update-distribution
 update-domain-contact
 update-domain-contact-privacy
