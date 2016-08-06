@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1947
+[sub_commands]: 1951
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1163,6 +1163,7 @@ get-document
 get-domain-detail
 get-domain-name
 get-domain-names
+get-domain-suggestions
 get-download-url-for-layer
 get-endpoint-attributes
 get-evaluation
@@ -1414,6 +1415,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-outgoing-certificates
 list-parts
 list-phone-numbers-opted-out
 list-pipelines
@@ -1691,6 +1693,7 @@ remove-tags-from-stream
 remove-tags-from-vault
 remove-targets
 remove-user-from-group
+renew-domain
 renew-offering
 reorder-receipt-rule-set
 replace-network-acl-association
@@ -2017,6 +2020,7 @@ verify-domain-identity
 verify-email-identity
 verify-trust
 verify-user-attribute
+view-billing
 wait
 website
 [global_options]: 11
