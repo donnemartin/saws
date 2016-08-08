@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1951
+[sub_commands]: 1953
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1731,6 +1731,7 @@ respond-decision-task-completed
 respond-to-auth-challenge
 restart-app-server
 restore-address-to-classic
+restore-db-cluster-from-s3
 restore-db-cluster-from-snapshot
 restore-db-cluster-to-point-in-time
 restore-db-instance-from-db-snapshot
@@ -1766,6 +1767,7 @@ schedule-hbase-backup
 schedule-key-deletion
 schedule-run
 search
+search-game-sessions
 search-products
 select
 send-bounce
