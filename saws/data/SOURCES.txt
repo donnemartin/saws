@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1953
+[sub_commands]: 1958
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -292,6 +292,7 @@ create-device-pool
 create-dhcp-options
 create-directory
 create-distribution
+create-distribution-with-tags
 create-document
 create-domain
 create-domain-name
@@ -398,6 +399,7 @@ create-storage-location
 create-stored-iscsi-volume
 create-stream
 create-streaming-distribution
+create-streaming-distribution-with-tags
 create-subnet
 create-subscription
 create-table
@@ -1836,6 +1838,7 @@ start-logging
 start-pipeline-execution
 start-replication-task
 start-stack
+start-support-data-export
 start-task
 start-workflow-execution
 stop-assessment-run
@@ -1859,6 +1862,7 @@ suggest
 suspend-processes
 swap-environment-cnames
 sync
+tag-resource
 terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
@@ -1885,6 +1889,7 @@ unmonitor-instances
 unsubscribe
 unsubscribe-from-dataset
 unsubscribe-from-event
+untag-resource
 update-access-key
 update-account
 update-account-password-policy
