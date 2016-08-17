@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1958
+[sub_commands]: 1964
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -144,6 +144,7 @@ attach-elastic-load-balancer
 attach-group-policy
 attach-instances
 attach-internet-gateway
+attach-load-balancer-target-groups
 attach-load-balancer-to-subnets
 attach-load-balancers
 attach-network-interface
@@ -543,6 +544,7 @@ delete-identities
 delete-identity
 delete-identity-policy
 delete-identity-pool
+delete-imported-key-material
 delete-index-field
 delete-instance
 delete-instance-profile
@@ -858,6 +860,7 @@ describe-limits
 describe-load-balancer-attributes
 describe-load-balancer-policies
 describe-load-balancer-policy-types
+describe-load-balancer-target-groups
 describe-load-balancers
 describe-load-based-auto-scaling
 describe-locations
@@ -1011,6 +1014,7 @@ detach-group-policy
 detach-instances
 detach-internet-gateway
 detach-load-balancer-from-subnets
+detach-load-balancer-target-groups
 detach-load-balancers
 detach-network-interface
 detach-principal-policy
@@ -1225,6 +1229,7 @@ get-open-id-connect-provider
 get-open-id-token
 get-open-id-token-for-developer-identity
 get-operation-detail
+get-parameters-for-import
 get-password-data
 get-pipeline
 get-pipeline-definition
@@ -1301,6 +1306,7 @@ head-bucket
 head-object
 import-certificate
 import-image
+import-key-material
 import-key-pair
 import-rest-api
 import-snapshot
