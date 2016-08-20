@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1964
+[sub_commands]: 1976
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -417,6 +417,8 @@ create-traffic-policy-version
 create-trail
 create-trust
 create-upload
+create-usage-plan
+create-usage-plan-key
 create-user
 create-user-pool
 create-user-pool-client
@@ -648,6 +650,8 @@ delete-traffic-policy-instance
 delete-trail
 delete-trust
 delete-upload
+delete-usage-plan
+delete-usage-plan-key
 delete-user
 delete-user-attributes
 delete-user-policy
@@ -1291,6 +1295,11 @@ get-traffic-policy-instance
 get-traffic-policy-instance-count
 get-trail-status
 get-upload
+get-usage
+get-usage-plan
+get-usage-plan-key
+get-usage-plan-keys
+get-usage-plans
 get-user
 get-user-attribute-verification-code
 get-user-policy
@@ -1304,6 +1313,7 @@ global-sign-out
 grant-access
 head-bucket
 head-object
+import-api-keys
 import-certificate
 import-image
 import-key-material
@@ -2005,6 +2015,8 @@ update-thing-shadow
 update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
+update-usage
+update-usage-plan
 update-user
 update-user-attributes
 update-user-pool
