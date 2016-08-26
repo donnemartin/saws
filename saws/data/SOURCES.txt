@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1976
+[sub_commands]: 1984
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -829,6 +829,8 @@ describe-game-session-details
 describe-game-sessions
 describe-gateway-information
 describe-hapg
+describe-host-reservation-offerings
+describe-host-reservations
 describe-hosts
 describe-hsm
 describe-hsm-client-certificates
@@ -1012,6 +1014,7 @@ describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
 describe-workspaces
+describe-workspaces-connection-status
 detach-classic-link-vpc
 detach-elastic-load-balancer
 detach-group-policy
@@ -1191,6 +1194,7 @@ get-health-check
 get-health-check-count
 get-health-check-last-failure-reason
 get-health-check-status
+get-host-reservation-purchase-preview
 get-hosted-zone
 get-hosted-zone-count
 get-hostname-suggestion
@@ -1567,6 +1571,7 @@ modify-volume-attribute
 modify-vpc-attribute
 modify-vpc-endpoint
 modify-vpc-peering-connection-options
+modify-workspace-properties
 monitor-instances
 move-address-to-vpc
 mv
@@ -1583,6 +1588,7 @@ promote-read-replica-db-cluster
 provision-product
 publish
 publish-version
+purchase-host-reservation
 purchase-offering
 purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
@@ -1857,6 +1863,7 @@ start-stack
 start-support-data-export
 start-task
 start-workflow-execution
+start-workspaces
 stop-assessment-run
 stop-configuration-recorder
 stop-data-collection-by-agent-ids
@@ -1869,6 +1876,7 @@ stop-replication-task
 stop-run
 stop-stack
 stop-task
+stop-workspaces
 submit-container-state-change
 submit-task-state-change
 subscribe
