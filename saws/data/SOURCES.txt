@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1984
+[sub_commands]: 1985
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1582,6 +1582,7 @@ poll-for-jobs
 poll-for-task
 poll-for-third-party-jobs
 predict
+presign
 preview-agents
 promote-read-replica
 promote-read-replica-db-cluster
