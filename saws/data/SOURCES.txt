@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1985
+[sub_commands]: 1987
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1241,6 +1241,7 @@ get-parameters-for-import
 get-password-data
 get-pipeline
 get-pipeline-definition
+get-pipeline-execution
 get-pipeline-state
 get-platform-application-attributes
 get-policy
@@ -1896,6 +1897,7 @@ terminate-provisioned-product
 terminate-workflow-execution
 terminate-workspaces
 test-connection
+test-dns-answer
 test-event-pattern
 test-invoke-authorizer
 test-invoke-method
