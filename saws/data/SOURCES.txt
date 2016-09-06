@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1987
+[sub_commands]: 1993
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -420,6 +420,7 @@ create-upload
 create-usage-plan
 create-usage-plan-key
 create-user
+create-user-import-job
 create-user-pool
 create-user-pool-client
 create-user-profile
@@ -989,6 +990,7 @@ describe-trusted-advisor-check-summaries
 describe-trusted-advisor-checks
 describe-trusts
 describe-upload-buffer
+describe-user-import-job
 describe-user-pool
 describe-user-pool-client
 describe-user-profiles
@@ -1159,6 +1161,7 @@ get-context-keys-for-custom-policy
 get-context-keys-for-principal-policy
 get-credential-report
 get-credentials-for-identity
+get-csv-header
 get-data-retrieval-policy
 get-data-source
 get-deployment
@@ -1509,6 +1512,7 @@ list-traffic-policy-instances-by-policy
 list-traffic-policy-versions
 list-unique-problems
 list-uploads
+list-user-import-jobs
 list-user-policies
 list-user-pool-clients
 list-user-pools
@@ -1864,6 +1868,7 @@ start-replication-task
 start-stack
 start-support-data-export
 start-task
+start-user-import-job
 start-workflow-execution
 start-workspaces
 stop-assessment-run
@@ -1878,6 +1883,7 @@ stop-replication-task
 stop-run
 stop-stack
 stop-task
+stop-user-import-job
 stop-workspaces
 submit-container-state-change
 submit-task-state-change
