@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1993
+[sub_commands]: 1994
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -951,6 +951,7 @@ describe-snapshot-attribute
 describe-snapshot-copy-grants
 describe-snapshot-schedule
 describe-snapshots
+describe-source-regions
 describe-spot-datafeed-subscription
 describe-spot-fleet-instances
 describe-spot-fleet-request-history
