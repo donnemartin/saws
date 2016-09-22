@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1994
+[sub_commands]: 1998
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -386,6 +386,7 @@ create-route
 create-route-table
 create-rule
 create-saml-provider
+create-security-configuration
 create-security-group
 create-service
 create-size-constraint-set
@@ -618,6 +619,7 @@ delete-run
 delete-saml-provider
 delete-scaling-policy
 delete-scheduled-action
+delete-security-configuration
 delete-security-group
 delete-server-certificate
 delete-service
@@ -941,6 +943,7 @@ describe-scheduled-actions
 describe-scheduled-instance-availability
 describe-scheduled-instances
 describe-schemas
+describe-security-configuration
 describe-security-group-references
 describe-security-groups
 describe-service-access-policies
@@ -1473,6 +1476,7 @@ list-rules-packages
 list-runs
 list-saml-providers
 list-samples
+list-security-configurations
 list-server-certificates
 list-services
 list-signing-certificates
