@@ -71,11 +71,12 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 1998
+[sub_commands]: 2000
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
 accept-certificate-transfer
+accept-reserved-instances-exchange-quote
 accept-vpc-peering-connection
 acknowledge-job
 acknowledge-third-party-job
@@ -1262,6 +1263,7 @@ get-remote-access-session
 get-repository
 get-repository-policy
 get-repository-triggers
+get-reserved-instances-exchange-quote
 get-resource
 get-resource-config-history
 get-resources
