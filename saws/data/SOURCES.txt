@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2000
+[sub_commands]: 2001
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -106,6 +106,7 @@ add-upload-buffer
 add-user-to-group
 add-working-storage
 admin-confirm-sign-up
+admin-create-user
 admin-delete-user
 admin-delete-user-attributes
 admin-disable-user
