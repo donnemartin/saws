@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2001
+[sub_commands]: 2003
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -93,6 +93,7 @@ add-ip-routes
 add-model
 add-option-to-option-group
 add-permission
+add-role-to-db-cluster
 add-role-to-instance-profile
 add-source-identifier-to-subscription
 add-steps
@@ -1721,6 +1722,7 @@ remove-client-id-from-open-id-connect-provider
 remove-ip-routes
 remove-option-from-option-group
 remove-permission
+remove-role-from-db-cluster
 remove-role-from-instance-profile
 remove-source-identifier-from-subscription
 remove-tags
