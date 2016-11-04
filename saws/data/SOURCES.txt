@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2003
+[sub_commands]: 2004
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1404,6 +1404,7 @@ list-endpoints-by-platform-application
 list-entities-for-policy
 list-event-source-mappings
 list-event-subscriptions
+list-exports
 list-findings
 list-fleets
 list-functions
