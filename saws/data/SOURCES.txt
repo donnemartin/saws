@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2004
+[sub_commands]: 2011
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -271,6 +271,8 @@ create-cluster-snapshot
 create-cluster-subnet-group
 create-computer
 create-conditional-forwarder
+create-configuration-set
+create-configuration-set-event-destination
 create-configuration-template
 create-connection
 create-custom-action-type
@@ -499,6 +501,8 @@ delete-cluster-subnet-group
 delete-conditional-forwarder
 delete-config-rule
 delete-configuration-recorder
+delete-configuration-set
+delete-configuration-set-event-destination
 delete-configuration-template
 delete-connection
 delete-custom-action-type
@@ -761,6 +765,7 @@ describe-config-rules
 describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
+describe-configuration-set
 describe-configuration-settings
 describe-configurations
 describe-connection-loa
@@ -1383,6 +1388,7 @@ list-cloud-front-origin-access-identities
 list-clusters
 list-command-invocations
 list-commands
+list-configuration-sets
 list-configurations
 list-container-instances
 list-datasets
@@ -1959,6 +1965,7 @@ update-chap-credentials
 update-client-certificate
 update-cloud-front-origin-access-identity
 update-conditional-forwarder
+update-configuration-set-event-destination
 update-configuration-template
 update-container-agent
 update-data-source
