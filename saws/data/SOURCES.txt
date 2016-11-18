@@ -71,11 +71,12 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2011
+[sub_commands]: 2049
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
 accept-certificate-transfer
+accept-portfolio-share
 accept-reserved-instances-exchange-quote
 accept-vpc-peering-connection
 acknowledge-job
@@ -137,6 +138,8 @@ assign-volume
 associate-address
 associate-dhcp-options
 associate-elastic-ip
+associate-principal-with-portfolio
+associate-product-with-portfolio
 associate-route-table
 associate-vpc-with-hosted-zone
 assume-role
@@ -175,6 +178,7 @@ batch-get-image
 batch-get-item
 batch-get-on-premises-instances
 batch-get-repositories
+batch-meter-usage
 batch-put-attributes
 batch-write-item
 build-suggesters
@@ -191,6 +195,7 @@ cancel-job
 cancel-key-deletion
 cancel-reserved-instances-listing
 cancel-retrieval
+cancel-schema-extension
 cancel-spot-fleet-requests
 cancel-spot-instance-requests
 cancel-update-stack
@@ -275,6 +280,7 @@ create-configuration-set
 create-configuration-set-event-destination
 create-configuration-template
 create-connection
+create-constraint
 create-custom-action-type
 create-customer-gateway
 create-data-source-from-rds
@@ -366,9 +372,13 @@ create-player-session
 create-player-sessions
 create-policy
 create-policy-version
+create-portfolio
+create-portfolio-share
 create-preset
 create-private-virtual-interface
+create-product
 create-project
+create-provisioning-artifact
 create-public-virtual-interface
 create-queue
 create-realtime-endpoint
@@ -434,6 +444,7 @@ create-vault
 create-virtual-mfa-device
 create-volume
 create-vpc
+create-vpc-association-authorization
 create-vpc-endpoint
 create-vpc-peering-connection
 create-vpn-connection
@@ -505,6 +516,7 @@ delete-configuration-set
 delete-configuration-set-event-destination
 delete-configuration-template
 delete-connection
+delete-constraint
 delete-custom-action-type
 delete-customer-gateway
 delete-data-source
@@ -598,8 +610,12 @@ delete-placement-group
 delete-platform-application
 delete-policy
 delete-policy-version
+delete-portfolio
+delete-portfolio-share
 delete-preset
+delete-product
 delete-project
+delete-provisioning-artifact
 delete-queue
 delete-realtime-endpoint
 delete-receipt-filter
@@ -675,6 +691,7 @@ delete-virtual-interface
 delete-virtual-mfa-device
 delete-volume
 delete-vpc
+delete-vpc-association-authorization
 delete-vpc-endpoints
 delete-vpc-peering-connection
 delete-vpn-connection
@@ -771,6 +788,7 @@ describe-configurations
 describe-connection-loa
 describe-connections
 describe-connections-on-interconnect
+describe-constraint
 describe-container-instances
 describe-conversion-tasks
 describe-cross-account-access-role
@@ -910,9 +928,12 @@ describe-pipelines
 describe-placement-groups
 describe-player-sessions
 describe-policies
+describe-portfolio
 describe-prefix-lists
 describe-product
+describe-product-as-admin
 describe-product-view
+describe-provisioning-artifact
 describe-provisioning-parameters
 describe-raid-arrays
 describe-rds-db-instances
@@ -1066,6 +1087,8 @@ disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-elastic-ip
+disassociate-principal-from-portfolio
+disassociate-product-from-portfolio
 disassociate-route-table
 disassociate-vpc-from-hosted-zone
 discover-poll-endpoint
@@ -1151,7 +1174,6 @@ get-byte-match-set
 get-caller-identity
 get-certificate
 get-change
-get-change-details
 get-change-token
 get-change-token-status
 get-checker-ip-ranges
@@ -1354,6 +1376,7 @@ install-to-remote-access-session
 invoke
 invoke-async
 list
+list-accepted-portfolio-shares
 list-access-keys
 list-account-aliases
 list-action-types
@@ -1380,8 +1403,6 @@ list-byte-match-sets
 list-ca-certificates
 list-certificates
 list-certificates-by-ca
-list-change-batches-by-hosted-zone
-list-change-batches-by-rr-set
 list-change-sets
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
@@ -1390,6 +1411,7 @@ list-command-invocations
 list-commands
 list-configuration-sets
 list-configurations
+list-constraints-for-portfolio
 list-container-instances
 list-datasets
 list-dead-letter-source-queues
@@ -1464,10 +1486,15 @@ list-platform-applications
 list-policies
 list-policy-principals
 list-policy-versions
+list-portfolio-access
+list-portfolios
+list-portfolios-for-product
 list-presets
 list-principal-policies
 list-principal-things
+list-principals-for-portfolio
 list-projects
+list-provisioning-artifacts
 list-public-keys
 list-queues
 list-receipt-filters
@@ -1487,6 +1514,7 @@ list-rules-packages
 list-runs
 list-saml-providers
 list-samples
+list-schema-extensions
 list-security-configurations
 list-server-certificates
 list-services
@@ -1539,6 +1567,7 @@ list-virtual-mfa-devices
 list-volume-initiators
 list-volume-recovery-points
 list-volumes
+list-vpc-association-authorizations
 list-web-acls
 list-workflow-types
 list-xss-match-sets
@@ -1721,6 +1750,7 @@ register-task-definition
 register-volume
 register-workflow-type
 reject-certificate-transfer
+reject-portfolio-share
 reject-vpc-peering-connection
 release-address
 release-hosts
@@ -1771,6 +1801,7 @@ reset-network-interface-attribute
 reset-snapshot-attribute
 resolve-alias
 resolve-case
+resolve-customer
 respond-activity-task-canceled
 respond-activity-task-completed
 respond-activity-task-failed
@@ -1816,6 +1847,7 @@ schedule-run
 search
 search-game-sessions
 search-products
+search-products-as-admin
 select
 send-bounce
 send-command
@@ -1882,6 +1914,7 @@ start-instances
 start-logging
 start-pipeline-execution
 start-replication-task
+start-schema-extension
 start-stack
 start-support-data-export
 start-task
@@ -1967,6 +2000,7 @@ update-cloud-front-origin-access-identity
 update-conditional-forwarder
 update-configuration-set-event-destination
 update-configuration-template
+update-constraint
 update-container-agent
 update-data-source
 update-default-branch
@@ -2017,8 +2051,11 @@ update-open-id-connect-provider-thumbprint
 update-pipeline
 update-pipeline-notifications
 update-pipeline-status
+update-portfolio
+update-product
 update-project
 update-provisioned-product
+update-provisioning-artifact
 update-radius
 update-rds-db-instance
 update-receipt-rule
@@ -2034,6 +2071,7 @@ update-scaling-parameters
 update-server-certificate
 update-service
 update-service-access-policies
+update-shard-count
 update-signing-certificate
 update-size-constraint-set
 update-snapshot-schedule
