@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2049
+[sub_commands]: 2055
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -198,6 +198,7 @@ cancel-retrieval
 cancel-schema-extension
 cancel-spot-fleet-requests
 cancel-spot-instance-requests
+cancel-steps
 cancel-update-stack
 change-message-visibility
 change-message-visibility-batch
@@ -700,6 +701,7 @@ delete-vpn-gateway
 delete-web-acl
 delete-xss-match-set
 deliver-config-snapshot
+deploy
 deprecate-activity-type
 deprecate-domain
 deprecate-thing-type
@@ -1243,6 +1245,7 @@ get-identity-policies
 get-identity-pool-configuration
 get-identity-pool-roles
 get-identity-verification-attributes
+get-instance-access
 get-instance-profile
 get-integration
 get-integration-response
@@ -1626,6 +1629,7 @@ monitor-instances
 move-address-to-vpc
 mv
 opt-in-phone-number
+package
 poll-for-activity-task
 poll-for-decision-task
 poll-for-jobs
@@ -1652,6 +1656,7 @@ put
 put-action-revision
 put-approval-result
 put-attributes
+put-auto-scaling-policy
 put-bucket-accelerate-configuration
 put-bucket-acl
 put-bucket-cors
@@ -1755,6 +1760,7 @@ reject-vpc-peering-connection
 release-address
 release-hosts
 remove-attributes-from-findings
+remove-auto-scaling-policy
 remove-client-id-from-open-id-connect-provider
 remove-ip-routes
 remove-option-from-option-group
