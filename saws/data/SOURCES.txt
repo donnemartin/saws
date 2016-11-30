@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2055
+[sub_commands]: 2075
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -487,8 +487,11 @@ delete-bandwidth-rate-limit
 delete-base-path-mapping
 delete-batch-prediction
 delete-bucket
+delete-bucket-analytics-configuration
 delete-bucket-cors
+delete-bucket-inventory-configuration
 delete-bucket-lifecycle
+delete-bucket-metrics-configuration
 delete-bucket-policy
 delete-bucket-replication
 delete-bucket-tagging
@@ -603,6 +606,7 @@ delete-network-acl-entry
 delete-network-interface
 delete-notification-configuration
 delete-object
+delete-object-tagging
 delete-objects
 delete-open-id-connect-provider
 delete-option-group
@@ -1158,11 +1162,14 @@ get-batch-prediction
 get-branch
 get-bucket-accelerate-configuration
 get-bucket-acl
+get-bucket-analytics-configuration
 get-bucket-cors
+get-bucket-inventory-configuration
 get-bucket-lifecycle
 get-bucket-lifecycle-configuration
 get-bucket-location
 get-bucket-logging
+get-bucket-metrics-configuration
 get-bucket-notification
 get-bucket-notification-configuration
 get-bucket-policy
@@ -1219,6 +1226,7 @@ get-domain-suggestions
 get-download-url-for-layer
 get-endpoint-attributes
 get-evaluation
+get-event-selectors
 get-event-source-mapping
 get-export
 get-federation-token
@@ -1270,6 +1278,7 @@ get-model-template
 get-models
 get-object
 get-object-acl
+get-object-tagging
 get-object-torrent
 get-offering-status
 get-on-premises-instance
@@ -1400,6 +1409,9 @@ list-attached-user-policies
 list-available-solution-stacks
 list-available-zones
 list-branches
+list-bucket-analytics-configurations
+list-bucket-inventory-configurations
+list-bucket-metrics-configurations
 list-buckets
 list-builds
 list-byte-match-sets
@@ -1455,6 +1467,7 @@ list-identity-policies
 list-identity-pool-usage
 list-identity-pools
 list-images
+list-imports
 list-instance-profiles
 list-instance-profiles-for-role
 list-instances
@@ -1497,6 +1510,7 @@ list-principal-policies
 list-principal-things
 list-principals-for-portfolio
 list-projects
+list-provisioned-capacity
 list-provisioning-artifacts
 list-public-keys
 list-queues
@@ -1645,6 +1659,7 @@ publish
 publish-version
 purchase-host-reservation
 purchase-offering
+purchase-provisioned-capacity
 purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
 purchase-reserved-instances-offering
@@ -1659,10 +1674,13 @@ put-attributes
 put-auto-scaling-policy
 put-bucket-accelerate-configuration
 put-bucket-acl
+put-bucket-analytics-configuration
 put-bucket-cors
+put-bucket-inventory-configuration
 put-bucket-lifecycle
 put-bucket-lifecycle-configuration
 put-bucket-logging
+put-bucket-metrics-configuration
 put-bucket-notification
 put-bucket-notification-configuration
 put-bucket-policy
@@ -1677,6 +1695,7 @@ put-delivery-channel
 put-destination
 put-destination-policy
 put-evaluations
+put-event-selectors
 put-events
 put-group-policy
 put-identity-policy
@@ -1697,6 +1716,7 @@ put-metric-filter
 put-notification-configuration
 put-object
 put-object-acl
+put-object-tagging
 put-pipeline-definition
 put-record
 put-record-batch
