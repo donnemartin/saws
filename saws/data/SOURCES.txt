@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2075
+[sub_commands]: 2133
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -133,6 +133,7 @@ apply-environment-managed-action
 apply-pending-maintenance-action
 apply-security-groups-to-load-balancer
 assign-instance
+assign-ipv6-addresses
 assign-private-ip-addresses
 assign-volume
 associate-address
@@ -141,6 +142,8 @@ associate-elastic-ip
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
+associate-subnet-cidr-block
+associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
 assume-role
 assume-role-with-saml
@@ -257,6 +260,7 @@ create-authorizer
 create-auto-scaling-group
 create-base-path-mapping
 create-batch-prediction
+create-bgp-peer
 create-branch
 create-bucket
 create-build
@@ -307,8 +311,11 @@ create-directory
 create-distribution
 create-distribution-with-tags
 create-document
+create-documentation-part
+create-documentation-version
 create-domain
 create-domain-name
+create-egress-only-internet-gateway
 create-elasticsearch-domain
 create-endpoint
 create-environment
@@ -353,6 +360,7 @@ create-log-group
 create-log-stream
 create-login-profile
 create-luna-client
+create-maintenance-window
 create-microsoft-ad
 create-ml-model
 create-model
@@ -486,6 +494,7 @@ delete-auto-scaling-group
 delete-bandwidth-rate-limit
 delete-base-path-mapping
 delete-batch-prediction
+delete-bgp-peer
 delete-bucket
 delete-bucket-analytics-configuration
 delete-bucket-cors
@@ -544,8 +553,11 @@ delete-dhcp-options
 delete-directory
 delete-distribution
 delete-document
+delete-documentation-part
+delete-documentation-version
 delete-domain
 delete-domain-name
+delete-egress-only-internet-gateway
 delete-elasticsearch-domain
 delete-endpoint
 delete-environment-configuration
@@ -592,6 +604,7 @@ delete-log-group
 delete-log-stream
 delete-login-profile
 delete-luna-client
+delete-maintenance-window
 delete-message
 delete-message-batch
 delete-method
@@ -610,6 +623,7 @@ delete-object-tagging
 delete-objects
 delete-open-id-connect-provider
 delete-option-group
+delete-parameter
 delete-pipeline
 delete-placement-group
 delete-platform-application
@@ -722,7 +736,9 @@ deregister-managed-instance
 deregister-on-premises-instance
 deregister-rds-db-instance
 deregister-scalable-target
+deregister-target-from-maintenance-window
 deregister-task-definition
+deregister-task-from-maintenance-window
 deregister-volume
 describe-account-attributes
 describe-account-limits
@@ -749,6 +765,7 @@ describe-attachment
 describe-auto-scaling-groups
 describe-auto-scaling-instances
 describe-auto-scaling-notification-types
+describe-automation-executions
 describe-availability-options
 describe-availability-zones
 describe-bandwidth-rate-limit
@@ -829,6 +846,8 @@ describe-domain
 describe-domains
 describe-ec2-instance-limits
 describe-ecs-clusters
+describe-effective-instance-associations
+describe-egress-only-internet-gateways
 describe-elastic-ips
 describe-elastic-load-balancers
 describe-elasticsearch-domain
@@ -881,6 +900,7 @@ describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
 describe-index-fields
+describe-instance-associations-status
 describe-instance-attribute
 describe-instance-health
 describe-instance-information
@@ -910,6 +930,12 @@ describe-log-streams
 describe-logging-status
 describe-luna-client
 describe-maintenance-start-time
+describe-maintenance-window-execution-task-invocations
+describe-maintenance-window-execution-tasks
+describe-maintenance-window-executions
+describe-maintenance-window-targets
+describe-maintenance-window-tasks
+describe-maintenance-windows
 describe-metric-collection-types
 describe-metric-filters
 describe-ml-models
@@ -928,6 +954,7 @@ describe-option-groups
 describe-orderable-cluster-options
 describe-orderable-db-instance-options
 describe-orderable-replication-instances
+describe-parameters
 describe-pending-maintenance-actions
 describe-permissions
 describe-pipelines
@@ -1096,6 +1123,8 @@ disassociate-elastic-ip
 disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
 disassociate-route-table
+disassociate-subnet-cidr-block
+disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
 discover-poll-endpoint
 domain-metadata
@@ -1156,6 +1185,7 @@ get-attributes
 get-authorization-token
 get-authorizer
 get-authorizers
+get-automation-execution
 get-base-path-mapping
 get-base-path-mappings
 get-batch-prediction
@@ -1191,6 +1221,7 @@ get-client-certificates
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cognito-events
+get-command-invocation
 get-commit
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
@@ -1219,6 +1250,10 @@ get-directory-limits
 get-distribution
 get-distribution-config
 get-document
+get-documentation-part
+get-documentation-parts
+get-documentation-version
+get-documentation-versions
 get-domain-detail
 get-domain-name
 get-domain-names
@@ -1258,6 +1293,8 @@ get-instance-profile
 get-integration
 get-integration-response
 get-invalidation
+get-inventory
+get-inventory-schema
 get-ip-set
 get-item
 get-job
@@ -1269,6 +1306,9 @@ get-log-events
 get-logging-options
 get-login
 get-login-profile
+get-maintenance-window
+get-maintenance-window-execution
+get-maintenance-window-execution-task
 get-method
 get-method-response
 get-metric-statistics
@@ -1286,6 +1326,8 @@ get-open-id-connect-provider
 get-open-id-token
 get-open-id-token-for-developer-identity
 get-operation-detail
+get-parameter-history
+get-parameters
 get-parameters-for-import
 get-password-data
 get-pipeline
@@ -1370,6 +1412,7 @@ head-bucket
 head-object
 import-api-keys
 import-certificate
+import-documentation-parts
 import-image
 import-key-material
 import-key-pair
@@ -1440,6 +1483,7 @@ list-devices
 list-discovered-resources
 list-distributions
 list-distributions-by-web-acl-id
+list-document-versions
 list-documents
 list-domain-names
 list-domains
@@ -1472,6 +1516,7 @@ list-instance-profiles
 list-instance-profiles-for-role
 list-instances
 list-invalidations
+list-inventory-entries
 list-ip-routes
 list-ip-sets
 list-jobs
@@ -1702,6 +1747,7 @@ put-identity-policy
 put-image
 put-integration
 put-integration-response
+put-inventory
 put-item
 put-job-failure-result
 put-job-success-result
@@ -1717,6 +1763,7 @@ put-notification-configuration
 put-object
 put-object-acl
 put-object-tagging
+put-parameter
 put-pipeline-definition
 put-record
 put-record-batch
@@ -1771,7 +1818,9 @@ register-instances-with-load-balancer
 register-on-premises-instance
 register-rds-db-instance
 register-scalable-target
+register-target-with-maintenance-window
 register-task-definition
+register-task-with-maintenance-window
 register-volume
 register-workflow-type
 reject-certificate-transfer
@@ -1931,6 +1980,7 @@ socks
 split-shard
 ssh
 start-assessment-run
+start-automation-execution
 start-config-rules-evaluation
 start-configuration-recorder
 start-data-collection-by-agent-ids
@@ -1948,6 +1998,7 @@ start-user-import-job
 start-workflow-execution
 start-workspaces
 stop-assessment-run
+stop-automation-execution
 stop-configuration-recorder
 stop-data-collection-by-agent-ids
 stop-deployment
@@ -1989,6 +2040,7 @@ test-role
 transfer-certificate
 transfer-domain
 unassign-instance
+unassign-ipv6-addresses
 unassign-private-ip-addresses
 unassign-volume
 uninstall
@@ -2008,6 +2060,7 @@ update-app
 update-application
 update-application-version
 update-assessment-target
+update-association
 update-association-status
 update-assume-role-policy
 update-authorizer
@@ -2036,6 +2089,10 @@ update-destination
 update-device-pool
 update-device-status
 update-distribution
+update-document
+update-document-default-version
+update-documentation-part
+update-documentation-version
 update-domain-contact
 update-domain-contact-privacy
 update-domain-name
@@ -2067,6 +2124,7 @@ update-key-description
 update-layer
 update-login-profile
 update-maintenance-start-time
+update-maintenance-window
 update-managed-instance-role
 update-method
 update-method-response
