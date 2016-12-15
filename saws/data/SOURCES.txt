@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2133
+[sub_commands]: 2137
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1600,6 +1600,7 @@ list-tags-for-resource
 list-tags-for-resources
 list-tags-for-stream
 list-tags-for-vault
+list-tags-log-group
 list-tapes
 list-targets-by-rule
 list-task-definition-families
@@ -1674,6 +1675,7 @@ modify-network-interface-attribute
 modify-replication-group
 modify-replication-instance
 modify-replication-subnet-group
+modify-replication-task
 modify-reserved-instances
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
@@ -2021,6 +2023,7 @@ suggest
 suspend-processes
 swap-environment-cnames
 sync
+tag-log-group
 tag-resource
 terminate-clusters
 terminate-environment
@@ -2050,6 +2053,7 @@ unmonitor-instances
 unsubscribe
 unsubscribe-from-dataset
 unsubscribe-from-event
+untag-log-group
 untag-resource
 update-access-key
 update-account
