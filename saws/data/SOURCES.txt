@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2137
+[sub_commands]: 2159
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -107,6 +107,7 @@ add-tags-to-vault
 add-upload-buffer
 add-user-to-group
 add-working-storage
+admin-add-user-to-group
 admin-confirm-sign-up
 admin-create-user
 admin-delete-user
@@ -118,6 +119,8 @@ admin-get-device
 admin-get-user
 admin-initiate-auth
 admin-list-devices
+admin-list-groups-for-user
+admin-remove-user-from-group
 admin-reset-user-password
 admin-respond-to-auth-challenge
 admin-set-user-settings
@@ -373,6 +376,7 @@ create-network-interface
 create-open-id-connect-provider
 create-option-group
 create-or-update-tags
+create-patch-baseline
 create-pipeline
 create-placement-group
 create-platform-application
@@ -624,6 +628,7 @@ delete-objects
 delete-open-id-connect-provider
 delete-option-group
 delete-parameter
+delete-patch-baseline
 delete-pipeline
 delete-placement-group
 delete-platform-application
@@ -734,6 +739,7 @@ deregister-instance
 deregister-instances-from-load-balancer
 deregister-managed-instance
 deregister-on-premises-instance
+deregister-patch-baseline-for-patch-group
 deregister-rds-db-instance
 deregister-scalable-target
 deregister-target-from-maintenance-window
@@ -768,6 +774,7 @@ describe-auto-scaling-notification-types
 describe-automation-executions
 describe-availability-options
 describe-availability-zones
+describe-available-patches
 describe-bandwidth-rate-limit
 describe-batch-predictions
 describe-build
@@ -847,6 +854,7 @@ describe-domains
 describe-ec2-instance-limits
 describe-ecs-clusters
 describe-effective-instance-associations
+describe-effective-patches-for-patch-baseline
 describe-egress-only-internet-gateways
 describe-elastic-ips
 describe-elastic-load-balancers
@@ -904,6 +912,9 @@ describe-instance-associations-status
 describe-instance-attribute
 describe-instance-health
 describe-instance-information
+describe-instance-patch-states
+describe-instance-patch-states-for-patch-group
+describe-instance-patches
 describe-instance-status
 describe-instances
 describe-instances-health
@@ -955,6 +966,9 @@ describe-orderable-cluster-options
 describe-orderable-db-instance-options
 describe-orderable-replication-instances
 describe-parameters
+describe-patch-baselines
+describe-patch-group-state
+describe-patch-groups
 describe-pending-maintenance-actions
 describe-permissions
 describe-pipelines
@@ -1238,6 +1252,8 @@ get-credentials-for-identity
 get-csv-header
 get-data-retrieval-policy
 get-data-source
+get-default-patch-baseline
+get-deployable-patch-snapshot-for-instance
 get-deployment
 get-deployment-config
 get-deployment-group
@@ -1330,6 +1346,8 @@ get-parameter-history
 get-parameters
 get-parameters-for-import
 get-password-data
+get-patch-baseline
+get-patch-baseline-for-patch-group
 get-pipeline
 get-pipeline-definition
 get-pipeline-execution
@@ -1624,6 +1642,7 @@ list-user-policies
 list-user-pool-clients
 list-user-pools
 list-users
+list-users-in-group
 list-vaults
 list-versions-by-function
 list-virtual-mfa-devices
@@ -1809,6 +1828,7 @@ register-ca-certificate
 register-certificate
 register-container-instance
 register-cross-account-access-role
+register-default-patch-baseline
 register-device
 register-domain
 register-ecs-cluster
@@ -1818,6 +1838,7 @@ register-image
 register-instance
 register-instances-with-load-balancer
 register-on-premises-instance
+register-patch-baseline-for-patch-group
 register-rds-db-instance
 register-scalable-target
 register-target-with-maintenance-window
@@ -2136,6 +2157,7 @@ update-ml-model
 update-model
 update-my-user-profile
 update-open-id-connect-provider-thumbprint
+update-patch-baseline
 update-pipeline
 update-pipeline-notifications
 update-pipeline-status
