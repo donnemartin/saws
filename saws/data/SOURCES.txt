@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2159
+[sub_commands]: 2164
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -140,6 +140,7 @@ assign-ipv6-addresses
 assign-private-ip-addresses
 assign-volume
 associate-address
+associate-configuration-items-to-application
 associate-dhcp-options
 associate-elastic-ip
 associate-principal-with-portfolio
@@ -487,6 +488,7 @@ delete-api-key
 delete-app
 delete-application
 delete-application-version
+delete-applications
 delete-archive
 delete-assessment-run
 delete-assessment-target
@@ -1133,6 +1135,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-configuration-items-from-application
 disassociate-elastic-ip
 disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
@@ -1263,6 +1266,7 @@ get-device
 get-device-pool
 get-device-pool-compatibility
 get-directory-limits
+get-discovery-summary
 get-distribution
 get-distribution-config
 get-document
@@ -1597,6 +1601,7 @@ list-samples
 list-schema-extensions
 list-security-configurations
 list-server-certificates
+list-server-neighbors
 list-services
 list-signing-certificates
 list-size-constraint-sets
