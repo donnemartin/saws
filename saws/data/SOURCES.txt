@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2177
+[sub_commands]: 2178
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1478,6 +1478,7 @@ list-associations
 list-attached-group-policies
 list-attached-role-policies
 list-attached-user-policies
+list-attributes
 list-available-solution-stacks
 list-available-zones
 list-branches
