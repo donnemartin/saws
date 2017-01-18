@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2178
+[sub_commands]: 2179
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1634,6 +1634,7 @@ list-tags-for-resources
 list-tags-for-stream
 list-tags-for-vault
 list-tags-log-group
+list-tags-of-resource
 list-tapes
 list-targets-by-rule
 list-task-definition-families
