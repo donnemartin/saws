@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2179
+[sub_commands]: 2182
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1211,6 +1211,7 @@ get-automation-execution
 get-base-path-mapping
 get-base-path-mappings
 get-batch-prediction
+get-blob
 get-branch
 get-bucket-accelerate-configuration
 get-bucket-acl
@@ -1270,6 +1271,7 @@ get-deployments
 get-device
 get-device-pool
 get-device-pool-compatibility
+get-differences
 get-directory-limits
 get-discovery-summary
 get-distribution
@@ -2124,6 +2126,7 @@ update-configuration-set-event-destination
 update-configuration-template
 update-constraint
 update-container-agent
+update-container-instances-state
 update-data-source
 update-default-branch
 update-deployment
