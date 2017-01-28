@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2182
+[sub_commands]: 2185
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -232,6 +232,7 @@ confirm-public-virtual-interface
 confirm-sign-up
 confirm-subscription
 connect-directory
+continue-deployment
 continue-update-rollback
 copy-cluster-snapshot
 copy-db-cluster-parameter-group
@@ -1691,6 +1692,7 @@ modify-db-cluster-parameter-group
 modify-db-cluster-snapshot-attribute
 modify-db-instance
 modify-db-parameter-group
+modify-db-snapshot
 modify-db-snapshot-attribute
 modify-db-subnet-group
 modify-document-permission
@@ -2018,6 +2020,7 @@ signal-resource
 signal-workflow-execution
 simulate-custom-policy
 simulate-principal-policy
+skip-wait-time-for-instance-termination
 socks
 split-shard
 ssh
