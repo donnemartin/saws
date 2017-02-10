@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2185
+[sub_commands]: 2189
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -143,6 +143,7 @@ associate-address
 associate-configuration-items-to-application
 associate-dhcp-options
 associate-elastic-ip
+associate-iam-instance-profile
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
@@ -904,6 +905,7 @@ describe-hosts
 describe-hsm
 describe-hsm-client-certificates
 describe-hsm-configurations
+describe-iam-instance-profile-associations
 describe-id-format
 describe-identity
 describe-identity-id-format
@@ -1143,6 +1145,7 @@ disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-configuration-items-from-application
 disassociate-elastic-ip
+disassociate-iam-instance-profile
 disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
 disassociate-route-table
@@ -1891,6 +1894,7 @@ remove-user-from-group
 renew-domain
 renew-offering
 reorder-receipt-rule-set
+replace-iam-instance-profile-association
 replace-network-acl-association
 replace-network-acl-entry
 replace-route
