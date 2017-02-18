@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2189
+[sub_commands]: 2191
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1090,6 +1090,7 @@ describe-virtual-interfaces
 describe-volume-attribute
 describe-volume-status
 describe-volumes
+describe-volumes-modifications
 describe-vpc-attribute
 describe-vpc-classic-link
 describe-vpc-classic-link-dns-support
@@ -1723,6 +1724,7 @@ modify-snapshot-attribute
 modify-snapshot-copy-retention-period
 modify-spot-fleet-request
 modify-subnet-attribute
+modify-volume
 modify-volume-attribute
 modify-vpc-attribute
 modify-vpc-endpoint
