@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2191
+[sub_commands]: 2192
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1604,6 +1604,7 @@ list-records
 list-remote-access-sessions
 list-repositories
 list-resource-record-sets
+list-resource-tags
 list-retirable-grants
 list-reusable-delegation-sets
 list-role-policies
