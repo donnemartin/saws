@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2192
+[sub_commands]: 2203
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -129,6 +129,7 @@ admin-update-user-attributes
 admin-user-global-sign-out
 allocate-address
 allocate-connection-on-interconnect
+allocate-hosted-connection
 allocate-hosts
 allocate-private-virtual-interface
 allocate-public-virtual-interface
@@ -141,13 +142,16 @@ assign-private-ip-addresses
 assign-volume
 associate-address
 associate-configuration-items-to-application
+associate-connection-with-lag
 associate-dhcp-options
 associate-elastic-ip
+associate-hosted-connection
 associate-iam-instance-profile
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
 associate-subnet-cidr-block
+associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
 assume-role
@@ -356,6 +360,7 @@ create-job
 create-key
 create-key-pair
 create-keys-and-certificate
+create-lag
 create-launch-configuration
 create-layer
 create-lb-cookie-stickiness-policy
@@ -605,6 +610,7 @@ delete-internet-gateway
 delete-ip-set
 delete-item
 delete-key-pair
+delete-lag
 delete-launch-configuration
 delete-layer
 delete-lifecycle-hook
@@ -901,6 +907,7 @@ describe-gateway-information
 describe-hapg
 describe-host-reservation-offerings
 describe-host-reservations
+describe-hosted-connections
 describe-hosts
 describe-hsm
 describe-hsm-client-certificates
@@ -933,11 +940,13 @@ describe-internet-gateways
 describe-job
 describe-key
 describe-key-pairs
+describe-lags
 describe-launch-configurations
 describe-layers
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
 describe-limits
+describe-loa
 describe-load-balancer-attributes
 describe-load-balancer-policies
 describe-load-balancer-policy-types
@@ -1145,6 +1154,7 @@ disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-configuration-items-from-application
+disassociate-connection-from-lag
 disassociate-elastic-ip
 disassociate-iam-instance-profile
 disassociate-principal-from-portfolio
@@ -2177,6 +2187,7 @@ update-ip-set
 update-item
 update-job
 update-key-description
+update-lag
 update-layer
 update-login-profile
 update-maintenance-start-time
