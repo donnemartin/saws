@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2203
+[sub_commands]: 2214
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -338,6 +338,7 @@ create-fleet
 create-flow-logs
 create-function
 create-game-session
+create-game-session-queue
 create-grant
 create-group
 create-hapg
@@ -390,6 +391,7 @@ create-pipeline
 create-placement-group
 create-platform-application
 create-platform-endpoint
+create-platform-version
 create-player-session
 create-player-sessions
 create-policy
@@ -586,6 +588,7 @@ delete-file-system
 delete-fleet
 delete-flow-logs
 delete-function
+delete-game-session-queue
 delete-gateway
 delete-group
 delete-group-policy
@@ -645,6 +648,7 @@ delete-patch-baseline
 delete-pipeline
 delete-placement-group
 delete-platform-application
+delete-platform-version
 delete-policy
 delete-policy-version
 delete-portfolio
@@ -902,6 +906,8 @@ describe-fleet-port-settings
 describe-fleet-utilization
 describe-flow-logs
 describe-game-session-details
+describe-game-session-placement
+describe-game-session-queues
 describe-game-sessions
 describe-gateway-information
 describe-hapg
@@ -992,6 +998,7 @@ describe-pending-maintenance-actions
 describe-permissions
 describe-pipelines
 describe-placement-groups
+describe-platform-version
 describe-player-sessions
 describe-policies
 describe-portfolio
@@ -1592,6 +1599,7 @@ list-parts
 list-phone-numbers-opted-out
 list-pipelines
 list-platform-applications
+list-platform-versions
 list-policies
 list-policy-principals
 list-policy-versions
@@ -2046,6 +2054,7 @@ start-automation-execution
 start-config-rules-evaluation
 start-configuration-recorder
 start-data-collection-by-agent-ids
+start-game-session-placement
 start-gateway
 start-instance
 start-instances
@@ -2064,6 +2073,7 @@ stop-automation-execution
 stop-configuration-recorder
 stop-data-collection-by-agent-ids
 stop-deployment
+stop-game-session-placement
 stop-instance
 stop-instances
 stop-logging
@@ -2174,6 +2184,7 @@ update-fleet-port-settings
 update-function-code
 update-function-configuration
 update-game-session
+update-game-session-queue
 update-gateway-information
 update-gateway-software-now
 update-group
