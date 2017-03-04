@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2214
+[sub_commands]: 2217
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -879,6 +879,7 @@ describe-elastic-load-balancers
 describe-elasticsearch-domain
 describe-elasticsearch-domain-config
 describe-elasticsearch-domains
+describe-elasticsearch-instance-type-limits
 describe-endpoint
 describe-endpoint-types
 describe-endpoints
@@ -1541,6 +1542,8 @@ list-document-versions
 list-documents
 list-domain-names
 list-domains
+list-elasticsearch-instance-types
+list-elasticsearch-versions
 list-endpoints-by-platform-application
 list-entities-for-policy
 list-event-source-mappings
