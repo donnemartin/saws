@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2217
+[sub_commands]: 2219
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1090,6 +1090,7 @@ describe-termination-policy-types
 describe-thing
 describe-thing-type
 describe-time-based-auto-scaling
+describe-time-to-live
 describe-trails
 describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
@@ -2253,6 +2254,7 @@ update-table
 update-tags-for-domain
 update-thing
 update-thing-shadow
+update-time-to-live
 update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
