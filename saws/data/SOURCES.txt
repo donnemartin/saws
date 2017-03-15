@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2219
+[sub_commands]: 2222
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -89,6 +89,7 @@ add-cache
 add-client-id-to-open-id-connect-provider
 add-communication-to-case
 add-custom-attributes
+add-instance-fleet
 add-instance-groups
 add-ip-routes
 add-model
@@ -1571,6 +1572,7 @@ list-identity-pool-usage
 list-identity-pools
 list-images
 list-imports
+list-instance-fleets
 list-instance-profiles
 list-instance-profiles-for-role
 list-instances
@@ -1732,6 +1734,7 @@ modify-id-format
 modify-identity-id-format
 modify-image-attribute
 modify-instance-attribute
+modify-instance-fleet
 modify-instance-groups
 modify-instance-placement
 modify-load-balancer-attributes
