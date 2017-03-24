@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2222
+[sub_commands]: 2227
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -383,6 +383,7 @@ create-nat-gateway
 create-network-acl
 create-network-acl-entry
 create-network-interface
+create-network-profile
 create-nfs-file-share
 create-open-id-connect-provider
 create-option-group
@@ -638,6 +639,7 @@ delete-nat-gateway
 delete-network-acl
 delete-network-acl-entry
 delete-network-interface
+delete-network-profile
 delete-notification-configuration
 delete-object
 delete-object-tagging
@@ -1368,6 +1370,7 @@ get-ml-model
 get-model
 get-model-template
 get-models
+get-network-profile
 get-object
 get-object-acl
 get-object-tagging
@@ -1591,6 +1594,7 @@ list-luna-clients
 list-metrics
 list-mfa-devices
 list-multipart-uploads
+list-network-profiles
 list-object-versions
 list-objects
 list-objects-v2
@@ -2216,6 +2220,7 @@ update-method-response
 update-ml-model
 update-model
 update-my-user-profile
+update-network-profile
 update-nfs-file-share
 update-open-id-connect-provider-thumbprint
 update-patch-baseline
