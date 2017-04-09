@@ -4,7 +4,7 @@
 SAWS
 ====
 
-|Build Status| |Documentation Status| |Dependency Status| |Codecov|
+|Build Status| |Documentation Status| |Dependency Status|
 
 |PyPI version| |PyPI| |License|
 
@@ -18,8 +18,8 @@ Although the `AWS CLI <https://github.com/aws/aws-cli>`__ is a great
 resource to manage your AWS-powered services, it's **tough to remember
 usage** of:
 
--  50+ top-level commands
--  1400+ subcommands
+-  70+ top-level commands
+-  2000+ subcommands
 -  Countless command-specific options
 -  Resources such as instance tags and buckets
 
@@ -614,14 +614,6 @@ Dependencies management details are available on
 Unit Tests and Code Coverage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|Codecov|
-
-.. figure:: http://codecov.io/github/donnemartin/saws/branch.svg?branch=master
-   :alt: 
-
-Code coverage details are available on
-`Codecov <https://codecov.io/github/donnemartin/saws/saws>`__.
-
 Run unit tests in your active Python environment:
 
 ::
@@ -710,8 +702,6 @@ License
    :target: http://saws.readthedocs.org/en/latest/?badge=latest
 .. |Dependency Status| image:: https://gemnasium.com/donnemartin/saws.svg
    :target: https://gemnasium.com/donnemartin/saws
-.. |Codecov| image:: https://img.shields.io/codecov/c/github/donnemartin/saws.svg
-   :target: https://codecov.io/github/donnemartin/saws/saws
 .. |PyPI version| image:: https://badge.fury.io/py/saws.svg
    :target: http://badge.fury.io/py/saws
 .. |PyPI| image:: https://img.shields.io/pypi/pyversions/saws.svg
