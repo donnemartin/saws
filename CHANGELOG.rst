@@ -1,7 +1,7 @@
 .. figure:: http://i.imgur.com/vzC5zmA.gif
    :alt: 
 
-|Build Status| |Documentation Status| |Dependency Status| |Codecov|
+|Build Status| |Documentation Status| |Dependency Status|
 
 |PyPI version| |PyPI| |License|
 
@@ -19,6 +19,22 @@ https://github.com/donnemartin/saws/issues
 
 Changelog
 =========
+
+0.4.2 (2017-04-08)
+------------------
+
+Bug Fixes
+~~~~~~~~~
+
+-  `#90 <https://github.com/donnemartin/saws/pull/90>`__ - Fix
+   ``Sphinx`` document generation issues.
+
+Updates
+~~~~~~~
+
+-  Update list of commands.
+-  `#92 <https://github.com/donnemartin/saws/pull/92>`__ - Update
+   ``feed_key to feed and process_keys for``\ prompt-toolkit\` v1.0.1+.
 
 0.4.1 (2015-05-31)
 ------------------
@@ -237,8 +253,6 @@ Updates
    :target: http://saws.readthedocs.org/en/latest/?badge=latest
 .. |Dependency Status| image:: https://gemnasium.com/donnemartin/saws.svg
    :target: https://gemnasium.com/donnemartin/saws
-.. |Codecov| image:: https://img.shields.io/codecov/c/github/donnemartin/saws.svg
-   :target: https://codecov.io/github/donnemartin/saws/saws
 .. |PyPI version| image:: https://badge.fury.io/py/saws.svg
    :target: http://badge.fury.io/py/saws
 .. |PyPI| image:: https://img.shields.io/pypi/pyversions/saws.svg
