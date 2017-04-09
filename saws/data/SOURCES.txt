@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2228
+[sub_commands]: 2230
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1874,6 +1874,7 @@ rebuild-workspaces
 receive-message
 record-activity-task-heartbeat
 record-lifecycle-action-heartbeat
+refresh-cache
 refresh-schemas
 refresh-trusted-advisor-check
 register
@@ -2117,6 +2118,7 @@ terminate-workspaces
 test-connection
 test-dns-answer
 test-event-pattern
+test-failover
 test-invoke-authorizer
 test-invoke-method
 test-metric-filter
