@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2230
+[sub_commands]: 2231
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1270,6 +1270,7 @@ get-client-certificate
 get-client-certificates
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
+get-cluster-credentials
 get-cognito-events
 get-command-invocation
 get-commit
