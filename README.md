@@ -451,6 +451,8 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 ## License
 
+*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+
     Copyright 2015 Donne Martin
 
     Licensed under the Apache License, Version 2.0 (the "License");
