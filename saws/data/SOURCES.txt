@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2231
+[sub_commands]: 2240
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -337,6 +337,7 @@ create-export-task
 create-file-system
 create-fleet
 create-flow-logs
+create-fpga-image
 create-function
 create-game-session
 create-game-session-queue
@@ -417,6 +418,7 @@ create-replication-instance
 create-replication-subnet-group
 create-replication-task
 create-repository
+create-request-validator
 create-reserved-instances-listing
 create-resource
 create-resource-group
@@ -430,6 +432,7 @@ create-saml-provider
 create-security-configuration
 create-security-group
 create-service
+create-service-linked-role
 create-service-specific-credential
 create-size-constraint-set
 create-snapshot
@@ -673,6 +676,7 @@ delete-replication-subnet-group
 delete-replication-task
 delete-repository
 delete-repository-policy
+delete-request-validator
 delete-resource
 delete-rest-api
 delete-retention-policy
@@ -1404,6 +1408,8 @@ get-remote-access-session
 get-repository
 get-repository-policy
 get-repository-triggers
+get-request-validator
+get-request-validators
 get-reserved-instances-exchange-quote
 get-resource
 get-resource-config-history
@@ -1599,6 +1605,7 @@ list-network-profiles
 list-object-versions
 list-objects
 list-objects-v2
+list-offering-promotions
 list-offering-transactions
 list-offerings
 list-on-premises-instances
@@ -2242,8 +2249,10 @@ update-receipt-rule
 update-records
 update-repository-description
 update-repository-name
+update-request-validator
 update-resource
 update-rest-api
+update-role-description
 update-rule
 update-runtime-configuration
 update-saml-provider
