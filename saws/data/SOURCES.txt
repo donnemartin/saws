@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2240
+[sub_commands]: 2241
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1221,6 +1221,7 @@ generate-credential-report
 generate-data-key
 generate-data-key-without-plaintext
 generate-data-set
+generate-db-auth-token
 generate-random
 get
 get-access-key-last-used
