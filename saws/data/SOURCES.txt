@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2241
+[sub_commands]: 2242
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1235,6 +1235,7 @@ get-api-key
 get-api-keys
 get-application
 get-application-revision
+get-assessment-report
 get-attributes
 get-authorization-token
 get-authorizer
