@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2242
+[sub_commands]: 2243
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1917,6 +1917,7 @@ reject-portfolio-share
 reject-vpc-peering-connection
 release-address
 release-hosts
+reload-tables
 remove-attributes-from-findings
 remove-auto-scaling-policy
 remove-client-id-from-open-id-connect-provider
