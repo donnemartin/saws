@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2243
+[sub_commands]: 2245
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -2077,6 +2077,7 @@ start-automation-execution
 start-config-rules-evaluation
 start-configuration-recorder
 start-data-collection-by-agent-ids
+start-db-instance
 start-export-task
 start-game-session-placement
 start-gateway
@@ -2096,6 +2097,7 @@ stop-assessment-run
 stop-automation-execution
 stop-configuration-recorder
 stop-data-collection-by-agent-ids
+stop-db-instance
 stop-deployment
 stop-game-session-placement
 stop-instance
