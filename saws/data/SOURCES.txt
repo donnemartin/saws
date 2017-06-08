@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2245
+[sub_commands]: 2255
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -351,6 +351,7 @@ create-hsm
 create-hsm-client-certificate
 create-hsm-configuration
 create-identity-pool
+create-identity-provider
 create-image
 create-instance
 create-instance-export-task
@@ -469,6 +470,7 @@ create-user
 create-user-import-job
 create-user-pool
 create-user-pool-client
+create-user-pool-domain
 create-user-profile
 create-vault
 create-virtual-mfa-device
@@ -607,6 +609,7 @@ delete-identities
 delete-identity
 delete-identity-policy
 delete-identity-pool
+delete-identity-provider
 delete-imported-key-material
 delete-index-field
 delete-instance
@@ -732,6 +735,7 @@ delete-user-attributes
 delete-user-policy
 delete-user-pool
 delete-user-pool-client
+delete-user-pool-domain
 delete-user-profile
 delete-vault
 delete-vault-access-policy
@@ -932,6 +936,7 @@ describe-identity
 describe-identity-id-format
 describe-identity-pool
 describe-identity-pool-usage
+describe-identity-provider
 describe-identity-usage
 describe-image-attribute
 describe-images
@@ -1108,6 +1113,7 @@ describe-upload-buffer
 describe-user-import-job
 describe-user-pool
 describe-user-pool-client
+describe-user-pool-domain
 describe-user-profiles
 describe-vault
 describe-virtual-gateways
@@ -1348,6 +1354,7 @@ get-identity-notification-attributes
 get-identity-policies
 get-identity-pool-configuration
 get-identity-pool-roles
+get-identity-provider-by-identifier
 get-identity-verification-attributes
 get-instance-access
 get-instance-profile
@@ -1569,6 +1576,7 @@ list-fleets
 list-functions
 list-gateways
 list-geo-locations
+list-git-hub-account-token-names
 list-grants
 list-group-policies
 list-groups
@@ -1582,6 +1590,7 @@ list-identities
 list-identity-policies
 list-identity-pool-usage
 list-identity-pools
+list-identity-providers
 list-images
 list-imports
 list-instance-fleets
@@ -2218,6 +2227,7 @@ update-group
 update-health-check
 update-hosted-zone-comment
 update-identity-pool
+update-identity-provider
 update-instance
 update-integration
 update-integration-response
