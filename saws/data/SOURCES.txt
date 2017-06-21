@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2255
+[sub_commands]: 2257
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -917,6 +917,7 @@ describe-fleet-events
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-flow-logs
+describe-fpga-images
 describe-game-session-details
 describe-game-session-placement
 describe-game-session-queues
@@ -1019,6 +1020,7 @@ describe-prefix-lists
 describe-product
 describe-product-as-admin
 describe-product-view
+describe-provisioned-product
 describe-provisioning-artifact
 describe-provisioning-parameters
 describe-raid-arrays
