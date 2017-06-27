@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2257
+[sub_commands]: 2267
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -409,6 +409,7 @@ create-project
 create-provisioning-artifact
 create-public-virtual-interface
 create-queue
+create-rate-based-rule
 create-realtime-endpoint
 create-receipt-filter
 create-receipt-rule
@@ -653,6 +654,7 @@ delete-objects
 delete-open-id-connect-provider
 delete-option-group
 delete-parameter
+delete-parameters
 delete-patch-baseline
 delete-pipeline
 delete-placement-group
@@ -667,6 +669,7 @@ delete-product
 delete-project
 delete-provisioning-artifact
 delete-queue
+delete-rate-based-rule
 delete-realtime-endpoint
 delete-receipt-filter
 delete-receipt-rule
@@ -1397,8 +1400,10 @@ get-open-id-connect-provider
 get-open-id-token
 get-open-id-token-for-developer-identity
 get-operation-detail
+get-parameter
 get-parameter-history
 get-parameters
+get-parameters-by-path
 get-parameters-for-import
 get-password-data
 get-patch-baseline
@@ -1413,6 +1418,8 @@ get-policy-version
 get-project
 get-queue-attributes
 get-queue-url
+get-rate-based-rule
+get-rate-based-rule-managed-keys
 get-records
 get-registration-code
 get-remote-access-session
@@ -1628,6 +1635,7 @@ list-operations
 list-outgoing-certificates
 list-parts
 list-phone-numbers-opted-out
+list-pipeline-executions
 list-pipelines
 list-platform-applications
 list-platform-versions
@@ -1646,6 +1654,7 @@ list-provisioned-capacity
 list-provisioning-artifacts
 list-public-keys
 list-queues
+list-rate-based-rules
 list-receipt-filters
 list-receipt-rule-sets
 list-record-history
@@ -2261,6 +2270,7 @@ update-project
 update-provisioned-product
 update-provisioning-artifact
 update-radius
+update-rate-based-rule
 update-rds-db-instance
 update-receipt-rule
 update-records
