@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2267
+[sub_commands]: 2279
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -152,6 +152,7 @@ associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
 associate-subnet-cidr-block
+associate-tag-option-with-resource
 associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
@@ -423,6 +424,7 @@ create-repository
 create-request-validator
 create-reserved-instances-listing
 create-resource
+create-resource-data-sync
 create-resource-group
 create-rest-api
 create-reusable-delegation-set
@@ -452,6 +454,7 @@ create-streaming-distribution-with-tags
 create-subnet
 create-subscription
 create-table
+create-tag-option
 create-tags
 create-tape-with-barcode
 create-tapes
@@ -684,6 +687,7 @@ delete-repository
 delete-repository-policy
 delete-request-validator
 delete-resource
+delete-resource-data-sync
 delete-rest-api
 delete-retention-policy
 delete-reusable-delegation-set
@@ -905,6 +909,7 @@ describe-environment-managed-actions
 describe-environment-resources
 describe-environments
 describe-evaluations
+describe-event-bus
 describe-event-categories
 describe-event-subscriptions
 describe-event-topics
@@ -1097,6 +1102,7 @@ describe-suggesters
 describe-table
 describe-table-restore-status
 describe-table-statistics
+describe-tag-option
 describe-tags
 describe-tape-archives
 describe-tape-recovery-points
@@ -1188,6 +1194,7 @@ disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
 disassociate-route-table
 disassociate-subnet-cidr-block
+disassociate-tag-option-from-resource
 disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
 discover-poll-endpoint
@@ -1661,8 +1668,10 @@ list-record-history
 list-records
 list-remote-access-sessions
 list-repositories
+list-resource-data-sync
 list-resource-record-sets
 list-resource-tags
+list-resources-for-tag-option
 list-retirable-grants
 list-reusable-delegation-sets
 list-role-policies
@@ -1692,6 +1701,7 @@ list-subscriptions
 list-subscriptions-by-topic
 list-suites
 list-tables
+list-tag-options
 list-tags
 list-tags-for-certificate
 list-tags-for-domain
@@ -1870,6 +1880,7 @@ put-object
 put-object-acl
 put-object-tagging
 put-parameter
+put-permission
 put-pipeline-definition
 put-record
 put-record-batch
@@ -2299,6 +2310,7 @@ update-stage
 update-streaming-distribution
 update-subscription
 update-table
+update-tag-option
 update-tags-for-domain
 update-thing
 update-thing-shadow
