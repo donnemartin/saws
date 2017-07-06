@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2279
+[sub_commands]: 2283
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -560,6 +560,7 @@ delete-connection
 delete-constraint
 delete-custom-action-type
 delete-customer-gateway
+delete-dashboards
 delete-data-source
 delete-dataset
 delete-db-cluster
@@ -1311,6 +1312,7 @@ get-context-keys-for-principal-policy
 get-credential-report
 get-credentials-for-identity
 get-csv-header
+get-dashboard
 get-data-retrieval-policy
 get-data-source
 get-default-patch-baseline
@@ -1563,6 +1565,7 @@ list-configuration-sets
 list-configurations
 list-constraints-for-portfolio
 list-container-instances
+list-dashboards
 list-datasets
 list-dead-letter-source-queues
 list-delivery-streams
@@ -1852,6 +1855,7 @@ put-bucket-versioning
 put-bucket-website
 put-config-rule
 put-configuration-recorder
+put-dashboard
 put-delivery-channel
 put-destination
 put-destination-policy
