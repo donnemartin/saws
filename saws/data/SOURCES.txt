@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2283
+[sub_commands]: 2287
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -887,6 +887,7 @@ describe-directories
 describe-document
 describe-document-permission
 describe-domain
+describe-domain-controllers
 describe-domains
 describe-ec2-instance-limits
 describe-ecs-clusters
@@ -2123,6 +2124,7 @@ start-pipeline-execution
 start-replication-task
 start-schema-extension
 start-stack
+start-stream-encryption
 start-support-data-export
 start-task
 start-user-import-job
@@ -2142,6 +2144,7 @@ stop-remote-access-session
 stop-replication-task
 stop-run
 stop-stack
+stop-stream-encryption
 stop-task
 stop-user-import-job
 stop-workspaces
@@ -2274,6 +2277,7 @@ update-model
 update-my-user-profile
 update-network-profile
 update-nfs-file-share
+update-number-of-domain-controllers
 update-open-id-connect-provider-thumbprint
 update-patch-baseline
 update-pipeline
