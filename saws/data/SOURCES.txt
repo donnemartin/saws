@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2287
+[sub_commands]: 2295
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -386,6 +386,7 @@ create-nat-gateway
 create-network-acl
 create-network-acl-entry
 create-network-interface
+create-network-interface-permission
 create-network-profile
 create-nfs-file-share
 create-open-id-connect-provider
@@ -602,6 +603,7 @@ delete-flow-logs
 delete-function
 delete-game-session-queue
 delete-gateway
+delete-gateway-response
 delete-group
 delete-group-policy
 delete-hapg
@@ -650,6 +652,7 @@ delete-nat-gateway
 delete-network-acl
 delete-network-acl-entry
 delete-network-interface
+delete-network-interface-permission
 delete-network-profile
 delete-notification-configuration
 delete-object
@@ -1005,6 +1008,7 @@ describe-my-user-profile
 describe-nat-gateways
 describe-network-acls
 describe-network-interface-attribute
+describe-network-interface-permissions
 describe-network-interfaces
 describe-nfs-file-shares
 describe-notification-configurations
@@ -1351,6 +1355,8 @@ get-function
 get-function-configuration
 get-game-session-log
 get-game-session-log-url
+get-gateway-response
+get-gateway-responses
 get-geo-location
 get-group
 get-group-policy
@@ -1863,6 +1869,7 @@ put-destination-policy
 put-evaluations
 put-event-selectors
 put-events
+put-gateway-response
 put-group-policy
 put-identity-policy
 put-image
@@ -2251,6 +2258,7 @@ update-function-configuration
 update-game-session
 update-game-session-queue
 update-gateway-information
+update-gateway-response
 update-gateway-software-now
 update-group
 update-health-check
