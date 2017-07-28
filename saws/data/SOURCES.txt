@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2295
+[sub_commands]: 2308
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -446,6 +446,8 @@ create-snapshot-from-volume-recovery-point
 create-spot-datafeed-subscription
 create-sql-injection-match-set
 create-stack
+create-stack-instances
+create-stack-set
 create-stage
 create-storage-location
 create-stored-iscsi-volume
@@ -718,6 +720,8 @@ delete-spot-datafeed-subscription
 delete-sql-injection-match-set
 delete-ssh-public-key
 delete-stack
+delete-stack-instances
+delete-stack-set
 delete-stage
 delete-stream
 delete-streaming-distribution
@@ -1093,9 +1097,12 @@ describe-spot-fleet-requests
 describe-spot-instance-requests
 describe-spot-price-history
 describe-stack-events
+describe-stack-instance
 describe-stack-provisioning-parameters
 describe-stack-resource
 describe-stack-resources
+describe-stack-set
+describe-stack-set-operation
 describe-stack-summary
 describe-stacks
 describe-stale-security-groups
@@ -1702,7 +1709,11 @@ list-signing-certificates
 list-size-constraint-sets
 list-sql-injection-match-sets
 list-ssh-public-keys
+list-stack-instances
 list-stack-resources
+list-stack-set-operation-results
+list-stack-set-operations
+list-stack-sets
 list-stacks
 list-steps
 list-streaming-distributions
@@ -2151,6 +2162,7 @@ stop-remote-access-session
 stop-replication-task
 stop-run
 stop-stack
+stop-stack-set-operation
 stop-stream-encryption
 stop-task
 stop-user-import-job
@@ -2322,6 +2334,7 @@ update-snapshot-schedule
 update-sql-injection-match-set
 update-ssh-public-key
 update-stack
+update-stack-set
 update-stage
 update-streaming-distribution
 update-subscription
