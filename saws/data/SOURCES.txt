@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2308
+[sub_commands]: 2309
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -901,6 +901,7 @@ describe-ecs-clusters
 describe-effective-instance-associations
 describe-effective-patches-for-patch-baseline
 describe-egress-only-internet-gateways
+describe-elastic-gpus
 describe-elastic-ips
 describe-elastic-load-balancers
 describe-elasticsearch-domain
