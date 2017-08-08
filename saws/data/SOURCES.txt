@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2310
+[sub_commands]: 2311
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -2072,6 +2072,7 @@ search-game-sessions
 search-products
 search-products-as-admin
 select
+send-automation-signal
 send-bounce
 send-command
 send-email
