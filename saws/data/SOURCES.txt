@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2312
+[sub_commands]: 2329
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -113,12 +113,14 @@ admin-confirm-sign-up
 admin-create-user
 admin-delete-user
 admin-delete-user-attributes
+admin-disable-provider-for-user
 admin-disable-user
 admin-enable-user
 admin-forget-device
 admin-get-device
 admin-get-user
 admin-initiate-auth
+admin-link-provider-for-user
 admin-list-devices
 admin-list-groups-for-user
 admin-remove-user-from-group
@@ -428,6 +430,7 @@ create-reserved-instances-listing
 create-resource
 create-resource-data-sync
 create-resource-group
+create-resource-server
 create-rest-api
 create-reusable-delegation-set
 create-role
@@ -695,6 +698,7 @@ delete-repository-policy
 delete-request-validator
 delete-resource
 delete-resource-data-sync
+delete-resource-server
 delete-rest-api
 delete-retention-policy
 delete-reusable-delegation-set
@@ -1067,6 +1071,7 @@ describe-reserved-node-offerings
 describe-reserved-nodes
 describe-resize
 describe-resource-groups
+describe-resource-server
 describe-route-tables
 describe-rule
 describe-rules-packages
@@ -1408,6 +1413,8 @@ get-login-profile
 get-maintenance-window
 get-maintenance-window-execution
 get-maintenance-window-execution-task
+get-maintenance-window-execution-task-invocation
+get-maintenance-window-task
 get-method
 get-method-response
 get-metric-statistics
@@ -1501,6 +1508,7 @@ get-traffic-policy
 get-traffic-policy-instance
 get-traffic-policy-instance-count
 get-trail-status
+get-ui-customization
 get-upload
 get-usage
 get-usage-plan
@@ -1578,6 +1586,8 @@ list-cloud-front-origin-access-identities
 list-clusters
 list-command-invocations
 list-commands
+list-compliance-items
+list-compliance-summaries
 list-configuration-sets
 list-configurations
 list-constraints-for-portfolio
@@ -1688,8 +1698,10 @@ list-record-history
 list-records
 list-remote-access-sessions
 list-repositories
+list-resource-compliance-summaries
 list-resource-data-sync
 list-resource-record-sets
+list-resource-servers
 list-resource-tags
 list-resources-for-tag-option
 list-retirable-grants
@@ -1874,6 +1886,7 @@ put-bucket-request-payment
 put-bucket-tagging
 put-bucket-versioning
 put-bucket-website
+put-compliance-items
 put-config-rule
 put-configuration-recorder
 put-dashboard
@@ -2116,6 +2129,7 @@ set-tags-for-resource
 set-task-status
 set-time-based-auto-scaling
 set-topic-attributes
+set-ui-customization
 set-user-settings
 set-vault-access-policy
 set-vault-notifications
@@ -2293,6 +2307,8 @@ update-layer
 update-login-profile
 update-maintenance-start-time
 update-maintenance-window
+update-maintenance-window-target
+update-maintenance-window-task
 update-managed-instance-role
 update-method
 update-method-response
@@ -2321,6 +2337,7 @@ update-repository-description
 update-repository-name
 update-request-validator
 update-resource
+update-resource-server
 update-rest-api
 update-role-description
 update-rule
