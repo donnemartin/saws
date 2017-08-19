@@ -71,11 +71,12 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2329
+[sub_commands]: 2340
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
 accept-certificate-transfer
+accept-match
 accept-portfolio-share
 accept-reserved-instances-exchange-quote
 accept-vpc-peering-connection
@@ -380,6 +381,8 @@ create-log-stream
 create-login-profile
 create-luna-client
 create-maintenance-window
+create-matchmaking-configuration
+create-matchmaking-rule-set
 create-microsoft-ad
 create-ml-model
 create-model
@@ -646,6 +649,7 @@ delete-log-stream
 delete-login-profile
 delete-luna-client
 delete-maintenance-window
+delete-matchmaking-configuration
 delete-message
 delete-message-batch
 delete-method
@@ -1008,6 +1012,9 @@ describe-maintenance-window-executions
 describe-maintenance-window-targets
 describe-maintenance-window-tasks
 describe-maintenance-windows
+describe-matchmaking
+describe-matchmaking-configurations
+describe-matchmaking-rule-sets
 describe-metric-collection-types
 describe-metric-filters
 describe-ml-models
@@ -2156,6 +2163,7 @@ start-gateway
 start-instance
 start-instances
 start-logging
+start-matchmaking
 start-pipeline-execution
 start-replication-task
 start-schema-extension
@@ -2176,6 +2184,7 @@ stop-game-session-placement
 stop-instance
 stop-instances
 stop-logging
+stop-matchmaking
 stop-remote-access-session
 stop-replication-task
 stop-run
@@ -2310,6 +2319,7 @@ update-maintenance-window
 update-maintenance-window-target
 update-maintenance-window-task
 update-managed-instance-role
+update-matchmaking-configuration
 update-method
 update-method-response
 update-ml-model
@@ -2391,6 +2401,7 @@ upload-signing-certificate
 upload-ssh-public-key
 validate-configuration-settings
 validate-logs
+validate-matchmaking-rule-set
 validate-pipeline-definition
 validate-template
 verify-domain-dkim
