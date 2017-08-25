@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2340
+[sub_commands]: 2341
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1413,6 +1413,7 @@ get-job-details
 get-job-output
 get-key-policy
 get-key-rotation-status
+get-kinesis-stream
 get-log-events
 get-logging-options
 get-login
