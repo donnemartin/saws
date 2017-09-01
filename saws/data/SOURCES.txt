@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2341
+[sub_commands]: 2342
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1571,6 +1571,7 @@ list-assessment-run-agents
 list-assessment-runs
 list-assessment-targets
 list-assessment-templates
+list-association-versions
 list-associations
 list-attached-group-policies
 list-attached-role-policies
