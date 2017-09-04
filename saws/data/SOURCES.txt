@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2342
+[sub_commands]: 2344
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -2356,6 +2356,8 @@ update-rule
 update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
+update-security-group-rule-descriptions-egress
+update-security-group-rule-descriptions-ingress
 update-server-certificate
 update-service
 update-service-access-policies
