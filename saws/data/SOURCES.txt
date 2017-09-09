@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2344
+[sub_commands]: 2347
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -492,6 +492,7 @@ create-volume
 create-vpc
 create-vpc-association-authorization
 create-vpc-endpoint
+create-vpc-peering-authorization
 create-vpc-peering-connection
 create-vpn-connection
 create-vpn-connection-route
@@ -770,6 +771,7 @@ delete-volume
 delete-vpc
 delete-vpc-association-authorization
 delete-vpc-endpoints
+delete-vpc-peering-authorization
 delete-vpc-peering-connection
 delete-vpn-connection
 delete-vpn-connection-route
@@ -1165,6 +1167,7 @@ describe-vpc-classic-link
 describe-vpc-classic-link-dns-support
 describe-vpc-endpoint-services
 describe-vpc-endpoints
+describe-vpc-peering-authorizations
 describe-vpc-peering-connections
 describe-vpcs
 describe-vpn-connections
