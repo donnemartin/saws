@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2347
+[sub_commands]: 2354
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -416,6 +416,7 @@ create-product
 create-project
 create-provisioning-artifact
 create-public-virtual-interface
+create-query-logging-config
 create-queue
 create-rate-based-rule
 create-realtime-endpoint
@@ -686,6 +687,7 @@ delete-preset
 delete-product
 delete-project
 delete-provisioning-artifact
+delete-query-logging-config
 delete-queue
 delete-rate-based-rule
 delete-realtime-endpoint
@@ -703,6 +705,7 @@ delete-repository-policy
 delete-request-validator
 delete-resource
 delete-resource-data-sync
+delete-resource-policy
 delete-resource-server
 delete-rest-api
 delete-retention-policy
@@ -1080,6 +1083,7 @@ describe-reserved-node-offerings
 describe-reserved-nodes
 describe-resize
 describe-resource-groups
+describe-resource-policies
 describe-resource-server
 describe-route-tables
 describe-rule
@@ -1460,6 +1464,7 @@ get-platform-application-attributes
 get-policy
 get-policy-version
 get-project
+get-query-logging-config
 get-queue-attributes
 get-queue-url
 get-rate-based-rule
@@ -1702,6 +1707,7 @@ list-projects
 list-provisioned-capacity
 list-provisioning-artifacts
 list-public-keys
+list-query-logging-configs
 list-queues
 list-rate-based-rules
 list-receipt-filters
@@ -1937,6 +1943,7 @@ put-record
 put-record-batch
 put-records
 put-repository-triggers
+put-resource-policy
 put-rest-api
 put-retention-policy
 put-role-policy
