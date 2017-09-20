@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2354
+[sub_commands]: 2356
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -252,6 +252,7 @@ copy-db-snapshot
 copy-image
 copy-object
 copy-option-group
+copy-product
 copy-snapshot
 count-closed-workflow-executions
 count-open-workflow-executions
@@ -879,6 +880,7 @@ describe-connections-on-interconnect
 describe-constraint
 describe-container-instances
 describe-conversion-tasks
+describe-copy-product-status
 describe-cross-account-access-role
 describe-customer-gateways
 describe-data-sources
