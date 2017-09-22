@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2356
+[sub_commands]: 2361
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -299,6 +299,7 @@ create-computer
 create-conditional-forwarder
 create-configuration-set
 create-configuration-set-event-destination
+create-configuration-set-tracking-options
 create-configuration-template
 create-connection
 create-constraint
@@ -568,6 +569,7 @@ delete-config-rule
 delete-configuration-recorder
 delete-configuration-set
 delete-configuration-set-event-destination
+delete-configuration-set-tracking-options
 delete-configuration-template
 delete-connection
 delete-constraint
@@ -724,6 +726,7 @@ delete-security-configuration
 delete-security-group
 delete-server-certificate
 delete-service
+delete-service-linked-role
 delete-service-specific-credential
 delete-signing-certificate
 delete-size-constraint-set
@@ -1498,6 +1501,7 @@ get-sdk-types
 get-send-quota
 get-send-statistics
 get-server-certificate
+get-service-linked-role-deletion-status
 get-session-token
 get-shard-iterator
 get-shipping-label
@@ -2278,6 +2282,7 @@ update-client-certificate
 update-cloud-front-origin-access-identity
 update-conditional-forwarder
 update-configuration-set-event-destination
+update-configuration-set-tracking-options
 update-configuration-template
 update-constraint
 update-container-agent
