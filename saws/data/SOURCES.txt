@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2361
+[sub_commands]: 2368
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -151,6 +151,7 @@ associate-dhcp-options
 associate-elastic-ip
 associate-hosted-connection
 associate-iam-instance-profile
+associate-kms-key
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
@@ -249,6 +250,7 @@ copy-db-cluster-parameter-group
 copy-db-cluster-snapshot
 copy-db-parameter-group
 copy-db-snapshot
+copy-fpga-image
 copy-image
 copy-object
 copy-option-group
@@ -614,6 +616,7 @@ delete-file-share
 delete-file-system
 delete-fleet
 delete-flow-logs
+delete-fpga-image
 delete-function
 delete-game-session-queue
 delete-gateway
@@ -954,6 +957,7 @@ describe-fleet-events
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-flow-logs
+describe-fpga-image-attribute
 describe-fpga-images
 describe-game-session-details
 describe-game-session-placement
@@ -1229,6 +1233,7 @@ disassociate-configuration-items-from-application
 disassociate-connection-from-lag
 disassociate-elastic-ip
 disassociate-iam-instance-profile
+disassociate-kms-key
 disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
 disassociate-route-table
@@ -1831,6 +1836,7 @@ modify-db-subnet-group
 modify-document-permission
 modify-endpoint
 modify-event-subscription
+modify-fpga-image-attribute
 modify-hapg
 modify-hosts
 modify-hsm
@@ -2056,6 +2062,7 @@ reset-cache-parameter-group
 reset-cluster-parameter-group
 reset-db-cluster-parameter-group
 reset-db-parameter-group
+reset-fpga-image-attribute
 reset-image-attribute
 reset-instance-attribute
 reset-network-interface-attribute
