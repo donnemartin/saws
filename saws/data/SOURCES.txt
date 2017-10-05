@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2368
+[sub_commands]: 2370
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1278,6 +1278,7 @@ flush-stage-authorizers-cache
 flush-stage-cache
 forget-device
 forgot-password
+generate
 generate-client-certificate
 generate-credential-report
 generate-data-key
@@ -2400,6 +2401,7 @@ update-subscription
 update-table
 update-tag-option
 update-tags-for-domain
+update-termination-protection
 update-thing
 update-thing-shadow
 update-time-to-live
