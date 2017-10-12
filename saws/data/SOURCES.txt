@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2370
+[sub_commands]: 2371
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -225,6 +225,7 @@ change-resource-record-sets
 change-tags-for-resource
 check-dns-availability
 check-domain-availability
+check-domain-transferability
 check-if-phone-number-is-opted-out
 clone-receipt-rule-set
 clone-stack
