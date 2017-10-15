@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2371
+[sub_commands]: 2383
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -474,6 +474,7 @@ create-tag-option
 create-tags
 create-tape-with-barcode
 create-tapes
+create-template
 create-thing
 create-thing-type
 create-topic
@@ -650,6 +651,7 @@ delete-lag
 delete-launch-configuration
 delete-layer
 delete-lifecycle-hook
+delete-lifecycle-policy
 delete-load-balancer
 delete-load-balancer-listeners
 delete-load-balancer-policy
@@ -754,6 +756,7 @@ delete-tags
 delete-tags-for-domain
 delete-tape
 delete-tape-archive
+delete-template
 delete-thing
 delete-thing-shadow
 delete-thing-type
@@ -1433,6 +1436,8 @@ get-job-output
 get-key-policy
 get-key-rotation-status
 get-kinesis-stream
+get-lifecycle-policy
+get-lifecycle-policy-preview
 get-log-events
 get-logging-options
 get-login
@@ -1783,6 +1788,7 @@ list-targets-by-rule
 list-task-definition-families
 list-task-definitions
 list-tasks
+list-templates
 list-tests
 list-thing-principals
 list-thing-types
@@ -1940,6 +1946,7 @@ put-job-failure-result
 put-job-success-result
 put-key-policy
 put-lifecycle-hook
+put-lifecycle-policy
 put-log-events
 put-method
 put-method-response
@@ -2122,11 +2129,13 @@ search-products-as-admin
 select
 send-automation-signal
 send-bounce
+send-bulk-templated-email
 send-command
 send-email
 send-message
 send-message-batch
 send-raw-email
+send-templated-email
 set
 set-active-receipt-rule-set
 set-alarm-state
@@ -2189,6 +2198,7 @@ start-game-session-placement
 start-gateway
 start-instance
 start-instances
+start-lifecycle-policy-preview
 start-logging
 start-matchmaking
 start-pipeline-execution
@@ -2246,6 +2256,7 @@ test-failover
 test-invoke-authorizer
 test-invoke-method
 test-metric-filter
+test-render-template
 test-repository-triggers
 test-role
 transfer-certificate
@@ -2402,6 +2413,7 @@ update-subscription
 update-table
 update-tag-option
 update-tags-for-domain
+update-template
 update-termination-protection
 update-thing
 update-thing-shadow
