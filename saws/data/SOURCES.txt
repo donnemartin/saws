@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2383
+[sub_commands]: 2386
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -541,6 +541,7 @@ delete-bandwidth-rate-limit
 delete-base-path-mapping
 delete-batch-prediction
 delete-bgp-peer
+delete-branch
 delete-bucket
 delete-bucket-analytics-configuration
 delete-bucket-cors
@@ -1172,6 +1173,7 @@ describe-user-pool
 describe-user-pool-client
 describe-user-pool-domain
 describe-user-profiles
+describe-valid-db-instance-modifications
 describe-vault
 describe-virtual-gateways
 describe-virtual-interfaces
@@ -2413,6 +2415,7 @@ update-subscription
 update-table
 update-tag-option
 update-tags-for-domain
+update-tags-for-resource
 update-template
 update-termination-protection
 update-thing
