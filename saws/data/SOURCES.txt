@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2386
+[sub_commands]: 2402
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -351,6 +351,7 @@ create-fpga-image
 create-function
 create-game-session
 create-game-session-queue
+create-geo-match-set
 create-grant
 create-group
 create-hapg
@@ -428,6 +429,8 @@ create-realtime-endpoint
 create-receipt-filter
 create-receipt-rule
 create-receipt-rule-set
+create-regex-match-set
+create-regex-pattern-set
 create-remote-access-session
 create-replication-group
 create-replication-instance
@@ -624,6 +627,7 @@ delete-function
 delete-game-session-queue
 delete-gateway
 delete-gateway-response
+delete-geo-match-set
 delete-group
 delete-group-policy
 delete-hapg
@@ -704,6 +708,8 @@ delete-realtime-endpoint
 delete-receipt-filter
 delete-receipt-rule
 delete-receipt-rule-set
+delete-regex-match-set
+delete-regex-pattern-set
 delete-registration-code
 delete-remote-access-session
 delete-replication-group
@@ -1404,6 +1410,7 @@ get-game-session-log-url
 get-gateway-response
 get-gateway-responses
 get-geo-location
+get-geo-match-set
 get-group
 get-group-policy
 get-health-check
@@ -1489,6 +1496,8 @@ get-queue-url
 get-rate-based-rule
 get-rate-based-rule-managed-keys
 get-records
+get-regex-match-set
+get-regex-pattern-set
 get-registration-code
 get-remote-access-session
 get-repository
@@ -1659,6 +1668,7 @@ list-fleets
 list-functions
 list-gateways
 list-geo-locations
+list-geo-match-sets
 list-git-hub-account-token-names
 list-grants
 list-group-policies
@@ -1734,6 +1744,8 @@ list-receipt-filters
 list-receipt-rule-sets
 list-record-history
 list-records
+list-regex-match-sets
+list-regex-pattern-sets
 list-remote-access-sessions
 list-repositories
 list-resource-compliance-summaries
@@ -1875,6 +1887,7 @@ modify-volume-attribute
 modify-vpc-attribute
 modify-vpc-endpoint
 modify-vpc-peering-connection-options
+modify-vpc-tenancy
 modify-workspace-properties
 monitor-instances
 move-address-to-vpc
@@ -2340,6 +2353,7 @@ update-game-session-queue
 update-gateway-information
 update-gateway-response
 update-gateway-software-now
+update-geo-match-set
 update-group
 update-health-check
 update-hosted-zone-comment
@@ -2384,6 +2398,8 @@ update-rate-based-rule
 update-rds-db-instance
 update-receipt-rule
 update-records
+update-regex-match-set
+update-regex-pattern-set
 update-repository-description
 update-repository-name
 update-request-validator
