@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2403
+[sub_commands]: 2406
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1739,6 +1739,7 @@ list-provisioned-capacity
 list-provisioning-artifacts
 list-public-keys
 list-query-logging-configs
+list-queue-tags
 list-queues
 list-rate-based-rules
 list-receipt-filters
@@ -2257,6 +2258,7 @@ suspend-processes
 swap-environment-cnames
 sync
 tag-log-group
+tag-queue
 tag-resource
 terminate-clusters
 terminate-environment
@@ -2289,6 +2291,7 @@ unsubscribe
 unsubscribe-from-dataset
 unsubscribe-from-event
 untag-log-group
+untag-queue
 untag-resource
 update-access-key
 update-account
