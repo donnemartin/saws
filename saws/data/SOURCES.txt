@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2402
+[sub_commands]: 2403
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -611,6 +611,7 @@ delete-domain
 delete-domain-name
 delete-egress-only-internet-gateway
 delete-elasticsearch-domain
+delete-elasticsearch-service-role
 delete-endpoint
 delete-environment-configuration
 delete-evaluation
