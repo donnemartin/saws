@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2406
+[sub_commands]: 2413
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -328,6 +328,8 @@ create-deployment-config
 create-deployment-group
 create-device-pool
 create-dhcp-options
+create-direct-connect-gateway
+create-direct-connect-gateway-association
 create-directory
 create-distribution
 create-distribution-with-tags
@@ -602,6 +604,8 @@ delete-deployment-group
 delete-destination
 delete-device-pool
 delete-dhcp-options
+delete-direct-connect-gateway
+delete-direct-connect-gateway-association
 delete-directory
 delete-distribution
 delete-document
@@ -924,6 +928,9 @@ describe-delivery-stream
 describe-deployments
 describe-destinations
 describe-dhcp-options
+describe-direct-connect-gateway-associations
+describe-direct-connect-gateway-attachments
+describe-direct-connect-gateways
 describe-directories
 describe-document
 describe-document-permission
