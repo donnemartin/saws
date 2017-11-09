@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2413
+[sub_commands]: 2416
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -550,6 +550,7 @@ delete-branch
 delete-bucket
 delete-bucket-analytics-configuration
 delete-bucket-cors
+delete-bucket-encryption
 delete-bucket-inventory-configuration
 delete-bucket-lifecycle
 delete-bucket-metrics-configuration
@@ -1333,6 +1334,7 @@ get-bucket-accelerate-configuration
 get-bucket-acl
 get-bucket-analytics-configuration
 get-bucket-cors
+get-bucket-encryption
 get-bucket-inventory-configuration
 get-bucket-lifecycle
 get-bucket-lifecycle-configuration
@@ -1935,6 +1937,7 @@ put-bucket-accelerate-configuration
 put-bucket-acl
 put-bucket-analytics-configuration
 put-bucket-cors
+put-bucket-encryption
 put-bucket-inventory-configuration
 put-bucket-lifecycle
 put-bucket-lifecycle-configuration
