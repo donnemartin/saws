@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2416
+[sub_commands]: 2418
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1885,6 +1885,7 @@ modify-luna-client
 modify-mount-target-security-groups
 modify-network-interface-attribute
 modify-replication-group
+modify-replication-group-shard-configuration
 modify-replication-instance
 modify-replication-subnet-group
 modify-replication-task
@@ -1997,6 +1998,7 @@ put-retention-policy
 put-role-policy
 put-rule
 put-scaling-policy
+put-scheduled-action
 put-scheduled-update-group-action
 put-subscription-filter
 put-targets
