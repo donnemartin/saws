@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2418
+[sub_commands]: 2419
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -321,6 +321,7 @@ create-db-security-group
 create-db-snapshot
 create-db-subnet-group
 create-default-roles
+create-default-subnet
 create-default-vpc
 create-delivery-stream
 create-deployment
