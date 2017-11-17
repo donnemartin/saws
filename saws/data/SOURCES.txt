@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2419
+[sub_commands]: 2423
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1313,6 +1313,7 @@ get-access-key-last-used
 get-account
 get-account-authorization-details
 get-account-password-policy
+get-account-sending-enabled
 get-account-settings
 get-account-summary
 get-alias
@@ -2309,6 +2310,7 @@ untag-resource
 update-access-key
 update-account
 update-account-password-policy
+update-account-sending-enabled
 update-alias
 update-api-key
 update-app
@@ -2334,6 +2336,8 @@ update-client-certificate
 update-cloud-front-origin-access-identity
 update-conditional-forwarder
 update-configuration-set-event-destination
+update-configuration-set-reputation-metrics-enabled
+update-configuration-set-sending-enabled
 update-configuration-set-tracking-options
 update-configuration-template
 update-constraint
