@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2423
+[sub_commands]: 2426
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1312,6 +1312,7 @@ get
 get-access-key-last-used
 get-account
 get-account-authorization-details
+get-account-limit
 get-account-password-policy
 get-account-sending-enabled
 get-account-settings
@@ -1432,6 +1433,7 @@ get-health-check-status
 get-host-reservation-purchase-preview
 get-hosted-zone
 get-hosted-zone-count
+get-hosted-zone-limit
 get-hostname-suggestion
 get-id
 get-identity-dkim-attributes
@@ -1524,6 +1526,7 @@ get-resources
 get-rest-api
 get-rest-apis
 get-reusable-delegation-set
+get-reusable-delegation-set-limit
 get-role
 get-role-policy
 get-rule
