@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2426
+[sub_commands]: 2429
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1099,6 +1099,7 @@ describe-regions
 describe-replication-groups
 describe-replication-instances
 describe-replication-subnet-groups
+describe-replication-task-assessment-results
 describe-replication-tasks
 describe-repositories
 describe-reserved-cache-nodes
@@ -2125,6 +2126,7 @@ restore-db-cluster-from-s3
 restore-db-cluster-from-snapshot
 restore-db-cluster-to-point-in-time
 restore-db-instance-from-db-snapshot
+restore-db-instance-from-s3
 restore-db-instance-to-point-in-time
 restore-from-cluster-snapshot
 restore-from-hbase-backup
@@ -2237,6 +2239,7 @@ start-logging
 start-matchmaking
 start-pipeline-execution
 start-replication-task
+start-replication-task-assessment
 start-schema-extension
 start-stack
 start-stream-encryption
