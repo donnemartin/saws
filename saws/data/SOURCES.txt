@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2429
+[sub_commands]: 2446
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -425,6 +425,7 @@ create-product
 create-project
 create-provisioning-artifact
 create-public-virtual-interface
+create-pull-request
 create-query-logging-config
 create-queue
 create-rate-based-rule
@@ -576,6 +577,7 @@ delete-cluster-parameter-group
 delete-cluster-security-group
 delete-cluster-snapshot
 delete-cluster-subnet-group
+delete-comment-content
 delete-conditional-forwarder
 delete-config-rule
 delete-configuration-recorder
@@ -1089,6 +1091,7 @@ describe-product-view
 describe-provisioned-product
 describe-provisioning-artifact
 describe-provisioning-parameters
+describe-pull-request-events
 describe-raid-arrays
 describe-rds-db-instances
 describe-receipt-rule
@@ -1160,6 +1163,7 @@ describe-stale-security-groups
 describe-step
 describe-stored-iscsi-volumes
 describe-stream
+describe-stream-summary
 describe-subnets
 describe-subscription-filters
 describe-suggesters
@@ -1368,6 +1372,9 @@ get-cloud-front-origin-access-identity-config
 get-cluster-credentials
 get-cognito-events
 get-command-invocation
+get-comment
+get-comments-for-compared-commit
+get-comments-for-pull-request
 get-commit
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
@@ -1459,7 +1466,6 @@ get-job-details
 get-job-output
 get-key-policy
 get-key-rotation-status
-get-kinesis-stream
 get-lifecycle-policy
 get-lifecycle-policy-preview
 get-log-events
@@ -1471,6 +1477,7 @@ get-maintenance-window-execution
 get-maintenance-window-execution-task
 get-maintenance-window-execution-task-invocation
 get-maintenance-window-task
+get-merge-conflicts
 get-method
 get-method-response
 get-metric-statistics
@@ -1505,6 +1512,7 @@ get-platform-application-attributes
 get-policy
 get-policy-version
 get-project
+get-pull-request
 get-query-logging-config
 get-queue-attributes
 get-queue-url
@@ -1753,6 +1761,7 @@ list-projects
 list-provisioned-capacity
 list-provisioning-artifacts
 list-public-keys
+list-pull-requests
 list-query-logging-configs
 list-queue-tags
 list-queues
@@ -1854,6 +1863,7 @@ lookup-events
 ls
 mb
 merge-developer-identities
+merge-pull-request-by-fast-forward
 merge-shards
 meter-usage
 modify-cache-cluster
@@ -1917,6 +1927,9 @@ poll-for-decision-task
 poll-for-jobs
 poll-for-task
 poll-for-third-party-jobs
+post-comment-for-compared-commit
+post-comment-for-pull-request
+post-comment-reply
 predict
 presign
 preview-agents
@@ -2340,6 +2353,7 @@ update-certificate
 update-chap-credentials
 update-client-certificate
 update-cloud-front-origin-access-identity
+update-comment
 update-conditional-forwarder
 update-configuration-set-event-destination
 update-configuration-set-reputation-metrics-enabled
@@ -2420,6 +2434,9 @@ update-product
 update-project
 update-provisioned-product
 update-provisioning-artifact
+update-pull-request-description
+update-pull-request-status
+update-pull-request-title
 update-radius
 update-rate-based-rule
 update-rds-db-instance
