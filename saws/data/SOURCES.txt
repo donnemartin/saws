@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2446
+[sub_commands]: 2436
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -132,7 +132,6 @@ admin-update-device-status
 admin-update-user-attributes
 admin-user-global-sign-out
 allocate-address
-allocate-connection-on-interconnect
 allocate-hosted-connection
 allocate-hosts
 allocate-private-virtual-interface
@@ -900,9 +899,7 @@ describe-configuration-recorders
 describe-configuration-set
 describe-configuration-settings
 describe-configurations
-describe-connection-loa
 describe-connections
-describe-connections-on-interconnect
 describe-constraint
 describe-container-instances
 describe-conversion-tasks
@@ -969,7 +966,6 @@ describe-event-categories
 describe-event-subscriptions
 describe-event-topics
 describe-events
-describe-export-configurations
 describe-export-tasks
 describe-expressions
 describe-file-systems
@@ -1018,7 +1014,6 @@ describe-instance-patches
 describe-instance-status
 describe-instances
 describe-instances-health
-describe-interconnect-loa
 describe-interconnects
 describe-internet-gateways
 describe-job
@@ -1298,7 +1293,6 @@ evaluate-expression
 execute-change-set
 execute-policy
 exit-standby
-export-configurations
 failover-db-cluster
 filter-log-events
 flush-stage-authorizers-cache
@@ -1344,12 +1338,10 @@ get-bucket-analytics-configuration
 get-bucket-cors
 get-bucket-encryption
 get-bucket-inventory-configuration
-get-bucket-lifecycle
 get-bucket-lifecycle-configuration
 get-bucket-location
 get-bucket-logging
 get-bucket-metrics-configuration
-get-bucket-notification
 get-bucket-notification-configuration
 get-bucket-policy
 get-bucket-replication
@@ -1616,7 +1608,6 @@ install
 install-applications
 install-to-remote-access-session
 invoke
-invoke-async
 list
 list-accepted-portfolio-shares
 list-access-keys
@@ -1920,6 +1911,7 @@ modify-workspace-properties
 monitor-instances
 move-address-to-vpc
 mv
+notify-when-uploaded
 opt-in-phone-number
 package
 poll-for-activity-task
@@ -1959,11 +1951,9 @@ put-bucket-analytics-configuration
 put-bucket-cors
 put-bucket-encryption
 put-bucket-inventory-configuration
-put-bucket-lifecycle
 put-bucket-lifecycle-configuration
 put-bucket-logging
 put-bucket-metrics-configuration
-put-bucket-notification
 put-bucket-notification-configuration
 put-bucket-policy
 put-bucket-replication
@@ -2309,7 +2299,6 @@ test-invoke-method
 test-metric-filter
 test-render-template
 test-repository-triggers
-test-role
 transfer-certificate
 transfer-domain
 unassign-instance
@@ -2468,6 +2457,7 @@ update-snapshot-schedule
 update-sql-injection-match-set
 update-ssh-public-key
 update-stack
+update-stack-instances
 update-stack-set
 update-stage
 update-streaming-distribution
