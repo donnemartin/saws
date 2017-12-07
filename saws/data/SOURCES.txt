@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2436
+[sub_commands]: 2469
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -79,6 +79,7 @@ accept-certificate-transfer
 accept-match
 accept-portfolio-share
 accept-reserved-instances-exchange-quote
+accept-vpc-endpoint-connections
 accept-vpc-peering-connection
 acknowledge-job
 acknowledge-third-party-job
@@ -124,10 +125,13 @@ admin-initiate-auth
 admin-link-provider-for-user
 admin-list-devices
 admin-list-groups-for-user
+admin-list-user-auth-events
 admin-remove-user-from-group
 admin-reset-user-password
 admin-respond-to-auth-challenge
+admin-set-user-mfa-preference
 admin-set-user-settings
+admin-update-auth-event-feedback
 admin-update-device-status
 admin-update-user-attributes
 admin-user-global-sign-out
@@ -154,6 +158,7 @@ associate-kms-key
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-route-table
+associate-software-token
 associate-subnet-cidr-block
 associate-tag-option-with-resource
 associate-virtual-interface
@@ -379,6 +384,8 @@ create-key-pair
 create-keys-and-certificate
 create-lag
 create-launch-configuration
+create-launch-template
+create-launch-template-version
 create-layer
 create-lb-cookie-stickiness-policy
 create-load-balancer
@@ -505,6 +512,8 @@ create-volume
 create-vpc
 create-vpc-association-authorization
 create-vpc-endpoint
+create-vpc-endpoint-connection-notification
+create-vpc-endpoint-service-configuration
 create-vpc-peering-authorization
 create-vpc-peering-connection
 create-vpn-connection
@@ -662,6 +671,8 @@ delete-item
 delete-key-pair
 delete-lag
 delete-launch-configuration
+delete-launch-template
+delete-launch-template-versions
 delete-layer
 delete-lifecycle-hook
 delete-lifecycle-policy
@@ -799,6 +810,8 @@ delete-virtual-mfa-device
 delete-volume
 delete-vpc
 delete-vpc-association-authorization
+delete-vpc-endpoint-connection-notifications
+delete-vpc-endpoint-service-configurations
 delete-vpc-endpoints
 delete-vpc-peering-authorization
 delete-vpc-peering-connection
@@ -1021,6 +1034,8 @@ describe-key
 describe-key-pairs
 describe-lags
 describe-launch-configurations
+describe-launch-template-versions
+describe-launch-templates
 describe-layers
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
@@ -1114,6 +1129,7 @@ describe-resize
 describe-resource-groups
 describe-resource-policies
 describe-resource-server
+describe-risk-configuration
 describe-route-tables
 describe-rule
 describe-rules-packages
@@ -1200,6 +1216,10 @@ describe-volumes-modifications
 describe-vpc-attribute
 describe-vpc-classic-link
 describe-vpc-classic-link-dns-support
+describe-vpc-endpoint-connection-notifications
+describe-vpc-endpoint-connections
+describe-vpc-endpoint-service-configurations
+describe-vpc-endpoint-service-permissions
 describe-vpc-endpoint-services
 describe-vpc-endpoints
 describe-vpc-peering-authorizations
@@ -1458,6 +1478,7 @@ get-job-details
 get-job-output
 get-key-policy
 get-key-rotation-status
+get-launch-template-data
 get-lifecycle-policy
 get-lifecycle-policy-preview
 get-log-events
@@ -1579,6 +1600,7 @@ get-usage-plans
 get-user
 get-user-attribute-verification-code
 get-user-policy
+get-user-pool-mfa-config
 get-vault-access-policy
 get-vault-lock
 get-vault-notifications
@@ -1887,6 +1909,7 @@ modify-instance-attribute
 modify-instance-fleet
 modify-instance-groups
 modify-instance-placement
+modify-launch-template
 modify-load-balancer-attributes
 modify-luna-client
 modify-mount-target-security-groups
@@ -1905,6 +1928,9 @@ modify-volume
 modify-volume-attribute
 modify-vpc-attribute
 modify-vpc-endpoint
+modify-vpc-endpoint-connection-notification
+modify-vpc-endpoint-service-configuration
+modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
 modify-workspace-properties
@@ -1982,6 +2008,7 @@ put-item
 put-job-failure-result
 put-job-success-result
 put-key-policy
+put-lifecycle-event-hook-execution-status
 put-lifecycle-hook
 put-lifecycle-policy
 put-log-events
@@ -2062,6 +2089,7 @@ register-volume
 register-workflow-type
 reject-certificate-transfer
 reject-portfolio-share
+reject-vpc-endpoint-connections
 reject-vpc-peering-connection
 release-address
 release-hosts
@@ -2203,6 +2231,7 @@ set-platform-application-attributes
 set-queue-attributes
 set-receipt-rule-position
 set-repository-policy
+set-risk-configuration
 set-sms-attributes
 set-stack-policy
 set-status
@@ -2212,6 +2241,8 @@ set-task-status
 set-time-based-auto-scaling
 set-topic-attributes
 set-ui-customization
+set-user-mfa-preference
+set-user-pool-mfa-config
 set-user-settings
 set-vault-access-policy
 set-vault-notifications
@@ -2329,6 +2360,7 @@ update-assessment-target
 update-association
 update-association-status
 update-assume-role-policy
+update-auth-event-feedback
 update-authorizer
 update-auto-scaling-group
 update-availability-options
@@ -2503,6 +2535,7 @@ validate-template
 verify-domain-dkim
 verify-domain-identity
 verify-email-identity
+verify-software-token
 verify-trust
 verify-user-attribute
 view-billing
