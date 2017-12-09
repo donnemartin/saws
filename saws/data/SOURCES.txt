@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2469
+[sub_commands]: 2541
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -107,6 +107,7 @@ add-tags-to-on-premises-instances
 add-tags-to-resource
 add-tags-to-stream
 add-tags-to-vault
+add-thing-to-thing-group
 add-upload-buffer
 add-user-to-group
 add-working-storage
@@ -161,6 +162,7 @@ associate-route-table
 associate-software-token
 associate-subnet-cidr-block
 associate-tag-option-with-resource
+associate-targets-with-job
 associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
@@ -176,7 +178,7 @@ attach-load-balancer-target-groups
 attach-load-balancer-to-subnets
 attach-load-balancers
 attach-network-interface
-attach-principal-policy
+attach-policy
 attach-role-policy
 attach-thing-principal
 attach-user-policy
@@ -231,6 +233,7 @@ check-dns-availability
 check-domain-availability
 check-domain-transferability
 check-if-phone-number-is-opted-out
+clear-default-authorizer
 clone-receipt-rule-set
 clone-stack
 complete-layer-upload
@@ -281,6 +284,7 @@ create-association
 create-association-batch
 create-authorizer
 create-auto-scaling-group
+create-backup
 create-base-path-mapping
 create-batch-prediction
 create-bgp-peer
@@ -359,6 +363,7 @@ create-function
 create-game-session
 create-game-session-queue
 create-geo-match-set
+create-global-table
 create-grant
 create-group
 create-hapg
@@ -456,9 +461,11 @@ create-resource-server
 create-rest-api
 create-reusable-delegation-set
 create-role
+create-role-alias
 create-route
 create-route-table
 create-rule
+create-rule-group
 create-saml-provider
 create-security-configuration
 create-security-group
@@ -489,6 +496,7 @@ create-tape-with-barcode
 create-tapes
 create-template
 create-thing
+create-thing-group
 create-thing-type
 create-topic
 create-topic-rule
@@ -514,6 +522,7 @@ create-vpc-association-authorization
 create-vpc-endpoint
 create-vpc-endpoint-connection-notification
 create-vpc-endpoint-service-configuration
+create-vpc-link
 create-vpc-peering-authorization
 create-vpc-peering-connection
 create-vpn-connection
@@ -552,6 +561,7 @@ delete-association
 delete-attributes
 delete-authorizer
 delete-auto-scaling-group
+delete-backup
 delete-bandwidth-rate-limit
 delete-base-path-mapping
 delete-batch-prediction
@@ -641,6 +651,7 @@ delete-fleet
 delete-flow-logs
 delete-fpga-image
 delete-function
+delete-function-concurrency
 delete-game-session-queue
 delete-gateway
 delete-gateway-response
@@ -746,10 +757,12 @@ delete-rest-api
 delete-retention-policy
 delete-reusable-delegation-set
 delete-role
+delete-role-alias
 delete-role-policy
 delete-route
 delete-route-table
 delete-rule
+delete-rule-group
 delete-run
 delete-saml-provider
 delete-scaling-policy
@@ -784,6 +797,7 @@ delete-tape
 delete-tape-archive
 delete-template
 delete-thing
+delete-thing-group
 delete-thing-shadow
 delete-thing-type
 delete-topic
@@ -802,6 +816,7 @@ delete-user-pool
 delete-user-pool-client
 delete-user-pool-domain
 delete-user-profile
+delete-v2-logging-level
 delete-vault
 delete-vault-access-policy
 delete-vault-notifications
@@ -813,6 +828,7 @@ delete-vpc-association-authorization
 delete-vpc-endpoint-connection-notifications
 delete-vpc-endpoint-service-configurations
 delete-vpc-endpoints
+delete-vpc-link
 delete-vpc-peering-authorization
 delete-vpc-peering-connection
 delete-vpn-connection
@@ -865,13 +881,16 @@ describe-assessment-targets
 describe-assessment-templates
 describe-association
 describe-attachment
+describe-authorizer
 describe-auto-scaling-groups
 describe-auto-scaling-instances
 describe-auto-scaling-notification-types
 describe-automation-executions
+describe-automation-step-executions
 describe-availability-options
 describe-availability-zones
 describe-available-patches
+describe-backup
 describe-bandwidth-rate-limit
 describe-batch-predictions
 describe-build
@@ -915,6 +934,7 @@ describe-configurations
 describe-connections
 describe-constraint
 describe-container-instances
+describe-continuous-backups
 describe-conversion-tasks
 describe-copy-product-status
 describe-cross-account-access-role
@@ -935,6 +955,7 @@ describe-db-security-groups
 describe-db-snapshot-attributes
 describe-db-snapshots
 describe-db-subnet-groups
+describe-default-authorizer
 describe-default-cluster-parameters
 describe-delivery-channel-status
 describe-delivery-channels
@@ -976,6 +997,7 @@ describe-environments
 describe-evaluations
 describe-event-bus
 describe-event-categories
+describe-event-configurations
 describe-event-subscriptions
 describe-event-topics
 describe-events
@@ -996,6 +1018,7 @@ describe-game-session-placement
 describe-game-session-queues
 describe-game-sessions
 describe-gateway-information
+describe-global-table
 describe-hapg
 describe-host-reservation-offerings
 describe-host-reservations
@@ -1016,9 +1039,11 @@ describe-image-attribute
 describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
+describe-index
 describe-index-fields
 describe-instance-associations-status
 describe-instance-attribute
+describe-instance-credit-specifications
 describe-instance-health
 describe-instance-information
 describe-instance-patch-states
@@ -1030,6 +1055,7 @@ describe-instances-health
 describe-interconnects
 describe-internet-gateways
 describe-job
+describe-job-execution
 describe-key
 describe-key-pairs
 describe-lags
@@ -1130,6 +1156,7 @@ describe-resource-groups
 describe-resource-policies
 describe-resource-server
 describe-risk-configuration
+describe-role-alias
 describe-route-tables
 describe-rule
 describe-rules-packages
@@ -1190,6 +1217,8 @@ describe-task-definition
 describe-tasks
 describe-termination-policy-types
 describe-thing
+describe-thing-group
+describe-thing-registration-task
 describe-thing-type
 describe-time-based-auto-scaling
 describe-time-to-live
@@ -1244,7 +1273,7 @@ detach-load-balancer-from-subnets
 detach-load-balancer-target-groups
 detach-load-balancers
 detach-network-interface
-detach-principal-policy
+detach-policy
 detach-role-policy
 detach-thing-principal
 detach-user-policy
@@ -1430,6 +1459,7 @@ get-domain-name
 get-domain-names
 get-domain-suggestions
 get-download-url-for-layer
+get-effective-policies
 get-endpoint-attributes
 get-evaluation
 get-event-selectors
@@ -1464,6 +1494,7 @@ get-identity-pool-configuration
 get-identity-pool-roles
 get-identity-provider-by-identifier
 get-identity-verification-attributes
+get-indexing-configuration
 get-instance-access
 get-instance-profile
 get-integration
@@ -1475,6 +1506,7 @@ get-ip-set
 get-item
 get-job
 get-job-details
+get-job-document
 get-job-output
 get-key-policy
 get-key-rotation-status
@@ -1552,6 +1584,7 @@ get-reusable-delegation-set-limit
 get-role
 get-role-policy
 get-rule
+get-rule-group
 get-run
 get-saml-provider
 get-sampled-requests
@@ -1601,9 +1634,12 @@ get-user
 get-user-attribute-verification-code
 get-user-policy
 get-user-pool-mfa-config
+get-v2-logging-options
 get-vault-access-policy
 get-vault-lock
 get-vault-notifications
+get-vpc-link
+get-vpc-links
 get-web-acl
 get-workflow-execution-history
 get-xss-match-set
@@ -1635,6 +1671,7 @@ list-accepted-portfolio-shares
 list-access-keys
 list-account-aliases
 list-action-types
+list-activated-rules-in-rule-group
 list-activity-types
 list-aliases
 list-allowed-node-type-modifications
@@ -1648,11 +1685,14 @@ list-assessment-templates
 list-association-versions
 list-associations
 list-attached-group-policies
+list-attached-policies
 list-attached-role-policies
 list-attached-user-policies
 list-attributes
+list-authorizers
 list-available-solution-stacks
 list-available-zones
+list-backups
 list-branches
 list-bucket-analytics-configurations
 list-bucket-inventory-configurations
@@ -1707,6 +1747,7 @@ list-gateways
 list-geo-locations
 list-geo-match-sets
 list-git-hub-account-token-names
+list-global-tables
 list-grants
 list-group-policies
 list-groups
@@ -1723,6 +1764,7 @@ list-identity-pools
 list-identity-providers
 list-images
 list-imports
+list-indices
 list-instance-fleets
 list-instance-profiles
 list-instance-profiles-for-role
@@ -1731,6 +1773,8 @@ list-invalidations
 list-inventory-entries
 list-ip-routes
 list-ip-sets
+list-job-executions-for-job
+list-job-executions-for-thing
 list-jobs
 list-jobs-by-pipeline
 list-jobs-by-status
@@ -1761,13 +1805,11 @@ list-pipelines
 list-platform-applications
 list-platform-versions
 list-policies
-list-policy-principals
 list-policy-versions
 list-portfolio-access
 list-portfolios
 list-portfolios-for-product
 list-presets
-list-principal-policies
 list-principal-things
 list-principals-for-portfolio
 list-projects
@@ -1795,8 +1837,10 @@ list-resource-tags
 list-resources-for-tag-option
 list-retirable-grants
 list-reusable-delegation-sets
+list-role-aliases
 list-role-policies
 list-roles
+list-rule-groups
 list-rule-names-by-target
 list-rules
 list-rules-packages
@@ -1822,6 +1866,7 @@ list-stacks
 list-steps
 list-streaming-distributions
 list-streams
+list-subscribed-rule-groups
 list-subscriptions
 list-subscriptions-by-topic
 list-suites
@@ -1838,14 +1883,20 @@ list-tags-log-group
 list-tags-of-resource
 list-tapes
 list-targets-by-rule
+list-targets-for-policy
 list-task-definition-families
 list-task-definitions
 list-tasks
 list-templates
 list-tests
+list-thing-groups
+list-thing-groups-for-thing
 list-thing-principals
+list-thing-registration-task-reports
+list-thing-registration-tasks
 list-thing-types
 list-things
+list-things-in-thing-group
 list-topic-rules
 list-topics
 list-traffic-policies
@@ -1861,6 +1912,7 @@ list-user-pool-clients
 list-user-pools
 list-users
 list-users-in-group
+list-v2-logging-levels
 list-vaults
 list-versions-by-function
 list-virtual-mfa-devices
@@ -1906,6 +1958,7 @@ modify-id-format
 modify-identity-id-format
 modify-image-attribute
 modify-instance-attribute
+modify-instance-credit-specification
 modify-instance-fleet
 modify-instance-groups
 modify-instance-placement
@@ -1997,6 +2050,7 @@ put-destination-policy
 put-evaluations
 put-event-selectors
 put-events
+put-function-concurrency
 put-gateway-response
 put-group-policy
 put-identity-policy
@@ -2085,6 +2139,7 @@ register-scalable-target
 register-target-with-maintenance-window
 register-task-definition
 register-task-with-maintenance-window
+register-thing
 register-volume
 register-workflow-type
 reject-certificate-transfer
@@ -2110,6 +2165,7 @@ remove-tags-from-resource
 remove-tags-from-stream
 remove-tags-from-vault
 remove-targets
+remove-thing-from-thing-group
 remove-user-from-group
 renew-domain
 renew-offering
@@ -2163,6 +2219,7 @@ restore-from-cluster-snapshot
 restore-from-hbase-backup
 restore-from-snapshot
 restore-object
+restore-table-from-backup
 restore-table-from-cluster-snapshot
 resume-processes
 resync-mfa-device
@@ -2191,6 +2248,7 @@ schedule-key-deletion
 schedule-run
 search
 search-game-sessions
+search-index
 search-products
 search-products-as-admin
 select
@@ -2208,6 +2266,7 @@ set-active-receipt-rule-set
 set-alarm-state
 set-cognito-events
 set-data-retrieval-policy
+set-default-authorizer
 set-default-policy-version
 set-desired-capacity
 set-endpoint-attributes
@@ -2244,6 +2303,8 @@ set-ui-customization
 set-user-mfa-preference
 set-user-pool-mfa-config
 set-user-settings
+set-v2-logging-level
+set-v2-logging-options
 set-vault-access-policy
 set-vault-notifications
 shutdown-gateway
@@ -2279,6 +2340,7 @@ start-stack
 start-stream-encryption
 start-support-data-export
 start-task
+start-thing-registration-task
 start-user-import-job
 start-workflow-execution
 start-workspaces
@@ -2300,6 +2362,7 @@ stop-stack
 stop-stack-set-operation
 stop-stream-encryption
 stop-task
+stop-thing-registration-task
 stop-user-import-job
 stop-workspaces
 submit-container-state-change
@@ -2321,6 +2384,7 @@ terminate-instances
 terminate-provisioned-product
 terminate-workflow-execution
 terminate-workspaces
+test-authorization
 test-connection
 test-dns-answer
 test-event-pattern
@@ -2404,6 +2468,7 @@ update-elastic-ip
 update-elasticsearch-domain-config
 update-environment
 update-evaluation
+update-event-configurations
 update-event-source-mapping
 update-fleet-attributes
 update-fleet-capacity
@@ -2416,11 +2481,13 @@ update-gateway-information
 update-gateway-response
 update-gateway-software-now
 update-geo-match-set
+update-global-table
 update-group
 update-health-check
 update-hosted-zone-comment
 update-identity-pool
 update-identity-provider
+update-indexing-configuration
 update-instance
 update-integration
 update-integration-response
@@ -2471,8 +2538,10 @@ update-request-validator
 update-resource
 update-resource-server
 update-rest-api
+update-role-alias
 update-role-description
 update-rule
+update-rule-group
 update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
@@ -2501,6 +2570,8 @@ update-tags-for-resource
 update-template
 update-termination-protection
 update-thing
+update-thing-group
+update-thing-groups-for-thing
 update-thing-shadow
 update-time-to-live
 update-traffic-policy-comment
@@ -2514,6 +2585,7 @@ update-user-pool
 update-user-pool-client
 update-user-profile
 update-volume
+update-vpc-link
 update-vtl-device-type
 update-web-acl
 update-xss-match-set
