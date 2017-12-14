@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2541
+[sub_commands]: 2547
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -315,6 +315,7 @@ create-configuration-template
 create-connection
 create-constraint
 create-custom-action-type
+create-custom-verification-email-template
 create-customer-gateway
 create-data-source-from-rds
 create-data-source-from-redshift
@@ -606,6 +607,7 @@ delete-configuration-template
 delete-connection
 delete-constraint
 delete-custom-action-type
+delete-custom-verification-email-template
 delete-customer-gateway
 delete-dashboards
 delete-data-source
@@ -1430,6 +1432,7 @@ get-context-keys-for-principal-policy
 get-credential-report
 get-credentials-for-identity
 get-csv-header
+get-custom-verification-email-template
 get-dashboard
 get-data-retrieval-policy
 get-data-source
@@ -1715,6 +1718,7 @@ list-configuration-sets
 list-configurations
 list-constraints-for-portfolio
 list-container-instances
+list-custom-verification-email-templates
 list-dashboards
 list-datasets
 list-dead-letter-source-queues
@@ -2256,6 +2260,7 @@ send-automation-signal
 send-bounce
 send-bulk-templated-email
 send-command
+send-custom-verification-email
 send-email
 send-message
 send-message-batch
@@ -2448,6 +2453,7 @@ update-configuration-template
 update-constraint
 update-container-agent
 update-container-instances-state
+update-custom-verification-email-template
 update-data-source
 update-default-branch
 update-deployment
