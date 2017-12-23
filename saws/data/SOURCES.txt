@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2547
+[sub_commands]: 2548
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1614,6 +1614,7 @@ get-streaming-distribution
 get-streaming-distribution-config
 get-subscription-attributes
 get-suite
+get-tags
 get-telemetry-metadata
 get-template
 get-template-summary
