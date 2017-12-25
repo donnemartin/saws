@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2548
+[sub_commands]: 2553
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -419,6 +419,7 @@ create-nfs-file-share
 create-open-id-connect-provider
 create-option-group
 create-or-update-tags
+create-ota-update
 create-patch-baseline
 create-pipeline
 create-placement-group
@@ -718,6 +719,7 @@ delete-object-tagging
 delete-objects
 delete-open-id-connect-provider
 delete-option-group
+delete-ota-update
 delete-parameter
 delete-parameters
 delete-patch-baseline
@@ -1544,6 +1546,7 @@ get-open-id-connect-provider
 get-open-id-token
 get-open-id-token-for-developer-identity
 get-operation-detail
+get-ota-update
 get-parameter
 get-parameter-history
 get-parameters
@@ -1802,6 +1805,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-ota-updates
 list-outgoing-certificates
 list-parts
 list-phone-numbers-opted-out
@@ -2568,6 +2572,7 @@ update-stack
 update-stack-instances
 update-stack-set
 update-stage
+update-stream
 update-streaming-distribution
 update-subscription
 update-table
