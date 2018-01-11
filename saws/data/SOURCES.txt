@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2553
+[sub_commands]: 2554
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -659,6 +659,7 @@ delete-game-session-queue
 delete-gateway
 delete-gateway-response
 delete-geo-match-set
+delete-git-hub-account-token
 delete-group
 delete-group-policy
 delete-hapg
