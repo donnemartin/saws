@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2554
+[sub_commands]: 2562
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -436,6 +436,7 @@ create-preset
 create-private-virtual-interface
 create-product
 create-project
+create-provisioned-product-plan
 create-provisioning-artifact
 create-public-virtual-interface
 create-pull-request
@@ -735,6 +736,7 @@ delete-portfolio-share
 delete-preset
 delete-product
 delete-project
+delete-provisioned-product-plan
 delete-provisioning-artifact
 delete-query-logging-config
 delete-queue
@@ -1108,6 +1110,7 @@ describe-network-interfaces
 describe-nfs-file-shares
 describe-notification-configurations
 describe-objects
+describe-operating-systems
 describe-option-group-options
 describe-option-groups
 describe-orderable-cluster-options
@@ -1130,6 +1133,7 @@ describe-product
 describe-product-as-admin
 describe-product-view
 describe-provisioned-product
+describe-provisioned-product-plan
 describe-provisioning-artifact
 describe-provisioning-parameters
 describe-pull-request-events
@@ -1346,6 +1350,7 @@ estimate-template-cost
 evaluate-expression
 execute-change-set
 execute-policy
+execute-provisioned-product-plan
 exit-standby
 failover-db-cluster
 filter-log-events
@@ -1824,6 +1829,7 @@ list-principal-things
 list-principals-for-portfolio
 list-projects
 list-provisioned-capacity
+list-provisioned-product-plans
 list-provisioning-artifacts
 list-public-keys
 list-pull-requests
@@ -1863,6 +1869,7 @@ list-server-certificates
 list-server-neighbors
 list-service-specific-credentials
 list-services
+list-shards
 list-signing-certificates
 list-size-constraint-sets
 list-sql-injection-match-sets
@@ -2261,6 +2268,7 @@ search-game-sessions
 search-index
 search-products
 search-products-as-admin
+search-provisioned-products
 select
 send-automation-signal
 send-bounce
