@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2562
+[sub_commands]: 2565
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1145,6 +1145,7 @@ describe-record
 describe-refresh-schemas-status
 describe-regions
 describe-replication-groups
+describe-replication-instance-task-logs
 describe-replication-instances
 describe-replication-subnet-groups
 describe-replication-task-assessment-results
@@ -2124,6 +2125,7 @@ reboot-cluster
 reboot-db-instance
 reboot-instance
 reboot-instances
+reboot-replication-instance
 reboot-workspaces
 rebuild-environment
 rebuild-workspaces
@@ -2350,6 +2352,7 @@ start-instance
 start-instances
 start-lifecycle-policy-preview
 start-logging
+start-match-backfill
 start-matchmaking
 start-pipeline-execution
 start-replication-task
