@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2565
+[sub_commands]: 2567
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -875,6 +875,7 @@ describe-addresses
 describe-adjustment-types
 describe-agent-versions
 describe-agents
+describe-aggregate-id-format
 describe-alarm-history
 describe-alarms
 describe-alarms-for-metric
@@ -1129,6 +1130,7 @@ describe-player-sessions
 describe-policies
 describe-portfolio
 describe-prefix-lists
+describe-principal-id-format
 describe-product
 describe-product-as-admin
 describe-product-view
