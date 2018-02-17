@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2567
+[sub_commands]: 2568
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -1613,6 +1613,7 @@ get-service-linked-role-deletion-status
 get-session-token
 get-shard-iterator
 get-shipping-label
+get-signing-certificate
 get-size-constraint-set
 get-sms-attributes
 get-snapshot-limits
