@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2568
+[sub_commands]: 2571
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -725,6 +725,7 @@ delete-ota-update
 delete-parameter
 delete-parameters
 delete-patch-baseline
+delete-permission-policy
 delete-pipeline
 delete-placement-group
 delete-platform-application
@@ -1564,6 +1565,7 @@ get-parameters-for-import
 get-password-data
 get-patch-baseline
 get-patch-baseline-for-patch-group
+get-permission-policy
 get-pipeline
 get-pipeline-definition
 get-pipeline-execution
@@ -2098,6 +2100,7 @@ put-object-acl
 put-object-tagging
 put-parameter
 put-permission
+put-permission-policy
 put-pipeline-definition
 put-record
 put-record-batch
