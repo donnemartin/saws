@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2571
+[sub_commands]: 2572
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -2073,6 +2073,7 @@ put-destination-policy
 put-evaluations
 put-event-selectors
 put-events
+put-file
 put-function-concurrency
 put-gateway-response
 put-group-policy
