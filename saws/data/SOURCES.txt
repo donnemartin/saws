@@ -71,7 +71,7 @@ support
 swf
 waf
 workspaces
-[sub_commands]: 2572
+[sub_commands]: 2573
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
@@ -799,6 +799,7 @@ delete-subnet
 delete-subscription-filter
 delete-suggester
 delete-table
+delete-tag-option
 delete-tags
 delete-tags-for-domain
 delete-tape
