@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3542
+[sub_commands]: 3543
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3649,6 +3649,7 @@ update-volume
 update-vpc-link
 update-vtl-device-type
 update-web-acl
+update-webhook
 update-xss-match-set
 upgrade-applied-schema
 upgrade-published-schema
