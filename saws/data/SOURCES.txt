@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3538
+[sub_commands]: 3542
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -316,6 +316,7 @@ batch-get-partition
 batch-get-projects
 batch-get-query-execution
 batch-get-repositories
+batch-get-resource-config
 batch-get-traces
 batch-meter-usage
 batch-put-attributes
@@ -2228,6 +2229,7 @@ get-repository-triggers
 get-request-validator
 get-request-validators
 get-reservation-coverage
+get-reservation-purchase-recommendation
 get-reservation-utilization
 get-reserved-instances-exchange-quote
 get-resolver
@@ -3503,6 +3505,8 @@ update-hosted-zone-comment
 update-identity-pool
 update-identity-provider
 update-indexing-configuration
+update-input
+update-input-security-group
 update-instance
 update-instance-custom-health-status
 update-integration
