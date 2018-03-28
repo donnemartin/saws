@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3543
+[sub_commands]: 3545
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3109,6 +3109,7 @@ restore-object
 restore-server
 restore-table-from-backup
 restore-table-from-cluster-snapshot
+restore-table-to-point-in-time
 resume-processes
 resync-mfa-device
 retire-grant
@@ -3435,6 +3436,7 @@ update-connectivity-info
 update-constraint
 update-container-agent
 update-container-instances-state
+update-continuous-backups
 update-core-definition
 update-crawler
 update-crawler-schedule
