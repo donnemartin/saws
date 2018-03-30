@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3545
+[sub_commands]: 3546
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3416,6 +3416,7 @@ update-byte-match-set
 update-ca-certificate
 update-campaign
 update-certificate
+update-certificate-options
 update-channel
 update-chap-credentials
 update-classifier
