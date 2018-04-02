@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3546
+[sub_commands]: 3547
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3584,6 +3584,7 @@ update-resource
 update-resource-definition
 update-resource-server
 update-rest-api
+update-role
 update-role-alias
 update-role-description
 update-room
