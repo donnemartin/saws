@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3547
+[sub_commands]: 3559
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -230,6 +230,7 @@ assign-volume
 associate-address
 associate-configuration-items-to-application
 associate-connection-with-lag
+associate-contact-with-address-book
 associate-created-artifact
 associate-delegate-to-resource
 associate-device-with-room
@@ -399,6 +400,7 @@ create-activation
 create-activity
 create-additional-assignments-for-hit
 create-address
+create-address-book
 create-alias
 create-api-key
 create-app
@@ -452,6 +454,7 @@ create-configuration-set-tracking-options
 create-configuration-template
 create-connection
 create-constraint
+create-contact
 create-container
 create-core-definition
 create-core-definition-version
@@ -787,6 +790,7 @@ delete-account-alias
 delete-account-password-policy
 delete-activation
 delete-activity
+delete-address-book
 delete-adm-channel
 delete-alarms
 delete-alias
@@ -869,6 +873,7 @@ delete-configuration-set-tracking-options
 delete-configuration-template
 delete-connection
 delete-constraint
+delete-contact
 delete-container
 delete-container-policy
 delete-core-definition
@@ -1772,6 +1777,7 @@ disassociate-address
 disassociate-configuration-items-from-application
 disassociate-connection-from-lag
 disassociate-connector
+disassociate-contact-from-address-book
 disassociate-created-artifact
 disassociate-delegate-from-resource
 disassociate-device-from-room
@@ -1863,6 +1869,7 @@ get-account-settings
 get-account-summary
 get-active-names
 get-activity-task
+get-address-book
 get-adm-channel
 get-alias
 get-api-key
@@ -1962,6 +1969,7 @@ get-connectivity-info
 get-connectors
 get-console-output
 get-console-screenshot
+get-contact
 get-contact-reachability-status
 get-container-policy
 get-content-moderation
@@ -3138,6 +3146,8 @@ schedule-hbase-backup
 schedule-key-deletion
 schedule-run
 search
+search-address-books
+search-contacts
 search-devices
 search-faces
 search-faces-by-image
@@ -3385,6 +3395,7 @@ update-access-key
 update-account
 update-account-password-policy
 update-account-sending-enabled
+update-address-book
 update-adm-channel
 update-alias
 update-api-key
@@ -3435,6 +3446,7 @@ update-configuration-template
 update-connection
 update-connectivity-info
 update-constraint
+update-contact
 update-container-agent
 update-container-instances-state
 update-continuous-backups
