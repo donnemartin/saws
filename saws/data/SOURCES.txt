@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3559
+[sub_commands]: 3580
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -518,6 +518,8 @@ create-event-subscription
 create-export-job
 create-export-task
 create-facet
+create-field-level-encryption-config
+create-field-level-encryption-profile
 create-file-system
 create-fleet
 create-flow-logs
@@ -644,6 +646,7 @@ create-protection
 create-provisioned-product-plan
 create-provisioning-artifact
 create-public-dns-namespace
+create-public-key
 create-public-virtual-interface
 create-pull-request
 create-qualification-type
@@ -936,6 +939,8 @@ delete-event-subscription
 delete-expression
 delete-faces
 delete-facet
+delete-field-level-encryption-config
+delete-field-level-encryption-profile
 delete-file-share
 delete-file-system
 delete-fleet
@@ -1063,6 +1068,7 @@ delete-project
 delete-protection
 delete-provisioned-product-plan
 delete-provisioning-artifact
+delete-public-key
 delete-qualification-type
 delete-query-logging-config
 delete-queue
@@ -2008,6 +2014,7 @@ get-dev-endpoints
 get-device
 get-device-definition
 get-device-definition-version
+get-device-instance
 get-device-pool
 get-device-pool-compatibility
 get-differences
@@ -2053,6 +2060,10 @@ get-face-detection
 get-face-search
 get-facet
 get-federation-token
+get-field-level-encryption
+get-field-level-encryption-config
+get-field-level-encryption-profile
+get-field-level-encryption-profile-config
 get-file-upload-url
 get-findings
 get-findings-statistics
@@ -2212,6 +2223,8 @@ get-preset
 get-products
 get-profile
 get-project
+get-public-key
+get-public-key-config
 get-pull-request
 get-qualification-score
 get-qualification-type
@@ -2483,6 +2496,7 @@ list-detectors
 list-development-schema-arns
 list-device-definition-versions
 list-device-definitions
+list-device-instances
 list-device-pools
 list-devices
 list-directories
@@ -2507,6 +2521,8 @@ list-exports
 list-faces
 list-facet-attributes
 list-facet-names
+list-field-level-encryption-configs
+list-field-level-encryption-profiles
 list-file-shares
 list-findings
 list-fleets
@@ -3465,6 +3481,7 @@ update-detector
 update-dev-endpoint
 update-device
 update-device-definition
+update-device-instance
 update-device-pool
 update-device-status
 update-directory-config
@@ -3492,6 +3509,8 @@ update-event-configurations
 update-event-source-mapping
 update-expiration-for-hit
 update-facet
+update-field-level-encryption-config
+update-field-level-encryption-profile
 update-findings-feedback
 update-fleet
 update-fleet-attributes
@@ -3524,6 +3543,7 @@ update-input
 update-input-security-group
 update-instance
 update-instance-custom-health-status
+update-instance-profile
 update-integration
 update-integration-response
 update-ip-set
@@ -3575,6 +3595,7 @@ update-profile
 update-project
 update-provisioned-product
 update-provisioning-artifact
+update-public-key
 update-pull-request-description
 update-pull-request-status
 update-pull-request-title
