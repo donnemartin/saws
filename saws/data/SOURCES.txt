@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3580
+[sub_commands]: 3600
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -757,6 +757,7 @@ create-user-pool-domain
 create-user-profile
 create-vault
 create-virtual-mfa-device
+create-vocabulary
 create-volume
 create-vpc
 create-vpc-association-authorization
@@ -795,6 +796,7 @@ delete-activation
 delete-activity
 delete-address-book
 delete-adm-channel
+delete-aggregation-authorization
 delete-alarms
 delete-alias
 delete-analysis-scheme
@@ -869,6 +871,7 @@ delete-comment-content
 delete-compute-environment
 delete-conditional-forwarder
 delete-config-rule
+delete-configuration-aggregator
 delete-configuration-recorder
 delete-configuration-set
 delete-configuration-set-event-destination
@@ -1051,6 +1054,7 @@ delete-parameter-group
 delete-parameters
 delete-partition
 delete-patch-baseline
+delete-pending-aggregation-request
 delete-permission-policy
 delete-pipeline
 delete-placement-group
@@ -1191,6 +1195,7 @@ delete-vault-access-policy
 delete-vault-notifications
 delete-virtual-interface
 delete-virtual-mfa-device
+delete-vocabulary
 delete-volume
 delete-vpc
 delete-vpc-association-authorization
@@ -1247,7 +1252,9 @@ describe-adjustment-types
 describe-affected-entities
 describe-agent-versions
 describe-agents
+describe-aggregate-compliance-by-config-rules
 describe-aggregate-id-format
+describe-aggregation-authorizations
 describe-alarm-history
 describe-alarms
 describe-alarms-for-metric
@@ -1317,6 +1324,8 @@ describe-conditional-forwarders
 describe-config-rule-evaluation-status
 describe-config-rules
 describe-configuration
+describe-configuration-aggregator-sources-status
+describe-configuration-aggregators
 describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
@@ -1544,6 +1553,7 @@ describe-parameters
 describe-patch-baselines
 describe-patch-group-state
 describe-patch-groups
+describe-pending-aggregation-requests
 describe-pending-maintenance-actions
 describe-permissions
 describe-pipelines
@@ -1848,6 +1858,7 @@ execute-provisioned-product-plan
 exit-standby
 expire-session
 export-bundle
+export-certificate
 export-project
 failover-db-cluster
 filter-log-events
@@ -1877,6 +1888,8 @@ get-active-names
 get-activity-task
 get-address-book
 get-adm-channel
+get-aggregate-compliance-details-by-config-rule
+get-aggregate-config-rule-compliance-summary
 get-alias
 get-api-key
 get-api-keys
@@ -2175,6 +2188,7 @@ get-members
 get-merge-conflicts
 get-method
 get-method-response
+get-metric-data
 get-metric-statistics
 get-ml-model
 get-model
@@ -2364,6 +2378,7 @@ get-v2-logging-options
 get-vault-access-policy
 get-vault-lock
 get-vault-notifications
+get-vocabulary
 get-vpc-link
 get-vpc-links
 get-web-acl
@@ -2774,6 +2789,7 @@ list-v2-logging-levels
 list-vaults
 list-versions-by-function
 list-virtual-mfa-devices
+list-vocabularies
 list-volume-initiators
 list-volume-recovery-points
 list-volumes
@@ -2895,6 +2911,7 @@ purge-queue
 push
 put
 put-action-revision
+put-aggregation-authorization
 put-application-policy
 put-approval-result
 put-attributes
@@ -2919,6 +2936,7 @@ put-bucket-versioning
 put-bucket-website
 put-compliance-items
 put-config-rule
+put-configuration-aggregator
 put-configuration-recorder
 put-container-policy
 put-cors-policy
@@ -3178,6 +3196,7 @@ search-rooms
 search-skill-groups
 search-users
 select
+select-object-content
 send-automation-signal
 send-bonus
 send-bounce
@@ -3682,6 +3701,7 @@ update-user-defined-function
 update-user-pool
 update-user-pool-client
 update-user-profile
+update-vocabulary
 update-volume
 update-vpc-link
 update-vtl-device-type
