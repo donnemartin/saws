@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3600
+[sub_commands]: 3604
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1016,6 +1016,7 @@ delete-log-stream
 delete-logger-definition
 delete-login-profile
 delete-luna-client
+delete-mailbox-permissions
 delete-maintenance-window
 delete-matchmaking-configuration
 delete-members
@@ -2199,6 +2200,7 @@ get-namespace
 get-network-profile
 get-object
 get-object-acl
+get-object-attributes
 get-object-information
 get-object-tagging
 get-object-torrent
@@ -2604,6 +2606,7 @@ list-local-disks
 list-logger-definition-versions
 list-logger-definitions
 list-luna-clients
+list-mailbox-permissions
 list-members
 list-metrics
 list-mfa-devices
@@ -2968,6 +2971,7 @@ put-lifecycle-event-hook-execution-status
 put-lifecycle-hook
 put-lifecycle-policy
 put-log-events
+put-mailbox-permissions
 put-method
 put-method-response
 put-metric-alarm
