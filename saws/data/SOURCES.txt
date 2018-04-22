@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3604
+[sub_commands]: 3614
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -767,6 +767,7 @@ create-vpc-endpoint-service-configuration
 create-vpc-link
 create-vpc-peering-authorization
 create-vpc-peering-connection
+create-vpce-configuration
 create-vpn-connection
 create-vpn-connection-route
 create-vpn-gateway
@@ -990,6 +991,7 @@ delete-intent
 delete-intent-version
 delete-interconnect
 delete-internet-gateway
+delete-inventory
 delete-invitations
 delete-ip-set
 delete-item
@@ -1206,6 +1208,7 @@ delete-vpc-endpoints
 delete-vpc-link
 delete-vpc-peering-authorization
 delete-vpc-peering-connection
+delete-vpce-configuration
 delete-vpn-connection
 delete-vpn-connection-route
 delete-vpn-gateway
@@ -1478,6 +1481,7 @@ describe-instances
 describe-instances-health
 describe-interconnects
 describe-internet-gateways
+describe-inventory-deletions
 describe-job
 describe-job-definitions
 describe-job-execution
@@ -2383,6 +2387,7 @@ get-vault-notifications
 get-vocabulary
 get-vpc-link
 get-vpc-links
+get-vpce-configuration
 get-web-acl
 get-web-acl-for-resource
 get-workflow-execution-history
@@ -2740,6 +2745,7 @@ list-tables
 list-tag-options
 list-tags
 list-tags-for-certificate
+list-tags-for-delivery-stream
 list-tags-for-domain
 list-tags-for-project
 list-tags-for-resource
@@ -2797,6 +2803,7 @@ list-volume-initiators
 list-volume-recovery-points
 list-volumes
 list-vpc-association-authorizations
+list-vpce-configurations
 list-web-acls
 list-worker-blocks
 list-workers-with-qualification-type
@@ -3383,6 +3390,7 @@ swap-environment-cnames
 sync
 synthesize-speech
 tag
+tag-delivery-stream
 tag-log-group
 tag-project
 tag-queue
@@ -3424,6 +3432,7 @@ unsubscribe
 unsubscribe-from-dataset
 unsubscribe-from-event
 untag
+untag-delivery-stream
 untag-log-group
 untag-project
 untag-queue
@@ -3708,6 +3717,7 @@ update-user-profile
 update-vocabulary
 update-volume
 update-vpc-link
+update-vpce-configuration
 update-vtl-device-type
 update-web-acl
 update-webhook
