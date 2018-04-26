@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3614
+[sub_commands]: 3615
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3658,6 +3658,7 @@ update-rule-group
 update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
+update-scaling-plan
 update-schema
 update-security-group-rule-descriptions-egress
 update-security-group-rule-descriptions-ingress
