@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3615
+[sub_commands]: 3617
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2063,6 +2063,7 @@ get-domains
 get-download-url-for-layer
 get-effective-policies
 get-email-channel
+get-encryption-config
 get-endpoint
 get-endpoint-attributes
 get-entitlements
@@ -2954,6 +2955,7 @@ put-dashboard
 put-delivery-channel
 put-destination
 put-destination-policy
+put-encryption-config
 put-evaluations
 put-event-selectors
 put-event-stream
