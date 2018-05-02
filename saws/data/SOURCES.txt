@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3617
+[sub_commands]: 3629
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -240,6 +240,7 @@ associate-elastic-ip
 associate-fleet
 associate-hosted-connection
 associate-iam-instance-profile
+associate-ip-groups
 associate-kms-key
 associate-member-to-group
 associate-node
@@ -287,6 +288,7 @@ attach-vpn-gateway
 authorize-cache-security-group-ingress
 authorize-cluster-security-group-ingress
 authorize-db-security-group-ingress
+authorize-ip-rules
 authorize-security-group-egress
 authorize-security-group-ingress
 authorize-snapshot-access
@@ -566,6 +568,7 @@ create-intent-version
 create-interconnect
 create-internet-gateway
 create-invalidation
+create-ip-group
 create-ip-set
 create-job
 create-job-queue
@@ -993,6 +996,7 @@ delete-interconnect
 delete-internet-gateway
 delete-inventory
 delete-invitations
+delete-ip-group
 delete-ip-set
 delete-item
 delete-job
@@ -1440,6 +1444,7 @@ describe-game-session-queues
 describe-game-sessions
 describe-gateway-information
 describe-global-table
+describe-global-table-settings
 describe-group
 describe-groups
 describe-handshake
@@ -1482,6 +1487,7 @@ describe-instances-health
 describe-interconnects
 describe-internet-gateways
 describe-inventory-deletions
+describe-ip-groups
 describe-job
 describe-job-definitions
 describe-job-execution
@@ -1807,6 +1813,7 @@ disassociate-elastic-ip
 disassociate-fleet
 disassociate-from-master-account
 disassociate-iam-instance-profile
+disassociate-ip-groups
 disassociate-kms-key
 disassociate-member-from-group
 disassociate-members
@@ -2519,6 +2526,7 @@ list-detectors
 list-development-schema-arns
 list-device-definition-versions
 list-device-definitions
+list-device-events
 list-device-instances
 list-device-pools
 list-devices
@@ -2879,6 +2887,7 @@ modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
 modify-workspace-properties
+modify-workspace-state
 monitor-instances
 move-account
 move-address-to-vpc
@@ -3178,6 +3187,7 @@ revoke-cluster-security-group-ingress
 revoke-db-security-group-ingress
 revoke-grant
 revoke-invitation
+revoke-ip-rules
 revoke-security-group-egress
 revoke-security-group-ingress
 revoke-snapshot-access
@@ -3562,6 +3572,7 @@ update-gateway-software-now
 update-gcm-channel
 update-geo-match-set
 update-global-table
+update-global-table-settings
 update-graphql-api
 update-group
 update-group-certificate-configuration
@@ -3657,6 +3668,7 @@ update-role-description
 update-room
 update-rule
 update-rule-group
+update-rules-of-ip-group
 update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
