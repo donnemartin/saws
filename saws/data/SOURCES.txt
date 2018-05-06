@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3629
+[sub_commands]: 3637
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -951,6 +951,7 @@ delete-field-level-encryption-profile
 delete-file-share
 delete-file-system
 delete-fleet
+delete-fleets
 delete-flow-logs
 delete-folder
 delete-folder-contents
@@ -1246,6 +1247,7 @@ deregister-targets
 deregister-task-definition
 deregister-task-from-maintenance-window
 deregister-volume
+deregister-webhook-with-third-party
 describe-account
 describe-account-attributes
 describe-account-limits
@@ -1431,6 +1433,8 @@ describe-findings
 describe-fleet-attributes
 describe-fleet-capacity
 describe-fleet-events
+describe-fleet-history
+describe-fleet-instances
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-fleets
@@ -2814,6 +2818,7 @@ list-volumes
 list-vpc-association-authorizations
 list-vpce-configurations
 list-web-acls
+list-webhooks
 list-worker-blocks
 list-workers-with-qualification-type
 list-workflow-types
@@ -2846,6 +2851,7 @@ modify-db-subnet-group
 modify-document-permission
 modify-endpoint
 modify-event-subscription
+modify-fleet
 modify-fpga-image-attribute
 modify-hapg
 modify-hosts
@@ -3027,6 +3033,7 @@ put-third-party-job-failure-result
 put-third-party-job-success-result
 put-trace-segments
 put-user-policy
+put-webhook
 query
 query-objects
 rb
@@ -3080,6 +3087,7 @@ register-task-with-maintenance-window
 register-thing
 register-to-work-mail
 register-volume
+register-webhook-with-third-party
 register-workflow-type
 reject-assignment
 reject-certificate-transfer
