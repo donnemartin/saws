@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3637
+[sub_commands]: 3642
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -523,6 +523,7 @@ create-facet
 create-field-level-encryption-config
 create-field-level-encryption-profile
 create-file-system
+create-filter
 create-fleet
 create-flow-logs
 create-folder
@@ -950,6 +951,7 @@ delete-field-level-encryption-config
 delete-field-level-encryption-profile
 delete-file-share
 delete-file-system
+delete-filter
 delete-fleet
 delete-fleets
 delete-flow-logs
@@ -2095,6 +2097,7 @@ get-field-level-encryption-config
 get-field-level-encryption-profile
 get-field-level-encryption-profile-config
 get-file-upload-url
+get-filter
 get-findings
 get-findings-statistics
 get-folder
@@ -2559,6 +2562,7 @@ list-facet-names
 list-field-level-encryption-configs
 list-field-level-encryption-profiles
 list-file-shares
+list-filters
 list-findings
 list-fleets
 list-fragments
@@ -3563,6 +3567,7 @@ update-expiration-for-hit
 update-facet
 update-field-level-encryption-config
 update-field-level-encryption-profile
+update-filter
 update-findings-feedback
 update-fleet
 update-fleet-attributes
