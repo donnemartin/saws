@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3642
+[sub_commands]: 3645
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1611,6 +1611,8 @@ describe-reserved-cache-nodes
 describe-reserved-cache-nodes-offerings
 describe-reserved-db-instances
 describe-reserved-db-instances-offerings
+describe-reserved-elasticsearch-instance-offerings
+describe-reserved-elasticsearch-instances
 describe-reserved-instances
 describe-reserved-instances-listings
 describe-reserved-instances-modifications
@@ -2934,6 +2936,7 @@ purchase-offering
 purchase-provisioned-capacity
 purchase-reserved-cache-nodes-offering
 purchase-reserved-db-instances-offering
+purchase-reserved-elasticsearch-instance-offering
 purchase-reserved-instances-offering
 purchase-reserved-node-offering
 purchase-scheduled-instances
