@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3645
+[sub_commands]: 3649
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -292,6 +292,7 @@ authorize-ip-rules
 authorize-security-group-egress
 authorize-security-group-ingress
 authorize-snapshot-access
+backtrack-db-cluster
 batch-check-layer-availability
 batch-create-partition
 batch-delete-attributes
@@ -1357,6 +1358,7 @@ describe-cross-account-access-role
 describe-customer-gateways
 describe-data-sources
 describe-dataset
+describe-db-cluster-backtracks
 describe-db-cluster-parameter-groups
 describe-db-cluster-parameters
 describe-db-cluster-snapshot-attributes
@@ -3334,6 +3336,7 @@ start-export-task
 start-face-detection
 start-face-search
 start-fleet
+start-fleet-actions
 start-game-session-placement
 start-gateway
 start-image-builder
@@ -3383,6 +3386,7 @@ stop-db-instance
 stop-deployment
 stop-execution
 stop-fleet
+stop-fleet-actions
 stop-game-session-placement
 stop-image-builder
 stop-instance
