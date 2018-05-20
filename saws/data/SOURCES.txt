@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3649
+[sub_commands]: 3650
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1004,6 +1004,7 @@ delete-ip-group
 delete-ip-set
 delete-item
 delete-job
+delete-job-execution
 delete-job-queue
 delete-job-template
 delete-key-pair
