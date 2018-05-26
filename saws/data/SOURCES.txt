@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3650
+[sub_commands]: 3653
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1113,6 +1113,7 @@ delete-resource-definition
 delete-resource-policy
 delete-resource-server
 delete-rest-api
+delete-retention-configuration
 delete-retention-policy
 delete-reusable-delegation-set
 delete-role
@@ -1628,6 +1629,7 @@ describe-resource-groups
 describe-resource-permissions
 describe-resource-policies
 describe-resource-server
+describe-retention-configurations
 describe-risk-configuration
 describe-role-alias
 describe-root-folders
@@ -3027,6 +3029,7 @@ put-repository-triggers
 put-resource-attributes
 put-resource-policy
 put-rest-api
+put-retention-configuration
 put-retention-policy
 put-role-policy
 put-room-skill-parameter
