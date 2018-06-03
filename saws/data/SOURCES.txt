@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3653
+[sub_commands]: 3655
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -341,6 +341,7 @@ cancel-export-task
 cancel-handshake
 cancel-import-task
 cancel-job
+cancel-job-execution
 cancel-key-deletion
 cancel-reserved-instances-listing
 cancel-retrieval
@@ -3170,6 +3171,7 @@ reset-network-interface-attribute
 reset-password
 reset-service-specific-credential
 reset-snapshot-attribute
+reset-user-password
 resolve-alias
 resolve-case
 resolve-customer
