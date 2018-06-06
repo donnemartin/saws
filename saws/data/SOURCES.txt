@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3655
+[sub_commands]: 3660
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -552,6 +552,7 @@ create-hosted-zone
 create-hsm
 create-hsm-client-certificate
 create-hsm-configuration
+create-hyper-parameter-tuning-job
 create-identity-pool
 create-identity-provider
 create-image
@@ -1467,6 +1468,7 @@ describe-hosts
 describe-hsm
 describe-hsm-client-certificates
 describe-hsm-configurations
+describe-hyper-parameter-tuning-job
 describe-iam-instance-profile-associations
 describe-id-format
 describe-identity
@@ -2600,6 +2602,7 @@ list-hits-for-qualification-type
 list-hosted-zones
 list-hosted-zones-by-name
 list-hsms
+list-hyper-parameter-tuning-jobs
 list-identities
 list-identity-policies
 list-identity-pool-usage
@@ -2806,6 +2809,7 @@ list-traffic-policy-instances-by-hosted-zone
 list-traffic-policy-instances-by-policy
 list-traffic-policy-versions
 list-training-jobs
+list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
 list-typed-link-facet-attributes
 list-typed-link-facet-names
@@ -3394,6 +3398,7 @@ stop-execution
 stop-fleet
 stop-fleet-actions
 stop-game-session-placement
+stop-hyper-parameter-tuning-job
 stop-image-builder
 stop-instance
 stop-instances
