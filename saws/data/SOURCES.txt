@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3660
+[sub_commands]: 3666
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -236,6 +236,8 @@ associate-delegate-to-resource
 associate-device-with-room
 associate-dhcp-options
 associate-discovered-resource
+associate-drt-log-bucket
+associate-drt-role
 associate-elastic-ip
 associate-fleet
 associate-hosted-connection
@@ -1165,7 +1167,6 @@ delete-streaming-distribution
 delete-subnet
 delete-subnet-group
 delete-subscriber
-delete-subscription
 delete-subscription-definition
 delete-subscription-filter
 delete-suggester
@@ -1397,6 +1398,7 @@ describe-document-versions
 describe-domain
 describe-domain-controllers
 describe-domains
+describe-drt-access
 describe-ec2-instance-limits
 describe-ecs-clusters
 describe-effective-instance-associations
@@ -1409,6 +1411,7 @@ describe-elasticsearch-domain
 describe-elasticsearch-domain-config
 describe-elasticsearch-domains
 describe-elasticsearch-instance-type-limits
+describe-emergency-contact-settings
 describe-endpoint
 describe-endpoint-config
 describe-endpoint-types
@@ -1825,6 +1828,8 @@ disassociate-created-artifact
 disassociate-delegate-from-resource
 disassociate-device-from-room
 disassociate-discovered-resource
+disassociate-drt-log-bucket
+disassociate-drt-role
 disassociate-elastic-ip
 disassociate-fleet
 disassociate-from-master-account
@@ -3573,6 +3578,7 @@ update-domain-nameservers
 update-elastic-ip
 update-elasticsearch-domain-config
 update-email-channel
+update-emergency-contact-settings
 update-endpoint
 update-endpoint-weights-and-capacities
 update-endpoints-batch
