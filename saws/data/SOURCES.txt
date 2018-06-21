@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3666
+[sub_commands]: 3668
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2200,6 +2200,7 @@ get-launch-template-data
 get-lexicon
 get-lifecycle-policy
 get-lifecycle-policy-preview
+get-link-attributes
 get-load-balancer
 get-load-balancer-metric-data
 get-load-balancer-tls-certificates
@@ -3637,6 +3638,7 @@ update-job-template
 update-key-description
 update-lag
 update-layer
+update-link-attributes
 update-load-balancer-attribute
 update-logger-definition
 update-login-profile
