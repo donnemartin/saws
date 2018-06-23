@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3668
+[sub_commands]: 3672
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1110,6 +1110,7 @@ delete-report-definition
 delete-repository
 delete-repository-policy
 delete-request-validator
+delete-reservation
 delete-resolver
 delete-resource
 delete-resource-data-sync
@@ -1566,6 +1567,7 @@ describe-notification-subscriptions
 describe-notifications-for-budget
 describe-object
 describe-objects
+describe-offering
 describe-operating-systems
 describe-option-group-options
 describe-option-groups
@@ -1617,6 +1619,7 @@ describe-replication-task-assessment-results
 describe-replication-tasks
 describe-report-definitions
 describe-repositories
+describe-reservation
 describe-reserved-cache-nodes
 describe-reserved-cache-nodes-offerings
 describe-reserved-db-instances
@@ -2719,6 +2722,7 @@ list-regex-match-sets
 list-regex-pattern-sets
 list-remote-access-sessions
 list-repositories
+list-reservations
 list-resolvers
 list-resource-compliance-summaries
 list-resource-data-sync
