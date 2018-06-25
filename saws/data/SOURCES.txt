@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3672
+[sub_commands]: 3673
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2649,6 +2649,7 @@ list-logger-definition-versions
 list-logger-definitions
 list-luna-clients
 list-mailbox-permissions
+list-managed-schema-arns
 list-members
 list-metrics
 list-mfa-devices
