@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3673
+[sub_commands]: 3677
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -521,6 +521,7 @@ create-environment-membership
 create-evaluation
 create-event-source-mapping
 create-event-subscription
+create-exclusions-preview
 create-export-job
 create-export-task
 create-facet
@@ -1437,6 +1438,7 @@ describe-event-subscriptions
 describe-event-topics
 describe-event-types
 describe-events
+describe-exclusions
 describe-execution
 describe-export-tasks
 describe-expressions
@@ -2102,6 +2104,7 @@ get-evaluation
 get-event-selectors
 get-event-source-mapping
 get-event-stream
+get-exclusions-preview
 get-execution-history
 get-export
 get-export-job
@@ -2573,6 +2576,7 @@ list-entities-for-policy
 list-environments
 list-event-source-mappings
 list-event-subscriptions
+list-exclusions
 list-executions
 list-exports
 list-faces
