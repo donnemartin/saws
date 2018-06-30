@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3677
+[sub_commands]: 3693
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1400,6 +1400,7 @@ describe-document-versions
 describe-domain
 describe-domain-controllers
 describe-domains
+describe-dominant-language-detection-job
 describe-drt-access
 describe-ec2-instance-limits
 describe-ecs-clusters
@@ -1420,6 +1421,7 @@ describe-endpoint-types
 describe-endpoints
 describe-engine-default-cluster-parameters
 describe-engine-default-parameters
+describe-entities-detection-job
 describe-entity-aggregates
 describe-environment-health
 describe-environment-managed-action-history
@@ -1514,6 +1516,7 @@ describe-job-queues
 describe-jobs
 describe-key
 describe-key-pairs
+describe-key-phrases-detection-job
 describe-lags
 describe-launch-configurations
 describe-launch-template-versions
@@ -1663,6 +1666,7 @@ describe-schemas
 describe-security-configuration
 describe-security-group-references
 describe-security-groups
+describe-sentiment-detection-job
 describe-servers
 describe-service-access-policies
 describe-service-errors
@@ -2567,11 +2571,13 @@ list-document-versions
 list-documents
 list-domain-names
 list-domains
+list-dominant-language-detection-jobs
 list-elasticsearch-instance-types
 list-elasticsearch-versions
 list-endpoint-configs
 list-endpoints
 list-endpoints-by-platform-application
+list-entities-detection-jobs
 list-entities-for-policy
 list-environments
 list-event-source-mappings
@@ -2644,6 +2650,7 @@ list-job-templates
 list-jobs
 list-jobs-by-pipeline
 list-jobs-by-status
+list-key-phrases-detection-jobs
 list-key-policies
 list-keys
 list-launch-paths
@@ -2757,6 +2764,7 @@ list-saml-providers
 list-samples
 list-schema-extensions
 list-security-configurations
+list-sentiment-detection-jobs
 list-server-certificates
 list-server-neighbors
 list-service-specific-credentials
@@ -3356,6 +3364,8 @@ start-crawler-schedule
 start-data-collection-by-agent-ids
 start-db-instance
 start-device-sync
+start-dominant-language-detection-job
+start-entities-detection-job
 start-execution
 start-export-task
 start-face-detection
@@ -3369,6 +3379,7 @@ start-import
 start-instance
 start-instances
 start-job-run
+start-key-phrases-detection-job
 start-label-detection
 start-lifecycle-policy-preview
 start-logging
@@ -3386,6 +3397,7 @@ start-replication-task
 start-replication-task-assessment
 start-schema-creation
 start-schema-extension
+start-sentiment-detection-job
 start-stack
 start-stream-encryption
 start-stream-processor
@@ -3409,6 +3421,8 @@ stop-crawler-schedule
 stop-data-collection-by-agent-ids
 stop-db-instance
 stop-deployment
+stop-dominant-language-detection-job
+stop-entities-detection-job
 stop-execution
 stop-fleet
 stop-fleet-actions
@@ -3417,6 +3431,7 @@ stop-hyper-parameter-tuning-job
 stop-image-builder
 stop-instance
 stop-instances
+stop-key-phrases-detection-job
 stop-logging
 stop-matchmaking
 stop-monitoring-members
@@ -3425,6 +3440,7 @@ stop-query-execution
 stop-remote-access-session
 stop-replication-task
 stop-run
+stop-sentiment-detection-job
 stop-stack
 stop-stack-set-operation
 stop-stream-encryption
