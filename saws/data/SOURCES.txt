@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3693
+[sub_commands]: 3699
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -709,6 +709,7 @@ create-service-specific-credential
 create-size-constraint-set
 create-skill-group
 create-slot-type-version
+create-smb-file-share
 create-snapshot
 create-snapshot-copy-grant
 create-snapshot-from-volume-recovery-point
@@ -1673,6 +1674,8 @@ describe-service-errors
 describe-services
 describe-sessions
 describe-severity-levels
+describe-smb-file-shares
+describe-smb-settings
 describe-snapshot-attribute
 describe-snapshot-copy-grants
 describe-snapshot-schedule
@@ -2468,6 +2471,7 @@ invite-members
 invoke
 invoke-endpoint
 is-vpc-peered
+join-domain
 leave-organization
 list
 list-accepted-portfolio-shares
@@ -3321,6 +3325,7 @@ set-repository-policy
 set-risk-configuration
 set-rule-priorities
 set-security-groups
+set-smb-guest-password
 set-sms-attributes
 set-stack-policy
 set-status
@@ -3751,6 +3756,7 @@ update-shard-count
 update-signing-certificate
 update-size-constraint-set
 update-skill-group
+update-smb-file-share
 update-sms-channel
 update-snapshot-schedule
 update-sql-injection-match-set
