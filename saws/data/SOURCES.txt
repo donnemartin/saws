@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3699
+[sub_commands]: 3702
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1290,6 +1290,8 @@ describe-assessment-runs
 describe-assessment-targets
 describe-assessment-templates
 describe-association
+describe-association-execution-targets
+describe-association-executions
 describe-attachment
 describe-attack
 describe-authorizer
@@ -3357,6 +3359,7 @@ split-shard
 ssh
 start-application
 start-assessment-run
+start-associations-once
 start-automation-execution
 start-build
 start-celebrity-recognition
