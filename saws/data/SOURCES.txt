@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3702
+[sub_commands]: 3706
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -145,6 +145,7 @@ accept-match
 accept-portfolio-share
 accept-qualification-request
 accept-reserved-instances-exchange-quote
+accept-reserved-node-exchange
 accept-vpc-endpoint-connections
 accept-vpc-peering-connection
 acknowledge-job
@@ -1330,6 +1331,7 @@ describe-channel
 describe-chap-credentials
 describe-classic-link-instances
 describe-cluster
+describe-cluster-db-revisions
 describe-cluster-parameter-groups
 describe-cluster-parameters
 describe-cluster-security-groups
@@ -2319,6 +2321,7 @@ get-reservation-coverage
 get-reservation-purchase-recommendation
 get-reservation-utilization
 get-reserved-instances-exchange-quote
+get-reserved-node-exchange-offerings
 get-resolver
 get-resource
 get-resource-config-history
@@ -2882,6 +2885,7 @@ modify-cache-parameter-group
 modify-cache-subnet-group
 modify-cluster
 modify-cluster-attributes
+modify-cluster-db-revision
 modify-cluster-iam-roles
 modify-cluster-parameter-group
 modify-cluster-subnet-group
