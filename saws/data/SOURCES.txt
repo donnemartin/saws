@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3706
+[sub_commands]: 3711
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1203,6 +1203,7 @@ delete-usage-plan-key
 delete-user
 delete-user-attributes
 delete-user-defined-function
+delete-user-endpoints
 delete-user-policy
 delete-user-pool
 delete-user-pool-client
@@ -2012,6 +2013,7 @@ get-certificate
 get-change
 get-change-token
 get-change-token-status
+get-channels
 get-checker-ip-ranges
 get-classifier
 get-classifiers
@@ -2426,6 +2428,7 @@ get-user
 get-user-attribute-verification-code
 get-user-defined-function
 get-user-defined-functions
+get-user-endpoints
 get-user-policy
 get-user-pool-mfa-config
 get-utterances-view
@@ -2955,6 +2958,7 @@ open-instance-public-ports
 opt-in-phone-number
 package
 peer-vpc
+phone-number-validate
 poll-for-activity-task
 poll-for-decision-task
 poll-for-jobs
@@ -3152,6 +3156,7 @@ release-static-ip
 reload-tables
 remove-account-from-organization
 remove-all-resource-permissions
+remove-attributes
 remove-attributes-from-findings
 remove-auto-scaling-policy
 remove-client-id-from-open-id-connect-provider
