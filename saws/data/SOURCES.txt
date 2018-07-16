@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3711
+[sub_commands]: 3720
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -992,6 +992,7 @@ delete-identity-pool
 delete-identity-provider
 delete-image
 delete-image-builder
+delete-image-permissions
 delete-imported-key-material
 delete-index-field
 delete-input
@@ -1126,6 +1127,7 @@ delete-retention-policy
 delete-reusable-delegation-set
 delete-role
 delete-role-alias
+delete-role-permissions-boundary
 delete-role-policy
 delete-room
 delete-room-skill-parameter
@@ -1204,6 +1206,7 @@ delete-user
 delete-user-attributes
 delete-user-defined-function
 delete-user-endpoints
+delete-user-permissions-boundary
 delete-user-policy
 delete-user-pool
 delete-user-pool-client
@@ -1493,6 +1496,7 @@ describe-identity-provider
 describe-identity-usage
 describe-image-attribute
 describe-image-builders
+describe-image-permissions
 describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
@@ -2159,6 +2163,7 @@ get-health-check-count
 get-health-check-last-failure-reason
 get-health-check-status
 get-hit
+get-hls-streaming-session-url
 get-host-reservation-purchase-preview
 get-hosted-zone
 get-hosted-zone-count
@@ -3073,6 +3078,7 @@ put-resource-policy
 put-rest-api
 put-retention-configuration
 put-retention-policy
+put-role-permissions-boundary
 put-role-policy
 put-room-skill-parameter
 put-rule
@@ -3087,6 +3093,7 @@ put-telemetry-records
 put-third-party-job-failure-result
 put-third-party-job-success-result
 put-trace-segments
+put-user-permissions-boundary
 put-user-policy
 put-webhook
 query
@@ -3634,6 +3641,7 @@ update-expiration-for-hit
 update-facet
 update-field-level-encryption-config
 update-field-level-encryption-profile
+update-file-system
 update-filter
 update-findings-feedback
 update-fleet
@@ -3663,6 +3671,7 @@ update-hit-type-of-hit
 update-hosted-zone-comment
 update-identity-pool
 update-identity-provider
+update-image-permissions
 update-indexing-configuration
 update-input
 update-input-security-group
