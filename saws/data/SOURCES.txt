@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3720
+[sub_commands]: 3730
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -309,6 +309,7 @@ batch-detect-dominant-language
 batch-detect-entities
 batch-detect-key-phrases
 batch-detect-sentiment
+batch-detect-syntax
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
@@ -753,6 +754,7 @@ create-traffic-policy-instance
 create-traffic-policy-version
 create-trail
 create-training-job
+create-transform-job
 create-trigger
 create-trust
 create-type
@@ -1743,6 +1745,7 @@ describe-time-to-live
 describe-topics-detection-job
 describe-trails
 describe-training-job
+describe-transform-job
 describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
@@ -1816,6 +1819,7 @@ detect-key-phrases
 detect-labels
 detect-moderation-labels
 detect-sentiment
+detect-syntax
 detect-text
 disable-alarm-actions
 disable-availability-zones-for-load-balancer
@@ -2380,6 +2384,7 @@ get-sms-attributes
 get-sms-channel
 get-snapshot-limits
 get-snowball-usage
+get-speech-synthesis-task
 get-sql-injection-match-set
 get-ssh-public-key
 get-stack-policy
@@ -2549,6 +2554,7 @@ list-clusters
 list-collections
 list-command-invocations
 list-commands
+list-compatible-images
 list-compliance-items
 list-compliance-summaries
 list-configuration-revisions
@@ -2790,6 +2796,7 @@ list-shards
 list-signing-certificates
 list-size-constraint-sets
 list-skills
+list-speech-synthesis-tasks
 list-sql-injection-match-sets
 list-ssh-public-keys
 list-stack-instances
@@ -2851,6 +2858,7 @@ list-traffic-policy-versions
 list-training-jobs
 list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
+list-transform-jobs
 list-typed-link-facet-attributes
 list-typed-link-facet-names
 list-types
@@ -3422,6 +3430,7 @@ start-replication-task-assessment
 start-schema-creation
 start-schema-extension
 start-sentiment-detection-job
+start-speech-synthesis-task
 start-stack
 start-stream-encryption
 start-stream-processor
@@ -3472,6 +3481,7 @@ stop-stream-processor
 stop-task
 stop-thing-registration-task
 stop-training-job
+stop-transform-job
 stop-trigger
 stop-user-import-job
 stop-workspaces
