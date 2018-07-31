@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3730
+[sub_commands]: 3732
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1343,6 +1343,7 @@ describe-cluster-parameters
 describe-cluster-security-groups
 describe-cluster-snapshots
 describe-cluster-subnet-groups
+describe-cluster-tracks
 describe-cluster-versions
 describe-clusters
 describe-commands
@@ -2490,6 +2491,7 @@ invoke
 invoke-endpoint
 is-vpc-peered
 join-domain
+label-parameter-version
 leave-organization
 list
 list-accepted-portfolio-shares
