@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3732
+[sub_commands]: 3733
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -385,6 +385,7 @@ confirm-subscription
 connect-directory
 continue-deployment
 continue-update-rollback
+copy-backup-to-region
 copy-cluster-snapshot
 copy-db-cluster-parameter-group
 copy-db-cluster-snapshot
