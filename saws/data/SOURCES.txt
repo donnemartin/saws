@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3733
+[sub_commands]: 3758
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -281,6 +281,7 @@ attach-network-interface
 attach-object
 attach-policy
 attach-role-policy
+attach-security-profile
 attach-static-ip
 attach-thing-principal
 attach-to-index
@@ -336,6 +337,7 @@ build-suggesters
 bulk-publish
 bundle-instance
 cancel-archival
+cancel-audit-task
 cancel-bundle-task
 cancel-certificate-transfer
 cancel-cluster
@@ -700,10 +702,12 @@ create-rule-group
 create-saml-provider
 create-sample-findings
 create-scaling-plan
+create-scheduled-audit
 create-schema
 create-script
 create-security-configuration
 create-security-group
+create-security-profile
 create-segment
 create-server
 create-service
@@ -807,6 +811,7 @@ define-index-field
 define-suggester
 delete-access-key
 delete-account-alias
+delete-account-audit-configuration
 delete-account-password-policy
 delete-activation
 delete-activity
@@ -1143,9 +1148,11 @@ delete-saml-provider
 delete-scaling-plan
 delete-scaling-policy
 delete-scheduled-action
+delete-scheduled-audit
 delete-schema
 delete-security-configuration
 delete-security-group
+delete-security-profile
 delete-segment
 delete-server
 delete-server-catalog
@@ -1269,6 +1276,7 @@ deregister-volume
 deregister-webhook-with-third-party
 describe-account
 describe-account-attributes
+describe-account-audit-configuration
 describe-account-limits
 describe-activations
 describe-active-receipt-rule-set
@@ -1302,6 +1310,7 @@ describe-association-execution-targets
 describe-association-executions
 describe-attachment
 describe-attack
+describe-audit-task
 describe-authorizer
 describe-auto-scaling-groups
 describe-auto-scaling-instances
@@ -1674,12 +1683,14 @@ describe-scaling-plans
 describe-scaling-policies
 describe-scaling-process-types
 describe-scheduled-actions
+describe-scheduled-audit
 describe-scheduled-instance-availability
 describe-scheduled-instances
 describe-schemas
 describe-security-configuration
 describe-security-group-references
 describe-security-groups
+describe-security-profile
 describe-sentiment-detection-job
 describe-servers
 describe-service-access-policies
@@ -1808,6 +1819,7 @@ detach-network-interface
 detach-object
 detach-policy
 detach-role-policy
+detach-security-profile
 detach-static-ip
 detach-thing-principal
 detach-typed-link
@@ -2502,6 +2514,7 @@ list-accounts
 list-accounts-for-parent
 list-action-types
 list-activated-rules-in-rule-group
+list-active-violations
 list-activities
 list-activity-types
 list-aliases
@@ -2528,6 +2541,8 @@ list-attached-role-policies
 list-attached-user-policies
 list-attacks
 list-attributes
+list-audit-findings
+list-audit-tasks
 list-authorizers
 list-available-solution-stacks
 list-available-zones
@@ -2788,8 +2803,11 @@ list-rules-packages
 list-runs
 list-saml-providers
 list-samples
+list-scheduled-audits
 list-schema-extensions
 list-security-configurations
+list-security-profiles
+list-security-profiles-for-target
 list-sentiment-detection-jobs
 list-server-certificates
 list-server-neighbors
@@ -2835,6 +2853,7 @@ list-tags-of-resource
 list-tapes
 list-targets-by-rule
 list-targets-for-policy
+list-targets-for-security-profile
 list-task-definition-families
 list-task-definitions
 list-tasks
@@ -2877,6 +2896,7 @@ list-users-in-group
 list-v2-logging-levels
 list-vaults
 list-versions-by-function
+list-violation-events
 list-virtual-mfa-devices
 list-vocabularies
 list-volume-initiators
@@ -3424,6 +3444,7 @@ start-matchmaking
 start-monitoring-members
 start-next-pending-job-execution
 start-notebook-instance
+start-on-demand-audit-task
 start-on-demand-replication-run
 start-person-tracking
 start-pipeline-execution
@@ -3551,6 +3572,7 @@ untag-resources
 untag-stream
 update-access-key
 update-account
+update-account-audit-configuration
 update-account-password-policy
 update-account-sending-enabled
 update-address-book
@@ -3776,9 +3798,11 @@ update-runtime-configuration
 update-saml-provider
 update-scaling-parameters
 update-scaling-plan
+update-scheduled-audit
 update-schema
 update-security-group-rule-descriptions-egress
 update-security-group-rule-descriptions-ingress
+update-security-profile
 update-segment
 update-server
 update-server-certificate
@@ -3857,6 +3881,7 @@ validate-configuration-settings
 validate-logs
 validate-matchmaking-rule-set
 validate-pipeline-definition
+validate-security-profile-behaviors
 validate-template
 verify-domain-dkim
 verify-domain-identity
