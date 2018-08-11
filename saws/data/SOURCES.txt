@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3758
+[sub_commands]: 3762
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1268,6 +1268,7 @@ deregister-on-premises-instance
 deregister-patch-baseline-for-patch-group
 deregister-rds-db-instance
 deregister-scalable-target
+deregister-stream-consumer
 deregister-target-from-maintenance-window
 deregister-targets
 deregister-task-definition
@@ -1727,6 +1728,7 @@ describe-state-machine-for-execution
 describe-step
 describe-stored-iscsi-volumes
 describe-stream
+describe-stream-consumer
 describe-stream-processor
 describe-stream-summary
 describe-subnet-groups
@@ -2828,6 +2830,7 @@ list-stack-sets
 list-stacks
 list-state-machines
 list-steps
+list-stream-consumers
 list-stream-processors
 list-streaming-distributions
 list-streams
@@ -3173,6 +3176,7 @@ register-on-premises-instance
 register-patch-baseline-for-patch-group
 register-rds-db-instance
 register-scalable-target
+register-stream-consumer
 register-target-with-maintenance-window
 register-targets
 register-task-definition
