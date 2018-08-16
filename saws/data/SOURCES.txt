@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3762
+[sub_commands]: 3763
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2931,6 +2931,7 @@ modify-cluster-db-revision
 modify-cluster-iam-roles
 modify-cluster-parameter-group
 modify-cluster-subnet-group
+modify-current-db-cluster-capacity
 modify-db-cluster
 modify-db-cluster-parameter-group
 modify-db-cluster-snapshot-attribute
