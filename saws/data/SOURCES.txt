@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3763
+[sub_commands]: 3769
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -304,6 +304,7 @@ batch-delete-builds
 batch-delete-connection
 batch-delete-image
 batch-delete-partition
+batch-delete-scheduled-action
 batch-delete-table
 batch-delete-table-version
 batch-detect-dominant-language
@@ -329,6 +330,7 @@ batch-get-resource-config
 batch-get-traces
 batch-meter-usage
 batch-put-attributes
+batch-put-scheduled-update-group-action
 batch-read
 batch-stop-job-run
 batch-write
@@ -2052,6 +2054,7 @@ get-comment
 get-comments-for-compared-commit
 get-comments-for-pull-request
 get-commit
+get-compatible-elasticsearch-versions
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
 get-compliance-summary-by-config-rule
@@ -2444,6 +2447,8 @@ get-triggers
 get-type
 get-typed-link-facet-information
 get-ui-customization
+get-upgrade-history
+get-upgrade-status
 get-upload
 get-usage
 get-usage-plan
@@ -3871,6 +3876,7 @@ update-web-acl
 update-webhook
 update-xss-match-set
 upgrade-applied-schema
+upgrade-elasticsearch-domain
 upgrade-published-schema
 upload-archive
 upload-build
