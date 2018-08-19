@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3769
+[sub_commands]: 3771
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3498,6 +3498,7 @@ stop-hyper-parameter-tuning-job
 stop-image-builder
 stop-instance
 stop-instances
+stop-job
 stop-key-phrases-detection-job
 stop-logging
 stop-matchmaking
@@ -3859,6 +3860,7 @@ update-trail
 update-trigger
 update-type
 update-typed-link-facet
+update-upload
 update-usage
 update-usage-plan
 update-user
