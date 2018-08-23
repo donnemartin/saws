@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3771
+[sub_commands]: 3775
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1383,6 +1383,7 @@ describe-constraint
 describe-container
 describe-container-instances
 describe-continuous-backups
+describe-continuous-exports
 describe-conversion-tasks
 describe-copy-product-status
 describe-create-account-status
@@ -3262,6 +3263,7 @@ reset-password
 reset-service-specific-credential
 reset-snapshot-attribute
 reset-user-password
+resize-cluster
 resolve-alias
 resolve-case
 resolve-customer
@@ -3424,6 +3426,7 @@ start-channel
 start-config-rules-evaluation
 start-configuration-recorder
 start-content-moderation
+start-continuous-export
 start-crawler
 start-crawler-schedule
 start-data-collection-by-agent-ids
@@ -3483,6 +3486,7 @@ stop-automation-execution
 stop-build
 stop-channel
 stop-configuration-recorder
+stop-continuous-export
 stop-crawler
 stop-crawler-schedule
 stop-data-collection-by-agent-ids
