@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3775
+[sub_commands]: 3778
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -333,6 +333,7 @@ batch-put-attributes
 batch-put-scheduled-update-group-action
 batch-read
 batch-stop-job-run
+batch-update-schedule
 batch-write
 batch-write-item
 build-suggesters
@@ -1359,6 +1360,7 @@ describe-cluster-subnet-groups
 describe-cluster-tracks
 describe-cluster-versions
 describe-clusters
+describe-collection
 describe-commands
 describe-comments
 describe-communications
@@ -1686,6 +1688,7 @@ describe-scaling-plan-resources
 describe-scaling-plans
 describe-scaling-policies
 describe-scaling-process-types
+describe-schedule
 describe-scheduled-actions
 describe-scheduled-audit
 describe-scheduled-instance-availability
