@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3778
+[sub_commands]: 3781
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2380,6 +2380,8 @@ get-schema-creation-status
 get-sdk
 get-sdk-type
 get-sdk-types
+get-security-configuration
+get-security-configurations
 get-segment
 get-segment-export-jobs
 get-segment-import-jobs
@@ -3070,6 +3072,7 @@ put-configuration-recorder
 put-container-policy
 put-cors-policy
 put-dashboard
+put-data-catalog-encryption-settings
 put-delivery-channel
 put-destination
 put-destination-policy
