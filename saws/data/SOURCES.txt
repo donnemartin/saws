@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3781
+[sub_commands]: 3788
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -704,6 +704,7 @@ create-rule
 create-rule-group
 create-saml-provider
 create-sample-findings
+create-sampling-rule
 create-scaling-plan
 create-scheduled-audit
 create-schema
@@ -1148,6 +1149,7 @@ delete-rule
 delete-rule-group
 delete-run
 delete-saml-provider
+delete-sampling-rule
 delete-scaling-plan
 delete-scaling-policy
 delete-scheduled-action
@@ -2361,6 +2363,7 @@ get-resource
 get-resource-config-history
 get-resource-definition
 get-resource-definition-version
+get-resource-policy
 get-resources
 get-rest-api
 get-rest-apis
@@ -2375,6 +2378,9 @@ get-rule-group
 get-run
 get-saml-provider
 get-sampled-requests
+get-sampling-rules
+get-sampling-statistic-summaries
+get-sampling-targets
 get-schema-as-json
 get-schema-creation-status
 get-sdk
@@ -3817,6 +3823,7 @@ update-rule-group
 update-rules-of-ip-group
 update-runtime-configuration
 update-saml-provider
+update-sampling-rule
 update-scaling-parameters
 update-scaling-plan
 update-scheduled-audit
