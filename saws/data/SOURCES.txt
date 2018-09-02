@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3788
+[sub_commands]: 3787
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2363,7 +2363,6 @@ get-resource
 get-resource-config-history
 get-resource-definition
 get-resource-definition-version
-get-resource-policy
 get-resources
 get-rest-api
 get-rest-apis
@@ -3319,8 +3318,8 @@ revoke-security-group-egress
 revoke-security-group-ingress
 revoke-snapshot-access
 rm
-rotate-channel-credentials
 rotate-encryption-key
+rotate-ingest-endpoint-credentials
 run-instances
 run-scheduled-instances
 run-task
