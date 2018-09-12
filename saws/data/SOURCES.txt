@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3791
+[sub_commands]: 3796
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2068,6 +2068,7 @@ get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
 get-config
 get-connection
+get-connection-status
 get-connections
 get-connectivity-info
 get-connectors
@@ -3290,6 +3291,7 @@ respond-decision-task-completed
 respond-to-auth-challenge
 restart-app-server
 restore-address-to-classic
+restore-backup
 restore-db-cluster-from-s3
 restore-db-cluster-from-snapshot
 restore-db-cluster-to-point-in-time
@@ -3305,6 +3307,7 @@ restore-table-from-backup
 restore-table-from-cluster-snapshot
 restore-table-to-point-in-time
 resume-processes
+resume-session
 resync-mfa-device
 retire-grant
 retrieve-domain-auth-code
@@ -3482,6 +3485,7 @@ start-replication-task-assessment
 start-schema-creation
 start-schema-extension
 start-sentiment-detection-job
+start-session
 start-speech-synthesis-task
 start-stack
 start-stream-encryption
@@ -3564,6 +3568,7 @@ terminate-instance-in-auto-scaling-group
 terminate-instances
 terminate-job
 terminate-provisioned-product
+terminate-session
 terminate-workflow-execution
 terminate-workspaces
 test-authorization
