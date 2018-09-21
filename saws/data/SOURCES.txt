@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3796
+[sub_commands]: 3798
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -806,6 +806,7 @@ deactivate-user
 decline-handshake
 decline-invitations
 decode-authorization-message
+decrease-replica-count
 decrease-replication-factor
 decrease-stream-retention-period
 decrypt
@@ -2504,6 +2505,7 @@ import-migration-task
 import-rest-api
 import-server-catalog
 import-snapshot
+increase-replica-count
 increase-replication-factor
 increase-stream-retention-period
 index-documents
