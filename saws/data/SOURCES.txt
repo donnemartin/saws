@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3798
+[sub_commands]: 3804
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -605,6 +605,7 @@ create-load-balancer-policy
 create-load-balancer-tls-certificate
 create-log-group
 create-log-stream
+create-log-subscription
 create-logger-definition
 create-logger-definition-version
 create-login-profile
@@ -1045,6 +1046,7 @@ delete-load-balancer-policy
 delete-load-balancer-tls-certificate
 delete-log-group
 delete-log-stream
+delete-log-subscription
 delete-logger-definition
 delete-logging-configuration
 delete-login-profile
@@ -2283,6 +2285,7 @@ get-method
 get-method-response
 get-metric-data
 get-metric-statistics
+get-metric-widget-image
 get-ml-model
 get-model
 get-model-template
@@ -2720,6 +2723,7 @@ list-keys
 list-launch-paths
 list-lexicons
 list-local-disks
+list-log-subscriptions
 list-logger-definition-versions
 list-logger-definitions
 list-logging-configurations
@@ -3450,6 +3454,7 @@ start-continuous-export
 start-crawler
 start-crawler-schedule
 start-data-collection-by-agent-ids
+start-db-cluster
 start-db-instance
 start-device-sync
 start-dominant-language-detection-job
@@ -3511,6 +3516,7 @@ stop-continuous-export
 stop-crawler
 stop-crawler-schedule
 stop-data-collection-by-agent-ids
+stop-db-cluster
 stop-db-instance
 stop-deployment
 stop-dominant-language-detection-job
