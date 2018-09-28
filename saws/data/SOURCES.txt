@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3804
+[sub_commands]: 3809
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -146,6 +146,7 @@ accept-portfolio-share
 accept-qualification-request
 accept-reserved-instances-exchange-quote
 accept-reserved-node-exchange
+accept-shared-directory
 accept-vpc-endpoint-connections
 accept-vpc-peering-connection
 acknowledge-job
@@ -1711,6 +1712,7 @@ describe-service-errors
 describe-services
 describe-sessions
 describe-severity-levels
+describe-shared-directories
 describe-smb-file-shares
 describe-smb-settings
 describe-snapshot-attribute
@@ -3219,6 +3221,7 @@ reject-assignment
 reject-certificate-transfer
 reject-portfolio-share
 reject-qualification-request
+reject-shared-directory
 reject-vpc-endpoint-connections
 reject-vpc-peering-connection
 release-address
@@ -3428,6 +3431,7 @@ set-v2-logging-level
 set-v2-logging-options
 set-vault-access-policy
 set-vault-notifications
+share-directory
 show
 shutdown-gateway
 sign
@@ -3602,6 +3606,7 @@ unlink-developer-identity
 unlink-identity
 unmonitor-instances
 unpeer-vpc
+unshare-directory
 unsubscribe
 unsubscribe-from-dataset
 unsubscribe-from-event
