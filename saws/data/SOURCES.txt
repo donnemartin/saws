@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3809
+[sub_commands]: 3813
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -972,6 +972,7 @@ delete-faces
 delete-facet
 delete-field-level-encryption-config
 delete-field-level-encryption-profile
+delete-file
 delete-file-share
 delete-file-system
 delete-filter
@@ -1948,6 +1949,7 @@ expire-session
 export-bundle
 export-certificate
 export-project
+export-server-engine-attribute
 failover-db-cluster
 filter-log-events
 flush-stage-authorizers-cache
@@ -2098,6 +2100,7 @@ get-csv-header
 get-current-user
 get-custom-verification-email-template
 get-dashboard
+get-data-catalog-encryption-settings
 get-data-endpoint
 get-data-retrieval-policy
 get-data-source
@@ -2170,6 +2173,7 @@ get-field-level-encryption
 get-field-level-encryption-config
 get-field-level-encryption-profile
 get-field-level-encryption-profile-config
+get-file
 get-file-upload-url
 get-filter
 get-findings
