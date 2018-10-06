@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3813
+[sub_commands]: 3814
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3900,6 +3900,7 @@ update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
 update-trigger
+update-trust
 update-type
 update-typed-link-facet
 update-upload
