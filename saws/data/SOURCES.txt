@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3814
+[sub_commands]: 3817
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -353,6 +353,7 @@ cancel-import-task
 cancel-job
 cancel-job-execution
 cancel-key-deletion
+cancel-maintenance-window-execution
 cancel-reserved-instances-listing
 cancel-retrieval
 cancel-schema-extension
@@ -1580,9 +1581,11 @@ describe-maintenance-start-time
 describe-maintenance-window-execution-task-invocations
 describe-maintenance-window-execution-tasks
 describe-maintenance-window-executions
+describe-maintenance-window-schedule
 describe-maintenance-window-targets
 describe-maintenance-window-tasks
 describe-maintenance-windows
+describe-maintenance-windows-for-target
 describe-matchmaking
 describe-matchmaking-configurations
 describe-matchmaking-rule-sets
