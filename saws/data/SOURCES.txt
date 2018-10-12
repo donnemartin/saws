@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3817
+[sub_commands]: 3820
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -347,6 +347,7 @@ cancel-certificate-transfer
 cancel-cluster
 cancel-command
 cancel-conversion-task
+cancel-elasticsearch-service-software-update
 cancel-export-task
 cancel-handshake
 cancel-import-task
@@ -1217,6 +1218,7 @@ delete-topic-rule
 delete-traffic-policy
 delete-traffic-policy-instance
 delete-trail
+delete-transcription-job
 delete-trigger
 delete-trust
 delete-type
@@ -3469,6 +3471,7 @@ start-db-cluster
 start-db-instance
 start-device-sync
 start-dominant-language-detection-job
+start-elasticsearch-service-software-update
 start-entities-detection-job
 start-execution
 start-export-task
