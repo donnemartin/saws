@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3820
+[sub_commands]: 3821
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3918,6 +3918,7 @@ update-user-defined-function
 update-user-pool
 update-user-pool-client
 update-user-profile
+update-virtual-interface-attributes
 update-vocabulary
 update-volume
 update-vpc-link
