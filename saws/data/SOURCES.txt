@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3821
+[sub_commands]: 3833
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -253,6 +253,7 @@ associate-product-with-portfolio
 associate-qualification-with-worker
 associate-role-to-group
 associate-route-table
+associate-service-action-with-provisioning-artifact
 associate-service-role-to-account
 associate-skill-group-with-room
 associate-software-token
@@ -298,6 +299,7 @@ authorize-security-group-egress
 authorize-security-group-ingress
 authorize-snapshot-access
 backtrack-db-cluster
+batch-associate-service-action-with-provisioning-artifact
 batch-check-layer-availability
 batch-create-partition
 batch-delete-attributes
@@ -313,6 +315,7 @@ batch-detect-entities
 batch-detect-key-phrases
 batch-detect-sentiment
 batch-detect-syntax
+batch-disassociate-service-action-from-provisioning-artifact
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
@@ -719,6 +722,7 @@ create-security-profile
 create-segment
 create-server
 create-service
+create-service-action
 create-service-linked-role
 create-service-specific-credential
 create-size-constraint-set
@@ -1171,6 +1175,7 @@ delete-server
 delete-server-catalog
 delete-server-certificate
 delete-service
+delete-service-action
 delete-service-linked-role
 delete-service-specific-credential
 delete-signing-certificate
@@ -1714,6 +1719,7 @@ describe-security-profile
 describe-sentiment-detection-job
 describe-servers
 describe-service-access-policies
+describe-service-action
 describe-service-errors
 describe-services
 describe-sessions
@@ -1905,6 +1911,7 @@ disassociate-product-from-portfolio
 disassociate-qualification-from-worker
 disassociate-role-from-group
 disassociate-route-table
+disassociate-service-action-from-provisioning-artifact
 disassociate-service-role-from-account
 disassociate-skill-group-from-room
 disassociate-subnet-cidr-block
@@ -1949,6 +1956,7 @@ evaluate-expression
 execute-change-set
 execute-policy
 execute-provisioned-product-plan
+execute-provisioned-product-service-action
 exit-standby
 expire-session
 export-bundle
@@ -2796,6 +2804,7 @@ list-protections
 list-provisioned-capacity
 list-provisioned-product-plans
 list-provisioning-artifacts
+list-provisioning-artifacts-for-service-action
 list-public-keys
 list-published-schema-arns
 list-pull-requests
@@ -2850,6 +2859,8 @@ list-security-profiles-for-target
 list-sentiment-detection-jobs
 list-server-certificates
 list-server-neighbors
+list-service-actions
+list-service-actions-for-provisioning-artifact
 list-service-specific-credentials
 list-services
 list-shards
@@ -3868,6 +3879,7 @@ update-server-certificate
 update-server-engine-attributes
 update-service
 update-service-access-policies
+update-service-action
 update-service-specific-credential
 update-shard-count
 update-signing-certificate
