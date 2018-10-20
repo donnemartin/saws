@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3833
+[sub_commands]: 3856
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -684,6 +684,9 @@ create-receipt-rule
 create-receipt-rule-set
 create-regex-match-set
 create-regex-pattern-set
+create-relational-database
+create-relational-database-from-snapshot
+create-relational-database-snapshot
 create-remote-access-session
 create-replication-group
 create-replication-instance
@@ -1128,6 +1131,8 @@ delete-receipt-rule-set
 delete-regex-match-set
 delete-regex-pattern-set
 delete-registration-code
+delete-relational-database
+delete-relational-database-snapshot
 delete-remote-access-session
 delete-replication-group
 delete-replication-instance
@@ -2371,6 +2376,18 @@ get-regex-match-set
 get-regex-pattern-set
 get-regions
 get-registration-code
+get-relational-database
+get-relational-database-blueprints
+get-relational-database-bundles
+get-relational-database-events
+get-relational-database-log-events
+get-relational-database-log-streams
+get-relational-database-master-user-password
+get-relational-database-metric-data
+get-relational-database-parameters
+get-relational-database-snapshot
+get-relational-database-snapshots
+get-relational-databases
 get-remote-access-session
 get-replication-jobs
 get-replication-runs
@@ -2389,6 +2406,7 @@ get-resource
 get-resource-config-history
 get-resource-definition
 get-resource-definition-version
+get-resource-policy
 get-resources
 get-rest-api
 get-rest-apis
@@ -3195,6 +3213,7 @@ reboot-db-instance
 reboot-instance
 reboot-instances
 reboot-node
+reboot-relational-database
 reboot-replication-instance
 reboot-workspaces
 rebuild-environment
@@ -3512,6 +3531,7 @@ start-on-demand-replication-run
 start-person-tracking
 start-pipeline-execution
 start-query-execution
+start-relational-database
 start-replication-task
 start-replication-task-assessment
 start-schema-creation
@@ -3561,6 +3581,7 @@ stop-matchmaking
 stop-monitoring-members
 stop-notebook-instance
 stop-query-execution
+stop-relational-database
 stop-remote-access-session
 stop-replication-task
 stop-run
@@ -3847,6 +3868,8 @@ update-receipt-rule
 update-records
 update-regex-match-set
 update-regex-pattern-set
+update-relational-database
+update-relational-database-parameters
 update-replication-job
 update-repository-description
 update-repository-name
