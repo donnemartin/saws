@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3856
+[sub_commands]: 3861
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -300,6 +300,7 @@ authorize-security-group-ingress
 authorize-snapshot-access
 backtrack-db-cluster
 batch-associate-service-action-with-provisioning-artifact
+batch-associate-user-stack
 batch-check-layer-availability
 batch-create-partition
 batch-delete-attributes
@@ -316,6 +317,7 @@ batch-detect-key-phrases
 batch-detect-sentiment
 batch-detect-syntax
 batch-disassociate-service-action-from-provisioning-artifact
+batch-disassociate-user-stack
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
@@ -1805,6 +1807,7 @@ describe-user-pool-client
 describe-user-pool-domain
 describe-user-profile
 describe-user-profiles
+describe-user-stack-associations
 describe-users
 describe-valid-db-instance-modifications
 describe-vault
@@ -1888,6 +1891,7 @@ disable-snapshot-copy
 disable-sso
 disable-stage-transition
 disable-topic-rule
+disable-user
 disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
@@ -1950,6 +1954,7 @@ enable-snapshot-copy
 enable-sso
 enable-stage-transition
 enable-topic-rule
+enable-user
 enable-vgw-route-propagation
 enable-volume-io
 enable-vpc-classic-link
