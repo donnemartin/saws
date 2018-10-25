@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3861
+[sub_commands]: 3867
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -213,6 +213,7 @@ admin-update-auth-event-feedback
 admin-update-device-status
 admin-update-user-attributes
 admin-user-global-sign-out
+advertise-byoip-cidr
 allocate-address
 allocate-hosted-connection
 allocate-hosts
@@ -1279,6 +1280,7 @@ deprecate-activity-type
 deprecate-domain
 deprecate-thing-type
 deprecate-workflow-type
+deprovision-byoip-cidr
 deregister
 deregister-container-instance
 deregister-ecs-cluster
@@ -1357,6 +1359,7 @@ describe-budgets
 describe-build
 describe-bundle
 describe-bundle-tasks
+describe-byoip-cidrs
 describe-ca-certificate
 describe-cache
 describe-cache-clusters
@@ -1662,6 +1665,7 @@ describe-provisioned-product
 describe-provisioned-product-plan
 describe-provisioning-artifact
 describe-provisioning-parameters
+describe-public-ipv4-pools
 describe-pull-request-events
 describe-raid-arrays
 describe-rds-db-instances
@@ -3085,6 +3089,7 @@ presign
 preview-agents
 promote-read-replica
 promote-read-replica-db-cluster
+provision-byoip-cidr
 provision-product
 publish
 publish-schema
@@ -3995,6 +4000,7 @@ verify-user-attribute
 view-billing
 wait
 website
+withdraw-byoip-cidr
 [global_options]: 11
 --color
 --debug
