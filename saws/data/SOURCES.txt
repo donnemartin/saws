@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3867
+[sub_commands]: 3887
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -225,6 +225,7 @@ apply-pending-maintenance-action
 apply-schema
 apply-security-groups-to-load-balancer
 approve-assignment
+approve-skill
 archive-findings
 assign-instance
 assign-ipv6-addresses
@@ -257,6 +258,7 @@ associate-route-table
 associate-service-action-with-provisioning-artifact
 associate-service-role-to-account
 associate-skill-group-with-room
+associate-skill-with-skill-group
 associate-software-token
 associate-subnet-cidr-block
 associate-tag-option-with-resource
@@ -470,6 +472,7 @@ create-comment
 create-compute-environment
 create-computer
 create-conditional-forwarder
+create-conference-provider
 create-configuration
 create-configuration-set
 create-configuration-set-event-destination
@@ -910,6 +913,7 @@ delete-comment
 delete-comment-content
 delete-compute-environment
 delete-conditional-forwarder
+delete-conference-provider
 delete-config-rule
 delete-configuration-aggregator
 delete-configuration-recorder
@@ -949,6 +953,7 @@ delete-deployment-group
 delete-destination
 delete-detector
 delete-dev-endpoint
+delete-device
 delete-device-definition
 delete-device-pool
 delete-dhcp-options
@@ -1188,6 +1193,7 @@ delete-service-linked-role
 delete-service-specific-credential
 delete-signing-certificate
 delete-size-constraint-set
+delete-skill-authorization
 delete-skill-group
 delete-slot-type
 delete-slot-type-version
@@ -1926,6 +1932,7 @@ disassociate-role-from-group
 disassociate-route-table
 disassociate-service-action-from-provisioning-artifact
 disassociate-service-role-from-account
+disassociate-skill-from-skill-group
 disassociate-skill-group-from-room
 disassociate-subnet-cidr-block
 disassociate-tag-option-from-resource
@@ -1982,6 +1989,7 @@ filter-log-events
 flush-stage-authorizers-cache
 flush-stage-cache
 forget-device
+forget-smart-home-appliances
 forgot-password
 generate
 generate-client-certificate
@@ -2100,6 +2108,8 @@ get-compliance-details-by-config-rule
 get-compliance-details-by-resource
 get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
+get-conference-preference
+get-conference-provider
 get-config
 get-connection
 get-connection-status
@@ -2647,6 +2657,7 @@ list-commands
 list-compatible-images
 list-compliance-items
 list-compliance-summaries
+list-conference-providers
 list-configuration-revisions
 list-configuration-sets
 list-configurations
@@ -2894,6 +2905,9 @@ list-shards
 list-signing-certificates
 list-size-constraint-sets
 list-skills
+list-skills-store-categories
+list-skills-store-skills-by-category
+list-smart-home-appliances
 list-speech-synthesis-tasks
 list-sql-injection-match-sets
 list-ssh-public-keys
@@ -3131,6 +3145,7 @@ put-bucket-tagging
 put-bucket-versioning
 put-bucket-website
 put-compliance-items
+put-conference-preference
 put-config-rule
 put-configuration-aggregator
 put-configuration-recorder
@@ -3199,6 +3214,7 @@ put-scaling-policy
 put-scheduled-action
 put-scheduled-update-group-action
 put-schema-from-json
+put-skill-authorization
 put-slot-type
 put-subscription-filter
 put-targets
@@ -3238,6 +3254,7 @@ refresh-trusted-advisor-check
 register
 register-activity-type
 register-application-revision
+register-avs-device
 register-ca-certificate
 register-certificate
 register-container-instance
@@ -3271,6 +3288,7 @@ reject-certificate-transfer
 reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
+reject-skill
 reject-vpc-endpoint-connections
 reject-vpc-peering-connection
 release-address
@@ -3548,6 +3566,7 @@ start-schema-creation
 start-schema-extension
 start-sentiment-detection-job
 start-session
+start-smart-home-appliance-discovery
 start-speech-synthesis-task
 start-stack
 start-stream-encryption
@@ -3717,6 +3736,7 @@ update-cluster
 update-comment
 update-compute-environment
 update-conditional-forwarder
+update-conference-provider
 update-configuration
 update-configuration-set-event-destination
 update-configuration-set-reputation-metrics-enabled
