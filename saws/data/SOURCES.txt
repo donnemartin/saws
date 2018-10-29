@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3887
+[sub_commands]: 3892
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -351,6 +351,7 @@ bundle-instance
 cancel-archival
 cancel-audit-task
 cancel-bundle-task
+cancel-capacity-reservation
 cancel-certificate-transfer
 cancel-cluster
 cancel-command
@@ -455,6 +456,7 @@ create-cache-security-group
 create-cache-subnet-group
 create-cached-iscsi-volume
 create-campaign
+create-capacity-reservation
 create-case
 create-certificate-from-csr
 create-change-set
@@ -1375,6 +1377,7 @@ describe-cache-parameters
 describe-cache-security-groups
 describe-cache-subnet-groups
 describe-cached-iscsi-volumes
+describe-capacity-reservations
 describe-cases
 describe-certificate
 describe-certificates
@@ -3014,6 +3017,7 @@ meter-usage
 modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
+modify-capacity-reservation
 modify-cluster
 modify-cluster-attributes
 modify-cluster-db-revision
@@ -3041,6 +3045,7 @@ modify-id-format
 modify-identity-id-format
 modify-image-attribute
 modify-instance-attribute
+modify-instance-capacity-reservation-attributes
 modify-instance-credit-specification
 modify-instance-fleet
 modify-instance-groups
