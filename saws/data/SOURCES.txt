@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3892
+[sub_commands]: 3902
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1663,6 +1663,7 @@ describe-player-sessions
 describe-policies
 describe-policy
 describe-portfolio
+describe-portfolio-share-status
 describe-prefix-lists
 describe-principal-id-format
 describe-product
@@ -1886,6 +1887,7 @@ detect-syntax
 detect-text
 disable-alarm-actions
 disable-availability-zones-for-load-balancer
+disable-aws-organizations-access
 disable-aws-service-access
 disable-directory
 disable-domain-auto-renew
@@ -1951,6 +1953,7 @@ download-default-key-pair
 enable-alarm-actions
 enable-all-features
 enable-availability-zones-for-load-balancer
+enable-aws-organizations-access
 enable-aws-service-access
 enable-directory
 enable-domain-auto-renew
@@ -2041,6 +2044,7 @@ get-authorization-token
 get-authorizer
 get-authorizers
 get-automation-execution
+get-aws-organizations-access-status
 get-baidu-channel
 get-base-path-mapping
 get-base-path-mappings
@@ -2075,6 +2079,7 @@ get-bucket-website
 get-builtin-intent
 get-builtin-intents
 get-builtin-slot-types
+get-bulk-deployment-status
 get-bulk-publish-details
 get-bundles
 get-byte-match-set
@@ -2642,6 +2647,8 @@ list-bucket-metrics-configurations
 list-buckets
 list-builds
 list-builds-for-project
+list-bulk-deployment-detailed-reports
+list-bulk-deployments
 list-bundles
 list-byte-match-sets
 list-ca-certificates
@@ -2816,6 +2823,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-organization-portfolio-access
 list-organizational-units-for-parent
 list-organizations
 list-origin-endpoints
@@ -3521,6 +3529,7 @@ start-assessment-run
 start-associations-once
 start-automation-execution
 start-build
+start-bulk-deployment
 start-celebrity-recognition
 start-channel
 start-config-rules-evaluation
@@ -3589,6 +3598,7 @@ stop-application
 stop-assessment-run
 stop-automation-execution
 stop-build
+stop-bulk-deployment
 stop-channel
 stop-configuration-recorder
 stop-continuous-export
