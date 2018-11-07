@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3902
+[sub_commands]: 3904
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -463,6 +463,7 @@ create-change-set
 create-channel
 create-classifier
 create-cloud-formation-change-set
+create-cloud-formation-template
 create-cloud-front-origin-access-identity
 create-cluster
 create-cluster-parameter-group
@@ -2102,6 +2103,7 @@ get-classifier
 get-classifiers
 get-client-certificate
 get-client-certificates
+get-cloud-formation-template
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cluster-credentials
