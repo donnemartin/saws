@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3904
+[sub_commands]: 3915
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -498,6 +498,7 @@ create-data-source-from-redshift
 create-data-source-from-s3
 create-database
 create-db-cluster
+create-db-cluster-endpoint
 create-db-cluster-parameter-group
 create-db-cluster-snapshot
 create-db-instance
@@ -941,6 +942,7 @@ delete-data-source
 delete-database
 delete-dataset
 delete-db-cluster
+delete-db-cluster-endpoint
 delete-db-cluster-parameter-group
 delete-db-cluster-snapshot
 delete-db-instance
@@ -1364,6 +1366,7 @@ describe-bandwidth-rate-limit
 describe-batch-predictions
 describe-broker
 describe-budget
+describe-budget-performance-history
 describe-budgets
 describe-build
 describe-bundle
@@ -1430,6 +1433,7 @@ describe-customer-gateways
 describe-data-sources
 describe-dataset
 describe-db-cluster-backtracks
+describe-db-cluster-endpoints
 describe-db-cluster-parameter-groups
 describe-db-cluster-parameters
 describe-db-cluster-snapshot-attributes
@@ -1761,10 +1765,12 @@ describe-spot-fleet-requests
 describe-spot-instance-requests
 describe-spot-price-history
 describe-ssl-policies
+describe-stack-drift-detection-status
 describe-stack-events
 describe-stack-instance
 describe-stack-provisioning-parameters
 describe-stack-resource
+describe-stack-resource-drifts
 describe-stack-resources
 describe-stack-set
 describe-stack-set-operation
@@ -1884,6 +1890,8 @@ detect-key-phrases
 detect-labels
 detect-moderation-labels
 detect-sentiment
+detect-stack-drift
+detect-stack-resource-drift
 detect-syntax
 detect-text
 disable-alarm-actions
@@ -3036,6 +3044,7 @@ modify-cluster-parameter-group
 modify-cluster-subnet-group
 modify-current-db-cluster-capacity
 modify-db-cluster
+modify-db-cluster-endpoint
 modify-db-cluster-parameter-group
 modify-db-cluster-snapshot-attribute
 modify-db-instance
@@ -3543,6 +3552,7 @@ start-crawler-schedule
 start-data-collection-by-agent-ids
 start-db-cluster
 start-db-instance
+start-delivery-stream-encryption
 start-device-sync
 start-dominant-language-detection-job
 start-elasticsearch-service-software-update
@@ -3609,6 +3619,7 @@ stop-crawler-schedule
 stop-data-collection-by-agent-ids
 stop-db-cluster
 stop-db-instance
+stop-delivery-stream-encryption
 stop-deployment
 stop-dominant-language-detection-job
 stop-entities-detection-job
