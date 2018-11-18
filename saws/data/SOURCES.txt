@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3917
+[sub_commands]: 3961
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -308,6 +308,7 @@ batch-check-layer-availability
 batch-create-partition
 batch-delete-attributes
 batch-delete-builds
+batch-delete-cluster-snapshots
 batch-delete-connection
 batch-delete-image
 batch-delete-partition
@@ -338,6 +339,7 @@ batch-get-repositories
 batch-get-resource-config
 batch-get-traces
 batch-meter-usage
+batch-modify-cluster-snapshots
 batch-put-attributes
 batch-put-scheduled-update-group-action
 batch-read
@@ -531,6 +533,7 @@ create-disk-snapshot
 create-distribution
 create-distribution-with-tags
 create-document
+create-document-classifier
 create-documentation-part
 create-documentation-version
 create-domain
@@ -540,6 +543,7 @@ create-egress-only-internet-gateway
 create-elasticsearch-domain
 create-endpoint
 create-endpoint-config
+create-entity-recognizer
 create-environment
 create-environment-ec2
 create-environment-membership
@@ -746,6 +750,7 @@ create-smb-file-share
 create-snapshot
 create-snapshot-copy-grant
 create-snapshot-from-volume-recovery-point
+create-snapshot-schedule
 create-software-update-job
 create-spot-datafeed-subscription
 create-sql-injection-match-set
@@ -840,6 +845,7 @@ delete-access-key
 delete-account-alias
 delete-account-audit-configuration
 delete-account-password-policy
+delete-account-setting
 delete-activation
 delete-activity
 delete-address-book
@@ -947,6 +953,7 @@ delete-db-cluster-endpoint
 delete-db-cluster-parameter-group
 delete-db-cluster-snapshot
 delete-db-instance
+delete-db-instance-automated-backup
 delete-db-parameter-group
 delete-db-security-group
 delete-db-snapshot
@@ -971,6 +978,7 @@ delete-disk
 delete-disk-snapshot
 delete-distribution
 delete-document
+delete-document-classifier
 delete-documentation-part
 delete-documentation-version
 delete-domain
@@ -982,6 +990,7 @@ delete-elasticsearch-service-role
 delete-email-channel
 delete-endpoint
 delete-endpoint-config
+delete-entity-recognizer
 delete-environment
 delete-environment-configuration
 delete-environment-membership
@@ -1133,6 +1142,7 @@ delete-project
 delete-protection
 delete-provisioned-product-plan
 delete-provisioning-artifact
+delete-public-access-block
 delete-public-key
 delete-qualification-type
 delete-query-logging-config
@@ -1269,6 +1279,7 @@ delete-vault-notifications
 delete-virtual-interface
 delete-virtual-mfa-device
 delete-vocabulary
+delete-voice-channel
 delete-volume
 delete-vpc
 delete-vpc-association-authorization
@@ -1285,6 +1296,7 @@ delete-vpn-gateway
 delete-web-acl
 delete-webhook
 delete-worker-block
+delete-workspace-image
 delete-xss-match-set
 deliver-config-snapshot
 deploy
@@ -1319,6 +1331,7 @@ describe-account
 describe-account-attributes
 describe-account-audit-configuration
 describe-account-limits
+describe-account-modifications
 describe-activations
 describe-active-receipt-rule-set
 describe-activities
@@ -1441,6 +1454,7 @@ describe-db-cluster-snapshot-attributes
 describe-db-cluster-snapshots
 describe-db-clusters
 describe-db-engine-versions
+describe-db-instance-automated-backups
 describe-db-instances
 describe-db-log-files
 describe-db-parameter-groups
@@ -1464,6 +1478,8 @@ describe-direct-connect-gateways
 describe-directories
 describe-directory-configs
 describe-document
+describe-document-classification-job
+describe-document-classifier
 describe-document-permission
 describe-document-versions
 describe-domain
@@ -1492,6 +1508,7 @@ describe-engine-default-cluster-parameters
 describe-engine-default-parameters
 describe-entities-detection-job
 describe-entity-aggregates
+describe-entity-recognizer
 describe-environment-health
 describe-environment-managed-action-history
 describe-environment-managed-actions
@@ -1757,6 +1774,7 @@ describe-smb-settings
 describe-snapshot-attribute
 describe-snapshot-copy-grants
 describe-snapshot-schedule
+describe-snapshot-schedules
 describe-snapshots
 describe-source-regions
 describe-spot-datafeed-subscription
@@ -1781,6 +1799,7 @@ describe-stale-security-groups
 describe-state-machine
 describe-state-machine-for-execution
 describe-step
+describe-storage
 describe-stored-iscsi-volumes
 describe-stream
 describe-stream-consumer
@@ -1860,6 +1879,7 @@ describe-workflow-type
 describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
+describe-workspace-images
 describe-workspaces
 describe-workspaces-connection-status
 detach-classic-link-vpc
@@ -2081,6 +2101,7 @@ get-bucket-logging
 get-bucket-metrics-configuration
 get-bucket-notification-configuration
 get-bucket-policy
+get-bucket-policy-status
 get-bucket-replication
 get-bucket-request-payment
 get-bucket-tagging
@@ -2147,6 +2168,7 @@ get-core-definition
 get-core-definition-version
 get-cors-policy
 get-cost-and-usage
+get-cost-forecast
 get-crawler
 get-crawler-metrics
 get-crawlers
@@ -2396,6 +2418,7 @@ get-preset
 get-products
 get-profile
 get-project
+get-public-access-block
 get-public-key
 get-public-key-config
 get-pull-request
@@ -2561,6 +2584,7 @@ get-vault-access-policy
 get-vault-lock
 get-vault-notifications
 get-vocabulary
+get-voice-channel
 get-vpc-link
 get-vpc-links
 get-vpce-configuration
@@ -2583,6 +2607,7 @@ import-migration-task
 import-rest-api
 import-server-catalog
 import-snapshot
+import-workspace-image
 increase-replica-count
 increase-replication-factor
 increase-stream-retention-period
@@ -2611,6 +2636,7 @@ list
 list-accepted-portfolio-shares
 list-access-keys
 list-account-aliases
+list-account-settings
 list-accounts
 list-accounts-for-parent
 list-action-types
@@ -2645,6 +2671,7 @@ list-attributes
 list-audit-findings
 list-audit-tasks
 list-authorizers
+list-available-management-cidr-ranges
 list-available-solution-stacks
 list-available-zones
 list-aws-service-access-for-organization
@@ -2712,6 +2739,8 @@ list-directories
 list-discovered-resources
 list-distributions
 list-distributions-by-web-acl-id
+list-document-classification-jobs
+list-document-classifiers
 list-document-versions
 list-documents
 list-domain-names
@@ -2724,6 +2753,7 @@ list-endpoints
 list-endpoints-by-platform-application
 list-entities-detection-jobs
 list-entities-for-policy
+list-entity-recognizers
 list-environments
 list-event-source-mappings
 list-event-subscriptions
@@ -2902,6 +2932,7 @@ list-review-policy-results-for-hit
 list-reviewable-hits
 list-role-aliases
 list-role-policies
+list-role-tags
 list-roles
 list-roots
 list-rule-groups
@@ -3005,6 +3036,7 @@ list-user-policies
 list-user-pool-clients
 list-user-pools
 list-user-profiles
+list-user-tags
 list-users
 list-users-in-group
 list-v2-logging-levels
@@ -3033,6 +3065,7 @@ merge-developer-identities
 merge-pull-request-by-fast-forward
 merge-shards
 meter-usage
+modify-account
 modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
@@ -3043,6 +3076,8 @@ modify-cluster-db-revision
 modify-cluster-iam-roles
 modify-cluster-maintenance
 modify-cluster-parameter-group
+modify-cluster-snapshot
+modify-cluster-snapshot-schedule
 modify-cluster-subnet-group
 modify-current-db-cluster-capacity
 modify-db-cluster
@@ -3086,6 +3121,7 @@ modify-reserved-instances
 modify-rule
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
+modify-snapshot-schedule
 modify-spot-fleet-request
 modify-subnet-attribute
 modify-target-group
@@ -3146,6 +3182,7 @@ purchase-scheduled-instances
 purge-queue
 push
 put
+put-account-setting
 put-action-revision
 put-aggregation-authorization
 put-application-policy
@@ -3222,6 +3259,7 @@ put-parameter
 put-permission
 put-permission-policy
 put-pipeline-definition
+put-public-access-block
 put-record
 put-record-batch
 put-records
@@ -3556,6 +3594,7 @@ start-db-cluster
 start-db-instance
 start-delivery-stream-encryption
 start-device-sync
+start-document-classification-job
 start-dominant-language-detection-job
 start-elasticsearch-service-software-update
 start-entities-detection-job
@@ -3674,7 +3713,9 @@ tag-project
 tag-queue
 tag-resource
 tag-resources
+tag-role
 tag-stream
+tag-user
 terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
@@ -3718,7 +3759,9 @@ untag-project
 untag-queue
 untag-resource
 untag-resources
+untag-role
 untag-stream
+untag-user
 update-access-key
 update-account
 update-account-audit-configuration
@@ -4015,6 +4058,7 @@ update-user-pool-client
 update-user-profile
 update-virtual-interface-attributes
 update-vocabulary
+update-voice-channel
 update-volume
 update-vpc-link
 update-vpce-configuration
