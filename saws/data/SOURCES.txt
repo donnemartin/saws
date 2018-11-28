@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3961
+[sub_commands]: 3984
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -184,6 +184,7 @@ add-tags-to-on-premises-instances
 add-tags-to-resource
 add-tags-to-stream
 add-tags-to-vault
+add-thing-to-billing-group
 add-thing-to-thing-group
 add-upload-buffer
 add-user-to-group
@@ -232,6 +233,7 @@ assign-ipv6-addresses
 assign-private-ip-addresses
 assign-volume
 associate-address
+associate-certificate
 associate-configuration-items-to-application
 associate-connection-with-lag
 associate-contact-with-address-book
@@ -322,6 +324,7 @@ batch-detect-sentiment
 batch-detect-syntax
 batch-disassociate-service-action-from-provisioning-artifact
 batch-disassociate-user-stack
+batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
@@ -446,6 +449,7 @@ create-backup
 create-base-path-mapping
 create-batch-prediction
 create-bgp-peer
+create-billing-group
 create-bot-version
 create-branch
 create-broker
@@ -539,6 +543,7 @@ create-documentation-version
 create-domain
 create-domain-entry
 create-domain-name
+create-dynamic-thing-group
 create-egress-only-internet-gateway
 create-elasticsearch-domain
 create-endpoint
@@ -881,6 +886,7 @@ delete-bandwidth-rate-limit
 delete-base-path-mapping
 delete-batch-prediction
 delete-bgp-peer
+delete-billing-group
 delete-bot
 delete-bot-alias
 delete-bot-channel-association
@@ -984,6 +990,7 @@ delete-documentation-version
 delete-domain
 delete-domain-entry
 delete-domain-name
+delete-dynamic-thing-group
 delete-egress-only-internet-gateway
 delete-elasticsearch-domain
 delete-elasticsearch-service-role
@@ -1378,6 +1385,7 @@ describe-backup
 describe-backups
 describe-bandwidth-rate-limit
 describe-batch-predictions
+describe-billing-group
 describe-broker
 describe-budget
 describe-budget-performance-history
@@ -1403,6 +1411,7 @@ describe-change-set
 describe-channel
 describe-chap-credentials
 describe-classic-link-instances
+describe-client-properties
 describe-cluster
 describe-cluster-db-revisions
 describe-cluster-parameter-groups
@@ -1941,6 +1950,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-certificate
 disassociate-configuration-items-from-application
 disassociate-connection-from-lag
 disassociate-connector
@@ -2051,6 +2061,8 @@ get-address-book
 get-adm-channel
 get-aggregate-compliance-details-by-config-rule
 get-aggregate-config-rule-compliance-summary
+get-aggregate-discovered-resource-counts
+get-aggregate-resource-config
 get-alias
 get-api-key
 get-api-keys
@@ -2596,6 +2608,7 @@ global-sign-out
 grant-access
 head-bucket
 head-object
+import
 import-api-keys
 import-catalog-to-glue
 import-certificate
@@ -2644,6 +2657,7 @@ list-activated-rules-in-rule-group
 list-active-violations
 list-activities
 list-activity-types
+list-aggregate-discovered-resources
 list-aliases
 list-allowed-node-type-modifications
 list-api-keys
@@ -2676,6 +2690,7 @@ list-available-solution-stacks
 list-available-zones
 list-aws-service-access-for-organization
 list-backups
+list-billing-groups
 list-bonus-payments
 list-branches
 list-brokers
@@ -2888,6 +2903,7 @@ list-portfolios-for-product
 list-presets
 list-principal-things
 list-principals-for-portfolio
+list-profiles
 list-progress-update-streams
 list-projects
 list-protections
@@ -3012,6 +3028,7 @@ list-thing-registration-task-reports
 list-thing-registration-tasks
 list-thing-types
 list-things
+list-things-in-billing-group
 list-things-in-thing-group
 list-threat-intel-sets
 list-topic-rules
@@ -3070,6 +3087,7 @@ modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
 modify-capacity-reservation
+modify-client-properties
 modify-cluster
 modify-cluster-attributes
 modify-cluster-db-revision
@@ -3381,6 +3399,7 @@ remove-tags-from-resource
 remove-tags-from-stream
 remove-tags-from-vault
 remove-targets
+remove-thing-from-billing-group
 remove-thing-from-thing-group
 remove-user-from-group
 renew-domain
@@ -3716,6 +3735,7 @@ tag-resources
 tag-role
 tag-stream
 tag-user
+tail
 terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
@@ -3792,6 +3812,7 @@ update-baidu-channel
 update-bandwidth-rate-limit
 update-base-path-mapping
 update-batch-prediction
+update-billing-group
 update-broker
 update-budget
 update-build
@@ -3853,6 +3874,7 @@ update-domain-contact-privacy
 update-domain-entry
 update-domain-name
 update-domain-nameservers
+update-dynamic-thing-group
 update-elastic-ip
 update-elasticsearch-domain-config
 update-email-channel
@@ -4095,6 +4117,7 @@ view-billing
 wait
 website
 withdraw-byoip-cidr
+wizard
 [global_options]: 11
 --color
 --debug
