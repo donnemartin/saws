@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 3984
+[sub_commands]: 4042
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -147,6 +147,7 @@ accept-qualification-request
 accept-reserved-instances-exchange-quote
 accept-reserved-node-exchange
 accept-shared-directory
+accept-transit-gateway-vpc-attachment
 accept-vpc-endpoint-connections
 accept-vpc-peering-connection
 acknowledge-job
@@ -266,6 +267,7 @@ associate-subnet-cidr-block
 associate-tag-option-with-resource
 associate-targets-with-job
 associate-team-member
+associate-transit-gateway-route-table
 associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
@@ -405,6 +407,7 @@ confirm-product-instance
 confirm-public-virtual-interface
 confirm-sign-up
 confirm-subscription
+connect-custom-key-store
 connect-directory
 continue-deployment
 continue-update-rollback
@@ -489,6 +492,8 @@ create-configuration-set-event-destination
 create-configuration-set-tracking-options
 create-configuration-template
 create-connection
+create-connector-definition
+create-connector-definition-version
 create-constraint
 create-contact
 create-container
@@ -496,6 +501,7 @@ create-core-definition
 create-core-definition-version
 create-crawler
 create-custom-action-type
+create-custom-key-store
 create-custom-metadata
 create-custom-verification-email-template
 create-customer-gateway
@@ -796,6 +802,10 @@ create-traffic-policy-version
 create-trail
 create-training-job
 create-transform-job
+create-transit-gateway
+create-transit-gateway-route
+create-transit-gateway-route-table
+create-transit-gateway-vpc-attachment
 create-trigger
 create-trust
 create-type
@@ -865,6 +875,8 @@ delete-apns-sandbox-channel
 delete-apns-voip-channel
 delete-apns-voip-sandbox-channel
 delete-app
+delete-app-launch-configuration
+delete-app-replication-configuration
 delete-application
 delete-application-cloud-watch-logging-option
 delete-application-input-processing-configuration
@@ -939,6 +951,7 @@ delete-configuration-set-event-destination
 delete-configuration-set-tracking-options
 delete-configuration-template
 delete-connection
+delete-connector-definition
 delete-constraint
 delete-contact
 delete-container
@@ -947,6 +960,7 @@ delete-core-definition
 delete-cors-policy
 delete-crawler
 delete-custom-action-type
+delete-custom-key-store
 delete-custom-metadata
 delete-custom-verification-email-template
 delete-customer-gateway
@@ -1261,6 +1275,10 @@ delete-traffic-policy
 delete-traffic-policy-instance
 delete-trail
 delete-transcription-job
+delete-transit-gateway
+delete-transit-gateway-route
+delete-transit-gateway-route-table
+delete-transit-gateway-vpc-attachment
 delete-trigger
 delete-trust
 delete-type
@@ -1452,6 +1470,7 @@ describe-conversion-tasks
 describe-copy-product-status
 describe-create-account-status
 describe-cross-account-access-role
+describe-custom-key-stores
 describe-customer-gateways
 describe-data-sources
 describe-dataset
@@ -1844,6 +1863,10 @@ describe-topics-detection-job
 describe-trails
 describe-training-job
 describe-transform-job
+describe-transit-gateway-attachments
+describe-transit-gateway-route-tables
+describe-transit-gateway-vpc-attachments
+describe-transit-gateways
 describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
@@ -1945,6 +1968,7 @@ disable-snapshot-copy
 disable-sso
 disable-stage-transition
 disable-topic-rule
+disable-transit-gateway-route-table-propagation
 disable-user
 disable-vgw-route-propagation
 disable-vpc-classic-link
@@ -1982,9 +2006,11 @@ disassociate-skill-group-from-room
 disassociate-subnet-cidr-block
 disassociate-tag-option-from-resource
 disassociate-team-member
+disassociate-transit-gateway-route-table
 disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
 disassociate-web-acl
+disconnect-custom-key-store
 discover-input-schema
 discover-poll-endpoint
 domain-metadata
@@ -2011,6 +2037,7 @@ enable-snapshot-copy
 enable-sso
 enable-stage-transition
 enable-topic-rule
+enable-transit-gateway-route-table-propagation
 enable-user
 enable-vgw-route-propagation
 enable-volume-io
@@ -2030,6 +2057,7 @@ export-bundle
 export-certificate
 export-project
 export-server-engine-attribute
+export-transit-gateway-routes
 failover-db-cluster
 filter-log-events
 flush-stage-authorizers-cache
@@ -2038,6 +2066,7 @@ forget-device
 forget-smart-home-appliances
 forgot-password
 generate
+generate-change-set
 generate-client-certificate
 generate-credential-report
 generate-data-key
@@ -2045,6 +2074,7 @@ generate-data-key-without-plaintext
 generate-data-set
 generate-db-auth-token
 generate-random
+generate-template
 get
 get-access-key-last-used
 get-account
@@ -2071,6 +2101,8 @@ get-apns-sandbox-channel
 get-apns-voip-channel
 get-apns-voip-sandbox-channel
 get-app
+get-app-launch-configuration
+get-app-replication-configuration
 get-application
 get-application-policy
 get-application-revision
@@ -2167,6 +2199,8 @@ get-connection
 get-connection-status
 get-connections
 get-connectivity-info
+get-connector-definition
+get-connector-definition-version
 get-connectors
 get-console-output
 get-console-screenshot
@@ -2288,6 +2322,7 @@ get-group-certificate-configuration
 get-group-policy
 get-group-query
 get-group-version
+get-groups
 get-health-check
 get-health-check-count
 get-health-check-last-failure-reason
@@ -2393,6 +2428,9 @@ get-object
 get-object-acl
 get-object-attributes
 get-object-information
+get-object-legal-hold
+get-object-lock-configuration
+get-object-retention
 get-object-tagging
 get-object-torrent
 get-offering-status
@@ -2497,6 +2535,7 @@ get-sampled-requests
 get-sampling-rules
 get-sampling-statistic-summaries
 get-sampling-targets
+get-scaling-plan-resource-forecast-data
 get-schema-as-json
 get-schema-creation-status
 get-sdk
@@ -2570,6 +2609,9 @@ get-traffic-policy-instance
 get-traffic-policy-instance-count
 get-trail-status
 get-transcription-job
+get-transit-gateway-attachment-propagations
+get-transit-gateway-route-table-associations
+get-transit-gateway-route-table-propagations
 get-trigger
 get-triggers
 get-type
@@ -2608,7 +2650,6 @@ global-sign-out
 grant-access
 head-bucket
 head-object
-import
 import-api-keys
 import-catalog-to-glue
 import-certificate
@@ -2644,6 +2685,7 @@ invoke-endpoint
 is-vpc-peered
 join-domain
 label-parameter-version
+launch-app
 leave-organization
 list
 list-accepted-portfolio-shares
@@ -2665,6 +2707,7 @@ list-application-revisions
 list-application-versions
 list-applications
 list-applied-schema-arns
+list-apps
 list-artifacts
 list-assessment-run-agents
 list-assessment-runs
@@ -2724,6 +2767,8 @@ list-conference-providers
 list-configuration-revisions
 list-configuration-sets
 list-configurations
+list-connector-definition-versions
+list-connector-definitions
 list-constraints-for-portfolio
 list-container-instances
 list-containers
@@ -2903,7 +2948,6 @@ list-portfolios-for-product
 list-presets
 list-principal-things
 list-principals-for-portfolio
-list-profiles
 list-progress-update-streams
 list-projects
 list-protections
@@ -2931,6 +2975,7 @@ list-remote-access-sessions
 list-repositories
 list-reservations
 list-resolvers
+list-resolvers-by-function
 list-resource-compliance-summaries
 list-resource-data-sync
 list-resource-definition-versions
@@ -3144,6 +3189,7 @@ modify-spot-fleet-request
 modify-subnet-attribute
 modify-target-group
 modify-target-group-attributes
+modify-transit-gateway-vpc-attachment
 modify-volume
 modify-volume-attribute
 modify-vpc-attribute
@@ -3203,6 +3249,8 @@ put
 put-account-setting
 put-action-revision
 put-aggregation-authorization
+put-app-launch-configuration
+put-app-replication-configuration
 put-application-policy
 put-approval-result
 put-attributes
@@ -3272,6 +3320,9 @@ put-metric-filter
 put-notification-configuration
 put-object
 put-object-acl
+put-object-legal-hold
+put-object-lock-configuration
+put-object-retention
 put-object-tagging
 put-parameter
 put-permission
@@ -3371,6 +3422,7 @@ reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
 reject-skill
+reject-transit-gateway-vpc-attachment
 reject-vpc-endpoint-connections
 reject-vpc-peering-connection
 release-address
@@ -3411,6 +3463,7 @@ replace-network-acl-entry
 replace-route
 replace-route-table-association
 replace-topic-rule
+replace-transit-gateway-route
 report-instance-status
 report-task-progress
 report-task-runner-heartbeat
@@ -3509,6 +3562,7 @@ search-provisioned-products
 search-resources
 search-rooms
 search-skill-groups
+search-transit-gateway-routes
 search-users
 select
 select-object-content
@@ -3594,6 +3648,7 @@ skip-wait-time-for-instance-termination
 socks
 split-shard
 ssh
+start-app-replication
 start-application
 start-assessment-run
 start-associations-once
@@ -3666,6 +3721,7 @@ start-trigger
 start-user-import-job
 start-workflow-execution
 start-workspaces
+stop-app-replication
 stop-application
 stop-assessment-run
 stop-automation-execution
@@ -3735,7 +3791,7 @@ tag-resources
 tag-role
 tag-stream
 tag-user
-tail
+terminate-app
 terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
@@ -3839,6 +3895,7 @@ update-configuration-set-tracking-options
 update-configuration-template
 update-connection
 update-connectivity-info
+update-connector-definition
 update-constraint
 update-contact
 update-container-agent
@@ -3847,6 +3904,7 @@ update-continuous-backups
 update-core-definition
 update-crawler
 update-crawler-schedule
+update-custom-key-store
 update-custom-verification-email-template
 update-data-retention
 update-data-source
@@ -3899,6 +3957,7 @@ update-fleet-attributes
 update-fleet-capacity
 update-fleet-port-settings
 update-folder
+update-function
 update-function-code
 update-function-configuration
 update-function-definition
@@ -4117,7 +4176,6 @@ view-billing
 wait
 website
 withdraw-byoip-cidr
-wizard
 [global_options]: 11
 --color
 --debug
