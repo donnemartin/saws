@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4106
+[sub_commands]: 4107
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1253,6 +1253,7 @@ delete-sms-channel
 delete-snapshot
 delete-snapshot-copy-grant
 delete-snapshot-schedule
+delete-source-credentials
 delete-spot-datafeed-subscription
 delete-sql-injection-match-set
 delete-ssh-public-key
@@ -1745,7 +1746,6 @@ describe-product-as-admin
 describe-product-view
 describe-project
 describe-protection
-describe-provisioned-capacity
 describe-provisioned-product
 describe-provisioned-product-plan
 describe-provisioning-artifact
@@ -2698,6 +2698,7 @@ import-migration-task
 import-rest-api
 import-server-catalog
 import-snapshot
+import-source-credentials
 import-terminology
 import-workspace-image
 increase-replica-count
@@ -3069,6 +3070,7 @@ list-skills
 list-skills-store-categories
 list-skills-store-skills-by-category
 list-smart-home-appliances
+list-source-credentials
 list-speech-synthesis-tasks
 list-sql-injection-match-sets
 list-ssh-public-keys
@@ -3226,7 +3228,6 @@ modify-load-balancer-attributes
 modify-luna-client
 modify-mount-target-security-groups
 modify-network-interface-attribute
-modify-provisioned-capacity
 modify-replication-group
 modify-replication-group-shard-configuration
 modify-replication-instance
