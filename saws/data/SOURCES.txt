@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4107
+[sub_commands]: 4115
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -461,6 +461,7 @@ create-broker
 create-bucket
 create-budget
 create-build
+create-business-report-schedule
 create-byte-match-set
 create-cache-cluster
 create-cache-parameter-group
@@ -929,6 +930,7 @@ delete-bucket-tagging
 delete-bucket-website
 delete-budget
 delete-build
+delete-business-report-schedule
 delete-byte-match-set
 delete-ca-certificate
 delete-cache-cluster
@@ -2103,6 +2105,7 @@ generate-data-key-without-plaintext
 generate-data-set
 generate-db-auth-token
 generate-random
+generate-service-last-accessed-details
 generate-template
 get
 get-access-key-last-used
@@ -2591,6 +2594,8 @@ get-server-certificate
 get-servers
 get-service
 get-service-graph
+get-service-last-accessed-details
+get-service-last-accessed-details-with-entities
 get-service-linked-role-deletion-status
 get-service-role-for-account
 get-session-token
@@ -2787,6 +2792,7 @@ list-builds-for-project
 list-bulk-deployment-detailed-reports
 list-bulk-deployments
 list-bundles
+list-business-report-schedules
 list-byte-match-sets
 list-ca-certificates
 list-certificates
@@ -2988,6 +2994,7 @@ list-platform-applications
 list-platform-versions
 list-policies
 list-policies-for-target
+list-policies-granting-service-access
 list-policy-attachments
 list-policy-versions
 list-portfolio-access
@@ -3935,6 +3942,7 @@ update-billing-group
 update-broker
 update-budget
 update-build
+update-business-report-schedule
 update-byte-match-set
 update-ca-certificate
 update-campaign
