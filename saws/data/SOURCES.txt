@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4117
+[sub_commands]: 4136
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -226,6 +226,7 @@ allocate-static-ip
 apply-environment-managed-action
 apply-pending-maintenance-action
 apply-schema
+apply-security-groups-to-client-vpn-target-network
 apply-security-groups-to-load-balancer
 approve-assignment
 approve-skill
@@ -236,6 +237,7 @@ assign-private-ip-addresses
 assign-volume
 associate-address
 associate-certificate
+associate-client-vpn-target-network
 associate-configuration-items-to-application
 associate-connection-with-lag
 associate-contact-with-address-book
@@ -301,6 +303,7 @@ attach-user-policy
 attach-volume
 attach-vpn-gateway
 authorize-cache-security-group-ingress
+authorize-client-vpn-ingress
 authorize-cluster-security-group-ingress
 authorize-db-security-group-ingress
 authorize-ip-rules
@@ -476,6 +479,8 @@ create-certificate-from-csr
 create-change-set
 create-channel
 create-classifier
+create-client-vpn-endpoint
+create-client-vpn-route
 create-cloud-formation-change-set
 create-cloud-formation-stack
 create-cloud-formation-template
@@ -945,6 +950,8 @@ delete-channel
 delete-chap-credentials
 delete-classifier
 delete-client-certificate
+delete-client-vpn-endpoint
+delete-client-vpn-route
 delete-cloud-front-origin-access-identity
 delete-cluster
 delete-cluster-parameter-group
@@ -1452,6 +1459,11 @@ describe-channel
 describe-chap-credentials
 describe-classic-link-instances
 describe-client-properties
+describe-client-vpn-authorization-rules
+describe-client-vpn-connections
+describe-client-vpn-endpoints
+describe-client-vpn-routes
+describe-client-vpn-target-networks
 describe-cluster
 describe-cluster-db-revisions
 describe-cluster-parameter-groups
@@ -2005,6 +2017,7 @@ disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-certificate
+disassociate-client-vpn-target-network
 disassociate-configuration-items-from-application
 disassociate-connection-from-lag
 disassociate-connector
@@ -2087,6 +2100,8 @@ exit-standby
 expire-session
 export-bundle
 export-certificate
+export-client-vpn-client-certificate-revocation-list
+export-client-vpn-client-configuration
 export-project
 export-server-engine-attribute
 export-snapshot
@@ -2697,6 +2712,7 @@ head-object
 import-api-keys
 import-catalog-to-glue
 import-certificate
+import-client-vpn-client-certificate-revocation-list
 import-documentation-parts
 import-image
 import-key-material
@@ -3194,6 +3210,7 @@ modify-cache-parameter-group
 modify-cache-subnet-group
 modify-capacity-reservation
 modify-client-properties
+modify-client-vpn-endpoint
 modify-cluster
 modify-cluster-attributes
 modify-cluster-db-revision
@@ -3595,6 +3612,7 @@ retrieve-tape-archive
 retrieve-tape-recovery-point
 retry-stage-execution
 revoke-cache-security-group-ingress
+revoke-client-vpn-ingress
 revoke-cluster-security-group-ingress
 revoke-db-security-group-ingress
 revoke-grant
@@ -3862,6 +3880,7 @@ tag-role
 tag-stream
 tag-user
 terminate-app
+terminate-client-vpn-connections
 terminate-clusters
 terminate-environment
 terminate-instance-in-auto-scaling-group
