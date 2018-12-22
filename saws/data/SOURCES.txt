@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4136
+[sub_commands]: 4139
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3853,6 +3853,8 @@ stop-stream-encryption
 stop-stream-processor
 stop-task
 stop-thing-registration-task
+stop-training-document-classifier
+stop-training-entity-recognizer
 stop-training-job
 stop-transform-job
 stop-trigger
@@ -4229,6 +4231,7 @@ update-user-attributes
 update-user-defined-function
 update-user-pool
 update-user-pool-client
+update-user-pool-domain
 update-user-profile
 update-virtual-interface-attributes
 update-vocabulary
