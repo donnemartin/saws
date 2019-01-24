@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4139
+[sub_commands]: 4142
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -320,6 +320,7 @@ batch-delete-builds
 batch-delete-cluster-snapshots
 batch-delete-connection
 batch-delete-image
+batch-delete-import-data
 batch-delete-partition
 batch-delete-scheduled-action
 batch-delete-table
@@ -1642,6 +1643,7 @@ describe-image-permissions
 describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
+describe-import-tasks
 describe-index
 describe-index-fields
 describe-input
@@ -3766,6 +3768,7 @@ start-game-session-placement
 start-gateway
 start-image-builder
 start-import
+start-import-task
 start-instance
 start-instances
 start-job-run
