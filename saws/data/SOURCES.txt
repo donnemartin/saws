@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4142
+[sub_commands]: 4144
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -177,6 +177,7 @@ add-option-to-option-group
 add-permission
 add-resource-permissions
 add-role-to-db-cluster
+add-role-to-db-instance
 add-role-to-instance-profile
 add-source-identifier-to-subscription
 add-steps
@@ -3527,6 +3528,7 @@ remove-option-from-option-group
 remove-permission
 remove-resource-permission
 remove-role-from-db-cluster
+remove-role-from-db-instance
 remove-role-from-instance-profile
 remove-source-identifier-from-subscription
 remove-tags
