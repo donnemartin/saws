@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4144
+[sub_commands]: 4145
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1135,6 +1135,7 @@ delete-luna-client
 delete-mailbox-permissions
 delete-maintenance-window
 delete-matchmaking-configuration
+delete-matchmaking-rule-set
 delete-members
 delete-message
 delete-message-batch
