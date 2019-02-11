@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4145
+[sub_commands]: 4146
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3331,6 +3331,7 @@ purge-queue
 push
 put
 put-account-setting
+put-account-setting-default
 put-action-revision
 put-aggregation-authorization
 put-app-launch-configuration
