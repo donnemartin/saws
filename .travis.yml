@@ -1,3 +1,4 @@
+group: travis_latest
 language: python
 env:
   - TOXENV=py27
