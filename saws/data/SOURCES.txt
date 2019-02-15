@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4146
+[sub_commands]: 4148
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1679,6 +1679,7 @@ describe-launch-configurations
 describe-launch-template-versions
 describe-launch-templates
 describe-layers
+describe-lifecycle-configuration
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
 describe-limits
@@ -3391,6 +3392,7 @@ put-job-failure-result
 put-job-success-result
 put-key-policy
 put-lexicon
+put-lifecycle-configuration
 put-lifecycle-event-hook-execution-status
 put-lifecycle-hook
 put-lifecycle-policy
