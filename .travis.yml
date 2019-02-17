@@ -1,12 +1,12 @@
 language: python
-env:
-  - TOXENV=py27
-  - TOXENV=py34
-os:
-  - linux
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27
+    - python: 3.6
+      env: TOXENV=py36
 install:
-  - travis_retry pip install tox
-  - pip install codecov
+  - travis_retry pip install tox codecov
 script:
   - tox
 after_success:
