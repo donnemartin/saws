@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4148
+[sub_commands]: 4153
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -856,6 +856,7 @@ create-vpn-connection-route
 create-vpn-gateway
 create-web-acl
 create-webhook
+create-work-group
 create-worker-block
 create-workspaces
 create-workteam
@@ -1350,6 +1351,7 @@ delete-vpn-connection-route
 delete-vpn-gateway
 delete-web-acl
 delete-webhook
+delete-work-group
 delete-worker-block
 delete-workspace-image
 delete-workteam
@@ -2708,6 +2710,7 @@ get-vpc-links
 get-vpce-configuration
 get-web-acl
 get-web-acl-for-resource
+get-work-group
 get-workflow-execution-history
 get-xss-match-set
 global-sign-out
@@ -3195,6 +3198,7 @@ list-vpc-association-authorizations
 list-vpce-configurations
 list-web-acls
 list-webhooks
+list-work-groups
 list-worker-blocks
 list-workers-with-qualification-type
 list-workflow-types
@@ -4251,6 +4255,7 @@ update-vpce-configuration
 update-vtl-device-type
 update-web-acl
 update-webhook
+update-work-group
 update-workteam
 update-xss-match-set
 upgrade-applied-schema
