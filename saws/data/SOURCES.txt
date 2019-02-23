@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4153
+[sub_commands]: 4154
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -495,6 +495,7 @@ create-cluster-subnet-group
 create-code-repository
 create-collection
 create-comment
+create-commit
 create-compilation-job
 create-compute-environment
 create-computer
