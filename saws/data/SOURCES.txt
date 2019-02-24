@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4154
+[sub_commands]: 4161
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -337,11 +337,14 @@ batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
+batch-get-crawlers
 batch-get-deployment-groups
 batch-get-deployment-targets
 batch-get-deployments
+batch-get-dev-endpoints
 batch-get-image
 batch-get-item
+batch-get-jobs
 batch-get-named-query
 batch-get-on-premises-instances
 batch-get-partition
@@ -350,6 +353,7 @@ batch-get-query-execution
 batch-get-repositories
 batch-get-resource-config
 batch-get-traces
+batch-get-triggers
 batch-meter-usage
 batch-modify-cluster-snapshots
 batch-put-attributes
@@ -2850,6 +2854,7 @@ list-container-instances
 list-containers
 list-core-definition-versions
 list-core-definitions
+list-crawlers
 list-create-account-status
 list-created-artifacts
 list-curated-environment-images
@@ -2864,6 +2869,7 @@ list-deployment-groups
 list-deployment-targets
 list-deployments
 list-detectors
+list-dev-endpoints
 list-development-schema-arns
 list-device-definition-versions
 list-device-definitions
@@ -3173,6 +3179,7 @@ list-training-jobs
 list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
 list-transform-jobs
+list-triggers
 list-typed-link-facet-attributes
 list-typed-link-facet-names
 list-types
