@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4161
+[sub_commands]: 4163
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3752,6 +3752,7 @@ simulate-principal-policy
 socks
 split-shard
 ssh
+start-access-logging
 start-app-replication
 start-application
 start-assessment-run
@@ -3827,6 +3828,7 @@ start-trigger
 start-user-import-job
 start-workflow-execution
 start-workspaces
+stop-access-logging
 stop-app-replication
 stop-application
 stop-assessment-run
