@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4163
+[sub_commands]: 4166
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2430,6 +2430,7 @@ get-introspection-schema
 get-invalidation
 get-inventory
 get-inventory-schema
+get-invitation-configuration
 get-invitations-count
 get-ip-set
 get-item
@@ -3262,6 +3263,7 @@ modify-image-attribute
 modify-instance-attribute
 modify-instance-capacity-reservation-attributes
 modify-instance-credit-specification
+modify-instance-event-start-time
 modify-instance-fleet
 modify-instance-groups
 modify-instance-placement
@@ -3399,6 +3401,7 @@ put-integration
 put-integration-response
 put-intent
 put-inventory
+put-invitation-configuration
 put-item
 put-job-failure-result
 put-job-success-result
