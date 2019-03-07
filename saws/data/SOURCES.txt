@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4166
+[sub_commands]: 4169
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2628,6 +2628,7 @@ get-service-last-accessed-details
 get-service-last-accessed-details-with-entities
 get-service-linked-role-deletion-status
 get-service-role-for-account
+get-service-setting
 get-session-token
 get-shard-iterator
 get-shipping-label
@@ -3595,6 +3596,7 @@ reset-instance-attribute
 reset-job-bookmark
 reset-network-interface-attribute
 reset-password
+reset-service-setting
 reset-service-specific-credential
 reset-snapshot-attribute
 reset-user-password
@@ -4208,6 +4210,7 @@ update-server-engine-attributes
 update-service
 update-service-access-policies
 update-service-action
+update-service-setting
 update-service-specific-credential
 update-shard-count
 update-signing-certificate
