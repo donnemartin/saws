@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4174
+[sub_commands]: 4175
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3566,6 +3566,7 @@ remove-thing-from-billing-group
 remove-thing-from-thing-group
 remove-user-from-group
 render-ui-template
+renew-certificate
 renew-domain
 renew-offering
 reorder-receipt-rule-set
