@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4175
+[sub_commands]: 4176
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3681,6 +3681,7 @@ search-transit-gateway-routes
 search-users
 select
 select-object-content
+select-resource-config
 send-automation-signal
 send-bonus
 send-bounce
