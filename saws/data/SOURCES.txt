@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4176
+[sub_commands]: 4177
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2774,6 +2774,7 @@ list-account-aliases
 list-account-settings
 list-accounts
 list-accounts-for-parent
+list-action-executions
 list-action-types
 list-activated-rules-in-rule-group
 list-active-violations
