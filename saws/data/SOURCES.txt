@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4177
+[sub_commands]: 4179
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1116,6 +1116,7 @@ delete-job-execution
 delete-job-queue
 delete-job-template
 delete-key-pair
+delete-known-host-keys
 delete-labels
 delete-lag
 delete-launch-configuration
@@ -2653,6 +2654,7 @@ get-stage
 get-stages
 get-static-ip
 get-static-ips
+get-statistics
 get-status
 get-streaming-distribution
 get-streaming-distribution-config
