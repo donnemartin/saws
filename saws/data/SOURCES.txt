@@ -133,12 +133,13 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4179
+[sub_commands]: 4184
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
 accept-certificate-transfer
+accept-direct-connect-gateway-association-proposal
 accept-handshake
 accept-invitation
 accept-match
@@ -554,6 +555,7 @@ create-device-pool
 create-dhcp-options
 create-direct-connect-gateway
 create-direct-connect-gateway-association
+create-direct-connect-gateway-association-proposal
 create-directory
 create-directory-config
 create-disk
@@ -1022,6 +1024,7 @@ delete-device-pool
 delete-dhcp-options
 delete-direct-connect-gateway
 delete-direct-connect-gateway-association
+delete-direct-connect-gateway-association-proposal
 delete-directory
 delete-directory-config
 delete-disk
@@ -1548,6 +1551,7 @@ describe-delivery-stream
 describe-deployments
 describe-destinations
 describe-dhcp-options
+describe-direct-connect-gateway-association-proposals
 describe-direct-connect-gateway-associations
 describe-direct-connect-gateway-attachments
 describe-direct-connect-gateways
@@ -4053,6 +4057,7 @@ update-device-definition
 update-device-instance
 update-device-pool
 update-device-status
+update-direct-connect-gateway-association
 update-directory-config
 update-distribution
 update-document
