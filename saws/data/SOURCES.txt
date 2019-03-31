@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4184
+[sub_commands]: 4189
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -814,6 +814,7 @@ create-tags
 create-tape-with-barcode
 create-tapes
 create-target-group
+create-task-set
 create-template
 create-thing
 create-thing-group
@@ -1303,6 +1304,7 @@ delete-tags-for-domain
 delete-tape
 delete-tape-archive
 delete-target-group
+delete-task-set
 delete-template
 delete-terminology
 delete-thing
@@ -1912,6 +1914,7 @@ describe-target-group-attributes
 describe-target-groups
 describe-target-health
 describe-task-definition
+describe-task-sets
 describe-tasks
 describe-termination-policy-types
 describe-thing
@@ -4225,6 +4228,7 @@ update-server-engine-attributes
 update-service
 update-service-access-policies
 update-service-action
+update-service-primary-task-set
 update-service-setting
 update-service-specific-credential
 update-shard-count
@@ -4251,6 +4255,7 @@ update-table
 update-tag-option
 update-tags-for-domain
 update-tags-for-resource
+update-task-set
 update-team-member
 update-template
 update-termination-protection
