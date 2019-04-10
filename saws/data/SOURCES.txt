@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4189
+[sub_commands]: 4190
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4199,6 +4199,7 @@ update-replication-job
 update-repository-description
 update-repository-name
 update-request-validator
+update-reservation
 update-resolver
 update-resource
 update-resource-definition
