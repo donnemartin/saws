@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4190
+[sub_commands]: 4192
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1451,6 +1451,8 @@ describe-bandwidth-rate-limit
 describe-batch-predictions
 describe-billing-group
 describe-broker
+describe-broker-engine-types
+describe-broker-instance-options
 describe-budget
 describe-budget-performance-history
 describe-budgets
