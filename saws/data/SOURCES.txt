@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4192
+[sub_commands]: 4193
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -602,6 +602,7 @@ create-game-session-queue
 create-geo-match-set
 create-global-cluster
 create-global-table
+create-gov-cloud-account
 create-grant
 create-graphql-api
 create-group
