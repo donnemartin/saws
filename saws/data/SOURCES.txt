@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4193
+[sub_commands]: 4205
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -599,6 +599,7 @@ create-function-definition
 create-function-definition-version
 create-game-session
 create-game-session-queue
+create-gateway-group
 create-geo-match-set
 create-global-cluster
 create-global-table
@@ -1075,6 +1076,7 @@ delete-function-concurrency
 delete-function-definition
 delete-game-session-queue
 delete-gateway
+delete-gateway-group
 delete-gateway-response
 delete-gcm-channel
 delete-geo-match-set
@@ -1258,6 +1260,7 @@ delete-scaling-policy
 delete-scheduled-action
 delete-scheduled-audit
 delete-schema
+delete-script
 delete-security-configuration
 delete-security-group
 delete-security-profile
@@ -1849,6 +1852,7 @@ describe-scheduled-audit
 describe-scheduled-instance-availability
 describe-scheduled-instances
 describe-schemas
+describe-script
 describe-security-configuration
 describe-security-group-references
 describe-security-groups
@@ -2387,6 +2391,8 @@ get-function-definition
 get-function-definition-version
 get-game-session-log
 get-game-session-log-url
+get-gateway
+get-gateway-group
 get-gateway-response
 get-gateway-responses
 get-gcm-channel
@@ -2465,6 +2471,7 @@ get-key-rotation-status
 get-label-detection
 get-launch-template-data
 get-layer-version
+get-layer-version-by-arn
 get-layer-version-policy
 get-lexicon
 get-lifecycle-policy
@@ -2933,6 +2940,7 @@ list-fragments
 list-function-definition-versions
 list-function-definitions
 list-functions
+list-gateway-groups
 list-gateways
 list-geo-locations
 list-geo-match-sets
@@ -3111,6 +3119,7 @@ list-saml-providers
 list-samples
 list-scheduled-audits
 list-schema-extensions
+list-scripts
 list-security-configurations
 list-security-profiles
 list-security-profiles-for-target
@@ -4107,6 +4116,8 @@ update-function-configuration
 update-function-definition
 update-game-session
 update-game-session-queue
+update-gateway
+update-gateway-group
 update-gateway-information
 update-gateway-response
 update-gateway-software-now
@@ -4222,6 +4233,7 @@ update-scaling-parameters
 update-scaling-plan
 update-scheduled-audit
 update-schema
+update-script
 update-security-group-rule-descriptions-egress
 update-security-group-rule-descriptions-ingress
 update-security-profile
