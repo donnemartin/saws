@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4205
+[sub_commands]: 4206
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3755,6 +3755,7 @@ set-repository-policy
 set-risk-configuration
 set-rule-priorities
 set-security-groups
+set-security-token-service-preferences
 set-smb-guest-password
 set-sms-attributes
 set-stack-policy
