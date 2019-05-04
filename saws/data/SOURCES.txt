@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4206
+[sub_commands]: 4215
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -225,6 +225,7 @@ allocate-hosts
 allocate-private-virtual-interface
 allocate-public-virtual-interface
 allocate-static-ip
+allocate-transit-virtual-interface
 apply-environment-managed-action
 apply-pending-maintenance-action
 apply-schema
@@ -238,6 +239,7 @@ assign-ipv6-addresses
 assign-private-ip-addresses
 assign-volume
 associate-address
+associate-budget-with-resource
 associate-certificate
 associate-client-vpn-target-network
 associate-configuration-items-to-application
@@ -419,6 +421,7 @@ confirm-product-instance
 confirm-public-virtual-interface
 confirm-sign-up
 confirm-subscription
+confirm-transit-virtual-interface
 connect-custom-key-store
 connect-directory
 continue-deployment
@@ -834,6 +837,7 @@ create-transit-gateway
 create-transit-gateway-route
 create-transit-gateway-route-table
 create-transit-gateway-vpc-attachment
+create-transit-virtual-interface
 create-trigger
 create-trust
 create-type
@@ -2046,6 +2050,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-budget-from-resource
 disassociate-certificate
 disassociate-client-vpn-target-network
 disassociate-configuration-items-from-application
@@ -2695,6 +2700,7 @@ get-test
 get-thing-shadow
 get-third-party-job-details
 get-threat-intel-set
+get-time-series-service-statistics
 get-topic-attributes
 get-topic-rule
 get-trace-graph
@@ -2843,6 +2849,7 @@ list-bucket-analytics-configurations
 list-bucket-inventory-configurations
 list-bucket-metrics-configurations
 list-buckets
+list-budgets-for-resource
 list-builds
 list-builds-for-project
 list-bulk-deployment-detailed-reports
@@ -3323,6 +3330,7 @@ modify-vpc-endpoint-service-configuration
 modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
+modify-vpn-connection
 modify-workspace-properties
 modify-workspace-state
 monitor-instances
@@ -3704,6 +3712,7 @@ search-users
 select
 select-object-content
 select-resource-config
+send-announcement
 send-automation-signal
 send-bonus
 send-bounce
