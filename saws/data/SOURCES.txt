@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4215
+[sub_commands]: 4220
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -213,6 +213,7 @@ admin-remove-user-from-group
 admin-reset-user-password
 admin-respond-to-auth-challenge
 admin-set-user-mfa-preference
+admin-set-user-password
 admin-set-user-settings
 admin-update-auth-event-feedback
 admin-update-device-status
@@ -1261,6 +1262,7 @@ delete-saml-provider
 delete-sampling-rule
 delete-scaling-plan
 delete-scaling-policy
+delete-schedule
 delete-scheduled-action
 delete-scheduled-audit
 delete-schema
@@ -2495,6 +2497,7 @@ get-logging-configuration
 get-logging-options
 get-login
 get-login-profile
+get-mailbox-details
 get-maintenance-window
 get-maintenance-window-execution
 get-maintenance-window-execution-task
@@ -4039,6 +4042,7 @@ update-campaign
 update-certificate
 update-certificate-options
 update-channel
+update-channel-class
 update-chap-credentials
 update-classifier
 update-client-certificate
@@ -4167,6 +4171,7 @@ update-link-attributes
 update-load-balancer-attribute
 update-logger-definition
 update-login-profile
+update-mailbox-quota
 update-maintenance-start-time
 update-maintenance-window
 update-maintenance-window-target
