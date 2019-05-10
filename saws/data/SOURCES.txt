@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4220
+[sub_commands]: 4222
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1029,6 +1029,7 @@ delete-dev-endpoint
 delete-device
 delete-device-definition
 delete-device-pool
+delete-device-usage-data
 delete-dhcp-options
 delete-direct-connect-gateway
 delete-direct-connect-gateway-association
@@ -1775,6 +1776,7 @@ describe-parameters
 describe-patch-baselines
 describe-patch-group-state
 describe-patch-groups
+describe-patch-properties
 describe-pending-aggregation-requests
 describe-pending-maintenance-actions
 describe-permissions
