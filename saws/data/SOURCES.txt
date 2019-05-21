@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4222
+[sub_commands]: 4225
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -846,6 +846,7 @@ create-typed-link-facet
 create-upload
 create-usage-plan
 create-usage-plan-key
+create-usage-report-subscription
 create-user
 create-user-defined-function
 create-user-import-job
@@ -1340,6 +1341,7 @@ delete-typed-link-facet
 delete-upload
 delete-usage-plan
 delete-usage-plan-key
+delete-usage-report-subscription
 delete-user
 delete-user-attributes
 delete-user-defined-function
@@ -1952,6 +1954,7 @@ describe-trusted-advisor-check-summaries
 describe-trusted-advisor-checks
 describe-trusts
 describe-upload-buffer
+describe-usage-report-subscriptions
 describe-user
 describe-user-import-job
 describe-user-pool
