@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4225
+[sub_commands]: 4227
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -248,6 +248,7 @@ associate-connection-with-lag
 associate-contact-with-address-book
 associate-created-artifact
 associate-delegate-to-resource
+associate-device-with-network-profile
 associate-device-with-room
 associate-dhcp-options
 associate-discovered-resource
@@ -3708,6 +3709,7 @@ search-faces
 search-faces-by-image
 search-game-sessions
 search-index
+search-network-profiles
 search-products
 search-products-as-admin
 search-profiles
