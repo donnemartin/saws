@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4227
+[sub_commands]: 4228
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4215,6 +4215,7 @@ update-product
 update-profile
 update-project
 update-provisioned-product
+update-provisioned-product-properties
 update-provisioning-artifact
 update-public-key
 update-pull-request-description
