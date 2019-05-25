@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4228
+[sub_commands]: 4234
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2038,6 +2038,7 @@ disable-aws-service-access
 disable-directory
 disable-domain-auto-renew
 disable-domain-transfer-lock
+disable-ebs-encryption-by-default
 disable-enhanced-monitoring
 disable-gateway
 disable-hbase-backups
@@ -2112,6 +2113,7 @@ enable-aws-service-access
 enable-directory
 enable-domain-auto-renew
 enable-domain-transfer-lock
+enable-ebs-encryption-by-default
 enable-enhanced-monitoring
 enable-key
 enable-key-rotation
@@ -2367,6 +2369,8 @@ get-domain-names
 get-domain-suggestions
 get-domains
 get-download-url-for-layer
+get-ebs-default-kms-key-id
+get-ebs-encryption-by-default
 get-effective-policies
 get-email-channel
 get-encryption-config
@@ -3291,6 +3295,7 @@ modify-db-snapshot
 modify-db-snapshot-attribute
 modify-db-subnet-group
 modify-document-permission
+modify-ebs-default-kms-key-id
 modify-endpoint
 modify-event-subscription
 modify-fleet
@@ -3634,6 +3639,7 @@ reset-cluster-parameter-group
 reset-db-cluster-parameter-group
 reset-db-parameter-group
 reset-deployments
+reset-ebs-default-kms-key-id
 reset-fpga-image-attribute
 reset-image-attribute
 reset-instance-attribute
