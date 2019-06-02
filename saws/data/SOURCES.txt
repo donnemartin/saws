@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4234
+[sub_commands]: 4235
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -238,6 +238,7 @@ archive-findings
 assign-instance
 assign-ipv6-addresses
 assign-private-ip-addresses
+assign-tape-pool
 assign-volume
 associate-address
 associate-budget-with-resource
