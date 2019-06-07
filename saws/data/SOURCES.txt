@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4235
+[sub_commands]: 4239
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -795,6 +795,7 @@ create-snapshot
 create-snapshot-copy-grant
 create-snapshot-from-volume-recovery-point
 create-snapshot-schedule
+create-snapshots
 create-software-update-job
 create-spot-datafeed-subscription
 create-sql-injection-match-set
@@ -3163,6 +3164,7 @@ list-speech-synthesis-tasks
 list-sql-injection-match-sets
 list-ssh-public-keys
 list-stack-instances
+list-stack-instances-for-provisioned-product
 list-stack-resources
 list-stack-set-operation-results
 list-stack-set-operations
@@ -3813,6 +3815,7 @@ socks
 split-shard
 ssh
 start-access-logging
+start-activity-stream
 start-app-replication
 start-application
 start-assessment-run
@@ -3890,6 +3893,7 @@ start-user-import-job
 start-workflow-execution
 start-workspaces
 stop-access-logging
+stop-activity-stream
 stop-app-replication
 stop-application
 stop-assessment-run
