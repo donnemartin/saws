@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4244
+[sub_commands]: 4251
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -700,6 +700,7 @@ create-notification
 create-notification-subscription
 create-object
 create-open-id-connect-provider
+create-ops-item
 create-option-group
 create-or-update-tags
 create-organization
@@ -1770,6 +1771,7 @@ describe-object
 describe-objects
 describe-offering
 describe-operating-systems
+describe-ops-items
 describe-option-group-options
 describe-option-groups
 describe-orderable-cluster-options
@@ -2555,6 +2557,8 @@ get-operation
 get-operation-detail
 get-operations
 get-operations-for-resource
+get-ops-item
+get-ops-summary
 get-ota-update
 get-parameter
 get-parameter-history
@@ -3433,6 +3437,7 @@ put-conference-preference
 put-config-rule
 put-configuration-aggregator
 put-configuration-recorder
+put-configuration-set-delivery-options
 put-container-policy
 put-cors-policy
 put-dashboard
@@ -3952,6 +3957,7 @@ stop-transform-job
 stop-trigger
 stop-user-import-job
 stop-workspaces
+submit-attachment-state-changes
 submit-container-state-change
 submit-job
 submit-task-state-change
@@ -4214,6 +4220,7 @@ update-notification-settings
 update-number-of-domain-controllers
 update-object-attributes
 update-open-id-connect-provider-thumbprint
+update-ops-item
 update-organizational-unit
 update-origin-endpoint
 update-parameter-group
