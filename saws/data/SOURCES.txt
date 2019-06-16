@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4251
+[sub_commands]: 4261
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -333,6 +333,7 @@ batch-delete-partition
 batch-delete-scheduled-action
 batch-delete-table
 batch-delete-table-version
+batch-describe-merge-conflicts
 batch-detect-dominant-language
 batch-detect-entities
 batch-detect-key-phrases
@@ -849,6 +850,7 @@ create-trigger
 create-trust
 create-type
 create-typed-link-facet
+create-unreferenced-merge-commit
 create-upload
 create-usage-plan
 create-usage-plan-key
@@ -1745,6 +1747,7 @@ describe-maintenance-windows-for-target
 describe-matchmaking
 describe-matchmaking-configurations
 describe-matchmaking-rule-sets
+describe-merge-conflicts
 describe-metric-collection-types
 describe-metric-filters
 describe-migration-task
@@ -2526,7 +2529,9 @@ get-master-account
 get-media
 get-media-for-fragment-list
 get-members
+get-merge-commit
 get-merge-conflicts
+get-merge-options
 get-method
 get-method-response
 get-metric-data
@@ -3275,8 +3280,13 @@ lookup-events
 lookup-policy
 ls
 mb
+merge-branches-by-fast-forward
+merge-branches-by-squash
+merge-branches-by-three-way
 merge-developer-identities
 merge-pull-request-by-fast-forward
+merge-pull-request-by-squash
+merge-pull-request-by-three-way
 merge-shards
 meter-usage
 modify-account
