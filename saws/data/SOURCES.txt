@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4261
+[sub_commands]: 4283
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -362,6 +362,7 @@ batch-get-repositories
 batch-get-resource-config
 batch-get-traces
 batch-get-triggers
+batch-get-workflows
 batch-meter-usage
 batch-modify-cluster-snapshots
 batch-put-attributes
@@ -882,6 +883,7 @@ create-web-acl
 create-webhook
 create-work-group
 create-worker-block
+create-workflow
 create-workspaces
 create-workteam
 create-xss-match-set
@@ -1319,6 +1321,7 @@ delete-suggester
 delete-table
 delete-table-version
 delete-tag-option
+delete-tag-policy
 delete-tags
 delete-tags-for-domain
 delete-tape
@@ -1386,6 +1389,7 @@ delete-web-acl
 delete-webhook
 delete-work-group
 delete-worker-block
+delete-workflow
 delete-workspace-image
 delete-workteam
 delete-xss-match-set
@@ -1829,6 +1833,7 @@ describe-replication-instances
 describe-replication-subnet-groups
 describe-replication-task-assessment-results
 describe-replication-tasks
+describe-report-creation
 describe-report-definitions
 describe-repositories
 describe-reservation
@@ -2063,6 +2068,7 @@ disable-rule
 disable-snapshot-copy
 disable-sso
 disable-stage-transition
+disable-tag-policies
 disable-topic-rule
 disable-transit-gateway-route-table-propagation
 disable-user
@@ -2137,6 +2143,7 @@ enable-rule
 enable-snapshot-copy
 enable-sso
 enable-stage-transition
+enable-tag-policies
 enable-topic-rule
 enable-transit-gateway-route-table-propagation
 enable-user
@@ -2177,6 +2184,7 @@ generate-data-key
 generate-data-key-without-plaintext
 generate-data-set
 generate-db-auth-token
+generate-organizations-access-report
 generate-random
 generate-service-last-accessed-details
 generate-template
@@ -2296,6 +2304,7 @@ get-commit
 get-compatible-elasticsearch-versions
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
+get-compliance-summary
 get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
 get-conference-preference
@@ -2383,6 +2392,7 @@ get-download-url-for-layer
 get-ebs-default-kms-key-id
 get-ebs-encryption-by-default
 get-effective-policies
+get-effective-tag-policy
 get-email-channel
 get-encryption-config
 get-endpoint
@@ -2564,6 +2574,7 @@ get-operations
 get-operations-for-resource
 get-ops-item
 get-ops-summary
+get-organizations-access-report
 get-ota-update
 get-parameter
 get-parameter-history
@@ -2718,6 +2729,7 @@ get-table-version
 get-table-versions
 get-tables
 get-tag-keys
+get-tag-policy
 get-tag-values
 get-tags
 get-telemetry-metadata
@@ -2774,7 +2786,11 @@ get-vpce-configuration
 get-web-acl
 get-web-acl-for-resource
 get-work-group
+get-workflow
 get-workflow-execution-history
+get-workflow-run
+get-workflow-run-properties
+get-workflow-runs
 get-xss-match-set
 global-sign-out
 grant-access
@@ -3273,6 +3289,7 @@ list-work-groups
 list-worker-blocks
 list-workers-with-qualification-type
 list-workflow-types
+list-workflows
 list-workteams
 list-xss-match-sets
 lookup-developer-identity
@@ -3523,6 +3540,7 @@ put-schema-from-json
 put-skill-authorization
 put-slot-type
 put-subscription-filter
+put-tag-policy
 put-targets
 put-telemetry-records
 put-third-party-job-failure-result
@@ -3531,6 +3549,7 @@ put-trace-segments
 put-user-permissions-boundary
 put-user-policy
 put-webhook
+put-workflow-run-properties
 query
 query-objects
 rb
@@ -3893,6 +3912,7 @@ start-relational-database
 start-remediation-execution
 start-replication-task
 start-replication-task-assessment
+start-report-creation
 start-schema-creation
 start-schema-extension
 start-sentiment-detection-job
@@ -3910,6 +3930,7 @@ start-transcription-job
 start-trigger
 start-user-import-job
 start-workflow-execution
+start-workflow-run
 start-workspaces
 stop-access-logging
 stop-activity-stream
@@ -4364,6 +4385,7 @@ update-vtl-device-type
 update-web-acl
 update-webhook
 update-work-group
+update-workflow
 update-workteam
 update-xss-match-set
 upgrade-applied-schema
