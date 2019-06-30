@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4274
+[sub_commands]: 4288
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -836,6 +836,10 @@ create-thing-type
 create-threat-intel-set
 create-topic
 create-topic-rule
+create-traffic-mirror-filter
+create-traffic-mirror-filter-rule
+create-traffic-mirror-session
+create-traffic-mirror-target
 create-traffic-policy
 create-traffic-policy-instance
 create-traffic-policy-version
@@ -1336,6 +1340,10 @@ delete-thing-type
 delete-threat-intel-set
 delete-topic
 delete-topic-rule
+delete-traffic-mirror-filter
+delete-traffic-mirror-filter-rule
+delete-traffic-mirror-session
+delete-traffic-mirror-target
 delete-traffic-policy
 delete-traffic-policy-instance
 delete-trail
@@ -1955,6 +1963,9 @@ describe-thing-type
 describe-time-based-auto-scaling
 describe-time-to-live
 describe-topics-detection-job
+describe-traffic-mirror-filters
+describe-traffic-mirror-sessions
+describe-traffic-mirror-targets
 describe-trails
 describe-training-job
 describe-transform-job
@@ -3365,6 +3376,9 @@ modify-spot-fleet-request
 modify-subnet-attribute
 modify-target-group
 modify-target-group-attributes
+modify-traffic-mirror-filter-network-services
+modify-traffic-mirror-filter-rule
+modify-traffic-mirror-session
 modify-transit-gateway-vpc-attachment
 modify-volume
 modify-volume-attribute
