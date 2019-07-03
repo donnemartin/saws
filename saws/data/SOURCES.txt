@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4288
+[sub_commands]: 4289
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -445,6 +445,7 @@ copy-object
 copy-option-group
 copy-product
 copy-snapshot
+copy-workspace-image
 count-closed-workflow-executions
 count-open-workflow-executions
 count-pending-activity-tasks
