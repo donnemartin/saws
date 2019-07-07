@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4289
+[sub_commands]: 4292
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4047,6 +4047,9 @@ unassign-instance
 unassign-ipv6-addresses
 unassign-private-ip-addresses
 unassign-volume
+undeprecate-activity-type
+undeprecate-domain
+undeprecate-workflow-type
 uninstall
 unlink-developer-identity
 unlink-identity
