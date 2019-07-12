@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4292
+[sub_commands]: 4302
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -921,6 +921,7 @@ delete-alarms
 delete-algorithm
 delete-alias
 delete-analysis-scheme
+delete-anomaly-detector
 delete-api-key
 delete-apns-channel
 delete-apns-sandbox-channel
@@ -1201,6 +1202,7 @@ delete-objects
 delete-open-id-connect-provider
 delete-option-group
 delete-organization
+delete-organization-config-rule
 delete-organizational-unit
 delete-origin-endpoint
 delete-ota-update
@@ -1455,6 +1457,7 @@ describe-alarms-for-metric
 describe-algorithm
 describe-alias
 describe-analysis-schemes
+describe-anomaly-detectors
 describe-application
 describe-application-state
 describe-application-versions
@@ -1793,6 +1796,8 @@ describe-orderable-cluster-options
 describe-orderable-db-instance-options
 describe-orderable-replication-instances
 describe-organization
+describe-organization-config-rule-statuses
+describe-organization-config-rules
 describe-organizational-unit
 describe-origin-endpoint
 describe-parameter-groups
@@ -2345,6 +2350,7 @@ get-credentials-for-identity
 get-csv-header
 get-current-user
 get-custom-verification-email-template
+get-dash-streaming-session-url
 get-dashboard
 get-data-catalog-encryption-settings
 get-data-endpoint
@@ -2580,6 +2586,7 @@ get-operations
 get-operations-for-resource
 get-ops-item
 get-ops-summary
+get-organization-config-rule-detailed-status
 get-organizations-access-report
 get-ota-update
 get-parameter
@@ -2767,6 +2774,7 @@ get-upgrade-history
 get-upgrade-status
 get-upload
 get-usage
+get-usage-forecast
 get-usage-plan
 get-usage-plan-key
 get-usage-plan-keys
@@ -3443,6 +3451,7 @@ put-account-setting
 put-account-setting-default
 put-action-revision
 put-aggregation-authorization
+put-anomaly-detector
 put-app-launch-configuration
 put-app-replication-configuration
 put-application-policy
@@ -3521,6 +3530,7 @@ put-object-legal-hold
 put-object-lock-configuration
 put-object-retention
 put-object-tagging
+put-organization-config-rule
 put-parameter
 put-permission
 put-permission-policy
