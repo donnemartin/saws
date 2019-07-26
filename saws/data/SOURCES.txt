@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4316
+[sub_commands]: 4319
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2211,6 +2211,7 @@ generate-random
 generate-service-last-accessed-details
 generate-template
 get
+get-access-key-info
 get-access-key-last-used
 get-account
 get-account-authorization-details
@@ -2239,6 +2240,7 @@ get-app
 get-app-launch-configuration
 get-app-replication-configuration
 get-application
+get-application-date-range-kpi
 get-application-policy
 get-application-revision
 get-application-settings
@@ -2296,6 +2298,7 @@ get-byte-match-set
 get-caller-identity
 get-campaign
 get-campaign-activities
+get-campaign-date-range-kpi
 get-campaign-version
 get-campaign-versions
 get-campaigns
