@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4319
+[sub_commands]: 4320
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3516,6 +3516,7 @@ put-gateway-response
 put-group-policy
 put-identity-policy
 put-image
+put-image-tag-mutability
 put-instance-public-ports
 put-integration
 put-integration-response
