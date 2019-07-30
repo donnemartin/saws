@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4320
+[sub_commands]: 4324
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2302,6 +2302,7 @@ get-campaign-date-range-kpi
 get-campaign-version
 get-campaign-versions
 get-campaigns
+get-capacity-reservation-usage
 get-catalog-import-status
 get-celebrity-info
 get-celebrity-recognition
@@ -2517,6 +2518,8 @@ get-invitations-count
 get-ip-set
 get-item
 get-job
+get-job-bookmark
+get-job-bookmarks
 get-job-details
 get-job-document
 get-job-manifest
@@ -2681,6 +2684,7 @@ get-rest-api
 get-rest-apis
 get-reusable-delegation-set
 get-reusable-delegation-set-limit
+get-rightsizing-recommendation
 get-role
 get-role-policy
 get-room
