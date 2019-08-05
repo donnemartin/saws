@@ -57,40 +57,38 @@ class Toolbar(object):
         assert callable(fuzzy_cfg)
         assert callable(shortcuts_cfg)
 
-        def get_toolbar_items(_):
+        def get_toolbar_items():
             """Returns bottom menu items.
-
-            Args:
-                * _: An instance of prompt_toolkit's Cli (not used).
 
             Returns:
                 A list of Token.Toolbar.
             """
             if color_cfg():
-                color_token = Token.Toolbar.On
+                color_token = 'class:toolbar.on'
                 color = 'ON'
             else:
-                color_token = Token.Toolbar.Off
+                color_token = 'class:toolbar.off'
                 color = 'OFF'
             if fuzzy_cfg():
-                fuzzy_token = Token.Toolbar.On
+                fuzzy_token = 'class:toolbar.on'
                 fuzzy = 'ON'
             else:
-                fuzzy_token = Token.Toolbar.Off
+                fuzzy_token = 'class:toolbar.off'
                 fuzzy = 'OFF'
             if shortcuts_cfg():
-                shortcuts_token = Token.Toolbar.On
+                shortcuts_token = 'class:toolbar.on'
                 shortcuts = 'ON'
             else:
-                shortcuts_token = Token.Toolbar.Off
+                shortcuts_token = 'class:toolbar.off'
                 shortcuts = 'OFF'
+
             return [
                 (color_token, ' [F2] Color: {0} '.format(color)),
                 (fuzzy_token, ' [F3] Fuzzy: {0} '.format(fuzzy)),
                 (shortcuts_token, ' [F4] Shortcuts: {0} '.format(shortcuts)),
-                (Token.Toolbar, ' [F5] Refresh '),
-                (Token.Toolbar, ' [F9] Docs '),
-                (Token.Toolbar, ' [F10] Exit ')
+                ('', ' [F5] Refresh '),
+                ('', ' [F9] Docs '),
+                ('', ' [F10] Exit ')
             ]
 
         return get_toolbar_items
