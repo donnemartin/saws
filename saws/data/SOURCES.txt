@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4324
+[sub_commands]: 4335
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -378,6 +378,7 @@ build-suggesters
 bulk-publish
 bundle-instance
 cancel-archival
+cancel-audit-mitigation-actions-task
 cancel-audit-task
 cancel-bundle-task
 cancel-capacity-reservation
@@ -686,6 +687,7 @@ create-matchmaking-configuration
 create-matchmaking-rule-set
 create-members
 create-microsoft-ad
+create-mitigation-action
 create-ml-model
 create-model
 create-model-package
@@ -1184,6 +1186,7 @@ delete-message-batch
 delete-method
 delete-method-response
 delete-metric-filter
+delete-mitigation-action
 delete-ml-model
 delete-model
 delete-model-package
@@ -1477,6 +1480,8 @@ describe-association-execution-targets
 describe-association-executions
 describe-attachment
 describe-attack
+describe-audit-finding
+describe-audit-mitigation-actions-task
 describe-audit-task
 describe-authorizer
 describe-auto-scaling-groups
@@ -1773,6 +1778,7 @@ describe-merge-conflicts
 describe-metric-collection-types
 describe-metric-filters
 describe-migration-task
+describe-mitigation-action
 describe-ml-models
 describe-model
 describe-model-package
@@ -2907,6 +2913,8 @@ list-attached-user-policies
 list-attacks
 list-attributes
 list-audit-findings
+list-audit-mitigation-actions-executions
+list-audit-mitigation-actions-tasks
 list-audit-tasks
 list-authorizers
 list-available-management-cidr-ranges
@@ -3096,6 +3104,7 @@ list-members
 list-metrics
 list-mfa-devices
 list-migration-tasks
+list-mitigation-actions
 list-model-packages
 list-models
 list-multipart-uploads
@@ -3897,6 +3906,7 @@ start-app-replication
 start-application
 start-assessment-run
 start-associations-once
+start-audit-mitigation-actions-task
 start-automation-execution
 start-build
 start-bulk-deployment
@@ -4280,6 +4290,7 @@ update-managed-instance-role
 update-matchmaking-configuration
 update-method
 update-method-response
+update-mitigation-action
 update-ml-model
 update-model
 update-my-user-profile
