@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4335
+[sub_commands]: 4351
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -394,6 +394,7 @@ cancel-job
 cancel-job-execution
 cancel-key-deletion
 cancel-maintenance-window-execution
+cancel-ml-task-run
 cancel-reserved-instances-listing
 cancel-resize
 cancel-retrieval
@@ -689,6 +690,7 @@ create-members
 create-microsoft-ad
 create-mitigation-action
 create-ml-model
+create-ml-transform
 create-model
 create-model-package
 create-mount-target
@@ -1188,6 +1190,7 @@ delete-method-response
 delete-metric-filter
 delete-mitigation-action
 delete-ml-model
+delete-ml-transform
 delete-model
 delete-model-package
 delete-mount-target
@@ -1306,6 +1309,7 @@ delete-service
 delete-service-action
 delete-service-linked-role
 delete-service-specific-credential
+delete-session
 delete-signing-certificate
 delete-size-constraint-set
 delete-skill-authorization
@@ -2581,6 +2585,10 @@ get-metric-data
 get-metric-statistics
 get-metric-widget-image
 get-ml-model
+get-ml-task-run
+get-ml-task-runs
+get-ml-transform
+get-ml-transforms
 get-model
 get-model-template
 get-models
@@ -2729,6 +2737,7 @@ get-service-last-accessed-details-with-entities
 get-service-linked-role-deletion-status
 get-service-role-for-account
 get-service-setting
+get-session
 get-session-token
 get-shard-iterator
 get-shipping-label
@@ -3586,6 +3595,7 @@ put-scaling-policy
 put-scheduled-action
 put-scheduled-update-group-action
 put-schema-from-json
+put-session
 put-skill-authorization
 put-slot-type
 put-subscription-filter
@@ -3812,6 +3822,7 @@ search-provisioned-products
 search-resources
 search-rooms
 search-skill-groups
+search-tables
 search-transit-gateway-routes
 search-users
 select
@@ -3928,6 +3939,7 @@ start-dominant-language-detection-job
 start-elasticsearch-service-software-update
 start-entities-detection-job
 start-execution
+start-export-labels-task-run
 start-export-task
 start-face-detection
 start-face-search
@@ -3937,6 +3949,7 @@ start-game-session-placement
 start-gateway
 start-image-builder
 start-import
+start-import-labels-task-run
 start-import-task
 start-instance
 start-instances
@@ -3948,6 +3961,8 @@ start-logging
 start-maintenance
 start-match-backfill
 start-matchmaking
+start-ml-evaluation-task-run
+start-ml-labeling-set-generation-task-run
 start-monitoring-members
 start-next-pending-job-execution
 start-notebook-instance
@@ -4292,6 +4307,7 @@ update-method
 update-method-response
 update-mitigation-action
 update-ml-model
+update-ml-transform
 update-model
 update-my-user-profile
 update-network-profile
