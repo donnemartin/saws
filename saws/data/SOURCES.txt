@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4351
+[sub_commands]: 4352
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3835,6 +3835,7 @@ send-bounce
 send-bulk-templated-email
 send-command
 send-custom-verification-email
+send-diagnostic-interrupt
 send-email
 send-invitation
 send-message
