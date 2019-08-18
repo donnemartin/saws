@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4352
+[sub_commands]: 4353
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -346,6 +346,7 @@ batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
 batch-get-builds
+batch-get-commits
 batch-get-crawlers
 batch-get-deployment-groups
 batch-get-deployment-targets
@@ -2529,7 +2530,6 @@ get-ip-set
 get-item
 get-job
 get-job-bookmark
-get-job-bookmarks
 get-job-details
 get-job-document
 get-job-manifest
@@ -3437,6 +3437,7 @@ modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
 modify-vpn-connection
+modify-vpn-tunnel-certificate
 modify-workspace-properties
 modify-workspace-state
 monitor-instances
