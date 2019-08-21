@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4353
+[sub_commands]: 4356
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2272,6 +2272,7 @@ get-base-path-mapping
 get-base-path-mappings
 get-batch-prediction
 get-blob
+get-block-public-access-configuration
 get-blueprints
 get-bot
 get-bot-alias
@@ -3414,6 +3415,7 @@ modify-replication-group-shard-configuration
 modify-replication-instance
 modify-replication-subnet-group
 modify-replication-task
+modify-report-definition
 modify-reserved-instances
 modify-rule
 modify-snapshot-attribute
@@ -3497,6 +3499,7 @@ put-application-policy
 put-approval-result
 put-attributes
 put-auto-scaling-policy
+put-block-public-access-configuration
 put-bot
 put-bot-alias
 put-bucket-accelerate-configuration
