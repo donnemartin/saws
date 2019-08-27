@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4356
+[sub_commands]: 4358
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1665,6 +1665,7 @@ describe-event-types
 describe-events
 describe-exclusions
 describe-execution
+describe-export-image-tasks
 describe-export-tasks
 describe-expressions
 describe-file-systems
@@ -2198,6 +2199,7 @@ export-bundle
 export-certificate
 export-client-vpn-client-certificate-revocation-list
 export-client-vpn-client-configuration
+export-image
 export-project
 export-server-engine-attribute
 export-snapshot
