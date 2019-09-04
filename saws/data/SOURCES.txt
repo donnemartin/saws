@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4358
+[sub_commands]: 4359
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4180,6 +4180,7 @@ update-classifier
 update-client-certificate
 update-cloud-front-origin-access-identity
 update-cluster
+update-cluster-settings
 update-code-repository
 update-comment
 update-compute-environment
