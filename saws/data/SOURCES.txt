@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4359
+[sub_commands]: 4362
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1258,6 +1258,7 @@ delete-registration-code
 delete-relational-database
 delete-relational-database-snapshot
 delete-remediation-configuration
+delete-remediation-exceptions
 delete-remote-access-session
 delete-replication-group
 delete-replication-instance
@@ -1859,6 +1860,7 @@ describe-record
 describe-refresh-schemas-status
 describe-regions
 describe-remediation-configurations
+describe-remediation-exceptions
 describe-remediation-execution-status
 describe-replication-groups
 describe-replication-instance-task-logs
@@ -3586,6 +3588,7 @@ put-record
 put-record-batch
 put-records
 put-remediation-configurations
+put-remediation-exceptions
 put-report-definition
 put-repository-triggers
 put-resource-attributes
