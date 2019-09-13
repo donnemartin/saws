@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4362
+[sub_commands]: 4363
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3444,6 +3444,7 @@ modify-vpc-peering-connection-options
 modify-vpc-tenancy
 modify-vpn-connection
 modify-vpn-tunnel-certificate
+modify-vpn-tunnel-options
 modify-workspace-properties
 modify-workspace-state
 monitor-instances
