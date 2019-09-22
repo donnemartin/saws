@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4363
+[sub_commands]: 4365
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2049,6 +2049,7 @@ describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
 describe-workspace-images
+describe-workspace-snapshots
 describe-workspaces
 describe-workspaces-connection-status
 describe-workteam
@@ -3786,6 +3787,7 @@ restore-server
 restore-table-from-backup
 restore-table-from-cluster-snapshot
 restore-table-to-point-in-time
+restore-workspace
 resume-processes
 resume-session
 resync-mfa-device
