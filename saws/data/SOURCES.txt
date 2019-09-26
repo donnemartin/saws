@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4365
+[sub_commands]: 4366
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1800,6 +1800,7 @@ describe-network-interface-permissions
 describe-network-interfaces
 describe-nfs-file-shares
 describe-node-association-status
+describe-node-configuration-options
 describe-notebook-instance
 describe-notebook-instance-lifecycle-config
 describe-notification-configurations
