@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4366
+[sub_commands]: 4370
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -954,6 +954,7 @@ delete-association
 delete-attributes
 delete-authorizer
 delete-auto-scaling-group
+delete-auto-snapshot
 delete-backup
 delete-baidu-channel
 delete-bandwidth-rate-limit
@@ -2087,6 +2088,7 @@ detect-stack-drift
 detect-stack-resource-drift
 detect-syntax
 detect-text
+disable-add-on
 disable-alarm-actions
 disable-availability-zones-for-load-balancer
 disable-aws-organizations-access
@@ -2161,6 +2163,7 @@ discover-poll-endpoint
 domain-metadata
 download-db-log-file-portion
 download-default-key-pair
+enable-add-on
 enable-alarm-actions
 enable-all-features
 enable-availability-zones-for-load-balancer
@@ -2271,6 +2274,7 @@ get-attributes
 get-authorization-token
 get-authorizer
 get-authorizers
+get-auto-snapshots
 get-automation-execution
 get-aws-organizations-access-status
 get-baidu-channel
