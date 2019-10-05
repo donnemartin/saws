@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4370
+[sub_commands]: 4374
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -626,6 +626,7 @@ create-group
 create-group-certificate-authority
 create-group-version
 create-hapg
+create-harvest-job
 create-hbase-backup
 create-health-check
 create-hit
@@ -1248,6 +1249,7 @@ delete-public-key
 delete-qualification-type
 delete-query-logging-config
 delete-queue
+delete-queued-reserved-instances
 delete-rate-based-rule
 delete-realtime-endpoint
 delete-receipt-filter
@@ -1696,6 +1698,7 @@ describe-group
 describe-groups
 describe-handshake
 describe-hapg
+describe-harvest-job
 describe-host-reservation-offerings
 describe-host-reservations
 describe-hosted-connections
@@ -3068,6 +3071,7 @@ list-groups-for-user
 list-handshakes-for-account
 list-handshakes-for-organization
 list-hapgs
+list-harvest-jobs
 list-health-checks
 list-hits
 list-hits-for-qualification-type
