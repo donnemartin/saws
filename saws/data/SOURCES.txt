@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4374
+[sub_commands]: 4387
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -588,6 +588,7 @@ create-domain-name
 create-dynamic-thing-group
 create-egress-only-internet-gateway
 create-elasticsearch-domain
+create-email-template
 create-endpoint
 create-endpoint-config
 create-entity-recognizer
@@ -748,6 +749,7 @@ create-public-dns-namespace
 create-public-key
 create-public-virtual-interface
 create-pull-request
+create-push-template
 create-qualification-type
 create-query-logging-config
 create-queue
@@ -806,6 +808,7 @@ create-size-constraint-set
 create-skill-group
 create-slot-type-version
 create-smb-file-share
+create-sms-template
 create-snapshot
 create-snapshot-copy-grant
 create-snapshot-from-volume-recovery-point
@@ -1079,6 +1082,7 @@ delete-egress-only-internet-gateway
 delete-elasticsearch-domain
 delete-elasticsearch-service-role
 delete-email-channel
+delete-email-template
 delete-endpoint
 delete-endpoint-config
 delete-entity-recognizer
@@ -1246,6 +1250,7 @@ delete-provisioned-product-plan
 delete-provisioning-artifact
 delete-public-access-block
 delete-public-key
+delete-push-template
 delete-qualification-type
 delete-query-logging-config
 delete-queue
@@ -1322,6 +1327,7 @@ delete-skill-group
 delete-slot-type
 delete-slot-type-version
 delete-sms-channel
+delete-sms-template
 delete-snapshot
 delete-snapshot-copy-grant
 delete-snapshot-schedule
@@ -2444,6 +2450,7 @@ get-ebs-default-kms-key-id
 get-ebs-encryption-by-default
 get-effective-policies
 get-email-channel
+get-email-template
 get-encryption-config
 get-endpoint
 get-endpoint-attributes
@@ -2661,6 +2668,7 @@ get-public-access-block
 get-public-key
 get-public-key-config
 get-pull-request
+get-push-template
 get-qualification-score
 get-qualification-type
 get-query-execution
@@ -2763,8 +2771,10 @@ get-slot-type-versions
 get-slot-types
 get-sms-attributes
 get-sms-channel
+get-sms-template
 get-snapshot-limits
 get-snowball-usage
+get-software-updates
 get-speech-synthesis-task
 get-sql-injection-match-set
 get-ssh-public-key
@@ -4251,6 +4261,7 @@ update-dynamic-thing-group
 update-elastic-ip
 update-elasticsearch-domain-config
 update-email-channel
+update-email-template
 update-emergency-contact-settings
 update-endpoint
 update-endpoint-weights-and-capacities
@@ -4365,6 +4376,7 @@ update-public-key
 update-pull-request-description
 update-pull-request-status
 update-pull-request-title
+update-push-template
 update-qualification-type
 update-queue
 update-radius
@@ -4421,6 +4433,7 @@ update-skill-group
 update-smb-file-share
 update-smb-security-strategy
 update-sms-channel
+update-sms-template
 update-snapshot-schedule
 update-sql-injection-match-set
 update-ssh-public-key
