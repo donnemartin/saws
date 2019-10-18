@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4387
+[sub_commands]: 4393
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -536,6 +536,7 @@ create-core-definition
 create-core-definition-version
 create-crawler
 create-custom-action-type
+create-custom-availability-zone
 create-custom-key-store
 create-custom-metadata
 create-custom-verification-email-template
@@ -1031,6 +1032,7 @@ delete-core-definition
 delete-cors-policy
 delete-crawler
 delete-custom-action-type
+delete-custom-availability-zone
 delete-custom-key-store
 delete-custom-metadata
 delete-custom-verification-email-template
@@ -1143,6 +1145,7 @@ delete-imported-key-material
 delete-index-field
 delete-input
 delete-input-security-group
+delete-installation-media
 delete-instance
 delete-instance-profile
 delete-instance-snapshot
@@ -1587,6 +1590,7 @@ describe-conversion-tasks
 describe-copy-product-status
 describe-create-account-status
 describe-cross-account-access-role
+describe-custom-availability-zones
 describe-custom-key-stores
 describe-customer-gateways
 describe-data-sources
@@ -1732,6 +1736,7 @@ describe-index
 describe-index-fields
 describe-input
 describe-input-security-group
+describe-installation-media
 describe-instance-associations-status
 describe-instance-attribute
 describe-instance-credit-specifications
@@ -2870,6 +2875,7 @@ import-certificate
 import-client-vpn-client-certificate-revocation-list
 import-documentation-parts
 import-image
+import-installation-media
 import-key-material
 import-key-pair
 import-migration-task
