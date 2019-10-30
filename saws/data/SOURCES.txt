@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4393
+[sub_commands]: 4398
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -420,6 +420,7 @@ close-instance-public-ports
 compare-faces
 complete-layer-upload
 complete-lifecycle-action
+complete-migration
 complete-multipart-upload
 complete-vault-lock
 compose-environments
@@ -1728,6 +1729,7 @@ describe-identity-usage
 describe-image-attribute
 describe-image-builders
 describe-image-permissions
+describe-image-scan-findings
 describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
@@ -3573,6 +3575,7 @@ put-gateway-response
 put-group-policy
 put-identity-policy
 put-image
+put-image-scanning-configuration
 put-image-tag-mutability
 put-instance-public-ports
 put-integration
@@ -3986,6 +3989,7 @@ start-fleet-actions
 start-game-session-placement
 start-gateway
 start-image-builder
+start-image-scan
 start-import
 start-import-labels-task-run
 start-import-task
@@ -3999,6 +4003,7 @@ start-logging
 start-maintenance
 start-match-backfill
 start-matchmaking
+start-migration
 start-ml-evaluation-task-run
 start-ml-labeling-set-generation-task-run
 start-monitoring-members
