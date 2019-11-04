@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4398
+[sub_commands]: 4409
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -665,6 +665,7 @@ create-ip-set
 create-job
 create-job-queue
 create-job-template
+create-journey
 create-key
 create-key-pair
 create-keys-and-certificate
@@ -1165,6 +1166,7 @@ delete-job
 delete-job-execution
 delete-job-queue
 delete-job-template
+delete-journey
 delete-key-pair
 delete-known-host-keys
 delete-labels
@@ -2567,6 +2569,10 @@ get-job-runs
 get-job-template
 get-job-unlock-code
 get-jobs
+get-journey
+get-journey-date-range-kpi
+get-journey-execution-activity-metrics
+get-journey-execution-metrics
 get-key-pair
 get-key-pairs
 get-key-policy
@@ -2822,6 +2828,7 @@ get-trace-summaries
 get-traffic-policy
 get-traffic-policy-instance
 get-traffic-policy-instance-count
+get-trail
 get-trail-status
 get-transcription-job
 get-transit-gateway-attachment-propagations
@@ -3125,6 +3132,7 @@ list-job-templates
 list-jobs
 list-jobs-by-pipeline
 list-jobs-by-status
+list-journeys
 list-key-phrases-detection-jobs
 list-key-policies
 list-keys
@@ -3338,6 +3346,7 @@ list-traffic-policy-instances
 list-traffic-policy-instances-by-hosted-zone
 list-traffic-policy-instances-by-policy
 list-traffic-policy-versions
+list-trails
 list-training-jobs
 list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
@@ -4334,6 +4343,8 @@ update-job
 update-job-execution
 update-job-queue
 update-job-template
+update-journey
+update-journey-state
 update-key-description
 update-lag
 update-layer
