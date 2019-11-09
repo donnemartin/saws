@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4409
+[sub_commands]: 4413
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2746,6 +2746,10 @@ get-sampled-requests
 get-sampling-rules
 get-sampling-statistic-summaries
 get-sampling-targets
+get-savings-plans-coverage
+get-savings-plans-purchase-recommendation
+get-savings-plans-utilization
+get-savings-plans-utilization-details
 get-scaling-plan-resource-forecast-data
 get-schema-as-json
 get-schema-creation-status
