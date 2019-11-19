@@ -158,7 +158,7 @@ class AwsCompleter(Completer):
 
         Currently, only one shortcut is replaced before shortcut replacement
         terminates, although this function could potentially be extended
-        to replace mutliple shortcuts.
+        to replace multiple shortcuts.
 
         Args:
             * text: A string representing the input command text to replace.
