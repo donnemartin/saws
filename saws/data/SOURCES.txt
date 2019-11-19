@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4414
+[sub_commands]: 4428
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -751,6 +751,7 @@ create-provisioning-artifact
 create-public-dns-namespace
 create-public-key
 create-public-virtual-interface
+create-publishing-destination
 create-pull-request
 create-push-template
 create-qualification-type
@@ -1256,6 +1257,7 @@ delete-provisioned-product-plan
 delete-provisioning-artifact
 delete-public-access-block
 delete-public-key
+delete-publishing-destination
 delete-push-template
 delete-qualification-type
 delete-query-logging-config
@@ -1462,6 +1464,7 @@ deregister-task-definition
 deregister-task-from-maintenance-window
 deregister-volume
 deregister-webhook-with-third-party
+deregister-workspace-directory
 describe-account
 describe-account-attributes
 describe-account-audit-configuration
@@ -1637,6 +1640,7 @@ describe-document-permission
 describe-document-versions
 describe-domain
 describe-domain-controllers
+describe-domain-endpoint-options
 describe-domains
 describe-dominant-language-detection-job
 describe-drt-access
@@ -1870,6 +1874,7 @@ describe-provisioned-product-plan
 describe-provisioning-artifact
 describe-provisioning-parameters
 describe-public-ipv4-pools
+describe-publishing-destination
 describe-pull-request-events
 describe-queries
 describe-raid-arrays
@@ -2343,6 +2348,7 @@ get-campaign-version
 get-campaign-versions
 get-campaigns
 get-capacity-reservation-usage
+get-cardinality
 get-catalog-import-status
 get-celebrity-info
 get-celebrity-recognition
@@ -2664,6 +2670,7 @@ get-password-data
 get-patch-baseline
 get-patch-baseline-for-patch-group
 get-pending-job-executions
+get-percentiles
 get-permission-policy
 get-person-tracking
 get-pipeline
@@ -3219,6 +3226,7 @@ list-provisioning-artifacts
 list-provisioning-artifacts-for-service-action
 list-public-keys
 list-published-schema-arns
+list-publishing-destinations
 list-pull-requests
 list-qualification-requests
 list-qualification-types
@@ -3464,6 +3472,7 @@ modify-replication-task
 modify-report-definition
 modify-reserved-instances
 modify-rule
+modify-selfservice-permissions
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
 modify-snapshot-schedule
@@ -3487,6 +3496,8 @@ modify-vpc-tenancy
 modify-vpn-connection
 modify-vpn-tunnel-certificate
 modify-vpn-tunnel-options
+modify-workspace-access-properties
+modify-workspace-creation-properties
 modify-workspace-properties
 modify-workspace-state
 monitor-instances
@@ -3720,6 +3731,7 @@ register-usage
 register-volume
 register-webhook-with-third-party
 register-workflow-type
+register-workspace-directory
 reject-assignment
 reject-certificate-transfer
 reject-portfolio-share
@@ -4279,6 +4291,7 @@ update-documentation-part
 update-documentation-version
 update-domain-contact
 update-domain-contact-privacy
+update-domain-endpoint-options
 update-domain-entry
 update-domain-name
 update-domain-nameservers
@@ -4400,6 +4413,7 @@ update-provisioned-product
 update-provisioned-product-properties
 update-provisioning-artifact
 update-public-key
+update-publishing-destination
 update-pull-request-description
 update-pull-request-status
 update-pull-request-title
