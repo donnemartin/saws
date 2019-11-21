@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4428
+[sub_commands]: 4440
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -887,6 +887,7 @@ create-user-profile
 create-vault
 create-virtual-mfa-device
 create-vocabulary
+create-voice-template
 create-volume
 create-vpc
 create-vpc-association-authorization
@@ -1414,6 +1415,7 @@ delete-virtual-interface
 delete-virtual-mfa-device
 delete-vocabulary
 delete-voice-channel
+delete-voice-template
 delete-volume
 delete-vpc
 delete-vpc-association-authorization
@@ -1462,6 +1464,7 @@ deregister-target-from-maintenance-window
 deregister-targets
 deregister-task-definition
 deregister-task-from-maintenance-window
+deregister-type
 deregister-volume
 deregister-webhook-with-third-party
 deregister-workspace-directory
@@ -2032,6 +2035,8 @@ describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
 describe-trusted-advisor-checks
 describe-trusts
+describe-type
+describe-type-registration
 describe-update-actions
 describe-upload-buffer
 describe-usage-report-subscriptions
@@ -2874,6 +2879,7 @@ get-vault-lock
 get-vault-notifications
 get-vocabulary
 get-voice-channel
+get-voice-template
 get-vpc-link
 get-vpc-links
 get-vpce-configuration
@@ -3365,6 +3371,8 @@ list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
 list-transform-jobs
 list-triggers
+list-type-registrations
+list-type-versions
 list-typed-link-facet-attributes
 list-typed-link-facet-names
 list-types
@@ -3694,6 +3702,7 @@ rebuild-workspaces
 receive-message
 recognize-celebrities
 record-activity-task-heartbeat
+record-handler-progress
 record-lifecycle-action-heartbeat
 refresh-cache
 refresh-schemas
@@ -3727,6 +3736,7 @@ register-task-definition
 register-task-with-maintenance-window
 register-thing
 register-to-work-mail
+register-type
 register-usage
 register-volume
 register-webhook-with-third-party
@@ -3958,6 +3968,7 @@ set-tags-for-resource
 set-task-status
 set-time-based-auto-scaling
 set-topic-attributes
+set-type-default-version
 set-ui-customization
 set-user-mfa-preference
 set-user-pool-mfa-config
@@ -4523,6 +4534,7 @@ update-user-profile
 update-virtual-interface-attributes
 update-vocabulary
 update-voice-channel
+update-voice-template
 update-volume
 update-vpc-link
 update-vpce-configuration
