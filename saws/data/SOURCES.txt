@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4440
+[sub_commands]: 4488
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -242,6 +242,7 @@ assign-private-ip-addresses
 assign-tape-pool
 assign-volume
 associate-address
+associate-approval-rule-template-with-repository
 associate-budget-with-resource
 associate-certificate
 associate-client-vpn-target-network
@@ -320,6 +321,7 @@ authorize-security-group-ingress
 authorize-snapshot-access
 backtrack-db-cluster
 batch-apply-update-action
+batch-associate-approval-rule-template-with-repositories
 batch-associate-service-action-with-provisioning-artifact
 batch-associate-user-stack
 batch-check-layer-availability
@@ -340,6 +342,7 @@ batch-detect-entities
 batch-detect-key-phrases
 batch-detect-sentiment
 batch-detect-syntax
+batch-disassociate-approval-rule-template-from-repositories
 batch-disassociate-service-action-from-provisioning-artifact
 batch-disassociate-user-stack
 batch-get-aggregate-resource-config
@@ -433,6 +436,7 @@ confirm-product-instance
 confirm-public-virtual-interface
 confirm-sign-up
 confirm-subscription
+confirm-topic-rule-destination
 confirm-transit-virtual-interface
 connect-custom-key-store
 connect-directory
@@ -471,6 +475,7 @@ create-app
 create-app-cookie-stickiness-policy
 create-application
 create-application-version
+create-approval-rule-template
 create-assessment-target
 create-assessment-template
 create-association
@@ -753,6 +758,7 @@ create-public-key
 create-public-virtual-interface
 create-publishing-destination
 create-pull-request
+create-pull-request-approval-rule
 create-push-template
 create-qualification-type
 create-query-logging-config
@@ -853,6 +859,7 @@ create-thing-type
 create-threat-intel-set
 create-topic
 create-topic-rule
+create-topic-rule-destination
 create-traffic-mirror-filter
 create-traffic-mirror-filter-rule
 create-traffic-mirror-session
@@ -955,6 +962,7 @@ delete-application-output
 delete-application-reference-data-source
 delete-application-version
 delete-applications
+delete-approval-rule-template
 delete-archive
 delete-assessment-run
 delete-assessment-target
@@ -1026,6 +1034,7 @@ delete-configuration-set
 delete-configuration-set-event-destination
 delete-configuration-set-tracking-options
 delete-configuration-template
+delete-conformance-pack
 delete-connection
 delete-connector-definition
 delete-constraint
@@ -1229,6 +1238,7 @@ delete-open-id-connect-provider
 delete-option-group
 delete-organization
 delete-organization-config-rule
+delete-organization-conformance-pack
 delete-organizational-unit
 delete-origin-endpoint
 delete-ota-update
@@ -1259,6 +1269,7 @@ delete-provisioning-artifact
 delete-public-access-block
 delete-public-key
 delete-publishing-destination
+delete-pull-request-approval-rule
 delete-push-template
 delete-qualification-type
 delete-query-logging-config
@@ -1376,6 +1387,7 @@ delete-thing-type
 delete-threat-intel-set
 delete-topic
 delete-topic-rule
+delete-topic-rule-destination
 delete-traffic-mirror-filter
 delete-traffic-mirror-filter-rule
 delete-traffic-mirror-session
@@ -1516,6 +1528,7 @@ describe-auto-scaling-instances
 describe-auto-scaling-notification-types
 describe-automation-executions
 describe-automation-step-executions
+describe-availability-monitor-test
 describe-availability-options
 describe-availability-zones
 describe-available-patches
@@ -1589,6 +1602,9 @@ describe-configuration-revision
 describe-configuration-set
 describe-configuration-settings
 describe-configurations
+describe-conformance-pack-compliance
+describe-conformance-pack-status
+describe-conformance-packs
 describe-connections
 describe-constraint
 describe-container
@@ -1692,6 +1708,7 @@ describe-execution
 describe-export-image-tasks
 describe-export-tasks
 describe-expressions
+describe-fast-snapshot-restores
 describe-file-systems
 describe-findings
 describe-fleet-attributes
@@ -1845,6 +1862,8 @@ describe-orderable-replication-instances
 describe-organization
 describe-organization-config-rule-statuses
 describe-organization-config-rules
+describe-organization-conformance-pack-statuses
+describe-organization-conformance-packs
 describe-organizational-unit
 describe-origin-endpoint
 describe-parameter-groups
@@ -2114,6 +2133,7 @@ detect-moderation-labels
 detect-sentiment
 detect-stack-drift
 detect-stack-resource-drift
+detect-stack-set-drift
 detect-syntax
 detect-text
 disable-add-on
@@ -2126,6 +2146,7 @@ disable-domain-auto-renew
 disable-domain-transfer-lock
 disable-ebs-encryption-by-default
 disable-enhanced-monitoring
+disable-fast-snapshot-restores
 disable-gateway
 disable-hbase-backups
 disable-key
@@ -2145,6 +2166,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-approval-rule-template-from-repository
 disassociate-budget-from-resource
 disassociate-certificate
 disassociate-client-vpn-target-network
@@ -2202,6 +2224,7 @@ enable-domain-auto-renew
 enable-domain-transfer-lock
 enable-ebs-encryption-by-default
 enable-enhanced-monitoring
+enable-fast-snapshot-restores
 enable-key
 enable-key-rotation
 enable-logging
@@ -2224,6 +2247,7 @@ encrypt
 enter-standby
 estimate-template-cost
 evaluate-expression
+evaluate-pull-request-approval-rules
 execute-change-set
 execute-policy
 execute-provisioned-product-plan
@@ -2293,6 +2317,7 @@ get-application-policy
 get-application-revision
 get-application-settings
 get-applied-schema-version
+get-approval-rule-template
 get-apps
 get-assessment-report
 get-assignment
@@ -2386,6 +2411,8 @@ get-compliance-summary-by-resource-type
 get-conference-preference
 get-conference-provider
 get-config
+get-conformance-pack-compliance-details
+get-conformance-pack-compliance-summary
 get-connection
 get-connection-status
 get-connections
@@ -2546,6 +2573,7 @@ get-import
 get-import-job
 get-import-jobs
 get-indexing-configuration
+get-insight-selectors
 get-instance
 get-instance-access
 get-instance-access-details
@@ -2662,6 +2690,7 @@ get-operations-for-resource
 get-ops-item
 get-ops-summary
 get-organization-config-rule-detailed-status
+get-organization-conformance-pack-detailed-status
 get-organizations-access-report
 get-ota-update
 get-parameter
@@ -2694,6 +2723,8 @@ get-public-access-block
 get-public-key
 get-public-key-config
 get-pull-request
+get-pull-request-approval-states
+get-pull-request-override-state
 get-push-template
 get-qualification-score
 get-qualification-type
@@ -2840,6 +2871,7 @@ get-threat-intel-set
 get-time-series-service-statistics
 get-topic-attributes
 get-topic-rule
+get-topic-rule-destination
 get-trace-graph
 get-trace-summaries
 get-traffic-policy
@@ -2960,6 +2992,7 @@ list-application-revisions
 list-application-versions
 list-applications
 list-applied-schema-arns
+list-approval-rule-templates
 list-apps
 list-artifacts
 list-assessment-run-agents
@@ -2967,6 +3000,7 @@ list-assessment-runs
 list-assessment-targets
 list-assessment-templates
 list-assignments-for-hit
+list-associated-approval-rule-templates-for-repository
 list-associated-fleets
 list-associated-stacks
 list-association-versions
@@ -3249,6 +3283,7 @@ list-regex-match-sets
 list-regex-pattern-sets
 list-remote-access-sessions
 list-repositories
+list-repositories-for-approval-rule-template
 list-reservations
 list-resolvers
 list-resolvers-by-function
@@ -3357,6 +3392,7 @@ list-things
 list-things-in-billing-group
 list-things-in-thing-group
 list-threat-intel-sets
+list-topic-rule-destinations
 list-topic-rules
 list-topics
 list-topics-detection-jobs
@@ -3465,6 +3501,7 @@ modify-instance-credit-specification
 modify-instance-event-start-time
 modify-instance-fleet
 modify-instance-groups
+modify-instance-metadata-options
 modify-instance-placement
 modify-launch-template
 modify-listener
@@ -3518,6 +3555,7 @@ notify-when-uploaded
 notify-workers
 open-instance-public-ports
 opt-in-phone-number
+override-pull-request-approval-rules
 package
 peer-vpc
 phone-number-validate
@@ -3590,6 +3628,7 @@ put-config-rule
 put-configuration-aggregator
 put-configuration-recorder
 put-configuration-set-delivery-options
+put-conformance-pack
 put-container-policy
 put-cors-policy
 put-dashboard
@@ -3610,6 +3649,7 @@ put-identity-policy
 put-image
 put-image-scanning-configuration
 put-image-tag-mutability
+put-insight-selectors
 put-instance-public-ports
 put-integration
 put-integration-response
@@ -3641,6 +3681,7 @@ put-object-lock-configuration
 put-object-retention
 put-object-tagging
 put-organization-config-rule
+put-organization-conformance-pack
 put-parameter
 put-partner-events
 put-permission
@@ -3997,6 +4038,7 @@ start-assessment-run
 start-associations-once
 start-audit-mitigation-actions-task
 start-automation-execution
+start-availability-monitor-test
 start-build
 start-bulk-deployment
 start-celebrity-recognition
@@ -4224,6 +4266,9 @@ update-application
 update-application-resource-lifecycle
 update-application-settings
 update-application-version
+update-approval-rule-template-content
+update-approval-rule-template-description
+update-approval-rule-template-name
 update-assessment-target
 update-association
 update-association-status
@@ -4425,6 +4470,8 @@ update-provisioned-product-properties
 update-provisioning-artifact
 update-public-key
 update-publishing-destination
+update-pull-request-approval-rule-content
+update-pull-request-approval-state
 update-pull-request-description
 update-pull-request-status
 update-pull-request-title
@@ -4514,6 +4561,7 @@ update-thing-groups-for-thing
 update-thing-shadow
 update-threat-intel-set
 update-time-to-live
+update-topic-rule-destination
 update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
