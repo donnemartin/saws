@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4488
+[sub_commands]: 4500
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -470,6 +470,7 @@ create-address
 create-address-book
 create-algorithm
 create-alias
+create-api-cache
 create-api-key
 create-app
 create-app-cookie-stickiness-policy
@@ -947,6 +948,7 @@ delete-algorithm
 delete-alias
 delete-analysis-scheme
 delete-anomaly-detector
+delete-api-cache
 delete-api-key
 delete-apns-channel
 delete-apns-sandbox-channel
@@ -1300,6 +1302,7 @@ delete-request-validator
 delete-reservation
 delete-resolver
 delete-resource
+delete-resource-config
 delete-resource-data-sync
 delete-resource-definition
 delete-resource-policy
@@ -1774,6 +1777,8 @@ describe-instance-patch-states
 describe-instance-patch-states-for-patch-group
 describe-instance-patches
 describe-instance-status
+describe-instance-type-offerings
+describe-instance-types
 describe-instances
 describe-instances-health
 describe-interconnects
@@ -2018,6 +2023,7 @@ describe-subscription
 describe-subscription-filters
 describe-suggesters
 describe-table
+describe-table-replica-auto-scaling
 describe-table-restore-status
 describe-table-statistics
 describe-tag-option
@@ -2265,6 +2271,7 @@ export-snapshot
 export-transit-gateway-routes
 failover-db-cluster
 filter-log-events
+flush-api-cache
 flush-stage-authorizers-cache
 flush-stage-cache
 forget-device
@@ -2302,6 +2309,7 @@ get-aggregate-config-rule-compliance-summary
 get-aggregate-discovered-resource-counts
 get-aggregate-resource-config
 get-alias
+get-api-cache
 get-api-key
 get-api-keys
 get-apns-channel
@@ -3696,6 +3704,7 @@ put-remediation-exceptions
 put-report-definition
 put-repository-triggers
 put-resource-attributes
+put-resource-config
 put-resource-policy
 put-rest-api
 put-retention-configuration
@@ -4256,6 +4265,7 @@ update-account-sending-enabled
 update-address-book
 update-adm-channel
 update-alias
+update-api-cache
 update-api-key
 update-apns-channel
 update-apns-sandbox-channel
@@ -4494,6 +4504,7 @@ update-request-validator
 update-reservation
 update-resolver
 update-resource
+update-resource-data-sync
 update-resource-definition
 update-resource-server
 update-rest-api
@@ -4548,6 +4559,7 @@ update-subscriber
 update-subscription
 update-subscription-definition
 update-table
+update-table-replica-auto-scaling
 update-tag-option
 update-tags-for-domain
 update-tags-for-resource
