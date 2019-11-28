@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4500
+[sub_commands]: 4561
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -363,6 +363,8 @@ batch-get-on-premises-instances
 batch-get-partition
 batch-get-projects
 batch-get-query-execution
+batch-get-report-groups
+batch-get-reports
 batch-get-repositories
 batch-get-resource-config
 batch-get-traces
@@ -416,6 +418,7 @@ check-dns-availability
 check-domain-availability
 check-domain-transferability
 check-if-phone-number-is-opted-out
+classify-document
 clear-default-authorizer
 clone-receipt-rule-set
 clone-stack
@@ -541,6 +544,7 @@ create-contact
 create-container
 create-core-definition
 create-core-definition-version
+create-cost-category-definition
 create-crawler
 create-custom-action-type
 create-custom-availability-zone
@@ -591,6 +595,7 @@ create-document-classifier
 create-documentation-part
 create-documentation-version
 create-domain
+create-domain-configuration
 create-domain-entry
 create-domain-name
 create-dynamic-thing-group
@@ -707,6 +712,8 @@ create-model
 create-model-package
 create-mount-target
 create-multipart-upload
+create-multiplex
+create-multiplex-program
 create-named-query
 create-nat-gateway
 create-network-acl
@@ -754,6 +761,9 @@ create-project
 create-protection
 create-provisioned-product-plan
 create-provisioning-artifact
+create-provisioning-claim
+create-provisioning-template
+create-provisioning-template-version
 create-public-dns-namespace
 create-public-key
 create-public-virtual-interface
@@ -780,6 +790,7 @@ create-replication-instance
 create-replication-job
 create-replication-subnet-group
 create-replication-task
+create-report-group
 create-repository
 create-request-validator
 create-reserved-instances-listing
@@ -803,6 +814,7 @@ create-saml-provider
 create-sample-findings
 create-sampling-rule
 create-scaling-plan
+create-scheduled-action
 create-scheduled-audit
 create-schema
 create-script
@@ -1045,6 +1057,7 @@ delete-container
 delete-container-policy
 delete-core-definition
 delete-cors-policy
+delete-cost-category-definition
 delete-crawler
 delete-custom-action-type
 delete-custom-availability-zone
@@ -1092,6 +1105,7 @@ delete-document-classifier
 delete-documentation-part
 delete-documentation-version
 delete-domain
+delete-domain-configuration
 delete-domain-entry
 delete-domain-name
 delete-dynamic-thing-group
@@ -1130,6 +1144,7 @@ delete-fpga-image
 delete-function
 delete-function-concurrency
 delete-function-definition
+delete-function-event-invoke-config
 delete-game-session-queue
 delete-gateway
 delete-gateway-group
@@ -1160,6 +1175,7 @@ delete-imported-key-material
 delete-index-field
 delete-input
 delete-input-security-group
+delete-insight-rules
 delete-installation-media
 delete-instance
 delete-instance-profile
@@ -1220,6 +1236,8 @@ delete-ml-transform
 delete-model
 delete-model-package
 delete-mount-target
+delete-multiplex
+delete-multiplex-program
 delete-named-query
 delete-namespace
 delete-nat-gateway
@@ -1268,6 +1286,8 @@ delete-project
 delete-protection
 delete-provisioned-product-plan
 delete-provisioning-artifact
+delete-provisioning-template
+delete-provisioning-template-version
 delete-public-access-block
 delete-public-key
 delete-publishing-destination
@@ -1295,7 +1315,9 @@ delete-replication-instance
 delete-replication-job
 delete-replication-subnet-group
 delete-replication-task
+delete-report
 delete-report-definition
+delete-report-group
 delete-repository
 delete-repository-policy
 delete-request-validator
@@ -1616,6 +1638,7 @@ describe-continuous-backups
 describe-continuous-exports
 describe-conversion-tasks
 describe-copy-product-status
+describe-cost-category-definition
 describe-create-account-status
 describe-cross-account-access-role
 describe-custom-availability-zones
@@ -1661,6 +1684,7 @@ describe-document-classifier
 describe-document-permission
 describe-document-versions
 describe-domain
+describe-domain-configuration
 describe-domain-controllers
 describe-domain-endpoint-options
 describe-domains
@@ -1767,6 +1791,7 @@ describe-index
 describe-index-fields
 describe-input
 describe-input-security-group
+describe-insight-rules
 describe-installation-media
 describe-instance-associations-status
 describe-instance-attribute
@@ -1840,6 +1865,8 @@ describe-model-package
 describe-mount-target-security-groups
 describe-mount-targets
 describe-moving-addresses
+describe-multiplex
+describe-multiplex-program
 describe-my-user-profile
 describe-nat-gateways
 describe-network-acls
@@ -1900,6 +1927,8 @@ describe-provisioned-product
 describe-provisioned-product-plan
 describe-provisioning-artifact
 describe-provisioning-parameters
+describe-provisioning-template
+describe-provisioning-template-version
 describe-public-ipv4-pools
 describe-publishing-destination
 describe-pull-request-events
@@ -2038,6 +2067,7 @@ describe-task-definition
 describe-task-sets
 describe-tasks
 describe-termination-policy-types
+describe-test-cases
 describe-thing
 describe-thing-group
 describe-thing-registration-task
@@ -2155,6 +2185,7 @@ disable-enhanced-monitoring
 disable-fast-snapshot-restores
 disable-gateway
 disable-hbase-backups
+disable-insight-rules
 disable-key
 disable-key-rotation
 disable-logging
@@ -2231,6 +2262,7 @@ enable-domain-transfer-lock
 enable-ebs-encryption-by-default
 enable-enhanced-monitoring
 enable-fast-snapshot-restores
+enable-insight-rules
 enable-key
 enable-key-rotation
 enable-logging
@@ -2282,6 +2314,8 @@ generate-change-set
 generate-client-certificate
 generate-credential-report
 generate-data-key
+generate-data-key-pair
+generate-data-key-pair-without-plaintext
 generate-data-key-without-plaintext
 generate-data-set
 generate-db-auth-token
@@ -2459,6 +2493,7 @@ get-data-source
 get-database
 get-databases
 get-dataflow-graph
+get-default-credit-specification
 get-default-patch-baseline
 get-deployable-patch-snapshot-for-instance
 get-deployment
@@ -2540,6 +2575,7 @@ get-function
 get-function-configuration
 get-function-definition
 get-function-definition-version
+get-function-event-invoke-config
 get-game-session-log
 get-game-session-log-url
 get-gateway
@@ -2581,6 +2617,7 @@ get-import
 get-import-job
 get-import-jobs
 get-indexing-configuration
+get-insight-rule-report
 get-insight-selectors
 get-instance
 get-instance-access
@@ -3075,6 +3112,7 @@ list-container-instances
 list-containers
 list-core-definition-versions
 list-core-definitions
+list-cost-category-definitions
 list-crawlers
 list-create-account-status
 list-created-artifacts
@@ -3106,6 +3144,7 @@ list-document-classification-jobs
 list-document-classifiers
 list-document-versions
 list-documents
+list-domain-configurations
 list-domain-names
 list-domains
 list-dominant-language-detection-jobs
@@ -3137,6 +3176,7 @@ list-fleets
 list-fragments
 list-function-definition-versions
 list-function-definitions
+list-function-event-invoke-configs
 list-functions
 list-gateway-groups
 list-gateways
@@ -3218,6 +3258,8 @@ list-mitigation-actions
 list-model-packages
 list-models
 list-multipart-uploads
+list-multiplex-programs
+list-multiplexes
 list-named-queries
 list-namespaces
 list-network-profiles
@@ -3272,6 +3314,8 @@ list-provisioned-capacity
 list-provisioned-product-plans
 list-provisioning-artifacts
 list-provisioning-artifacts-for-service-action
+list-provisioning-template-versions
+list-provisioning-templates
 list-public-keys
 list-published-schema-arns
 list-publishing-destinations
@@ -3290,6 +3334,9 @@ list-records
 list-regex-match-sets
 list-regex-pattern-sets
 list-remote-access-sessions
+list-report-groups
+list-reports
+list-reports-for-report-group
 list-repositories
 list-repositories-for-approval-rule-template
 list-reservations
@@ -3490,6 +3537,7 @@ modify-db-parameter-group
 modify-db-snapshot
 modify-db-snapshot-attribute
 modify-db-subnet-group
+modify-default-credit-specification
 modify-document-permission
 modify-ebs-default-kms-key-id
 modify-endpoint
@@ -3525,6 +3573,7 @@ modify-replication-task
 modify-report-definition
 modify-reserved-instances
 modify-rule
+modify-scheduled-action
 modify-selfservice-permissions
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
@@ -3651,12 +3700,14 @@ put-event-stream
 put-events
 put-file
 put-function-concurrency
+put-function-event-invoke-config
 put-gateway-response
 put-group-policy
 put-identity-policy
 put-image
 put-image-scanning-configuration
 put-image-tag-mutability
+put-insight-rule
 put-insight-selectors
 put-instance-public-ports
 put-integration
@@ -4095,6 +4146,7 @@ start-migration
 start-ml-evaluation-task-run
 start-ml-labeling-set-generation-task-run
 start-monitoring-members
+start-multiplex
 start-next-pending-job-execution
 start-notebook-instance
 start-on-demand-audit-task
@@ -4161,6 +4213,7 @@ stop-labeling-job
 stop-logging
 stop-matchmaking
 stop-monitoring-members
+stop-multiplex
 stop-notebook-instance
 stop-query
 stop-query-execution
@@ -4329,6 +4382,7 @@ update-container-agent
 update-container-instances-state
 update-continuous-backups
 update-core-definition
+update-cost-category-definition
 update-crawler
 update-crawler-schedule
 update-custom-key-store
@@ -4355,6 +4409,7 @@ update-document-default-version
 update-document-version
 update-documentation-part
 update-documentation-version
+update-domain-configuration
 update-domain-contact
 update-domain-contact-privacy
 update-domain-endpoint-options
@@ -4391,6 +4446,7 @@ update-function
 update-function-code
 update-function-configuration
 update-function-definition
+update-function-event-invoke-config
 update-game-session
 update-game-session-queue
 update-gateway
@@ -4449,6 +4505,8 @@ update-mitigation-action
 update-ml-model
 update-ml-transform
 update-model
+update-multiplex
+update-multiplex-program
 update-my-user-profile
 update-network-profile
 update-nfs-file-share
@@ -4478,6 +4536,7 @@ update-project
 update-provisioned-product
 update-provisioned-product-properties
 update-provisioning-artifact
+update-provisioning-template
 update-public-key
 update-publishing-destination
 update-pull-request-approval-rule-content
@@ -4498,6 +4557,7 @@ update-regex-pattern-set
 update-relational-database
 update-relational-database-parameters
 update-replication-job
+update-report-group
 update-repository-description
 update-repository-name
 update-request-validator
@@ -4624,6 +4684,7 @@ validate-matchmaking-rule-set
 validate-pipeline-definition
 validate-security-profile-behaviors
 validate-template
+verify
 verify-domain-dkim
 verify-domain-identity
 verify-email-identity
