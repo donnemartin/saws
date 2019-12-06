@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4561
+[sub_commands]: 4604
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -148,6 +148,7 @@ accept-qualification-request
 accept-reserved-instances-exchange-quote
 accept-reserved-node-exchange
 accept-shared-directory
+accept-transit-gateway-peering-attachment
 accept-transit-gateway-vpc-attachment
 accept-vpc-endpoint-connections
 accept-vpc-peering-connection
@@ -280,6 +281,7 @@ associate-subnet-cidr-block
 associate-tag-option-with-resource
 associate-targets-with-job
 associate-team-member
+associate-transit-gateway-multicast-domain
 associate-transit-gateway-route-table
 associate-virtual-interface
 associate-vpc-cidr-block
@@ -505,6 +507,7 @@ create-cache-security-group
 create-cache-subnet-group
 create-cached-iscsi-volume
 create-campaign
+create-capacity-provider
 create-capacity-reservation
 create-case
 create-certificate-from-csr
@@ -693,6 +696,8 @@ create-load-balancer
 create-load-balancer-listeners
 create-load-balancer-policy
 create-load-balancer-tls-certificate
+create-local-gateway-route
+create-local-gateway-route-table-vpc-association
 create-log-group
 create-log-stream
 create-log-subscription
@@ -884,6 +889,8 @@ create-trail
 create-training-job
 create-transform-job
 create-transit-gateway
+create-transit-gateway-multicast-domain
+create-transit-gateway-peering-attachment
 create-transit-gateway-route
 create-transit-gateway-route-table
 create-transit-gateway-vpc-attachment
@@ -1213,6 +1220,8 @@ delete-load-balancer
 delete-load-balancer-listeners
 delete-load-balancer-policy
 delete-load-balancer-tls-certificate
+delete-local-gateway-route
+delete-local-gateway-route-table-vpc-association
 delete-log-group
 delete-log-stream
 delete-log-subscription
@@ -1422,6 +1431,8 @@ delete-traffic-policy-instance
 delete-trail
 delete-transcription-job
 delete-transit-gateway
+delete-transit-gateway-multicast-domain
+delete-transit-gateway-peering-attachment
 delete-transit-gateway-route
 delete-transit-gateway-route-table
 delete-transit-gateway-vpc-attachment
@@ -1482,6 +1493,7 @@ deprecate-thing-type
 deprecate-workflow-type
 deprovision-byoip-cidr
 deregister
+deregister-certificate
 deregister-container-instance
 deregister-ecs-cluster
 deregister-elastic-ip
@@ -1501,6 +1513,8 @@ deregister-target-from-maintenance-window
 deregister-targets
 deregister-task-definition
 deregister-task-from-maintenance-window
+deregister-transit-gateway-multicast-group-members
+deregister-transit-gateway-multicast-group-sources
 deregister-type
 deregister-volume
 deregister-webhook-with-third-party
@@ -1581,6 +1595,7 @@ describe-cache-parameters
 describe-cache-security-groups
 describe-cache-subnet-groups
 describe-cached-iscsi-volumes
+describe-capacity-providers
 describe-capacity-reservations
 describe-cases
 describe-certificate
@@ -1606,6 +1621,7 @@ describe-cluster-tracks
 describe-cluster-versions
 describe-clusters
 describe-code-repository
+describe-coip-pools
 describe-collection
 describe-commands
 describe-comments
@@ -1636,6 +1652,7 @@ describe-container
 describe-container-instances
 describe-continuous-backups
 describe-continuous-exports
+describe-contributor-insights
 describe-conversion-tasks
 describe-copy-product-status
 describe-cost-category-definition
@@ -1694,6 +1711,7 @@ describe-ec2-instance-limits
 describe-ecs-clusters
 describe-effective-instance-associations
 describe-effective-patches-for-patch-baseline
+describe-effective-policy
 describe-egress-only-internet-gateways
 describe-elastic-gpus
 describe-elastic-ips
@@ -1824,6 +1842,7 @@ describe-launch-configurations
 describe-launch-template-versions
 describe-launch-templates
 describe-layers
+describe-ldaps-settings
 describe-lifecycle-configuration
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
@@ -1837,6 +1856,12 @@ describe-load-balancer-policy-types
 describe-load-balancer-target-groups
 describe-load-balancers
 describe-load-based-auto-scaling
+describe-local-gateway-route-table-virtual-interface-group-associations
+describe-local-gateway-route-table-vpc-associations
+describe-local-gateway-route-tables
+describe-local-gateway-virtual-interface-groups
+describe-local-gateway-virtual-interfaces
+describe-local-gateways
 describe-locations
 describe-log-groups
 describe-log-streams
@@ -1949,6 +1974,7 @@ describe-replication-instances
 describe-replication-subnet-groups
 describe-replication-task-assessment-results
 describe-replication-tasks
+describe-report-creation
 describe-report-definitions
 describe-repositories
 describe-reservation
@@ -2082,6 +2108,8 @@ describe-trails
 describe-training-job
 describe-transform-job
 describe-transit-gateway-attachments
+describe-transit-gateway-multicast-domains
+describe-transit-gateway-peering-attachments
 describe-transit-gateway-route-tables
 describe-transit-gateway-vpc-attachments
 describe-transit-gateways
@@ -2188,6 +2216,7 @@ disable-hbase-backups
 disable-insight-rules
 disable-key
 disable-key-rotation
+disable-ldaps
 disable-logging
 disable-metrics-collection
 disable-policy-type
@@ -2239,6 +2268,7 @@ disassociate-skill-group-from-room
 disassociate-subnet-cidr-block
 disassociate-tag-option-from-resource
 disassociate-team-member
+disassociate-transit-gateway-multicast-domain
 disassociate-transit-gateway-route-table
 disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
@@ -2265,6 +2295,7 @@ enable-fast-snapshot-restores
 enable-insight-rules
 enable-key
 enable-key-rotation
+enable-ldaps
 enable-logging
 enable-metrics-collection
 enable-mfa-device
@@ -2440,6 +2471,7 @@ get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cluster-credentials
 get-cognito-events
+get-coip-pool-usage
 get-command-invocation
 get-comment
 get-comments-for-compared-commit
@@ -2448,6 +2480,7 @@ get-commit
 get-compatible-elasticsearch-versions
 get-compliance-details-by-config-rule
 get-compliance-details-by-resource
+get-compliance-summary
 get-compliance-summary-by-config-rule
 get-compliance-summary-by-resource-type
 get-conference-preference
@@ -2926,6 +2959,7 @@ get-trail
 get-trail-status
 get-transcription-job
 get-transit-gateway-attachment-propagations
+get-transit-gateway-multicast-domain-associations
 get-transit-gateway-route-table-associations
 get-transit-gateway-route-table-propagations
 get-trigger
@@ -3110,6 +3144,7 @@ list-connector-definitions
 list-constraints-for-portfolio
 list-container-instances
 list-containers
+list-contributor-insights
 list-core-definition-versions
 list-core-definitions
 list-cost-category-definitions
@@ -3679,6 +3714,7 @@ put-bucket-request-payment
 put-bucket-tagging
 put-bucket-versioning
 put-bucket-website
+put-cluster-capacity-providers
 put-compliance-items
 put-conference-preference
 put-config-rule
@@ -3837,6 +3873,8 @@ register-task-definition
 register-task-with-maintenance-window
 register-thing
 register-to-work-mail
+register-transit-gateway-multicast-group-members
+register-transit-gateway-multicast-group-sources
 register-type
 register-usage
 register-volume
@@ -3849,6 +3887,7 @@ reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
 reject-skill
+reject-transit-gateway-peering-attachment
 reject-transit-gateway-vpc-attachment
 reject-vpc-endpoint-connections
 reject-vpc-peering-connection
@@ -3991,6 +4030,7 @@ search-faces
 search-faces-by-image
 search-game-sessions
 search-index
+search-local-gateway-routes
 search-network-profiles
 search-products
 search-products-as-admin
@@ -4000,6 +4040,7 @@ search-resources
 search-rooms
 search-skill-groups
 search-tables
+search-transit-gateway-multicast-groups
 search-transit-gateway-routes
 search-users
 select
@@ -4159,6 +4200,7 @@ start-relational-database
 start-remediation-execution
 start-replication-task
 start-replication-task-assessment
+start-report-creation
 start-schema-creation
 start-schema-extension
 start-sentiment-detection-job
@@ -4381,6 +4423,7 @@ update-contact
 update-container-agent
 update-container-instances-state
 update-continuous-backups
+update-contributor-insights
 update-core-definition
 update-cost-category-definition
 update-crawler
