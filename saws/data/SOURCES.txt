@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4604
+[sub_commands]: 4674
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -283,6 +283,7 @@ associate-targets-with-job
 associate-team-member
 associate-transit-gateway-multicast-domain
 associate-transit-gateway-route-table
+associate-trial-component
 associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
@@ -487,6 +488,7 @@ create-assessment-template
 create-association
 create-association-batch
 create-authorizer
+create-auto-ml-job
 create-auto-scaling-group
 create-backup
 create-base-path-mapping
@@ -567,6 +569,7 @@ create-db-cluster-snapshot
 create-db-instance
 create-db-instance-read-replica
 create-db-parameter-group
+create-db-proxy
 create-db-security-group
 create-db-snapshot
 create-db-subnet-group
@@ -616,6 +619,7 @@ create-event-bus
 create-event-source-mapping
 create-event-subscription
 create-exclusions-preview
+create-experiment
 create-export-job
 create-export-task
 create-facet
@@ -624,6 +628,7 @@ create-field-level-encryption-profile
 create-file-system
 create-filter
 create-fleet
+create-flow-definition
 create-flow-logs
 create-folder
 create-fpga-image
@@ -654,6 +659,7 @@ create-hsm
 create-hsm-client-certificate
 create-hsm-configuration
 create-http-namespace
+create-human-task-ui
 create-hyper-parameter-tuning-job
 create-identity-pool
 create-identity-provider
@@ -715,6 +721,7 @@ create-ml-model
 create-ml-transform
 create-model
 create-model-package
+create-monitoring-schedule
 create-mount-target
 create-multipart-upload
 create-multiplex
@@ -756,13 +763,16 @@ create-policy-version
 create-portfolio
 create-portfolio-share
 create-preset
+create-presigned-domain-url
 create-presigned-notebook-instance-url
 create-private-dns-namespace
 create-private-virtual-interface
+create-processing-job
 create-product
 create-profile
 create-progress-update-stream
 create-project
+create-project-version
 create-protection
 create-provisioned-product-plan
 create-provisioning-artifact
@@ -832,6 +842,7 @@ create-service
 create-service-action
 create-service-linked-role
 create-service-specific-credential
+create-signaling-channel
 create-size-constraint-set
 create-skill-group
 create-slot-type-version
@@ -895,6 +906,8 @@ create-transit-gateway-route
 create-transit-gateway-route-table
 create-transit-gateway-vpc-attachment
 create-transit-virtual-interface
+create-trial
+create-trial-component
 create-trigger
 create-trust
 create-type
@@ -1083,6 +1096,7 @@ delete-db-cluster-snapshot
 delete-db-instance
 delete-db-instance-automated-backup
 delete-db-parameter-group
+delete-db-proxy
 delete-db-security-group
 delete-db-snapshot
 delete-db-subnet-group
@@ -1133,6 +1147,7 @@ delete-event-bus
 delete-event-source-mapping
 delete-event-stream
 delete-event-subscription
+delete-experiment
 delete-expression
 delete-faces
 delete-facet
@@ -1144,6 +1159,7 @@ delete-file-system
 delete-filter
 delete-fleet
 delete-fleets
+delete-flow-definition
 delete-flow-logs
 delete-folder
 delete-folder-contents
@@ -1244,6 +1260,7 @@ delete-ml-model
 delete-ml-transform
 delete-model
 delete-model-package
+delete-monitoring-schedule
 delete-mount-target
 delete-multiplex
 delete-multiplex-program
@@ -1293,6 +1310,7 @@ delete-profile
 delete-progress-update-stream
 delete-project
 delete-protection
+delete-provisioned-concurrency-config
 delete-provisioned-product-plan
 delete-provisioning-artifact
 delete-provisioning-template
@@ -1374,6 +1392,7 @@ delete-service-action
 delete-service-linked-role
 delete-service-specific-credential
 delete-session
+delete-signaling-channel
 delete-signing-certificate
 delete-size-constraint-set
 delete-skill-authorization
@@ -1436,6 +1455,8 @@ delete-transit-gateway-peering-attachment
 delete-transit-gateway-route
 delete-transit-gateway-route-table
 delete-transit-gateway-vpc-attachment
+delete-trial
+delete-trial-component
 delete-trigger
 delete-trust
 delete-type
@@ -1495,6 +1516,7 @@ deprovision-byoip-cidr
 deregister
 deregister-certificate
 deregister-container-instance
+deregister-db-proxy-targets
 deregister-ecs-cluster
 deregister-elastic-ip
 deregister-event-topic
@@ -1545,6 +1567,7 @@ describe-algorithm
 describe-alias
 describe-analysis-schemes
 describe-anomaly-detectors
+describe-app
 describe-application
 describe-application-state
 describe-application-versions
@@ -1562,6 +1585,7 @@ describe-audit-finding
 describe-audit-mitigation-actions-task
 describe-audit-task
 describe-authorizer
+describe-auto-ml-job
 describe-auto-scaling-groups
 describe-auto-scaling-instances
 describe-auto-scaling-notification-types
@@ -1676,6 +1700,9 @@ describe-db-instances
 describe-db-log-files
 describe-db-parameter-groups
 describe-db-parameters
+describe-db-proxies
+describe-db-proxy-target-groups
+describe-db-proxy-targets
 describe-db-security-groups
 describe-db-snapshot-attributes
 describe-db-snapshots
@@ -1750,6 +1777,7 @@ describe-event-types
 describe-events
 describe-exclusions
 describe-execution
+describe-experiment
 describe-export-image-tasks
 describe-export-tasks
 describe-expressions
@@ -1764,6 +1792,7 @@ describe-fleet-instances
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-fleets
+describe-flow-definition
 describe-flow-logs
 describe-folder-contents
 describe-fpga-image-attribute
@@ -1788,6 +1817,7 @@ describe-hosts
 describe-hsm
 describe-hsm-client-certificates
 describe-hsm-configurations
+describe-human-task-ui
 describe-hyper-parameter-tuning-job
 describe-iam-instance-profile-associations
 describe-id-format
@@ -1887,6 +1917,7 @@ describe-mitigation-action
 describe-ml-models
 describe-model
 describe-model-package
+describe-monitoring-schedule
 describe-mount-target-security-groups
 describe-mount-targets
 describe-moving-addresses
@@ -1943,10 +1974,13 @@ describe-portfolio
 describe-portfolio-share-status
 describe-prefix-lists
 describe-principal-id-format
+describe-processing-job
 describe-product
 describe-product-as-admin
 describe-product-view
 describe-project
+describe-project-versions
+describe-projects
 describe-protection
 describe-provisioned-product
 describe-provisioned-product-plan
@@ -2034,6 +2068,7 @@ describe-services
 describe-sessions
 describe-severity-levels
 describe-shared-directories
+describe-signaling-channel
 describe-smb-file-shares
 describe-smb-settings
 describe-snapshot-attribute
@@ -2113,6 +2148,8 @@ describe-transit-gateway-peering-attachments
 describe-transit-gateway-route-tables
 describe-transit-gateway-vpc-attachments
 describe-transit-gateways
+describe-trial
+describe-trial-component
 describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
@@ -2188,6 +2225,7 @@ detach-typed-link
 detach-user-policy
 detach-volume
 detach-vpn-gateway
+detect-custom-labels
 detect-dominant-language
 detect-entities
 detect-faces
@@ -2270,6 +2308,7 @@ disassociate-tag-option-from-resource
 disassociate-team-member
 disassociate-transit-gateway-multicast-domain
 disassociate-transit-gateway-route-table
+disassociate-trial-component
 disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
 disassociate-web-acl
@@ -2605,6 +2644,7 @@ get-findings-statistics
 get-folder
 get-folder-path
 get-function
+get-function-concurrency
 get-function-configuration
 get-function-definition
 get-function-definition-version
@@ -2797,6 +2837,7 @@ get-preset
 get-products
 get-profile
 get-project
+get-provisioned-concurrency-config
 get-public-access-block
 get-public-key
 get-public-key-config
@@ -2902,6 +2943,7 @@ get-session
 get-session-token
 get-shard-iterator
 get-shipping-label
+get-signaling-channel-endpoint
 get-signing-certificate
 get-size-constraint-set
 get-skill-group
@@ -3096,6 +3138,7 @@ list-audit-mitigation-actions-executions
 list-audit-mitigation-actions-tasks
 list-audit-tasks
 list-authorizers
+list-auto-ml-jobs
 list-available-management-cidr-ranges
 list-available-solution-stacks
 list-available-zones
@@ -3118,6 +3161,7 @@ list-bundles
 list-business-report-schedules
 list-byte-match-sets
 list-ca-certificates
+list-candidates-for-auto-ml-job
 list-certificates
 list-certificates-by-ca
 list-change-sets
@@ -3198,6 +3242,7 @@ list-event-sources
 list-event-subscriptions
 list-exclusions
 list-executions
+list-experiments
 list-exports
 list-faces
 list-facet-attributes
@@ -3208,6 +3253,7 @@ list-file-shares
 list-filters
 list-findings
 list-fleets
+list-flow-definitions
 list-fragments
 list-function-definition-versions
 list-function-definitions
@@ -3238,6 +3284,7 @@ list-hits-for-qualification-type
 list-hosted-zones
 list-hosted-zones-by-name
 list-hsms
+list-human-task-uis
 list-hyper-parameter-tuning-jobs
 list-identities
 list-identity-policies
@@ -3292,6 +3339,8 @@ list-migration-tasks
 list-mitigation-actions
 list-model-packages
 list-models
+list-monitoring-executions
+list-monitoring-schedules
 list-multipart-uploads
 list-multiplex-programs
 list-multiplexes
@@ -3342,10 +3391,12 @@ list-portfolios-for-product
 list-presets
 list-principal-things
 list-principals-for-portfolio
+list-processing-jobs
 list-progress-update-streams
 list-projects
 list-protections
 list-provisioned-capacity
+list-provisioned-concurrency-configs
 list-provisioned-product-plans
 list-provisioning-artifacts
 list-provisioning-artifacts-for-service-action
@@ -3418,6 +3469,7 @@ list-service-actions-for-provisioning-artifact
 list-service-specific-credentials
 list-services
 list-shards
+list-signaling-channels
 list-signing-certificates
 list-size-constraint-sets
 list-skills
@@ -3496,6 +3548,8 @@ list-training-jobs
 list-training-jobs-for-hyper-parameter-tuning-job
 list-transcription-jobs
 list-transform-jobs
+list-trial-components
+list-trials
 list-triggers
 list-type-registrations
 list-type-versions
@@ -3569,6 +3623,8 @@ modify-db-cluster-parameter-group
 modify-db-cluster-snapshot-attribute
 modify-db-instance
 modify-db-parameter-group
+modify-db-proxy
+modify-db-proxy-target-group
 modify-db-snapshot
 modify-db-snapshot-attribute
 modify-db-subnet-group
@@ -3782,6 +3838,7 @@ put-partner-events
 put-permission
 put-permission-policy
 put-pipeline-definition
+put-provisioned-concurrency-config
 put-public-access-block
 put-record
 put-record-batch
@@ -3852,6 +3909,7 @@ register-ca-certificate
 register-certificate
 register-container-instance
 register-cross-account-access-role
+register-db-proxy-targets
 register-default-patch-baseline
 register-device
 register-domain
@@ -4187,6 +4245,7 @@ start-migration
 start-ml-evaluation-task-run
 start-ml-labeling-set-generation-task-run
 start-monitoring-members
+start-monitoring-schedule
 start-multiplex
 start-next-pending-job-execution
 start-notebook-instance
@@ -4194,6 +4253,7 @@ start-on-demand-audit-task
 start-on-demand-replication-run
 start-person-tracking
 start-pipeline-execution
+start-project-version
 start-query
 start-query-execution
 start-relational-database
@@ -4225,6 +4285,7 @@ stop-activity-stream
 stop-app-replication
 stop-application
 stop-assessment-run
+stop-auto-ml-job
 stop-automation-execution
 stop-build
 stop-bulk-deployment
@@ -4255,8 +4316,11 @@ stop-labeling-job
 stop-logging
 stop-matchmaking
 stop-monitoring-members
+stop-monitoring-schedule
 stop-multiplex
 stop-notebook-instance
+stop-processing-job
+stop-project-version
 stop-query
 stop-query-execution
 stop-relational-database
@@ -4452,6 +4516,7 @@ update-document-default-version
 update-document-version
 update-documentation-part
 update-documentation-version
+update-domain
 update-domain-configuration
 update-domain-contact
 update-domain-contact-privacy
@@ -4473,6 +4538,7 @@ update-environment-membership
 update-evaluation
 update-event-configurations
 update-event-source-mapping
+update-experiment
 update-expiration-for-hit
 update-facet
 update-field-level-encryption-config
@@ -4548,6 +4614,7 @@ update-mitigation-action
 update-ml-model
 update-ml-transform
 update-model
+update-monitoring-schedule
 update-multiplex
 update-multiplex-program
 update-my-user-profile
@@ -4640,6 +4707,7 @@ update-service-primary-task-set
 update-service-setting
 update-service-specific-credential
 update-shard-count
+update-signaling-channel
 update-signing-certificate
 update-size-constraint-set
 update-skill-group
@@ -4680,6 +4748,8 @@ update-topic-rule-destination
 update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
+update-trial
+update-trial-component
 update-trigger
 update-trust
 update-type
