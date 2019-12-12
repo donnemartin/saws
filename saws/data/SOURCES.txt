@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4674
+[sub_commands]: 4675
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2482,6 +2482,7 @@ get-bulk-deployment-status
 get-bulk-publish-details
 get-bundles
 get-byte-match-set
+get-calendar-state
 get-caller-identity
 get-campaign
 get-campaign-activities
