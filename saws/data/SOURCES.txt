@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4675
+[sub_commands]: 4677
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3470,6 +3470,8 @@ list-service-actions-for-provisioning-artifact
 list-service-specific-credentials
 list-services
 list-shards
+list-shared-projects
+list-shared-report-groups
 list-signaling-channels
 list-signing-certificates
 list-size-constraint-sets
