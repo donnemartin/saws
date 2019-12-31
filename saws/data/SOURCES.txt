@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4677
+[sub_commands]: 4701
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -882,6 +882,8 @@ create-tapes
 create-target-group
 create-task-set
 create-template
+create-test-grid-project
+create-test-grid-url
 create-thing
 create-thing-group
 create-thing-type
@@ -927,6 +929,7 @@ create-user-profile
 create-vault
 create-virtual-mfa-device
 create-vocabulary
+create-vocabulary-filter
 create-voice-template
 create-volume
 create-vpc
@@ -1433,6 +1436,7 @@ delete-target-group
 delete-task-set
 delete-template
 delete-terminology
+delete-test-grid-project
 delete-thing
 delete-thing-group
 delete-thing-shadow
@@ -1483,6 +1487,7 @@ delete-vault-notifications
 delete-virtual-interface
 delete-virtual-mfa-device
 delete-vocabulary
+delete-vocabulary-filter
 delete-voice-channel
 delete-voice-template
 delete-volume
@@ -1554,7 +1559,9 @@ describe-activity-type
 describe-address
 describe-addresses
 describe-adjustment-types
+describe-affected-accounts-for-organization
 describe-affected-entities
+describe-affected-entities-for-organization
 describe-agent-versions
 describe-agents
 describe-aggregate-compliance-by-config-rules
@@ -1770,11 +1777,13 @@ describe-event-bus
 describe-event-categories
 describe-event-configurations
 describe-event-details
+describe-event-details-for-organization
 describe-event-source
 describe-event-subscriptions
 describe-event-topics
 describe-event-types
 describe-events
+describe-events-for-organization
 describe-exclusions
 describe-execution
 describe-experiment
@@ -1810,6 +1819,7 @@ describe-groups
 describe-handshake
 describe-hapg
 describe-harvest-job
+describe-health-service-status-for-organization
 describe-host-reservation-offerings
 describe-host-reservations
 describe-hosted-connections
@@ -2251,6 +2261,7 @@ disable-enhanced-monitoring
 disable-fast-snapshot-restores
 disable-gateway
 disable-hbase-backups
+disable-health-service-access-for-organization
 disable-insight-rules
 disable-key
 disable-key-rotation
@@ -2331,6 +2342,7 @@ enable-domain-transfer-lock
 enable-ebs-encryption-by-default
 enable-enhanced-monitoring
 enable-fast-snapshot-restores
+enable-health-service-access-for-organization
 enable-insight-rules
 enable-key
 enable-key-rotation
@@ -2986,6 +2998,8 @@ get-template
 get-template-summary
 get-terminology
 get-test
+get-test-grid-project
+get-test-grid-session
 get-thing-shadow
 get-third-party-job-details
 get-threat-intel-set
@@ -3032,6 +3046,7 @@ get-vault-access-policy
 get-vault-lock
 get-vault-notifications
 get-vocabulary
+get-vocabulary-filter
 get-voice-channel
 get-voice-template
 get-vpc-link
@@ -3524,8 +3539,13 @@ list-task-definition-families
 list-task-definitions
 list-tasks
 list-team-members
+list-template-versions
 list-templates
 list-terminologies
+list-test-grid-projects
+list-test-grid-session-actions
+list-test-grid-session-artifacts
+list-test-grid-sessions
 list-tests
 list-thing-groups
 list-thing-groups-for-thing
@@ -3575,6 +3595,7 @@ list-versions-by-function
 list-violation-events
 list-virtual-mfa-devices
 list-vocabularies
+list-vocabulary-filters
 list-volume-initiators
 list-volume-recovery-points
 list-volumes
@@ -4740,7 +4761,9 @@ update-tags-for-resource
 update-task-set
 update-team-member
 update-template
+update-template-active-version
 update-termination-protection
+update-test-grid-project
 update-thing
 update-thing-group
 update-thing-groups-for-thing
@@ -4769,6 +4792,7 @@ update-user-pool-domain
 update-user-profile
 update-virtual-interface-attributes
 update-vocabulary
+update-vocabulary-filter
 update-voice-channel
 update-voice-template
 update-volume
