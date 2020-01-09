@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4701
+[sub_commands]: 4702
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4301,6 +4301,7 @@ start-topics-detection-job
 start-transcription-job
 start-trigger
 start-user-import-job
+start-vpc-endpoint-service-private-dns-verification
 start-workflow-execution
 start-workflow-run
 start-workspaces
