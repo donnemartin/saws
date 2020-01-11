@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4702
+[sub_commands]: 4707
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2139,6 +2139,7 @@ describe-task-sets
 describe-tasks
 describe-termination-policy-types
 describe-test-cases
+describe-text-translation-job
 describe-thing
 describe-thing-group
 describe-thing-registration-task
@@ -3126,6 +3127,7 @@ list-allowed-node-type-modifications
 list-api-keys
 list-application-dependencies
 list-application-revisions
+list-application-states
 list-application-versions
 list-applications
 list-applied-schema-arns
@@ -3547,6 +3549,7 @@ list-test-grid-session-actions
 list-test-grid-session-artifacts
 list-test-grid-sessions
 list-tests
+list-text-translation-jobs
 list-thing-groups
 list-thing-groups-for-thing
 list-thing-principals
@@ -4296,6 +4299,7 @@ start-stream-encryption
 start-stream-processor
 start-support-data-export
 start-task
+start-text-translation-job
 start-thing-registration-task
 start-topics-detection-job
 start-transcription-job
@@ -4358,6 +4362,7 @@ stop-stack-set-operation
 stop-stream-encryption
 stop-stream-processor
 stop-task
+stop-text-translation-job
 stop-thing-registration-task
 stop-training-document-classifier
 stop-training-entity-recognizer
