@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4707
+[sub_commands]: 4709
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3627,11 +3627,13 @@ merge-pull-request-by-squash
 merge-pull-request-by-three-way
 merge-shards
 meter-usage
+migrate-workspace
 modify-account
 modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
 modify-capacity-reservation
+modify-certificates
 modify-client-properties
 modify-client-vpn-endpoint
 modify-cluster
