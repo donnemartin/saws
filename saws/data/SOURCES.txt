@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4709
+[sub_commands]: 4715
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -467,6 +467,7 @@ count-pending-activity-tasks
 count-pending-decision-tasks
 cp
 create-access-key
+create-access-point
 create-account
 create-account-alias
 create-activation
@@ -969,6 +970,7 @@ define-expression
 define-index-field
 define-suggester
 delete-access-key
+delete-access-point
 delete-account-alias
 delete-account-audit-configuration
 delete-account-password-policy
@@ -1159,6 +1161,7 @@ delete-field-level-encryption-profile
 delete-file
 delete-file-share
 delete-file-system
+delete-file-system-policy
 delete-filter
 delete-fleet
 delete-fleets
@@ -1546,6 +1549,7 @@ deregister-type
 deregister-volume
 deregister-webhook-with-third-party
 deregister-workspace-directory
+describe-access-points
 describe-account
 describe-account-attributes
 describe-account-audit-configuration
@@ -1791,6 +1795,7 @@ describe-export-image-tasks
 describe-export-tasks
 describe-expressions
 describe-fast-snapshot-restores
+describe-file-system-policy
 describe-file-systems
 describe-findings
 describe-fleet-attributes
@@ -3820,6 +3825,7 @@ put-event-selectors
 put-event-stream
 put-events
 put-file
+put-file-system-policy
 put-function-concurrency
 put-function-event-invoke-config
 put-gateway-response
