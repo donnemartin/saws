@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4715
+[sub_commands]: 4719
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1873,6 +1873,7 @@ describe-interconnects
 describe-internet-gateways
 describe-inventory-deletions
 describe-ip-groups
+describe-ipv6-pools
 describe-job
 describe-job-definitions
 describe-job-execution
@@ -2211,6 +2212,7 @@ describe-vpn-gateways
 describe-vtl-devices
 describe-workflow-execution
 describe-workflow-type
+describe-workforce
 describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
@@ -2451,6 +2453,7 @@ get-approval-rule-template
 get-apps
 get-assessment-report
 get-assignment
+get-associated-ipv6-pool-cidrs
 get-associated-role
 get-attribute-values
 get-attributes
@@ -4817,6 +4820,7 @@ update-web-acl
 update-webhook
 update-work-group
 update-workflow
+update-workforce
 update-workteam
 update-xss-match-set
 upgrade-applied-schema
