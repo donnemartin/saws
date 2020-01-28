@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4719
+[sub_commands]: 4720
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4359,6 +4359,7 @@ stop-monitoring-members
 stop-monitoring-schedule
 stop-multiplex
 stop-notebook-instance
+stop-pipeline-execution
 stop-processing-job
 stop-project-version
 stop-query
