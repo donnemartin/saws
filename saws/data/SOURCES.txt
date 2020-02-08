@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4720
+[sub_commands]: 4721
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2778,6 +2778,7 @@ get-logger-definition-version
 get-logging-configuration
 get-logging-options
 get-login
+get-login-password
 get-login-profile
 get-mailbox-details
 get-maintenance-window
