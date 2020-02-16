@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4721
+[sub_commands]: 4725
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -969,6 +969,7 @@ define-analysis-scheme
 define-expression
 define-index-field
 define-suggester
+delete-access-control-rule
 delete-access-key
 delete-access-point
 delete-account-alias
@@ -2414,6 +2415,7 @@ generate-random
 generate-service-last-accessed-details
 generate-template
 get
+get-access-control-effect
 get-access-key-info
 get-access-key-last-used
 get-account
@@ -3118,6 +3120,7 @@ launch-app
 leave-organization
 list
 list-accepted-portfolio-shares
+list-access-control-rules
 list-access-keys
 list-account-aliases
 list-account-settings
@@ -3778,6 +3781,7 @@ purchase-scheduled-instances
 purge-queue
 push
 put
+put-access-control-rule
 put-account-setting
 put-account-setting-default
 put-action-revision
