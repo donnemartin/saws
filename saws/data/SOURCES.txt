@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4725
+[sub_commands]: 4727
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -260,6 +260,7 @@ associate-drt-log-bucket
 associate-drt-role
 associate-elastic-ip
 associate-fleet
+associate-health-check
 associate-hosted-connection
 associate-iam-instance-profile
 associate-ip-groups
@@ -2307,6 +2308,7 @@ disassociate-drt-role
 disassociate-elastic-ip
 disassociate-fleet
 disassociate-from-master-account
+disassociate-health-check
 disassociate-iam-instance-profile
 disassociate-ip-groups
 disassociate-kms-key
