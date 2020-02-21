@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4727
+[sub_commands]: 4729
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3014,6 +3014,7 @@ get-terminology
 get-test
 get-test-grid-project
 get-test-grid-session
+get-text-detection
 get-thing-shadow
 get-third-party-job-details
 get-threat-intel-set
@@ -4317,6 +4318,7 @@ start-stream-encryption
 start-stream-processor
 start-support-data-export
 start-task
+start-text-detection
 start-text-translation-job
 start-thing-registration-task
 start-topics-detection-job
