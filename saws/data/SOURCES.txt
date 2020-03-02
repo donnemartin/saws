@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4729
+[sub_commands]: 4737
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -548,6 +548,7 @@ create-connector-definition
 create-connector-definition-version
 create-constraint
 create-contact
+create-contact-method
 create-container
 create-core-definition
 create-core-definition-version
@@ -982,6 +983,7 @@ delete-activity
 delete-address-book
 delete-adm-channel
 delete-aggregation-authorization
+delete-alarm
 delete-alarms
 delete-algorithm
 delete-alias
@@ -1080,6 +1082,7 @@ delete-connection
 delete-connector-definition
 delete-constraint
 delete-contact
+delete-contact-method
 delete-container
 delete-container-policy
 delete-core-definition
@@ -2436,6 +2439,7 @@ get-aggregate-compliance-details-by-config-rule
 get-aggregate-config-rule-compliance-summary
 get-aggregate-discovered-resource-counts
 get-aggregate-resource-config
+get-alarms
 get-alias
 get-api-cache
 get-api-key
@@ -2563,6 +2567,7 @@ get-connectors
 get-console-output
 get-console-screenshot
 get-contact
+get-contact-methods
 get-contact-reachability-status
 get-container-policy
 get-content-moderation
@@ -3789,6 +3794,7 @@ put-account-setting
 put-account-setting-default
 put-action-revision
 put-aggregation-authorization
+put-alarm
 put-anomaly-detector
 put-app-launch-configuration
 put-app-replication-configuration
@@ -4156,6 +4162,7 @@ send-bonus
 send-bounce
 send-bulk-templated-email
 send-command
+send-contact-method-verification
 send-custom-verification-email
 send-diagnostic-interrupt
 send-email
@@ -4425,6 +4432,7 @@ terminate-provisioned-product
 terminate-session
 terminate-workflow-execution
 terminate-workspaces
+test-alarm
 test-authorization
 test-connection
 test-dns-answer
