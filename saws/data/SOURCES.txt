@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4737
+[sub_commands]: 4739
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3375,6 +3375,7 @@ list-metrics
 list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
+list-ml-transforms
 list-model-packages
 list-models
 list-monitoring-executions
@@ -4154,6 +4155,7 @@ search-transit-gateway-multicast-groups
 search-transit-gateway-routes
 search-users
 select
+select-aggregate-resource-config
 select-object-content
 select-resource-config
 send-announcement
