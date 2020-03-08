@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4740
+[sub_commands]: 4745
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -797,6 +797,7 @@ create-realtime-endpoint
 create-receipt-filter
 create-receipt-rule
 create-receipt-rule-set
+create-recommender-configuration
 create-regex-match-set
 create-regex-pattern-set
 create-relational-database
@@ -1340,6 +1341,7 @@ delete-realtime-endpoint
 delete-receipt-filter
 delete-receipt-rule
 delete-receipt-rule-set
+delete-recommender-configuration
 delete-regex-match-set
 delete-regex-pattern-set
 delete-registration-code
@@ -2887,6 +2889,8 @@ get-queue-attributes
 get-queue-url
 get-rate-based-rule
 get-rate-based-rule-managed-keys
+get-recommender-configuration
+get-recommender-configurations
 get-records
 get-regex-match-set
 get-regex-pattern-set
@@ -4723,6 +4727,7 @@ update-radius
 update-rate-based-rule
 update-rds-db-instance
 update-receipt-rule
+update-recommender-configuration
 update-records
 update-regex-match-set
 update-regex-pattern-set
