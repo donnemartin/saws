@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4745
+[sub_commands]: 4746
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3654,6 +3654,7 @@ merge-shards
 meter-usage
 migrate-workspace
 modify-account
+modify-availability-zone-group
 modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
