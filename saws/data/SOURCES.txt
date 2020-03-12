@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4746
+[sub_commands]: 4749
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3760,6 +3760,7 @@ open-instance-public-ports
 opt-in-phone-number
 override-pull-request-approval-rules
 package
+pause-cluster
 peer-vpc
 phone-number-validate
 poll-for-activity-task
@@ -4109,6 +4110,7 @@ restore-table-from-backup
 restore-table-from-cluster-snapshot
 restore-table-to-point-in-time
 restore-workspace
+resume-cluster
 resume-processes
 resume-session
 resync-mfa-device
@@ -4469,6 +4471,7 @@ unlink-developer-identity
 unlink-identity
 unmonitor-instances
 unpeer-vpc
+unshare-application
 unshare-directory
 unsubscribe
 unsubscribe-from-dataset
