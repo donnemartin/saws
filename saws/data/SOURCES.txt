@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4749
+[sub_commands]: 4758
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -643,6 +643,7 @@ create-game-session-queue
 create-gateway-group
 create-geo-match-set
 create-global-cluster
+create-global-replication-group
 create-global-table
 create-gov-cloud-account
 create-grant
@@ -964,6 +965,7 @@ deactivate-user
 decline-handshake
 decline-invitations
 decode-authorization-message
+decrease-node-groups-in-global-replication-group
 decrease-replica-count
 decrease-replication-factor
 decrease-stream-retention-period
@@ -1188,6 +1190,7 @@ delete-gcm-channel
 delete-geo-match-set
 delete-git-hub-account-token
 delete-global-cluster
+delete-global-replication-group
 delete-graphql-api
 delete-group
 delete-group-policy
@@ -1824,6 +1827,7 @@ describe-game-session-queues
 describe-game-sessions
 describe-gateway-information
 describe-global-clusters
+describe-global-replication-groups
 describe-global-table
 describe-global-table-settings
 describe-group
@@ -2313,6 +2317,7 @@ disassociate-drt-role
 disassociate-elastic-ip
 disassociate-fleet
 disassociate-from-master-account
+disassociate-global-replication-group
 disassociate-health-check
 disassociate-iam-instance-profile
 disassociate-ip-groups
@@ -2400,6 +2405,7 @@ export-server-engine-attribute
 export-snapshot
 export-transit-gateway-routes
 failover-db-cluster
+failover-global-replication-group
 filter-log-events
 flush-api-cache
 flush-stage-authorizers-cache
@@ -3105,6 +3111,7 @@ import-snapshot
 import-source-credentials
 import-terminology
 import-workspace-image
+increase-node-groups-in-global-replication-group
 increase-replica-count
 increase-replication-factor
 increase-stream-retention-period
@@ -3691,6 +3698,7 @@ modify-event-subscription
 modify-fleet
 modify-fpga-image-attribute
 modify-global-cluster
+modify-global-replication-group
 modify-hapg
 modify-hosts
 modify-hsm
@@ -3941,6 +3949,7 @@ re-encrypt
 read-job
 read-pipeline
 read-preset
+rebalance-slots-in-global-replication-group
 reboot-broker
 reboot-cache-cluster
 reboot-cluster
