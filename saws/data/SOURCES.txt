@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4758
+[sub_commands]: 4762
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1535,6 +1535,7 @@ deregister
 deregister-certificate
 deregister-container-instance
 deregister-db-proxy-targets
+deregister-delegated-administrator
 deregister-ecs-cluster
 deregister-elastic-ip
 deregister-event-topic
@@ -3250,6 +3251,8 @@ list-dashboards
 list-data-sources
 list-datasets
 list-dead-letter-source-queues
+list-delegated-administrators
+list-delegated-services-for-account
 list-delivery-streams
 list-deployment-configs
 list-deployment-groups
@@ -3980,6 +3983,7 @@ register-container-instance
 register-cross-account-access-role
 register-db-proxy-targets
 register-default-patch-baseline
+register-delegated-administrator
 register-device
 register-domain
 register-ecs-cluster
