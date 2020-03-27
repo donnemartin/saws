@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4762
+[sub_commands]: 4769
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -267,6 +267,7 @@ associate-ip-groups
 associate-kms-key
 associate-member-to-group
 associate-node
+associate-package
 associate-principal-with-portfolio
 associate-product-with-portfolio
 associate-qualification-with-worker
@@ -751,6 +752,7 @@ create-organization
 create-organizational-unit
 create-origin-endpoint
 create-ota-update
+create-package
 create-parameter-group
 create-partition
 create-partner-event-source
@@ -1303,6 +1305,7 @@ delete-organization-conformance-pack
 delete-organizational-unit
 delete-origin-endpoint
 delete-ota-update
+delete-package
 delete-parameter
 delete-parameter-group
 delete-parameters
@@ -1982,6 +1985,7 @@ describe-organization-conformance-pack-statuses
 describe-organization-conformance-packs
 describe-organizational-unit
 describe-origin-endpoint
+describe-packages
 describe-parameter-groups
 describe-parameters
 describe-partner-event-source
@@ -2349,6 +2353,7 @@ disconnect-custom-key-store
 discover-input-schema
 discover-instances
 discover-poll-endpoint
+dissociate-package
 domain-metadata
 download-db-log-file-portion
 download-default-key-pair
@@ -3278,6 +3283,7 @@ list-documents
 list-domain-configurations
 list-domain-names
 list-domains
+list-domains-for-package
 list-dominant-language-detection-jobs
 list-elasticsearch-instance-types
 list-elasticsearch-versions
@@ -3424,6 +3430,7 @@ list-origin-endpoints
 list-ota-updates
 list-outgoing-certificates
 list-outgoing-typed-links
+list-packages-for-domain
 list-parents
 list-partner-event-source-accounts
 list-partner-event-sources
