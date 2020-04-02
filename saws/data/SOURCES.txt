@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4769
+[sub_commands]: 4773
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1272,6 +1272,7 @@ delete-message-batch
 delete-method
 delete-method-response
 delete-metric-filter
+delete-metric-policy
 delete-mitigation-action
 delete-ml-model
 delete-ml-transform
@@ -1327,6 +1328,7 @@ delete-product
 delete-profile
 delete-progress-update-stream
 delete-project
+delete-project-version
 delete-protection
 delete-provisioned-concurrency-config
 delete-provisioned-product-plan
@@ -2820,6 +2822,7 @@ get-merge-options
 get-method
 get-method-response
 get-metric-data
+get-metric-policy
 get-metric-statistics
 get-metric-widget-image
 get-ml-model
@@ -3902,6 +3905,7 @@ put-method-response
 put-metric-alarm
 put-metric-data
 put-metric-filter
+put-metric-policy
 put-notification-configuration
 put-object
 put-object-acl
