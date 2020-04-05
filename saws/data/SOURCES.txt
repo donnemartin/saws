@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4773
+[sub_commands]: 4791
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -423,6 +423,7 @@ check-dns-availability
 check-domain-availability
 check-domain-transferability
 check-if-phone-number-is-opted-out
+claim-game-server
 classify-document
 clear-default-authorizer
 clone-receipt-rule-set
@@ -590,6 +591,7 @@ create-device-definition
 create-device-definition-version
 create-device-pool
 create-dhcp-options
+create-dimension
 create-direct-connect-gateway
 create-direct-connect-gateway-association
 create-direct-connect-gateway-association-proposal
@@ -639,6 +641,7 @@ create-fpga-image
 create-function
 create-function-definition
 create-function-definition-version
+create-game-server-group
 create-game-session
 create-game-session-queue
 create-gateway-group
@@ -1128,6 +1131,7 @@ delete-device-definition
 delete-device-pool
 delete-device-usage-data
 delete-dhcp-options
+delete-dimension
 delete-direct-connect-gateway
 delete-direct-connect-gateway-association
 delete-direct-connect-gateway-association-proposal
@@ -1184,6 +1188,7 @@ delete-function
 delete-function-concurrency
 delete-function-definition
 delete-function-event-invoke-config
+delete-game-server-group
 delete-game-session-queue
 delete-gateway
 delete-gateway-group
@@ -1545,6 +1550,7 @@ deregister-ecs-cluster
 deregister-elastic-ip
 deregister-event-topic
 deregister-from-work-mail
+deregister-game-server
 deregister-image
 deregister-instance
 deregister-instances-from-load-balancer
@@ -1743,6 +1749,7 @@ describe-delivery-stream
 describe-deployments
 describe-destinations
 describe-dhcp-options
+describe-dimension
 describe-direct-connect-gateway-association-proposals
 describe-direct-connect-gateway-associations
 describe-direct-connect-gateway-attachments
@@ -1827,6 +1834,8 @@ describe-flow-logs
 describe-folder-contents
 describe-fpga-image-attribute
 describe-fpga-images
+describe-game-server
+describe-game-server-group
 describe-game-session-details
 describe-game-session-placement
 describe-game-session-queues
@@ -3275,6 +3284,7 @@ list-device-events
 list-device-instances
 list-device-pools
 list-devices
+list-dimensions
 list-directories
 list-discovered-resources
 list-distributions
@@ -3320,6 +3330,8 @@ list-function-definition-versions
 list-function-definitions
 list-function-event-invoke-configs
 list-functions
+list-game-server-groups
+list-game-servers
 list-gateway-groups
 list-gateways
 list-geo-locations
@@ -4000,6 +4012,7 @@ register-domain
 register-ecs-cluster
 register-elastic-ip
 register-event-topic
+register-game-server
 register-image
 register-instance
 register-instances-with-load-balancer
@@ -4135,6 +4148,7 @@ restore-table-from-cluster-snapshot
 restore-table-to-point-in-time
 restore-workspace
 resume-cluster
+resume-game-server-group
 resume-processes
 resume-session
 resync-mfa-device
@@ -4441,6 +4455,7 @@ subscribe
 subscribe-to-dataset
 subscribe-to-event
 suggest
+suspend-game-server-group
 suspend-processes
 swap-environment-cnames
 sync
@@ -4602,6 +4617,7 @@ update-device-definition
 update-device-instance
 update-device-pool
 update-device-status
+update-dimension
 update-direct-connect-gateway-association
 update-directory-config
 update-distribution
@@ -4650,6 +4666,8 @@ update-function-code
 update-function-configuration
 update-function-definition
 update-function-event-invoke-config
+update-game-server
+update-game-server-group
 update-game-session
 update-game-session-queue
 update-gateway
