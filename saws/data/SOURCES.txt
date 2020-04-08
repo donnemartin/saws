@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4791
+[sub_commands]: 4796
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1271,6 +1271,7 @@ delete-mailbox-permissions
 delete-maintenance-window
 delete-matchmaking-configuration
 delete-matchmaking-rule-set
+delete-medical-transcription-job
 delete-members
 delete-message
 delete-message-batch
@@ -2824,6 +2825,7 @@ get-mapping
 get-master-account
 get-media
 get-media-for-fragment-list
+get-medical-transcription-job
 get-members
 get-merge-commit
 get-merge-conflicts
@@ -3405,6 +3407,7 @@ list-logging-configurations
 list-luna-clients
 list-mailbox-permissions
 list-managed-schema-arns
+list-medical-transcription-jobs
 list-members
 list-metrics
 list-mfa-devices
@@ -3454,6 +3457,7 @@ list-phone-numbers-opted-out
 list-pipeline-executions
 list-pipelines
 list-platform-applications
+list-platform-branches
 list-platform-versions
 list-policies
 list-policies-for-target
@@ -4342,6 +4346,7 @@ start-logging
 start-maintenance
 start-match-backfill
 start-matchmaking
+start-medical-transcription-job
 start-migration
 start-ml-evaluation-task-run
 start-ml-labeling-set-generation-task-run
