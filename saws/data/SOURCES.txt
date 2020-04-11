@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4796
+[sub_commands]: 4799
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1554,6 +1554,7 @@ deregister-from-work-mail
 deregister-game-server
 deregister-image
 deregister-instance
+deregister-instance-event-notification-attributes
 deregister-instances-from-load-balancer
 deregister-job-definition
 deregister-managed-instance
@@ -1886,6 +1887,7 @@ describe-installation-media
 describe-instance-associations-status
 describe-instance-attribute
 describe-instance-credit-specifications
+describe-instance-event-notification-attributes
 describe-instance-health
 describe-instance-information
 describe-instance-patch-states
@@ -4019,6 +4021,7 @@ register-event-topic
 register-game-server
 register-image
 register-instance
+register-instance-event-notification-attributes
 register-instances-with-load-balancer
 register-job-definition
 register-on-premises-instance
