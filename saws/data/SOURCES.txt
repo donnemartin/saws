@@ -133,13 +133,14 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4799
+[sub_commands]: 4815
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
 abort-vault-lock
 accept-certificate-transfer
 accept-direct-connect-gateway-association-proposal
+accept-domain-transfer-from-another-aws-account
 accept-handshake
 accept-invitation
 accept-match
@@ -397,6 +398,7 @@ cancel-certificate-transfer
 cancel-cluster
 cancel-command
 cancel-conversion-task
+cancel-domain-transfer-to-another-aws-account
 cancel-elasticsearch-service-software-update
 cancel-export-task
 cancel-handshake
@@ -926,6 +928,7 @@ create-type
 create-typed-link-facet
 create-unreferenced-merge-commit
 create-upload
+create-usage-limit
 create-usage-plan
 create-usage-plan-key
 create-usage-report-subscription
@@ -1490,6 +1493,7 @@ delete-trust
 delete-type
 delete-typed-link-facet
 delete-upload
+delete-usage-limit
 delete-usage-plan
 delete-usage-plan-key
 delete-usage-report-subscription
@@ -1995,6 +1999,7 @@ describe-orderable-replication-instances
 describe-organization
 describe-organization-config-rule-statuses
 describe-organization-config-rules
+describe-organization-configuration
 describe-organization-conformance-pack-statuses
 describe-organization-conformance-packs
 describe-organizational-unit
@@ -2206,6 +2211,7 @@ describe-type
 describe-type-registration
 describe-update-actions
 describe-upload-buffer
+describe-usage-limits
 describe-usage-report-subscriptions
 describe-user
 describe-user-import-job
@@ -2306,6 +2312,7 @@ disable-key-rotation
 disable-ldaps
 disable-logging
 disable-metrics-collection
+disable-organization-admin-account
 disable-policy-type
 disable-radius
 disable-rule
@@ -2391,6 +2398,7 @@ enable-ldaps
 enable-logging
 enable-metrics-collection
 enable-mfa-device
+enable-organization-admin-account
 enable-policy-type
 enable-radius
 enable-rule
@@ -2823,6 +2831,7 @@ get-maintenance-window-execution
 get-maintenance-window-execution-task
 get-maintenance-window-execution-task-invocation
 get-maintenance-window-task
+get-managed-scaling-policy
 get-mapping
 get-master-account
 get-media
@@ -3443,6 +3452,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-organization-admin-accounts
 list-organization-portfolio-access
 list-organizational-units-for-parent
 list-organizations
@@ -3771,6 +3781,7 @@ modify-traffic-mirror-filter-network-services
 modify-traffic-mirror-filter-rule
 modify-traffic-mirror-session
 modify-transit-gateway-vpc-attachment
+modify-usage-limit
 modify-volume
 modify-volume-attribute
 modify-vpc-attribute
@@ -3918,6 +3929,7 @@ put-lifecycle-policy
 put-log-events
 put-logging-configuration
 put-mailbox-permissions
+put-managed-scaling-policy
 put-method
 put-method-response
 put-metric-alarm
@@ -4045,6 +4057,7 @@ register-workflow-type
 register-workspace-directory
 reject-assignment
 reject-certificate-transfer
+reject-domain-transfer-from-another-aws-account
 reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
@@ -4068,6 +4081,7 @@ remove-from-global-cluster
 remove-ip-routes
 remove-layer-version-permission
 remove-listener-certificates
+remove-managed-scaling-policy
 remove-option-from-option-group
 remove-permission
 remove-resource-permission
@@ -4504,6 +4518,7 @@ transact-get-items
 transact-write-items
 transfer-certificate
 transfer-domain
+transfer-domain-to-another-aws-account
 translate-text
 unarchive-findings
 unassign-instance
@@ -4748,6 +4763,7 @@ update-number-of-domain-controllers
 update-object-attributes
 update-open-id-connect-provider-thumbprint
 update-ops-item
+update-organization-configuration
 update-organizational-unit
 update-origin-endpoint
 update-parameter-group
