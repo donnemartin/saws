@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4815
+[sub_commands]: 4818
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1026,6 +1026,7 @@ delete-attributes
 delete-authorizer
 delete-auto-scaling-group
 delete-auto-snapshot
+delete-automatic-tape-creation-policy
 delete-backup
 delete-baidu-channel
 delete-bandwidth-rate-limit
@@ -3219,6 +3220,7 @@ list-audit-mitigation-actions-tasks
 list-audit-tasks
 list-authorizers
 list-auto-ml-jobs
+list-automatic-tape-creation-policies
 list-available-management-cidr-ranges
 list-available-solution-stacks
 list-available-zones
@@ -4577,6 +4579,7 @@ update-assume-role-policy
 update-auth-event-feedback
 update-authorizer
 update-auto-scaling-group
+update-automatic-tape-creation-policy
 update-availability-options
 update-baidu-channel
 update-bandwidth-rate-limit
