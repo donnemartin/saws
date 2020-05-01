@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4818
+[sub_commands]: 4819
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2571,6 +2571,7 @@ get-classifier
 get-classifiers
 get-client-certificate
 get-client-certificates
+get-clip
 get-cloud-formation-stack-records
 get-cloud-formation-template
 get-cloud-front-origin-access-identity
