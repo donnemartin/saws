@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4819
+[sub_commands]: 4825
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -724,6 +724,7 @@ create-luna-client
 create-maintenance-window
 create-matchmaking-configuration
 create-matchmaking-rule-set
+create-medical-vocabulary
 create-members
 create-microsoft-ad
 create-mitigation-action
@@ -958,6 +959,7 @@ create-vpn-connection
 create-vpn-connection-route
 create-vpn-gateway
 create-web-acl
+create-web-acl-migration-stack
 create-webhook
 create-work-group
 create-worker-block
@@ -1276,6 +1278,7 @@ delete-maintenance-window
 delete-matchmaking-configuration
 delete-matchmaking-rule-set
 delete-medical-transcription-job
+delete-medical-vocabulary
 delete-members
 delete-message
 delete-message-batch
@@ -2839,6 +2842,7 @@ get-master-account
 get-media
 get-media-for-fragment-list
 get-medical-transcription-job
+get-medical-vocabulary
 get-members
 get-merge-commit
 get-merge-conflicts
@@ -3422,6 +3426,7 @@ list-luna-clients
 list-mailbox-permissions
 list-managed-schema-arns
 list-medical-transcription-jobs
+list-medical-vocabularies
 list-members
 list-metrics
 list-mfa-devices
@@ -4747,6 +4752,7 @@ update-maintenance-window-target
 update-maintenance-window-task
 update-managed-instance-role
 update-matchmaking-configuration
+update-medical-vocabulary
 update-method
 update-method-response
 update-mitigation-action
