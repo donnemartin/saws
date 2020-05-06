@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4825
+[sub_commands]: 4826
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4028,6 +4028,7 @@ register-application-revision
 register-avs-device
 register-ca-certificate
 register-certificate
+register-certificate-without-ca
 register-container-instance
 register-cross-account-access-role
 register-db-proxy-targets
