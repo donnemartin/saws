@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4826
+[sub_commands]: 4829
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1354,6 +1354,7 @@ delete-publishing-destination
 delete-pull-request-approval-rule
 delete-push-template
 delete-qualification-type
+delete-query-definition
 delete-query-logging-config
 delete-queue
 delete-queued-reserved-instances
@@ -2047,6 +2048,7 @@ describe-public-ipv4-pools
 describe-publishing-destination
 describe-pull-request-events
 describe-queries
+describe-query-definitions
 describe-raid-arrays
 describe-rds-db-instances
 describe-receipt-rule
@@ -3960,6 +3962,7 @@ put-permission-policy
 put-pipeline-definition
 put-provisioned-concurrency-config
 put-public-access-block
+put-query-definition
 put-record
 put-record-batch
 put-records
