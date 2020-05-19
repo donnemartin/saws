@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4829
+[sub_commands]: 4830
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4480,6 +4480,7 @@ stop-training-job
 stop-transform-job
 stop-trigger
 stop-user-import-job
+stop-workflow-run
 stop-workspaces
 submit-attachment-state-changes
 submit-container-state-change
