@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4830
+[sub_commands]: 4834
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1391,6 +1391,7 @@ delete-resource-data-sync
 delete-resource-definition
 delete-resource-policy
 delete-resource-server
+delete-resources-by-external-id
 delete-rest-api
 delete-retention-configuration
 delete-retention-policy
@@ -1890,6 +1891,7 @@ describe-import-tasks
 describe-index
 describe-index-fields
 describe-input
+describe-input-device
 describe-input-security-group
 describe-insight-rules
 describe-installation-media
@@ -3391,6 +3393,7 @@ list-imports
 list-incoming-typed-links
 list-index
 list-indices
+list-input-devices
 list-input-security-groups
 list-inputs
 list-instance-fleets
@@ -4729,6 +4732,7 @@ update-identity-provider
 update-image-permissions
 update-indexing-configuration
 update-input
+update-input-device
 update-input-security-group
 update-instance
 update-instance-custom-health-status
