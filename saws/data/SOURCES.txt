@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4834
+[sub_commands]: 4835
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2643,6 +2643,7 @@ get-databases
 get-dataflow-graph
 get-default-credit-specification
 get-default-patch-baseline
+get-default-retention-policy
 get-deployable-patch-snapshot-for-instance
 get-deployment
 get-deployment-config
