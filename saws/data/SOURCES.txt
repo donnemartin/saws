@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4835
+[sub_commands]: 4853
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -142,6 +142,7 @@ accept-certificate-transfer
 accept-direct-connect-gateway-association-proposal
 accept-domain-transfer-from-another-aws-account
 accept-handshake
+accept-inbound-cross-cluster-search-connection
 accept-invitation
 accept-match
 accept-portfolio-share
@@ -564,6 +565,7 @@ create-custom-key-store
 create-custom-metadata
 create-custom-verification-email-template
 create-customer-gateway
+create-data-catalog
 create-data-source
 create-data-source-from-rds
 create-data-source-from-redshift
@@ -758,6 +760,7 @@ create-organization
 create-organizational-unit
 create-origin-endpoint
 create-ota-update
+create-outbound-cross-cluster-search-connection
 create-package
 create-parameter-group
 create-partition
@@ -1110,6 +1113,7 @@ delete-custom-metadata
 delete-custom-verification-email-template
 delete-customer-gateway
 delete-dashboards
+delete-data-catalog
 delete-data-source
 delete-database
 delete-dataset
@@ -1223,6 +1227,7 @@ delete-image
 delete-image-builder
 delete-image-permissions
 delete-imported-key-material
+delete-inbound-cross-cluster-search-connection
 delete-index-field
 delete-input
 delete-input-security-group
@@ -1319,6 +1324,7 @@ delete-organization-conformance-pack
 delete-organizational-unit
 delete-origin-endpoint
 delete-ota-update
+delete-outbound-cross-cluster-search-connection
 delete-package
 delete-parameter
 delete-parameter-group
@@ -1888,6 +1894,7 @@ describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
 describe-import-tasks
+describe-inbound-cross-cluster-search-connections
 describe-index
 describe-index-fields
 describe-input
@@ -2011,6 +2018,7 @@ describe-organization-conformance-pack-statuses
 describe-organization-conformance-packs
 describe-organizational-unit
 describe-origin-endpoint
+describe-outbound-cross-cluster-search-connections
 describe-packages
 describe-parameter-groups
 describe-parameters
@@ -2634,6 +2642,7 @@ get-current-user
 get-custom-verification-email-template
 get-dash-streaming-session-url
 get-dashboard
+get-data-catalog
 get-data-catalog-encryption-settings
 get-data-endpoint
 get-data-retrieval-policy
@@ -3058,6 +3067,7 @@ get-subscription-definition-version
 get-subscription-state
 get-suite
 get-table
+get-table-metadata
 get-table-version
 get-table-versions
 get-tables
@@ -3290,7 +3300,9 @@ list-created-artifacts
 list-curated-environment-images
 list-custom-verification-email-templates
 list-dashboards
+list-data-catalogs
 list-data-sources
+list-databases
 list-datasets
 list-dead-letter-source-queues
 list-delegated-administrators
@@ -3607,6 +3619,7 @@ list-subscription-definitions
 list-subscriptions
 list-subscriptions-by-topic
 list-suites
+list-table-metadata
 list-tables
 list-tag-options
 list-tags
@@ -3683,6 +3696,7 @@ list-v2-logging-levels
 list-vaults
 list-versions-by-function
 list-violation-events
+list-virtual-interface-test-history
 list-virtual-mfa-devices
 list-vocabularies
 list-vocabulary-filters
@@ -4074,6 +4088,7 @@ register-workspace-directory
 reject-assignment
 reject-certificate-transfer
 reject-domain-transfer-from-another-aws-account
+reject-inbound-cross-cluster-search-connection
 reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
@@ -4336,6 +4351,7 @@ start-associations-once
 start-audit-mitigation-actions-task
 start-automation-execution
 start-availability-monitor-test
+start-bgp-failover-test
 start-build
 start-bulk-deployment
 start-celebrity-recognition
@@ -4429,6 +4445,7 @@ stop-application
 stop-assessment-run
 stop-auto-ml-job
 stop-automation-execution
+stop-bgp-failover-test
 stop-build
 stop-bulk-deployment
 stop-channel
@@ -4644,6 +4661,7 @@ update-crawler
 update-crawler-schedule
 update-custom-key-store
 update-custom-verification-email-template
+update-data-catalog
 update-data-retention
 update-data-source
 update-database
