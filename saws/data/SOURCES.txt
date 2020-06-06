@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4853
+[sub_commands]: 4855
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -261,6 +261,7 @@ associate-discovered-resource
 associate-drt-log-bucket
 associate-drt-role
 associate-elastic-ip
+associate-environment-operations-role
 associate-fleet
 associate-health-check
 associate-hosted-connection
@@ -2357,6 +2358,7 @@ disassociate-discovered-resource
 disassociate-drt-log-bucket
 disassociate-drt-role
 disassociate-elastic-ip
+disassociate-environment-operations-role
 disassociate-fleet
 disassociate-from-master-account
 disassociate-global-replication-group
