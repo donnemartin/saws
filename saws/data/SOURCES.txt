@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4855
+[sub_commands]: 4858
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -272,6 +272,7 @@ associate-member-to-group
 associate-node
 associate-package
 associate-principal-with-portfolio
+associate-proactive-engagement-details
 associate-product-with-portfolio
 associate-qualification-with-worker
 associate-role-to-group
@@ -2331,6 +2332,7 @@ disable-logging
 disable-metrics-collection
 disable-organization-admin-account
 disable-policy-type
+disable-proactive-engagement
 disable-radius
 disable-rule
 disable-snapshot-copy
@@ -2418,6 +2420,7 @@ enable-metrics-collection
 enable-mfa-device
 enable-organization-admin-account
 enable-policy-type
+enable-proactive-engagement
 enable-radius
 enable-rule
 enable-snapshot-copy
