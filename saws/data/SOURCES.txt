@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4858
+[sub_commands]: 4860
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1068,6 +1068,7 @@ delete-cache-parameter-group
 delete-cache-security-group
 delete-cache-subnet-group
 delete-campaign
+delete-capacity-provider
 delete-certificate
 delete-change-set
 delete-channel
@@ -3464,6 +3465,7 @@ list-multipart-uploads
 list-multiplex-programs
 list-multiplexes
 list-named-queries
+list-named-shadows-for-thing
 list-namespaces
 list-network-profiles
 list-notebook-instance-lifecycle-configs
