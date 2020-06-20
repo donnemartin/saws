@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4860
+[sub_commands]: 4863
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -406,6 +406,7 @@ cancel-elasticsearch-service-software-update
 cancel-export-task
 cancel-handshake
 cancel-import-task
+cancel-instance-refresh
 cancel-job
 cancel-job-execution
 cancel-key-deletion
@@ -1914,6 +1915,7 @@ describe-instance-information
 describe-instance-patch-states
 describe-instance-patch-states-for-patch-group
 describe-instance-patches
+describe-instance-refreshes
 describe-instance-status
 describe-instance-type-offerings
 describe-instance-types
@@ -4393,6 +4395,7 @@ start-import
 start-import-labels-task-run
 start-import-task
 start-instance
+start-instance-refresh
 start-instances
 start-job-run
 start-key-phrases-detection-job
