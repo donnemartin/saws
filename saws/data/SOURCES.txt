@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4863
+[sub_commands]: 4864
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3401,6 +3401,7 @@ list-hits
 list-hits-for-qualification-type
 list-hosted-zones
 list-hosted-zones-by-name
+list-hosted-zones-by-vpc
 list-hsms
 list-human-task-uis
 list-hyper-parameter-tuning-jobs
