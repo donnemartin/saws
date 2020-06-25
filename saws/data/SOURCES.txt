@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4864
+[sub_commands]: 4866
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3024,6 +3024,7 @@ get-search-suggestions
 get-security-configuration
 get-security-configurations
 get-segment
+get-segment-detection
 get-segment-export-jobs
 get-segment-import-jobs
 get-segment-version
@@ -4429,6 +4430,7 @@ start-replication-task-assessment
 start-report-creation
 start-schema-creation
 start-schema-extension
+start-segment-detection
 start-sentiment-detection-job
 start-session
 start-smart-home-appliance-discovery
