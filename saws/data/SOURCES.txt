@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4866
+[sub_commands]: 4868
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2604,6 +2604,7 @@ get-cognito-events
 get-coip-pool-usage
 get-command-invocation
 get-comment
+get-comment-reactions
 get-comments-for-compared-commit
 get-comments-for-pull-request
 get-commit
@@ -3918,6 +3919,7 @@ put-bucket-tagging
 put-bucket-versioning
 put-bucket-website
 put-cluster-capacity-providers
+put-comment-reaction
 put-compliance-items
 put-composite-alarm
 put-conference-preference
