@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4868
+[sub_commands]: 4874
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1086,6 +1086,8 @@ delete-cluster-snapshot
 delete-cluster-subnet-group
 delete-code-repository
 delete-collection
+delete-column-statistics-for-partition
+delete-column-statistics-for-table
 delete-comment
 delete-comment-content
 delete-compute-environment
@@ -2602,6 +2604,8 @@ get-cloud-front-origin-access-identity-config
 get-cluster-credentials
 get-cognito-events
 get-coip-pool-usage
+get-column-statistics-for-partition
+get-column-statistics-for-table
 get-command-invocation
 get-comment
 get-comment-reactions
@@ -4651,6 +4655,8 @@ update-cloud-front-origin-access-identity
 update-cluster
 update-cluster-settings
 update-code-repository
+update-column-statistics-for-partition
+update-column-statistics-for-table
 update-comment
 update-compute-environment
 update-conditional-forwarder
