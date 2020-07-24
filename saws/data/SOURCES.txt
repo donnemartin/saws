@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4881
+[sub_commands]: 4899
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -515,6 +515,7 @@ create-business-report-schedule
 create-byte-match-set
 create-cache-cluster
 create-cache-parameter-group
+create-cache-policy
 create-cache-security-group
 create-cache-subnet-group
 create-cached-iscsi-volume
@@ -763,6 +764,7 @@ create-or-update-tags
 create-organization
 create-organizational-unit
 create-origin-endpoint
+create-origin-request-policy
 create-ota-update
 create-outbound-cross-cluster-search-connection
 create-package
@@ -1067,6 +1069,7 @@ delete-byte-match-set
 delete-ca-certificate
 delete-cache-cluster
 delete-cache-parameter-group
+delete-cache-policy
 delete-cache-security-group
 delete-cache-subnet-group
 delete-campaign
@@ -1225,6 +1228,7 @@ delete-hosted-zone
 delete-hsm
 delete-hsm-client-certificate
 delete-hsm-configuration
+delete-human-task-ui
 delete-identities
 delete-identity
 delete-identity-policy
@@ -1331,6 +1335,7 @@ delete-organization-config-rule
 delete-organization-conformance-pack
 delete-organizational-unit
 delete-origin-endpoint
+delete-origin-request-policy
 delete-ota-update
 delete-outbound-cross-cluster-search-connection
 delete-package
@@ -1655,6 +1660,7 @@ describe-availability-options
 describe-availability-zones
 describe-available-patches
 describe-backup
+describe-backup-policy
 describe-backups
 describe-bandwidth-rate-limit
 describe-batch-predictions
@@ -2576,6 +2582,8 @@ get-bulk-deployment-status
 get-bulk-publish-details
 get-bundles
 get-byte-match-set
+get-cache-policy
+get-cache-policy-config
 get-calendar-state
 get-caller-identity
 get-campaign
@@ -2919,6 +2927,8 @@ get-ops-summary
 get-organization-config-rule-detailed-status
 get-organization-conformance-pack-detailed-status
 get-organizations-access-report
+get-origin-request-policy
+get-origin-request-policy-config
 get-ota-update
 get-parameter
 get-parameter-history
@@ -3001,6 +3011,7 @@ get-resource
 get-resource-config-history
 get-resource-definition
 get-resource-definition-version
+get-resource-policies
 get-resource-policy
 get-resources
 get-rest-api
@@ -3282,6 +3293,7 @@ list-bundles
 list-business-report-schedules
 list-byte-match-sets
 list-ca-certificates
+list-cache-policies
 list-candidates-for-auto-ml-job
 list-certificates
 list-certificates-by-ca
@@ -3344,6 +3356,8 @@ list-dimensions
 list-directories
 list-discovered-resources
 list-distributions
+list-distributions-by-cache-policy-id
+list-distributions-by-origin-request-policy-id
 list-distributions-by-web-acl-id
 list-document-classification-jobs
 list-document-classifiers
@@ -3504,6 +3518,7 @@ list-organization-portfolio-access
 list-organizational-units-for-parent
 list-organizations
 list-origin-endpoints
+list-origin-request-policies
 list-ota-updates
 list-outgoing-certificates
 list-outgoing-typed-links
@@ -3909,6 +3924,7 @@ put-application-policy
 put-approval-result
 put-attributes
 put-auto-scaling-policy
+put-backup-policy
 put-block-public-access-configuration
 put-bot
 put-bot-alias
@@ -4650,6 +4666,7 @@ update-build
 update-business-report-schedule
 update-byte-match-set
 update-ca-certificate
+update-cache-policy
 update-campaign
 update-certificate
 update-certificate-options
@@ -4832,6 +4849,7 @@ update-ops-item
 update-organization-configuration
 update-organizational-unit
 update-origin-endpoint
+update-origin-request-policy
 update-parameter-group
 update-partition
 update-patch-baseline
