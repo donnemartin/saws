@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4899
+[sub_commands]: 4912
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -297,6 +297,7 @@ associate-web-acl
 assume-role
 assume-role-with-saml
 assume-role-with-web-identity
+attach-certificate-to-distribution
 attach-classic-link-vpc
 attach-disk
 attach-elastic-load-balancer
@@ -523,6 +524,7 @@ create-campaign
 create-capacity-provider
 create-capacity-reservation
 create-case
+create-certificate
 create-certificate-from-csr
 create-change-set
 create-channel
@@ -1913,6 +1915,7 @@ describe-index
 describe-index-fields
 describe-input
 describe-input-device
+describe-input-device-thumbnail
 describe-input-security-group
 describe-insight-rules
 describe-installation-media
@@ -2284,11 +2287,13 @@ describe-workforce
 describe-working-storage
 describe-workspace-bundles
 describe-workspace-directories
+describe-workspace-image-permissions
 describe-workspace-images
 describe-workspace-snapshots
 describe-workspaces
 describe-workspaces-connection-status
 describe-workteam
+detach-certificate-from-distribution
 detach-classic-link-vpc
 detach-disk
 detach-elastic-load-balancer
@@ -2598,6 +2603,7 @@ get-catalog-import-status
 get-celebrity-info
 get-celebrity-recognition
 get-certificate
+get-certificates
 get-change
 get-change-token
 get-change-token-status
@@ -2704,7 +2710,11 @@ get-disk-snapshot
 get-disk-snapshots
 get-disks
 get-distribution
+get-distribution-bundles
 get-distribution-config
+get-distribution-latest-cache-reset
+get-distribution-metric-data
+get-distributions
 get-document
 get-document-path
 get-document-version
@@ -4199,6 +4209,7 @@ reset-cluster-parameter-group
 reset-db-cluster-parameter-group
 reset-db-parameter-group
 reset-deployments
+reset-distribution-cache
 reset-ebs-default-kms-key-id
 reset-fpga-image-attribute
 reset-image-attribute
@@ -4725,6 +4736,7 @@ update-dimension
 update-direct-connect-gateway-association
 update-directory-config
 update-distribution
+update-distribution-bundle
 update-document
 update-document-default-version
 update-document-version
@@ -5001,6 +5013,7 @@ update-webhook
 update-work-group
 update-workflow
 update-workforce
+update-workspace-image-permission
 update-workteam
 update-xss-match-set
 upgrade-applied-schema
