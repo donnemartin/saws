@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4912
+[sub_commands]: 4915
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -975,6 +975,7 @@ create-webhook
 create-work-group
 create-worker-block
 create-workflow
+create-workforce
 create-workspaces
 create-workteam
 create-xss-match-set
@@ -1563,6 +1564,7 @@ delete-webhook
 delete-work-group
 delete-worker-block
 delete-workflow
+delete-workforce
 delete-workspace-image
 delete-workteam
 delete-xss-match-set
@@ -3758,6 +3760,7 @@ list-worker-blocks
 list-workers-with-qualification-type
 list-workflow-types
 list-workflows
+list-workforces
 list-workteams
 list-xss-match-sets
 lookup-developer-identity
