@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4915
+[sub_commands]: 4928
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -413,6 +413,7 @@ cancel-job-execution
 cancel-key-deletion
 cancel-maintenance-window-execution
 cancel-ml-task-run
+cancel-replication-task-assessment-run
 cancel-reserved-instances-listing
 cancel-resize
 cancel-retrieval
@@ -1399,6 +1400,7 @@ delete-replication-instance
 delete-replication-job
 delete-replication-subnet-group
 delete-replication-task
+delete-replication-task-assessment-run
 delete-report
 delete-report-definition
 delete-report-group
@@ -1636,6 +1638,7 @@ describe-alias
 describe-analysis-schemes
 describe-anomaly-detectors
 describe-app
+describe-applicable-individual-assessments
 describe-application
 describe-application-state
 describe-application-versions
@@ -2095,6 +2098,8 @@ describe-replication-instance-task-logs
 describe-replication-instances
 describe-replication-subnet-groups
 describe-replication-task-assessment-results
+describe-replication-task-assessment-runs
+describe-replication-task-individual-assessments
 describe-replication-tasks
 describe-report-creation
 describe-report-definitions
@@ -2784,10 +2789,12 @@ get-graphql-api
 get-group
 get-group-certificate-authority
 get-group-certificate-configuration
+get-group-configuration
 get-group-policy
 get-group-query
 get-group-version
 get-groups
+get-groups-for-capacity-reservation
 get-health-check
 get-health-check-count
 get-health-check-last-failure-reason
@@ -2895,6 +2902,7 @@ get-media
 get-media-for-fragment-list
 get-medical-transcription-job
 get-medical-vocabulary
+get-member-detectors
 get-members
 get-merge-commit
 get-merge-conflicts
@@ -3187,6 +3195,7 @@ get-workflow-runs
 get-xss-match-set
 global-sign-out
 grant-access
+group-resources
 head-bucket
 head-object
 import-api-keys
@@ -4257,6 +4266,7 @@ resume-cluster
 resume-game-server-group
 resume-processes
 resume-session
+resume-workflow-run
 resync-mfa-device
 retire-grant
 retrieve-domain-auth-code
@@ -4470,6 +4480,7 @@ start-relational-database
 start-remediation-execution
 start-replication-task
 start-replication-task-assessment
+start-replication-task-assessment-run
 start-report-creation
 start-schema-creation
 start-schema-extension
@@ -4618,6 +4629,7 @@ unassign-volume
 undeprecate-activity-type
 undeprecate-domain
 undeprecate-workflow-type
+ungroup-resources
 uninstall
 unlink-developer-identity
 unlink-identity
@@ -4841,6 +4853,7 @@ update-maintenance-window-task
 update-managed-instance-role
 update-matchmaking-configuration
 update-medical-vocabulary
+update-member-detectors
 update-method
 update-method-response
 update-mitigation-action
