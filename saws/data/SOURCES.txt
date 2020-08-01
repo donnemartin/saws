@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4928
+[sub_commands]: 4938
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -358,6 +358,7 @@ batch-disassociate-user-stack
 batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
+batch-get-build-batches
 batch-get-builds
 batch-get-commits
 batch-get-crawlers
@@ -1068,6 +1069,7 @@ delete-bucket-tagging
 delete-bucket-website
 delete-budget
 delete-build
+delete-build-batch
 delete-business-report-schedule
 delete-byte-match-set
 delete-ca-certificate
@@ -1716,6 +1718,7 @@ describe-cluster-subnet-groups
 describe-cluster-tracks
 describe-cluster-versions
 describe-clusters
+describe-code-coverages
 describe-code-repository
 describe-coip-pools
 describe-collection
@@ -3165,6 +3168,7 @@ get-usage-plan
 get-usage-plan-key
 get-usage-plan-keys
 get-usage-plans
+get-usage-statistics
 get-user
 get-user-attribute-verification-code
 get-user-defined-function
@@ -3306,6 +3310,8 @@ list-bucket-inventory-configurations
 list-bucket-metrics-configurations
 list-buckets
 list-budgets-for-resource
+list-build-batches
+list-build-batches-for-project
 list-builds
 list-builds-for-project
 list-bulk-deployment-detailed-reports
@@ -4273,6 +4279,8 @@ retrieve-domain-auth-code
 retrieve-environment-info
 retrieve-tape-archive
 retrieve-tape-recovery-point
+retry-build
+retry-build-batch
 retry-stage-execution
 revoke-cache-security-group-ingress
 revoke-client-vpn-ingress
@@ -4417,6 +4425,7 @@ start-automation-execution
 start-availability-monitor-test
 start-bgp-failover-test
 start-build
+start-build-batch
 start-bulk-deployment
 start-celebrity-recognition
 start-channel
@@ -4514,6 +4523,7 @@ stop-auto-ml-job
 stop-automation-execution
 stop-bgp-failover-test
 stop-build
+stop-build-batch
 stop-bulk-deployment
 stop-channel
 stop-compilation-job
