@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4938
+[sub_commands]: 4942
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -712,6 +712,7 @@ create-keys-and-certificate
 create-labeling-job
 create-labels
 create-lag
+create-language-model
 create-launch-configuration
 create-launch-template
 create-launch-template-version
@@ -1273,6 +1274,7 @@ delete-key-pair
 delete-known-host-keys
 delete-labels
 delete-lag
+delete-language-model
 delete-launch-configuration
 delete-launch-template
 delete-launch-template-versions
@@ -1957,6 +1959,7 @@ describe-key-pairs
 describe-key-phrases-detection-job
 describe-labeling-job
 describe-lags
+describe-language-model
 describe-launch-configurations
 describe-launch-template-versions
 describe-launch-templates
@@ -3492,6 +3495,7 @@ list-key-policies
 list-keys
 list-labeling-jobs
 list-labeling-jobs-for-workteam
+list-language-models
 list-launch-paths
 list-layer-versions
 list-layers
