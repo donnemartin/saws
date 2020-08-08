@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4942
+[sub_commands]: 4945
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -525,6 +525,7 @@ create-cached-iscsi-volume
 create-campaign
 create-capacity-provider
 create-capacity-reservation
+create-carrier-gateway
 create-case
 create-certificate
 create-certificate-from-csr
@@ -1081,6 +1082,7 @@ delete-cache-security-group
 delete-cache-subnet-group
 delete-campaign
 delete-capacity-provider
+delete-carrier-gateway
 delete-certificate
 delete-change-set
 delete-channel
@@ -1697,6 +1699,7 @@ describe-cache-subnet-groups
 describe-cached-iscsi-volumes
 describe-capacity-providers
 describe-capacity-reservations
+describe-carrier-gateways
 describe-cases
 describe-certificate
 describe-certificates
