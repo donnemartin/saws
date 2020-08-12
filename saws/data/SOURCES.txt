@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4945
+[sub_commands]: 4952
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1027,6 +1027,7 @@ delete-apns-voip-sandbox-channel
 delete-app
 delete-app-launch-configuration
 delete-app-replication-configuration
+delete-app-validation-configuration
 delete-application
 delete-application-cloud-watch-logging-option
 delete-application-input-processing-configuration
@@ -2543,6 +2544,8 @@ get-apns-voip-sandbox-channel
 get-app
 get-app-launch-configuration
 get-app-replication-configuration
+get-app-validation-configuration
+get-app-validation-output
 get-application
 get-application-date-range-kpi
 get-application-policy
@@ -3209,6 +3212,7 @@ group-resources
 head-bucket
 head-object
 import-api-keys
+import-app-catalog
 import-catalog-to-glue
 import-certificate
 import-client-vpn-client-certificate-revocation-list
@@ -3902,6 +3906,7 @@ monitor-instances
 move-account
 move-address-to-vpc
 mv
+notify-app-validation-output
 notify-application-state
 notify-migration-task-state
 notify-when-uploaded
@@ -3955,6 +3960,7 @@ put-alarm
 put-anomaly-detector
 put-app-launch-configuration
 put-app-replication-configuration
+put-app-validation-configuration
 put-application-policy
 put-approval-result
 put-attributes
@@ -4485,6 +4491,7 @@ start-monitoring-schedule
 start-multiplex
 start-next-pending-job-execution
 start-notebook-instance
+start-on-demand-app-replication
 start-on-demand-audit-task
 start-on-demand-replication-run
 start-person-tracking
