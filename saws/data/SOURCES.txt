@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4952
+[sub_commands]: 4957
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -500,6 +500,7 @@ create-assessment-target
 create-assessment-template
 create-association
 create-association-batch
+create-audit-suppression
 create-authorizer
 create-auto-ml-job
 create-auto-scaling-group
@@ -1042,6 +1043,7 @@ delete-assessment-target
 delete-assessment-template
 delete-association
 delete-attributes
+delete-audit-suppression
 delete-authorizer
 delete-auto-scaling-group
 delete-auto-snapshot
@@ -1661,6 +1663,7 @@ describe-attachment
 describe-attack
 describe-audit-finding
 describe-audit-mitigation-actions-task
+describe-audit-suppression
 describe-audit-task
 describe-authorizer
 describe-auto-ml-job
@@ -3302,6 +3305,7 @@ list-attributes
 list-audit-findings
 list-audit-mitigation-actions-executions
 list-audit-mitigation-actions-tasks
+list-audit-suppressions
 list-audit-tasks
 list-authorizers
 list-auto-ml-jobs
@@ -4700,6 +4704,7 @@ update-assessment-target
 update-association
 update-association-status
 update-assume-role-policy
+update-audit-suppression
 update-auth-event-feedback
 update-authorizer
 update-auto-scaling-group
