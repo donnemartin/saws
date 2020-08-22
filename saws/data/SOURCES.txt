@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4957
+[sub_commands]: 4960
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -906,6 +906,7 @@ create-subscription-definition-version
 create-table
 create-tag-option
 create-tags
+create-tape-pool
 create-tape-with-barcode
 create-tapes
 create-target-group
@@ -1498,6 +1499,7 @@ delete-tags
 delete-tags-for-domain
 delete-tape
 delete-tape-archive
+delete-tape-pool
 delete-target-group
 delete-task-set
 delete-template
@@ -3711,6 +3713,7 @@ list-tags-for-stream
 list-tags-for-vault
 list-tags-log-group
 list-tags-of-resource
+list-tape-pools
 list-tapes
 list-targets-by-rule
 list-targets-for-policy
