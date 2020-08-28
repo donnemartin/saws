@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4960
+[sub_commands]: 4965
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -934,6 +934,7 @@ create-transform-job
 create-transit-gateway
 create-transit-gateway-multicast-domain
 create-transit-gateway-peering-attachment
+create-transit-gateway-prefix-list-reference
 create-transit-gateway-route
 create-transit-gateway-route-table
 create-transit-gateway-vpc-attachment
@@ -1524,6 +1525,7 @@ delete-transcription-job
 delete-transit-gateway
 delete-transit-gateway-multicast-domain
 delete-transit-gateway-peering-attachment
+delete-transit-gateway-prefix-list-reference
 delete-transit-gateway-route
 delete-transit-gateway-route-table
 delete-transit-gateway-vpc-attachment
@@ -3166,6 +3168,7 @@ get-trail-status
 get-transcription-job
 get-transit-gateway-attachment-propagations
 get-transit-gateway-multicast-domain-associations
+get-transit-gateway-prefix-list-references
 get-transit-gateway-route-table-associations
 get-transit-gateway-route-table-propagations
 get-trigger
@@ -3891,6 +3894,8 @@ modify-target-group-attributes
 modify-traffic-mirror-filter-network-services
 modify-traffic-mirror-filter-rule
 modify-traffic-mirror-session
+modify-transit-gateway
+modify-transit-gateway-prefix-list-reference
 modify-transit-gateway-vpc-attachment
 modify-usage-limit
 modify-volume
