@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4965
+[sub_commands]: 4974
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -747,6 +747,7 @@ create-ml-transform
 create-model
 create-model-package
 create-monitoring-schedule
+create-monitoring-subscription
 create-mount-target
 create-multipart-upload
 create-multiplex
@@ -1324,6 +1325,7 @@ delete-ml-transform
 delete-model
 delete-model-package
 delete-monitoring-schedule
+delete-monitoring-subscription
 delete-mount-target
 delete-multiplex
 delete-multiplex-program
@@ -1891,6 +1893,7 @@ describe-fpga-image-attribute
 describe-fpga-images
 describe-game-server
 describe-game-server-group
+describe-game-server-instances
 describe-game-session-details
 describe-game-session-placement
 describe-game-session-queues
@@ -2036,6 +2039,7 @@ describe-network-interfaces
 describe-nfs-file-shares
 describe-node-association-status
 describe-node-configuration-options
+describe-notebook-execution
 describe-notebook-instance
 describe-notebook-instance-lifecycle-config
 describe-notification-configurations
@@ -2940,6 +2944,7 @@ get-ml-transforms
 get-model
 get-model-template
 get-models
+get-monitoring-subscription
 get-named-query
 get-namespace
 get-network-profile
@@ -3543,6 +3548,7 @@ list-named-queries
 list-named-shadows-for-thing
 list-namespaces
 list-network-profiles
+list-notebook-executions
 list-notebook-instance-lifecycle-configs
 list-notebook-instances
 list-object-attributes
@@ -3908,6 +3914,7 @@ modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
 modify-vpn-connection
+modify-vpn-connection-options
 modify-vpn-tunnel-certificate
 modify-vpn-tunnel-options
 modify-workspace-access-properties
@@ -4502,6 +4509,7 @@ start-monitoring-members
 start-monitoring-schedule
 start-multiplex
 start-next-pending-job-execution
+start-notebook-execution
 start-notebook-instance
 start-on-demand-app-replication
 start-on-demand-audit-task
@@ -4580,6 +4588,7 @@ stop-matchmaking
 stop-monitoring-members
 stop-monitoring-schedule
 stop-multiplex
+stop-notebook-execution
 stop-notebook-instance
 stop-pipeline-execution
 stop-processing-job
