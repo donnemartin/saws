@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4974
+[sub_commands]: 4980
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -820,6 +820,7 @@ create-query-logging-config
 create-queue
 create-rate-based-rule
 create-realtime-endpoint
+create-realtime-log-config
 create-receipt-filter
 create-receipt-rule
 create-receipt-rule-set
@@ -1396,6 +1397,7 @@ delete-queue
 delete-queued-reserved-instances
 delete-rate-based-rule
 delete-realtime-endpoint
+delete-realtime-log-config
 delete-receipt-filter
 delete-receipt-rule
 delete-receipt-rule-set
@@ -3018,6 +3020,7 @@ get-queue-attributes
 get-queue-url
 get-rate-based-rule
 get-rate-based-rule-managed-keys
+get-realtime-log-config
 get-recommender-configuration
 get-recommender-configurations
 get-records
@@ -3409,6 +3412,7 @@ list-discovered-resources
 list-distributions
 list-distributions-by-cache-policy-id
 list-distributions-by-origin-request-policy-id
+list-distributions-by-realtime-log-config
 list-distributions-by-web-acl-id
 list-document-classification-jobs
 list-document-classifiers
@@ -3619,6 +3623,7 @@ list-query-logging-configs
 list-queue-tags
 list-queues
 list-rate-based-rules
+list-realtime-log-configs
 list-receipt-filters
 list-receipt-rule-sets
 list-record-history
@@ -4954,6 +4959,7 @@ update-queue
 update-radius
 update-rate-based-rule
 update-rds-db-instance
+update-realtime-log-config
 update-receipt-rule
 update-recommender-configuration
 update-records
