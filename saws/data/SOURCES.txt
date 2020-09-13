@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4980
+[sub_commands]: 4981
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2982,6 +2982,7 @@ get-parameters
 get-parameters-by-path
 get-parameters-for-import
 get-partition
+get-partition-indexes
 get-partitions
 get-password-data
 get-patch-baseline
