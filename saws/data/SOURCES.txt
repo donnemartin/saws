@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4981
+[sub_commands]: 4988
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -250,6 +250,7 @@ associate-budget-with-resource
 associate-certificate
 associate-client-vpn-target-network
 associate-configuration-items-to-application
+associate-connection-alias
 associate-connection-with-lag
 associate-contact-with-address-book
 associate-created-artifact
@@ -559,6 +560,7 @@ create-configuration-set-event-destination
 create-configuration-set-tracking-options
 create-configuration-template
 create-connection
+create-connection-alias
 create-connector-definition
 create-connector-definition-version
 create-constraint
@@ -1122,6 +1124,7 @@ delete-configuration-set-tracking-options
 delete-configuration-template
 delete-conformance-pack
 delete-connection
+delete-connection-alias
 delete-connector-definition
 delete-constraint
 delete-contact
@@ -1762,6 +1765,8 @@ describe-configurations
 describe-conformance-pack-compliance
 describe-conformance-pack-status
 describe-conformance-packs
+describe-connection-alias-permissions
+describe-connection-aliases
 describe-connections
 describe-constraint
 describe-container
@@ -2399,6 +2404,7 @@ disassociate-budget-from-resource
 disassociate-certificate
 disassociate-client-vpn-target-network
 disassociate-configuration-items-from-application
+disassociate-connection-alias
 disassociate-connection-from-lag
 disassociate-connector
 disassociate-contact-from-address-book
@@ -4770,6 +4776,7 @@ update-configuration-set-sending-enabled
 update-configuration-set-tracking-options
 update-configuration-template
 update-connection
+update-connection-alias-permission
 update-connectivity-info
 update-connector-definition
 update-constraint
