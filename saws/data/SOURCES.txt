@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4988
+[sub_commands]: 4995
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2082,6 +2082,7 @@ describe-patch-properties
 describe-pending-aggregation-requests
 describe-pending-maintenance-actions
 describe-permissions
+describe-pii-entities-detection-job
 describe-pipelines
 describe-placement-groups
 describe-platform-version
@@ -2358,6 +2359,7 @@ detect-faces
 detect-key-phrases
 detect-labels
 detect-moderation-labels
+detect-pii-entities
 detect-sentiment
 detect-stack-drift
 detect-stack-resource-drift
@@ -3166,6 +3168,7 @@ get-test
 get-test-grid-project
 get-test-grid-session
 get-text-detection
+get-thing-runtime-configuration
 get-thing-shadow
 get-third-party-job-details
 get-threat-intel-set
@@ -3592,6 +3595,7 @@ list-partner-event-source-accounts
 list-partner-event-sources
 list-parts
 list-phone-numbers-opted-out
+list-pii-entities-detection-jobs
 list-pipeline-executions
 list-pipelines
 list-platform-applications
@@ -4527,6 +4531,7 @@ start-on-demand-app-replication
 start-on-demand-audit-task
 start-on-demand-replication-run
 start-person-tracking
+start-pii-entities-detection-job
 start-pipeline-execution
 start-project-version
 start-query
@@ -4602,6 +4607,7 @@ stop-monitoring-schedule
 stop-multiplex
 stop-notebook-execution
 stop-notebook-instance
+stop-pii-entities-detection-job
 stop-pipeline-execution
 stop-processing-job
 stop-project-version
@@ -5052,6 +5058,7 @@ update-test-grid-project
 update-thing
 update-thing-group
 update-thing-groups-for-thing
+update-thing-runtime-configuration
 update-thing-shadow
 update-threat-intel-set
 update-time-to-live
