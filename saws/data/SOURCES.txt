@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4998
+[sub_commands]: 4999
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -392,6 +392,7 @@ batch-start
 batch-stop
 batch-stop-job-run
 batch-stop-update-action
+batch-update-partition
 batch-update-schedule
 batch-write
 batch-write-item
