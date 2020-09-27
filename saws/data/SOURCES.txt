@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 4999
+[sub_commands]: 5013
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -417,6 +417,7 @@ cancel-instance-refresh
 cancel-job
 cancel-job-execution
 cancel-key-deletion
+cancel-mailbox-export-job
 cancel-maintenance-window-execution
 cancel-ml-task-run
 cancel-replication-task-assessment-run
@@ -494,6 +495,8 @@ create-address
 create-address-book
 create-algorithm
 create-alias
+create-anomaly-monitor
+create-anomaly-subscription
 create-api-cache
 create-api-key
 create-app
@@ -1029,6 +1032,8 @@ delete-algorithm
 delete-alias
 delete-analysis-scheme
 delete-anomaly-detector
+delete-anomaly-monitor
+delete-anomaly-subscription
 delete-api-cache
 delete-api-key
 delete-apns-channel
@@ -2014,6 +2019,7 @@ describe-log-groups
 describe-log-streams
 describe-logging-status
 describe-luna-client
+describe-mailbox-export-job
 describe-maintenance-start-time
 describe-maintenance-window-execution-task-invocations
 describe-maintenance-window-execution-tasks
@@ -2559,6 +2565,9 @@ get-aggregate-discovered-resource-counts
 get-aggregate-resource-config
 get-alarms
 get-alias
+get-anomalies
+get-anomaly-monitors
+get-anomaly-subscriptions
 get-api-cache
 get-api-key
 get-api-keys
@@ -3545,6 +3554,7 @@ list-logger-definition-versions
 list-logger-definitions
 list-logging-configurations
 list-luna-clients
+list-mailbox-export-jobs
 list-mailbox-permissions
 list-managed-schema-arns
 list-medical-transcription-jobs
@@ -3972,6 +3982,7 @@ presign
 preview-agents
 promote-read-replica
 promote-read-replica-db-cluster
+provide-anomaly-feedback
 provision-byoip-cidr
 provision-product
 publish
@@ -4518,6 +4529,7 @@ start-key-phrases-detection-job
 start-label-detection
 start-lifecycle-policy-preview
 start-logging
+start-mailbox-export-job
 start-maintenance
 start-match-backfill
 start-matchmaking
@@ -4725,6 +4737,8 @@ update-account-sending-enabled
 update-address-book
 update-adm-channel
 update-alias
+update-anomaly-monitor
+update-anomaly-subscription
 update-api-cache
 update-api-key
 update-apns-channel
