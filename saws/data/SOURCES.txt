@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5013
+[sub_commands]: 5016
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1083,6 +1083,7 @@ delete-bucket-encryption
 delete-bucket-inventory-configuration
 delete-bucket-lifecycle
 delete-bucket-metrics-configuration
+delete-bucket-ownership-controls
 delete-bucket-policy
 delete-bucket-replication
 delete-bucket-tagging
@@ -2626,6 +2627,7 @@ get-bucket-location
 get-bucket-logging
 get-bucket-metrics-configuration
 get-bucket-notification-configuration
+get-bucket-ownership-controls
 get-bucket-policy
 get-bucket-policy-status
 get-bucket-replication
@@ -4029,6 +4031,7 @@ put-bucket-lifecycle-configuration
 put-bucket-logging
 put-bucket-metrics-configuration
 put-bucket-notification-configuration
+put-bucket-ownership-controls
 put-bucket-policy
 put-bucket-replication
 put-bucket-request-payment
