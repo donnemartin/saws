@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5016
+[sub_commands]: 5022
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -452,6 +452,7 @@ complete-multipart-upload
 complete-vault-lock
 compose-environments
 configure-health-check
+configure-logs
 confirm-connection
 confirm-device
 confirm-forgot-password
@@ -964,6 +965,7 @@ create-usage-plan-key
 create-usage-report-subscription
 create-user
 create-user-defined-function
+create-user-group
 create-user-import-job
 create-user-pool
 create-user-pool-client
@@ -1561,6 +1563,7 @@ delete-user
 delete-user-attributes
 delete-user-defined-function
 delete-user-endpoints
+delete-user-group
 delete-user-permissions-boundary
 delete-user-policy
 delete-user-pool
@@ -2296,6 +2299,7 @@ describe-upload-buffer
 describe-usage-limits
 describe-usage-report-subscriptions
 describe-user
+describe-user-groups
 describe-user-import-job
 describe-user-pool
 describe-user-pool-client
@@ -3936,6 +3940,8 @@ modify-transit-gateway
 modify-transit-gateway-prefix-list-reference
 modify-transit-gateway-vpc-attachment
 modify-usage-limit
+modify-user
+modify-user-group
 modify-volume
 modify-volume-attribute
 modify-vpc-attribute
