@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5022
+[sub_commands]: 5026
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -858,6 +858,7 @@ create-resource-definition-version
 create-resource-group
 create-resource-server
 create-rest-api
+create-return-shipping-label
 create-reusable-delegation-set
 create-role
 create-role-alias
@@ -2167,6 +2168,7 @@ describe-resource-permissions
 describe-resource-policies
 describe-resource-server
 describe-retention-configurations
+describe-return-shipping-label
 describe-risk-configuration
 describe-role-alias
 describe-root-folders
@@ -3031,6 +3033,7 @@ get-products
 get-profile
 get-project
 get-provisioned-concurrency-config
+get-provisioned-product-outputs
 get-public-access-block
 get-public-key
 get-public-key-config
@@ -4927,6 +4930,7 @@ update-item
 update-job
 update-job-execution
 update-job-queue
+update-job-shipment-state
 update-job-template
 update-journey
 update-journey-state
