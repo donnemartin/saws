@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5026
+[sub_commands]: 5035
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -523,6 +523,7 @@ create-branch
 create-broker
 create-bucket
 create-budget
+create-budget-action
 create-build
 create-business-report-schedule
 create-byte-match-set
@@ -1092,6 +1093,7 @@ delete-bucket-replication
 delete-bucket-tagging
 delete-bucket-website
 delete-budget
+delete-budget-action
 delete-build
 delete-build-batch
 delete-business-report-schedule
@@ -1711,6 +1713,10 @@ describe-broker
 describe-broker-engine-types
 describe-broker-instance-options
 describe-budget
+describe-budget-action
+describe-budget-action-histories
+describe-budget-actions-for-account
+describe-budget-actions-for-budget
 describe-budget-performance-history
 describe-budgets
 describe-build
@@ -2377,6 +2383,7 @@ detect-key-phrases
 detect-labels
 detect-moderation-labels
 detect-pii-entities
+detect-protective-equipment
 detect-sentiment
 detect-stack-drift
 detect-stack-resource-drift
@@ -2512,6 +2519,7 @@ enter-standby
 estimate-template-cost
 evaluate-expression
 evaluate-pull-request-approval-rules
+execute-budget-action
 execute-change-set
 execute-policy
 execute-provisioned-product-plan
@@ -4782,6 +4790,7 @@ update-batch-prediction
 update-billing-group
 update-broker
 update-budget
+update-budget-action
 update-build
 update-business-report-schedule
 update-byte-match-set
