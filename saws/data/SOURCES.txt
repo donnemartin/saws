@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5035
+[sub_commands]: 5040
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -143,6 +143,7 @@ accept-direct-connect-gateway-association-proposal
 accept-domain-transfer-from-another-aws-account
 accept-handshake
 accept-inbound-cross-cluster-search-connection
+accept-input-device-transfer
 accept-invitation
 accept-match
 accept-portfolio-share
@@ -413,6 +414,7 @@ cancel-elasticsearch-service-software-update
 cancel-export-task
 cancel-handshake
 cancel-import-task
+cancel-input-device-transfer
 cancel-instance-refresh
 cancel-job
 cancel-job-execution
@@ -3535,6 +3537,7 @@ list-imports
 list-incoming-typed-links
 list-index
 list-indices
+list-input-device-transfers
 list-input-devices
 list-input-security-groups
 list-inputs
@@ -4239,6 +4242,7 @@ reject-assignment
 reject-certificate-transfer
 reject-domain-transfer-from-another-aws-account
 reject-inbound-cross-cluster-search-connection
+reject-input-device-transfer
 reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
@@ -4719,6 +4723,7 @@ transact-write-items
 transfer-certificate
 transfer-domain
 transfer-domain-to-another-aws-account
+transfer-input-device
 translate-text
 unarchive-findings
 unassign-instance
