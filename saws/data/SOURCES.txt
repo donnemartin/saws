@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5040
+[sub_commands]: 5062
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -263,6 +263,7 @@ associate-discovered-resource
 associate-drt-log-bucket
 associate-drt-role
 associate-elastic-ip
+associate-enclave-certificate-iam-role
 associate-environment-operations-role
 associate-fleet
 associate-health-check
@@ -504,6 +505,7 @@ create-api-cache
 create-api-key
 create-app
 create-app-cookie-stickiness-policy
+create-app-image-config
 create-application
 create-application-version
 create-approval-rule-template
@@ -701,6 +703,7 @@ create-identity-provider
 create-image
 create-image-builder
 create-image-builder-streaming-url
+create-image-version
 create-import-job
 create-index
 create-input
@@ -722,6 +725,7 @@ create-job-queue
 create-job-template
 create-journey
 create-key
+create-key-group
 create-key-pair
 create-keys-and-certificate
 create-labeling-job
@@ -1047,6 +1051,7 @@ delete-apns-sandbox-channel
 delete-apns-voip-channel
 delete-apns-voip-sandbox-channel
 delete-app
+delete-app-image-config
 delete-app-launch-configuration
 delete-app-replication-configuration
 delete-app-validation-configuration
@@ -1273,6 +1278,7 @@ delete-identity-provider
 delete-image
 delete-image-builder
 delete-image-permissions
+delete-image-version
 delete-imported-key-material
 delete-inbound-cross-cluster-search-connection
 delete-index-field
@@ -1299,6 +1305,7 @@ delete-job-execution
 delete-job-queue
 delete-job-template
 delete-journey
+delete-key-group
 delete-key-pair
 delete-known-host-keys
 delete-labels
@@ -1676,6 +1683,7 @@ describe-alias
 describe-analysis-schemes
 describe-anomaly-detectors
 describe-app
+describe-app-image-config
 describe-applicable-individual-assessments
 describe-application
 describe-application-state
@@ -1955,10 +1963,12 @@ describe-identity-pool
 describe-identity-pool-usage
 describe-identity-provider
 describe-identity-usage
+describe-image
 describe-image-attribute
 describe-image-builders
 describe-image-permissions
 describe-image-scan-findings
+describe-image-version
 describe-images
 describe-import-image-tasks
 describe-import-snapshot-tasks
@@ -2443,6 +2453,7 @@ disassociate-discovered-resource
 disassociate-drt-log-bucket
 disassociate-drt-role
 disassociate-elastic-ip
+disassociate-enclave-certificate-iam-role
 disassociate-environment-operations-role
 disassociate-fleet
 disassociate-from-master-account
@@ -2607,6 +2618,7 @@ get-approval-rule-template
 get-apps
 get-assessment-report
 get-assignment
+get-associated-enclave-certificate-iam-roles
 get-associated-ipv6-pool-cidrs
 get-associated-role
 get-attribute-values
@@ -2924,6 +2936,8 @@ get-journey
 get-journey-date-range-kpi
 get-journey-execution-activity-metrics
 get-journey-execution-metrics
+get-key-group
+get-key-group-config
 get-key-pair
 get-key-pairs
 get-key-policy
@@ -3331,6 +3345,7 @@ list-algorithms
 list-aliases
 list-allowed-node-type-modifications
 list-api-keys
+list-app-image-configs
 list-application-dependencies
 list-application-revisions
 list-application-states
@@ -3453,6 +3468,7 @@ list-directories
 list-discovered-resources
 list-distributions
 list-distributions-by-cache-policy-id
+list-distributions-by-key-group
 list-distributions-by-origin-request-policy-id
 list-distributions-by-realtime-log-config
 list-distributions-by-web-acl-id
@@ -3532,6 +3548,7 @@ list-identity-policies
 list-identity-pool-usage
 list-identity-pools
 list-identity-providers
+list-image-versions
 list-images
 list-imports
 list-incoming-typed-links
@@ -3558,6 +3575,7 @@ list-jobs
 list-jobs-by-pipeline
 list-jobs-by-status
 list-journeys
+list-key-groups
 list-key-phrases-detection-jobs
 list-key-policies
 list-keys
@@ -4771,6 +4789,7 @@ update-apns-sandbox-channel
 update-apns-voip-channel
 update-apns-voip-sandbox-channel
 update-app
+update-app-image-config
 update-application
 update-application-resource-lifecycle
 update-application-settings
@@ -4929,6 +4948,7 @@ update-hit-type-of-hit
 update-hosted-zone-comment
 update-identity-pool
 update-identity-provider
+update-image
 update-image-permissions
 update-indexing-configuration
 update-input
@@ -4949,6 +4969,7 @@ update-job-template
 update-journey
 update-journey-state
 update-key-description
+update-key-group
 update-lag
 update-layer
 update-link-attributes
@@ -5072,6 +5093,7 @@ update-signing-certificate
 update-size-constraint-set
 update-skill-group
 update-smb-file-share
+update-smb-file-share-visibility
 update-smb-security-strategy
 update-sms-channel
 update-sms-template
