@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5062
+[sub_commands]: 5066
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2895,8 +2895,12 @@ get-import
 get-import-job
 get-import-jobs
 get-indexing-configuration
+get-insight
+get-insight-events
+get-insight-impact-graph
 get-insight-rule-report
 get-insight-selectors
+get-insight-summaries
 get-instance
 get-instance-access
 get-instance-access-details
