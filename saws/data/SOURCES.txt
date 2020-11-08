@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5066
+[sub_commands]: 5074
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -423,6 +423,7 @@ cancel-key-deletion
 cancel-mailbox-export-job
 cancel-maintenance-window-execution
 cancel-ml-task-run
+cancel-replay
 cancel-replication-task-assessment-run
 cancel-reserved-instances-listing
 cancel-resize
@@ -509,6 +510,7 @@ create-app-image-config
 create-application
 create-application-version
 create-approval-rule-template
+create-archive
 create-assessment-target
 create-assessment-template
 create-association
@@ -1690,6 +1692,7 @@ describe-application-state
 describe-application-versions
 describe-applications
 describe-apps
+describe-archive
 describe-assessment-runs
 describe-assessment-targets
 describe-assessment-templates
@@ -2155,6 +2158,7 @@ describe-regions
 describe-remediation-configurations
 describe-remediation-exceptions
 describe-remediation-execution-status
+describe-replay
 describe-replication-groups
 describe-replication-instance-task-logs
 describe-replication-instances
@@ -3358,6 +3362,7 @@ list-applications
 list-applied-schema-arns
 list-approval-rule-templates
 list-apps
+list-archives
 list-artifacts
 list-assessment-run-agents
 list-assessment-runs
@@ -3698,6 +3703,7 @@ list-records
 list-regex-match-sets
 list-regex-pattern-sets
 list-remote-access-sessions
+list-replays
 list-report-groups
 list-reports
 list-reports-for-report-group
@@ -4600,6 +4606,7 @@ start-query
 start-query-execution
 start-relational-database
 start-remediation-execution
+start-replay
 start-replication-task
 start-replication-task-assessment
 start-replication-task-assessment-run
@@ -4801,6 +4808,7 @@ update-application-version
 update-approval-rule-template-content
 update-approval-rule-template-description
 update-approval-rule-template-name
+update-archive
 update-assessment-target
 update-association
 update-association-status
