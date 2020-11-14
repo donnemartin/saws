@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5074
+[sub_commands]: 5084
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1093,6 +1093,7 @@ delete-bucket
 delete-bucket-analytics-configuration
 delete-bucket-cors
 delete-bucket-encryption
+delete-bucket-intelligent-tiering-configuration
 delete-bucket-inventory-configuration
 delete-bucket-lifecycle
 delete-bucket-metrics-configuration
@@ -1720,6 +1721,7 @@ describe-backup
 describe-backup-policy
 describe-backups
 describe-bandwidth-rate-limit
+describe-bandwidth-rate-limit-schedule
 describe-batch-predictions
 describe-billing-group
 describe-broker
@@ -1911,6 +1913,7 @@ describe-events-for-organization
 describe-exclusions
 describe-execution
 describe-experiment
+describe-export
 describe-export-image-tasks
 describe-export-tasks
 describe-expressions
@@ -2551,6 +2554,7 @@ export-image
 export-project
 export-server-engine-attribute
 export-snapshot
+export-table-to-point-in-time
 export-transit-gateway-routes
 failover-db-cluster
 failover-global-replication-group
@@ -2653,6 +2657,7 @@ get-bucket-acl
 get-bucket-analytics-configuration
 get-bucket-cors
 get-bucket-encryption
+get-bucket-intelligent-tiering-configuration
 get-bucket-inventory-configuration
 get-bucket-lifecycle-configuration
 get-bucket-location
@@ -3037,6 +3042,7 @@ get-organizations-access-report
 get-origin-request-policy
 get-origin-request-policy-config
 get-ota-update
+get-package-version-history
 get-parameter
 get-parameter-history
 get-parameters
@@ -3399,6 +3405,7 @@ list-bonus-payments
 list-branches
 list-brokers
 list-bucket-analytics-configurations
+list-bucket-intelligent-tiering-configurations
 list-bucket-inventory-configurations
 list-bucket-metrics-configurations
 list-buckets
@@ -4074,6 +4081,7 @@ put-bucket-acl
 put-bucket-analytics-configuration
 put-bucket-cors
 put-bucket-encryption
+put-bucket-intelligent-tiering-configuration
 put-bucket-inventory-configuration
 put-bucket-lifecycle-configuration
 put-bucket-logging
@@ -4821,6 +4829,7 @@ update-automatic-tape-creation-policy
 update-availability-options
 update-baidu-channel
 update-bandwidth-rate-limit
+update-bandwidth-rate-limit-schedule
 update-base-path-mapping
 update-batch-prediction
 update-billing-group
@@ -5021,6 +5030,7 @@ update-organization-configuration
 update-organizational-unit
 update-origin-endpoint
 update-origin-request-policy
+update-package
 update-parameter-group
 update-partition
 update-patch-baseline
