@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5084
+[sub_commands]: 5105
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -582,6 +582,9 @@ create-constraint
 create-contact
 create-contact-method
 create-container
+create-container-service
+create-container-service-deployment
+create-container-service-registry-login
 create-core-definition
 create-core-definition-version
 create-cost-category-definition
@@ -822,6 +825,7 @@ create-progress-update-stream
 create-project
 create-project-version
 create-protection
+create-protection-group
 create-provisioned-product-plan
 create-provisioning-artifact
 create-provisioning-claim
@@ -1155,7 +1159,9 @@ delete-constraint
 delete-contact
 delete-contact-method
 delete-container
+delete-container-image
 delete-container-policy
+delete-container-service
 delete-core-definition
 delete-cors-policy
 delete-cost-category-definition
@@ -1410,6 +1416,7 @@ delete-progress-update-stream
 delete-project
 delete-project-version
 delete-protection
+delete-protection-group
 delete-provisioned-concurrency-config
 delete-provisioned-product-plan
 delete-provisioning-artifact
@@ -1702,6 +1709,7 @@ describe-association-execution-targets
 describe-association-executions
 describe-attachment
 describe-attack
+describe-attack-statistics
 describe-audit-finding
 describe-audit-mitigation-actions-task
 describe-audit-suppression
@@ -2140,6 +2148,7 @@ describe-project
 describe-project-versions
 describe-projects
 describe-protection
+describe-protection-group
 describe-provisioned-product
 describe-provisioned-product-plan
 describe-provisioning-artifact
@@ -2744,7 +2753,14 @@ get-console-screenshot
 get-contact
 get-contact-methods
 get-contact-reachability-status
+get-container-api-metadata
+get-container-images
+get-container-log
 get-container-policy
+get-container-service-deployments
+get-container-service-metric-data
+get-container-service-powers
+get-container-services
 get-content-moderation
 get-context-keys-for-custom-policy
 get-context-keys-for-principal-policy
@@ -3683,6 +3699,7 @@ list-principals-for-portfolio
 list-processing-jobs
 list-progress-update-streams
 list-projects
+list-protection-groups
 list-protections
 list-provisioned-capacity
 list-provisioned-concurrency-configs
@@ -3730,6 +3747,7 @@ list-resource-tags
 list-resources
 list-resources-for-tag-option
 list-resources-for-web-acl
+list-resources-in-protection-group
 list-retirable-grants
 list-reusable-delegation-sets
 list-review-policy-results-for-hit
@@ -4239,6 +4257,7 @@ register-avs-device
 register-ca-certificate
 register-certificate
 register-certificate-without-ca
+register-container-image
 register-container-instance
 register-cross-account-access-role
 register-db-proxy-targets
@@ -4873,6 +4892,7 @@ update-constraint
 update-contact
 update-container-agent
 update-container-instances-state
+update-container-service
 update-continuous-backups
 update-contributor-insights
 update-core-definition
@@ -5044,6 +5064,7 @@ update-primary-email-address
 update-product
 update-profile
 update-project
+update-protection-group
 update-provisioned-product
 update-provisioned-product-properties
 update-provisioning-artifact
