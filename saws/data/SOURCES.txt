@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5105
+[sub_commands]: 5107
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3315,6 +3315,7 @@ head-bucket
 head-object
 import-api-keys
 import-app-catalog
+import-as-provisioned-product
 import-catalog-to-glue
 import-certificate
 import-client-vpn-client-certificate-revocation-list
@@ -4029,6 +4030,7 @@ modify-workspace-state
 monitor-instances
 move-account
 move-address-to-vpc
+move-replication-task
 mv
 notify-app-validation-output
 notify-application-state
