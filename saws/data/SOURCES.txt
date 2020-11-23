@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5107
+[sub_commands]: 5127
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -181,6 +181,7 @@ add-listener-certificates
 add-model
 add-option-to-option-group
 add-permission
+add-region
 add-resource-permissions
 add-role-to-db-cluster
 add-role-to-db-instance
@@ -442,6 +443,7 @@ check-dns-availability
 check-domain-availability
 check-domain-transferability
 check-if-phone-number-is-opted-out
+check-schema-version-validity
 claim-game-server
 classify-document
 clear-default-authorizer
@@ -850,6 +852,7 @@ create-receipt-rule-set
 create-recommender-configuration
 create-regex-match-set
 create-regex-pattern-set
+create-registry
 create-relational-database
 create-relational-database-from-snapshot
 create-relational-database-snapshot
@@ -1442,6 +1445,7 @@ delete-recommender-configuration
 delete-regex-match-set
 delete-regex-pattern-set
 delete-registration-code
+delete-registry
 delete-relational-database
 delete-relational-database-snapshot
 delete-remediation-configuration
@@ -1491,6 +1495,7 @@ delete-schedule
 delete-scheduled-action
 delete-scheduled-audit
 delete-schema
+delete-schema-versions
 delete-script
 delete-security-configuration
 delete-security-group
@@ -3113,6 +3118,7 @@ get-regex-match-set
 get-regex-pattern-set
 get-regions
 get-registration-code
+get-registry
 get-relational-database
 get-relational-database-blueprints
 get-relational-database-bundles
@@ -3168,8 +3174,12 @@ get-savings-plans-purchase-recommendation
 get-savings-plans-utilization
 get-savings-plans-utilization-details
 get-scaling-plan-resource-forecast-data
+get-schema
 get-schema-as-json
+get-schema-by-definition
 get-schema-creation-status
+get-schema-version
+get-schema-versions-diff
 get-sdk
 get-sdk-type
 get-sdk-types
@@ -3727,6 +3737,7 @@ list-record-history
 list-records
 list-regex-match-sets
 list-regex-pattern-sets
+list-registries
 list-remote-access-sessions
 list-replays
 list-report-groups
@@ -3767,6 +3778,8 @@ list-saml-providers
 list-samples
 list-scheduled-audits
 list-schema-extensions
+list-schema-versions
+list-schemas
 list-scripts
 list-security-configurations
 list-security-profiles
@@ -3926,6 +3939,7 @@ meter-usage
 migrate-workspace
 modify-account
 modify-availability-zone-group
+modify-backup-attributes
 modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
@@ -4211,6 +4225,7 @@ put-scaling-policy
 put-scheduled-action
 put-scheduled-update-group-action
 put-schema-from-json
+put-schema-version-metadata
 put-session
 put-skill-authorization
 put-slot-type
@@ -4226,6 +4241,7 @@ put-webhook
 put-workflow-run-properties
 query
 query-objects
+query-schema-version-metadata
 rb
 re-encrypt
 read-job
@@ -4280,6 +4296,7 @@ register-on-premises-instance
 register-patch-baseline-for-patch-group
 register-rds-db-instance
 register-scalable-target
+register-schema-version
 register-stream-consumer
 register-target-with-maintenance-window
 register-targets
@@ -4326,10 +4343,12 @@ remove-listener-certificates
 remove-managed-scaling-policy
 remove-option-from-option-group
 remove-permission
+remove-region
 remove-resource-permission
 remove-role-from-db-cluster
 remove-role-from-db-instance
 remove-role-from-instance-profile
+remove-schema-version-metadata
 remove-source-identifier-from-subscription
 remove-tags
 remove-tags-from-certificate
@@ -5090,6 +5109,7 @@ update-recommender-configuration
 update-records
 update-regex-match-set
 update-regex-pattern-set
+update-registry
 update-relational-database
 update-relational-database-parameters
 update-replication-job
