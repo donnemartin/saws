@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5127
+[sub_commands]: 5165
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -360,6 +360,7 @@ batch-detect-syntax
 batch-disassociate-approval-rule-template-from-repositories
 batch-disassociate-service-action-from-provisioning-artifact
 batch-disassociate-user-stack
+batch-execute-statement
 batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
@@ -563,6 +564,7 @@ create-cluster-security-group
 create-cluster-snapshot
 create-cluster-subnet-group
 create-code-repository
+create-code-signing-config
 create-collection
 create-comment
 create-commit
@@ -800,8 +802,10 @@ create-origin-request-policy
 create-ota-update
 create-outbound-cross-cluster-search-connection
 create-package
+create-parallel-data
 create-parameter-group
 create-partition
+create-partition-index
 create-partner-event-source
 create-patch-baseline
 create-pipeline
@@ -926,6 +930,8 @@ create-stream-processor
 create-streaming-distribution
 create-streaming-distribution-with-tags
 create-streaming-url
+create-studio
+create-studio-session-mapping
 create-subnet
 create-subnet-group
 create-subscriber
@@ -1139,6 +1145,7 @@ delete-cluster-security-group
 delete-cluster-snapshot
 delete-cluster-subnet-group
 delete-code-repository
+delete-code-signing-config
 delete-collection
 delete-column-statistics-for-partition
 delete-column-statistics-for-table
@@ -1258,6 +1265,7 @@ delete-folder
 delete-folder-contents
 delete-fpga-image
 delete-function
+delete-function-code-signing-config
 delete-function-concurrency
 delete-function-definition
 delete-function-event-invoke-config
@@ -1396,10 +1404,12 @@ delete-origin-request-policy
 delete-ota-update
 delete-outbound-cross-cluster-search-connection
 delete-package
+delete-parallel-data
 delete-parameter
 delete-parameter-group
 delete-parameters
 delete-partition
+delete-partition-index
 delete-partner-event-source
 delete-patch-baseline
 delete-pending-aggregation-request
@@ -1533,6 +1543,8 @@ delete-state-machine
 delete-stream
 delete-stream-processor
 delete-streaming-distribution
+delete-studio
+delete-studio-session-mapping
 delete-subnet
 delete-subnet-group
 delete-subscriber
@@ -1922,6 +1934,7 @@ describe-event-subscriptions
 describe-event-topics
 describe-event-types
 describe-events
+describe-events-detection-job
 describe-events-for-organization
 describe-exclusions
 describe-execution
@@ -2029,6 +2042,7 @@ describe-jobs
 describe-key
 describe-key-pairs
 describe-key-phrases-detection-job
+describe-kinesis-streaming-destination
 describe-labeling-job
 describe-lags
 describe-language-model
@@ -2282,6 +2296,7 @@ describe-stream
 describe-stream-consumer
 describe-stream-processor
 describe-stream-summary
+describe-studio
 describe-subnet-groups
 describe-subnets
 describe-subscribed-workteam
@@ -2440,6 +2455,7 @@ disable-health-service-access-for-organization
 disable-insight-rules
 disable-key
 disable-key-rotation
+disable-kinesis-streaming-destination
 disable-ldaps
 disable-logging
 disable-metrics-collection
@@ -2529,6 +2545,7 @@ enable-health-service-access-for-organization
 enable-insight-rules
 enable-key
 enable-key-rotation
+enable-kinesis-streaming-destination
 enable-ldaps
 enable-logging
 enable-metrics-collection
@@ -2558,6 +2575,8 @@ execute-change-set
 execute-policy
 execute-provisioned-product-plan
 execute-provisioned-product-service-action
+execute-statement
+execute-transaction
 exit-standby
 expire-session
 export-bundle
@@ -2725,6 +2744,7 @@ get-cloud-formation-template
 get-cloud-front-origin-access-identity
 get-cloud-front-origin-access-identity-config
 get-cluster-credentials
+get-code-signing-config
 get-cognito-events
 get-coip-pool-usage
 get-column-statistics-for-partition
@@ -2877,6 +2897,7 @@ get-findings-statistics
 get-folder
 get-folder-path
 get-function
+get-function-code-signing-config
 get-function-concurrency
 get-function-configuration
 get-function-definition
@@ -3064,6 +3085,7 @@ get-origin-request-policy
 get-origin-request-policy-config
 get-ota-update
 get-package-version-history
+get-parallel-data
 get-parameter
 get-parameter-history
 get-parameters
@@ -3134,6 +3156,7 @@ get-relational-databases
 get-remote-access-session
 get-replication-jobs
 get-replication-runs
+get-report-group-trend
 get-repository
 get-repository-policy
 get-repository-triggers
@@ -3233,6 +3256,7 @@ get-statistics
 get-status
 get-streaming-distribution
 get-streaming-distribution-config
+get-studio-session-mapping
 get-subscription-attributes
 get-subscription-definition
 get-subscription-definition-version
@@ -3459,6 +3483,7 @@ list-cloud-front-origin-access-identities
 list-cluster-jobs
 list-clusters
 list-code-repositories
+list-code-signing-configs
 list-collections
 list-command-invocations
 list-commands
@@ -3537,6 +3562,7 @@ list-event-buses
 list-event-source-mappings
 list-event-sources
 list-event-subscriptions
+list-events-detection-jobs
 list-exclusions
 list-executions
 list-experiments
@@ -3556,6 +3582,7 @@ list-function-definition-versions
 list-function-definitions
 list-function-event-invoke-configs
 list-functions
+list-functions-by-code-signing-config
 list-game-server-groups
 list-game-servers
 list-gateway-groups
@@ -3685,6 +3712,7 @@ list-ota-updates
 list-outgoing-certificates
 list-outgoing-typed-links
 list-packages-for-domain
+list-parallel-data
 list-parents
 list-partner-event-source-accounts
 list-partner-event-sources
@@ -3818,6 +3846,8 @@ list-stream-consumers
 list-stream-processors
 list-streaming-distributions
 list-streams
+list-studio-session-mappings
+list-studios
 list-subscribed-rule-groups
 list-subscribed-workteams
 list-subscription-definition-versions
@@ -4152,6 +4182,7 @@ put-event-stream
 put-events
 put-file
 put-file-system-policy
+put-function-code-signing-config
 put-function-concurrency
 put-function-event-invoke-config
 put-gateway-response
@@ -4607,6 +4638,7 @@ start-document-classification-job
 start-dominant-language-detection-job
 start-elasticsearch-service-software-update
 start-entities-detection-job
+start-events-detection-job
 start-execution
 start-export-labels-task-run
 start-export-task
@@ -4670,6 +4702,7 @@ start-stack
 start-stream-encryption
 start-stream-processor
 start-support-data-export
+start-sync-execution
 start-task
 start-text-detection
 start-text-translation-job
@@ -4706,6 +4739,7 @@ stop-delivery-stream-encryption
 stop-deployment
 stop-dominant-language-detection-job
 stop-entities-detection-job
+stop-events-detection-job
 stop-execution
 stop-fleet
 stop-fleet-actions
@@ -4882,6 +4916,7 @@ update-byte-match-set
 update-ca-certificate
 update-cache-policy
 update-campaign
+update-capacity-provider
 update-certificate
 update-certificate-options
 update-channel
@@ -4893,6 +4928,7 @@ update-cloud-front-origin-access-identity
 update-cluster
 update-cluster-settings
 update-code-repository
+update-code-signing-config
 update-column-statistics-for-partition
 update-column-statistics-for-table
 update-comment
@@ -5072,6 +5108,7 @@ update-organizational-unit
 update-origin-endpoint
 update-origin-request-policy
 update-package
+update-parallel-data
 update-parameter-group
 update-partition
 update-patch-baseline
@@ -5172,6 +5209,7 @@ update-stage
 update-state-machine
 update-stream
 update-streaming-distribution
+update-studio-session-mapping
 update-subnet-group
 update-subscriber
 update-subscription
