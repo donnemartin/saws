@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5165
+[sub_commands]: 5203
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -166,6 +166,7 @@ add-application-input
 add-application-input-processing-configuration
 add-application-output
 add-application-reference-data-source
+add-association
 add-attachments-to-set
 add-attributes-to-findings
 add-cache
@@ -496,6 +497,7 @@ create-access-key
 create-access-point
 create-account
 create-account-alias
+create-action
 create-activation
 create-activity
 create-additional-assignments-for-hit
@@ -514,6 +516,7 @@ create-application
 create-application-version
 create-approval-rule-template
 create-archive
+create-artifact
 create-assessment-target
 create-assessment-template
 create-association
@@ -589,6 +592,7 @@ create-container
 create-container-service
 create-container-service-deployment
 create-container-service-registry-login
+create-context
 create-core-definition
 create-core-definition-version
 create-cost-category-definition
@@ -667,6 +671,7 @@ create-experiment
 create-export-job
 create-export-task
 create-facet
+create-feature-group
 create-field-level-encryption-config
 create-field-level-encryption-profile
 create-file-system
@@ -772,6 +777,7 @@ create-ml-model
 create-ml-transform
 create-model
 create-model-package
+create-model-package-group
 create-monitoring-schedule
 create-monitoring-subscription
 create-mount-target
@@ -1046,6 +1052,7 @@ delete-account-alias
 delete-account-audit-configuration
 delete-account-password-policy
 delete-account-setting
+delete-action
 delete-activation
 delete-activity
 delete-address-book
@@ -1079,6 +1086,7 @@ delete-application-version
 delete-applications
 delete-approval-rule-template
 delete-archive
+delete-artifact
 delete-assessment-run
 delete-assessment-target
 delete-assessment-template
@@ -1172,6 +1180,7 @@ delete-container
 delete-container-image
 delete-container-policy
 delete-container-service
+delete-context
 delete-core-definition
 delete-cors-policy
 delete-cost-category-definition
@@ -1250,6 +1259,7 @@ delete-experiment
 delete-expression
 delete-faces
 delete-facet
+delete-feature-group
 delete-field-level-encryption-config
 delete-field-level-encryption-profile
 delete-file
@@ -1372,6 +1382,8 @@ delete-ml-model
 delete-ml-transform
 delete-model
 delete-model-package
+delete-model-package-group
+delete-model-package-group-policy
 delete-monitoring-schedule
 delete-monitoring-subscription
 delete-mount-target
@@ -1686,6 +1698,7 @@ describe-account-attributes
 describe-account-audit-configuration
 describe-account-limits
 describe-account-modifications
+describe-action
 describe-activations
 describe-active-receipt-rule-set
 describe-activities
@@ -1718,6 +1731,7 @@ describe-application-versions
 describe-applications
 describe-apps
 describe-archive
+describe-artifact
 describe-assessment-runs
 describe-assessment-targets
 describe-assessment-templates
@@ -1831,6 +1845,7 @@ describe-connections
 describe-constraint
 describe-container
 describe-container-instances
+describe-context
 describe-continuous-backups
 describe-continuous-exports
 describe-contributor-insights
@@ -1944,6 +1959,7 @@ describe-export-image-tasks
 describe-export-tasks
 describe-expressions
 describe-fast-snapshot-restores
+describe-feature-group
 describe-file-system-policy
 describe-file-systems
 describe-findings
@@ -2097,6 +2113,7 @@ describe-mitigation-action
 describe-ml-models
 describe-model
 describe-model-package
+describe-model-package-group
 describe-monitoring-schedule
 describe-mount-target-security-groups
 describe-mount-targets
@@ -2149,6 +2166,9 @@ describe-pending-aggregation-requests
 describe-pending-maintenance-actions
 describe-permissions
 describe-pii-entities-detection-job
+describe-pipeline
+describe-pipeline-definition-for-execution
+describe-pipeline-execution
 describe-pipelines
 describe-placement-groups
 describe-platform-version
@@ -2443,6 +2463,7 @@ disable-alarm-actions
 disable-availability-zones-for-load-balancer
 disable-aws-organizations-access
 disable-aws-service-access
+disable-client-authentication
 disable-directory
 disable-domain-auto-renew
 disable-domain-transfer-lock
@@ -2464,6 +2485,7 @@ disable-policy-type
 disable-proactive-engagement
 disable-radius
 disable-rule
+disable-sagemaker-servicecatalog-portfolio
 disable-snapshot-copy
 disable-sso
 disable-stage-transition
@@ -2535,6 +2557,7 @@ enable-all-features
 enable-availability-zones-for-load-balancer
 enable-aws-organizations-access
 enable-aws-service-access
+enable-client-authentication
 enable-directory
 enable-domain-auto-renew
 enable-domain-transfer-lock
@@ -2555,6 +2578,7 @@ enable-policy-type
 enable-proactive-engagement
 enable-radius
 enable-rule
+enable-sagemaker-servicecatalog-portfolio
 enable-snapshot-copy
 enable-sso
 enable-stage-transition
@@ -3052,6 +3076,7 @@ get-ml-task-runs
 get-ml-transform
 get-ml-transforms
 get-model
+get-model-package-group-policy
 get-model-template
 get-models
 get-monitoring-subscription
@@ -3187,6 +3212,7 @@ get-room-skill-parameter
 get-rule
 get-rule-group
 get-run
+get-sagemaker-servicecatalog-portfolio-status
 get-saml-provider
 get-sampled-requests
 get-sampling-rules
@@ -3401,6 +3427,7 @@ list-accounts
 list-accounts-for-parent
 list-action-executions
 list-action-types
+list-actions
 list-activated-rules-in-rule-group
 list-active-violations
 list-activities
@@ -3500,6 +3527,7 @@ list-connector-definitions
 list-constraints-for-portfolio
 list-container-instances
 list-containers
+list-contexts
 list-contributor-insights
 list-core-definition-versions
 list-core-definitions
@@ -3570,6 +3598,7 @@ list-exports
 list-faces
 list-facet-attributes
 list-facet-names
+list-feature-groups
 list-field-level-encryption-configs
 list-field-level-encryption-profiles
 list-file-shares
@@ -3673,6 +3702,7 @@ list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
 list-ml-transforms
+list-model-package-groups
 list-model-packages
 list-models
 list-monitoring-executions
@@ -3719,7 +3749,9 @@ list-partner-event-sources
 list-parts
 list-phone-numbers-opted-out
 list-pii-entities-detection-jobs
+list-pipeline-execution-steps
 list-pipeline-executions
+list-pipeline-parameters-for-execution
 list-pipelines
 list-platform-applications
 list-platform-branches
@@ -4218,6 +4250,7 @@ put-metric-alarm
 put-metric-data
 put-metric-filter
 put-metric-policy
+put-model-package-group-policy
 put-notification-configuration
 put-object
 put-object-acl
@@ -4870,6 +4903,7 @@ update-account
 update-account-audit-configuration
 update-account-password-policy
 update-account-sending-enabled
+update-action
 update-address-book
 update-adm-channel
 update-alias
@@ -4891,6 +4925,7 @@ update-approval-rule-template-content
 update-approval-rule-template-description
 update-approval-rule-template-name
 update-archive
+update-artifact
 update-assessment-target
 update-association
 update-association-status
@@ -4950,6 +4985,7 @@ update-contact
 update-container-agent
 update-container-instances-state
 update-container-service
+update-context
 update-continuous-backups
 update-contributor-insights
 update-core-definition
@@ -5089,6 +5125,7 @@ update-mitigation-action
 update-ml-model
 update-ml-transform
 update-model
+update-model-package
 update-monitoring-schedule
 update-multiplex
 update-multiplex-program
@@ -5113,6 +5150,7 @@ update-parameter-group
 update-partition
 update-patch-baseline
 update-pipeline
+update-pipeline-execution
 update-pipeline-notifications
 update-pipeline-status
 update-policy
