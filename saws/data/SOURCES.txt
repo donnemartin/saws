@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5203
+[sub_commands]: 5210
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -799,6 +799,7 @@ create-notification-subscription
 create-object
 create-open-id-connect-provider
 create-ops-item
+create-ops-metadata
 create-option-group
 create-or-update-tags
 create-organization
@@ -1406,6 +1407,7 @@ delete-object
 delete-object-tagging
 delete-objects
 delete-open-id-connect-provider
+delete-ops-metadata
 delete-option-group
 delete-organization
 delete-organization-config-rule
@@ -3102,6 +3104,7 @@ get-operation-detail
 get-operations
 get-operations-for-resource
 get-ops-item
+get-ops-metadata
 get-ops-summary
 get-organization-config-rule-detailed-status
 get-organization-conformance-pack-detailed-status
@@ -3732,6 +3735,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-ops-metadata
 list-organization-admin-accounts
 list-organization-portfolio-access
 list-organizational-units-for-parent
@@ -4665,6 +4669,7 @@ start-crawler-schedule
 start-data-collection-by-agent-ids
 start-db-cluster
 start-db-instance
+start-db-instance-automated-backups-replication
 start-delivery-stream-encryption
 start-device-sync
 start-document-classification-job
@@ -4768,6 +4773,7 @@ stop-crawler-schedule
 stop-data-collection-by-agent-ids
 stop-db-cluster
 stop-db-instance
+stop-db-instance-automated-backups-replication
 stop-delivery-stream-encryption
 stop-deployment
 stop-dominant-language-detection-job
@@ -5140,6 +5146,7 @@ update-number-of-domain-controllers
 update-object-attributes
 update-open-id-connect-provider-thumbprint
 update-ops-item
+update-ops-metadata
 update-organization-configuration
 update-organizational-unit
 update-origin-endpoint
