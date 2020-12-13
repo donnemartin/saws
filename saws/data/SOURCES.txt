@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5210
+[sub_commands]: 5260
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -151,6 +151,7 @@ accept-qualification-request
 accept-reserved-instances-exchange-quote
 accept-reserved-node-exchange
 accept-shared-directory
+accept-transit-gateway-multicast-domain-associations
 accept-transit-gateway-peering-attachment
 accept-transit-gateway-vpc-attachment
 accept-vpc-endpoint-connections
@@ -604,6 +605,7 @@ create-custom-metadata
 create-custom-verification-email-template
 create-customer-gateway
 create-data-catalog
+create-data-quality-job-definition
 create-data-source
 create-data-source-from-rds
 create-data-source-from-redshift
@@ -631,6 +633,7 @@ create-detector
 create-dev-endpoint
 create-device-definition
 create-device-definition-version
+create-device-fleet
 create-device-pool
 create-dhcp-options
 create-dimension
@@ -653,6 +656,7 @@ create-domain-configuration
 create-domain-entry
 create-domain-name
 create-dynamic-thing-group
+create-edge-packaging-job
 create-egress-only-internet-gateway
 create-elasticsearch-domain
 create-email-template
@@ -776,8 +780,11 @@ create-mitigation-action
 create-ml-model
 create-ml-transform
 create-model
+create-model-bias-job-definition
+create-model-explainability-job-definition
 create-model-package
 create-model-package-group
+create-model-quality-job-definition
 create-monitoring-schedule
 create-monitoring-subscription
 create-mount-target
@@ -788,6 +795,7 @@ create-named-query
 create-nat-gateway
 create-network-acl
 create-network-acl-entry
+create-network-insights-path
 create-network-interface
 create-network-interface-permission
 create-network-profile
@@ -974,6 +982,8 @@ create-trail
 create-training-job
 create-transform-job
 create-transit-gateway
+create-transit-gateway-connect
+create-transit-gateway-connect-peer
 create-transit-gateway-multicast-domain
 create-transit-gateway-peering-attachment
 create-transit-gateway-prefix-list-reference
@@ -1194,6 +1204,7 @@ delete-custom-verification-email-template
 delete-customer-gateway
 delete-dashboards
 delete-data-catalog
+delete-data-quality-job-definition
 delete-data-source
 delete-database
 delete-dataset
@@ -1218,6 +1229,7 @@ delete-detector
 delete-dev-endpoint
 delete-device
 delete-device-definition
+delete-device-fleet
 delete-device-pool
 delete-device-usage-data
 delete-dhcp-options
@@ -1382,9 +1394,12 @@ delete-mitigation-action
 delete-ml-model
 delete-ml-transform
 delete-model
+delete-model-bias-job-definition
+delete-model-explainability-job-definition
 delete-model-package
 delete-model-package-group
 delete-model-package-group-policy
+delete-model-quality-job-definition
 delete-monitoring-schedule
 delete-monitoring-subscription
 delete-mount-target
@@ -1395,6 +1410,8 @@ delete-namespace
 delete-nat-gateway
 delete-network-acl
 delete-network-acl-entry
+delete-network-insights-analysis
+delete-network-insights-path
 delete-network-interface
 delete-network-interface-permission
 delete-network-profile
@@ -1470,6 +1487,7 @@ delete-regex-match-set
 delete-regex-pattern-set
 delete-registration-code
 delete-registry
+delete-registry-policy
 delete-relational-database
 delete-relational-database-snapshot
 delete-remediation-configuration
@@ -1595,6 +1613,8 @@ delete-traffic-policy-instance
 delete-trail
 delete-transcription-job
 delete-transit-gateway
+delete-transit-gateway-connect
+delete-transit-gateway-connect-peer
 delete-transit-gateway-multicast-domain
 delete-transit-gateway-peering-attachment
 delete-transit-gateway-prefix-list-reference
@@ -1668,6 +1688,7 @@ deregister-certificate
 deregister-container-instance
 deregister-db-proxy-targets
 deregister-delegated-administrator
+deregister-devices
 deregister-ecs-cluster
 deregister-elastic-ip
 deregister-event-topic
@@ -1859,6 +1880,7 @@ describe-cross-account-access-role
 describe-custom-availability-zones
 describe-custom-key-stores
 describe-customer-gateways
+describe-data-quality-job-definition
 describe-data-sources
 describe-dataset
 describe-db-cluster-backtracks
@@ -1889,6 +1911,8 @@ describe-delivery-channels
 describe-delivery-stream
 describe-deployments
 describe-destinations
+describe-device
+describe-device-fleet
 describe-dhcp-options
 describe-dimension
 describe-direct-connect-gateway-association-proposals
@@ -1911,6 +1935,7 @@ describe-dominant-language-detection-job
 describe-drt-access
 describe-ec2-instance-limits
 describe-ecs-clusters
+describe-edge-packaging-job
 describe-effective-instance-associations
 describe-effective-patches-for-patch-baseline
 describe-effective-policy
@@ -2114,8 +2139,11 @@ describe-migration-task
 describe-mitigation-action
 describe-ml-models
 describe-model
+describe-model-bias-job-definition
+describe-model-explainability-job-definition
 describe-model-package
 describe-model-package-group
+describe-model-quality-job-definition
 describe-monitoring-schedule
 describe-mount-target-security-groups
 describe-mount-targets
@@ -2125,6 +2153,8 @@ describe-multiplex-program
 describe-my-user-profile
 describe-nat-gateways
 describe-network-acls
+describe-network-insights-analyses
+describe-network-insights-paths
 describe-network-interface-attribute
 describe-network-interface-permissions
 describe-network-interfaces
@@ -2208,6 +2238,7 @@ describe-receipt-rule-set
 describe-record
 describe-refresh-schemas-status
 describe-regions
+describe-registry
 describe-remediation-configurations
 describe-remediation-exceptions
 describe-remediation-execution-status
@@ -2358,6 +2389,8 @@ describe-trails
 describe-training-job
 describe-transform-job
 describe-transit-gateway-attachments
+describe-transit-gateway-connect-peers
+describe-transit-gateway-connects
 describe-transit-gateway-multicast-domains
 describe-transit-gateway-peering-attachments
 describe-transit-gateway-route-tables
@@ -2855,6 +2888,7 @@ get-dev-endpoints
 get-device
 get-device-definition
 get-device-definition-version
+get-device-fleet-report
 get-device-instance
 get-device-pool
 get-device-pool-compatibility
@@ -3169,6 +3203,7 @@ get-regex-pattern-set
 get-regions
 get-registration-code
 get-registry
+get-registry-policy
 get-relational-database
 get-relational-database-blueprints
 get-relational-database-bundles
@@ -3542,6 +3577,7 @@ list-curated-environment-images
 list-custom-verification-email-templates
 list-dashboards
 list-data-catalogs
+list-data-quality-job-definitions
 list-data-sources
 list-databases
 list-datasets
@@ -3559,6 +3595,7 @@ list-development-schema-arns
 list-device-definition-versions
 list-device-definitions
 list-device-events
+list-device-fleets
 list-device-instances
 list-device-pools
 list-devices
@@ -3580,6 +3617,7 @@ list-domain-names
 list-domains
 list-domains-for-package
 list-dominant-language-detection-jobs
+list-edge-packaging-jobs
 list-elasticsearch-instance-types
 list-elasticsearch-versions
 list-endpoint-configs
@@ -3705,8 +3743,11 @@ list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
 list-ml-transforms
+list-model-bias-job-definitions
+list-model-explainability-job-definitions
 list-model-package-groups
 list-model-packages
+list-model-quality-job-definitions
 list-models
 list-monitoring-executions
 list-monitoring-schedules
@@ -4275,8 +4316,10 @@ put-query-definition
 put-record
 put-record-batch
 put-records
+put-registry-policy
 put-remediation-configurations
 put-remediation-exceptions
+put-replication-configuration
 put-report-definition
 put-repository-triggers
 put-resource-attributes
@@ -4350,6 +4393,7 @@ register-db-proxy-targets
 register-default-patch-baseline
 register-delegated-administrator
 register-device
+register-devices
 register-domain
 register-ecs-cluster
 register-elastic-ip
@@ -4389,6 +4433,7 @@ reject-portfolio-share
 reject-qualification-request
 reject-shared-directory
 reject-skill
+reject-transit-gateway-multicast-domain-associations
 reject-transit-gateway-peering-attachment
 reject-transit-gateway-vpc-attachment
 reject-vpc-endpoint-connections
@@ -4710,6 +4755,7 @@ start-ml-labeling-set-generation-task-run
 start-monitoring-members
 start-monitoring-schedule
 start-multiplex
+start-network-insights-analysis
 start-next-pending-job-execution
 start-notebook-execution
 start-notebook-instance
@@ -4777,6 +4823,7 @@ stop-db-instance-automated-backups-replication
 stop-delivery-stream-encryption
 stop-deployment
 stop-dominant-language-detection-job
+stop-edge-packaging-job
 stop-entities-detection-job
 stop-events-detection-job
 stop-execution
@@ -5012,9 +5059,11 @@ update-detector
 update-dev-endpoint
 update-device
 update-device-definition
+update-device-fleet
 update-device-instance
 update-device-pool
 update-device-status
+update-devices
 update-dimension
 update-direct-connect-gateway-association
 update-directory-config
@@ -5281,6 +5330,7 @@ update-topic-rule-destination
 update-traffic-policy-comment
 update-traffic-policy-instance
 update-trail
+update-training-job
 update-trial
 update-trial-component
 update-trigger
