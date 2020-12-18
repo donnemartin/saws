@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5260
+[sub_commands]: 5275
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -414,6 +414,7 @@ cancel-certificate-transfer
 cancel-cluster
 cancel-command
 cancel-conversion-task
+cancel-detect-mitigation-actions-task
 cancel-domain-transfer-to-another-aws-account
 cancel-elasticsearch-service-software-update
 cancel-export-task
@@ -602,6 +603,7 @@ create-custom-action-type
 create-custom-availability-zone
 create-custom-key-store
 create-custom-metadata
+create-custom-metric
 create-custom-verification-email-template
 create-customer-gateway
 create-data-catalog
@@ -1200,6 +1202,7 @@ delete-custom-action-type
 delete-custom-availability-zone
 delete-custom-key-store
 delete-custom-metadata
+delete-custom-metric
 delete-custom-verification-email-template
 delete-customer-gateway
 delete-dashboards
@@ -1879,6 +1882,7 @@ describe-create-account-status
 describe-cross-account-access-role
 describe-custom-availability-zones
 describe-custom-key-stores
+describe-custom-metric
 describe-customer-gateways
 describe-data-quality-job-definition
 describe-data-sources
@@ -1911,6 +1915,7 @@ describe-delivery-channels
 describe-delivery-stream
 describe-deployments
 describe-destinations
+describe-detect-mitigation-actions-task
 describe-device
 describe-device-fleet
 describe-dhcp-options
@@ -2733,6 +2738,7 @@ get-baidu-channel
 get-base-path-mapping
 get-base-path-mappings
 get-batch-prediction
+get-behavior-model-training-summaries
 get-blob
 get-block-public-access-configuration
 get-blueprints
@@ -3574,6 +3580,7 @@ list-crawlers
 list-create-account-status
 list-created-artifacts
 list-curated-environment-images
+list-custom-metrics
 list-custom-verification-email-templates
 list-dashboards
 list-data-catalogs
@@ -3589,6 +3596,8 @@ list-deployment-configs
 list-deployment-groups
 list-deployment-targets
 list-deployments
+list-detect-mitigation-actions-executions
+list-detect-mitigation-actions-tasks
 list-detectors
 list-dev-endpoints
 list-development-schema-arns
@@ -3610,6 +3619,7 @@ list-distributions-by-realtime-log-config
 list-distributions-by-web-acl-id
 list-document-classification-jobs
 list-document-classifiers
+list-document-metadata-history
 list-document-versions
 list-documents
 list-domain-configurations
@@ -3776,6 +3786,7 @@ list-on-premises-instances
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
+list-ops-item-events
 list-ops-metadata
 list-organization-admin-accounts
 list-organization-portfolio-access
@@ -4704,6 +4715,7 @@ start-build
 start-build-batch
 start-bulk-deployment
 start-celebrity-recognition
+start-change-request-execution
 start-channel
 start-config-rules-evaluation
 start-configuration-recorder
@@ -4716,6 +4728,7 @@ start-db-cluster
 start-db-instance
 start-db-instance-automated-backups-replication
 start-delivery-stream-encryption
+start-detect-mitigation-actions-task
 start-device-sync
 start-document-classification-job
 start-dominant-language-detection-job
@@ -5046,6 +5059,7 @@ update-cost-category-definition
 update-crawler
 update-crawler-schedule
 update-custom-key-store
+update-custom-metric
 update-custom-verification-email-template
 update-data-catalog
 update-data-retention
@@ -5071,6 +5085,7 @@ update-distribution
 update-distribution-bundle
 update-document
 update-document-default-version
+update-document-metadata
 update-document-version
 update-documentation-part
 update-documentation-version
