@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5275
+[sub_commands]: 5289
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -160,6 +160,7 @@ acknowledge-job
 acknowledge-third-party-job
 activate-event-source
 activate-gateway
+activate-key-signing-key
 activate-pipeline
 activate-user
 add-application-cloud-watch-logging-option
@@ -747,6 +748,7 @@ create-journey
 create-key
 create-key-group
 create-key-pair
+create-key-signing-key
 create-keys-and-certificate
 create-labeling-job
 create-labels
@@ -1043,6 +1045,7 @@ create-workteam
 create-xss-match-set
 credential-helper
 deactivate-event-source
+deactivate-key-signing-key
 deactivate-mfa-device
 deactivate-pipeline
 deactivate-user
@@ -1353,6 +1356,7 @@ delete-job-template
 delete-journey
 delete-key-group
 delete-key-pair
+delete-key-signing-key
 delete-known-host-keys
 delete-labels
 delete-lag
@@ -1575,6 +1579,7 @@ delete-stack-instances
 delete-stack-set
 delete-stage
 delete-state-machine
+delete-stored-query
 delete-stream
 delete-stream-processor
 delete-streaming-distribution
@@ -2214,6 +2219,7 @@ describe-policies
 describe-policy
 describe-portfolio
 describe-portfolio-share-status
+describe-portfolio-shares
 describe-prefix-lists
 describe-principal-id-format
 describe-processing-job
@@ -2513,6 +2519,7 @@ disable-fast-snapshot-restores
 disable-gateway
 disable-hbase-backups
 disable-health-service-access-for-organization
+disable-hosted-zone-dnssec
 disable-insight-rules
 disable-key
 disable-key-rotation
@@ -2605,6 +2612,7 @@ enable-ebs-encryption-by-default
 enable-enhanced-monitoring
 enable-fast-snapshot-restores
 enable-health-service-access-for-organization
+enable-hosted-zone-dnssec
 enable-insight-rules
 enable-key
 enable-key-rotation
@@ -2914,6 +2922,7 @@ get-distribution-config
 get-distribution-latest-cache-reset
 get-distribution-metric-data
 get-distributions
+get-dnssec
 get-document
 get-document-path
 get-document-version
@@ -3324,6 +3333,7 @@ get-static-ip
 get-static-ips
 get-statistics
 get-status
+get-stored-query
 get-streaming-distribution
 get-streaming-distribution-config
 get-studio-session-mapping
@@ -3930,6 +3940,7 @@ list-stack-sets
 list-stacks
 list-state-machines
 list-steps
+list-stored-queries
 list-stream-consumers
 list-stream-processors
 list-streaming-distributions
@@ -4268,6 +4279,7 @@ put-evaluations
 put-event-selectors
 put-event-stream
 put-events
+put-external-evaluation
 put-file
 put-file-system-policy
 put-function-code-signing-config
@@ -4351,6 +4363,7 @@ put-schema-version-metadata
 put-session
 put-skill-authorization
 put-slot-type
+put-stored-query
 put-subscription-filter
 put-targets
 put-telemetry-records
@@ -5226,6 +5239,7 @@ update-pipeline-notifications
 update-pipeline-status
 update-policy
 update-portfolio
+update-portfolio-share
 update-preset
 update-primary-email-address
 update-product
