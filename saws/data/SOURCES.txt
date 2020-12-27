@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5289
+[sub_commands]: 5290
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4286,6 +4286,7 @@ put-function-code-signing-config
 put-function-concurrency
 put-function-event-invoke-config
 put-gateway-response
+put-group-configuration
 put-group-policy
 put-identity-policy
 put-image
