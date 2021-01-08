@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5290
+[sub_commands]: 5291
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2867,6 +2867,7 @@ get-core-definition-version
 get-cors-policy
 get-cost-and-usage
 get-cost-and-usage-with-resources
+get-cost-categories
 get-cost-forecast
 get-crawler
 get-crawler-metrics
