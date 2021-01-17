@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5291
+[sub_commands]: 5293
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3188,6 +3188,7 @@ get-platform-application-attributes
 get-policy
 get-policy-version
 get-preset
+get-principal-tag-attribute-map
 get-products
 get-profile
 get-project
@@ -4678,6 +4679,7 @@ set-local-console-password
 set-logging-options
 set-permission
 set-platform-application-attributes
+set-principal-tag-attribute-map
 set-queue-attributes
 set-receipt-rule-position
 set-repository-policy
