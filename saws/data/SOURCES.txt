@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5293
+[sub_commands]: 5297
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1737,6 +1737,7 @@ describe-activity
 describe-activity-type
 describe-address
 describe-addresses
+describe-addresses-attribute
 describe-adjustment-types
 describe-affected-accounts-for-organization
 describe-affected-entities
@@ -3645,6 +3646,7 @@ list-elasticsearch-versions
 list-endpoint-configs
 list-endpoints
 list-endpoints-by-platform-application
+list-engine-versions
 list-entities-detection-jobs
 list-entities-for-policy
 list-entity-recognizers
@@ -4069,6 +4071,7 @@ merge-shards
 meter-usage
 migrate-workspace
 modify-account
+modify-address-attribute
 modify-availability-zone-group
 modify-backup-attributes
 modify-cache-cluster
@@ -4524,6 +4527,7 @@ request-upload-credentials
 resend-confirmation-code
 resend-contact-reachability-email
 resend-validation-email
+reset-address-attribute
 reset-cache
 reset-cache-parameter-group
 reset-cluster-parameter-group
