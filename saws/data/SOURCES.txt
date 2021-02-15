@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5297
+[sub_commands]: 5318
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2663,6 +2663,7 @@ export-snapshot
 export-table-to-point-in-time
 export-transit-gateway-routes
 failover-db-cluster
+failover-global-cluster
 failover-global-replication-group
 filter-log-events
 flush-api-cache
@@ -2697,6 +2698,7 @@ get-account-password-policy
 get-account-sending-enabled
 get-account-settings
 get-account-summary
+get-action-type
 get-active-names
 get-activity-task
 get-address-book
@@ -3723,6 +3725,7 @@ list-input-devices
 list-input-security-groups
 list-inputs
 list-instance-fleets
+list-instance-profile-tags
 list-instance-profiles
 list-instance-profiles-for-role
 list-instances
@@ -3763,6 +3766,7 @@ list-medical-transcription-jobs
 list-medical-vocabularies
 list-members
 list-metrics
+list-mfa-device-tags
 list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
@@ -3797,6 +3801,7 @@ list-offering-promotions
 list-offering-transactions
 list-offerings
 list-on-premises-instances
+list-open-id-connect-provider-tags
 list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
@@ -3830,6 +3835,7 @@ list-policies
 list-policies-for-target
 list-policies-granting-service-access
 list-policy-attachments
+list-policy-tags
 list-policy-versions
 list-portfolio-access
 list-portfolios
@@ -3904,6 +3910,7 @@ list-rule-names-by-target
 list-rules
 list-rules-packages
 list-runs
+list-saml-provider-tags
 list-saml-providers
 list-samples
 list-scheduled-audits
@@ -3915,6 +3922,7 @@ list-security-configurations
 list-security-profiles
 list-security-profiles-for-target
 list-sentiment-detection-jobs
+list-server-certificate-tags
 list-server-certificates
 list-server-neighbors
 list-service-actions
@@ -4919,12 +4927,18 @@ sync
 synthesize-speech
 tag
 tag-delivery-stream
+tag-instance-profile
 tag-log-group
+tag-mfa-device
+tag-open-id-connect-provider
+tag-policy
 tag-project
 tag-queue
 tag-resource
 tag-resources
 tag-role
+tag-saml-provider
+tag-server-certificate
 tag-stream
 tag-user
 terminate-app
@@ -4977,12 +4991,18 @@ unsubscribe-from-dataset
 unsubscribe-from-event
 untag
 untag-delivery-stream
+untag-instance-profile
 untag-log-group
+untag-mfa-device
+untag-open-id-connect-provider
+untag-policy
 untag-project
 untag-queue
 untag-resource
 untag-resources
 untag-role
+untag-saml-provider
+untag-server-certificate
 untag-stream
 untag-user
 update-access-key
@@ -4991,6 +5011,7 @@ update-account-audit-configuration
 update-account-password-policy
 update-account-sending-enabled
 update-action
+update-action-type
 update-address-book
 update-adm-channel
 update-alias
