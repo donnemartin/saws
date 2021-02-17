@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5318
+[sub_commands]: 5319
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -826,6 +826,7 @@ create-parameter-group
 create-partition
 create-partition-index
 create-partner-event-source
+create-partner-input
 create-patch-baseline
 create-pipeline
 create-placement-group
