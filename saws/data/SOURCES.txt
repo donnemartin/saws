@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5319
+[sub_commands]: 5320
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1939,6 +1939,7 @@ describe-document-classifier
 describe-document-permission
 describe-document-versions
 describe-domain
+describe-domain-auto-tunes
 describe-domain-configuration
 describe-domain-controllers
 describe-domain-endpoint-options
