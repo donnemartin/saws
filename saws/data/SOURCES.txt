@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5320
+[sub_commands]: 5321
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -5363,6 +5363,7 @@ update-stage
 update-state-machine
 update-stream
 update-streaming-distribution
+update-studio
 update-studio-session-mapping
 update-subnet-group
 update-subscriber
