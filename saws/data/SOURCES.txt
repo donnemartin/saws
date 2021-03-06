@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5321
+[sub_commands]: 5323
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2695,6 +2695,7 @@ get-access-key-last-used
 get-account
 get-account-authorization-details
 get-account-balance
+get-account-configuration
 get-account-limit
 get-account-password-policy
 get-account-sending-enabled
@@ -4237,6 +4238,7 @@ purge-queue
 push
 put
 put-access-control-rule
+put-account-configuration
 put-account-setting
 put-account-setting-default
 put-action-revision
