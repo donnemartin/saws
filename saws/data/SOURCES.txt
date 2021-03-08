@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5323
+[sub_commands]: 5331
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -511,6 +511,7 @@ create-alias
 create-anomaly-monitor
 create-anomaly-subscription
 create-api-cache
+create-api-destination
 create-api-key
 create-app
 create-app-cookie-stickiness-policy
@@ -1050,6 +1051,7 @@ deactivate-key-signing-key
 deactivate-mfa-device
 deactivate-pipeline
 deactivate-user
+deauthorize-connection
 decline-handshake
 decline-invitations
 decode-authorization-message
@@ -1084,6 +1086,7 @@ delete-anomaly-detector
 delete-anomaly-monitor
 delete-anomaly-subscription
 delete-api-cache
+delete-api-destination
 delete-api-key
 delete-apns-channel
 delete-apns-sandbox-channel
@@ -1755,6 +1758,7 @@ describe-algorithm
 describe-alias
 describe-analysis-schemes
 describe-anomaly-detectors
+describe-api-destination
 describe-app
 describe-app-image-config
 describe-applicable-individual-assessments
@@ -1872,6 +1876,7 @@ describe-configurations
 describe-conformance-pack-compliance
 describe-conformance-pack-status
 describe-conformance-packs
+describe-connection
 describe-connection-alias-permissions
 describe-connection-aliases
 describe-connections
@@ -3498,6 +3503,7 @@ list-aggregate-discovered-resources
 list-algorithms
 list-aliases
 list-allowed-node-type-modifications
+list-api-destinations
 list-api-keys
 list-app-image-configs
 list-application-dependencies
@@ -3584,6 +3590,7 @@ list-conference-providers
 list-configuration-revisions
 list-configuration-sets
 list-configurations
+list-connections
 list-connector-definition-versions
 list-connector-definitions
 list-constraints-for-portfolio
@@ -5022,6 +5029,7 @@ update-alias
 update-anomaly-monitor
 update-anomaly-subscription
 update-api-cache
+update-api-destination
 update-api-key
 update-apns-channel
 update-apns-sandbox-channel
