@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5331
+[sub_commands]: 5336
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -840,6 +840,7 @@ create-policy
 create-policy-version
 create-portfolio
 create-portfolio-share
+create-prepared-statement
 create-preset
 create-presigned-domain-url
 create-presigned-notebook-instance-url
@@ -1464,6 +1465,7 @@ delete-policy
 delete-policy-version
 delete-portfolio
 delete-portfolio-share
+delete-prepared-statement
 delete-preset
 delete-product
 delete-profile
@@ -3198,6 +3200,7 @@ get-plan
 get-platform-application-attributes
 get-policy
 get-policy-version
+get-prepared-statement
 get-preset
 get-principal-tag-attribute-map
 get-products
@@ -3850,6 +3853,7 @@ list-policy-versions
 list-portfolio-access
 list-portfolios
 list-portfolios-for-product
+list-prepared-statements
 list-presets
 list-principal-things
 list-principals-for-portfolio
@@ -5281,6 +5285,7 @@ update-pipeline-status
 update-policy
 update-portfolio
 update-portfolio-share
+update-prepared-statement
 update-preset
 update-primary-email-address
 update-product
