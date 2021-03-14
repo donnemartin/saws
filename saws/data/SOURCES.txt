@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5336
+[sub_commands]: 5340
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -623,6 +623,7 @@ create-db-instance
 create-db-instance-read-replica
 create-db-parameter-group
 create-db-proxy
+create-db-proxy-endpoint
 create-db-security-group
 create-db-snapshot
 create-db-subnet-group
@@ -1227,6 +1228,7 @@ delete-db-instance
 delete-db-instance-automated-backup
 delete-db-parameter-group
 delete-db-proxy
+delete-db-proxy-endpoint
 delete-db-security-group
 delete-db-snapshot
 delete-db-subnet-group
@@ -1915,6 +1917,7 @@ describe-db-log-files
 describe-db-parameter-groups
 describe-db-parameters
 describe-db-proxies
+describe-db-proxy-endpoints
 describe-db-proxy-target-groups
 describe-db-proxy-targets
 describe-db-security-groups
@@ -4120,6 +4123,7 @@ modify-db-cluster-snapshot-attribute
 modify-db-instance
 modify-db-parameter-group
 modify-db-proxy
+modify-db-proxy-endpoint
 modify-db-proxy-target-group
 modify-db-snapshot
 modify-db-snapshot-attribute
