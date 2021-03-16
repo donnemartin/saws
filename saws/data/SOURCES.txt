@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5340
+[sub_commands]: 5344
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -476,6 +476,7 @@ confirm-topic-rule-destination
 confirm-transit-virtual-interface
 connect-custom-key-store
 connect-directory
+contains-pii-entities
 continue-deployment
 continue-update-rollback
 copy-backup-to-region
@@ -1044,6 +1045,7 @@ create-work-group
 create-worker-block
 create-workflow
 create-workforce
+create-workspace-bundle
 create-workspaces
 create-workteam
 create-xss-match-set
@@ -1689,6 +1691,7 @@ delete-work-group
 delete-worker-block
 delete-workflow
 delete-workforce
+delete-workspace-bundle
 delete-workspace-image
 delete-workteam
 delete-xss-match-set
@@ -5441,6 +5444,7 @@ update-webhook
 update-work-group
 update-workflow
 update-workforce
+update-workspace-bundle
 update-workspace-image-permission
 update-workteam
 update-xss-match-set
