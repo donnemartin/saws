@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5344
+[sub_commands]: 5345
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2660,6 +2660,7 @@ evaluate-expression
 evaluate-pull-request-approval-rules
 execute-budget-action
 execute-change-set
+execute-command
 execute-policy
 execute-provisioned-product-plan
 execute-provisioned-product-service-action
