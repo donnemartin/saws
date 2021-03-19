@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5345
+[sub_commands]: 5350
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -687,6 +687,7 @@ create-field-level-encryption-profile
 create-file-system
 create-filter
 create-fleet
+create-fleet-locations
 create-flow-definition
 create-flow-logs
 create-folder
@@ -1296,6 +1297,7 @@ delete-file-system
 delete-file-system-policy
 delete-filter
 delete-fleet
+delete-fleet-locations
 delete-fleets
 delete-flow-definition
 delete-flow-logs
@@ -2021,6 +2023,9 @@ describe-fleet-capacity
 describe-fleet-events
 describe-fleet-history
 describe-fleet-instances
+describe-fleet-location-attributes
+describe-fleet-location-capacity
+describe-fleet-location-utilization
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-fleets
