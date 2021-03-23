@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5350
+[sub_commands]: 5351
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -5484,6 +5484,7 @@ view-billing
 wait
 website
 withdraw-byoip-cidr
+write-get-object-response
 [global_options]: 11
 --color
 --debug
