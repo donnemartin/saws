@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5351
+[sub_commands]: 5352
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4106,6 +4106,7 @@ meter-usage
 migrate-workspace
 modify-account
 modify-address-attribute
+modify-aqua-configuration
 modify-availability-zone-group
 modify-backup-attributes
 modify-cache-cluster
