@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5364
+[sub_commands]: 5379
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -275,6 +275,7 @@ associate-hosted-connection
 associate-iam-instance-profile
 associate-ip-groups
 associate-kms-key
+associate-mac-sec-key
 associate-member-to-group
 associate-node
 associate-package
@@ -332,6 +333,7 @@ authorize-cache-security-group-ingress
 authorize-client-vpn-ingress
 authorize-cluster-security-group-ingress
 authorize-db-security-group-ingress
+authorize-endpoint-access
 authorize-ip-rules
 authorize-security-group-egress
 authorize-security-group-ingress
@@ -667,6 +669,7 @@ create-egress-only-internet-gateway
 create-elasticsearch-domain
 create-email-template
 create-endpoint
+create-endpoint-access
 create-endpoint-config
 create-entity-recognizer
 create-environment
@@ -787,6 +790,7 @@ create-microsoft-ad
 create-mitigation-action
 create-ml-model
 create-ml-transform
+create-mobile-device-access-rule
 create-model
 create-model-bias-job-definition
 create-model-explainability-job-definition
@@ -1274,6 +1278,7 @@ delete-elasticsearch-service-role
 delete-email-channel
 delete-email-template
 delete-endpoint
+delete-endpoint-access
 delete-endpoint-config
 delete-entity-recognizer
 delete-environment
@@ -1413,6 +1418,7 @@ delete-metric-stream
 delete-mitigation-action
 delete-ml-model
 delete-ml-transform
+delete-mobile-device-access-rule
 delete-model
 delete-model-bias-job-definition
 delete-model-explainability-job-definition
@@ -1980,6 +1986,8 @@ describe-elasticsearch-domains
 describe-elasticsearch-instance-type-limits
 describe-emergency-contact-settings
 describe-endpoint
+describe-endpoint-access
+describe-endpoint-authorization
 describe-endpoint-config
 describe-endpoint-types
 describe-endpoints
@@ -2594,6 +2602,7 @@ disassociate-health-check
 disassociate-iam-instance-profile
 disassociate-ip-groups
 disassociate-kms-key
+disassociate-mac-sec-key
 disassociate-member-from-group
 disassociate-members
 disassociate-node
@@ -3002,6 +3011,7 @@ get-file-upload-url
 get-filter
 get-findings
 get-findings-statistics
+get-flow-logs-integration-template
 get-folder
 get-folder-path
 get-function
@@ -3160,6 +3170,7 @@ get-ml-task-run
 get-ml-task-runs
 get-ml-transform
 get-ml-transforms
+get-mobile-device-access-effect
 get-model
 get-model-package-group-policy
 get-model-template
@@ -3806,6 +3817,7 @@ list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
 list-ml-transforms
+list-mobile-device-access-rules
 list-model-bias-job-definitions
 list-model-explainability-job-definitions
 list-model-package-groups
@@ -4151,6 +4163,7 @@ modify-default-credit-specification
 modify-document-permission
 modify-ebs-default-kms-key-id
 modify-endpoint
+modify-endpoint-access
 modify-event-subscription
 modify-fleet
 modify-fpga-image-attribute
@@ -4640,6 +4653,7 @@ revoke-cache-security-group-ingress
 revoke-client-vpn-ingress
 revoke-cluster-security-group-ingress
 revoke-db-security-group-ingress
+revoke-endpoint-access
 revoke-grant
 revoke-invitation
 revoke-ip-rules
@@ -5278,6 +5292,7 @@ update-method-response
 update-mitigation-action
 update-ml-model
 update-ml-transform
+update-mobile-device-access-rule
 update-model
 update-model-package
 update-monitoring-schedule
