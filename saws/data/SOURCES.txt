@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5351
+[sub_commands]: 5364
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -886,6 +886,7 @@ create-relational-database
 create-relational-database-from-snapshot
 create-relational-database-snapshot
 create-remote-access-session
+create-replace-root-volume-task
 create-replication-group
 create-replication-instance
 create-replication-job
@@ -1408,6 +1409,7 @@ delete-method
 delete-method-response
 delete-metric-filter
 delete-metric-policy
+delete-metric-stream
 delete-mitigation-action
 delete-ml-model
 delete-ml-transform
@@ -1758,6 +1760,7 @@ describe-affected-entities-for-organization
 describe-agent-versions
 describe-agents
 describe-aggregate-compliance-by-config-rules
+describe-aggregate-compliance-by-conformance-packs
 describe-aggregate-id-format
 describe-aggregation-authorizations
 describe-alarm-history
@@ -2274,6 +2277,7 @@ describe-registry
 describe-remediation-configurations
 describe-remediation-exceptions
 describe-remediation-execution-status
+describe-replace-root-volume-tasks
 describe-replay
 describe-replication-groups
 describe-replication-instance-task-logs
@@ -2554,6 +2558,7 @@ disable-proactive-engagement
 disable-radius
 disable-rule
 disable-sagemaker-servicecatalog-portfolio
+disable-serial-console-access
 disable-snapshot-copy
 disable-sso
 disable-stage-transition
@@ -2648,6 +2653,7 @@ enable-proactive-engagement
 enable-radius
 enable-rule
 enable-sagemaker-servicecatalog-portfolio
+enable-serial-console-access
 enable-snapshot-copy
 enable-sso
 enable-stage-transition
@@ -2727,6 +2733,7 @@ get-address-book
 get-adm-channel
 get-aggregate-compliance-details-by-config-rule
 get-aggregate-config-rule-compliance-summary
+get-aggregate-conformance-pack-compliance-summary
 get-aggregate-discovered-resource-counts
 get-aggregate-resource-config
 get-alarms
@@ -3146,6 +3153,7 @@ get-method-response
 get-metric-data
 get-metric-policy
 get-metric-statistics
+get-metric-stream
 get-metric-widget-image
 get-ml-model
 get-ml-task-run
@@ -3325,6 +3333,7 @@ get-segment-versions
 get-segments
 get-send-quota
 get-send-statistics
+get-serial-console-access-status
 get-server-certificate
 get-servers
 get-service
@@ -3790,6 +3799,7 @@ list-managed-schema-arns
 list-medical-transcription-jobs
 list-medical-vocabularies
 list-members
+list-metric-streams
 list-metrics
 list-mfa-device-tags
 list-mfa-devices
@@ -4360,6 +4370,7 @@ put-metric-alarm
 put-metric-data
 put-metric-filter
 put-metric-policy
+put-metric-stream
 put-model-package-group-policy
 put-notification-configuration
 put-object
@@ -4819,6 +4830,7 @@ start-maintenance
 start-match-backfill
 start-matchmaking
 start-medical-transcription-job
+start-metric-streams
 start-migration
 start-ml-evaluation-task-run
 start-ml-labeling-set-generation-task-run
@@ -4909,6 +4921,7 @@ stop-key-phrases-detection-job
 stop-labeling-job
 stop-logging
 stop-matchmaking
+stop-metric-streams
 stop-monitoring-members
 stop-monitoring-schedule
 stop-multiplex
