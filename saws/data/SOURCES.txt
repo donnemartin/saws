@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5379
+[sub_commands]: 5392
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -269,6 +269,7 @@ associate-drt-role
 associate-elastic-ip
 associate-enclave-certificate-iam-role
 associate-environment-operations-role
+associate-file-system
 associate-fleet
 associate-health-check
 associate-hosted-connection
@@ -908,6 +909,7 @@ create-resource-definition-version
 create-resource-group
 create-resource-server
 create-rest-api
+create-restore-image-task
 create-return-shipping-label
 create-reusable-delegation-set
 create-role
@@ -954,6 +956,7 @@ create-stack-set
 create-stage
 create-state-machine
 create-storage-location
+create-store-image-task
 create-stored-iscsi-volume
 create-stream
 create-stream-processor
@@ -1013,6 +1016,7 @@ create-trust
 create-type
 create-typed-link-facet
 create-unreferenced-merge-commit
+create-updated-image
 create-upload
 create-usage-limit
 create-usage-plan
@@ -1695,6 +1699,7 @@ delete-vpce-configuration
 delete-vpn-connection
 delete-vpn-connection-route
 delete-vpn-gateway
+delete-warm-pool
 delete-web-acl
 delete-webhook
 delete-work-group
@@ -2026,6 +2031,7 @@ describe-export-tasks
 describe-expressions
 describe-fast-snapshot-restores
 describe-feature-group
+describe-file-system-associations
 describe-file-system-policy
 describe-file-systems
 describe-findings
@@ -2388,6 +2394,7 @@ describe-state-machine
 describe-state-machine-for-execution
 describe-step
 describe-storage
+describe-store-image-tasks
 describe-stored-iscsi-volumes
 describe-stream
 describe-stream-consumer
@@ -2487,6 +2494,7 @@ describe-vpcs
 describe-vpn-connections
 describe-vpn-gateways
 describe-vtl-devices
+describe-warm-pool
 describe-workflow-execution
 describe-workflow-type
 describe-workforce
@@ -2595,6 +2603,7 @@ disassociate-drt-role
 disassociate-elastic-ip
 disassociate-enclave-certificate-iam-role
 disassociate-environment-operations-role
+disassociate-file-system
 disassociate-fleet
 disassociate-from-master-account
 disassociate-global-replication-group
@@ -3714,6 +3723,7 @@ list-feature-groups
 list-field-level-encryption-configs
 list-field-level-encryption-profiles
 list-file-shares
+list-file-system-associations
 list-filters
 list-findings
 list-fleets
@@ -4438,6 +4448,7 @@ put-third-party-job-success-result
 put-trace-segments
 put-user-permissions-boundary
 put-user-policy
+put-warm-pool
 put-webhook
 put-workflow-run-properties
 query
@@ -5035,6 +5046,7 @@ undeprecate-domain
 undeprecate-workflow-type
 ungroup-resources
 uninstall
+unlabel-parameter-version
 unlink-developer-identity
 unlink-identity
 unmonitor-instances
@@ -5215,6 +5227,7 @@ update-facet
 update-field-level-encryption-config
 update-field-level-encryption-profile
 update-file-system
+update-file-system-association
 update-filter
 update-findings-feedback
 update-fleet
