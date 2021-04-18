@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5393
+[sub_commands]: 5394
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1994,6 +1994,7 @@ describe-endpoint
 describe-endpoint-access
 describe-endpoint-authorization
 describe-endpoint-config
+describe-endpoint-settings
 describe-endpoint-types
 describe-endpoints
 describe-engine-default-cluster-parameters
