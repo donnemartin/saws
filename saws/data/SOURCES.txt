@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5394
+[sub_commands]: 5398
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -183,6 +183,7 @@ add-layer-version-permission
 add-listener-certificates
 add-model
 add-option-to-option-group
+add-partner
 add-permission
 add-region
 add-resource-permissions
@@ -1471,6 +1472,7 @@ delete-parameter-group
 delete-parameters
 delete-partition
 delete-partition-index
+delete-partner
 delete-partner-event-source
 delete-patch-baseline
 delete-pending-aggregation-request
@@ -2239,6 +2241,7 @@ describe-packages
 describe-parameter-groups
 describe-parameters
 describe-partner-event-source
+describe-partners
 describe-patch-baselines
 describe-patch-group-state
 describe-patch-groups
@@ -5333,6 +5336,7 @@ update-package
 update-parallel-data
 update-parameter-group
 update-partition
+update-partner-status
 update-patch-baseline
 update-pipeline
 update-pipeline-execution
