@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5398
+[sub_commands]: 5401
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2054,6 +2054,7 @@ describe-flow-logs
 describe-folder-contents
 describe-fpga-image-attribute
 describe-fpga-images
+describe-function
 describe-game-server
 describe-game-server-group
 describe-game-server-instances
@@ -4284,6 +4285,7 @@ provide-anomaly-feedback
 provision-byoip-cidr
 provision-product
 publish
+publish-function
 publish-layer-version
 publish-schema
 publish-version
@@ -5029,6 +5031,7 @@ test-connection
 test-dns-answer
 test-event-pattern
 test-failover
+test-function
 test-invoke-authorizer
 test-invoke-method
 test-metric-filter
