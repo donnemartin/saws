@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5401
+[sub_commands]: 5404
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -781,6 +781,7 @@ create-log-subscription
 create-logger-definition
 create-logger-definition-version
 create-login-profile
+create-long-term-pricing
 create-luna-client
 create-maintenance-window
 create-managed-prefix-list
@@ -3818,6 +3819,7 @@ list-log-subscriptions
 list-logger-definition-versions
 list-logger-definitions
 list-logging-configurations
+list-long-term-pricing
 list-luna-clients
 list-mailbox-export-jobs
 list-mailbox-permissions
@@ -5299,6 +5301,7 @@ update-link-attributes
 update-load-balancer-attribute
 update-logger-definition
 update-login-profile
+update-long-term-pricing
 update-mailbox-quota
 update-maintenance-start-time
 update-maintenance-window
