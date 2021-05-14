@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5404
+[sub_commands]: 5407
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -280,6 +280,7 @@ associate-kms-key
 associate-mac-sec-key
 associate-member-to-group
 associate-node
+associate-ops-item-related-item
 associate-package
 associate-principal-with-portfolio
 associate-proactive-engagement-details
@@ -2621,6 +2622,7 @@ disassociate-mac-sec-key
 disassociate-member-from-group
 disassociate-members
 disassociate-node
+disassociate-ops-item-related-item
 disassociate-principal-from-portfolio
 disassociate-product-from-portfolio
 disassociate-qualification-from-worker
@@ -3870,6 +3872,7 @@ list-open-id-connect-providers
 list-open-workflow-executions
 list-operations
 list-ops-item-events
+list-ops-item-related-items
 list-ops-metadata
 list-organization-admin-accounts
 list-organization-portfolio-access
