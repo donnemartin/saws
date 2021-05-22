@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5407
+[sub_commands]: 5408
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3248,6 +3248,7 @@ get-plan
 get-platform-application-attributes
 get-policy
 get-policy-version
+get-predictive-scaling-forecast
 get-prepared-statement
 get-preset
 get-principal-tag-attribute-map
