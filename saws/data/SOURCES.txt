@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5410
+[sub_commands]: 5411
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2136,6 +2136,7 @@ describe-job
 describe-job-definitions
 describe-job-execution
 describe-job-queues
+describe-job-template
 describe-jobs
 describe-key
 describe-key-pairs
