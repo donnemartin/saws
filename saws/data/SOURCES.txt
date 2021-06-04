@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5411
+[sub_commands]: 5417
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -944,6 +944,7 @@ create-size-constraint-set
 create-skill-group
 create-slot-type-version
 create-smb-file-share
+create-sms-sandbox-phone-number
 create-sms-template
 create-snapshot
 create-snapshot-copy-grant
@@ -1594,6 +1595,7 @@ delete-skill-group
 delete-slot-type
 delete-slot-type-version
 delete-sms-channel
+delete-sms-sandbox-phone-number
 delete-sms-template
 delete-snapshot
 delete-snapshot-copy-grant
@@ -3387,6 +3389,7 @@ get-slot-type-versions
 get-slot-types
 get-sms-attributes
 get-sms-channel
+get-sms-sandbox-account-status
 get-sms-template
 get-snapshot-limits
 get-snowball-usage
@@ -3883,6 +3886,7 @@ list-organizational-units-for-parent
 list-organizations
 list-origin-endpoints
 list-origin-request-policies
+list-origination-numbers
 list-ota-updates
 list-outgoing-certificates
 list-outgoing-typed-links
@@ -4010,6 +4014,7 @@ list-skills
 list-skills-store-categories
 list-skills-store-skills-by-category
 list-smart-home-appliances
+list-sms-sandbox-phone-numbers
 list-source-credentials
 list-speech-synthesis-tasks
 list-sql-injection-match-sets
@@ -5537,6 +5542,7 @@ verify
 verify-domain-dkim
 verify-domain-identity
 verify-email-identity
+verify-sms-sandbox-phone-number
 verify-software-token
 verify-trust
 verify-user-attribute
