@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5417
+[sub_commands]: 5420
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4692,6 +4692,7 @@ revoke-ip-rules
 revoke-security-group-egress
 revoke-security-group-ingress
 revoke-snapshot-access
+revoke-token
 rm
 rotate-encryption-key
 rotate-ingest-endpoint-credentials
@@ -4742,6 +4743,8 @@ send-invitation
 send-message
 send-message-batch
 send-messages
+send-pipeline-execution-step-failure
+send-pipeline-execution-step-success
 send-raw-email
 send-task-failure
 send-task-heartbeat
