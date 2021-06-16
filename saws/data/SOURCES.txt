@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5420
+[sub_commands]: 5422
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2572,6 +2572,7 @@ disable-gateway
 disable-hbase-backups
 disable-health-service-access-for-organization
 disable-hosted-zone-dnssec
+disable-image-deprecation
 disable-insight-rules
 disable-key
 disable-key-rotation
@@ -2669,6 +2670,7 @@ enable-enhanced-monitoring
 enable-fast-snapshot-restores
 enable-health-service-access-for-organization
 enable-hosted-zone-dnssec
+enable-image-deprecation
 enable-insight-rules
 enable-key
 enable-key-rotation
