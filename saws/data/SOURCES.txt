@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5422
+[sub_commands]: 5427
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -301,6 +301,7 @@ associate-team-member
 associate-transit-gateway-multicast-domain
 associate-transit-gateway-route-table
 associate-trial-component
+associate-trunk-interface
 associate-virtual-interface
 associate-vpc-cidr-block
 associate-vpc-with-hosted-zone
@@ -2460,6 +2461,7 @@ describe-transit-gateway-vpc-attachments
 describe-transit-gateways
 describe-trial
 describe-trial-component
+describe-trunk-interface-associations
 describe-trusted-advisor-check-refresh-statuses
 describe-trusted-advisor-check-result
 describe-trusted-advisor-check-summaries
@@ -2644,6 +2646,7 @@ disassociate-team-member
 disassociate-transit-gateway-multicast-domain
 disassociate-transit-gateway-route-table
 disassociate-trial-component
+disassociate-trunk-interface
 disassociate-vpc-cidr-block
 disassociate-vpc-from-hosted-zone
 disassociate-web-acl
@@ -4609,6 +4612,7 @@ replace-route
 replace-route-table-association
 replace-topic-rule
 replace-transit-gateway-route
+replicate-key
 report-instance-status
 report-task-progress
 report-task-runner-heartbeat
@@ -5371,6 +5375,7 @@ update-portfolio-share
 update-prepared-statement
 update-preset
 update-primary-email-address
+update-primary-region
 update-product
 update-profile
 update-project
