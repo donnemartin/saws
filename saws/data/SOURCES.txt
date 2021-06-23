@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5427
+[sub_commands]: 5278
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -141,7 +141,6 @@ abort-vault-lock
 accept-certificate-transfer
 accept-direct-connect-gateway-association-proposal
 accept-domain-transfer-from-another-aws-account
-accept-handshake
 accept-inbound-cross-cluster-search-connection
 accept-input-device-transfer
 accept-invitation
@@ -169,11 +168,9 @@ add-application-input-processing-configuration
 add-application-output
 add-application-reference-data-source
 add-association
-add-attachments-to-set
 add-attributes-to-findings
 add-cache
 add-client-id-to-open-id-connect-provider
-add-communication-to-case
 add-custom-attributes
 add-facet-to-object
 add-instance-fleet
@@ -260,30 +257,24 @@ associate-connection-alias
 associate-connection-with-lag
 associate-contact-with-address-book
 associate-created-artifact
-associate-delegate-to-resource
 associate-device-with-network-profile
 associate-device-with-room
 associate-dhcp-options
 associate-discovered-resource
-associate-drt-log-bucket
-associate-drt-role
 associate-elastic-ip
 associate-enclave-certificate-iam-role
 associate-environment-operations-role
 associate-file-system
 associate-fleet
-associate-health-check
 associate-hosted-connection
 associate-iam-instance-profile
 associate-ip-groups
 associate-kms-key
 associate-mac-sec-key
-associate-member-to-group
 associate-node
 associate-ops-item-related-item
 associate-package
 associate-principal-with-portfolio
-associate-proactive-engagement-details
 associate-product-with-portfolio
 associate-qualification-with-worker
 associate-role-to-group
@@ -350,7 +341,6 @@ batch-associate-user-stack
 batch-check-layer-availability
 batch-create-partition
 batch-delete
-batch-delete-attributes
 batch-delete-builds
 batch-delete-cluster-snapshots
 batch-delete-connection
@@ -398,7 +388,6 @@ batch-get-triggers
 batch-get-workflows
 batch-meter-usage
 batch-modify-cluster-snapshots
-batch-put-attributes
 batch-put-scheduled-update-group-action
 batch-read
 batch-start
@@ -425,14 +414,12 @@ cancel-detect-mitigation-actions-task
 cancel-domain-transfer-to-another-aws-account
 cancel-elasticsearch-service-software-update
 cancel-export-task
-cancel-handshake
 cancel-import-task
 cancel-input-device-transfer
 cancel-instance-refresh
 cancel-job
 cancel-job-execution
 cancel-key-deletion
-cancel-mailbox-export-job
 cancel-maintenance-window-execution
 cancel-ml-task-run
 cancel-replay
@@ -445,8 +432,6 @@ cancel-spot-fleet-requests
 cancel-spot-instance-requests
 cancel-steps
 cancel-update-stack
-change-message-visibility
-change-message-visibility-batch
 change-password
 change-resource-record-sets
 change-tags-for-resource
@@ -505,7 +490,6 @@ count-pending-decision-tasks
 cp
 create-access-key
 create-access-point
-create-account
 create-account-alias
 create-action
 create-activation
@@ -543,7 +527,6 @@ create-bgp-peer
 create-billing-group
 create-bot-version
 create-branch
-create-broker
 create-bucket
 create-budget
 create-budget-action
@@ -560,7 +543,6 @@ create-campaign
 create-capacity-provider
 create-capacity-reservation
 create-carrier-gateway
-create-case
 create-certificate
 create-certificate-from-csr
 create-change-set
@@ -587,7 +569,6 @@ create-compute-environment
 create-computer
 create-conditional-forwarder
 create-conference-provider
-create-configuration
 create-configuration-set
 create-configuration-set-event-destination
 create-configuration-set-tracking-options
@@ -710,7 +691,6 @@ create-geo-match-set
 create-global-cluster
 create-global-replication-group
 create-global-table
-create-gov-cloud-account
 create-grant
 create-graphql-api
 create-group
@@ -795,7 +775,6 @@ create-microsoft-ad
 create-mitigation-action
 create-ml-model
 create-ml-transform
-create-mobile-device-access-rule
 create-model
 create-model-bias-job-definition
 create-model-explainability-job-definition
@@ -827,8 +806,6 @@ create-ops-item
 create-ops-metadata
 create-option-group
 create-or-update-tags
-create-organization
-create-organizational-unit
 create-origin-endpoint
 create-origin-request-policy
 create-ota-update
@@ -864,8 +841,6 @@ create-profile
 create-progress-update-stream
 create-project
 create-project-version
-create-protection
-create-protection-group
 create-provisioned-product-plan
 create-provisioning-artifact
 create-provisioning-claim
@@ -973,7 +948,6 @@ create-studio-session-mapping
 create-subnet
 create-subnet-group
 create-subscriber
-create-subscription
 create-subscription-definition
 create-subscription-definition-version
 create-table
@@ -1071,7 +1045,6 @@ deactivate-mfa-device
 deactivate-pipeline
 deactivate-user
 deauthorize-connection
-decline-handshake
 decline-invitations
 decode-authorization-message
 decrease-node-groups-in-global-replication-group
@@ -1083,7 +1056,6 @@ define-analysis-scheme
 define-expression
 define-index-field
 define-suggester
-delete-access-control-rule
 delete-access-key
 delete-access-point
 delete-account-alias
@@ -1148,7 +1120,6 @@ delete-bot-alias
 delete-bot-channel-association
 delete-bot-version
 delete-branch
-delete-broker
 delete-bucket
 delete-bucket-analytics-configuration
 delete-bucket-cors
@@ -1409,7 +1380,6 @@ delete-logger-definition
 delete-logging-configuration
 delete-login-profile
 delete-luna-client
-delete-mailbox-permissions
 delete-maintenance-window
 delete-managed-prefix-list
 delete-matchmaking-configuration
@@ -1417,8 +1387,6 @@ delete-matchmaking-rule-set
 delete-medical-transcription-job
 delete-medical-vocabulary
 delete-members
-delete-message
-delete-message-batch
 delete-method
 delete-method-response
 delete-metric-filter
@@ -1427,7 +1395,6 @@ delete-metric-stream
 delete-mitigation-action
 delete-ml-model
 delete-ml-transform
-delete-mobile-device-access-rule
 delete-model
 delete-model-bias-job-definition
 delete-model-explainability-job-definition
@@ -1461,10 +1428,8 @@ delete-objects
 delete-open-id-connect-provider
 delete-ops-metadata
 delete-option-group
-delete-organization
 delete-organization-config-rule
 delete-organization-conformance-pack
-delete-organizational-unit
 delete-origin-endpoint
 delete-origin-request-policy
 delete-ota-update
@@ -1496,8 +1461,6 @@ delete-profile
 delete-progress-update-stream
 delete-project
 delete-project-version
-delete-protection
-delete-protection-group
 delete-provisioned-concurrency-config
 delete-provisioned-product-plan
 delete-provisioning-artifact
@@ -1728,12 +1691,10 @@ deregister
 deregister-certificate
 deregister-container-instance
 deregister-db-proxy-targets
-deregister-delegated-administrator
 deregister-devices
 deregister-ecs-cluster
 deregister-elastic-ip
 deregister-event-topic
-deregister-from-work-mail
 deregister-game-server
 deregister-image
 deregister-instance
@@ -1806,9 +1767,6 @@ describe-assessment-templates
 describe-association
 describe-association-execution-targets
 describe-association-executions
-describe-attachment
-describe-attack
-describe-attack-statistics
 describe-audit-finding
 describe-audit-mitigation-actions-task
 describe-audit-suppression
@@ -1831,9 +1789,6 @@ describe-bandwidth-rate-limit
 describe-bandwidth-rate-limit-schedule
 describe-batch-predictions
 describe-billing-group
-describe-broker
-describe-broker-engine-types
-describe-broker-instance-options
 describe-budget
 describe-budget-action
 describe-budget-action-histories
@@ -1857,7 +1812,6 @@ describe-cached-iscsi-volumes
 describe-capacity-providers
 describe-capacity-reservations
 describe-carrier-gateways
-describe-cases
 describe-certificate
 describe-certificates
 describe-change-set
@@ -1886,7 +1840,6 @@ describe-coip-pools
 describe-collection
 describe-commands
 describe-comments
-describe-communications
 describe-compilation-job
 describe-compliance-by-config-rule
 describe-compliance-by-resource
@@ -1894,13 +1847,11 @@ describe-compute-environments
 describe-conditional-forwarders
 describe-config-rule-evaluation-status
 describe-config-rules
-describe-configuration
 describe-configuration-aggregator-sources-status
 describe-configuration-aggregators
 describe-configuration-options
 describe-configuration-recorder-status
 describe-configuration-recorders
-describe-configuration-revision
 describe-configuration-set
 describe-configuration-settings
 describe-configurations
@@ -1921,7 +1872,6 @@ describe-contributor-insights
 describe-conversion-tasks
 describe-copy-product-status
 describe-cost-category-definition
-describe-create-account-status
 describe-cross-account-access-role
 describe-custom-availability-zones
 describe-custom-key-stores
@@ -1982,13 +1932,11 @@ describe-domain-controllers
 describe-domain-endpoint-options
 describe-domains
 describe-dominant-language-detection-job
-describe-drt-access
 describe-ec2-instance-limits
 describe-ecs-clusters
 describe-edge-packaging-job
 describe-effective-instance-associations
 describe-effective-patches-for-patch-baseline
-describe-effective-policy
 describe-egress-only-internet-gateways
 describe-elastic-gpus
 describe-elastic-ips
@@ -1997,7 +1945,6 @@ describe-elasticsearch-domain
 describe-elasticsearch-domain-config
 describe-elasticsearch-domains
 describe-elasticsearch-instance-type-limits
-describe-emergency-contact-settings
 describe-endpoint
 describe-endpoint-access
 describe-endpoint-authorization
@@ -2073,9 +2020,7 @@ describe-global-clusters
 describe-global-replication-groups
 describe-global-table
 describe-global-table-settings
-describe-group
 describe-groups
-describe-handshake
 describe-hapg
 describe-harvest-job
 describe-health-service-status-for-organization
@@ -2177,7 +2122,6 @@ describe-log-groups
 describe-log-streams
 describe-logging-status
 describe-luna-client
-describe-mailbox-export-job
 describe-maintenance-start-time
 describe-maintenance-window-execution-task-invocations
 describe-maintenance-window-execution-tasks
@@ -2236,13 +2180,11 @@ describe-option-groups
 describe-orderable-cluster-options
 describe-orderable-db-instance-options
 describe-orderable-replication-instances
-describe-organization
 describe-organization-config-rule-statuses
 describe-organization-config-rules
 describe-organization-configuration
 describe-organization-conformance-pack-statuses
 describe-organization-conformance-packs
-describe-organizational-unit
 describe-origin-endpoint
 describe-outbound-cross-cluster-search-connections
 describe-packages
@@ -2266,7 +2208,6 @@ describe-placement-groups
 describe-platform-version
 describe-player-sessions
 describe-policies
-describe-policy
 describe-portfolio
 describe-portfolio-share-status
 describe-portfolio-shares
@@ -2279,8 +2220,6 @@ describe-product-view
 describe-project
 describe-project-versions
 describe-projects
-describe-protection
-describe-protection-group
 describe-provisioned-product
 describe-provisioned-product-plan
 describe-provisioning-artifact
@@ -2330,7 +2269,6 @@ describe-reserved-instances-offerings
 describe-reserved-node-offerings
 describe-reserved-nodes
 describe-resize
-describe-resource
 describe-resource-groups
 describe-resource-permissions
 describe-resource-policies
@@ -2372,7 +2310,6 @@ describe-service-errors
 describe-service-updates
 describe-services
 describe-sessions
-describe-severity-levels
 describe-shared-directories
 describe-signaling-channel
 describe-smb-file-shares
@@ -2417,7 +2354,6 @@ describe-subnet-groups
 describe-subnets
 describe-subscribed-workteam
 describe-subscribers-for-notification
-describe-subscription
 describe-subscription-filters
 describe-suggesters
 describe-table
@@ -2462,10 +2398,6 @@ describe-transit-gateways
 describe-trial
 describe-trial-component
 describe-trunk-interface-associations
-describe-trusted-advisor-check-refresh-statuses
-describe-trusted-advisor-check-result
-describe-trusted-advisor-check-summaries
-describe-trusted-advisor-checks
 describe-trusts
 describe-type
 describe-type-registration
@@ -2473,7 +2405,6 @@ describe-update-actions
 describe-upload-buffer
 describe-usage-limits
 describe-usage-report-subscriptions
-describe-user
 describe-user-groups
 describe-user-import-job
 describe-user-pool
@@ -2562,7 +2493,6 @@ disable-add-on
 disable-alarm-actions
 disable-availability-zones-for-load-balancer
 disable-aws-organizations-access
-disable-aws-service-access
 disable-client-authentication
 disable-directory
 disable-domain-auto-renew
@@ -2583,8 +2513,6 @@ disable-ldaps
 disable-logging
 disable-metrics-collection
 disable-organization-admin-account
-disable-policy-type
-disable-proactive-engagement
 disable-radius
 disable-rule
 disable-sagemaker-servicecatalog-portfolio
@@ -2609,11 +2537,8 @@ disassociate-connection-from-lag
 disassociate-connector
 disassociate-contact-from-address-book
 disassociate-created-artifact
-disassociate-delegate-from-resource
 disassociate-device-from-room
 disassociate-discovered-resource
-disassociate-drt-log-bucket
-disassociate-drt-role
 disassociate-elastic-ip
 disassociate-enclave-certificate-iam-role
 disassociate-environment-operations-role
@@ -2621,12 +2546,10 @@ disassociate-file-system
 disassociate-fleet
 disassociate-from-master-account
 disassociate-global-replication-group
-disassociate-health-check
 disassociate-iam-instance-profile
 disassociate-ip-groups
 disassociate-kms-key
 disassociate-mac-sec-key
-disassociate-member-from-group
 disassociate-members
 disassociate-node
 disassociate-ops-item-related-item
@@ -2655,15 +2578,12 @@ discover-input-schema
 discover-instances
 discover-poll-endpoint
 dissociate-package
-domain-metadata
 download-db-log-file-portion
 download-default-key-pair
 enable-add-on
 enable-alarm-actions
-enable-all-features
 enable-availability-zones-for-load-balancer
 enable-aws-organizations-access
-enable-aws-service-access
 enable-client-authentication
 enable-directory
 enable-domain-auto-renew
@@ -2683,8 +2603,6 @@ enable-logging
 enable-metrics-collection
 enable-mfa-device
 enable-organization-admin-account
-enable-policy-type
-enable-proactive-engagement
 enable-radius
 enable-rule
 enable-sagemaker-servicecatalog-portfolio
@@ -2749,7 +2667,6 @@ generate-random
 generate-service-last-accessed-details
 generate-template
 get
-get-access-control-effect
 get-access-key-info
 get-access-key-last-used
 get-account
@@ -2802,7 +2719,6 @@ get-associated-enclave-certificate-iam-roles
 get-associated-ipv6-pool-cidrs
 get-associated-role
 get-attribute-values
-get-attributes
 get-authorization-token
 get-authorizer
 get-authorizers
@@ -2956,7 +2872,6 @@ get-databases
 get-dataflow-graph
 get-default-credit-specification
 get-default-patch-baseline
-get-default-retention-policy
 get-deployable-patch-snapshot-for-instance
 get-deployment
 get-deployment-config
@@ -3164,7 +3079,6 @@ get-logging-options
 get-login
 get-login-password
 get-login-profile
-get-mailbox-details
 get-maintenance-window
 get-maintenance-window-execution
 get-maintenance-window-execution-task
@@ -3196,7 +3110,6 @@ get-ml-task-run
 get-ml-task-runs
 get-ml-transform
 get-ml-transforms
-get-mobile-device-access-effect
 get-model
 get-model-package-group-policy
 get-model-template
@@ -3279,8 +3192,6 @@ get-query-execution
 get-query-logging-config
 get-query-results
 get-queue
-get-queue-attributes
-get-queue-url
 get-rate-based-rule
 get-rate-based-rule-managed-keys
 get-realtime-log-config
@@ -3416,7 +3327,6 @@ get-studio-session-mapping
 get-subscription-attributes
 get-subscription-definition
 get-subscription-definition-version
-get-subscription-state
 get-suite
 get-table
 get-table-metadata
@@ -3538,7 +3448,6 @@ install
 install-applications
 install-to-remote-access-session
 invalidate-project-cache
-invite-account-to-organization
 invite-members
 invoke
 invoke-endpoint
@@ -3546,15 +3455,11 @@ is-vpc-peered
 join-domain
 label-parameter-version
 launch-app
-leave-organization
 list
 list-accepted-portfolio-shares
-list-access-control-rules
 list-access-keys
 list-account-aliases
 list-account-settings
-list-accounts
-list-accounts-for-parent
 list-action-executions
 list-action-types
 list-actions
@@ -3594,7 +3499,6 @@ list-attached-indices
 list-attached-policies
 list-attached-role-policies
 list-attached-user-policies
-list-attacks
 list-attributes
 list-audit-findings
 list-audit-mitigation-actions-executions
@@ -3607,12 +3511,10 @@ list-automatic-tape-creation-policies
 list-available-management-cidr-ranges
 list-available-solution-stacks
 list-available-zones
-list-aws-service-access-for-organization
 list-backups
 list-billing-groups
 list-bonus-payments
 list-branches
-list-brokers
 list-bucket-analytics-configurations
 list-bucket-intelligent-tiering-configurations
 list-bucket-inventory-configurations
@@ -3635,7 +3537,6 @@ list-certificates
 list-certificates-by-ca
 list-change-sets
 list-channels
-list-children
 list-closed-workflow-executions
 list-cloud-front-origin-access-identities
 list-cluster-jobs
@@ -3650,7 +3551,6 @@ list-compilation-jobs
 list-compliance-items
 list-compliance-summaries
 list-conference-providers
-list-configuration-revisions
 list-configuration-sets
 list-configurations
 list-connections
@@ -3665,7 +3565,6 @@ list-core-definition-versions
 list-core-definitions
 list-cost-category-definitions
 list-crawlers
-list-create-account-status
 list-created-artifacts
 list-curated-environment-images
 list-custom-metrics
@@ -3676,9 +3575,6 @@ list-data-quality-job-definitions
 list-data-sources
 list-databases
 list-datasets
-list-dead-letter-source-queues
-list-delegated-administrators
-list-delegated-services-for-account
 list-delivery-streams
 list-deployment-configs
 list-deployment-groups
@@ -3764,14 +3660,11 @@ list-global-tables
 list-grants
 list-graphql-apis
 list-group-certificate-authorities
-list-group-members
 list-group-policies
 list-group-resources
 list-group-versions
 list-groups
 list-groups-for-user
-list-handshakes-for-account
-list-handshakes-for-organization
 list-hapgs
 list-harvest-jobs
 list-health-checks
@@ -3834,8 +3727,6 @@ list-logger-definitions
 list-logging-configurations
 list-long-term-pricing
 list-luna-clients
-list-mailbox-export-jobs
-list-mailbox-permissions
 list-managed-schema-arns
 list-medical-transcription-jobs
 list-medical-vocabularies
@@ -3847,7 +3738,6 @@ list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
 list-ml-transforms
-list-mobile-device-access-rules
 list-model-bias-job-definitions
 list-model-explainability-job-definitions
 list-model-package-groups
@@ -3887,8 +3777,6 @@ list-ops-item-related-items
 list-ops-metadata
 list-organization-admin-accounts
 list-organization-portfolio-access
-list-organizational-units-for-parent
-list-organizations
 list-origin-endpoints
 list-origin-request-policies
 list-origination-numbers
@@ -3897,7 +3785,6 @@ list-outgoing-certificates
 list-outgoing-typed-links
 list-packages-for-domain
 list-parallel-data
-list-parents
 list-partner-event-source-accounts
 list-partner-event-sources
 list-parts
@@ -3911,7 +3798,6 @@ list-platform-applications
 list-platform-branches
 list-platform-versions
 list-policies
-list-policies-for-target
 list-policies-granting-service-access
 list-policy-attachments
 list-policy-tags
@@ -3926,8 +3812,6 @@ list-principals-for-portfolio
 list-processing-jobs
 list-progress-update-streams
 list-projects
-list-protection-groups
-list-protections
 list-provisioned-capacity
 list-provisioned-concurrency-configs
 list-provisioned-product-plans
@@ -3943,7 +3827,6 @@ list-qualification-requests
 list-qualification-types
 list-query-executions
 list-query-logging-configs
-list-queue-tags
 list-queues
 list-rate-based-rules
 list-realtime-log-configs
@@ -3968,14 +3851,12 @@ list-resource-compliance-summaries
 list-resource-data-sync
 list-resource-definition-versions
 list-resource-definitions
-list-resource-delegates
 list-resource-record-sets
 list-resource-servers
 list-resource-tags
 list-resources
 list-resources-for-tag-option
 list-resources-for-web-acl
-list-resources-in-protection-group
 list-retirable-grants
 list-reusable-delegation-sets
 list-review-policy-results-for-hit
@@ -3984,7 +3865,6 @@ list-role-aliases
 list-role-policies
 list-role-tags
 list-roles
-list-roots
 list-rule-groups
 list-rule-names-by-target
 list-rules
@@ -4268,7 +4148,6 @@ modify-workspace-creation-properties
 modify-workspace-properties
 modify-workspace-state
 monitor-instances
-move-account
 move-address-to-vpc
 move-replication-task
 mv
@@ -4316,10 +4195,8 @@ purchase-reserved-elasticsearch-instance-offering
 purchase-reserved-instances-offering
 purchase-reserved-node-offering
 purchase-scheduled-instances
-purge-queue
 push
 put
-put-access-control-rule
 put-account-configuration
 put-account-preferences
 put-account-setting
@@ -4411,7 +4288,6 @@ put-lifecycle-hook
 put-lifecycle-policy
 put-log-events
 put-logging-configuration
-put-mailbox-permissions
 put-managed-scaling-policy
 put-method
 put-method-response
@@ -4486,7 +4362,6 @@ read-job
 read-pipeline
 read-preset
 rebalance-slots-in-global-replication-group
-reboot-broker
 reboot-cache-cluster
 reboot-cluster
 reboot-db-instance
@@ -4498,14 +4373,12 @@ reboot-replication-instance
 reboot-workspaces
 rebuild-environment
 rebuild-workspaces
-receive-message
 recognize-celebrities
 record-activity-task-heartbeat
 record-handler-progress
 record-lifecycle-action-heartbeat
 refresh-cache
 refresh-schemas
-refresh-trusted-advisor-check
 register
 register-activity-type
 register-application-revision
@@ -4518,7 +4391,6 @@ register-container-instance
 register-cross-account-access-role
 register-db-proxy-targets
 register-default-patch-baseline
-register-delegated-administrator
 register-device
 register-devices
 register-domain
@@ -4542,7 +4414,6 @@ register-targets
 register-task-definition
 register-task-with-maintenance-window
 register-thing
-register-to-work-mail
 register-transit-gateway-multicast-group-members
 register-transit-gateway-multicast-group-sources
 register-type
@@ -4569,7 +4440,6 @@ release-address
 release-hosts
 release-static-ip
 reload-tables
-remove-account-from-organization
 remove-all-resource-permissions
 remove-attributes
 remove-attributes-from-findings
@@ -4639,14 +4509,12 @@ reset-image-attribute
 reset-instance-attribute
 reset-job-bookmark
 reset-network-interface-attribute
-reset-password
 reset-service-setting
 reset-service-specific-credential
 reset-snapshot-attribute
 reset-user-password
 resize-cluster
 resolve-alias
-resolve-case
 resolve-customer
 resolve-room
 respond-activity-task-canceled
@@ -4731,7 +4599,6 @@ search-tables
 search-transit-gateway-multicast-groups
 search-transit-gateway-routes
 search-users
-select
 select-aggregate-resource-config
 select-object-content
 select-resource-config
@@ -4746,8 +4613,6 @@ send-custom-verification-email
 send-diagnostic-interrupt
 send-email
 send-invitation
-send-message
-send-message-batch
 send-messages
 send-pipeline-execution-step-failure
 send-pipeline-execution-step-success
@@ -4786,7 +4651,6 @@ set-logging-options
 set-permission
 set-platform-application-attributes
 set-principal-tag-attribute-map
-set-queue-attributes
 set-receipt-rule-position
 set-repository-policy
 set-risk-configuration
@@ -4880,7 +4744,6 @@ start-key-phrases-detection-job
 start-label-detection
 start-lifecycle-policy-preview
 start-logging
-start-mailbox-export-job
 start-maintenance
 start-match-backfill
 start-matchmaking
@@ -5029,7 +4892,6 @@ tag-mfa-device
 tag-open-id-connect-provider
 tag-policy
 tag-project
-tag-queue
 tag-resource
 tag-resources
 tag-role
@@ -5095,7 +4957,6 @@ untag-mfa-device
 untag-open-id-connect-provider
 untag-policy
 untag-project
-untag-queue
 untag-resource
 untag-resources
 untag-role
@@ -5149,7 +5010,6 @@ update-bandwidth-rate-limit-schedule
 update-base-path-mapping
 update-batch-prediction
 update-billing-group
-update-broker
 update-budget
 update-budget-action
 update-build
@@ -5177,7 +5037,6 @@ update-comment
 update-compute-environment
 update-conditional-forwarder
 update-conference-provider
-update-configuration
 update-configuration-set-event-destination
 update-configuration-set-reputation-metrics-enabled
 update-configuration-set-sending-enabled
@@ -5243,7 +5102,6 @@ update-elastic-ip
 update-elasticsearch-domain-config
 update-email-channel
 update-email-template
-update-emergency-contact-settings
 update-endpoint
 update-endpoint-weights-and-capacities
 update-endpoints-batch
@@ -5323,7 +5181,6 @@ update-load-balancer-attribute
 update-logger-definition
 update-login-profile
 update-long-term-pricing
-update-mailbox-quota
 update-maintenance-start-time
 update-maintenance-window
 update-maintenance-window-target
@@ -5337,7 +5194,6 @@ update-method-response
 update-mitigation-action
 update-ml-model
 update-ml-transform
-update-mobile-device-access-rule
 update-model
 update-model-package
 update-monitoring-schedule
@@ -5356,7 +5212,6 @@ update-open-id-connect-provider-thumbprint
 update-ops-item
 update-ops-metadata
 update-organization-configuration
-update-organizational-unit
 update-origin-endpoint
 update-origin-request-policy
 update-package
@@ -5369,17 +5224,14 @@ update-pipeline
 update-pipeline-execution
 update-pipeline-notifications
 update-pipeline-status
-update-policy
 update-portfolio
 update-portfolio-share
 update-prepared-statement
 update-preset
-update-primary-email-address
 update-primary-region
 update-product
 update-profile
 update-project
-update-protection-group
 update-provisioned-product
 update-provisioned-product-properties
 update-provisioning-artifact
@@ -5470,7 +5322,6 @@ update-studio
 update-studio-session-mapping
 update-subnet-group
 update-subscriber
-update-subscription
 update-subscription-definition
 update-table
 update-table-replica-auto-scaling
