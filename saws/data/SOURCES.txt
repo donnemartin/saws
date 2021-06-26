@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5427
+[sub_commands]: 5435
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -162,6 +162,7 @@ activate-event-source
 activate-gateway
 activate-key-signing-key
 activate-pipeline
+activate-type
 activate-user
 add-application-cloud-watch-logging-option
 add-application-input
@@ -361,6 +362,7 @@ batch-delete-scheduled-action
 batch-delete-table
 batch-delete-table-version
 batch-describe-merge-conflicts
+batch-describe-type-configurations
 batch-detect-dominant-language
 batch-detect-entities
 batch-detect-key-phrases
@@ -1069,6 +1071,7 @@ deactivate-event-source
 deactivate-key-signing-key
 deactivate-mfa-device
 deactivate-pipeline
+deactivate-type
 deactivate-user
 deauthorize-connection
 decline-handshake
@@ -2288,6 +2291,7 @@ describe-provisioning-parameters
 describe-provisioning-template
 describe-provisioning-template-version
 describe-public-ipv4-pools
+describe-publisher
 describe-publishing-destination
 describe-pull-request-events
 describe-queries
@@ -4306,6 +4310,7 @@ publish
 publish-function
 publish-layer-version
 publish-schema
+publish-type
 publish-version
 purchase-host-reservation
 purchase-offering
@@ -4533,6 +4538,7 @@ register-instances-with-load-balancer
 register-job-definition
 register-on-premises-instance
 register-patch-baseline-for-patch-group
+register-publisher
 register-rds-db-instance
 register-scalable-target
 register-schema-version
@@ -4803,6 +4809,7 @@ set-tags-for-resource
 set-task-status
 set-time-based-auto-scaling
 set-topic-attributes
+set-type-configuration
 set-type-default-version
 set-ui-customization
 set-user-mfa-preference
@@ -5060,6 +5067,7 @@ test-invoke-method
 test-metric-filter
 test-render-template
 test-repository-triggers
+test-type
 transact-get-items
 transact-write-items
 transfer-certificate
