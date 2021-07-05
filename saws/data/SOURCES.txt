@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5435
+[sub_commands]: 5438
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -5300,6 +5300,7 @@ update-health-check
 update-hit-review-status
 update-hit-type-of-hit
 update-hosted-zone-comment
+update-http-namespace
 update-identity-pool
 update-identity-provider
 update-image
@@ -5384,6 +5385,7 @@ update-prepared-statement
 update-preset
 update-primary-email-address
 update-primary-region
+update-private-dns-namespace
 update-product
 update-profile
 update-project
@@ -5392,6 +5394,7 @@ update-provisioned-product
 update-provisioned-product-properties
 update-provisioning-artifact
 update-provisioning-template
+update-public-dns-namespace
 update-public-key
 update-publishing-destination
 update-pull-request-approval-rule-content
