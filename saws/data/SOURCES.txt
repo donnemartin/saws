@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5438
+[sub_commands]: 5442
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -252,6 +252,7 @@ assign-private-ip-addresses
 assign-tape-pool
 assign-volume
 associate-address
+associate-alias
 associate-approval-rule-template-with-repository
 associate-budget-with-resource
 associate-certificate
@@ -2365,6 +2366,7 @@ describe-schemas
 describe-script
 describe-security-configuration
 describe-security-group-references
+describe-security-group-rules
 describe-security-groups
 describe-security-profile
 describe-sentiment-detection-job
@@ -3657,6 +3659,7 @@ list-conference-providers
 list-configuration-revisions
 list-configuration-sets
 list-configurations
+list-conflicting-aliases
 list-connections
 list-connector-definition-versions
 list-connector-definitions
@@ -4237,6 +4240,7 @@ modify-report-definition
 modify-reserved-instances
 modify-rule
 modify-scheduled-action
+modify-security-group-rules
 modify-selfservice-permissions
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
