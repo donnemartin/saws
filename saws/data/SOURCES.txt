@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5442
+[sub_commands]: 5463
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -277,6 +277,7 @@ associate-fleet
 associate-health-check
 associate-hosted-connection
 associate-iam-instance-profile
+associate-instance-event-window
 associate-ip-groups
 associate-kms-key
 associate-mac-sec-key
@@ -536,6 +537,7 @@ create-assessment-template
 create-association
 create-association-batch
 create-audit-suppression
+create-authentication-profile
 create-authorizer
 create-auto-ml-job
 create-auto-scaling-group
@@ -548,6 +550,7 @@ create-bot-version
 create-branch
 create-broker
 create-bucket
+create-bucket-access-key
 create-budget
 create-budget-action
 create-build
@@ -744,6 +747,7 @@ create-index
 create-input
 create-input-security-group
 create-instance
+create-instance-event-window
 create-instance-export-task
 create-instance-profile
 create-instance-snapshot
@@ -1136,6 +1140,7 @@ delete-assessment-template
 delete-association
 delete-attributes
 delete-audit-suppression
+delete-authentication-profile
 delete-authorizer
 delete-auto-scaling-group
 delete-auto-snapshot
@@ -1154,6 +1159,7 @@ delete-bot-version
 delete-branch
 delete-broker
 delete-bucket
+delete-bucket-access-key
 delete-bucket-analytics-configuration
 delete-bucket-cors
 delete-bucket-encryption
@@ -1366,6 +1372,7 @@ delete-input-security-group
 delete-insight-rules
 delete-installation-media
 delete-instance
+delete-instance-event-window
 delete-instance-profile
 delete-instance-snapshot
 delete-integration
@@ -1817,6 +1824,7 @@ describe-audit-finding
 describe-audit-mitigation-actions-task
 describe-audit-suppression
 describe-audit-task
+describe-authentication-profiles
 describe-authorizer
 describe-auto-ml-job
 describe-auto-scaling-groups
@@ -2123,6 +2131,7 @@ describe-instance-associations-status
 describe-instance-attribute
 describe-instance-credit-specifications
 describe-instance-event-notification-attributes
+describe-instance-event-windows
 describe-instance-health
 describe-instance-information
 describe-instance-patch-states
@@ -2629,6 +2638,7 @@ disassociate-from-master-account
 disassociate-global-replication-group
 disassociate-health-check
 disassociate-iam-instance-profile
+disassociate-instance-event-window
 disassociate-ip-groups
 disassociate-kms-key
 disassociate-mac-sec-key
@@ -2832,8 +2842,10 @@ get-bot-versions
 get-bots
 get-branch
 get-bucket-accelerate-configuration
+get-bucket-access-keys
 get-bucket-acl
 get-bucket-analytics-configuration
+get-bucket-bundles
 get-bucket-cors
 get-bucket-encryption
 get-bucket-intelligent-tiering-configuration
@@ -2841,6 +2853,7 @@ get-bucket-inventory-configuration
 get-bucket-lifecycle-configuration
 get-bucket-location
 get-bucket-logging
+get-bucket-metric-data
 get-bucket-metrics-configuration
 get-bucket-notification-configuration
 get-bucket-ownership-controls
@@ -2851,6 +2864,7 @@ get-bucket-request-payment
 get-bucket-tagging
 get-bucket-versioning
 get-bucket-website
+get-buckets
 get-builtin-intent
 get-builtin-intents
 get-builtin-slot-types
@@ -3197,6 +3211,8 @@ get-metric-policy
 get-metric-statistics
 get-metric-stream
 get-metric-widget-image
+get-migration
+get-migrations
 get-ml-model
 get-ml-task-run
 get-ml-task-runs
@@ -4169,6 +4185,7 @@ migrate-workspace
 modify-account
 modify-address-attribute
 modify-aqua-configuration
+modify-authentication-profile
 modify-availability-zone-group
 modify-backup-attributes
 modify-cache-cluster
@@ -4220,6 +4237,7 @@ modify-instance-attribute
 modify-instance-capacity-reservation-attributes
 modify-instance-credit-specification
 modify-instance-event-start-time
+modify-instance-event-window
 modify-instance-fleet
 modify-instance-groups
 modify-instance-metadata-options
@@ -4799,6 +4817,7 @@ set-principal-tag-attribute-map
 set-queue-attributes
 set-receipt-rule-position
 set-repository-policy
+set-resource-access-for-bucket
 set-risk-configuration
 set-rule-priorities
 set-security-groups
@@ -5162,6 +5181,8 @@ update-base-path-mapping
 update-batch-prediction
 update-billing-group
 update-broker
+update-bucket
+update-bucket-bundle
 update-budget
 update-budget-action
 update-build
