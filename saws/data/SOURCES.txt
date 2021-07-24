@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5463
+[sub_commands]: 5465
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2314,6 +2314,7 @@ describe-record
 describe-refresh-schemas-status
 describe-regions
 describe-registry
+describe-release-label
 describe-remediation-configurations
 describe-remediation-exceptions
 describe-remediation-execution-status
@@ -3977,6 +3978,7 @@ list-records
 list-regex-match-sets
 list-regex-pattern-sets
 list-registries
+list-release-labels
 list-remote-access-sessions
 list-replays
 list-report-groups
