@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5465
+[sub_commands]: 5468
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -978,6 +978,7 @@ create-streaming-url
 create-studio
 create-studio-session-mapping
 create-subnet
+create-subnet-cidr-reservation
 create-subnet-group
 create-subscriber
 create-subscription
@@ -1628,6 +1629,7 @@ delete-streaming-distribution
 delete-studio
 delete-studio-session-mapping
 delete-subnet
+delete-subnet-cidr-reservation
 delete-subnet-group
 delete-subscriber
 delete-subscription-definition
@@ -3436,6 +3438,7 @@ get-stored-query
 get-streaming-distribution
 get-streaming-distribution-config
 get-studio-session-mapping
+get-subnet-cidr-reservations
 get-subscription-attributes
 get-subscription-definition
 get-subscription-definition-version
