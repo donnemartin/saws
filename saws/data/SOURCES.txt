@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5468
+[sub_commands]: 5469
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3545,6 +3545,7 @@ import-rest-api
 import-server-catalog
 import-snapshot
 import-source-credentials
+import-stacks-to-stack-set
 import-terminology
 import-workspace-image
 increase-node-groups-in-global-replication-group
