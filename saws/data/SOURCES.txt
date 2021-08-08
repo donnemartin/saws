@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5469
+[sub_commands]: 5486
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -262,6 +262,7 @@ associate-connection-alias
 associate-connection-with-lag
 associate-contact-with-address-book
 associate-created-artifact
+associate-data-share-consumer
 associate-delegate-to-resource
 associate-device-with-network-profile
 associate-device-with-room
@@ -339,6 +340,7 @@ attach-vpn-gateway
 authorize-cache-security-group-ingress
 authorize-client-vpn-ingress
 authorize-cluster-security-group-ingress
+authorize-data-share
 authorize-db-security-group-ingress
 authorize-endpoint-access
 authorize-ip-rules
@@ -562,6 +564,7 @@ create-cache-policy
 create-cache-security-group
 create-cache-subnet-group
 create-cached-iscsi-volume
+create-call-analytics-category
 create-campaign
 create-capacity-provider
 create-capacity-reservation
@@ -1080,6 +1083,7 @@ deactivate-pipeline
 deactivate-type
 deactivate-user
 deauthorize-connection
+deauthorize-data-share
 decline-handshake
 decline-invitations
 decode-authorization-message
@@ -1185,6 +1189,8 @@ delete-cache-parameter-group
 delete-cache-policy
 delete-cache-security-group
 delete-cache-subnet-group
+delete-call-analytics-category
+delete-call-analytics-job
 delete-campaign
 delete-capacity-provider
 delete-carrier-gateway
@@ -1942,6 +1948,9 @@ describe-custom-key-stores
 describe-custom-metric
 describe-customer-gateways
 describe-data-quality-job-definition
+describe-data-shares
+describe-data-shares-for-consumer
+describe-data-shares-for-producer
 describe-data-sources
 describe-dataset
 describe-db-cluster-backtracks
@@ -2627,6 +2636,7 @@ disassociate-connection-from-lag
 disassociate-connector
 disassociate-contact-from-address-book
 disassociate-created-artifact
+disassociate-data-share-consumer
 disassociate-delegate-from-resource
 disassociate-device-from-room
 disassociate-discovered-resource
@@ -2878,6 +2888,8 @@ get-byte-match-set
 get-cache-policy
 get-cache-policy-config
 get-calendar-state
+get-call-analytics-category
+get-call-analytics-job
 get-caller-identity
 get-campaign
 get-campaign-activities
@@ -3657,6 +3669,8 @@ list-business-report-schedules
 list-byte-match-sets
 list-ca-certificates
 list-cache-policies
+list-call-analytics-categories
+list-call-analytics-jobs
 list-candidates-for-auto-ml-job
 list-certificates
 list-certificates-by-ca
@@ -4587,6 +4601,7 @@ register-workflow-type
 register-workspace-directory
 reject-assignment
 reject-certificate-transfer
+reject-data-share
 reject-domain-transfer-from-another-aws-account
 reject-inbound-cross-cluster-search-connection
 reject-input-device-transfer
@@ -4873,6 +4888,7 @@ start-bgp-failover-test
 start-build
 start-build-batch
 start-bulk-deployment
+start-call-analytics-job
 start-celebrity-recognition
 start-change-request-execution
 start-channel
@@ -5196,6 +5212,7 @@ update-business-report-schedule
 update-byte-match-set
 update-ca-certificate
 update-cache-policy
+update-call-analytics-category
 update-campaign
 update-capacity-provider
 update-certificate
