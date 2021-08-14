@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5486
+[sub_commands]: 5487
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -5437,6 +5437,7 @@ update-private-dns-namespace
 update-product
 update-profile
 update-project
+update-project-visibility
 update-protection-group
 update-provisioned-product
 update-provisioned-product-properties
