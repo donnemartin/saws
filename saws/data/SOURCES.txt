@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5487
+[sub_commands]: 5488
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1884,6 +1884,7 @@ describe-change-set
 describe-channel
 describe-chap-credentials
 describe-classic-link-instances
+describe-client-authentication-settings
 describe-client-properties
 describe-client-vpn-authorization-rules
 describe-client-vpn-connections
