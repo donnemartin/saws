@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5488
+[sub_commands]: 5489
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3582,6 +3582,7 @@ invite-account-to-organization
 invite-members
 invoke
 invoke-endpoint
+invoke-endpoint-async
 is-vpc-peered
 join-domain
 label-parameter-version
