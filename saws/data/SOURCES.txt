@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5489
+[sub_commands]: 5498
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -379,6 +379,7 @@ batch-execute-statement
 batch-get-aggregate-resource-config
 batch-get-application-revisions
 batch-get-applications
+batch-get-blueprints
 batch-get-build-batches
 batch-get-builds
 batch-get-commits
@@ -548,6 +549,7 @@ create-base-path-mapping
 create-batch-prediction
 create-bgp-peer
 create-billing-group
+create-blueprint
 create-bot-version
 create-branch
 create-broker
@@ -1157,6 +1159,7 @@ delete-base-path-mapping
 delete-batch-prediction
 delete-bgp-peer
 delete-billing-group
+delete-blueprint
 delete-bot
 delete-bot-alias
 delete-bot-channel-association
@@ -2846,6 +2849,9 @@ get-batch-prediction
 get-behavior-model-training-summaries
 get-blob
 get-block-public-access-configuration
+get-blueprint
+get-blueprint-run
+get-blueprint-runs
 get-blueprints
 get-bot
 get-bot-alias
@@ -3651,6 +3657,7 @@ list-available-zones
 list-aws-service-access-for-organization
 list-backups
 list-billing-groups
+list-blueprints
 list-bonus-payments
 list-branches
 list-brokers
@@ -4887,6 +4894,7 @@ start-audit-mitigation-actions-task
 start-automation-execution
 start-availability-monitor-test
 start-bgp-failover-test
+start-blueprint-run
 start-build
 start-build-batch
 start-bulk-deployment
@@ -5204,6 +5212,7 @@ update-bandwidth-rate-limit-schedule
 update-base-path-mapping
 update-batch-prediction
 update-billing-group
+update-blueprint
 update-broker
 update-bucket
 update-bucket-bundle
