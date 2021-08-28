@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5498
+[sub_commands]: 5500
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -3373,6 +3373,7 @@ get-resource-policy
 get-resources
 get-rest-api
 get-rest-apis
+get-retained-message
 get-reusable-delegation-set
 get-reusable-delegation-set-limit
 get-rightsizing-recommendation
@@ -4028,6 +4029,7 @@ list-resources
 list-resources-for-tag-option
 list-resources-for-web-acl
 list-resources-in-protection-group
+list-retained-messages
 list-retirable-grants
 list-reusable-delegation-sets
 list-review-policy-results-for-hit
