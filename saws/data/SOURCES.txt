@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5500
+[sub_commands]: 5503
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2840,6 +2840,7 @@ get-authorization-token
 get-authorizer
 get-authorizers
 get-auto-snapshots
+get-auto-termination-policy
 get-automation-execution
 get-aws-organizations-access-status
 get-baidu-channel
@@ -4393,6 +4394,7 @@ put-application-policy
 put-approval-result
 put-attributes
 put-auto-scaling-policy
+put-auto-termination-policy
 put-backup-policy
 put-block-public-access-configuration
 put-bot
@@ -4634,6 +4636,7 @@ remove-all-resource-permissions
 remove-attributes
 remove-attributes-from-findings
 remove-auto-scaling-policy
+remove-auto-termination-policy
 remove-client-id-from-open-id-connect-provider
 remove-facet-from-object
 remove-from-global-cluster
