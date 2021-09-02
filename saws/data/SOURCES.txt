@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5503
+[sub_commands]: 5510
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -706,6 +706,7 @@ create-file-system
 create-filter
 create-fleet
 create-fleet-locations
+create-fleet-metric
 create-flow-definition
 create-flow-logs
 create-folder
@@ -1333,6 +1334,7 @@ delete-file-system-policy
 delete-filter
 delete-fleet
 delete-fleet-locations
+delete-fleet-metric
 delete-fleets
 delete-flow-definition
 delete-flow-logs
@@ -2079,6 +2081,7 @@ describe-fleet-instances
 describe-fleet-location-attributes
 describe-fleet-location-capacity
 describe-fleet-location-utilization
+describe-fleet-metric
 describe-fleet-port-settings
 describe-fleet-utilization
 describe-fleets
@@ -2886,6 +2889,7 @@ get-bucket-tagging
 get-bucket-versioning
 get-bucket-website
 get-buckets
+get-buckets-aggregation
 get-builtin-intent
 get-builtin-intents
 get-builtin-slot-types
@@ -3798,6 +3802,7 @@ list-file-shares
 list-file-system-associations
 list-filters
 list-findings
+list-fleet-metrics
 list-fleets
 list-flow-definitions
 list-fragments
@@ -4763,6 +4768,7 @@ revoke-security-group-ingress
 revoke-snapshot-access
 revoke-token
 rm
+rollback-stack
 rotate-encryption-key
 rotate-ingest-endpoint-credentials
 run-instances
@@ -5336,6 +5342,7 @@ update-findings-feedback
 update-fleet
 update-fleet-attributes
 update-fleet-capacity
+update-fleet-metric
 update-fleet-port-settings
 update-folder
 update-function
