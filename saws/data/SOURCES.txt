@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5510
+[sub_commands]: 5520
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -749,6 +749,7 @@ create-image-builder
 create-image-builder-streaming-url
 create-image-version
 create-import-job
+create-in-app-template
 create-index
 create-input
 create-input-security-group
@@ -982,6 +983,7 @@ create-streaming-distribution
 create-streaming-distribution-with-tags
 create-streaming-url
 create-studio
+create-studio-lifecycle-config
 create-studio-session-mapping
 create-subnet
 create-subnet-cidr-reservation
@@ -1377,6 +1379,7 @@ delete-image-builder
 delete-image-permissions
 delete-image-version
 delete-imported-key-material
+delete-in-app-template
 delete-inbound-cross-cluster-search-connection
 delete-index-field
 delete-input
@@ -1638,6 +1641,7 @@ delete-stream
 delete-stream-processor
 delete-streaming-distribution
 delete-studio
+delete-studio-lifecycle-config
 delete-studio-session-mapping
 delete-subnet
 delete-subnet-cidr-reservation
@@ -2447,6 +2451,7 @@ describe-stream-consumer
 describe-stream-processor
 describe-stream-summary
 describe-studio
+describe-studio-lifecycle-config
 describe-subnet-groups
 describe-subnets
 describe-subscribed-workteam
@@ -3136,6 +3141,8 @@ get-identity-verification-attributes
 get-import
 get-import-job
 get-import-jobs
+get-in-app-messages
+get-in-app-template
 get-indexing-configuration
 get-insight
 get-insight-events
@@ -4098,6 +4105,7 @@ list-stream-consumers
 list-stream-processors
 list-streaming-distributions
 list-streams
+list-studio-lifecycle-configs
 list-studio-session-mappings
 list-studios
 list-subscribed-rule-groups
@@ -4754,6 +4762,7 @@ retrieve-tape-archive
 retrieve-tape-recovery-point
 retry-build
 retry-build-batch
+retry-pipeline-execution
 retry-stage-execution
 revoke-cache-security-group-ingress
 revoke-client-vpn-ingress
@@ -5376,6 +5385,7 @@ update-identity-pool
 update-identity-provider
 update-image
 update-image-permissions
+update-in-app-template
 update-indexing-configuration
 update-input
 update-input-device
