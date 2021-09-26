@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5520
+[sub_commands]: 5526
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2134,6 +2134,7 @@ describe-image
 describe-image-attribute
 describe-image-builders
 describe-image-permissions
+describe-image-replication-status
 describe-image-scan-findings
 describe-image-version
 describe-images
@@ -3547,6 +3548,8 @@ get-voice-template
 get-vpc-link
 get-vpc-links
 get-vpce-configuration
+get-vpn-connection-device-sample-configuration
+get-vpn-connection-device-types
 get-web-acl
 get-web-acl-for-resource
 get-work-group
@@ -3770,6 +3773,7 @@ list-distributions-by-origin-request-policy-id
 list-distributions-by-realtime-log-config
 list-distributions-by-web-acl-id
 list-document-classification-jobs
+list-document-classifier-summaries
 list-document-classifiers
 list-document-metadata-history
 list-document-versions
@@ -3788,6 +3792,7 @@ list-endpoints-by-platform-application
 list-engine-versions
 list-entities-detection-jobs
 list-entities-for-policy
+list-entity-recognizer-summaries
 list-entity-recognizers
 list-environments
 list-event-buses
@@ -4547,6 +4552,7 @@ put-third-party-job-success-result
 put-trace-segments
 put-user-permissions-boundary
 put-user-policy
+put-verification-state-on-violation
 put-warm-pool
 put-webhook
 put-workflow-run-properties
