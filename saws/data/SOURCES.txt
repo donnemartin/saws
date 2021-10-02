@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5526
+[sub_commands]: 5531
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1038,6 +1038,7 @@ create-type
 create-typed-link-facet
 create-unreferenced-merge-commit
 create-updated-image
+create-updated-workspace-image
 create-upload
 create-usage-limit
 create-usage-plan
@@ -1453,6 +1454,7 @@ delete-metric-stream
 delete-mitigation-action
 delete-ml-model
 delete-ml-transform
+delete-mobile-device-access-override
 delete-mobile-device-access-rule
 delete-model
 delete-model-bias-job-definition
@@ -3254,6 +3256,7 @@ get-ml-task-runs
 get-ml-transform
 get-ml-transforms
 get-mobile-device-access-effect
+get-mobile-device-access-override
 get-model
 get-model-package-group-policy
 get-model-template
@@ -3917,6 +3920,7 @@ list-mfa-devices
 list-migration-tasks
 list-mitigation-actions
 list-ml-transforms
+list-mobile-device-access-overrides
 list-mobile-device-access-rules
 list-model-bias-job-definitions
 list-model-explainability-job-definitions
@@ -4498,6 +4502,7 @@ put-metric-data
 put-metric-filter
 put-metric-policy
 put-metric-stream
+put-mobile-device-access-override
 put-model-package-group-policy
 put-notification-configuration
 put-object
