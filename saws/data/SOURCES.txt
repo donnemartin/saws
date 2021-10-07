@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5531
+[sub_commands]: 5537
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -424,6 +424,7 @@ cancel-audit-mitigation-actions-task
 cancel-audit-task
 cancel-bundle-task
 cancel-capacity-reservation
+cancel-capacity-reservation-fleets
 cancel-certificate-transfer
 cancel-cluster
 cancel-command
@@ -570,6 +571,7 @@ create-call-analytics-category
 create-campaign
 create-capacity-provider
 create-capacity-reservation
+create-capacity-reservation-fleet
 create-carrier-gateway
 create-case
 create-certificate
@@ -1886,6 +1888,7 @@ describe-cache-security-groups
 describe-cache-subnet-groups
 describe-cached-iscsi-volumes
 describe-capacity-providers
+describe-capacity-reservation-fleets
 describe-capacity-reservations
 describe-carrier-gateways
 describe-cases
@@ -2144,6 +2147,7 @@ describe-import-image-tasks
 describe-import-snapshot-tasks
 describe-import-tasks
 describe-inbound-cross-cluster-search-connections
+describe-inbound-dmarc-settings
 describe-index
 describe-index-fields
 describe-input
@@ -4246,6 +4250,7 @@ modify-cache-cluster
 modify-cache-parameter-group
 modify-cache-subnet-group
 modify-capacity-reservation
+modify-capacity-reservation-fleet
 modify-certificates
 modify-client-properties
 modify-client-vpn-endpoint
@@ -4474,6 +4479,7 @@ put-identity-policy
 put-image
 put-image-scanning-configuration
 put-image-tag-mutability
+put-inbound-dmarc-settings
 put-insight-rule
 put-insight-selectors
 put-instance-public-ports
