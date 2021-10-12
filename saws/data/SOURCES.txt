@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5537
+[sub_commands]: 5538
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4524,6 +4524,7 @@ put-partner-events
 put-permission
 put-permission-policy
 put-pipeline-definition
+put-policy
 put-provisioned-concurrency-config
 put-public-access-block
 put-query-definition
