@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5538
+[sub_commands]: 5539
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -463,6 +463,7 @@ check-domain-availability
 check-domain-transferability
 check-if-phone-number-is-opted-out
 check-schema-version-validity
+claim-device
 claim-game-server
 classify-document
 clear-default-authorizer
