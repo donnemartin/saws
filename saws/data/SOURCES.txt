@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5539
+[sub_commands]: 5545
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1773,6 +1773,7 @@ deregister-instance
 deregister-instance-event-notification-attributes
 deregister-instances-from-load-balancer
 deregister-job-definition
+deregister-mail-domain
 deregister-managed-instance
 deregister-on-premises-instance
 deregister-patch-baseline-for-patch-group
@@ -3226,6 +3227,7 @@ get-logging-options
 get-login
 get-login-password
 get-login-profile
+get-mail-domain
 get-mailbox-details
 get-maintenance-window
 get-maintenance-window-execution
@@ -3912,6 +3914,7 @@ list-logger-definitions
 list-logging-configurations
 list-long-term-pricing
 list-luna-clients
+list-mail-domains
 list-mailbox-export-jobs
 list-mailbox-permissions
 list-managed-schema-arns
@@ -4623,6 +4626,7 @@ register-instance
 register-instance-event-notification-attributes
 register-instances-with-load-balancer
 register-job-definition
+register-mail-domain
 register-on-premises-instance
 register-patch-baseline-for-patch-group
 register-publisher
@@ -5313,6 +5317,7 @@ update-data-retention
 update-data-source
 update-database
 update-default-branch
+update-default-mail-domain
 update-deployment
 update-deployment-group
 update-destination
@@ -5565,6 +5570,7 @@ update-size-constraint-set
 update-skill-group
 update-smb-file-share
 update-smb-file-share-visibility
+update-smb-local-groups
 update-smb-security-strategy
 update-sms-channel
 update-sms-template
