@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5545
+[sub_commands]: 5549
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -480,6 +480,7 @@ compose-environments
 configure-health-check
 configure-logs
 confirm-connection
+confirm-customer-agreement
 confirm-device
 confirm-forgot-password
 confirm-private-virtual-interface
@@ -1964,6 +1965,7 @@ describe-custom-availability-zones
 describe-custom-key-stores
 describe-custom-metric
 describe-customer-gateways
+describe-customer-metadata
 describe-data-quality-job-definition
 describe-data-shares
 describe-data-shares-for-consumer
@@ -2387,6 +2389,7 @@ describe-risk-configuration
 describe-role-alias
 describe-root-folders
 describe-route-tables
+describe-router-configuration
 describe-rule
 describe-rules
 describe-rules-packages
@@ -5331,6 +5334,7 @@ update-device-pool
 update-device-status
 update-devices
 update-dimension
+update-direct-connect-gateway
 update-direct-connect-gateway-association
 update-directory-config
 update-distribution
