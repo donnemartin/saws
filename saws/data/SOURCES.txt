@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5549
+[sub_commands]: 5552
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -625,6 +625,7 @@ create-cost-category-definition
 create-crawler
 create-custom-action-type
 create-custom-availability-zone
+create-custom-db-engine-version
 create-custom-key-store
 create-custom-metadata
 create-custom-metric
@@ -1254,6 +1255,7 @@ delete-cost-category-definition
 delete-crawler
 delete-custom-action-type
 delete-custom-availability-zone
+delete-custom-db-engine-version
 delete-custom-key-store
 delete-custom-metadata
 delete-custom-metric
@@ -4271,6 +4273,7 @@ modify-cluster-snapshot
 modify-cluster-snapshot-schedule
 modify-cluster-subnet-group
 modify-current-db-cluster-capacity
+modify-custom-db-engine-version
 modify-db-cluster
 modify-db-cluster-endpoint
 modify-db-cluster-parameter-group
