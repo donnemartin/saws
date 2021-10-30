@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5552
+[sub_commands]: 5555
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -366,6 +366,7 @@ batch-delete-scheduled-action
 batch-delete-table
 batch-delete-table-version
 batch-describe-merge-conflicts
+batch-describe-model-package
 batch-describe-type-configurations
 batch-detect-dominant-language
 batch-detect-entities
@@ -3173,6 +3174,7 @@ get-instance-profile
 get-instance-snapshot
 get-instance-snapshots
 get-instance-state
+get-instance-types-from-instance-requirements
 get-instances
 get-instances-health-status
 get-integration
@@ -3473,6 +3475,7 @@ get-snapshot-limits
 get-snowball-usage
 get-software-updates
 get-speech-synthesis-task
+get-spot-placement-scores
 get-sql-injection-match-set
 get-ssh-public-key
 get-stack-policy
