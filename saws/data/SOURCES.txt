@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5555
+[sub_commands]: 5560
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -639,6 +639,7 @@ create-data-source-from-rds
 create-data-source-from-redshift
 create-data-source-from-s3
 create-database
+create-dataset
 create-db-cluster
 create-db-cluster-endpoint
 create-db-cluster-parameter-group
@@ -2711,6 +2712,7 @@ discover-input-schema
 discover-instances
 discover-poll-endpoint
 dissociate-package
+distribute-dataset-entries
 domain-metadata
 download-db-log-file-portion
 download-default-key-pair
@@ -3760,6 +3762,8 @@ list-data-catalogs
 list-data-quality-job-definitions
 list-data-sources
 list-databases
+list-dataset-entries
+list-dataset-labels
 list-datasets
 list-dead-letter-source-queues
 list-delegated-administrators
@@ -5325,6 +5329,7 @@ update-data-catalog
 update-data-retention
 update-data-source
 update-database
+update-dataset-entries
 update-default-branch
 update-default-mail-domain
 update-deployment
