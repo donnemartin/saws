@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5560
+[sub_commands]: 5567
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -933,6 +933,7 @@ create-resource-definition
 create-resource-definition-version
 create-resource-group
 create-resource-server
+create-response-headers-policy
 create-rest-api
 create-restore-image-task
 create-return-shipping-label
@@ -1587,6 +1588,7 @@ delete-resource-definition
 delete-resource-policy
 delete-resource-server
 delete-resources-by-external-id
+delete-response-headers-policy
 delete-rest-api
 delete-retention-configuration
 delete-retention-policy
@@ -3403,6 +3405,8 @@ get-resource-definition-version
 get-resource-policies
 get-resource-policy
 get-resources
+get-response-headers-policy
+get-response-headers-policy-config
 get-rest-api
 get-rest-apis
 get-retained-message
@@ -3793,6 +3797,7 @@ list-distributions-by-cache-policy-id
 list-distributions-by-key-group
 list-distributions-by-origin-request-policy-id
 list-distributions-by-realtime-log-config
+list-distributions-by-response-headers-policy-id
 list-distributions-by-web-acl-id
 list-document-classification-jobs
 list-document-classifier-summaries
@@ -4071,6 +4076,7 @@ list-resources
 list-resources-for-tag-option
 list-resources-for-web-acl
 list-resources-in-protection-group
+list-response-headers-policies
 list-retained-messages
 list-retirable-grants
 list-reusable-delegation-sets
@@ -5549,6 +5555,7 @@ update-resource
 update-resource-data-sync
 update-resource-definition
 update-resource-server
+update-response-headers-policy
 update-rest-api
 update-role
 update-role-alias
