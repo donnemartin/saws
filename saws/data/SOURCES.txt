@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5567
+[sub_commands]: 5572
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -951,6 +951,7 @@ create-sampling-rule
 create-scaling-plan
 create-scheduled-action
 create-scheduled-audit
+create-scheduling-policy
 create-schema
 create-script
 create-security-configuration
@@ -1611,6 +1612,7 @@ delete-scaling-policy
 delete-schedule
 delete-scheduled-action
 delete-scheduled-audit
+delete-scheduling-policy
 delete-schema
 delete-schema-versions
 delete-script
@@ -2412,6 +2414,7 @@ describe-scheduled-actions
 describe-scheduled-audit
 describe-scheduled-instance-availability
 describe-scheduled-instances
+describe-scheduling-policies
 describe-schemas
 describe-script
 describe-security-configuration
@@ -4096,6 +4099,7 @@ list-saml-provider-tags
 list-saml-providers
 list-samples
 list-scheduled-audits
+list-scheduling-policies
 list-schema-extensions
 list-schema-versions
 list-schemas
@@ -5570,6 +5574,7 @@ update-sampling-rule
 update-scaling-parameters
 update-scaling-plan
 update-scheduled-audit
+update-scheduling-policy
 update-schema
 update-script
 update-security-group-rule-descriptions-egress
