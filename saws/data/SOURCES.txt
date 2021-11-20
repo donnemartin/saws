@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5572
+[sub_commands]: 5573
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4415,6 +4415,7 @@ provide-anomaly-feedback
 provision-byoip-cidr
 provision-product
 publish
+publish-batch
 publish-function
 publish-layer-version
 publish-schema
