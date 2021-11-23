@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5573
+[sub_commands]: 5584
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -253,6 +253,7 @@ assign-tape-pool
 assign-volume
 associate-address
 associate-alias
+associate-application-fleet
 associate-approval-rule-template-with-repository
 associate-budget-with-resource
 associate-certificate
@@ -532,6 +533,7 @@ create-api-cache
 create-api-destination
 create-api-key
 create-app
+create-app-block
 create-app-cookie-stickiness-policy
 create-app-image-config
 create-application
@@ -721,6 +723,7 @@ create-fpga-image
 create-function
 create-function-definition
 create-function-definition-version
+create-function-url-config
 create-game-server-group
 create-game-session
 create-game-session-queue
@@ -1140,6 +1143,7 @@ delete-apns-sandbox-channel
 delete-apns-voip-channel
 delete-apns-voip-sandbox-channel
 delete-app
+delete-app-block
 delete-app-image-config
 delete-app-launch-configuration
 delete-app-replication-configuration
@@ -1359,6 +1363,7 @@ delete-function-code-signing-config
 delete-function-concurrency
 delete-function-definition
 delete-function-event-invoke-config
+delete-function-url-config
 delete-game-server-group
 delete-game-session-queue
 delete-gateway
@@ -1834,9 +1839,11 @@ describe-analysis-schemes
 describe-anomaly-detectors
 describe-api-destination
 describe-app
+describe-app-blocks
 describe-app-image-config
 describe-applicable-individual-assessments
 describe-application
+describe-application-fleet-associations
 describe-application-state
 describe-application-versions
 describe-applications
@@ -2659,6 +2666,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-application-fleet
 disassociate-approval-rule-template-from-repository
 disassociate-budget-from-resource
 disassociate-certificate
@@ -3121,6 +3129,7 @@ get-function-configuration
 get-function-definition
 get-function-definition-version
 get-function-event-invoke-config
+get-function-url-config
 get-game-session-log
 get-game-session-log-url
 get-gateway
@@ -3851,6 +3860,7 @@ list-fragments
 list-function-definition-versions
 list-function-definitions
 list-function-event-invoke-configs
+list-function-url-configs
 list-functions
 list-functions-by-code-signing-config
 list-game-server-groups
@@ -5409,6 +5419,7 @@ update-function-code
 update-function-configuration
 update-function-definition
 update-function-event-invoke-config
+update-function-url-config
 update-game-server
 update-game-server-group
 update-game-session
