@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5584
+[sub_commands]: 5590
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -2248,6 +2248,7 @@ describe-maintenance-window-targets
 describe-maintenance-window-tasks
 describe-maintenance-windows
 describe-maintenance-windows-for-target
+describe-managed-job-template
 describe-managed-prefix-lists
 describe-matchmaking
 describe-matchmaking-configurations
@@ -2390,6 +2391,7 @@ describe-reserved-instances
 describe-reserved-instances-listings
 describe-reserved-instances-modifications
 describe-reserved-instances-offerings
+describe-reserved-node-exchange-status
 describe-reserved-node-offerings
 describe-reserved-nodes
 describe-resize
@@ -3408,6 +3410,7 @@ get-reservation-coverage
 get-reservation-purchase-recommendation
 get-reservation-utilization
 get-reserved-instances-exchange-quote
+get-reserved-node-exchange-configuration-options
 get-reserved-node-exchange-offerings
 get-resolver
 get-resource
@@ -3947,6 +3950,7 @@ list-luna-clients
 list-mail-domains
 list-mailbox-export-jobs
 list-mailbox-permissions
+list-managed-job-templates
 list-managed-schema-arns
 list-medical-transcription-jobs
 list-medical-vocabularies
@@ -4345,6 +4349,7 @@ modify-luna-client
 modify-managed-prefix-list
 modify-mount-target-security-groups
 modify-network-interface-attribute
+modify-private-dns-name-options
 modify-replication-group
 modify-replication-group-shard-configuration
 modify-replication-instance
@@ -4618,6 +4623,7 @@ rebalance-slots-in-global-replication-group
 reboot-broker
 reboot-cache-cluster
 reboot-cluster
+reboot-db-cluster
 reboot-db-instance
 reboot-instance
 reboot-instances
