@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5590
+[sub_commands]: 5587
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -723,7 +723,6 @@ create-fpga-image
 create-function
 create-function-definition
 create-function-definition-version
-create-function-url-config
 create-game-server-group
 create-game-session
 create-game-session-queue
@@ -1363,7 +1362,6 @@ delete-function-code-signing-config
 delete-function-concurrency
 delete-function-definition
 delete-function-event-invoke-config
-delete-function-url-config
 delete-game-server-group
 delete-game-session-queue
 delete-gateway
@@ -3131,7 +3129,6 @@ get-function-configuration
 get-function-definition
 get-function-definition-version
 get-function-event-invoke-config
-get-function-url-config
 get-game-session-log
 get-game-session-log-url
 get-gateway
@@ -3863,7 +3860,6 @@ list-fragments
 list-function-definition-versions
 list-function-definitions
 list-function-event-invoke-configs
-list-function-url-configs
 list-functions
 list-functions-by-code-signing-config
 list-game-server-groups
@@ -4890,6 +4886,7 @@ send-invitation
 send-message
 send-message-batch
 send-messages
+send-otp-message
 send-pipeline-execution-step-failure
 send-pipeline-execution-step-success
 send-raw-email
@@ -5425,7 +5422,6 @@ update-function-code
 update-function-configuration
 update-function-definition
 update-function-event-invoke-config
-update-function-url-config
 update-game-server
 update-game-server-group
 update-game-session
@@ -5715,6 +5711,7 @@ verify
 verify-domain-dkim
 verify-domain-identity
 verify-email-identity
+verify-otp-message
 verify-sms-sandbox-phone-number
 verify-software-token
 verify-trust
