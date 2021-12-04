@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5587
+[sub_commands]: 5647
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -234,6 +234,7 @@ advertise-byoip-cidr
 allocate-address
 allocate-hosted-connection
 allocate-hosts
+allocate-ipam-pool-cidr
 allocate-private-virtual-interface
 allocate-public-virtual-interface
 allocate-static-ip
@@ -401,6 +402,7 @@ batch-get-query-execution
 batch-get-report-groups
 batch-get-reports
 batch-get-repositories
+batch-get-repository-scanning-configuration
 batch-get-resource-config
 batch-get-traces
 batch-get-triggers
@@ -760,6 +762,7 @@ create-image-version
 create-import-job
 create-in-app-template
 create-index
+create-inference-recommendations-job
 create-input
 create-input-security-group
 create-instance
@@ -775,6 +778,9 @@ create-internet-gateway
 create-invalidation
 create-ip-group
 create-ip-set
+create-ipam
+create-ipam-pool
+create-ipam-scope
 create-job
 create-job-queue
 create-job-template
@@ -835,6 +841,7 @@ create-named-query
 create-nat-gateway
 create-network-acl
 create-network-acl-entry
+create-network-insights-access-scope
 create-network-insights-path
 create-network-interface
 create-network-interface-permission
@@ -895,11 +902,13 @@ create-provisioning-claim
 create-provisioning-template
 create-provisioning-template-version
 create-public-dns-namespace
+create-public-ipv4-pool
 create-public-key
 create-public-virtual-interface
 create-publishing-destination
 create-pull-request
 create-pull-request-approval-rule
+create-pull-through-cache-rule
 create-push-template
 create-qualification-type
 create-query-logging-config
@@ -1414,6 +1423,9 @@ delete-inventory
 delete-invitations
 delete-ip-group
 delete-ip-set
+delete-ipam
+delete-ipam-pool
+delete-ipam-scope
 delete-item
 delete-job
 delete-job-execution
@@ -1486,6 +1498,8 @@ delete-namespace
 delete-nat-gateway
 delete-network-acl
 delete-network-acl-entry
+delete-network-insights-access-scope
+delete-network-insights-access-scope-analysis
 delete-network-insights-analysis
 delete-network-insights-path
 delete-network-interface
@@ -1545,9 +1559,11 @@ delete-provisioning-artifact
 delete-provisioning-template
 delete-provisioning-template-version
 delete-public-access-block
+delete-public-ipv4-pool
 delete-public-key
 delete-publishing-destination
 delete-pull-request-approval-rule
+delete-pull-through-cache-rule
 delete-push-template
 delete-qualification-type
 delete-query-definition
@@ -1769,6 +1785,8 @@ deprecate-domain
 deprecate-thing-type
 deprecate-workflow-type
 deprovision-byoip-cidr
+deprovision-ipam-pool-cidr
+deprovision-public-ipv4-pool-cidr
 deregister
 deregister-certificate
 deregister-container-instance
@@ -2167,6 +2185,7 @@ describe-inbound-cross-cluster-search-connections
 describe-inbound-dmarc-settings
 describe-index
 describe-index-fields
+describe-inference-recommendations-job
 describe-input
 describe-input-device
 describe-input-device-thumbnail
@@ -2193,6 +2212,9 @@ describe-interconnects
 describe-internet-gateways
 describe-inventory-deletions
 describe-ip-groups
+describe-ipam-pools
+describe-ipam-scopes
+describe-ipams
 describe-ipv6-pools
 describe-job
 describe-job-definitions
@@ -2216,6 +2238,7 @@ describe-lifecycle-configuration
 describe-lifecycle-hook-types
 describe-lifecycle-hooks
 describe-limits
+describe-lineage-group
 describe-listener-certificates
 describe-listeners
 describe-loa
@@ -2272,6 +2295,8 @@ describe-multiplex-program
 describe-my-user-profile
 describe-nat-gateways
 describe-network-acls
+describe-network-insights-access-scope-analyses
+describe-network-insights-access-scopes
 describe-network-insights-analyses
 describe-network-insights-paths
 describe-network-interface-attribute
@@ -2351,6 +2376,7 @@ describe-public-ipv4-pools
 describe-publisher
 describe-publishing-destination
 describe-pull-request-events
+describe-pull-through-cache-rules
 describe-queries
 describe-query-definitions
 describe-raid-arrays
@@ -2447,6 +2473,7 @@ describe-snapshot-attribute
 describe-snapshot-copy-grants
 describe-snapshot-schedule
 describe-snapshot-schedules
+describe-snapshot-tier-status
 describe-snapshots
 describe-source-regions
 describe-spot-datafeed-subscription
@@ -2627,6 +2654,7 @@ detect-syntax
 detect-text
 disable-add-on
 disable-alarm-actions
+disable-application-layer-automatic-response
 disable-availability-zones-for-load-balancer
 disable-aws-organizations-access
 disable-aws-service-access
@@ -2643,6 +2671,7 @@ disable-health-service-access-for-organization
 disable-hosted-zone-dnssec
 disable-image-deprecation
 disable-insight-rules
+disable-ipam-organization-admin-account
 disable-key
 disable-key-rotation
 disable-kinesis-streaming-destination
@@ -2732,6 +2761,7 @@ download-default-key-pair
 enable-add-on
 enable-alarm-actions
 enable-all-features
+enable-application-layer-automatic-response
 enable-availability-zones-for-load-balancer
 enable-aws-organizations-access
 enable-aws-service-access
@@ -2746,6 +2776,7 @@ enable-health-service-access-for-organization
 enable-hosted-zone-dnssec
 enable-image-deprecation
 enable-insight-rules
+enable-ipam-organization-admin-account
 enable-key
 enable-key-rotation
 enable-kinesis-streaming-destination
@@ -3204,6 +3235,10 @@ get-inventory-schema
 get-invitation-configuration
 get-invitations-count
 get-ip-set
+get-ipam-address-history
+get-ipam-pool-allocations
+get-ipam-pool-cidrs
+get-ipam-resource-cidrs
 get-item
 get-job
 get-job-bookmark
@@ -3234,6 +3269,7 @@ get-layer-version-policy
 get-lexicon
 get-lifecycle-policy
 get-lifecycle-policy-preview
+get-lineage-group-policy
 get-link-attributes
 get-load-balancer
 get-load-balancer-metric-data
@@ -3293,6 +3329,8 @@ get-models
 get-monitoring-subscription
 get-named-query
 get-namespace
+get-network-insights-access-scope-analysis-findings
+get-network-insights-access-scope-content
 get-network-profile
 get-object
 get-object-acl
@@ -3382,6 +3420,7 @@ get-regions
 get-registration-code
 get-registry
 get-registry-policy
+get-registry-scanning-configuration
 get-relational-database
 get-relational-database-blueprints
 get-relational-database-bundles
@@ -3903,6 +3942,7 @@ list-imports
 list-incoming-typed-links
 list-index
 list-indices
+list-inference-recommendations-jobs
 list-input-device-transfers
 list-input-devices
 list-input-security-groups
@@ -3936,6 +3976,7 @@ list-launch-paths
 list-layer-versions
 list-layers
 list-lexicons
+list-lineage-groups
 list-local-disks
 list-log-subscriptions
 list-logger-definition-versions
@@ -3962,6 +4003,7 @@ list-mobile-device-access-overrides
 list-mobile-device-access-rules
 list-model-bias-job-definitions
 list-model-explainability-job-definitions
+list-model-metadata
 list-model-package-groups
 list-model-packages
 list-model-quality-job-definitions
@@ -4136,6 +4178,7 @@ list-skills-store-categories
 list-skills-store-skills-by-category
 list-smart-home-appliances
 list-sms-sandbox-phone-numbers
+list-snapshots-in-recycle-bin
 list-source-credentials
 list-speech-synthesis-tasks
 list-sql-injection-match-sets
@@ -4338,6 +4381,10 @@ modify-instance-fleet
 modify-instance-groups
 modify-instance-metadata-options
 modify-instance-placement
+modify-ipam
+modify-ipam-pool
+modify-ipam-resource-cidr
+modify-ipam-scope
 modify-launch-template
 modify-listener
 modify-load-balancer-attributes
@@ -4360,6 +4407,7 @@ modify-selfservice-permissions
 modify-snapshot-attribute
 modify-snapshot-copy-retention-period
 modify-snapshot-schedule
+modify-snapshot-tier
 modify-spot-fleet-request
 modify-subnet-attribute
 modify-target-group
@@ -4393,6 +4441,7 @@ modify-workspace-state
 monitor-instances
 move-account
 move-address-to-vpc
+move-byoip-cidr-to-ipam
 move-replication-task
 mv
 notify-app-validation-output
@@ -4424,7 +4473,9 @@ promote-read-replica
 promote-read-replica-db-cluster
 provide-anomaly-feedback
 provision-byoip-cidr
+provision-ipam-pool-cidr
 provision-product
+provision-public-ipv4-pool-cidr
 publish
 publish-batch
 publish-function
@@ -4571,6 +4622,7 @@ put-record
 put-record-batch
 put-records
 put-registry-policy
+put-registry-scanning-configuration
 put-remediation-configurations
 put-remediation-exceptions
 put-replication-configuration
@@ -4608,6 +4660,7 @@ put-warm-pool
 put-webhook
 put-workflow-run-properties
 query
+query-lineage
 query-objects
 query-schema-version-metadata
 rb
@@ -4701,6 +4754,7 @@ reject-vpc-endpoint-connections
 reject-vpc-peering-connection
 release-address
 release-hosts
+release-ipam-pool-allocation
 release-static-ip
 reload-tables
 remove-account-from-organization
@@ -4804,6 +4858,8 @@ restore-from-snapshot
 restore-managed-prefix-list-version
 restore-object
 restore-server
+restore-snapshot-from-recycle-bin
+restore-snapshot-tier
 restore-table-from-backup
 restore-table-from-cluster-snapshot
 restore-table-to-point-in-time
@@ -5034,6 +5090,7 @@ start-ml-labeling-set-generation-task-run
 start-monitoring-members
 start-monitoring-schedule
 start-multiplex
+start-network-insights-access-scope-analysis
 start-network-insights-analysis
 start-next-pending-job-execution
 start-notebook-execution
@@ -5111,6 +5168,7 @@ stop-fleet-actions
 stop-game-session-placement
 stop-hyper-parameter-tuning-job
 stop-image-builder
+stop-inference-recommendations-job
 stop-instance
 stop-instances
 stop-job
@@ -5268,6 +5326,7 @@ update-apns-voip-sandbox-channel
 update-app
 update-app-image-config
 update-application
+update-application-layer-automatic-response
 update-application-resource-lifecycle
 update-application-settings
 update-application-version
@@ -5624,6 +5683,7 @@ update-stack-set
 update-stage
 update-state-machine
 update-stream
+update-stream-mode
 update-streaming-distribution
 update-studio
 update-studio-session-mapping
