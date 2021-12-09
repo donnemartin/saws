@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5647
+[sub_commands]: 5650
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -254,6 +254,7 @@ assign-tape-pool
 assign-volume
 associate-address
 associate-alias
+associate-api
 associate-application-fleet
 associate-approval-rule-template-with-repository
 associate-budget-with-resource
@@ -2695,6 +2696,7 @@ disable-vgw-route-propagation
 disable-vpc-classic-link
 disable-vpc-classic-link-dns-support
 disassociate-address
+disassociate-api
 disassociate-application-fleet
 disassociate-approval-rule-template-from-repository
 disassociate-budget-from-resource
@@ -2878,6 +2880,7 @@ get-alias
 get-anomalies
 get-anomaly-monitors
 get-anomaly-subscriptions
+get-api-association
 get-api-cache
 get-api-key
 get-api-keys
