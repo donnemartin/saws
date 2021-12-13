@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5650
+[sub_commands]: 5651
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -4078,6 +4078,7 @@ list-portfolios
 list-portfolios-for-product
 list-prepared-statements
 list-presets
+list-prices
 list-principal-things
 list-principals-for-portfolio
 list-processing-jobs
