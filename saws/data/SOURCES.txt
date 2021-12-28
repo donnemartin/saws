@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5651
+[sub_commands]: 5654
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -1332,6 +1332,7 @@ delete-egress-only-internet-gateway
 delete-elasticsearch-domain
 delete-elasticsearch-service-role
 delete-email-channel
+delete-email-monitoring-configuration
 delete-email-template
 delete-endpoint
 delete-endpoint-access
@@ -2071,6 +2072,7 @@ describe-elasticsearch-domain
 describe-elasticsearch-domain-config
 describe-elasticsearch-domains
 describe-elasticsearch-instance-type-limits
+describe-email-monitoring-configuration
 describe-emergency-contact-settings
 describe-endpoint
 describe-endpoint-access
@@ -4555,6 +4557,7 @@ put-data-catalog-encryption-settings
 put-delivery-channel
 put-destination
 put-destination-policy
+put-email-monitoring-configuration
 put-encryption-config
 put-evaluations
 put-event-selectors
