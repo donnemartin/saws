@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5640
+[sub_commands]: 5654
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -865,6 +865,7 @@ create-origin-request-policy
 create-ota-update
 create-outbound-cross-cluster-search-connection
 create-package
+create-parallel-data
 create-parameter-group
 create-partition
 create-partition-index
@@ -1526,6 +1527,7 @@ delete-origin-request-policy
 delete-ota-update
 delete-outbound-cross-cluster-search-connection
 delete-package
+delete-parallel-data
 delete-parameter
 delete-parameter-group
 delete-parameters
@@ -1694,6 +1696,7 @@ delete-tape-pool
 delete-target-group
 delete-task-set
 delete-template
+delete-terminology
 delete-test-grid-project
 delete-thing
 delete-thing-group
@@ -2531,6 +2534,7 @@ describe-task-sets
 describe-tasks
 describe-termination-policy-types
 describe-test-cases
+describe-text-translation-job
 describe-thing
 describe-thing-group
 describe-thing-registration-task
@@ -3361,6 +3365,7 @@ get-origin-request-policy
 get-origin-request-policy-config
 get-ota-update
 get-package-version-history
+get-parallel-data
 get-parameter
 get-parameter-history
 get-parameters
@@ -3563,6 +3568,7 @@ get-tags
 get-telemetry-metadata
 get-template
 get-template-summary
+get-terminology
 get-test
 get-test-grid-project
 get-test-grid-session
@@ -3655,6 +3661,7 @@ import-server-catalog
 import-snapshot
 import-source-credentials
 import-stacks-to-stack-set
+import-terminology
 import-workspace-image
 increase-node-groups-in-global-replication-group
 increase-replica-count
@@ -4048,6 +4055,7 @@ list-ota-updates
 list-outgoing-certificates
 list-outgoing-typed-links
 list-packages-for-domain
+list-parallel-data
 list-parents
 list-partner-event-source-accounts
 list-partner-event-sources
@@ -4230,11 +4238,13 @@ list-tasks
 list-team-members
 list-template-versions
 list-templates
+list-terminologies
 list-test-grid-projects
 list-test-grid-session-actions
 list-test-grid-session-artifacts
 list-test-grid-sessions
 list-tests
+list-text-translation-jobs
 list-thing-groups
 list-thing-groups-for-thing
 list-thing-principals
@@ -5122,6 +5132,7 @@ start-support-data-export
 start-sync-execution
 start-task
 start-text-detection
+start-text-translation-job
 start-thing-registration-task
 start-topics-detection-job
 start-transcription-job
@@ -5194,6 +5205,7 @@ stop-stack-set-operation
 stop-stream-encryption
 stop-stream-processor
 stop-task
+stop-text-translation-job
 stop-thing-registration-task
 stop-training-document-classifier
 stop-training-entity-recognizer
@@ -5262,6 +5274,7 @@ transfer-certificate
 transfer-domain
 transfer-domain-to-another-aws-account
 transfer-input-device
+translate-text
 unarchive-findings
 unassign-instance
 unassign-ipv6-addresses
@@ -5566,6 +5579,7 @@ update-organizational-unit
 update-origin-endpoint
 update-origin-request-policy
 update-package
+update-parallel-data
 update-parameter-group
 update-partition
 update-partner-status
