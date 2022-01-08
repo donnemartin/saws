@@ -133,7 +133,7 @@ workdocs
 workmail
 workspaces
 xray
-[sub_commands]: 5654
+[sub_commands]: 5674
 abort-document-version-upload
 abort-environment-update
 abort-multipart-upload
@@ -256,6 +256,7 @@ associate-address
 associate-alias
 associate-api
 associate-application-fleet
+associate-application-to-entitlement
 associate-approval-rule-template-with-repository
 associate-budget-with-resource
 associate-certificate
@@ -448,6 +449,7 @@ cancel-key-deletion
 cancel-mailbox-export-job
 cancel-maintenance-window-execution
 cancel-ml-task-run
+cancel-query
 cancel-replay
 cancel-replication-task-assessment-run
 cancel-reserved-instances-listing
@@ -698,12 +700,14 @@ create-email-template
 create-endpoint
 create-endpoint-access
 create-endpoint-config
+create-entitlement
 create-entity-recognizer
 create-environment
 create-environment-ec2
 create-environment-membership
 create-evaluation
 create-event-bus
+create-event-data-store
 create-event-source-mapping
 create-event-subscription
 create-exclusions-preview
@@ -1337,6 +1341,7 @@ delete-email-template
 delete-endpoint
 delete-endpoint-access
 delete-endpoint-config
+delete-entitlement
 delete-entity-recognizer
 delete-environment
 delete-environment-configuration
@@ -1344,6 +1349,7 @@ delete-environment-membership
 delete-evaluation
 delete-evaluation-results
 delete-event-bus
+delete-event-data-store
 delete-event-source-mapping
 delete-event-stream
 delete-event-subscription
@@ -2084,6 +2090,7 @@ describe-endpoints
 describe-engine-default-cluster-parameters
 describe-engine-default-parameters
 describe-entities-detection-job
+describe-entitlements
 describe-entity-aggregates
 describe-entity-recognizer
 describe-environment-health
@@ -2381,6 +2388,7 @@ describe-publishing-destination
 describe-pull-request-events
 describe-pull-through-cache-rules
 describe-queries
+describe-query
 describe-query-definitions
 describe-raid-arrays
 describe-rds-db-instances
@@ -2700,6 +2708,7 @@ disable-vpc-classic-link-dns-support
 disassociate-address
 disassociate-api
 disassociate-application-fleet
+disassociate-application-from-entitlement
 disassociate-approval-rule-template-from-repository
 disassociate-budget-from-resource
 disassociate-certificate
@@ -3133,6 +3142,7 @@ get-endpoint
 get-endpoint-attributes
 get-entitlements
 get-evaluation
+get-event-data-store
 get-event-selectors
 get-event-source-mapping
 get-event-stream
@@ -3599,6 +3609,9 @@ get-triggers
 get-type
 get-typed-link-facet-information
 get-ui-customization
+get-unfiltered-partition-metadata
+get-unfiltered-partitions-metadata
+get-unfiltered-table-metadata
 get-upgrade-history
 get-upgrade-status
 get-upload
@@ -3875,10 +3888,12 @@ list-endpoints-by-platform-application
 list-engine-versions
 list-entities-detection-jobs
 list-entities-for-policy
+list-entitled-applications
 list-entity-recognizer-summaries
 list-entity-recognizers
 list-environments
 list-event-buses
+list-event-data-stores
 list-event-source-mappings
 list-event-sources
 list-event-subscriptions
@@ -4101,6 +4116,7 @@ list-publishing-destinations
 list-pull-requests
 list-qualification-requests
 list-qualification-types
+list-queries
 list-query-executions
 list-query-logging-configs
 list-queue-tags
@@ -4433,6 +4449,7 @@ modify-vpc-attribute
 modify-vpc-endpoint
 modify-vpc-endpoint-connection-notification
 modify-vpc-endpoint-service-configuration
+modify-vpc-endpoint-service-payer-responsibility
 modify-vpc-endpoint-service-permissions
 modify-vpc-peering-connection-options
 modify-vpc-tenancy
@@ -4859,6 +4876,7 @@ restore-db-cluster-to-point-in-time
 restore-db-instance-from-db-snapshot
 restore-db-instance-from-s3
 restore-db-instance-to-point-in-time
+restore-event-data-store
 restore-from-cluster-snapshot
 restore-from-hbase-backup
 restore-from-snapshot
@@ -5463,10 +5481,12 @@ update-emergency-contact-settings
 update-endpoint
 update-endpoint-weights-and-capacities
 update-endpoints-batch
+update-entitlement
 update-environment
 update-environment-membership
 update-evaluation
 update-event-configurations
+update-event-data-store
 update-event-source-mapping
 update-experiment
 update-expiration-for-hit
