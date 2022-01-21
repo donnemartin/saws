@@ -386,7 +386,7 @@ class Saws(object):
             if not self._handle_cd(text):
                 text = self._colorize_output(text)
                 # Pass the command onto the shell so aws-cli can execute it
-                subprocess.call(text, shell=True)
+                subprocess.call(text, shell=True, executable=os.getenv("SHELL", "/bin/sh"))
             print('')
         except KeyboardInterrupt as e:
             self._handle_keyboard_interrupt(e, platform.system())
