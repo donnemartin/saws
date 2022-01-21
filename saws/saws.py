@@ -21,18 +21,17 @@ import platform
 import subprocess
 import traceback
 import webbrowser
-from prompt_toolkit import AbortAction, Application, CommandLineInterface
 from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.filters import Always, HasFocus, IsDone
-from prompt_toolkit.interface import AcceptAction
+from prompt_toolkit.shortcuts import Prompt
+from prompt_toolkit.filters import HasFocus, IsDone
 from prompt_toolkit.layout.processors import \
     HighlightMatchingBracketProcessor, ConditionalProcessor
-from prompt_toolkit.buffer import Buffer
-from prompt_toolkit.shortcuts import create_default_layout, create_eventloop
+from prompt_toolkit.lexers import PygmentsLexer
 from prompt_toolkit.history import FileHistory
-from prompt_toolkit.key_binding.input_processor import KeyPress
+from prompt_toolkit.key_binding.key_processor import KeyPress
 from prompt_toolkit.keys import Keys
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
+from prompt_toolkit.completion import ThreadedCompleter
 from awscli import completer as awscli_completer
 from .completer import AwsCompleter
 from .lexer import CommandLexer
@@ -49,8 +48,7 @@ class Saws(object):
     """Encapsulates the Saws CLI.
 
     Attributes:
-        * aws_cli: An instance of prompt_toolkit's CommandLineInterface.
-        * key_manager: An instance of KeyManager.
+        * prompt: An instance of prompt_toolkit's Prompt.
         * config: An instance of Config.
         * config_obj: An instance of ConfigObj, reads from ~/.sawsrc.
         * theme: A string representing the lexer theme.
@@ -74,8 +72,7 @@ class Saws(object):
         Returns:
             None.
         """
-        self.aws_cli = None
-        self.key_manager = None
+        self.prompt = None
         self.config = Config()
         self.config_obj = self.config.read_configuration()
         self.theme = self.config_obj[self.config.MAIN][self.config.THEME]
@@ -248,7 +245,7 @@ class Saws(object):
         base_url = 'http://docs.aws.amazon.com/cli/latest/reference/'
         index_html = 'index.html'
         if text is None:
-            text = self.aws_cli.current_buffer.document.text
+            text = self.prompt.app.current_buffer.document.text
         # If the user hit the F9 key, append 'docs' to the text
         if from_fkey:
             text = text.strip() + ' ' + AwsCommands.AWS_DOCS
@@ -365,9 +362,9 @@ class Saws(object):
             raise e
         else:
             # Clear the renderer and send a carriage return
-            self.aws_cli.renderer.clear()
-            self.aws_cli.input_processor.feed(KeyPress(Keys.ControlM, u''))
-            self.aws_cli.input_processor.process_keys()
+            self.prompt.app.renderer.clear()
+            self.prompt.app.key_processor.feed(KeyPress(Keys.ControlM, u''))
+            self.prompt.app.key_processor.process_keys()
 
     def _process_command(self, text):
         """Processes the input command, called by the cli event loop
@@ -406,26 +403,8 @@ class Saws(object):
         toolbar = Toolbar(self.get_color,
                           self.get_fuzzy_match,
                           self.get_shortcut_match)
-        layout = create_default_layout(
-            message='saws> ',
-            reserve_space_for_menu=8,
-            lexer=CommandLexer,
-            get_bottom_toolbar_tokens=toolbar.handler,
-            extra_input_processors=[
-                ConditionalProcessor(
-                    processor=HighlightMatchingBracketProcessor(
-                        chars='[](){}'),
-                    filter=HasFocus(DEFAULT_BUFFER) & ~IsDone())
-            ]
-        )
-        cli_buffer = Buffer(
-            history=history,
-            auto_suggest=AutoSuggestFromHistory(),
-            enable_history_search=True,
-            completer=self.completer,
-            complete_while_typing=Always(),
-            accept_action=AcceptAction.RETURN_DOCUMENT)
-        self.key_manager = KeyManager(
+
+        key_manager = KeyManager(
             self.set_color,
             self.get_color,
             self.set_fuzzy_match,
@@ -434,20 +413,31 @@ class Saws(object):
             self.get_shortcut_match,
             self.refresh_resources_and_options,
             self.handle_docs)
+
         style_factory = StyleFactory(self.theme)
-        application = Application(
-            mouse_support=False,
+
+        self.prompt = Prompt(
+            message='saws> ',
+            reserve_space_for_menu=8,
+            lexer=PygmentsLexer(CommandLexer),
+            bottom_toolbar=toolbar.handler,
+            extra_input_processor=
+                ConditionalProcessor(
+                    processor=HighlightMatchingBracketProcessor(
+                        chars='[](){}'),
+                    filter=HasFocus(DEFAULT_BUFFER) & ~IsDone()),
+            auto_suggest=AutoSuggestFromHistory(),
+            enable_history_search=True,
+            completer=ThreadedCompleter(self.completer),
+            complete_while_typing=True,
+            enable_system_prompt=True,
+            extra_key_bindings=key_manager.key_bindings,
             style=style_factory.style,
-            layout=layout,
-            buffer=cli_buffer,
-            key_bindings_registry=self.key_manager.manager.registry,
-            on_exit=AbortAction.RAISE_EXCEPTION,
-            on_abort=AbortAction.RETRY,
-            ignore_case=True)
-        eventloop = create_eventloop()
-        self.aws_cli = CommandLineInterface(
-            application=application,
-            eventloop=eventloop)
+            mouse_support=False,
+            include_default_pygments_style=False,
+            history=history,
+            #ignore_case=True,
+        )
 
     def run_cli(self):
         """Runs the main loop.
@@ -461,5 +451,9 @@ class Saws(object):
         print('Version:', __version__)
         print('Theme:', self.theme)
         while True:
-            document = self.aws_cli.run(reset_current_buffer=True)
-            self._process_command(document.text)
+            try:
+                text = self.prompt.prompt()
+            except KeyboardInterrupt:
+                pass
+            else:
+                self._process_command(text)
