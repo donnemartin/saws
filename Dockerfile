@@ -1,11 +1,7 @@
-FROM ubuntu:latest
+FROM python:alpine
 
-RUN apt-get update && apt-get install -y \
-    groff \
-    python-pip \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+ADD . /saws/
 
-RUN pip install saws
+RUN cd saws && python setup.py install && cd ..
 
 ENTRYPOINT ["saws"]
