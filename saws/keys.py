@@ -15,9 +15,8 @@
 
 from __future__ import unicode_literals
 from __future__ import print_function
-from prompt_toolkit.key_binding.manager import KeyBindingManager
-from prompt_toolkit.keys import Keys
-
+from prompt_toolkit.key_binding import KeyBindings
+from prompt_toolkit.application import run_in_terminal
 
 class KeyManager(object):
     """Creates a Key Manager.
@@ -44,15 +43,15 @@ class KeyManager(object):
             None.
         """
         self.manager = None
-        self._create_key_manager(set_color, get_color,
-                                 set_fuzzy_match, get_fuzzy_match,
-                                 set_shortcut_match, get_shortcut_match,
-                                 refresh_resources_and_options, handle_docs)
+        self.key_bindings = self._create_key_bindings(
+            set_color, get_color, set_fuzzy_match, get_fuzzy_match,
+            set_shortcut_match, get_shortcut_match,
+            refresh_resources_and_options, handle_docs)
 
-    def _create_key_manager(self, set_color, get_color,
-                            set_fuzzy_match, get_fuzzy_match,
-                            set_shortcut_match, get_shortcut_match,
-                            refresh_resources_and_options, handle_docs):
+    def _create_key_bindings(self, set_color, get_color,
+                             set_fuzzy_match, get_fuzzy_match,
+                             set_shortcut_match, get_shortcut_match,
+                             refresh_resources_and_options, handle_docs):
         """Creates and initializes the keybinding manager.
 
         Args:
@@ -74,13 +73,10 @@ class KeyManager(object):
         assert callable(get_shortcut_match)
         assert callable(refresh_resources_and_options)
         assert callable(handle_docs)
-        self.manager = KeyBindingManager(
-            enable_search=True,
-            enable_abort_and_exit_bindings=True,
-            enable_system_bindings=True,
-            enable_auto_suggest_bindings=True)
 
-        @self.manager.registry.add_binding(Keys.F2)
+        kb = KeyBindings()
+
+        @kb.add('f2')
         def handle_f2(_):
             """Enables/Disables color output.
 
@@ -92,7 +88,7 @@ class KeyManager(object):
             """
             set_color(not get_color())
 
-        @self.manager.registry.add_binding(Keys.F3)
+        @kb.add('f3')
         def handle_f3(_):
             """Enables/Disables fuzzy matching.
 
@@ -104,7 +100,7 @@ class KeyManager(object):
             """
             set_fuzzy_match(not get_fuzzy_match())
 
-        @self.manager.registry.add_binding(Keys.F4)
+        @kb.add('f4')
         def handle_f4(_):
             """Enables/Disables shortcut matching.
 
@@ -116,7 +112,7 @@ class KeyManager(object):
             """
             set_shortcut_match(not get_shortcut_match())
 
-        @self.manager.registry.add_binding(Keys.F5)
+        @kb.add('f5')
         def handle_f5(event):
             """Refreshes AWS resources.
 
@@ -128,7 +124,7 @@ class KeyManager(object):
             """
             event.cli.run_in_terminal(refresh_resources_and_options)
 
-        @self.manager.registry.add_binding(Keys.F9)
+        @kb.add('f9')
         def handle_f9(_):
             """Inputs the "docs" command when the `F9` key is pressed.
 
@@ -140,8 +136,8 @@ class KeyManager(object):
             """
             handle_docs(from_fkey=True)
 
-        @self.manager.registry.add_binding(Keys.F10)
-        def handle_f10(_):
+        @kb.add('f10')
+        def handle_f10(event):
             """Quits when the `F10` key is pressed.
 
             Args:
@@ -150,9 +146,9 @@ class KeyManager(object):
             Returns:
                 None.
             """
-            raise EOFError
+            event.app.exit()
 
-        @self.manager.registry.add_binding(Keys.ControlSpace)
+        @kb.add('c-space')
         def handle_ctrl_space(event):
             """Initializes autocompletion at the cursor.
 
@@ -172,3 +168,5 @@ class KeyManager(object):
                 b.complete_next()
             else:
                 event.cli.start_completion(select_first=False)
+
+        return kb

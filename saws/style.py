@@ -13,9 +13,8 @@
 # ANY KIND, either express or implied. See the License for the specific
 # language governing permissions and limitations under the License.
 
-from pygments.token import Token
 from pygments.util import ClassNotFound
-from prompt_toolkit.styles import default_style_extensions, style_from_dict
+from prompt_toolkit.styles import merge_styles, style_from_pygments_cls, Style
 import pygments.styles
 
 
@@ -56,22 +55,20 @@ class StyleFactory(object):
             style = pygments.styles.get_style_by_name('native')
 
         # Create styles dictionary.
-        styles = {}
-        styles.update(style.styles)
-        styles.update(default_style_extensions)
-        styles.update({
-            Token.Menu.Completions.Completion.Current: 'bg:#00aaaa #000000',
-            Token.Menu.Completions.Completion: 'bg:#008888 #ffffff',
-            Token.Scrollbar: 'bg:#00aaaa',
-            Token.Scrollbar.Button: 'bg:#003333',
-            Token.Toolbar: 'bg:#222222 #cccccc',
-            Token.Toolbar.Off: 'bg:#222222 #696969',
-            Token.Toolbar.On: 'bg:#222222 #ffffff',
-            Token.Toolbar.Search: 'noinherit bold',
-            Token.Toolbar.Search.Text: 'nobold',
-            Token.Toolbar.System: 'noinherit bold',
-            Token.Toolbar.Arg: 'noinherit bold',
-            Token.Toolbar.Arg.Text: 'nobold'
-        })
-
-        return style_from_dict(styles)
+        return merge_styles([
+            style_from_pygments_cls(style),
+            Style.from_dict({
+                'scrollbar': 'bg:#00aaaa',
+                'scrollbar.button': 'bg:#003333',
+                'completion-menu.completion': 'bg:#008888 #ffffff',
+                'completion-menu.completion.current': 'bg:#00aaaa #000000',
+                'system-toolbar': 'noinherit bold',
+                'search-toolbar': 'noinherit bold',
+                'search-toolbar.text': 'nobold',
+                'arg-toolbar': 'noinherit bold',
+                'arg-toolbar.text': 'nobold',
+                'bottom-toolbar': 'bg:#222222 #cccccc',
+                'toolbar.off': 'bg:#222222 #696969',
+                'toolbar.on': 'bg:#222222 #ffffff',
+            })
+        ])
